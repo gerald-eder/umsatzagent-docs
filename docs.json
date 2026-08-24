@@ -1,122 +1,97 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "UmsatzAgent Support",
+  "description": "Hilfe, Anleitungen und Support für UmsatzAgent — auf Deutsch.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#22A2E3",
+    "light": "#ADE5FF",
+    "dark": "#0A1F3D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo/logo-light.png",
+    "dark": "/logo/logo-dark.png",
+    "href": "https://umsatzagent.com"
+  },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
+        "language": "de",
+        "default": true,
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start",
+            "pages": ["index"]
+          },
+          {
+            "group": "Erste Schritte",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "erste-schritte/ueberblick",
+              "erste-schritte/onboarding",
+              "erste-schritte/was-du-beitraegst"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Anna",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "anna/ueberblick",
+              "anna/im-chat",
+              "anna/am-telefon"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Plattform",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "plattform/ueberblick",
+              "plattform/integrationen"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Konto & Abrechnung",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "konto/abrechnung",
+              "konto/vertrag",
+              "konto/datenschutz"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
+      { "label": "Community", "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/home" },
+      { "label": "Video-Kurse", "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning" }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Support-Call buchen",
+      "href": "https://link.umsatzagent.com/widget/groups/support-umsatzai"
     }
   },
   "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    "options": ["copy", "view", "chatgpt", "claude"]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "links": [
+      {
+        "header": "UmsatzAgent",
+        "items": [
+          { "label": "Website", "href": "https://umsatzagent.com" },
+          { "label": "Termin buchen", "href": "https://umsatzagent.com/termin" },
+          { "label": "Weiterempfehlen", "href": "https://umsatzagent.com/partner" }
+        ]
+      },
+      {
+        "header": "Rechtliches",
+        "items": [
+          { "label": "Impressum", "href": "https://umsatzagent.com/impressum" },
+          { "label": "Datenschutz", "href": "https://umsatzagent.com/datenschutz" },
+          { "label": "AVV", "href": "https://umsatzagent.com/avv" },
+          { "label": "Sub-Prozessoren", "href": "https://umsatzagent.com/subprozessoren" }
+        ]
+      }
+    ]
   }
 }
