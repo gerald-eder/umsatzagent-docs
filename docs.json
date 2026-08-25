@@ -22,7 +22,11 @@
         "groups": [
           {
             "group": "Start",
-            "pages": ["index"]
+            "pages": [
+              "index",
+              "fuer-inhaber",
+              "fuer-team"
+            ]
           },
           {
             "group": "Erste Schritte",
@@ -61,8 +65,14 @@
   },
   "navbar": {
     "links": [
-      { "label": "Community", "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/home" },
-      { "label": "Video-Kurse", "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning" }
+      {
+        "label": "Community",
+        "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"
+      },
+      {
+        "label": "Video-Kurse",
+        "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning"
+      }
     ],
     "primary": {
       "type": "button",
@@ -71,25 +81,51 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "links": [
       {
         "header": "UmsatzAgent",
         "items": [
-          { "label": "Website", "href": "https://umsatzagent.com" },
-          { "label": "Termin buchen", "href": "https://umsatzagent.com/termin" },
-          { "label": "Weiterempfehlen", "href": "https://umsatzagent.com/partner" }
+          {
+            "label": "Website",
+            "href": "https://umsatzagent.com"
+          },
+          {
+            "label": "Termin buchen",
+            "href": "https://umsatzagent.com/termin"
+          },
+          {
+            "label": "Weiterempfehlen",
+            "href": "https://umsatzagent.com/partner"
+          }
         ]
       },
       {
         "header": "Rechtliches",
         "items": [
-          { "label": "Impressum", "href": "https://umsatzagent.com/impressum" },
-          { "label": "Datenschutz", "href": "https://umsatzagent.com/datenschutz" },
-          { "label": "AVV", "href": "https://umsatzagent.com/avv" },
-          { "label": "Sub-Prozessoren", "href": "https://umsatzagent.com/subprozessoren" }
+          {
+            "label": "Impressum",
+            "href": "https://umsatzagent.com/impressum"
+          },
+          {
+            "label": "Datenschutz",
+            "href": "https://umsatzagent.com/datenschutz"
+          },
+          {
+            "label": "AVV",
+            "href": "https://umsatzagent.com/avv"
+          },
+          {
+            "label": "Sub-Prozessoren",
+            "href": "https://umsatzagent.com/subprozessoren"
+          }
         ]
       }
     ]
