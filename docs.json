@@ -15,70 +15,47 @@
     "href": "https://umsatzagent.com"
   },
   "navigation": {
-    "languages": [
+    "groups": [
       {
-        "language": "de",
-        "default": true,
-        "groups": [
-          {
-            "group": "Start",
-            "pages": [
-              "index",
-              "fuer-inhaber",
-              "fuer-team"
-            ]
-          },
-          {
-            "group": "Erste Schritte",
-            "pages": [
-              "erste-schritte/ueberblick",
-              "erste-schritte/onboarding",
-              "erste-schritte/was-du-beitraegst"
-            ]
-          },
-          {
-            "group": "Anna",
-            "pages": [
-              "anna/ueberblick",
-              "anna/im-chat",
-              "anna/am-telefon"
-            ]
-          },
-          {
-            "group": "Plattform",
-            "pages": [
-              "plattform/ueberblick",
-              "plattform/integrationen"
-            ]
-          },
-          {
-            "group": "Konto & Abrechnung",
-            "pages": [
-              "konto/abrechnung",
-              "konto/vertrag",
-              "konto/datenschutz"
-            ]
-          }
+        "group": "Start",
+        "pages": [
+          "index",
+          "fuer-inhaber",
+          "fuer-team"
+        ]
+      },
+      {
+        "group": "Erste Schritte",
+        "pages": [
+          "erste-schritte/ueberblick",
+          "erste-schritte/onboarding",
+          "erste-schritte/was-du-beitraegst"
+        ]
+      },
+      {
+        "group": "Anna",
+        "pages": [
+          "anna/ueberblick",
+          "anna/im-chat",
+          "anna/am-telefon"
+        ]
+      },
+      {
+        "group": "Plattform",
+        "pages": [
+          "plattform/ueberblick",
+          "plattform/integrationen"
+        ]
+      },
+      {
+        "group": "Konto & Abrechnung",
+        "pages": [
+          "konto/abrechnung",
+          "konto/vertrag",
+          "konto/datenschutz"
         ]
       }
     ]
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Community",
-        "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"
-      },
-      {
-        "label": "Video-Kurse",
-        "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Support-Call buchen",
-      "href": "https://link.umsatzagent.com/widget/groups/support-umsatzai"
-    }
   },
   "contextual": {
     "options": [

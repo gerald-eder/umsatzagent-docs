@@ -1,130 +1,124 @@
 ---
-title: "Willkommen im UmsatzAgent Help Center"
+title: "Willkommen beim UmsatzAgent Help Center"
 sidebarTitle: "Start"
-description: "Alles, was du brauchst, um UmsatzAgent erfolgreich zu nutzen."
+description: "Support-Hub für UmsatzAgent: Erste Schritte, Video-Kurse, Forum, Support-Call, Dokumentation, Abrechnung und Kontakt."
 mode: "custom"
 ---
 
-<div className="mx-auto max-w-5xl px-4 py-16">
+<div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
 
 <div className="text-center">
-  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-    Willkommen im UmsatzAgent Help Center 👋
+  <h1 className="text-3xl font-bold tracking-tight text-[#0A1F3D] sm:text-4xl dark:text-white">
+    Willkommen beim UmsatzAgent Help Center 👋
   </h1>
 
-  <p className="mt-3 text-lg text-gray-500 dark:text-gray-400">
-    Alles, was du brauchst, um UmsatzAgent erfolgreich zu nutzen. Nutz die Suche
-    oben, wenn du schon weißt, wonach du suchst.
+  <p className="mt-3 text-lg text-[#4A5A75] dark:text-gray-400">
+    Wir bieten Unterstützung auf verschiedene Weise:
   </p>
 </div>
 
-<div className="mt-16">
+<div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
 
-<h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-  Wähle deinen Startpunkt
-</h2>
+<a
+  href="/erste-schritte/ueberblick"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="compass" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Erste Schritte</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">Mach das zuerst.</p>
+  </div>
+</a>
 
-<p className="text-gray-500 dark:text-gray-400">
-  Je nach deiner Rolle findest du hier die passenden Anleitungen.
-</p>
+<a
+  href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="circle-play" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Video-Kurse</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+      Schritt-für-Schritt-Anleitungen.
+    </p>
+  </div>
+</a>
 
-<Columns cols={2}>
-  <Card
-    title="Ich richte mein Konto ein"
-    icon="gear"
-    href="/fuer-inhaber"
-    cta="Onboarding starten"
-  >
-    Für Inhaber und Administratoren. Was in den ersten Wochen passiert, wie Anna
-    auf dein Geschäft eingestellt wird und was du dafür brauchst.
-  </Card>
-  <Card
-    title="Ich arbeite täglich damit"
-    icon="users"
-    href="/fuer-team"
-    cta="Los geht's"
-  >
-    Für alle im Team. Wie der Posteingang funktioniert, wie Termine entstehen
-    und was Anna übernimmt, bevor ein Mensch dran ist.
-  </Card>
-</Columns>
+<a
+  href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="comments" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Forum</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+      Tipps und Ideen von anderen Nutzern.
+    </p>
+  </div>
+</a>
 
-</div>
+<a
+  href="https://link.umsatzagent.com/widget/groups/support-umsatzai"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="calendar-check" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">
+      Support-Call buchen
+    </div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">Persönlich, auf Deutsch.</p>
+  </div>
+</a>
 
-<div className="mt-16">
+<a
+  href="/plattform/ueberblick"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="book-open" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Dokumentation</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+      Anleitungen zu Plattform & Konto.
+    </p>
+  </div>
+</a>
 
-<h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-  Wir sind für dich da
-</h2>
+<a
+  href="/konto/abrechnung"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="credit-card" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Abrechnung</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+      Monatspreis, Rechnungen, Verbrauch.
+    </p>
+  </div>
+</a>
 
-<p className="text-gray-500 dark:text-gray-400">
-  Wenn du nicht weiterkommst — such dir aus, was dir am schnellsten hilft.
-</p>
+<a
+  href="https://umsatzagent.com/partner"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="bullhorn" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">Weiterempfehlen</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+      30 % Provision verdienen.
+    </p>
+  </div>
+</a>
 
-<Columns cols={3}>
-  <Card
-    title="Support-Call buchen"
-    icon="calendar-check"
-    href="https://link.umsatzagent.com/widget/groups/support-umsatzai"
-  >
-    Persönlicher Video-Call auf Deutsch. Bildschirm teilen statt E-Mail-Pingpong.
-  </Card>
-  <Card
-    title="E-Mail-Support"
-    icon="envelope"
-    href="mailto:info@umsatzagent.com"
-  >
-    info@umsatzagent.com — wir antworten auf Deutsch.
-  </Card>
-  <Card
-    title="Community"
-    icon="comments"
-    href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"
-  >
-    Tipps und Ideen von anderen Nutzern.
-  </Card>
-  <Card
-    title="Video-Kurse"
-    icon="circle-play"
-    href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning"
-  >
-    Die Online-Marketing Academy: Homepage-, Lead-, Sales- und Termin-Funnel.
-  </Card>
-  <Card
-    title="Abrechnung & Rechnungen"
-    icon="credit-card"
-    href="/konto/abrechnung"
-  >
-    Was der Monatspreis enthält, was Verbrauch kostet, wo deine Rechnungen liegen.
-  </Card>
-  <Card
-    title="Wissensdatenbank"
-    icon="book-open"
-    href="https://kb.mycrmsupport.com/0-295-495_umsatzai"
-  >
-    Detailfragen zur Plattform. Aktuell nur auf Englisch — die deutschen
-    Anleitungen hier wachsen laufend.
-  </Card>
-</Columns>
+<a
+  href="mailto:info@umsatzagent.com"
+  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+>
+  <Icon icon="envelope" size={22} color="#FFFFFF" />
+  <div>
+    <div className="text-sm font-bold text-white sm:text-base">E-Mail-Support</div>
+    <p className="mt-1 text-xs text-white/80 sm:text-sm">info@umsatzagent.com</p>
+  </div>
+</a>
 
-</div>
-
-<div className="mt-16 rounded-2xl bg-[#22A2E3] px-8 py-12 text-center text-white">
-  <h2 className="text-2xl font-bold tracking-tight text-white">
-    Verdiene 30 % wiederkehrende Provision
-  </h2>
-
-  <p className="mt-2 text-white/90">
-    Empfiehl UmsatzAgent weiter und erhalte wiederkehrend 30 % Provision für
-    jeden zahlenden Kunden.
-  </p>
-
-  <a
-    href="https://umsatzagent.com/partner"
-    className="mt-6 inline-block rounded-md bg-white px-5 py-3 font-semibold text-[#0A1F3D] no-underline"
-  >
-    Zum Empfehlungs-Programm
-  </a>
 </div>
 
 </div>
