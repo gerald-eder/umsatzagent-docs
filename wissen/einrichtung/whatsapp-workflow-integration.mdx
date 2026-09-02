@@ -1,0 +1,226 @@
+---
+title: "WhatsApp - Workflow-Integration"
+description: "Durch das Automatisieren von Antworten stellst du eine zeitnahe und professionelle Kommunikation mit deinen Kunden sicher und optimierst gleichzeitig…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [WhatsApp-Antworten mit Automatisierungen automatisieren](#whatsapp-antworten-mit-automatisierungen-automatisieren)
+
+  - [Schritt 1: Einen neuen Workflow erstellen](#schritt-1-einen-neuen-workflow-erstellen)
+  - [Schritt 2: Einen Trigger einrichten](#schritt-2-einen-trigger-einrichten)
+  - [Schritt 3: WhatsApp-spezifische Filter anwenden](#schritt-3-whatsapp-spezifische-filter-anwenden)
+  - [Schritt 4: Eine automatisierte Aktion definieren](#schritt-4-eine-automatisierte-aktion-definieren)
+  - [Schritt 5: Die automatisierte Antwort anpassen](#schritt-5-die-automatisierte-antwort-anpassen)
+  - [Schritt 6: Den Workflow speichern und aktivieren](#schritt-6-den-workflow-speichern-und-aktivieren)
+- [So wählst du die Absender-Telefonnummer für das Senden von WhatsApp-Nachrichten aus](#so-waehlst-du-die-absender-telefonnummer-fuer-das-senden-von-whatsapp-nachrichte)
+
+  - [Schritt 1: Eine Aktion im Workflow hinzufügen](#schritt-1-eine-aktion-im-workflow-hinzufuegen)
+  - [Schritt 2: WhatsApp als Aktionstyp auswählen](#schritt-2-whatsapp-als-aktionstyp-auswaehlen)
+  - [Schritt 3: Die Absender-Telefonnummer wählen](#schritt-3-die-absender-telefonnummer-waehlen)
+- [So richtest du das Warten auf eine Antwort des WhatsApp-Kontakts ein](#so-richtest-du-das-warten-auf-eine-antwort-des-whatsapp-kontakts-ein)
+- [So richtest du „Bitte nicht stören“ (DND) für WhatsApp ein](#so-richtest-du-bitte-nicht-stoeren-dnd-fuer-whatsapp-ein)-for-WhatsApp)
+- [FAQs](#faqs)
+  - [Wirkt sich die DND-Einstellung („Bitte nicht stören“) auf andere Kommunikationskanäle aus oder nur auf WhatsApp?](#wirkt-sich-die-dnd-einstellung-bitte-nicht-stoeren-auf-andere-kommunikationskana)-setting-affect-other-communication-channels-or-just-WhatsApp?)
+  - [Was ist der Unterschied zwischen „None - Manual Text“ und der Auswahl einer Vorlage beim Senden von WhatsApp-Nachrichten in Workflows?](#was-ist-der-unterschied-zwischen-none-manual-text-und-der-auswahl-einer-vorlage)
+  - [Kann ich mit WhatsApp-Automatisierungen Nachrichten außerhalb des 24-Stunden-Fensters senden?](#kann-ich-mit-whatsapp-automatisierungen-nachrichten-ausserhalb-des-24-stunden-fe)
+  - [Was ist eine „Kostenlose Einstiegspunkt-Konversation“ und wie unterscheidet sie sich von einer regulären Konversation?](#was-ist-eine-kostenlose-einstiegspunkt-konversation-und-wie-unterscheidet-sie-si)
+  - [Was passiert, wenn ein Kunde mit etwas anderem antwortet als dem, was ich für den Schritt „Auf WhatsApp-Antwort warten“ konfiguriert habe?](#was-passiert-wenn-ein-kunde-mit-etwas-anderem-antwortet-als-dem-was-ich-fuer-den)
+  - [Wie wähle ich die Kontaktnummer für das Senden von WhatsApp-Nachrichten aus?](#wie-waehle-ich-die-kontaktnummer-fuer-das-senden-von-whatsapp-nachrichten-aus)
+  - [Warum sehe ich meine Telefonnummer nicht in der Dropdown-Liste?](#warum-sehe-ich-meine-telefonnummer-nicht-in-der-dropdown-liste)
+  - [Kann ich mehrere Telefonnummern für WhatsApp-Nachrichten hinzufügen?](#kann-ich-mehrere-telefonnummern-fuer-whatsapp-nachrichten-hinzufuegen)
+  - [Was passiert, wenn ich die falsche Telefonnummer auswähle?](#was-passiert-wenn-ich-die-falsche-telefonnummer-auswaehle)
+  - [Muss ich diese Einstellung für jeden Workflow konfigurieren?](#muss-ich-diese-einstellung-fuer-jeden-workflow-konfigurieren)
+
+#
+
+#
+
+## WhatsApp-Antworten mit Automatisierungen automatisieren
+
+### Schritt 1: Einen neuen Workflow erstellen
+
+- Navigiere zu **Automatisierung** → **Workflow erstellen**.
+- Wähle **„Neu beginnen“**, um eine eigene Automatisierung zu erstellen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587428/original/Kzn3vKVF-8RDT9isDJWa8_dEiD9_MOiYYg.png?1787947942)
+
+### Schritt 2: Einen Trigger einrichten
+
+- Klicke auf **Neuen Trigger hinzufügen** und suche nach **„Customer Replied“**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155043306025/original/ptKxwsv00rkGALQM6vZISOZMeLMARfm_Jw.png?1741959241)
+
+### Schritt 3: WhatsApp-spezifische Filter anwenden
+
+- Füge einen Filter hinzu: **Antwortkanal** → Wähle **WhatsApp**, um sicherzustellen, dass diese Automatisierung nur für WhatsApp-Antworten gilt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042619144/original/mTWQBDtkmDiZApJheYmH9Ky5S7XtAMp3YQ.jpeg?1741092602)
+
+### Schritt 4: Eine automatisierte Aktion definieren
+
+- Klicke auf das **Pluszeichen (+)**, um eine Aktion hinzuzufügen.
+- Wähle **WhatsApp** als Aktionstyp.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587451/original/1XAnS4vOGUe3erO9zhb3pANJ_wjB-5waAQ.png?1787948015)**
+
+### Schritt 5: Die automatisierte Antwort anpassen
+
+- Wähle unter **WhatsApp Template** die Option **„None - Manual Text“** (für individuelle Antworten).
+- Verfasse eine Nachricht, die automatisch gesendet wird, wenn ein Kunde dir auf WhatsApp schreibt.
+- Nutze **dynamische Variablen** (z. B. **Kontaktname, E-Mail, Unternehmensname**), um Antworten zu personalisieren.
+- Klicke auf **Trigger speichern**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042619143/original/ZUHId9xnVnPAQJ1lR_zxCD__uS-RWoIckw.jpeg?1741092602)
+
+### Schritt 6: Den Workflow speichern und aktivieren
+
+- Klicke auf **Aktion speichern** → **Veröffentlichen** → **Speichern**, um deinen Workflow zu aktivieren.
+
+#
+
+#
+
+**Hinweis:** Du kannst für standardisierte Nachrichten auch vorab genehmigte WhatsApp-Nachrichtenvorlagen anstelle von manuellem Text senden.
+
+Durch das Automatisieren von Antworten stellst du eine zeitnahe und professionelle Kommunikation mit deinen Kunden sicher und optimierst gleichzeitig deine Geschäftsabläufe.
+
+## So wählst du die Absender-Telefonnummer für das Senden von WhatsApp-Nachrichten aus
+
+```
+Hinweis: Nur Telefonnummern mit dem Status „Verbunden“ stehen im Dropdown-Menü zur Auswahl zur Verfügung.
+```
+
+### Schritt 1: Eine Aktion im Workflow hinzufügen
+
+- Klicke im Workflow auf das **„+“**-Symbol, um eine neue Aktion hinzuzufügen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042619331/original/bDo5Ycvq_BhwzqjPKguo7AUkPtY0sKY7ng.jpeg?1741092749)
+
+#
+
+### Schritt 2: WhatsApp als Aktionstyp auswählen
+
+- Suche im Bereich **Aktion** nach **„WhatsApp“**.
+- Klicke auf **WhatsApp**, um fortzufahren.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042619334/original/sVSG2w845Nb_1n9lNwC4LDrVqmpKLXfneA.jpeg?1741092750)
+
+### Schritt 3: Die Absender-Telefonnummer wählen
+
+- Wähle aus dem Dropdown-Menü die **Telefonnummer** aus, die du zum Senden von WhatsApp-Nachrichten verwenden möchtest.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042619339/original/raWtFhzjy4PYH0pV1quD36vBc4wP7NF72g.jpeg?1741092751)
+
+#
+
+## So richtest du das Warten auf eine Antwort des WhatsApp-Kontakts ein
+
+Du kannst eine erste WhatsApp-Nachricht senden und dann auf die Antwort des Kontakts warten, bevor der nächste Schritt in deinem Workflow ausgelöst wird. Das ermöglicht natürlichere und reaktionsschnellere Interaktionen innerhalb deiner automatisierten Workflows.
+
+**Schritt 1:** Gehe zu **Automatisierung > Workflows > Workflow erstellen > Neu beginnen**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587465/original/eIL1B-lPfYNnwxOfAfZywkAw8OtrS139jQ.png?1787948052)Schritt 2:** Wähle **Neuen Trigger hinzufügen** und suche nach **Contact Created**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587472/original/BVxzyfeBYUk6SFOWfT5P42wzFdRCYk0SKQ.png?1787948070)**
+
+**Schritt 4: Klicke auf das Pluszeichen, um eine Aktion hinzuzufügen > Wähle WhatsApp**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587486/original/bSQ06HLwwPjmy_TKP0kqJODLFfjAmTFO6g.png?1787948084)**
+
+**Schritt 5: WHATSAPP-VORLAGE WÄHLEN > Wähle die Vorlage aus, die du senden möchtest**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587504/original/jAQ2K_NiZdAiz_uF0zhsjKO0n81Llccugw.png?1787948095)
+
+**Schritt 6:** Klicke auf das **+**-Symbol > Wähle **Warten**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587561/original/js16xI0VNlceCWErRmzpYRPsZ-JsdSnYgg.png?1787948108)**
+
+**Schritt 7:** WARTEN AUF > **Antwort des Kontakts** > ANTWORT AN > **WhatsApp** und **Aktion speichern**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587610/original/Yph8DONPoP7jEJfoian2oYb2r3LJO6pAKg.png?1787948143)
+
+**Schritt 8:** Klicke auf das Pluszeichen > **AKTIONSNAME**: WhatsApp > **WHATSAPP-VORLAGE WÄHLEN**: **None - Manual Text**
+
+Hinweis: Du kannst Freitext-Nachrichten **OHNE ZUSÄTZLICHE KOSTEN** senden, da die **Kostenlose Einstiegspunkt-Konversation** geöffnet ist, sobald der Kunde dir geantwortet hat.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587645/original/Lp5clbz4ZczG_s2La8CF5xDuqhXZp3YtwA.png?1787948192)
+
+**Schritt 9: Aktion speichern** und die Automatisierung **Veröffentlichen** und auf **Speichern** klicken
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587660/original/m-ACyIP2G_CfrS8Qkf41ZjFlENlHpMgwhw.png?1787948228)**
+
+## So richtest du „Bitte nicht stören“ (DND) für WhatsApp ein
+
+Lege basierend auf bestimmten Kundenaktionen (z. B. dem Senden von „STOPP“) den DND-Status für alle Kanäle oder speziell für WhatsApp fest. So kannst du Kundenpräferenzen respektieren und Kommunikationskanäle effektiver verwalten.
+
+**Schritt 1:** Gehe zu **Automatisierung > Workflows > Workflow erstellen > Neu beginnen**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587661/original/DuowJnwYAUCmwMULHaEfnxmrctAikHLiDA.png?1787948242)**
+
+**Schritt 2:** Wähle **Neuen Trigger hinzufügen > Customer Replied**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587671/original/Q6L5Y_sOlzEU88lJiOBhDo8LQ4QcGKmCYg.png?1787948256)**
+
+**Schritt 3:** Wähle **Filter hinzufügen >** Antwortkanal **> WhatsApp** und Enthält Phrase **> STOPP** und **Trigger speichern**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587685/original/Xelo-nxBFwjiIbRUOXlTQacQGKclq-DVPQ.png?1787948267)**
+
+**Schritt 4:** Klicke auf das **+ Symbol > Suche DND > Wähle DND aktivieren/deaktivieren**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587691/original/pCj8tZZE1JpJ8J2alBSQ4dd-XVPzfKfTWg.png?1787948280)**
+**Schritt 5:** Wähle **DND für bestimmte Kanäle aktivieren** > Kanäle: **WhatsApp > Aktion speichern**
+
+Hinweis: Du kannst DND für alle Kanäle aktivieren, indem du **DND für alle Kanäle aktivieren** auswählst.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587694/original/-41Nf1n5nimwWZ-8cqghHbhSLQGYcA0Jiw.png?1787948292)**
+
+---
+
+## FAQs
+
+## Wirkt sich die DND-Einstellung („Bitte nicht stören“) auf andere Kommunikationskanäle aus oder nur auf WhatsApp?
+
+Du kannst DND so konfigurieren, dass es für alle Kanäle oder nur für WhatsApp gilt. Dadurch hast du die Kontrolle darüber, ob der Kunde über alle Kanäle hinweg keine Nachrichten mehr erhalten soll oder nur auf dem Kanal, auf dem er darum gebeten hat.
+
+## Was ist der Unterschied zwischen „None - Manual Text“ und der Auswahl einer Vorlage beim Senden von WhatsApp-Nachrichten in Workflows?
+
+Mit „None - Manual Text“ kannst du innerhalb des 24-Stunden-Fensters eine Freitextnachricht verfassen. Die Auswahl einer Vorlage dient dem Senden vorab genehmigter Nachrichten, was für den Start von Konversationen außerhalb des 24-Stunden-Fensters oder für bestimmte Marketing- oder Support-Zwecke nützlich ist.
+
+## Kann ich mit WhatsApp-Automatisierungen Nachrichten außerhalb des 24-Stunden-Fensters senden?
+
+Ja, du kannst nach Ablauf des ursprünglichen 24-Stunden-Fensters genehmigte WhatsApp-Vorlagen für Kontaktaufnahmen oder Follow-up-Nachrichten verwenden. Beachte, dass für diese vorlagenbasierten Nachrichten zusätzliche Gebühren anfallen.
+
+## Was ist eine „Kostenlose Einstiegspunkt-Konversation“ und wie unterscheidet sie sich von einer regulären Konversation?
+
+- Wird ausgelöst, wenn ein Kunde auf eine „Click to WhatsApp“-Anzeige oder einen Facebook-Call-to-Action-Button klickt.
+- Dauert 72 Stunden im Vergleich zum standardmäßigen 24-Stunden-Fenster.
+- Während dieses verlängerten Fensters kannst du sowohl Freitext- als auch Vorlagennachrichten senden.
+
+## Was passiert, wenn ein Kunde mit etwas anderem antwortet als dem, was ich für den Schritt „Auf WhatsApp-Antwort warten“ konfiguriert habe?
+
+Der Workflow wartet weiter, bis der Kontakt eine Antwort sendet, die mit deinen Einstellungen übereinstimmt. Wenn du unerwartete Antworten verarbeiten möchtest, füge deinem Workflow zusätzliche Verzweigungen mit alternativen Bedingungen hinzu.
+
+## Wie wähle ich die Kontaktnummer für das Senden von WhatsApp-Nachrichten aus?
+
+Du kannst die Kontaktnummer mit folgenden Schritten auswählen:
+
+1. Klicke im Workflow auf das **„+“**-Symbol, um eine neue Aktion hinzuzufügen.
+2. Suche im Bereich **Aktion** nach **„WhatsApp“** und wähle es aus.
+3. Wähle die Telefonnummer aus der Dropdown-Liste aus.
+
+## Warum sehe ich meine Telefonnummer nicht in der Dropdown-Liste?
+
+Nur Telefonnummern, die im Reiter **Telefonnummer** verbunden sind, erscheinen im Dropdown-Menü. Stelle sicher, dass deine WhatsApp-Nummer in diesem Bereich korrekt verknüpft ist.
+
+## Kann ich mehrere Telefonnummern für WhatsApp-Nachrichten hinzufügen?
+
+Ja, wenn du mehrere WhatsApp-Nummern verbunden hast, kannst du beim Einrichten des Workflows die gewünschte Nummer aus der Dropdown-Liste auswählen.
+
+## Was passiert, wenn ich die falsche Telefonnummer auswähle?
+
+Wenn du eine falsche Nummer auswählst, werden die Nachrichten von dieser Nummer gesendet. Um dies zu korrigieren, bearbeite den Workflow und wähle die richtige Telefonnummer aus.
+
+## Muss ich diese Einstellung für jeden Workflow konfigurieren?
+
+Ja, in jedem Workflow musst du die Absender-Telefonnummer manuell auswählen, um sicherzustellen, dass Nachrichten von der richtigen Quelle gesendet werden.

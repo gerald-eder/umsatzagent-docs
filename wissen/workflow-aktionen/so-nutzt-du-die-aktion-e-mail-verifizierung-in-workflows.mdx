@@ -1,0 +1,187 @@
+---
+title: "So nutzt du die Aktion „E-Mail-Verifizierung“ in Workflows"
+description: "Die E-Mail-Verifizierung in Workflows hilft dabei, die E-Mail-Adressen von Kontakten zu überprüfen, bevor E-Mail-bezogene Workflow-Schritte ausgeführt…"
+---
+
+Die E-Mail-Verifizierung in Workflows hilft dabei, die E-Mail-Adressen von Kontakten zu überprüfen, bevor E-Mail-bezogene Workflow-Schritte ausgeführt werden. Durch die Überprüfung der E-Mail-Qualität vor dem Versand kannst du Bounces reduzieren, deine Absender-Reputation schützen und die Qualität automatisierter Nachrichten verbessern. Dieser Artikel erklärt, was die Aktion „E-Mail-Verifizierung“ bewirkt, wie du sie konfigurierst und wie du Verifizierungsergebnisse zur Steuerung der Workflow-Logik nutzt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Aktion „E-Mail-Verifizierung“ in Workflows?](#was-ist-die-aktion-e-mail-verifizierung-in-workflows)
+- [Hauptvorteile der Aktion „E-Mail-Verifizierung“ in Workflows](#hauptvorteile-der-aktion-e-mail-verifizierung-in-workflows)
+- [Voraussetzungen für die E-Mail-Verifizierung](#voraussetzungen-fuer-die-e-mail-verifizierung)
+- [So funktioniert die E-Mail-Verifizierung in Workflows](#so-funktioniert-die-e-mail-verifizierung-in-workflows)
+- [Verifizierungsergebnisse in der Workflow-Logik nutzen](#verifizierungsergebnisse-in-der-workflow-logik-nutzen)
+- [Empfohlene Platzierung in einem Workflow](#empfohlene-platzierung-in-einem-workflow)
+- [So verwendest du die Aktion „E-Mail-Verifizierung“ in Workflows](#so-verwendest-du-die-aktion-e-mail-verifizierung-in-workflows)
+- [Best Practices für die E-Mail-Verifizierung in Workflows](#best-practices-fuer-die-e-mail-verifizierung-in-workflows)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist die Aktion „E-Mail-Verifizierung“ in Workflows?
+
+Die Aktion „E-Mail-Verifizierung“ überprüft die E-Mail-Adresse eines Kontakts innerhalb eines Workflows, bevor der Kontakt einen E-Mail-Schritt erreicht. Dies hilft zu bestätigen, ob eine E-Mail-Adresse für den Versand geeignet ist, und gibt dir mehr Kontrolle darüber, wie sich Kontakte basierend auf der E-Mail-Qualität durch die Automatisierung bewegen.
+
+Die Aktion „E-Mail-Verifizierung“ kann an beliebiger Stelle in einem Workflow eingefügt werden, wird jedoch meist vor einer „E-Mail senden“-Aktion platziert. Das System prüft die E-Mail-Adresse des Kontakts und liefert ein Verifizierungsergebnis, mit dem der Workflow fortgesetzt, der Kontakt auf einen anderen Pfad geleitet oder der Versand an Adressen verhindert werden kann, die die Zustellbarkeit beeinträchtigen könnten.
+
+Die E-Mail-Verifizierung kann unter anderem folgende Signale prüfen:
+
+- Korrektheit der Syntax
+- Gültigkeit der Domain
+- Existenz des Postfachs
+- Risikoindikatoren wie Wegwerf-E-Mail-Adressen, inaktive oder minderwertige E-Mail-Adressen
+
+---
+
+## Hauptvorteile der Aktion „E-Mail-Verifizierung“ in Workflows
+
+- **Reduziert E-Mail-Bounces:** Validiere E-Mail-Adressen vor dem Versand, um fehlgeschlagene Zustellversuche zu verringern.
+- **Schützt die Absender-Reputation:** Vermeide das Senden an ungültige oder riskante Adressen, die die Domain-Reputation beeinträchtigen können.
+- **Verbessert die Zustellbarkeit:** Unterstütze eine bessere Posteingangsplatzierung durch den Versand an qualitativ hochwertigere E-Mail-Adressen.
+- **Verbessert Workflow-Entscheidungen:** Nutze Verifizierungsergebnisse, um E-Mail-Aktionen fortzusetzen, zu verzweigen oder zu stoppen.
+- **Unterstützt saubere Kontaktkommunikation:** Konzentriere die E-Mail-Automatisierung auf Kontakte mit Adressen, die Nachrichten mit höherer Wahrscheinlichkeit empfangen können.
+
+---
+
+## Voraussetzungen für die E-Mail-Verifizierung
+
+Die E-Mail-Verifizierung muss für das Konto verfügbar und aktiviert sein, bevor die Workflow-Aktion genutzt werden kann. Die Überprüfung des Zugriffs vor dem Erstellen des Workflows verhindert Einrichtungsprobleme und stellt sicher, dass die Verifizierung wie erwartet ausgeführt wird.
+
+Stelle vor Verwendung dieser Aktion sicher:
+
+- **Die E-Mail-Verifizierung ist für das Konto aktiviert.**
+- **Der Kontakt ist nicht von der Verifizierung ausgeschlossen.**
+
+  Wenn der Kontakt von der Verifizierung ausgeschlossen ist, wird die Aktion „E-Mail-Verifizierung“ übersprungen.
+- **Der Workflow hat Zugriff auf die E-Mail-Adresse des Kontakts.**
+- **Die Aktion ist vor E-Mail-Versandschritten platziert.**
+- **Jegliche If/Else- oder Bedingungslogik ist nach der Aktion „E-Mail-Verifizierung“ konfiguriert.**
+
+---
+
+## So funktioniert die E-Mail-Verifizierung in Workflows
+
+Die E-Mail-Verifizierung läuft als Teil der Workflow-Sequenz ab und prüft die E-Mail-Adresse des Kontakts, bevor dieser zu nachfolgenden Aktionen übergeht. Durch die Platzierung dieser Aktion vor E-Mail-Schritten erhält der Workflow die Möglichkeit, die E-Mail-Qualität vor dem Senden zu bewerten.
+
+Wenn ein Kontakt die Aktion „E-Mail-Verifizierung“ erreicht, wertet diese die E-Mail-Adresse aus und bestimmt, ob sie gültig, riskant oder ungültig erscheint. Der Workflow kann das Verifizierungsergebnis anschließend in späteren Aktionen oder bedingten Verzweigungen nutzen.
+
+Typische Ergebnisse sind:
+
+- **Gültig (Valid):** Die E-Mail-Adresse hat die Verifizierung bestanden und ist mit hoher Wahrscheinlichkeit sicher für den Versand.
+- **Riskant (Risky):** Die E-Mail-Adresse ist möglicherweise zustellbar, weist jedoch Risikosignale auf, die die Zustellbarkeit oder die Absender-Reputation beeinträchtigen könnten.
+- **Ungültig (Invalid):** Die E-Mail-Adresse hat die Verifizierung nicht bestanden und sollte generell vom E-Mail-Versand ausgeschlossen werden.
+
+Das Ergebnis im Workflow hängt davon ab, wie du die Schritte nach der Verifizierung konfigurierst. Du kannst verifizierten Kontakten erlauben fortzufahren, riskante Kontakte in einen Prüfpfad oder alternativen Pfad leiten oder den E-Mail-Versand für ungültige Adressen stoppen.
+
+---
+
+## Verifizierungsergebnisse in der Workflow-Logik nutzen
+
+Verifizierungsergebnisse sind am nützlichsten, wenn sie mit Workflow-Bedingungen kombiniert werden. Bedingte Logik ermöglicht es dir zu entscheiden, was nach der E-Mail-Prüfung geschieht, sodass nicht alle Kontakte denselben Pfad durchlaufen müssen.
+
+Du kannst die Ergebnisse der E-Mail-Verifizierung nutzen, um:
+
+- Den Workflow für verifizierte E-Mail-Adressen fortzusetzen
+- Verifizierte Kontakte zu einer „E-Mail senden“-Aktion zu leiten
+- Riskante E-Mail-Adressen in einen separaten Zweig umzuleiten
+- Den E-Mail-Versand für ungültige E-Mail-Adressen zu überspringen
+- Den Workflow zu stoppen oder Kontakte zu einer anderen Aktion weiterzuleiten
+
+Ein gängiges Setup besteht darin, nach der E-Mail-Verifizierung eine If/Else-Aktion hinzuzufügen und das Verifizierungsergebnis als Bedingung zu nutzen. Beispielsweise können Kontakte mit `isEmailVerified = true` zur Aktion „E-Mail senden“ fortfahren, während Kontakte, die die Bedingung nicht erfüllen, in einen anderen Zweig geleitet werden.
+
+---
+
+## Empfohlene Platzierung in einem Workflow
+
+Die Aktion „E-Mail-Verifizierung“ sollte in der Regel vor jeder Aktion platziert werden, die eine E-Mail versendet. Dies stellt sicher, dass der Workflow die E-Mail-Qualität vor dem Zustellversuch prüft.
+
+**Empfohlene Workflow-Reihenfolge:**
+
+1. Trigger startet den Workflow.
+2. Füge die Aktion „E-Mail-Verifizierung“ hinzu.
+3. Füge eine If/Else-Aktion oder eine verifizierungsbasierte Bedingung hinzu.
+4. Sende E-Mails nur an Kontakte, die deine Verifizierungskriterien erfüllen.
+5. Leite riskante oder ungültige Kontakte auf einen alternativen Pfad, eine interne Benachrichtigung, ein Tag oder das Workflow-Ende um.
+
+**Beispielhafter Workflow-Pfad:**
+
+- Kontakt tritt in den Workflow ein
+- E-Mail-Verifizierung wird ausgeführt
+- Wenn E-Mail verifiziert ist, weiter zu „E-Mail senden“
+- Wenn E-Mail riskant oder ungültig ist, DnD aktivieren oder Kontakt auf einen anderen Pfad verschieben
+
+---
+
+## So verwendest du die Aktion „E-Mail-Verifizierung“ in Workflows
+
+Die richtige Einrichtung stellt sicher, dass der Workflow die E-Mail-Qualität vor dem Versenden von Nachrichten prüft. Das Hinzufügen der Aktion vor E-Mail-Schritten und die Verknüpfung mit Entscheidungslogik gibt dir die Kontrolle darüber, welche Kontakte automatisierte E-Mails erhalten.
+
+```
+Hinweis: Stelle sicher, dass die E-Mail-Verifizierung für das Konto aktiviert ist und der Kontakt nicht von der Verifizierung ausgeschlossen ist.
+```
+
+1. Gehe zu **Automatisierung** > **Workflows**.
+2. **Öffne** einen **bestehenden** Workflow oder **erstelle** einen **neuen** **Workflow**.
+3. Füge einen passenden Trigger wie **Kontakt erstellt** hinzu.
+
+   ![](https://jumpshare.com/share/JoSzc90A3vIvZVV6Ji3U+/Screen+Shot+2026-05-12+at+21.24.47.png)
+4. Klicke auf **+**, um eine **neue Aktion hinzuzufügen**.
+5. Suche nach **E-Mail-Verifizierung**, wähle sie aus und klicke auf die Schaltfläche **Aktion speichern**.
+
+   ![](https://jumpshare.com/share/q1IOQJjtSDyL81OkUavZ+/Screen+Shot+2026-05-12+at+21.26.18.png)
+6. Platziere die Aktion vor jeder E-Mail-Aktion wie **E-Mail senden**.
+7. Füge nach der E-Mail-Verifizierung eine **If/Else-Bedingungsaktion** hinzu, wenn du Kontakte basierend auf den Verifizierungsergebnissen aufteilen möchtest.
+8. **Konfiguriere** die **Logik** für gültige, riskante oder ungültige E-Mail-Adressen.
+9. Leite verifizierte Kontakte zu den E-Mail-Schritten.
+10. Leite riskante oder ungültige Kontakte auf einen alternativen Pfad wie DnD um oder beende den Workflow.
+
+    ![](https://jumpshare.com/share/bvP1Glj1pzRVwuc5dCRv+/GIF+Recording+2026-05-12+at+21.33.23.gif)
+11. Teste den Workflow, um zu bestätigen, dass Kontakte dem erwarteten Pfad folgen.
+12. **Speichere** und **veröffentliche** den Workflow.
+
+    ![](https://jumpshare.com/share/C7qmddV32Yz4AK5VkISI+/Screen+Shot+2026-05-12+at+21.35.41.png)
+
+---
+
+## Best Practices für die E-Mail-Verifizierung in Workflows
+
+Die Verwendung der E-Mail-Verifizierung mit klarer Workflow-Logik reduziert unnötige Sendungen und stellt sicher, dass die automatisierte Kommunikation auf Kontakte mit höherer E-Mail-Qualität fokussiert bleibt. Kombiniere die Verifizierung mit bewährten Versandpraktiken für bessere Zustellbarkeitsergebnisse.
+
+- Platziere die E-Mail-Verifizierung vor jedem wichtigen E-Mail-Schritt, bei dem es auf E-Mail-Qualität ankommt.
+- Nutze If/Else-Logik, um verifizierte Kontakte von riskanten oder ungültigen Kontakten zu trennen.
+- Vermeide das Versenden von Marketing- oder automatisierten E-Mails an ungültige Adressen.
+- Behandle riskante Ergebnisse vorsichtig, insbesondere bei Kampagnen mit hohem Volumen.
+- Verwende Tags, Notizen oder alternative Pfade, um Kontakte mit riskanten oder ungültigen E-Mails zu erfassen.
+- Überprüfe den Workflow-Ausführungsverlauf beim Testen der Verifizierungslogik.
+- Nutze die E-Mail-Verifizierung als Teil einer umfassenderen Zustellbarkeitsstrategie; sie garantiert keine Platzierung im Posteingang.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Wo sollte ich die Aktion „E-Mail-Verifizierung“ in meinem Workflow platzieren?**
+Platziere sie vor jeder „E-Mail senden“-Aktion oder jedem E-Mail-bezogenen Schritt. Dadurch kann der Workflow die E-Mail-Adresse des Kontakts vor dem Senden validieren.
+
+**F: Stoppt die E-Mail-Verifizierung den Workflow automatisch?**
+Das Ergebnis hängt davon ab, wie der Workflow nach der Aktion konfiguriert ist. Du kannst Kontakten erlauben fortzufahren, sie per If/Else-Logik verzweigen oder E-Mail-bezogene Schritte für riskante oder ungültige E-Mails anhalten.
+
+**F: Was bedeutet eine riskante E-Mail?**
+Eine riskante E-Mail ist möglicherweise zustellbar, weist jedoch Signale auf, die sich negativ auf die Bounce-Rate, die Absender-Reputation oder die Zustellbarkeit auswirken könnten. Es empfiehlt sich oft, riskante Kontakte auf einen separaten Pfad zu leiten, anstatt automatisch zu senden.
+
+**F: Sollte ich E-Mails an ungültige Adressen senden?**
+Ungültige Adressen sollten generell vom E-Mail-Versand ausgeschlossen werden, um Bounces zu reduzieren und die Absender-Reputation zu schützen.
+
+**F: Kann ich die E-Mail-Verifizierung mit If/Else-Bedingungen nutzen?**
+Ja. Füge nach der E-Mail-Verifizierung eine If/Else-Aktion hinzu und verwende die verfügbare Ergebnisbedingung wie `isEmailVerified`, um den Pfad des Kontakts zu steuern.
+
+**F: Garantiert die E-Mail-Verifizierung die Zustellung in den Posteingang?**
+Nein. Die E-Mail-Verifizierung hilft dabei, das Senden an minderwertige Adressen zu reduzieren, aber die Platzierung im Posteingang hängt auch von der Absender-Reputation, der Inhaltsqualität, der Domain-Einrichtung, dem Engagement und bewährten E-Mail-Praktiken ab.
+
+**F: Prüft die Aktion „E-Mail-Verifizierung“ E-Mails in Echtzeit?**
+Ja. Die Aktion prüft die E-Mail-Adresse des Kontakts in dem Moment, in dem der Kontakt diesen Schritt im Workflow erreicht.
+
+**F: Muss die E-Mail-Verifizierung aktiviert sein, bevor ich diese Aktion nutzen kann?**
+Ja. Die E-Mail-Verifizierung muss für das Konto aktiviert sein, bevor sie in Workflows verwendet werden kann.

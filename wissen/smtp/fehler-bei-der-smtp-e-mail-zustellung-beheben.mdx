@@ -1,0 +1,132 @@
+---
+title: "Fehler bei der SMTP-E-Mail-Zustellung beheben"
+description: "Wenn über deinen SMTP-Anbieter gesendete E-Mails nicht zugestellt werden, liegt das meist daran, dass die Absender-E-Mail-Adresse nicht mit der in deinen…"
+---
+
+Wenn über deinen SMTP-Anbieter gesendete E-Mails nicht zugestellt werden, liegt das meist daran, dass die Absender-E-Mail-Adresse nicht mit der in deinen SMTP-Einstellungen verifizierten E-Mail-Adresse übereinstimmt. Dieser Artikel erklärt, wie du deine SMTP-Absendereinstellungen überprüfst, Zustellungsfehler verstehst und Probleme bei fehlgeschlagenen ausgehenden E-Mails behebst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [Warum SMTP-Zustellungsfehler auftreten](#warum-smtp-zustellungsfehler-auftreten)
+- [SMTP-Absender-E-Mail überprüfen](#smtp-absender-e-mail-ueberpruefen)
+- [SMTP-Fehler in Konversationen einsehen](#smtp-fehler-in-konversationen-einsehen)
+- [Häufige Ursachen für Zustellungsfehler](#haeufige-ursachen-fuer-zustellungsfehler)
+- [Best Practices für die SMTP-Zustellbarkeit](#best-practices-fuer-die-smtp-zustellbarkeit)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Übersicht
+
+SMTP-Anbieter verlangen, dass ausgehende E-Mails von einer verifizierten Absenderidentität gesendet werden. Wenn die in Konversationen, Workflows oder Kampagnen verwendete Absender-E-Mail-Adresse nicht mit dem konfigurierten SMTP-Konto übereinstimmt, lehnt der Anbieter die E-Mail möglicherweise ab.
+
+Dieser Artikel hilft dir dabei:
+
+- deine SMTP-Absenderkonfiguration zu überprüfen
+- Abweichungen bei Absenderadressen zu erkennen
+- SMTP-Fehlermeldungen zu verstehen
+- fehlgeschlagene E-Mail-Zustellungsversuche zu beheben
+
+---
+
+## Warum SMTP-Zustellungsfehler auftreten
+
+Die meisten SMTP-Zustellungsfehler entstehen, weil die Absender-E-Mail-Adresse vom SMTP-Anbieter nicht autorisiert ist.
+
+Häufige Gründe sind:
+
+- Senden von einer nicht verifizierten E-Mail-Adresse
+- Verwendung einer anderen Absenderadresse als im konfigurierten SMTP-Konto hinterlegt
+- Fehlende Absender-Authentifizierung
+- Probleme bei der Domain-Verifizierung
+- Sicherheitsbeschränkungen des SMTP-Anbieters
+
+In vielen Fällen löst die Korrektur der Absender-E-Mail-Adresse das Problem direkt.
+
+---
+
+## SMTP-Absender-E-Mail überprüfen
+
+Die beim Senden von Nachrichten verwendete Absender-E-Mail-Adresse sollte mit der in den Einstellungen deines SMTP-Anbieters konfigurierten E-Mail-Adresse übereinstimmen.
+
+###
+
+Dieses Bild zeigt, wo du den konfigurierten SMTP-Anbieter und die Absender-E-Mail-Adresse in den Einstellungen für E-Mail-Dienste überprüfst.
+
+Überprüfe die hervorgehobene Absender-E-Mail-Adresse und stelle sicher, dass sie mit der für die ausgehende Kommunikation verwendeten Adresse übereinstimmt.
+
+---
+
+## SMTP-Fehler in Konversationen einsehen
+
+Wenn eine E-Mail nicht gesendet werden kann, wird der genaue Fehler des SMTP-Anbieters direkt im Verlauf der Konversation angezeigt.
+
+###
+
+Dieses Bild zeigt, wie SMTP-Zustellungsfehler im Konversationsbereich dargestellt werden.
+
+Klicke auf das Warnsymbol neben der fehlgeschlagenen E-Mail-Nachricht, um detaillierte Fehlerinformationen des SMTP-Anbieters anzuzeigen. Diese Fehler erklären in der Regel, ob die Absenderidentität ungültig, nicht autorisiert oder nicht verifiziert ist.
+
+---
+
+## Häufige Ursachen für Zustellungsfehler
+
+SMTP-Zustellungsprobleme werden meist durch Folgendes verursacht:
+
+- Die Absender-E-Mail-Adresse stimmt nicht mit dem konfigurierten SMTP-Konto überein
+- Die Absender-Domain wurde nicht verifiziert
+- SMTP-Zugangsdaten sind ungültig oder abgelaufen
+- Der Anbieter hat die E-Mail aufgrund von Sicherheitsrichtlinien abgelehnt
+- Die Absender-Authentifizierung ist unvollständig
+
+Wenn die Absender-E-Mail-Adresse bereits mit dem konfigurierten SMTP-Konto übereinstimmt und E-Mails weiterhin fehlschlagen, wende dich direkt an deinen SMTP-Anbieter, um Zustellungsprotokolle und anbieterseitige Einschränkungen zu prüfen.
+
+---
+
+## Best Practices für die SMTP-Zustellbarkeit
+
+Die Einhaltung der empfohlenen SMTP-Konfigurationen verbessert die Zustellbarkeit und verringert Fehlversuche beim Senden.
+
+Empfohlene Maßnahmen:
+
+- Sende immer von einer verifizierten E-Mail-Adresse oder Domain
+- Halte die SMTP-Zugangsdaten aktuell
+- Nutze nach Möglichkeit authentifizierte Domains
+- Vermeide häufige Wechsel der Absender-E-Mail-Adressen
+- Überwache Warnungen und Protokolle deines SMTP-Anbieters regelmäßig
+
+Eine korrekte Authentifizierung verbessert die Posteingangsplatzierung und senkt die Ablehnungsrate.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum schlägt der Versand meiner E-Mails fehl?**
+
+Das passiert meist, wenn die Absender-E-Mail-Adresse nicht mit der in den Einstellungen deines SMTP-Anbieters verifizierten E-Mail-Adresse übereinstimmt.
+
+**F: Wo kann ich SMTP-Zustellungsfehler einsehen?**
+
+SMTP-Zustellungsfehler können direkt im Verlauf der Konversation eingesehen werden, indem du auf das Warnsymbol neben der fehlgeschlagenen Nachricht klickst.
+
+**F: Was bedeutet „Absenderidentität nicht verifiziert“?**
+
+Das bedeutet, dass der SMTP-Anbieter die für ausgehende E-Mails verwendete E-Mail-Adresse nicht erkennt oder nicht zulässt.
+
+**F: Kann ich E-Mails von einer anderen Adresse als der meines SMTP-Kontos senden?**
+
+Die meisten SMTP-Anbieter verlangen, dass die Absender-E-Mail-Adresse oder Absender-Domain verifiziert ist, bevor Nachrichten erfolgreich zugestellt werden können.
+
+**F: Was soll ich tun, wenn die Absender-E-Mail-Adresse bereits übereinstimmt?**
+
+Kontaktiere deinen SMTP-Anbieter und fordere Zustellungsprotokolle oder zusätzliche Unterstützung bei der Fehlerbehebung an.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn nach der Überprüfung deiner Absender-E-Mail-Konfiguration weiterhin SMTP-Zustellungsprobleme auftreten, wende dich an deinen SMTP-Anbieter für weitere Fehlerbehebungen und Informationen zum Zustellungsstatus.

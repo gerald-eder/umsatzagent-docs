@@ -58,21 +58,675 @@
       {
         "group": "Erste Schritte",
         "pages": [
+          "wissen/daten-importieren/daten-aus-hubspot-importieren",
+          "wissen/fehlerbehebung/so-behebst-du-domain-dns-und-verifizierungsfehler",
+          "wissen/grundeinrichtung/neuen-kontakt-erstellen",
+          {
+            "group": "Marketing & Lead-Generierung",
+            "pages": [
+              "wissen/marketing-lead-generierung/facebook-und-instagram-lead-ads-einrichten",
+              "wissen/marketing-lead-generierung/so-nutzt-du-die-aktion-e-mail-senden-in-unternehmens-und-custom-object"
+            ]
+          },
           {
             "group": "Schnellstart-Anleitungen",
             "pages": [
-              "wissen/quick-start-guides/automatische-wallet-aufladung",
-              "wissen/quick-start-guides/automatische-wallet-aufladung-und-frequenz",
-              "wissen/quick-start-guides/bewertungs-management-schnellstartanleitung",
-              "wissen/quick-start-guides/mediensteuerung-ueber-die-benachrichtigungsleiste-in-der-mobilen-app-n",
-              "wissen/quick-start-guides/mehrere-marken-in-einem-einzigen-saas-konto-verwalten",
-              "wissen/quick-start-guides/opportunity-werte-in-dokumentvorlagen",
-              "wissen/quick-start-guides/schnellstart-anleitung-fuer-den-marketing-bereich",
-              "wissen/quick-start-guides/schnellstartanleitung-fuer-die-umsatzagent-mobile-app",
-              "wissen/quick-start-guides/schnellstartanleitung-unterhaltungen-verwalten",
-              "wissen/quick-start-guides/schnellstartanleitung-zahlungen-verwalten"
+              "wissen/schnellstart-anleitungen/chancen-werte-in-dokumentvorlagen",
+              "wissen/schnellstart-anleitungen/marketing-bereich-schnellanleitung",
+              "wissen/schnellstart-anleitungen/schnelleinstieg-ruf",
+              "wissen/schnellstart-anleitungen/schnellstartanleitung-konversationen-verwalten",
+              "wissen/schnellstart-anleitungen/schnellstartanleitung-zahlungen-verwalten",
+              "wissen/schnellstart-anleitungen/umsatzagent-mobile-app-schnelleinstieg"
+            ]
+          },
+          {
+            "group": "Shop & Verkauf",
+            "pages": [
+              "wissen/shop-verkauf/online-kurs-erstellen-veroeffentlichen-und-verkaufen",
+              "wissen/shop-verkauf/optimierte-zahlungserfassung-mit-teilbaren-zahlungslinks",
+              "wissen/shop-verkauf/produkte-erstellen-und-ueber-funnels-verkaufen",
+              "wissen/shop-verkauf/stripe-fuer-sichere-zahlungsabwicklung-verbinden"
+            ]
+          },
+          {
+            "group": "Vertrieb & Konversationen",
+            "pages": [
+              "wissen/vertrieb-konversationen/live-chat-widget-einrichten",
+              "wissen/vertrieb-konversationen/verbinde-facebook-und-instagram-nachrichten-mit-deinem-zentralen-poste"
+            ]
+          },
+          {
+            "group": "Website & Inhalt",
+            "pages": [
+              "wissen/website-inhalt/externe-formular-einsendungen-automatisch-erfassen",
+              "wissen/website-inhalt/so-verbindest-du-eine-domain-und-veroeffentlichst-deine-website"
             ]
           }
+        ]
+      },
+      {
+        "group": "Konversationen",
+        "pages": [
+          {
+            "group": "Absender-Reputation & Drosselung",
+            "pages": [
+              "wissen/absender-reputation-drosselung/durch-ratenbegrenzung-gebremste-e-mails-drosselung-und-sendelimits-beh",
+              "wissen/absender-reputation-drosselung/niedrige-domain-reputation-vertrauen-wiederherstellen-und-zustellbarke",
+              "wissen/absender-reputation-drosselung/niedrige-ip-reputation-glaubwuerdigkeit-der-sende-ip-wiederherstellen"
+            ]
+          },
+          {
+            "group": "Authentifizierung & Sicherheit",
+            "pages": [
+              "wissen/authentifizierung-sicherheit/domain-oder-ip-auf-einer-blacklist-von-sperrlisten-entfernen-und-zuste",
+              "wissen/authentifizierung-sicherheit/e-mail-authentifizierungsfehler-spf-dkim-und-dmarc-probleme-beheben",
+              "wissen/authentifizierung-sicherheit/spamfilter-blockierungen-inhalt-und-absender-reputation-verbessern"
+            ]
+          },
+          {
+            "group": "E-Mail",
+            "pages": [
+              "wissen/e-mail/2-wege-e-mail-synchronisierung-fuer-outlook",
+              "wissen/e-mail/bot-erkennung-verhindert-erhoehung-der-statistiken-und-workflow-ausfue",
+              "wissen/e-mail/compliance-erreichen-anforderungen-von-google-und-yahoo-an-e-mail-abse",
+              "wissen/e-mail/dmarc-validierungsfunktion-e-mail-authentifizierungswarnungen-verstehe",
+              "wissen/e-mail/domain-loeschung-wegen-aktiver-kampagnenzuweisung-blockiert",
+              "wissen/e-mail/domain-warmup-so-funktioniert-es",
+              "wissen/e-mail/e-mail-authentifizierung-dmarc",
+              "wissen/e-mail/e-mail-validierung-aktivieren",
+              "wissen/e-mail/google-postmaster-tools",
+              "wissen/e-mail/konfiguration-der-e-mail-dienste-antwort-weiterleitungseinstellungen",
+              "wissen/e-mail/so-fuegst-du-eine-domain-hinzu-und-verifizierst-dns-eintraege",
+              "wissen/e-mail/so-nutzt-du-das-e-mail-risikobewertungs-tool",
+              "wissen/e-mail/so-richtest-du-abmelde-links-ein",
+              "wissen/e-mail/so-richtest-du-eine-dedizierte-e-mail-absendedomain-ein",
+              "wissen/e-mail/standardwerte-fuer-benutzerdefinierte-werte-in-e-mails-festlegen",
+              "wissen/e-mail/umsatzagent-e-mail-e-mail-provider-blockierung-erkannt-sofortige-massn",
+              "wissen/e-mail/was-ist-umsatzagent-e-mail",
+              "wissen/e-mail/was-ist-eine-dedizierte-ip-beim-umsatzagent-e-mail-dienst",
+              "wissen/e-mail/wo-finde-ich-meine-smtp-zugangsdaten",
+              "wissen/e-mail/ueberwache-deine-e-mail-zustellbarkeit-mit-dem-e-mail-integritaetsberi"
+            ]
+          },
+          {
+            "group": "Einrichtung",
+            "pages": [
+              "wissen/einrichtung/fehlerbehebung-otp-zum-verifizieren-der-whatsapp-telefonnummer-konnte",
+              "wissen/einrichtung/mm-lite-erklaert-schnelleres-einfacheres-whatsapp-marketing-nach-mass",
+              "wissen/einrichtung/marketing-opt-out-button-zu-deiner-nachrichtenvorlage",
+              "wissen/einrichtung/so-aktivierst-du-whatsapp-in-deinem-konto",
+              "wissen/einrichtung/so-waehlst-du-whatsapp-absendernummern-in-konversationen-aus",
+              "wissen/einrichtung/telefonnummer-loeschen-die-mit-der-whatsapp-koexistenz-verknuepft-ist",
+              "wissen/einrichtung/warum-der-whatsapp-anzeigename-abgelehnt-wurde",
+              "wissen/einrichtung/whatsapp-workflow-integration",
+              "wissen/einrichtung/whatsapp-faqs",
+              "wissen/einrichtung/whatsapp-anrufe",
+              "wissen/einrichtung/whatsapp-fehler-in-order-to-maintain-a-healthy-ecosystem-engagement-th",
+              "wissen/einrichtung/whatsapp-fehler-132000-number-of-parameters-does-not-match-the-expecte",
+              "wissen/einrichtung/whatsapp-fehler-business-account-is-restricted-from-messaging-users-in",
+              "wissen/einrichtung/whatsapp-fehler-dein-whatsapp-business-konto-ist-gesperrt-um-dein-kont",
+              "wissen/einrichtung/whatsapp-fehler-du-hast-den-code-zu-oft-angefordert-bitte-versuche-es",
+              "wissen/einrichtung/whatsapp-fehler-whatsapp-nachricht-kann-aufgrund-eines-ungueltigen-par",
+              "wissen/einrichtung/whatsapp-fehler-you-have-already-linked-the-maximum-number-of-phone-nu",
+              "wissen/einrichtung/whatsapp-fehler-diese-telefonnummer-ist-bereits-fuer-ein-whatsapp-kont",
+              "wissen/einrichtung/whatsapp-onboarding-fehlgeschlagen-please-create-a-new-whatsapp-busine",
+              "wissen/einrichtung/whatsapp-vorlagen-fehler-new-english-us-content-can-t-be-added-while-t",
+              "wissen/einrichtung/whatsapp-vorlagenfehler-body-parameter-at-index-contains-url",
+              "wissen/einrichtung/whatsapp-nicht-unterstuetzter-nachrichtentyp",
+              "wissen/einrichtung/ueberarbeitetes-whatsapp-onboarding"
+            ]
+          },
+          "wissen/empfaenger-server-probleme/empfaenger-richtlinienblockierung-server-einschraenkungen-umgehen",
+          "wissen/fehlerbehebung-bei-e-mail-zustellung/e-mail-versandstatus-gute-raten-beibehalten-und-bei-problemen-wiederhe",
+          "wissen/komplexe-zustellungsprobleme/mehrere-e-mail-zustellprobleme-beheben-vollstaendiger-wiederherstellun",
+          {
+            "group": "Konversationsansicht",
+            "pages": [
+              "wissen/konversationsansicht/aktivitaetskarten-in-konversationen",
+              "wissen/konversationsansicht/anleitung-formular-einsendungen-in-konversationen-aufrufen",
+              "wissen/konversationsansicht/cc-carbon-copy-und-bcc-blind-carbon-copy-im-e-mail-editor-nutzen",
+              "wissen/konversationsansicht/instagram-dm-workflow-aktion",
+              "wissen/konversationsansicht/konversationen-faqs",
+              "wissen/konversationsansicht/konversationen-sla-workflow-trigger-amp-berechtigungen",
+              "wissen/konversationsansicht/konversations-slas-einrichten-und-nachverfolgen",
+              "wissen/konversationsansicht/konversationsansichten-filter-speichern-schneller-arbeiten",
+              "wissen/konversationsansicht/praeferenzverwaltung-e-mail-abmeldeverwaltung",
+              "wissen/konversationsansicht/sla-performance-dashboard-in-konversationen",
+              "wissen/konversationsansicht/web-chat-in-konversationen-einrichtung-konfiguration-nachrichtenverwal",
+              "wissen/konversationsansicht/whatsapp-mediennachrichten-mit-bildunterschriften-in-konversationen-se",
+              "wissen/konversationsansicht/uebersicht-konversationsfilter-massenaktionen-nutzen"
+            ]
+          },
+          {
+            "group": "SMTP",
+            "pages": [
+              "wissen/smtp/eigenen-e-mail-dienst-smtp-hinzufuegen",
+              "wissen/smtp/fehler-bei-der-smtp-e-mail-zustellung-beheben",
+              "wissen/smtp/google-gmail-google-workspace-als-smtp-anbieter-nutzen"
+            ]
+          },
+          "wissen/technik-konfiguration/mail-schleife-erkannt-e-mail-routing-konflikte-beheben",
+          {
+            "group": "UmsatzAgent Telefonie",
+            "pages": [
+              "wissen/umsatzagent-telefonie/absender-id-und-opt-out-hinweise-fuer-sms-compliance-konfigurieren",
+              "wissen/umsatzagent-telefonie/anrufschleifen-beim-weiterleiten-von-anrufen-an-interne-telefonnummern",
+              "wissen/umsatzagent-telefonie/anruftranskriptionen-fuer-aufgezeichnete-anrufe",
+              "wissen/umsatzagent-telefonie/auswahl-zwischen-der-nutzung-deiner-bestehenden-telefonnummer-und-dem",
+              "wissen/umsatzagent-telefonie/benutzerdefinierte-anruf-dispositionen-im-umsatzagent-telefonsystem",
+              "wissen/umsatzagent-telefonie/best-practices-fuer-sms-zustellbarkeit-und-das-vermeiden-von-sms-einsc",
+              "wissen/umsatzagent-telefonie/eigene-telefonnummer-fuer-sprachanrufe-in-umsatzagent-nutzen",
+              "wissen/umsatzagent-telefonie/eingehende-anrufe-waehrend-der-arbeitszeiten-durchstellen",
+              "wissen/umsatzagent-telefonie/eingehende-anrufe-ivr-ki-routing-und-anrufablauf-erklaert",
+              "wissen/umsatzagent-telefonie/eingehendes-anrufrouting-nach-arbeitszeiten-konfigurieren",
+              "wissen/umsatzagent-telefonie/einstellungen-fuer-telefonnummern-bei-sprachanrufen",
+              "wissen/umsatzagent-telefonie/einstellungen-fuer-telefonnummern-erklaert",
+              "wissen/umsatzagent-telefonie/erstellung-von-regulatorischen-paketen-und-adressen",
+              "wissen/umsatzagent-telefonie/hilfe-zum-rechnungsnachweis",
+              "wissen/umsatzagent-telefonie/rufumleitung-zu-deiner-umsatzagent-telefonnummer",
+              "wissen/umsatzagent-telefonie/so-kaufst-du-eine-telefonnummer-fuer-dein-unternehmen",
+              "wissen/umsatzagent-telefonie/so-reduzierst-du-eingehende-spam-anrufe"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Kalender",
+        "pages": [
+          {
+            "group": "Events",
+            "pages": [
+              "wissen/events/meta-conversions-api-access-token-konfigurieren",
+              "wissen/events/pixel-id-fuer-das-event-tracking-in-funnels-und-websites-verstehen"
+            ]
+          },
+          {
+            "group": "Kalender",
+            "pages": [
+              "wissen/kalender/auswahl-mehrerer-meeting-standorte-im-kalender",
+              "wissen/kalender/benutzerdefinierte-formulareinsendungen-anzeigen-termin-seitenleiste",
+              "wissen/kalender/dienstleistungskalender",
+              "wissen/kalender/einmal-link",
+              "wissen/kalender/fehlerbehebungs-tool-fuer-kalender",
+              "wissen/kalender/in-app-kalenderansicht",
+              "wissen/kalender/kalender-verfuegbarkeit-woechentliche-arbeitszeiten-amp-datumsspezifis",
+              "wissen/kalender/kalender-widget-anpassen",
+              "wissen/kalender/kalender-widget-logo-hinzufuegen-aendern-oder-entfernen",
+              "wissen/kalender/kalender-e-mail-und-in-app-terminbenachrichtigungen",
+              "wissen/kalender/kalender-notizen-pro-termin-hinzufuegen",
+              "wissen/kalender/microsoft-teams-integration-fuer-kalender",
+              "wissen/kalender/raeume-und-ausruestung",
+              "wissen/kalender/servicemenue",
+              "wissen/kalender/so-erstellst-du-raeume",
+              "wissen/kalender/so-richtest-du-die-mitarbeiterauswahl-in-round-robin-kalendern-ein",
+              "wissen/kalender/so-richtest-du-wiederkehrende-termine-ein",
+              "wissen/kalender/stornierungs-und-umbuchungsrichtlinie-buchungs-widget",
+              "wissen/kalender/teammitglied-zuweisung-round-robin-kalender",
+              "wissen/kalender/teilzahlung-anzahlungsbetrag-einziehen",
+              "wissen/kalender/termine-ganz-einfach-in-jeder-zeitzone-anzeigen",
+              "wissen/kalender/vor-und-nachpuffer",
+              "wissen/kalender/wie-erstelle-ich-ausruestung",
+              "wissen/kalender/wie-richte-ich-einen-kalender-fuer-kurse-ein",
+              "wissen/kalender/wiederkehrende-termine",
+              "wissen/kalender/zahlungen-bei-wiederkehrenden-terminen-einziehen-buchungs-widget",
+              "wissen/kalender/icloud-integration-mit-umsatzagent"
+            ]
+          },
+          {
+            "group": "Kalender-Verbindungen",
+            "pages": [
+              "wissen/kalender-verbindungen/benutzerdefinierte-formulare-zu-kalendern-hinzufuegen",
+              "wissen/kalender-verbindungen/so-verbindest-du-google-meet",
+              "wissen/kalender-verbindungen/so-verbindest-du-zoom",
+              "wissen/kalender-verbindungen/so-verbindest-du-deinen-google-kalender",
+              "wissen/kalender-verbindungen/so-verbindest-du-deinen-outlook-kalender",
+              "wissen/kalender-verbindungen/wie-du-deinen-icloud-kalender-verbindest",
+              "wissen/kalender-verbindungen/wie-verbindest-du-microsoft-teams"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Kontakte",
+        "pages": [
+          "wissen/datensaetze-benutzerdefinierter-objekte/datensaetze-fuer-custom-objects-unternehmen-und-aufgaben-per-massenakt",
+          {
+            "group": "Erste Schritte mit benutzerdefinierten Objekten",
+            "pages": [
+              "wissen/erste-schritte-mit-benutzerdefinierten-o/benutzerdefinierte-objekte-erstellen-und-bearbeiten",
+              "wissen/erste-schritte-mit-benutzerdefinierten-o/custom-objects-leitfaden-crm-daten-organisieren-skalieren",
+              "wissen/erste-schritte-mit-benutzerdefinierten-o/datensaetze-fuer-benutzerdefinierte-objekte-einfach-erstellen-und-verw",
+              "wissen/erste-schritte-mit-benutzerdefinierten-o/unternehmen-amp-benutzerdefinierte-objekte-ueber-eine-csv-datei-import"
+            ]
+          },
+          {
+            "group": "Kontakte",
+            "pages": [
+              "wissen/kontakte/dateifreigabe-benachrichtigungen-fuer-kontakte-im-kundenportal",
+              "wissen/kontakte/erweiterte-filter-in-smart-lists",
+              "wissen/kontakte/kontaktdetailseite-anpassen-ansichten-bereiche-und-module",
+              "wissen/kontakte/kontakte-importieren",
+              "wissen/kontakte/kontakte-mit-benutzerdefinierten-labels-verknuepfen-demnaechst-verfueg",
+              "wissen/kontakte/kontakte-und-chancen-per-csv-importieren-demnaechst-verfuegbar",
+              "wissen/kontakte/mehrere-datensaetze-zusammenfuehren",
+              "wissen/kontakte/sichere-dokumentenfreigabe-mit-datenschutz-zugriffskontrollen",
+              "wissen/kontakte/so-fuegst-du-kontakte-per-massenaktion-zu-einem-workflow-hinzu",
+              "wissen/kontakte/tab-aktivitaet-bei-kontakten-in-der-mobilen-app",
+              "wissen/kontakte/tags-fuer-kontakte-per-massenaktion-hinzufuegen-und-entfernen",
+              "wissen/kontakte/wie-trage-ich-mehrere-telefonnummern-fuer-einen-kontakt-ein"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Chancen",
+        "pages": [
+          {
+            "group": "Chancen",
+            "pages": [
+              "wissen/chancen/chancen-prognose-einrichtung-und-nutzung",
+              "wissen/chancen/getrennte-zustaendige-fuer-kontakte-und-chancen",
+              "wissen/chancen/massenimport-von-chancen-per-csv-anleitung-zum-import-von-chancen",
+              "wissen/chancen/so-erstellst-und-verwaltest-du-chancen-pipelines-einrichtung-amp-best",
+              "wissen/chancen/so-nutzt-du-farbcodierungen-in-chancen-pipelines-smart-tags"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Zahlungen",
+        "pages": [
+          {
+            "group": "Bestellungen, Abos und Transaktionen",
+            "pages": [
+              "wissen/bestellungen-abos-und-transaktionen/abo-rueckerstattungs-trigger-fuer-die-workflow-automatisierung",
+              "wissen/bestellungen-abos-und-transaktionen/anleitung-zur-einrichtung-von-wiederholungsversuchen-bei-fehlgeschlage",
+              "wissen/bestellungen-abos-und-transaktionen/bestehende-abos-bearbeiten"
+            ]
+          },
+          {
+            "group": "E-Commerce",
+            "pages": [
+              "wissen/e-commerce/abgebrochene-checkouts-verwalten-und-exportieren",
+              "wissen/e-commerce/digitale-produkte-fuer-e-commerce-shops-ausliefern",
+              "wissen/e-commerce/so-erstellst-und-verwaltest-du-produkte-in-deinem-online-shop",
+              "wissen/e-commerce/so-nutzt-du-die-shopify-integration",
+              "wissen/e-commerce/so-richtest-du-einen-e-commerce-online-shop-ein",
+              "wissen/e-commerce/so-verbindest-du-einen-e-commerce-shop-und-synchronisierst-bestellunge",
+              "wissen/e-commerce/testbestellung-in-shops-aufgeben"
+            ]
+          },
+          {
+            "group": "Erste Schritte mit Zahlungen",
+            "pages": [
+              "wissen/erste-schritte-mit-zahlungen/abos-verwalten-status-tracking-amp-uebersicht",
+              "wissen/erste-schritte-mit-zahlungen/anleitung-zur-einrichtung-und-anpassung-automatischer-verkaufsbelege",
+              "wissen/erste-schritte-mit-zahlungen/apple-pay-und-google-pay-verwenden",
+              "wissen/erste-schritte-mit-zahlungen/automatische-zahlungen-in-wiederkehrenden-vorlagen",
+              "wissen/erste-schritte-mit-zahlungen/bestellungen-per-csv-datei-importieren-feldformate",
+              "wissen/erste-schritte-mit-zahlungen/einstellungen-fuer-automatische-wallet-aufladung-und-intelligente-anpa",
+              "wissen/erste-schritte-mit-zahlungen/fehlgeschlagene-abo-zahlungen-und-automatische-wiederholungsversuche-v",
+              "wissen/erste-schritte-mit-zahlungen/gutschein-targeting-nach-produkt-preis-und-variante",
+              "wissen/erste-schritte-mit-zahlungen/rechnungen-per-csv-datei-importieren-schritt-fuer-schritt-anleitung",
+              "wissen/erste-schritte-mit-zahlungen/so-erstellst-du-wiederkehrende-rechnungen",
+              "wissen/erste-schritte-mit-zahlungen/so-richtest-du-eine-paypal-integration-ein",
+              "wissen/erste-schritte-mit-zahlungen/tab-zahlungen-in-kontakten-und-chancen-auf-mobilgeraeten",
+              "wissen/erste-schritte-mit-zahlungen/transaktionsdaten-per-csv-datei-importieren",
+              "wissen/erste-schritte-mit-zahlungen/wie-du-rueckerstattungen-im-crm-verwaltest",
+              "wissen/erste-schritte-mit-zahlungen/wiederkehrende-rechnungszahlungen-automatisieren-anleitung-zur-automat",
+              "wissen/erste-schritte-mit-zahlungen/zahlungsanbieter-einrichten-um-zahlungen-zu-akzeptieren",
+              "wissen/erste-schritte-mit-zahlungen/zahlungsanbieter-nach-kanal-konfigurieren"
+            ]
+          },
+          "wissen/kaeufe/fehlgeschlagene-zahlung-wiederholen-so-behebst-du-zahlungsfehler-schne",
+          "wissen/produkte-gutscheine/erste-schritte-mit-gutscheinen",
+          {
+            "group": "Rechnungen & Angebote",
+            "pages": [
+              "wissen/rechnungen-angebote/dateianhaenge-fuer-angebote-und-rechnungen-verwalten",
+              "wissen/rechnungen-angebote/neuer-rechnungs-editor-rechnungen-schneller-erstellen-und-versenden",
+              "wissen/rechnungen-angebote/so-bearbeitest-du-teilweise-bezahlte-rechnungen-und-zahlungsplaene",
+              "wissen/rechnungen-angebote/wiederkehrende-rechnungen-mit-der-workflow-abrechnung-automatisieren"
+            ]
+          },
+          "wissen/zahlungseinstellungen-integrationen/paypal-zahlungselement-fuer-online-zahlungen-aktivieren"
+        ]
+      },
+      {
+        "group": "AI-Assistenten",
+        "pages": [
+          {
+            "group": "AI-Assistent",
+            "pages": [
+              "wissen/ai-assistent/ai-assistent-in-der-mobilen-app-nutzen",
+              "wissen/ai-assistent/ai-assistent-primaere-vs-nicht-primaere-assistenten",
+              "wissen/ai-assistent/ai-assistenten-status-fuer-einzelne-kontakte-verwalten",
+              "wissen/ai-assistent/ai-nachrichtendetails-ai-antworten-anzeigen-und-bearbeiten",
+              "wissen/ai-assistent/anleitung-zur-einrichtung-von-ai-assistenten-zielen-fuer-intelligenter",
+              "wissen/ai-assistent/assistenten-aktion-kontaktinformationen-hinzufuegen-im-ai-assistenten",
+              "wissen/ai-assistent/assistenten-antworten-automatisch-mit-intelligenten-triggern-stoppen",
+              "wissen/ai-assistent/assistentenstatus-fuer-einzelne-kontakte-verwalten",
+              "wissen/ai-assistent/einfuehrung-in-mehrere-wissensdatenbanken-im-ai-assistenten",
+              "wissen/ai-assistent/einrichtungsanleitung-workflow-aktion-fuer-ki-terminbuchung",
+              "wissen/ai-assistent/kontaktdaten-ueber-ai-prompt-erfassen",
+              "wissen/ai-assistent/so-konfigurierst-du-automatisches-follow-up-im-ai-assistenten",
+              "wissen/ai-assistent/so-konfigurierst-du-die-menschliche-uebergabe-im-ai-assistenten",
+              "wissen/ai-assistent/so-konfigurierst-du-die-uebergabe-an-menschen-fuer-ai-assistenten",
+              "wissen/ai-assistent/so-richtest-du-einen-formularbasierten-assistenten-ein",
+              "wissen/ai-assistent/wie-du-den-ai-assistenten-fuer-bessere-kundenantworten-trainierst",
+              "wissen/ai-assistent/workflows-einfach-aus-ai-konversationen-ausloesen",
+              "wissen/ai-assistent/zuweisung-und-status-von-ai-assistenten-in-workflows-automatisieren"
+            ]
+          },
+          {
+            "group": "Voice AI",
+            "pages": [
+              "wissen/voice-ai/anforderungen-fuer-ausgehende-anrufe-mit-voice-ai",
+              "wissen/voice-ai/voice-ai-anrufprotokolle-aufnahmen-exportieren-und-herunterladen",
+              "wissen/voice-ai/voice-ai-outbound-anruf-dashboard",
+              "wissen/voice-ai/whatsapp-sprachanrufe"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Marketing",
+        "pages": [
+          "wissen/ad-manager/so-verbindest-du-dein-instagram-konto-mit-einer-facebook-seite",
+          "wissen/brand-boards/brand-board-farben-im-formular-umfrage-und-quiz-builder",
+          {
+            "group": "E-Mail-Builder",
+            "pages": [
+              "wissen/e-mail-builder/e-mail-sequenzen-automatisierte-follow-ups",
+              "wissen/e-mail-builder/wie-du-eine-e-mail-kampagne-verschiebst"
+            ]
+          },
+          {
+            "group": "E-Mail-Builder-Funktionen",
+            "pages": [
+              "wissen/e-mail-builder-funktionen/a-b-testing-in-e-mail-kampagnen",
+              "wissen/e-mail-builder-funktionen/bild-element-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/button-element-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/elemente-im-e-mail-builder-fuer-den-schnellzugriff-speichern",
+              "wissen/e-mail-builder-funktionen/footer-element-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/inline-formular-umfrage-elemente-in-e-mail-kampagnen-nutzen",
+              "wissen/e-mail-builder-funktionen/logo-element-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/so-formatierst-du-e-mail-vorlagen-fuer-mobilgeraete",
+              "wissen/e-mail-builder-funktionen/so-nutzt-du-den-e-mail-builder-und-seinen-inline-editor",
+              "wissen/e-mail-builder-funktionen/so-nutzt-du-die-vorlagen-bibliothek-fuer-e-mail-bewertungsanfragen-im",
+              "wissen/e-mail-builder-funktionen/so-richtest-du-a-b-tests-fuer-deine-e-mail-kampagnen-ein",
+              "wissen/e-mail-builder-funktionen/so-zeigst-du-die-vorschau-von-benutzerdefinierten-feldern-im-e-mail-bu",
+              "wissen/e-mail-builder-funktionen/text-element-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/verschiedene-elemente-im-e-mail-builder",
+              "wissen/e-mail-builder-funktionen/video-element-im-e-mail-builder"
+            ]
+          },
+          {
+            "group": "Kampagnen-Einstellungen / -Funktionen",
+            "pages": [
+              "wissen/kampagnen-einstellungen-funktionen/abmeldeablaeufe-konfigurieren-ein-schritt-zwei-schritte-dynamisch",
+              "wissen/kampagnen-einstellungen-funktionen/e-mail-kampagnen-status-verstehen",
+              "wissen/kampagnen-einstellungen-funktionen/e-mail-kampagnen-vorlagen-in-der-vorschau-anzeigen-und-testen",
+              "wissen/kampagnen-einstellungen-funktionen/erneut-an-nicht-oeffner-senden-best-practices-und-anleitung",
+              "wissen/kampagnen-einstellungen-funktionen/geplante-e-mail-kampagne-pausieren-oder-abbrechen",
+              "wissen/kampagnen-einstellungen-funktionen/leitfaden-zu-vordefinierten-kontakt-segmenten",
+              "wissen/kampagnen-einstellungen-funktionen/sichtbarkeit-steuerung-bei-erneutem-kampagnenversand",
+              "wissen/kampagnen-einstellungen-funktionen/so-erstellst-du-empfaenger-segmente-in-e-mail-kampagnen",
+              "wissen/kampagnen-einstellungen-funktionen/so-legst-du-standardwerte-fuer-benutzerdefinierte-felder-ueber-bedingt",
+              "wissen/kampagnen-einstellungen-funktionen/so-planst-du-eine-e-mail-kampagne-neu-e-mail-builder",
+              "wissen/kampagnen-einstellungen-funktionen/so-richtest-du-die-absender-einstellungen-im-e-mail-builder-ein",
+              "wissen/kampagnen-einstellungen-funktionen/so-versendest-du-eine-regulaere-e-mail-kampagne-jetzt-senden-oder-plan",
+              "wissen/kampagnen-einstellungen-funktionen/verbesserter-ablauf-fuer-e-mail-kampagnen-und-kampagnen-uebersichtssei",
+              "wissen/kampagnen-einstellungen-funktionen/verschiedene-e-mail-versandmethoden-jetzt-senden-planen-batch-planung",
+              "wissen/kampagnen-einstellungen-funktionen/wie-du-segmente-in-e-mail-kampagnen-erstellst",
+              "wissen/kampagnen-einstellungen-funktionen/wie-plane-ich-batch-e-mail-kampagnen"
+            ]
+          },
+          {
+            "group": "Social Planner",
+            "pages": [
+              "wissen/social-planner/ideale-bild-und-videodateigroessen-im-social-planner",
+              "wissen/social-planner/instagram-profiltyp-pruefen",
+              "wissen/social-planner/leitfaden-zur-veroeffentlichung-von-instagram-reels-im-social-planner",
+              "wissen/social-planner/so-nutzt-du-den-social-planner-zum-erstellen-und-planen-von-beitraegen"
+            ]
+          },
+          {
+            "group": "Statistiken",
+            "pages": [
+              "wissen/statistiken/anleitung-zum-klick-tracking-in-e-mail-kampagnen",
+              "wissen/statistiken/e-mail-statistiken",
+              "wissen/statistiken/e-mail-statistiken-uebersichtsseite",
+              "wissen/statistiken/klick-performance-in-den-e-mail-statistiken",
+              "wissen/statistiken/kontakte-aus-kampagnenstatistiken-taggen",
+              "wissen/statistiken/so-greifst-du-auf-das-all-in-one-dashboard-fuer-e-mail-marketing-zu",
+              "wissen/statistiken/workflow-e-mail-aktionen-in-statistiken-enthalten"
+            ]
+          },
+          "wissen/vorlagen/e-mail-vorlagen-vs-e-mail-kampagnen",
+          {
+            "group": "Workflow-Aktion: E-Mail",
+            "pages": [
+              "wissen/workflow-aktion-e-mail/benutzeroberflaeche-fuer-e-mail-aktionen-in-workflows",
+              "wissen/workflow-aktion-e-mail/calendly-workflow-aktionen-trigger",
+              "wissen/workflow-aktion-e-mail/neue-benutzeroberflaeche-fuer-die-e-mail-erstellung-per-massenaktion-i",
+              "wissen/workflow-aktion-e-mail/wie-analysierst-du-workflow-kampagnen"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "wissen/workflows/aktion-e-mail-senden",
+              "wissen/workflows/aktion-kontaktfeld-aktualisieren",
+              "wissen/workflows/einfuehrung-in-workflows-und-automatisierungen",
+              "wissen/workflows/ereignis-startdatum-in-workflows-in-umsatzagent-festlegen",
+              "wissen/workflows/fehler-in-einem-workflow-hervorheben-und-beheben",
+              "wissen/workflows/so-nutzt-du-die-google-sheets-premium-workflow-aktion",
+              "wissen/workflows/so-richtest-du-ziel-ereignisse-in-workflows-ein",
+              "wissen/workflows/split-aktion",
+              "wissen/workflows/workflow-ai-assistent",
+              "wissen/workflows/workflow-builder-uebersicht",
+              "wissen/workflows/workflow-einstellungen-uebersicht",
+              "wissen/workflows/workflow-trigger-zahlung-erhalten"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Automatisierung",
+        "pages": [
+          {
+            "group": "Platzhalter & Variablen",
+            "pages": [
+              "wissen/platzhalter-variablen/so-erstellst-und-nutzt-du-benutzerdefinierte-felder",
+              "wissen/platzhalter-variablen/so-erstellst-und-verwaltest-du-benutzerdefinierte-felder-fuer-crm-date",
+              "wissen/platzhalter-variablen/so-erstellst-und-verwaltest-du-benutzerdefinierte-felder-fuer-crm-date-8466",
+              "wissen/platzhalter-variablen/so-verwendest-du-platzhalter-und-e-mail-fallback-werte-in-umsatzagent",
+              "wissen/platzhalter-variablen/so-verwendest-du-platzhalter-und-e-mail-fallback-werte-in-umsatzagent-8171",
+              "wissen/platzhalter-variablen/uebersicht-ueber-platzhalter-amp-benutzerdefinierte-variablen"
+            ]
+          },
+          {
+            "group": "Workflow-Aktionen",
+            "pages": [
+              "wissen/workflow-aktionen/so-nutzt-du-die-aktion-e-mail-verifizierung-in-workflows",
+              "wissen/workflow-aktionen/so-nutzt-du-die-workflow-aktion-associate-records"
+            ]
+          },
+          {
+            "group": "Workflow-KI",
+            "pages": [
+              "wissen/workflow-ki/so-kopierst-du-workflow-aktionen-zwischen-workflows",
+              "wissen/workflow-ki/workflow-aktion-ai-datenextraktion",
+              "wissen/workflow-ki/workflow-aktionen-voruebergehend-deaktivieren",
+              "wissen/workflow-ki/workflow-trigger-chance-geaendert"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Seiten",
+        "pages": [
+          {
+            "group": "Formulare",
+            "pages": [
+              "wissen/formulare/kreditkartenerfassung-fuer-0-bestellungen-in-formularen-und-umfragen-u",
+              "wissen/formulare/so-aenderst-du-die-primaerfarbe-fuer-formulare-umfragen-quizze",
+              "wissen/formulare/wie-mache-ich-meine-formulareinsendungen-sicher-vor-spammern"
+            ]
+          },
+          {
+            "group": "Funnel- & Website-Builder",
+            "pages": [
+              "wissen/funnel-website-builder/cookie-richtlinie-details",
+              "wissen/funnel-website-builder/definitionen-der-funnel-website-statistiken-kennzahlen-verstehen",
+              "wissen/funnel-website-builder/marketing-tools-in-funnel-website-nutzen-cookie-banner",
+              "wissen/funnel-website-builder/so-erstellst-du-seiten-im-page-builder",
+              "wissen/funnel-website-builder/so-erstellst-du-einen-funnel-mit-vorlagen-formularen-und-einer-eigenen",
+              "wissen/funnel-website-builder/so-nutzt-du-das-cookie-consent-banner-in-funnels-websites"
+            ]
+          },
+          {
+            "group": "Funnel-Analysen",
+            "pages": [
+              "wissen/funnel-analysen/erweiterte-filter-in-seiten-analytics-website-traffic-segmentieren",
+              "wissen/funnel-analysen/funnel-analysen"
+            ]
+          },
+          "wissen/tracking-fuer-formulare/externe-formular-einreichungen-mit-einem-tracking-skript-erfassen",
+          "wissen/webchat-widget/so-erstellst-du-ein-eingebettetes-live-chat-widget",
+          "wissen/wordpress/wordpress-plugin-fuer-umsatzagent-alles-wissenswerte"
+        ]
+      },
+      {
+        "group": "Mitgliedschaften",
+        "pages": [
+          "wissen/kundenportal-app/chancen-v2-mobile-app",
+          "wissen/mitgliedschaften/erste-schritte-einen-kurs-veroeffentlichen"
+        ]
+      },
+      {
+        "group": "Ruf",
+        "pages": [
+          {
+            "group": "Bewertungsverwaltung",
+            "pages": [
+              "wissen/bewertungsverwaltung/bewertungs-widgets-im-bereich-ruf-anpassen",
+              "wissen/bewertungsverwaltung/ruf-bewertungsanfrage-nachrichten-anpassen-sms-e-mail",
+              "wissen/bewertungsverwaltung/so-beanstandest-du-eine-google-bewertung-und-pruefst-den-status-der-be",
+              "wissen/bewertungsverwaltung/so-richtest-du-digitale-qr-codes-ein-um-die-bewertungsgewinnung-zu-max",
+              "wissen/bewertungsverwaltung/so-richtest-du-einen-bewertungslink-in-deiner-bewertungsanfrage-e-mail",
+              "wissen/bewertungsverwaltung/so-sendest-du-bewertungsanfragen-per-whatsapp",
+              "wissen/bewertungsverwaltung/so-verwendest-du-filter-im-ruf-metriken-dashboard"
+            ]
+          },
+          {
+            "group": "Google Unternehmensprofil",
+            "pages": [
+              "wissen/google-unternehmensprofil/massenimport-von-unternehmen-per-csv",
+              "wissen/google-unternehmensprofil/so-verbindest-du-dein-google-my-business-gmb"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Berichterstattung",
+        "pages": [
+          {
+            "group": "Tracking & Attribution (Allgemein)",
+            "pages": [
+              "wissen/tracking-attribution-allgemein/facebook-ads-berichterstattung-kennzahlen-und-performance-leitfaden",
+              "wissen/tracking-attribution-allgemein/facebook-utm-tracking-und-attribution-einrichten",
+              "wissen/tracking-attribution-allgemein/google-ads-berichterstattung-kennzahlenuebersicht",
+              "wissen/tracking-attribution-allgemein/kontakt-attributions-tracking-einblicke-in-lead-quellen",
+              "wissen/tracking-attribution-allgemein/uebersicht-und-leistungseinblicke-zur-anruf-berichterstattung"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "App-Marktplatz",
+        "pages": [
+          "wissen/bidirektionale-synchronisierungs-integra/so-aktivierst-du-die-google-zwei-wege-e-mail-synchronisierung",
+          {
+            "group": "Facebook",
+            "pages": [
+              "wissen/facebook/anleitung-zur-einrichtung-mehrerer-facebook-seiten",
+              "wissen/facebook/facebook-conversion-leads-walkthrough",
+              "wissen/facebook/facebook-lead-ads-mit-der-terminbuchung-verbinden",
+              "wissen/facebook/facebook-multi-seiten-fehlerbehebung",
+              "wissen/facebook/facebook-verbinden",
+              "wissen/facebook/facebook-lead-ads-integration-und-fehlerbehebung",
+              "wissen/facebook/facebook-seiten-fehlen-im-dropdown-menue-zur-seitenauswahl-bei-der-int",
+              "wissen/facebook/feldzuordnung-fuer-facebook-formulare",
+              "wissen/facebook/instagram-direct-integration",
+              "wissen/facebook/leitfaden-zur-seitenauswahl",
+              "wissen/facebook/messaging-einrichtung-und-fehlerbehebung",
+              "wissen/facebook/wie-richte-ich-ein-funnel-event-pixel-fuer-die-facebook-conversions-ap"
+            ]
+          },
+          {
+            "group": "Google Unternehmensprofil",
+            "pages": [
+              "wissen/google-unternehmensprofil/gbp-seiten-verwalten-hinzufuegen-entfernen-und-anpassen",
+              "wissen/google-unternehmensprofil/gmb-fehlerbehebungsleitfaden",
+              "wissen/google-unternehmensprofil/kundeninteraktionen-auf-verknuepften-gbp-seiten-verwalten",
+              "wissen/google-unternehmensprofil/messaging-und-social-media-kanaele-mit-dem-google-business-profile-ver"
+            ]
+          },
+          {
+            "group": "LinkedIn Lead Ads-Integration",
+            "pages": [
+              "wissen/linkedin-lead-ads-integration/linkedin-lead-ads-mit-crm",
+              "wissen/linkedin-lead-ads-integration/linkedin-lead-ads-mit-umsatzagent-verknuepfen",
+              "wissen/linkedin-lead-ads-integration/workflow-trigger-fuer-linkedin-lead-ads-hinzufuegen"
+            ]
+          },
+          "wissen/private-integrationen/umsatzagent-mit-zapier-verbinden",
+          "wissen/weitere-integrationen/google-konto-mit-dem-crm-verbinden"
+        ]
+      },
+      {
+        "group": "Mobile App",
+        "pages": [
+          {
+            "group": "Erste Schritte",
+            "pages": [
+              "wissen/erste-schritte/chancen-v2-mobile-app-karten-anpassen-abschluesse-erzielen",
+              "wissen/erste-schritte/einheitliche-terminansicht-in-der-mobilen-app",
+              "wissen/erste-schritte/umsatzagent-desktop-app-fuer-windows-mac-herunterladen"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Einstellungen",
+        "pages": [
+          {
+            "group": "Domain verbinden / übertragen",
+            "pages": [
+              "wissen/domain-verbinden-uebertragen/dns-verwalten-und-eine-gekaufte-domain-verbinden",
+              "wissen/domain-verbinden-uebertragen/domain-verbinden-eine-anleitung",
+              "wissen/domain-verbinden-uebertragen/domains-vollstaendige-uebersicht-und-zentrale-verwaltung",
+              "wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden"
+            ]
+          },
+          {
+            "group": "Einführung in Unternehmen",
+            "pages": [
+              "wissen/einfuehrung-in-unternehmen/massenimport-von-unternehmen-ins-crm-via-csv-umsatzagent",
+              "wissen/einfuehrung-in-unternehmen/unternehmen-im-crm-verwalten-einrichtung-benutzerdefinierte-felder-fil"
+            ]
+          },
+          {
+            "group": "Einstellungen",
+            "pages": [
+              "wissen/einstellungen/vollstaendige-anleitung-zum-medien-drive",
+              "wissen/einstellungen/wo-und-wie-du-die-standardmaessige-funktion-fuer-rueckruf-sms-bei-verp"
+            ]
+          },
+          "wissen/konto-abrechnung/so-aktualisierst-du-deine-steuernummer-in-der-abrechnung-ust-idnr-ein",
+          "wissen/module-felder/wie-nutzt-du-die-automatisierung-von-unternehmens-objekten"
         ]
       }
     ]

@@ -1,0 +1,459 @@
+---
+title: "So verwendest du Platzhalter und E-Mail-Fallback-Werte in UmsatzAgent"
+description: "Mit Platzhaltern kannst du Nachrichten und Dokumente personalisieren, indem gespeicherte Details automatisch eingefügt werden – wie der Name eines…"
+---
+
+Mit Platzhaltern kannst du Nachrichten und Dokumente personalisieren, indem gespeicherte Details automatisch eingefügt werden – wie der Name eines Kontakts, die E-Mail-Adresse eines zugewiesenen Benutzers, Termine oder Rechnungsbeträge. Wenn eine Nachricht gesendet oder ein Dokument erstellt wird, wird jeder Platzhalter durch den passenden Wert für den jeweiligen Empfänger oder Datensatz ersetzt. Das sorgt für eine einheitliche und präzise Kommunikation über E-Mails, SMS, Rechnungen, Kampagnen und automatisierte Workflows hinweg.
+
+```
+Hinweis zum „Rohformat“ bei Telefonnummern: Telefonfelder im Rohformat entfernen Leerzeichen, Klammern und Bindestriche. Das Rohformat ist besonders nützlich, wenn Telefonnummern in Links, Tracking-Parametern oder internationalen Formaten verwendet werden.
+```
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Kontakt-Platzhalter](#kontakt-platzhalter)
+- [Benutzer-Platzhalter](#benutzer-platzhalter)
+- [Termin-Platzhalter](#termin-platzhalter)
+- [Kalender-Platzhalter](#kalender-platzhalter)
+- [Kampagnen-Platzhalter](#kampagnen-platzhalter)
+- [Nachrichten-Platzhalter](#nachrichten-platzhalter)
+- [Konto-Platzhalter](#konto-platzhalter)
+- [Echtzeit-Platzhalter](#echtzeit-platzhalter)
+- [Attributions-Platzhalter](#attributions-platzhalter)
+- [Erste Attribution](#erste-attribution)
+- [Letzte Attribution](#letzte-attribution)
+- [Rechnungs-Platzhalter](#rechnungs-platzhalter)
+- [Unternehmensdetails](#unternehmensdetails)
+- [Kundendetails](#kundendetails)
+- [Absenderdetails](#absenderdetails)
+- [Karteninformationen](#karteninformationen)
+- [Kurs-Platzhalter](#kurs-platzhalter)
+- [Dienstleistungsbuchungs-Platzhalter](#dienstleistungsbuchungs-platzhalter)
+- [Dienstleistungspositionen und zugewiesener Benutzer](#dienstleistungspositionen-und-zugewiesener-benutzer)
+- [Standard- oder Fallback-Werte für leere Felder](#standard-oder-fallback-werte-fuer-leere-felder)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Kontakt-Platzhalter
+
+Diese Felder rufen Informationen ab, die im Kontaktdatensatz gespeichert sind. Sie werden häufig für Begrüßungen, Bestätigungen und personalisierte Follow-ups verwendet.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Vollständiger Name | {{contact.name}} | Jane Smith |
+| Vorname | {{contact.first\_name}} | Jane |
+| Nachname | {{contact.last\_name}} | Smith |
+| E-Mail | {{contact.email}} | jane@smith.com |
+| Telefon | {{contact.phone}} | (515) 555-2345 |
+| Telefon (Rohformat) | {{contact.phone\_raw}} | +15155552345 |
+| Unternehmensname | {{contact.company\_name}} | Smith Plumbing |
+| Vollständige Adresse | {{contact.full\_address}} | 1234 W. Main St, Chicago, IL 60657 |
+| Adresszeile 1 | {{contact.address1}} | 1234 W. Main St |
+| Stadt | {{contact.city}} | Chicago |
+| Bundesland/Region | {{contact.state}} | Illinois |
+| Postleitzahl | {{contact.postal\_code}} | 60657 |
+| Zeitzone | {{contact.timezone}} | GMT-06:00 America/Chicago |
+| Geburtsdatum | {{contact.date\_of\_birth}} | Jan 3, 1980 |
+| Quelle | {{contact.source}} | Empfehlung |
+| Website | {{contact.website}} | www.example.com |
+| Kontakt-ID | {{contact.id}} | FZDn5mYlkZuCCQe5Bep8 |
+
+---
+
+## Benutzer-Platzhalter
+
+Diese Felder rufen Informationen über den zugewiesenen Benutzer (oder Absender) ab, der mit der Aktivität, Konversation oder dem Termin verknüpft ist.
+
+```
+Benutzer-Platzhalter können auch in Abläufen nach der Kalenderbuchung verwendet werden, einschließlich der Kalenderbestätigungsseite (Dankesnachricht) und dem nächsten Funnel-Schritt nach einer Kalenderbuchung, wenn die Weiterleitungsaktion des Kalenderelements auf „Zum nächsten Schritt gehen“ eingestellt ist.
+```
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Vollständiger Name | {{user.name}} | John Doe |
+| Vorname | {{user.first\_name}} | John |
+| Nachname | {{user.last\_name}} | Doe |
+| E-Mail | {{user.email}} | john@doe.com |
+| Telefon | {{user.phone}} | (333) 555-9876 |
+| Telefon (Rohformat) | {{user.phone\_raw}} | +13335559876 |
+| E-Mail-Signatur | {{user.email\_signature}} | John Doejohn@doe.com(333) 555-9876 |
+| Buchungslink | {{user.calendar\_link}} | https://booking.example.com/schedule/john-doe |
+| Telefon des Terminnutzers (roh) | {{appointment.user.phone\_raw}} | +13335559876 |
+| Externe Rufnummer | {{user.call\_provider\_phone\_number}} | (234) 555-9876 |
+| Externe Rufnummer (roh) | {{user.call\_provider\_phone\_number\_raw}} | +12345559876 |
+
+> **Wichtig:** Je nach Konfiguration können in einigen Konten unterschiedliche Feldnamen für die „externe Rufnummer“ angezeigt werden. Verwende die Platzhalter-Auswahl im Editor, um den exakten Feldnamen einzufügen, der in deinem Konto verfügbar ist.
+
+---
+
+## Termin-Platzhalter
+
+Diese Felder rufen Details aus einem Termindatensatz ab und werden häufig in Bestätigungen, Erinnerungen und Umbuchungsnachrichten verwendet.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Titel | {{appointment.title}} | Termin mit Bob |
+| Startdatum/-zeit | {{appointment.start\_time}} | Mi, 5. Nov 2025 15:30 |
+| Nur Startdatum | {{appointment.only\_start\_date}} | 5. Nov 2025 |
+| Nur Startzeit | {{appointment.only\_start\_time}} | 15:30 |
+| Enddatum/-zeit | {{appointment.end\_time}} | Mi, 5. Nov 2025 16:00 |
+| Nur Enddatum | {{appointment.only\_end\_date}} | 5. Nov 2025 |
+| Nur Endzeit | {{appointment.only\_end\_time}} | 16:00 |
+| Wochentag | {{appointment.day\_of\_week}} | Montag |
+| Monatsnummer | {{appointment.month}} | 11 |
+| Zeitzone | {{appointment.timezone}} | CST |
+| Stornierungslink | {{appointment.cancellation\_link}} | https://booking.example.com/cancel?event\_id=123 |
+| Umbuchungslink | {{appointment.reschedule\_link}} | https://booking.example.com/reschedule?event\_id=123 |
+| Treffpunkt/Ort | {{appointment.meeting\_location}} | 123 W Main St, Chicago, IL 60657 |
+| Notizen | {{appointment.notes}} | Dies ist unser zweites Meeting. |
+| Link „Zum Kalender hinzufügen“ | {{appointment.add\_to\_calendar}} | https://booking.example.com/add-to-calendar?event\_id=123 |
+| Google-Kalender-Link | {{appointment.add\_to\_google\_calendar}} | https://booking.example.com/google/calendar/add-event/calendarid |
+| iCal/ICS-Link | {{appointment.add\_to\_ical}} | https://booking.example.com/get-ics?event\_id=123 |
+| Wiederholungen | {{appointment.recurring.repeats}} | 0 |
+| Anzahl der Wiederholungen | {{appointment.recurring.times\_to\_repeat}} | 1 |
+| Name des zugewiesenen Benutzers | {{appointment.user.name}} | John Doe |
+| E-Mail des zugewiesenen Benutzers | {{appointment.user.email}} | john@doe.com |
+| Telefon des zugewiesenen Benutzers | {{appointment.user.phone}} | (333) 555-9876 |
+| Telefon des zugewiesenen Benutzers (roh) | {{appointment.user.phone\_raw}} | +13335559876 |
+| Signatur des zugewiesenen Benutzers | {{appointment.user.email\_signature}} | John Doejohn@doe.com |
+
+---
+
+## Kalender-Platzhalter
+
+Diese Felder rufen Details aus dem mit dem Ereignis verknüpften Kalender ab.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Kalendername | {{calendar.name}} | Kalender für Gartenservice |
+
+---
+
+## Kampagnen-Platzhalter
+
+Diese Felder unterstützen geplante Kampagnenereignisse und Zeitvariablen.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Ereignisdatum/-zeit | {{campaign.event\_date\_time}} | 5. Nov 2025 15:30 |
+| Ereignisdatum | {{campaign.event\_date}} | 5. Nov 2025 |
+| Ereigniszeit | {{campaign.event\_time}} | 15:30 |
+
+---
+
+## Nachrichten-Platzhalter
+
+Diese Felder sind nützlich, um auf den Inhalt einer Nachricht innerhalb eines Workflows oder einer Automatisierung zu verweisen.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Nachrichtentext | {{message.body}} | Hallo, nur eine kurze Erinnerung an unser Telefonat morgen früh. |
+| Betreff der Nachricht | {{message.subject}} | Terminerinnerung |
+
+---
+
+## Konto-Platzhalter
+
+Diese Felder rufen Details auf Unternehmens- oder Kontoebene ab, die für Branding, Belege und die Unternehmensidentität verwendet werden.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Kontoname | {{location.name}} | WidgetWorks |
+| Vollständige Adresse | {{location.full\_address}} | 555 Oak St, Tampa, FL 33602 |
+| Adresszeile 1 | {{location.address}} | 555 Oak St |
+| Stadt | {{location.city}} | Tampa |
+| Bundesland/Region | {{location.state}} | Florida |
+| Land | {{location.country}} | US |
+| Postleitzahl | {{location.postal\_code}} | 33602 |
+| E-Mail | {{location.email}} | name@domain.com |
+| Telefon | {{location.phone}} | (333) 555-3344 |
+| Telefon (Rohformat) | {{location.phone\_raw}} | +13335553344 |
+| Website | {{location.website}} | mywebsiteurl.com |
+| Logo-URL | {{location.logo\_url}} | https://files.example.com/logo.png |
+| Vorname des Inhabers | {{location\_owner.first\_name}} | Lisa |
+| Nachname des Inhabers | {{location\_owner.last\_name}} | White |
+| E-Mail des Inhabers | {{location\_owner.email}} | lisa@white.com |
+| Konto-ID | {{location.id}} | DP4mTqaz7L9XpweFvRjC |
+
+---
+
+## Echtzeit-Platzhalter
+
+Diese Felder fügen die aktuellen Zeitwerte zum Zeitpunkt der Nachrichtenerstellung ein.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Sekunde | {{right\_now.second}} | 9 |
+| Minute | {{right\_now.minute}} | 10 |
+| Stunde (24h) | {{right\_now.hour}} | 14 |
+| Stunde (AM/PM) | {{right\_now.hour\_ampm}} | 2 |
+| AM/PM | {{right\_now.ampm}} | PM |
+| Wochentag | {{right\_now.day\_of\_week}} | Dienstag |
+| Monatsname | {{right\_now.month\_name}} | November |
+| Tag | {{right\_now.day}} | 4 |
+| Monat (Zahl) | {{right\_now.month}} | 11 |
+| Jahr | {{right\_now.year}} | 2025 |
+| Datum (MM/TT/JJJJ) | {{right\_now.middle\_endian\_date}} | 11/4/2025 |
+| Datum (TT/MM/JJJJ) | {{right\_now.little\_endian\_date}} | 4/11/2025 |
+
+---
+
+## Attributions-Platzhalter
+
+Diese Felder unterstützen Tracking-Details, die mit der ersten und letzten Attributionsquelle eines Kontakts verknüpft sind. Die Werte stammen üblicherweise aus Tracking-Parametern in Links.
+
+### Erste Attribution
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Sitzungsquelle | {{contact.attributionSource.sessionSource}} | Empfehlung |
+| Landing-Page-URL | {{contact.attributionSource.url}} | https://example.com/form?utm\_source=ads |
+| Kampagne | {{contact.attributionSource.campaign}} | fall\_sale |
+| UTM-Quelle | {{contact.attributionSource.utmSource}} | ads |
+| UTM-Medium | {{contact.attributionSource.utmMedium}} | banner |
+| UTM-Content | {{contact.attributionSource.utmContent}} | ad12 |
+| Referrer | {{contact.attributionSource.referrer}} | https://referrer.example.com |
+| Kampagnen-ID | {{contact.attributionSource.campaignId}} | 23849260571384729 |
+| Anzeigen-Klick-ID | {{contact.attributionSource.clickId}} | ABC123XYZ |
+| UTM-Keyword | {{contact.attributionSource.utmKeyword}} | running\_shoes |
+| UTM-Match-Type | {{contact.attributionSource.utmMatchType}} | exact |
+| Anzeigengruppen-ID | {{contact.attributionSource.adGroupId}} | 123456 |
+| Anzeigen-ID | {{contact.attributionSource.adId}} | 78910 |
+
+### Letzte Attribution
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Sitzungsquelle | {{contact.lastAttributionSource.sessionSource}} | Empfehlung |
+| Landing-Page-URL | {{contact.lastAttributionSource.url}} | https://example.com/form?utm\_source=ads |
+| Kampagne | {{contact.lastAttributionSource.campaign}} | xmas\_sale |
+| UTM-Quelle | {{contact.lastAttributionSource.utmSource}} | ads |
+| UTM-Medium | {{contact.lastAttributionSource.utmMedium}} | banner |
+| UTM-Content | {{contact.lastAttributionSource.utmContent}} | ad18 |
+| Referrer | {{contact.lastAttributionSource.referrer}} | https://referrer.example.com |
+| Kampagnen-ID | {{contact.lastAttributionSource.campaignId}} | 23850176293047583 |
+| Anzeigen-Klick-ID | {{contact.lastAttributionSource.clickId}} | XYZ789ABC |
+| UTM-Kampagne | {{contact.lastAttributionSource.utmCampaign}} | blowout\_sale |
+| UTM-Keyword | {{contact.lastAttributionSource.utmKeyword}} | hvac\_repair |
+| UTM-Match-Type | {{contact.lastAttributionSource.utmMatchType}} | broad |
+| Anzeigengruppen-ID | {{contact.lastAttributionSource.adGroupId}} | 654321 |
+| Anzeigen-ID | {{contact.lastAttributionSource.adId}} | 10987 |
+
+> **Wichtig:** In einigen Konten werden möglicherweise anbieterspezifische Attributionsfelder angezeigt. Verwende die Platzhalter-Auswahl, um die genauen Feldnamen einzufügen, die in deinem Konto verfügbar sind, und vermeide es, Anbieternamen im umgebenden Text zu erwähnen.
+
+---
+
+## Rechnungs-Platzhalter
+
+Diese Felder rufen Werte aus Rechnungsdatensätzen ab und werden häufig in Rechnungen, Quittungen, Zahlungsbestätigungen und Erinnerungen verwendet.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Rechnungsname | {{invoice.name}} | Beratungsvertrag |
+| Rechnungsnummer | {{invoice.number}} | 43255 |
+| Ausstellungsdatum | {{invoice.issue\_date}} | 2025-04-05 |
+| Fälligkeitsdatum | {{invoice.due\_date}} | 2025-10-05 |
+| Zwischensumme | {{invoice.sub\_total}} | $500.00 |
+| Rabattbetrag | {{invoice.discount\_amount}} | $50.00 |
+| Steuerbetrag | {{invoice.tax\_amount}} | $25.00 |
+| Gesamtbetrag | {{invoice.total\_amount}} | $475.00 |
+| Rechnungstitel | {{invoice.title}} | Beratungsrechnung |
+| Rechnungslink | {{invoice.url}} | https://pay.example.com/invoice/abc123 |
+
+### Unternehmensdetails
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Unternehmensname | {{invoice.company.name}} | Test Solutions |
+| Telefon des Unternehmens | {{invoice.company.phone}} | (888) 555-9876 |
+| Adresse des Unternehmens | {{invoice.company.address}} | 1234 Maple St |
+| Stadt des Unternehmens | {{invoice.company.city}} | Milwaukee |
+| Bundesland des Unternehmens | {{invoice.company.state}} | Wisconsin |
+| Land des Unternehmens | {{invoice.company.country}} | US |
+| Website des Unternehmens | {{invoice.company.website}} | www.example.com |
+| Logo-URL des Unternehmens | {{invoice.company.logo}} | https://files.example.com/logo.png |
+
+### Kundendetails
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Kundenname | {{invoice.customer.name}} | Tom Taylor |
+| Vorname des Kunden | {{invoice.customer.first\_name}} | Tom |
+| Nachname des Kunden | {{invoice.customer.last\_name}} | Taylor |
+| Telefon des Kunden | {{invoice.customer.phone}} | (222) 555-3456 |
+| E-Mail des Kunden | {{invoice.customer.email}} | tom@taylor.com |
+| Unternehmen des Kunden | {{invoice.customer.company}} | Taylor Construction |
+| Adresse des Kunden | {{invoice.customer.address}} | 3333 N. Main St |
+| Stadt des Kunden | {{invoice.customer.city}} | Chicago |
+| Bundesland des Kunden | {{invoice.customer.state}} | Illinois |
+| Postleitzahl des Kunden | {{invoice.customer.postal\_code}} | 60657 |
+
+### Absenderdetails
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Name des Absenders | {{invoice.sender.name}} | Bob Brown |
+| E-Mail des Absenders | {{invoice.sender.email}} | bob@brown.com |
+
+### Karteninformationen
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Kartentyp | {{invoice.card.brand}} | Visa |
+| Letzte 4 Ziffern der Karte | {{invoice.card.last4}} | 7654 |
+
+## Kurs-Platzhalter
+
+Diese Felder unterstützen Kurs- oder Lektionsinhalte beim Versenden von Nachrichten zu Einschreibungen oder Kursinhalten.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Kategorietitel | {{courses.categoryTitle}} | Erste Schritte beim Stricken |
+| Produkttitel | {{courses.productTitle}} | Grundlagen des Strickens |
+| Beitragstitel | {{courses.postTitle}} | Die besten Garnarten |
+
+---
+
+## Dienstleistungsbuchungs-Platzhalter
+
+Diese Felder rufen Details aus einem Dienstleistungsbuchungsdatensatz ab, einschließlich Zeitplan, Preisen und Informationen zum zugewiesenen Benutzer.
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Titel | {{servicebooking.title}} | Herrenschnitt |
+| Startzeit | {{servicebooking.start\_time}} | 15:30 |
+| Endzeit | {{servicebooking.end\_time}} | 16:30 |
+| Startdatum | {{servicebooking.start\_date}} | 6. März 2026 |
+| Enddatum | {{servicebooking.only\_end\_date}} | 7. März 2026 |
+| Nur Endzeit | {{servicebooking.only\_end\_time}} | 16:30 |
+| Wochentag | {{servicebooking.day\_of\_week}} | Montag |
+| Monat (Zahl) | {{servicebooking.month}} | 3 |
+| Monatsname | {{servicebooking.month\_name}} | März |
+| Zeitzone | {{servicebooking.timezone}} | CST |
+| Gesamtpreis | {{servicebooking.total\_price}} | $55 |
+| Treffpunkt/Ort | {{servicebooking.meeting\_location}} | 123 Main St, Chicago, IL 60657 |
+| Name des Treffpunkts | {{servicebooking.meeting\_location\_name}} | Stuhl 4 |
+| Umbuchungslink | {{servicebooking.reschedule\_link}} | https://booking.example.com/reschedule?booking\_id=123 |
+| Stornierungslink | {{servicebooking.cancellation\_link}} | https://booking.example.com/cancel?booking\_id=123 |
+
+### Dienstleistungspositionen und zugewiesener Benutzer
+
+| **Name** | **Platzhalter** | **Beispiel** |
+| --- | --- | --- |
+| Dienstleistungsname | {{this.name}} | Haarschnitt – Regulär |
+| Dienstleistungspreis | {{this.price}} | $125 |
+| Dienstleistungsdauer | {{this.duration}} | 45 Min. |
+| Startdatum der Dienstleistung | {{this.only\_start\_date}} | 6. März 2026 |
+| Startzeit der Dienstleistung | {{this.only\_start\_time}} | 16:30 |
+| Zeitzone der Dienstleistung | {{this.timezone}} | GMT-06:00 America/Chicago |
+| Zusatzleistungsname | {{this.addonName}} | Haare färben |
+| Zusatzleistungspreis | {{this.addonPrice}} | $25 |
+| Zusatzleistungsdauer | {{this.addonDuration}} | 15 Min. |
+| Zusatzleistungsmenge | {{this.addonQuantity}} | 1 |
+| Name des zugewiesenen Benutzers | {{this.user.name}} | Jane Smith |
+| E-Mail des zugewiesenen Benutzers | {{this.user.email}} | jane@smith.com |
+| Telefon des zugewiesenen Benutzers | {{this.user.phone}} | (515) 555-2345 |
+| Telefon des zugewiesenen Benutzers (roh) | {{this.user.phone\_raw}} | +15155552345 |
+| Signatur des zugewiesenen Benutzers | {{this.user.email\_signature}} | Jane Smithjane@smith.com |
+
+---
+
+## Standard- oder Fallback-Werte für leere Felder
+
+Einige Platzhalter können leer bleiben, wenn die gespeicherten Daten fehlen. Wenn ein Platzhalter keinen Wert hat, kann er durch einen Fallback-Wert ersetzt werden. Das hält Nachrichten lesbar und verhindert unvollständige Begrüßungen.
+
+Der Fallback-Wert kann festgelegt werden, indem du im E-Mail-Editor auf das Tag des benutzerdefinierten Werts klickst.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071460467/original/_4v9BjSqsBTDnQQcN2tRk855FpqfUCkIxw.png?1778876548)
+
+---
+
+## Voice-AI-Platzhalter
+
+Voice-AI-Platzhalter (auch Benutzerdefinierte Werte in Voice-AI-Prompts genannt) ermöglichen es deinem Sprach-AI-Assistenten, Telefongespräche anhand gespeicherter Daten zu personalisieren. Diese Werte können Kontakt-, Unternehmens-, Termin-, Kalender- oder Standortinformationen dynamisch abrufen, sofern sie im Anrufkontext vorliegen.
+
+Voice AI unterstützt Benutzerdefinierte Werte in Assistenten-Prompts und unterstützten Nachrichtenfeldern. Verwende die Auswahl für Benutzerdefinierte Werte im Voice-AI-Builder, wenn du dynamische Informationen zu einem Prompt hinzufügst.
+
+| Feldtyp | Platzhalter-Beispiel | Verwendungsbeispiel |
+| --- | --- | --- |
+| Kontakt-Vorname | `{{contact.first_name}}` | „Hallo {{contact.first\_name}}, danke für deinen Anruf.“ |
+| Vollständiger Kontaktname | `{{contact.name}}` | „Ich sehe, dein Name ist {{contact.name}}.“ |
+| Kontakt-E-Mail | `{{contact.email}}` | „Wir haben deine E-Mail als {{contact.email}} hinterlegt.“ |
+| Kontakt-Telefon | `{{contact.phone}}` | „Ist {{contact.phone}} noch die beste Nummer, um dich zu erreichen?“ |
+| Unternehmensname | `{{company.name}}` | „Ich sehe, du rufst von {{company.name}} an.“ |
+| Standortname | `{{location.name}}` | „Danke für deinen Anruf bei {{location.name}}.“ |
+| Standort-Telefon | `{{location.phone}}` | „Du erreichst uns auch unter {{location.phone}}.“ |
+| Standort-E-Mail | `{{location.email}}` | „Unser Team kann sich von {{location.email}} aus melden.“ |
+| Termin-Startzeit | `{{appointment.start_time}}` | „Dein Termin ist für {{appointment.start\_time}} geplant.“ |
+| Kalendername | `{{calendar.name}}` | „Dieser Termin ist im Kalender {{calendar.name}} gebucht.“ |
+
+```
+Wichtig: Die verfügbaren Platzhalter können je nach Voice-AI-Prompt-Feld, Anrufrichtung, Kontaktdatensatz, Terminkontext und den im Konto verfügbaren Daten variieren. Wenn ein Wert im Datensatz fehlt, bleibt der Platzhalter während des Gesprächs möglicherweise leer.
+```
+
+Eine Anleitung zur Einrichtung findest du unter So verwendest du benutzerdefinierte Werte in Voice-AI-Assistenten-Prompts.
+
+---
+
+## AI-Assistenten-Platzhalter
+
+Platzhalter für AI-Assistenten helfen dabei, automatisierte Konversationen mit vorhandenen Kontakt-, Unternehmens-, Standort- und weiteren unterstützten Daten zu personalisieren. Diese Werte sind nützlich beim Konfigurieren von Assistenten-Prompts, Assistenten-Zielen, KI-generierten Antworten und unterstützten Aktionen.
+
+Verwende die Auswahl für Benutzerdefinierte Werte, wenn du Platzhalter innerhalb der AI-Assistenten einfügst. Dadurch wird sichergestellt, dass der ausgewählte Wert an dieser Stelle der Assistenten-Konfiguration unterstützt wird.
+
+| Feldtyp | Platzhalter-Beispiel | Verwendungsbeispiel |
+| --- | --- | --- |
+| Kontakt-Vorname | `{{contact.first_name}}` | „Hallo {{contact.first\_name}}, wie kann ich dir heute helfen?“ |
+| Vollständiger Kontaktname | `{{contact.name}}` | „Danke, {{contact.name}}. Dabei kann ich helfen.“ |
+| Kontakt-E-Mail | `{{contact.email}}` | „Ich habe deine E-Mail als {{contact.email}} hinterlegt.“ |
+| Kontakt-Telefon | `{{contact.phone}}` | „Ist {{contact.phone}} die beste Nummer für einen Rückruf?“ |
+| Unternehmensname | `{{company.name}}` | „Ich sehe, dies betrifft {{company.name}}.“ |
+| Unternehmens-E-Mail | `{{company.email}}` | „Wir haben die Unternehmens-E-Mail als {{company.email}} hinterlegt.“ |
+| Unternehmenstelefon | `{{company.phone}}` | „Die hinterlegte Telefonnummer des Unternehmens lautet {{company.phone}}.“ |
+| Standortname | `{{location.name}}` | „Du chattest mit {{location.name}}.“ |
+| Standort-E-Mail | `{{location.email}}` | „Unser Team kann sich von {{location.email}} aus melden.“ |
+| Standort-Telefon | `{{location.phone}}` | „Du kannst uns auch unter {{location.phone}} kontaktieren.“ |
+
+Die Assistenten-Ziele umfassen Prompt-Einstellungen, Aktionen und Test-Tools, mit denen du steuerst, wie der AI-Assistent kommuniziert und antwortet. Teste die Antworten des Assistenten nach dem Hinzufügen von Platzhaltern, um sicherzustellen, dass die richtigen Werte ausgefüllt werden, bevor du ihn für Live-Konversationen aktivierst.
+
+```
+Wichtig: Die Verfügbarkeit von Platzhaltern kann vom bearbeiteten Bereich, dem gewählten Kanal, der Konfiguration des Assistenten und dem Vorhandensein der entsprechenden Daten abhängen. Wenn ein Feld keine gespeicherten Daten enthält, bleibt der Wert möglicherweise leer.
+```
+
+Anleitungen zur Einrichtung findest du unter Assistenten-Ziele im Überblick und AI-Assistent erklärt.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Was passiert, wenn ein Platzhalter keinen Wert hat?**
+
+Der Platzhalter wird in der Regel durch ein Leerzeichen ersetzt, wodurch ein Teil eines Satzes unvollständig wirken kann (zum Beispiel „Hallo ,“).
+
+**F: Was ist der Unterschied zwischen einem Standard-Telefonfeld und einem Telefonfeld im Rohformat?**
+
+Das Rohformat entfernt Zeichen wie Klammern und Bindestriche und eignet sich typischerweise besser für Links, Tracking-Parameter und internationale Formate.
+
+**F: Können Platzhalter in Rechnungen und zahlungsbezogenen Nachrichten verwendet werden?**
+
+Ja. Platzhalter können Rechnungsnummern, Beträge, Fälligkeitsdaten, Kundendetails und Links einfügen.
+
+**F: Warum sehe ich andere Platzhalter als ein anderes Konto?**
+
+Verfügbare Platzhalter können je nach aktivierten Tools, Konfiguration und der Art des bearbeiteten Datensatzes variieren.
+
+**F: Wie kann ich leere Begrüßungen vermeiden, wenn der Vorname fehlt?**
+
+Verwende bedingte Inhaltsblöcke, sodass eine Begrüßung angezeigt wird, wenn der Vorname vorhanden ist, und eine andere, wenn er fehlt.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Platzhalter nicht wie erwartet ausgefüllt werden, stelle sicher, dass der Datensatz die erforderlichen Informationen enthält (z. B. Vorname, E-Mail-Adresse oder Terminzeit). Bei Problemen mit Vorlagen und Automatisierungen prüfe, ob der richtige Platzhalter über die Auswahl eingefügt wurde und ob die Nachricht aus dem erwarteten Kontext heraus gesendet wird (Kontakt, Termin, Rechnung oder Buchung).
+
+Wenn du weitere Unterstützung benötigst, nutze die Hilfe-Optionen in deinem Konto und gib den Namen des Platzhalters, den Einsatzort sowie ein Beispiel der fehlerhaften Ausgabe an. Wende dich an den UmsatzAgent Support.

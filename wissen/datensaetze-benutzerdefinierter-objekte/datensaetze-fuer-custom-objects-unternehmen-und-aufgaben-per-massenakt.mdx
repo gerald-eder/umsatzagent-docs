@@ -1,0 +1,150 @@
+---
+title: "Datensätze für Custom Objects, Unternehmen und Aufgaben per Massenaktion löschen und wiederherstellen"
+description: "Die Massenlöschung bietet dir eine schnellere Möglichkeit, mehrere Datensätze von Custom Objects, Unternehmen oder Aufgaben zu entfernen, ohne jeden…"
+---
+
+Die Massenlöschung bietet dir eine schnellere Möglichkeit, mehrere Datensätze von Custom Objects, Unternehmen oder Aufgaben zu entfernen, ohne jeden Datensatz einzeln löschen zu müssen. Das ist besonders hilfreich nach Importen, Bereinigungsprojekten, Deduplizierungen oder umfassenden Datenzurücksetzungen. Gelöschte Datensätze aus unterstützten Massenlöschungen können innerhalb von 60 Tagen über die Seite „Massenaktionen“ wiederhergestellt werden, was das Risiko eines versehentlichen Datenverlusts verringert.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- Was ist die Massenlöschung und Wiederherstellung für Custom Objects, Unternehmen und Aufgaben?
+- Wichtigste Vorteile der Massenlöschung und Wiederherstellung
+- Unterstützte Datensatztypen
+- Was passiert, wenn Datensätze per Massenaktion gelöscht werden?
+- So richtest du die Massenlöschung für Custom Objects, Unternehmen und Aufgaben ein
+- So stellst du per Massenaktion gelöschte Datensätze wieder her
+- Häufig gestellte Fragen
+
+---
+
+## Was ist die Massenlöschung und Wiederherstellung für Custom Objects, Unternehmen und Aufgaben?
+
+Mit der Massenlöschung kannst du mehrere Datensätze aus einer Listenansicht auswählen und in einem Schritt löschen. Bei Custom Objects ermöglicht dies das Löschen über die Mehrfachauswahl direkt in der Listenansicht für Custom Objects. Bei Unternehmen und Aufgaben wurde das bisherige Limit von 100 Datensätzen für Massenlöschungen aufgehoben, sodass größere Bereinigungen ohne Aufteilung in kleinere Batches möglich sind.
+
+Wenn Datensätze gelöscht werden, werden deren Beziehungen, Verknüpfungen und Verknüpfungs-Labels entfernt. Die verknüpften Datensätze selbst werden nicht gelöscht. Per Massenaktion gelöschte Datensätze können innerhalb von 60 Tagen auf der Seite „Massenaktionen“ eingesehen und wiederhergestellt werden.
+
+---
+
+## Wichtigste Vorteile der Massenlöschung und Wiederherstellung
+
+Die Massenlöschung hilft Teams, große Datensatzmengen effizienter zu verwalten, während für unterstützte Löschvorgänge Wiederherstellungsoptionen verfügbar bleiben. Dies erleichtert die Bereinigung veralteter, doppelter oder fehlerhaft importierter Datensätze, ohne auf wiederholtes manuelles Löschen angewiesen zu sein.
+
+- **Schnellere Bereinigung:** Lösche mehrere Datensätze von Custom Objects, Unternehmen oder Aufgaben in einer einzigen Aktion, anstatt jeden Datensatz einzeln zu entfernen.
+- **Verbesserte Verwaltung von Custom Objects:** Nutze die Mehrfachauswahl in der Listenansicht, um Datensätze von Custom Objects direkt aus der Liste per Massenaktion zu löschen.
+- **Kein Limit von 100 Datensätzen für Unternehmen und Aufgaben:** Lösche größere Gruppen von Unternehmens- oder Aufgabendatensätzen, ohne Löschaufträge in 100er-Schritten aufteilen zu müssen.
+- **Sicherere Löschungen in großem Umfang:** Stelle berechtigte, per Massenaktion gelöschte Datensätze innerhalb von 60 Tagen über die Seite „Massenaktionen“ wieder her.
+- **Bessere Übersicht über Vorgänge:** Verfolge Löschfortschritt, Status und Statistiken auf der Seite „Massenaktionen“.
+- **Saubere Datensatzverknüpfungen:** Entferne Beziehungen, Verknüpfungen und Verknüpfungs-Labels der gelöschten Datensätze, während die verknüpften Datensätze selbst erhalten bleiben.
+
+---
+
+## Unterstützte Datensatztypen
+
+Die Massenlöschung ist für bestimmte Datensatztypen verfügbar, die eine Auswahl in der Listenansicht und Löschaktionen unterstützen. Zu wissen, wo diese Funktion anwendbar ist, stellt sicher, dass du für jedes Modul den richtigen Bereinigungsablauf nutzt.
+
+Zu den unterstützten Datensatztypen gehören:
+
+- Datensätze von Custom Objects
+- Unternehmensdatensätze
+- Aufgabendatensätze
+
+Für Custom Objects ist die Massenlöschung über die Mehrfachauswahl-Kontrollkästchen in der Listenansicht für Custom Objects verfügbar. Für Unternehmen und Aufgaben unterstützt die Massenlöschung größere Löschvorgänge, da die bisherige Obergrenze von 100 Datensätzen aufgehoben wurde.
+
+---
+
+## Was passiert, wenn Datensätze per Massenaktion gelöscht werden?
+
+Die Massenlöschung entfernt die ausgewählten Datensätze aus dem jeweiligen Modul und löscht auch die damit verbundenen Beziehungsdaten. Dies verhindert, dass gelöschte Datensätze nach dem Entfernen weiterhin in Verknüpfungen oder Labels verknüpfter Datensätze auftauchen.
+
+Wenn ein Datensatz gelöscht wird:
+
+- Der ausgewählte Datensatz wird gelöscht.
+- Beziehungen, die mit dem gelöschten Datensatz verbunden sind, werden entfernt.
+- Verknüpfungen, die mit dem gelöschten Datensatz verbunden sind, werden entfernt.
+- Verknüpfungs-Labels, die mit dem gelöschten Datensatz verbunden sind, werden entfernt.
+- Verknüpfte Datensätze selbst werden nicht gelöscht.
+
+Das Löschen eines Unternehmensdatensatzes löscht beispielsweise nicht die Kontakte, Chancen oder sonstigen Datensätze, die diesem Unternehmen möglicherweise zugeordnet waren. Die Verknüpfung zwischen dem gelöschten Unternehmen und diesen zugehörigen Datensätzen wird jedoch entfernt.
+
+```
+Wichtig: Prüfe, ob wiederhergestellte Datensätze ihre vorherigen Beziehungen, Verknüpfungen und Verknüpfungs-Labels wiedererhalten, bevor du dich bei der Wiederherstellung von Beziehungen auf die Wiederherstellungsfunktion verlässt.
+```
+
+```
+Vor dem Bestätigen einer Massenlöschung:
+
+Überprüfe alle Filter, die auf die Listenansicht angewendet wurden.
+
+Vergewissere dich, dass die ausgewählten Datensätze tatsächlich die sind, die du löschen möchtest.
+
+Exportiere bei Bedarf wichtige Daten vor größeren Bereinigungsaktionen.
+
+Stelle sicher, dass dein Team versteht, dass Beziehungen, Verknüpfungen und Verknüpfungs-Labels entfernt werden, wenn Datensätze gelöscht werden.
+
+Überprüfe nach dem Löschen die Seite „Massenaktionen“, um den Fortschritt und Abschluss des Vorgangs zu bestätigen.
+
+Stelle berechtigte Löschvorgänge innerhalb von 60 Tagen wieder her, falls Datensätze versehentlich gelöscht wurden.
+```
+
+---
+
+## So richtest du die Massenlöschung für Custom Objects, Unternehmen und Aufgaben ein
+
+Die Massenlöschung erfordert keine komplizierte Einrichtung. Sobald Datensätze in der Listenansicht verfügbar sind, können mehrere Datensätze ausgewählt, die Löschung bestätigt und der Löschvorgang über die Seite „Massenaktionen“ überwacht werden.
+
+So löschst du Datensätze per Massenaktion:
+
+1. Öffne den relevanten Bereich: Custom Objects, Unternehmen oder Aufgaben.
+2. Gehe zur Listenansicht der Datensätze, die du löschen möchtest.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161060/original/RQxzAHMiO67Eg0YJ2zVD7FAiuAdu73QMXg.png?1778599452)
+3. Wähle über die Kontrollkästchen die Datensätze aus, die du entfernen möchtest.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161487/original/HPdoS5475WRn_qNI5OY5fK8J00shRkGOyQ.png?1778599612)
+4. Klicke auf „Löschen“.
+5. Lies die Bestätigungsmeldung sorgfältig durch.
+6. Bestätige die Löschung.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161059/original/YDuMH59nkU08_hkOIh2YqmrQpotCo9_xtg.png?1778599452)
+7. Gehe zur Seite „Massenaktionen“.
+8. Überprüfe den Löschauftrag, um Fortschritt, Abschlussstatus und Statistiken einzusehen.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161057/original/lf1arTC_SW4u3OtQ1gvGJO4wKcbvqSRs2g.png?1778599452)
+
+---
+
+## So stellst du per Massenaktion gelöschte Datensätze wieder her
+
+Auf der Seite „Massenaktionen“ werden unterstützte Massenlöschungen protokolliert, sodass du berechtigte gelöschte Datensätze innerhalb des Wiederherstellungszeitraums wiederherstellen kannst. Die Wiederherstellung aus dem ursprünglichen Löschauftrag hilft dabei, Datensätze wiederherzustellen, die versehentlich oder im Rahmen einer rückgängig zu machenden Bereinigung gelöscht wurden.
+
+So stellst du gelöschte Datensätze innerhalb von 60 Tagen wieder her:
+
+1. Gehe zu „Massenaktionen“.
+2. Suche den Löschauftrag für die Datensätze, die du wiederherstellen möchtest.
+3. Klicke auf das Drei-Punkte-Menü des Löschauftrags.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161062/original/-fAtrQ5pE64xE0nz7IBhy0YbGS_hUVFM7g.png?1778599452)
+4. Klicke auf „Wiederherstellen“.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071161058/original/I8-X1c-tEJsIpLhlxz7eub4USGfkb0QN4w.png?1778599451)
+5. Lies die Bestätigungsmeldung durch.
+6. Bestätige die Wiederherstellung.
+7. Verfolge den Fortschritt der Wiederherstellung auf der Seite „Massenaktionen“.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich Datensätze von Custom Objects jetzt per Massenaktion löschen?**A: Ja. Datensätze von Custom Objects können jetzt über Kontrollkästchen in der Listenansicht ausgewählt und per Massenaktion gelöscht werden.
+
+**F: Gibt es noch ein Limit von 100 Datensätzen für die Massenlöschung von Unternehmen und Aufgaben?**A: Nein. Die bisherige Obergrenze von 100 Datensätzen für die Massenlöschung bei Unternehmen und Aufgaben wurde aufgehoben.
+
+**F: Wo kann ich den Fortschritt einer Massenlöschung einsehen?**A: Gehe zur Seite „Massenaktionen“, um Fortschritt, Statistiken und den Abschlussstatus zu überprüfen.
+
+**F: Kann ich Datensätze nach einer Massenlöschung wiederherstellen?**A: Ja. Unterstützte, per Massenaktion gelöschte Datensätze können innerhalb von 60 Tagen über die Seite „Massenaktionen“ wiederhergestellt werden.
+
+**F: Werden beim Löschen eines Datensatzes auch verknüpfte Datensätze gelöscht?**A: Nein. Verknüpfte Datensätze selbst werden nicht gelöscht. Beziehungen, Verknüpfungen und Verknüpfungs-Labels des gelöschten Datensatzes werden jedoch entfernt.
+
+**F: Was passiert nach Ablauf des 60-tägigen Wiederherstellungszeitraums?**A: Datensätze sollten innerhalb von 60 Tagen über die Seite „Massenaktionen“ wiederhergestellt werden. Nach Ablauf dieses Zeitraums ist die Löschung über die Wiederherstellungsoption unter „Massenaktionen“ möglicherweise nicht mehr wiederherstellbar.

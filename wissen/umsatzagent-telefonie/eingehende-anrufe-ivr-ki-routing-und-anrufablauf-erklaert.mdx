@@ -1,0 +1,465 @@
+---
+title: "Eingehende Anrufe: IVR, KI, Routing und Anrufablauf erklärt"
+description: "Dieser Artikel erklärt den gesamten Ablauf vom Moment, in dem jemand deine geschäftliche Telefonnummer anruft, bis der Anruf entgegengenommen oder an die…"
+---
+
+Dieser Artikel erklärt den gesamten Ablauf vom Moment, in dem jemand deine geschäftliche Telefonnummer anruft, bis der Anruf entgegengenommen oder an die Mailbox weitergeleitet wird.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht über den Ablauf eingehender Anrufe](#uebersicht-ueber-den-ablauf-eingehender-anrufe)
+- [Wo die Einstellungen für eingehende Anrufe konfiguriert werden](#wo-die-einstellungen-fuer-eingehende-anrufe-konfiguriert-werden)
+- [Stufe 1 — Intelligentes Anruf-Routing (IVR und Voice-KI)](#stufe-1-intelligentes-anruf-routing-ivr-und-voice-ki)
+  - [1. IVR-Einrichtung und Ablauf (Sprachmenü)](#1-ivr-einrichtung-und-ablauf-sprachmenue)
+  - [2. Voice-KI: Primärer Modus vs. Backup-Modus erklärt](#2-voice-ki-primaerer-modus-vs-backup-modus-erklaert)
+  - [So wechselst du zwischen den Voice-KI-Modi](#so-wechselst-du-zwischen-den-voice-ki-modi)
+- [Stufe 2 — Paralleles Klingeln (Wie Anrufe dein Team erreichen)](#stufe-2-paralleles-klingeln-wie-anrufe-dein-team-erreichen)
+  - [So funktioniert paralleles Klingeln](#so-funktioniert-paralleles-klingeln)
+  - [Welche Telefonnummer angerufen wird (Weiterleitungspriorität)](#welche-telefonnummer-angerufen-wird-weiterleitungsprioritaet)
+  - [Teammitglieder-Geräte und Anrufannahme](#teammitglieder-geraete-und-anrufannahme)
+  - [Einstellen des Klingel-Timeouts](#einstellen-des-klingel-timeouts)
+- [Stufe 3 — Nach dem Timeout](#stufe-3-nach-dem-timeout)
+  - [1. Voice-KI — Backup-Modus 3. Priorität](#1-voice-ki-backup-modus-3-prioritaet)
+  - [2. Backup — Mailbox oder Voice-KI](#2-backup-mailbox-oder-voice-ki)
+  - [Mailbox-Ansage — Woher sie stammt](#mailbox-ansage-woher-sie-stammt)
+- [Erweiterte Einstellungen — Nummernbezogene Funktionen](#erweiterte-einstellungen-nummernbezogene-funktionen)
+- [Telefonie-Einstellungen — Konto-weites Routing](#telefonie-einstellungen-konto-weites-routing)
+- [Vollständiges Anrufablauf-Diagramm](#vollstaendiges-anrufablauf-diagramm)
+- [Typische Einrichtungsszenarien](#typische-einrichtungsszenarien)
+- [Fehlerbehebung](#fehlerbehebung)
+- [Kurzübersicht](#kurzuebersicht)
+
+---
+
+## Übersicht über den Ablauf eingehender Anrufe
+
+Wenn jemand deine geschäftliche Telefonnummer anruft, durchläuft das System **drei Stufen.** Es stoppt in dem Moment, in dem der Anruf entgegengenommen wird. Nicht konfigurierte Optionen werden automatisch übersprungen.
+
+**Stufe 1 — Zuerst geprüft**
+
+Intelligentes Routing
+
+**IVR** oder **Voice-KI (primärer Modus)** — wenn eine dieser Optionen eingerichtet ist, übernimmt sie den Anruf sofort. Stufe 2 wird nie ausgeführt.
+
+**Stufe 2 — Wenn Stufe 1 nicht konfiguriert ist**
+
+Paralleles Klingeln
+
+Ein Wählvorgang geht gleichzeitig an **alle konfigurierten Ziele**: Geräte des Teammitglieds + eine Weiterleitungs-Telefonnummer + alle weiteren klingelnden Teammitglieder. Wer zuerst abhebt, nimmt den Anruf an. Dieses Klingeln läuft für die Dauer des festgelegten **Timeouts**.
+
+**Stufe 3 — Nach dem Timeout, wenn niemand abgenommen hat**
+
+Backup
+
+**Voice-KI (Backup-Modus)** wird zuerst versucht, falls konfiguriert. Danach folgt der letzte Fallback: **Mailbox** oder **Voice-KI** aus dem Backup-Bereich.
+
+```
+Grundregel: Das System wertet nur aus, was tatsächlich konfiguriert ist. Wenn etwas nicht eingerichtet oder deaktiviert ist, wird es automatisch übersprungen – kein Prioritätsplatz geht verloren.
+```
+
+---
+
+## Wo die Einstellungen für eingehende Anrufe konfiguriert werden
+
+Alle Einstellungen für eingehende Anrufe befinden sich im Konfigurationsfenster der Telefonnummer:
+
+**Einstellungen › Telefonsystem › Nummern › ⚙️ Konfigurieren (bei einer beliebigen Nummer)**
+
+Das Fenster hat drei Tabs:
+
+| Tab | **Was hier konfiguriert wird** |
+| --- | --- |
+| **Grundlegende Details** | Name und Bezeichnung der Nummer (Screenshot 1.0) |
+| **Anrufweiterleitung** | Gesamtes Routing der Stufen 1, 2 und 3 — IVR, Teammitglied, externe Telefonnummer, Voice-KI, geschäftliche Telefonnummer, Timeout, Backup (Screenshot 1.1 und 1.2) |
+| **Erweiterte Einstellungen** | Whisper-Nachricht, Call Connect, Anrufaufzeichnung, Anrufer-ID (Screenshot 1.3) |
+
+Konto-weite Routing-Schalter (z. B. „Der angerufenen Nummer zugewiesenen Benutzer anrufen“) befinden sich separat unter:
+
+**Einstellungen › Telefonsystem › Telefonie › Tab „Weitere Einstellungen“ › Unter-Tab „Eingehende Anrufe“**
+
+Der Bereich „Telefonie“ umfasst sechs Unter-Tabs: Anrufaufnahme und Transkription, Mailbox und Rückruf-SMS bei verpasstem Anruf, Anruf-Skripte, Benutzerdefinierte Anruf-Status, VoIP-Tischtelefon (SIP) und Weitere Einstellungen. Die Schalter für das eingehende Routing liegen unter „Weitere Einstellungen“ → „Eingehende Anrufe“.
+
+## Stufe 1 — Intelligentes Anruf-Routing (IVR und Voice-KI)
+
+Diese beiden Optionen haben, sofern konfiguriert, immer Priorität. Wenn eine von beiden den Anruf übernimmt, wird Stufe 2 nicht ausgeführt.
+
+### 1. IVR-Einrichtung und Ablauf (Sprachmenü)
+
+Mit IVR können Anrufer durch Drücken von Tasten auf ihrem Tastenfeld durch ein Telefonmenü navigieren.
+
+**Beispiel für den Anrufer:** „Vielen Dank für deinen Anruf. Drücke die 1 für Vertrieb. Drücke die 2 für Support. Drücke die 0, um mit der Zentrale verbunden zu werden.“
+
+IVR wird innerhalb eines Workflows erstellt, nicht direkt in den Einstellungen der Telefonnummer. Die Telefonnummer verweist lediglich auf den zu verwendenden Workflow.
+
+**So richtest du IVR ein:**
+
+1. Gehe zu Automatisierung und erstelle einen neuen Workflow mit dem Trigger für Telefon-IVR.
+2. Erstelle dein Menü — spiele Nachrichten ab, erfasse Tastatureingaben, verzweige nach gedrückter Ziffer und leite an Teammitglieder oder Abteilungen weiter.
+3. Öffne nach dem Erstellen das Konfigurationsfenster der Telefonnummer → Tab „Anrufweiterleitung“ → weise dem IVR-Feld den Workflow zu.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754703/original/QsJ9RHIGrhP_3aTBndu0a05GnC17Q0NwvQ.png?1788238620)
+
+Wenn IVR aktiv ist, wird der Anruf vollständig über den Workflow abgewickelt. Stufe 2 (Teammitglied, externe Telefonnummer etc.) wird nicht ausgeführt.
+
+### 2. Voice-KI: Primärer Modus vs. Backup-Modus erklärt
+
+Mit Voice-KI kann ein AI-Assistent Anrufe entgegennehmen und bearbeiten. Ob er bei jedem Anruf sofort antwortet oder erst einspringt, wenn kein Mensch abhebt, hängt von einem einzelnen Schalter ab — und dieser Schalter befindet sich in den Einstellungen des AI-Assistenten, nicht in den Telefoneinstellungen.
+
+### So wechselst du zwischen den Voice-KI-Modi
+
+**Einstellungen › AI-Assistenten › Voice-KI › Wähle deinen Assistenten › Tab „Telefon & Verfügbarkeit“**
+
+Suche nach diesem Schalter: **„AI-Assistent als Backup für die Telefonnummer/den Nummern-Pool aktivieren“.**
+Lass diesen Schalter deaktiviert, wenn dein Voice-KI-Assistent jeden Anruf sofort entgegennehmen soll.
+
+| Schalter-Status | Verhalten | Anzeige im Fenster „Anrufweiterleitung“ |
+| --- | --- | --- |
+| **AUS** (Primärer Modus) | Die KI nimmt jeden Anruf sofort entgegen. Stufe 2 wird nie ausgeführt. | Voice-KI erscheint ganz oben als **1. Priorität**. Teammitglied und externe Telefonnummer haben keine Prioritäts-Badges — sie werden nur erreicht, wenn die KI den Anruf weiterleitet. |
+| **EIN** (Backup-Modus) | Es wird zuerst über Stufe 2 versucht, Personen zu erreichen. Die KI antwortet nur, wenn innerhalb des Timeouts niemand abhebt. | Voice-KI erscheint als **3. Priorität**, nach Teammitglied (1.) und externer Telefonnummer (2.). Sie wird erst ausgelöst, nachdem das Klingeln in Stufe 2 abgelaufen ist — nicht währenddessen. |
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754729/original/TKPgYyXxBgpH7Rl7gaU-HrRHKZCWawx9aQ.png?1788238674)**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754744/original/imUgBizBA-mmVlQEsTFOktHDIM3PFD2bzQ.png?1788238726)**
+
+**Was Voice-KI leisten kann:**
+
+- Anrufe rund um die Uhr ohne menschlichen Mitarbeiter entgegennehmen
+- Fragen in natürlicher Sprache beantworten
+- Informationen von Anrufern erfassen
+- Bei Bedarf an ein Teammitglied weiterleiten
+
+Du kannst im selben Tab „Telefon & Verfügbarkeit“ auch Arbeitszeiten festlegen, damit die KI nur an bestimmten Tagen und zu bestimmten Zeiten antwortet.
+
+## Stufe 2 — Paralleles Klingeln (Wie Anrufe dein Team erreichen)
+
+### So funktioniert paralleles Klingeln
+
+Wenn Stufe 2 aktiv ist, sendet das System einen **einzelnen ausgehenden Anruf an alle konfigurierten Ziele gleichzeitig.** Es gibt keine sequentielle Logik nach dem Muster „Zuerst Teammitglied versuchen, dann externe Telefonnummer“. Alles klingelt gleichzeitig:
+
+- Ausgewählte Geräte des Teammitglieds (Web-App, Mobile App, VoIP-Tischtelefon)
+- Eine Weiterleitungs-Telefonnummer (siehe Priorität unten)
+- Alle zusätzlichen Teammitglieder (auf ihren bevorzugten Geräten)
+
+**Das Ziel, das zuerst abhebt, erhält den Anruf.** Bei allen anderen Zielen stoppt das Klingeln sofort.
+
+**Bedeutung der Prioritäts-Badges (1., 2., 3.):** Diese Kennzeichnungen erzeugen kein nacheinander geschaltetes Klingeln. Sie geben die Prioritätsreihenfolge an, welche Telefonnummer in das parallele Klingeln einbezogen wird — und die relative Position des Voice-KI-Backups (das separat nach Ablauf des Timeouts greift). Details dazu im nächsten Abschnitt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489887/original/G3m2XBJuVGEVYMlJ8wjWDJWM5vB3eobmfQ.png?1774267907)**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489883/original/60QZcGXN-YUD9wmzvT81cRraKAfi0HYI-g.png?1774267907)**
+
+---
+
+### Welche Telefonnummer angerufen wird (Weiterleitungspriorität)
+
+Es kann immer nur eine Telefonnummer in das parallele Klingeln eingebunden werden. Das System belegt diesen Platz nach folgender Priorität — was zuerst greift, gewinnt:
+
+| Priorität | Quelle der Telefonnummer | Bedingung |
+| --- | --- | --- |
+| 1. | Persönliche Telefonnummer des Teammitglieds | Nur wenn das Gerät „Telefonnummer“ in der Zeile des Teammitglieds angehakt ist. Wenn dies aktiv ist, werden externe Telefonnummer und geschäftliche Telefonnummer nicht genutzt — der Platz ist bereits belegt. |
+| 2. | Externe Telefonnummer | Wird verwendet, wenn das Gerät „Telefonnummer“ beim Teammitglied nicht angehakt und eine externe Telefonnummer konfiguriert ist. |
+| 3. | Geschäftliche Telefonnummer | Wird als letzter Ausweg verwendet, wenn keine der obigen Optionen den Platz belegt. Standardmäßig aktiviert. Deaktiviere dies unter „Weitere Einstellungen“ → „Eingehende Anrufe“, falls nicht gewünscht. |
+
+Wenn keine dieser Optionen konfiguriert ist, klingelt keine externe Telefonnummer — es werden nur digitale Endgeräte (Web-App, Mobile App) angerufen.
+
+---
+
+### Teammitglieder-Geräte und Anrufannahme
+
+Das Teammitglied ist der primäre Empfänger des Anrufs. Alle ausgewählten Geräte klingeln gleichzeitig als Teil des gemeinsamen Stufe-2-Anrufs.
+
+**Web-App**
+
+Eine Anrufbenachrichtigung erscheint im Browser-Tab von UmsatzAgent. Der Benutzer klickt darauf, um im Browser abzuheben. Ein aktiver Login ist erforderlich.
+
+**Mobile App**
+
+Eine Push-Benachrichtigung wird an das Smartphone des Benutzers gesendet. Der Anruf wird über die UmsatzAgent Mobile App entgegengenommen. Push-Benachrichtigungen müssen auf dem Gerät aktiviert sein.
+
+**Telefonnummer**
+
+Das System ruft die persönliche Telefonnummer des Benutzers an. Die Annahme erfolgt wie bei einem normalen Anruf. **Hinweis**: Das Aktivieren dieser Option belegt den Weiterleitungsplatz — externe und geschäftliche Telefonnummern werden nicht angerufen.
+
+**VoIP-Tischtelefon**
+
+Das System ruft das SIP-fähige Tischtelefon des Benutzers an. Erfordert die Einrichtung des Tischtelefons — klicke auf „Tischtelefon einrichten“ in der Zeile des Teammitglieds.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489867/original/QYhE24kLj54GSkMisu33HUkjTTIt8eqxxA.png?1774267905)**
+
+**Mehrere Teammitglieder gleichzeitig anrufen**
+
+Aktiviere dieses Kontrollkästchen, um zusätzliche Benutzer parallel zum primären Teammitglied klingeln zu lassen — alles im selben Anrufvorgang.
+
+- Alle ausgewählten Mitglieder klingeln gleichzeitig — wer zuerst abnimmt, erhält den Anruf
+- Jedes Mitglied klingelt auf dem im eigenen Profil hinterlegten bevorzugten Gerät
+- Maximal 6 zusätzliche Personen
+- Gilt nicht, wenn IVR oder Voice-KI (primärer Modus) aktiv ist
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489876/original/uxU66D5TUtq0rHBek81xOuWP025RKwPdcg.png?1774267907)**
+
+---
+
+### Einstellen des Klingel-Timeouts
+
+Das Timeout bestimmt, wie viele Sekunden das parallele Klingeln in Stufe 2 andauert, bevor abgebrochen und zu Stufe 3 gewechselt wird.
+
+- Standard: 20 Sekunden, falls nicht konfiguriert
+- Aktiviere „Timeout für eingehende Anrufe“ und trage den gewünschten Wert (in Sekunden) ein
+- Wird das Timeout ohne Annahme erreicht, wechselt das System zu Stufe 3
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489879/original/rk6K3iFT9AvMysEbvNznIc7j_CpH4Nlqug.png?1774267907)**
+
+---
+
+## Stufe 3 — Nach dem Timeout
+
+Wenn während des Klingelns in Stufe 2 niemand abhebt, wechselt der Anruf in diesen Bereich. Die Schritte erfolgen in dieser Reihenfolge:
+
+### 1. Voice-KI — Backup-Modus 3. Priorität
+
+Wenn Voice-KI mit aktiviertem Backup-Schalter eingerichtet ist, wird sie nach dem Timeout von Stufe 2 zuerst aufgerufen. Die KI nimmt den Anruf über eine separate Weiterleitung an — dies ist ein eigener Schritt nach dem parallelen Klingeln.
+
+Deshalb wird Voice-KI im Backup-Modus im Tab „Anrufweiterleitung“ als „3. Priorität“ angezeigt — sie läuft nach dem parallelen Klingeln (1. + 2.) und nicht parallel dazu.
+
+### 2. Backup — Mailbox oder Voice-KI
+
+Wenn das Voice-KI-Backup nicht greift (oder als letzte Rückfallebene), bestimmt der Backup-Bereich den weiteren Ablauf:
+
+| Option | Was passiert |
+| --- | --- |
+| **Mailbox** | Der Anrufer hört die Mailbox-Ansage und hinterlässt eine Nachricht. Abrufbar in den Konversationen des jeweiligen Kontakts. |
+| **Voice-KI** | Ein AI-Assistent nimmt den unbeantworteten Anruf entgegen und bearbeitet ihn. |
+
+Das Backup ist immer der letzte Schritt und wird nie übersprungen.
+
+### Mailbox-Ansage — Woher sie stammt
+
+Das System verwendet die erste gefundene Ansage in folgender Reihenfolge:
+
+1. **Persönliche Mailbox des Teammitglieds** — eingerichtet im Benutzerprofil unter den Telefoneinstellungen
+2. **Konto-Mailbox** — eingerichtet unter Einstellungen → Telefonsystem → Telefonie → Mailbox und Rückruf-SMS bei verpasstem Anruf
+3. **Systemstandard** — „We are unable to take your call right now. Please leave a message after the beep.“
+
+**Unterstützte Upload-Formate:** MP3, WAV, AIFF, GSM, ULAW
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489881/original/PtfGFe-Qhz2YicdM3SJeZsFDA2hyIqYIXA.png?1774267907)**
+
+---
+
+## Erweiterte Einstellungen — Nummernbezogene Funktionen
+
+**Einstellungen › Telefonsystem › Nummern › ⚙️ Konfigurieren › Tab „Erweiterte Einstellungen“**
+
+Diese Einstellungen steuern das Verhalten einzelner Anrufe, sobald sie in Stufe 2 ein Teammitglied erreichen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489891/original/dXas87JcIaYByBj5xkNv2sLEmYpBG9lPyQ.png?1774267908)**
+
+### Whisper-Nachricht
+
+Eine kurze Sprachnachricht, die **nur dem Mitarbeiter** (nicht dem Anrufer) in dem Moment vorgespielt wird, in dem er abhebt — bevor beide Parteien miteinander verbunden werden.
+
+**Beispiel:** Mitarbeiter hebt ab → hört „Eingehender Anruf über deine Facebook-Anzeige — Max Mustermann“ → wird sofort mit dem Anrufer verbunden.
+
+- Unterstützt Variablen: {{contact.name}}, Lead-Quelle, Kampagnenname etc.
+- Der Anrufer hört Wartemusik, während die Whisper-Nachricht für den Mitarbeiter abgespielt wird
+- Das Gespräch wird nach der Whisper-Nachricht automatisch verbunden — keine Aktion des Mitarbeiters erforderlich
+
+**Whisper-Nachricht vs. Call Connect:** Die Whisper-Nachricht spielt Informationen ab und verbindet automatisch. Call Connect (unten) erfordert das aktive Drücken einer Taste durch den Mitarbeiter — verwende Call Connect, wenn du Anrufbeantworter blockieren willst.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489877/original/vFQCuAOmvN3egOzEOp_BKT3NgbiV7yoLeQ.png?1774267907)**
+
+### Call Connect
+
+Wenn aktiviert, muss der Mitarbeiter eine beliebige Taste auf seinem Tastenfeld drücken, um zu bestätigen, dass er eine echte Person ist, bevor er mit dem Anrufer verbunden wird.
+
+**Warum das wichtig ist:** Wenn Anrufe an eine externe Telefonnummer weitergeleitet werden, erreichen sie möglicherweise eine Mailbox oder einen Anrufbeantworter statt einer Person. Ohne Call Connect wird der Anrufer mit dem Anrufbeantworter verbunden. Mit Call Connect drücken Anrufbeantworter keine Taste — das System wertet den Anruf als unbeantwortet und wechselt zu Stufe 3.
+
+**Ablauf für den Mitarbeiter:**
+
+1. Das Telefon klingelt — Mitarbeiter hebt ab
+2. Mitarbeiter hört die Whisper-Nachricht (falls konfiguriert), danach: „Drücke eine beliebige Taste, um zu verbinden.“
+3. Mitarbeiter drückt eine Taste → Anrufer und Mitarbeiter werden verbunden
+4. Wird keine Taste gedrückt → System wechselt zu Stufe 3 (Voice-KI-Backup oder Mailbox)
+
+**Optimal für:** Externe und geschäftliche Telefonnummern, bei denen Anrufbeantworter üblich sind. Weniger notwendig bei der Web-App oder Mobile App, da die App selbst bestätigt, dass ein Mensch geantwortet hat.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489889/original/EBDWSqpPEzkLdOohxm8E-nce_EAv4oI_dQ.png?1774267908)**
+
+### Anrufaufzeichnung
+
+Wenn aktiviert, zeichnet das System beide Seiten jedes eingehenden Anrufs auf dieser Nummer auf.
+
+- Aufnahmen erscheinen in den Konversationen des jeweiligen Kontakts
+- Ein Aufnahmehinweis kann zu Beginn des Anrufs für den Anrufer abgespielt werden — aktiviere/deaktiviere dies in den erweiterten Einstellungen (in manchen Regionen gesetzlich vorgeschrieben)
+
+---
+
+## Telefonie-Einstellungen — Konto-weites Routing
+
+**Einstellungen › Telefonsystem › Telefonie › Tab „Weitere Einstellungen“ › Unter-Tab „Eingehende Anrufe“**
+
+Diese beiden Schalter gelten konto-weit und liegen über den Weiterleitungseinstellungen der einzelnen Nummern.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754804/original/nZJzVbKX0-Qh0XUWowv2tU06LPO5kEAhMg.png?1788238787)**
+
+### Der angerufenen Nummer zugewiesenen Benutzer anrufen
+
+**Wenn EIN**: Das System versucht zuerst, den Benutzer anzurufen, der der gewählten Telefonnummer zugewiesen ist, bevor die standardmäßige Weiterleitungskette befolgt wird.
+
+**Wenn AUS**: Das System leitet basierend auf dem zugewiesenen Benutzer des Kontakts oder den allgemeinen Weiterleitungseinstellungen weiter.
+
+Diese Einstellung gilt nicht, wenn IVR oder Voice-KI (primärer Modus) konfiguriert ist — diese haben unabhängig von diesem Schalter immer Vorrang.
+
+### Anrufe an die geschäftliche Telefonnummer weiterleiten
+
+Steuert, ob die geschäftliche Telefonnummer deines Kontos als letzte Option im Weiterleitungsplatz verfügbar ist. Dies ist standardmäßig aktiv.
+
+**Deaktiviere** diese Option, wenn Anrufe nicht auf deine geschäftliche Festnetznummer geleitet werden sollen, falls keine andere Nummer hinterlegt ist.
+
+---
+
+## Vollständiges Anrufablauf-Diagramm
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489890/original/HDMzUepk3MA3_0T5n5-aJhEQJnK60SqzlQ.jpeg?1774267908)
+
+---
+
+## Typische Einrichtungsszenarien
+
+### 1. Alle Anrufe klingeln direkt bei mir
+
+1. Setze unter „Anrufweiterleitung“ das **Teammitglied** auf dich selbst.
+2. Hake die Geräte an, auf denen es klingeln soll (Web-App, Mobile App etc.).
+3. Setze das Backup auf **Mailbox**.
+
+### 2. Mein gesamtes Team gleichzeitig anrufen
+
+1. Wähle ein primäres Teammitglied aus.
+2. Aktiviere **Mehrere Teammitglieder anrufen** und füge dein Team hinzu (bis zu 6 zusätzliche Personen).
+3. Jedes Teammitglied legt das bevorzugte Gerät im eigenen Benutzerprofil fest.
+
+### 3. Telefonmenü (Drücke 1 für Vertrieb, Drücke 2 für Support)
+
+1. Gehe zu **Automatisierung**, erstelle einen Workflow mit dem Trigger *Telefon-IVR*.
+2. Erstelle Menüzweige für die einzelnen Tasteneingaben.
+3. Weise diesen Workflow in der Anrufweiterleitung dem Feld **IVR** zu.
+
+### 4. Die KI nimmt jeden Anruf sofort entgegen
+
+1. Gehe zu **AI-Assistenten → Voice-KI → dein Assistent → Telefon & Verfügbarkeit**.
+2. Schalte die Option *„AI-Assistent als Backup aktivieren“* auf **AUS**.
+3. Weise diesem Assistenten die Telefonnummer zu — die KI beantwortet jeden eingehenden Anruf sofort.
+
+### 5. Zuerst Menschen anrufen, KI übernimmt verpasste Anrufe
+
+1. Gehe zu **AI-Assistenten → Voice-KI → dein Assistent → Telefon & Verfügbarkeit**.
+2. Schalte die Option *„AI-Assistent als Backup aktivieren“* auf **EIN**.
+3. Konfiguriere dein Teammitglied und die externe Telefonnummer wie gewohnt unter „Anrufweiterleitung“.
+4. Voice-KI erscheint als 3. Priorität und antwortet erst, nachdem das Klingeln in Stufe 2 abgelaufen ist.
+
+### 6. Verhindern, dass Anrufe bei Anrufbeantwortern landen
+
+1. Aktiviere im Tab **Erweiterte Einstellungen** die Option **Call Connect**.
+2. Mitarbeiter müssen beim Abheben eine Taste drücken, um zu bestätigen, dass sie ein Mensch sind.
+3. Anrufbeantworter drücken keine Taste — der Anruf wechselt automatisch zu Stufe 3.
+
+---
+
+## Fehlerbehebung
+
+### 1. Mein Telefon klingelt bei eingehenden Anrufen nicht
+
+- Prüfe, welche Gerätetypen in der Zeile des Teammitglieds angehakt sind — mindestens einer muss aktiv sein.
+- Für Web-App: Du musst aktiv im Browser bei UmsatzAgent eingeloggt sein.
+- Für Mobile App: Push-Benachrichtigungen müssen auf deinem Smartphone aktiv sein.
+- Prüfe, ob IVR oder Voice-KI (primärer Modus) den Anruf abfängt, bevor Stufe 2 startet.
+- Prüfe das Timeout — ist es zu kurz, endet das Klingeln eventuell vor der Annahme.
+
+### 2. Anrufe gehen direkt an die Mailbox
+
+- Das Timeout ist möglicherweise zu kurz — erhöhe es im Timeout-Bereich.
+- Falls Call Connect aktiv ist und an eine externe Telefonnummer weitergeleitet wird: Ein Anrufbeantworter hebt möglicherweise ab, ohne eine Taste zu drücken, wodurch der Anruf an Stufe 3 weitergeleitet wird.
+- Prüfe „Weitere Einstellungen“ → „Eingehende Anrufe“: Wenn „Der angerufenen Nummer zugewiesenen Benutzer anrufen“ aktiv ist, aber kein Benutzer zugewiesen wurde, fällt der Anruf eventuell schneller als erwartet auf das Backup zurück.
+
+### 3. Der Mitarbeiter hört vor dem Anrufer eine Ansage
+
+Das ist die Whisper-Nachricht — sie spielt Kontextinformationen nur für den Mitarbeiter ab. Um sie zu deaktivieren, öffne den Tab „Erweiterte Einstellungen“ und schalte die Whisper-Nachricht aus.
+
+### 4. Der Mitarbeiter muss eine Taste drücken, bevor die Verbindung steht
+
+Call Connect ist aktiviert. Der Mitarbeiter muss eine Taste drücken, um zu bestätigen, dass er kein Anrufbeantworter ist. Schalte Call Connect im Tab „Erweiterte Einstellungen“ aus, um dies zu deaktivieren.
+
+### 5. „Mehrere Teammitglieder anrufen“ lässt nicht alle Telefone klingeln
+
+- Jedes Teammitglied muss im eigenen Benutzerprofil mindestens einen aktiven Gerätetyp hinterlegt haben.
+- Diese Funktion greift nur in Stufe 2 — sie hat keine Auswirkung, wenn IVR oder Voice-KI (primärer Modus) aktiv ist.
+
+### 6. Die falsche Person wird angerufen
+
+- Prüfe Einstellungen → Telefonsystem → Telefonie → Weitere Einstellungen → Eingehende Anrufe — „Der angerufenen Nummer zugewiesenen Benutzer anrufen“ überschreibt eventuell deine Weiterleitungseinstellungen.
+- Prüfe, ob dem Kontakt ein fester Benutzer zugewiesen ist — diese Zuweisung kann beeinflussen, wer den Anruf erhält.
+
+### 7. Die Voice-KI antwortet nicht, obwohl sie konfiguriert ist
+
+- Prüfe den Backup-Schalter unter AI-Assistenten → Voice-KI → Telefon & Verfügbarkeit.
+- Wenn das Backup auf EIN steht, antwortet die KI erst nach Ablauf des Timeouts in Stufe 2 — sie unterbricht keinen aktiven Klingelvorgang.
+- Soll die KI immer sofort antworten, schalte den Backup-Schalter auf AUS.
+
+---
+
+## Kurzübersicht
+
+| Funktion | Wo konfigurieren | Beschreibung |
+| --- | --- | --- |
+| **IVR** | Automatisierung (erstellen); Tab „Anrufweiterleitung“ (zuweisen) | Telefonmenü — leitet nach Tastatureingabe weiter. Greift vor Stufe 2. |
+| **Voice-KI — Primär** | AI-Assistenten → Voice-KI → Telefon & Verfügbarkeit (Backup-Schalter AUS) | Die KI nimmt jeden Anruf sofort entgegen. Stufe 2 wird nie ausgeführt. |
+| **Voice-KI — Backup** | AI-Assistenten → Voice-KI → Telefon & Verfügbarkeit (Backup-Schalter EIN) | Die KI antwortet erst nach Ablauf des Stufe-2-Timeouts ohne Annahme. |
+| **Teammitglied** | Tab „Anrufweiterleitung“ → Zeile „Teammitglied“ | Leitet an die Geräte des internen Benutzers weiter — alle klingeln gleichzeitig in Stufe 2. |
+| **Mehrere Teammitglieder anrufen** | Tab „Anrufweiterleitung“ → Kontrollkästchen „Mehrere Teammitglieder anrufen“ | Lässt bis zu 6 zusätzliche Benutzer gleichzeitig im selben Anrufvorgang klingeln. |
+| **Externe Telefonnummer** | Tab „Anrufweiterleitung“ → Zeile „Externe Telefonnummer“ | Belegt den Weiterleitungsplatz (2. Priorität), wenn die Telefonnummer des Teammitglieds nicht aktiv ist. |
+| **Geschäftliche Telefonnummer** | Standardmäßig aktiviert. Deaktivieren unter „Weitere Einstellungen“ → „Eingehende Anrufe“. | Belegt den Weiterleitungsplatz als letzte Option (3. Priorität). |
+| **Timeout** | Tab „Anrufweiterleitung“ → Bereich „Timeout“ | Dauer des Klingelns in Stufe 2 vor dem Wechsel zu Stufe 3 (Standard: 20s). |
+| **Mailbox** | Tab „Anrufweiterleitung“ → Bereich „Backup“ | Letzte Rückfallebene — Anrufer hinterlässt eine Nachricht. |
+| **Mailbox-Ansage** | Benutzerprofil (pro Benutzer) oder Telefonsystem → Telefonie → Mailbox und Rückruf-SMS bei verpasstem Anruf | Individuelle Audiodatei vor Beginn der Aufnahme. |
+| **Whisper-Nachricht** | Tab „Erweiterte Einstellungen“ | Spielt Kontextinfos nur für den Mitarbeiter vor dem Verbinden ab. Nicht für den Anrufer hörbar. |
+| **Call Connect** | Tab „Erweiterte Einstellungen“ | Mitarbeiter muss eine Taste drücken, um menschliche Annahme zu bestätigen — blockt Anrufbeantworter. |
+| **Anrufaufzeichnung** | Tab „Erweiterte Einstellungen“ | Zeichnet beide Gesprächsseiten jedes eingehenden Anrufs auf dieser Nummer auf. |
+| **Zugewiesenen Benutzer anrufen** | Telefonsystem → Telefonie → Weitere Einstellungen → Eingehende Anrufe | Leitet Anrufe an den Benutzer weiter, der der Nummer zugewiesen ist, bevor die Standardweiterleitung greift. |
+| **An geschäftliche Nummer weiterleiten** | Telefonsystem → Telefonie → Weitere Einstellungen → Eingehende Anrufe | Aktiviert/deaktiviert die geschäftliche Telefonnummer als letzte Weiterleitungsoption. Standardmäßig EIN. |
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn eingehende Anrufe nicht die gewünschte Person, das richtige Gerät, das IVR-Menü, den Voice-KI-Assistenten oder die Mailbox erreichen, prüfe zuerst den Anrufablauf von Stufe 1 bis Stufe 3 und kontrolliere, welche Routing-Optionen aktiv konfiguriert sind.
+
+Stelle sicher, dass:
+
+- Die richtige Telefonnummer konfiguriert wird.
+- Weder IVR noch Voice-KI im primären Modus den Anruf abfangen, bevor das Team-Routing beginnt.
+- Das gewünschte Teammitglied korrekt zugewiesen ist.
+- Mindestens ein Gerätetyp für das zugewiesene Teammitglied aktiviert ist.
+- Web-Benutzer im Browser eingeloggt sind, wenn Anrufe dort ankommen sollen.
+- Mobile Benutzer Push-Benachrichtigungen aktiviert haben.
+- VoIP-Tischtelefone eingerichtet und erreichbar sind, falls ausgewählt.
+- Bei „Mehrere Teammitglieder anrufen“ die richtigen Benutzer hinterlegt sind.
+- Jedes zusätzliche Teammitglied mindestens ein aktives Gerät eingerichtet hat.
+- Das Timeout für eingehende Anrufe lang genug ist, um das Abheben zu ermöglichen.
+- Nur die gewünschte Weiterleitungsnummer basierend auf der Priorität verwendet wird.
+- Die externe Telefonnummer korrekt hinterlegt ist, falls eine Weiterleitung aktiv ist.
+- Der Rückfall auf die geschäftliche Telefonnummer nur dann aktiviert ist, wenn dies gewünscht ist.
+- Der Voice-KI-Backup-Modus aktiviert ist, wenn die KI erst nach verpasstem menschlichen Anruf übernehmen soll.
+- Der primäre Voice-KI-Modus aktiviert ist, wenn die KI sofort antworten soll.
+- Das Backup-Ziel korrekt auf Mailbox oder Voice-KI eingestellt ist.
+- Die gewünschte Mailbox-Ansage auf der richtigen Benutzer- oder Konto-Ebene hinterlegt ist.
+- Die Whisper-Nachricht deaktiviert ist, wenn Mitarbeiter keine Vorab-Nachricht hören sollen.
+- Call Connect deaktiviert ist, wenn Mitarbeiter vor dem Verbinden keine Taste drücken sollen.
+- Anrufaufzeichnung und andere erweiterte Einstellungen wie gewünscht konfiguriert sind.
+- Konto-weite Routing-Einstellungen die nummernbezogenen Einstellungen nicht überschreiben.
+- Der der Nummer oder dem Kontakt zugewiesene Benutzer das Routing nicht unbeabsichtigt beeinflusst.
+
+Wenn Anrufe am falschen Ziel ankommen, prüfe die Routing-Reihenfolge genau und ermittle die erste konfigurierte Option, die den Anruf annimmt. Das System stoppt die Prüfung nachfolgender Optionen, sobald der Anruf angenommen wurde.
+
+Besteht das Problem weiterhin, notiere die betroffene Telefonnummer, Datum und Uhrzeit des Anrufs, das erwartete Ziel, das tatsächliche Ziel, die Zuweisung des Teammitglieds, aktive Gerätetypen, Timeout-Werte, den Voice-KI-Modus, die Backup-Einstellung sowie Screenshots der Anrufweiterleitung und der Routing-Konfiguration. Wende dich an den UmsatzAgent Support.

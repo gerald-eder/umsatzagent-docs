@@ -1,0 +1,106 @@
+---
+title: "WhatsApp-Fehler: (#132000) Number of Parameters Does Not Match the Expected Number of Params"
+description: "Folgender Fehler kann beim Senden einer WhatsApp-Vorlagennachricht auftreten:"
+---
+
+### Übersicht
+
+Folgender Fehler kann beim Senden einer WhatsApp-Vorlagennachricht auftreten:
+
+> **(#132000) Number of parameters does not match the expected number of params – body: number of localizable\_params (0) does not match the expected number of params (1)**
+
+Dieser Fehler wird von der Meta WhatsApp API zurückgegeben, wenn die Anzahl der in der API-Anfrage übergebenen Variablen nicht mit der Anzahl der Variablen übereinstimmt, die in der genehmigten Nachrichtenvorlage definiert sind.
+
+### Warum dieser Fehler auftritt
+
+WhatsApp-Nachrichtenvorlagen, die im WhatsApp Business Manager (über Meta Business Manager) erstellt wurden, können dynamische Variablen enthalten wie:
+
+```
+Hello {{1}}, your order has been confirmed.
+```
+
+In diesem Beispiel:
+
+- Die Vorlage erwartet **1 Variable** (`{{1}}`)
+- Wenn du die Nachricht **ohne Angabe eines Werts** für `{{1}}` sendest, empfängt die API:
+
+  - `localizable_params = 0`
+  - `expected params = 1`
+- Ergebnis: **Fehler #132000**
+
+Diese Diskrepanz zwischen:
+
+- **Erwarteten Parametern (in der Vorlage definiert)**
+- **Tatsächlich in der Anfrage gesendeten Parametern**
+
+verursacht den Fehler.
+
+### Fehlerbehebung
+
+Befolge diese Schritte, um das Problem zu beheben:
+
+#### 1️⃣ Vorlage überprüfen
+
+Gehe zu deinen WhatsApp-Vorlageneinstellungen und prüfe den Nachrichtentext auf Variablen wie:
+
+```
+{{1}}, {{2}}, {{3}}
+```
+
+Zähle die Gesamtzahl der Platzhalter.
+
+---
+
+#### 2️⃣ Variablen richtig zuweisen
+
+Stelle sicher, dass:
+
+- jedem Platzhalter eine entsprechende Variable zugewiesen ist
+- die korrekten dynamischen Werte in der Nachrichtenanfrage übergeben werden
+- keine erforderliche Variable leer bleibt
+
+Beispiel:
+
+Wenn der Vorlagentext lautet:
+
+```
+Hi {{1}}, your appointment is on {{2}}.
+```
+
+Musst du übergeben:
+
+- `{{1}} = Customer Name`
+- `{{2}} = Appointment Date`
+
+  `![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155064967864/original/ogTz8VSh68WnsBbvMKEpCIPiGZGdrZ7LNA.png?1771223574)`
+
+---
+
+#### |3️⃣ Vorlage speichern
+
+Wenn Variablen kürzlich hinzugefügt oder geändert wurden:
+
+- Klicke auf **Speichern**
+- Stelle sicher, dass die Vorlage ordnungsgemäß aktualisiert und synchronisiert ist
+
+### Wichtige Hinweise
+
+- Auch wenn eine Variable in deinem Workflow optional ist, muss sie dennoch übergeben werden, wenn sie in der Vorlage definiert ist.
+- Das Senden einer leeren Anfrage ohne Parameter löst diesen Fehler immer aus.
+- Vorlagenstruktur und API-Payload müssen exakt übereinstimmen.
+
+---
+
+### Zusammenfassung
+
+Fehler **#132000** tritt aufgrund einer Diskrepanz auf zwischen:
+
+- der Anzahl der in der WhatsApp-Vorlage definierten Variablen
+- der Anzahl der beim Senden der Nachricht übergebenen Variablen
+
+Zur Behebung:
+✔ Alle erforderlichen Variablen zuweisen
+✔ Zuordnung überprüfen
+✔ Vorlage speichern und synchronisieren
+
+Sobald die Parameteranzahl mit der Vorlagendefinition übereinstimmt, wird die Nachricht erfolgreich gesendet.

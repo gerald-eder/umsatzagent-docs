@@ -1,0 +1,174 @@
+---
+title: "Einrichtungsanleitung: Workflow-Aktion für KI-Terminbuchung"
+description: "Automatisiere die Terminplanung mit KI über die Workflow-Aktion zur Terminbuchung. Diese Funktion ermöglicht intelligente Konversationen, die Kontakte…"
+---
+
+Automatisiere die Terminplanung mit KI über die Workflow-Aktion zur Terminbuchung. Diese Funktion ermöglicht intelligente Konversationen, die Kontakte ohne manuellen Aufwand zur Buchung verfügbarer Zeitfenster führen. Durch das Konfigurieren wichtiger Einstellungen wie Kalenderauswahl, Nachrichtenlimits und Antwortzeiten erstellst du ein nahtloses Buchungserlebnis, das die Konversionsrate verbessert und Zeit spart. Diese Anleitung erklärt, wie du jede Komponente effektiv einrichtest und optimierst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Workflow-Aktion für KI-Terminbuchung?](#was-ist-die-workflow-aktion-fuer-ki-terminbuchung)
+- [Wichtigste Vorteile der Workflow-Aktion für KI-Terminbuchung](#wichtigste-vorteile-der-workflow-aktion-fuer-ki-terminbuchung)
+- [Kalender-Konfiguration](#kalender-konfiguration)
+- [Persönlichkeit und zusätzliche Anweisungen](#persoenlichkeit-und-zusaetzliche-anweisungen)
+- [Limit für maximale Nachrichten](#limit-fuer-maximale-nachrichten)
+- [Timeout-Wert und -Einheit](#timeout-wert-und-einheit)
+- [Kanalauswahl](#kanalauswahl)
+- [Steuerung der Bestätigungsnachricht](#steuerung-der-bestaetigungsnachricht)
+- [So richtest du die Workflow-Aktion für KI-Terminbuchung ein](#so-richtest-du-die-workflow-aktion-fuer-ki-terminbuchung-ein)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du weitere Hilfe?](#brauchst-du-weitere-hilfe)
+
+---
+
+## Was ist die Workflow-Aktion für KI-Terminbuchung?
+
+Die KI-Terminbuchung ermöglicht es dir, Planungsgespräche zu automatisieren, indem ein intelligenter Assistent mit Kontakten interagiert und Termine direkt in deinen Kalender bucht. Sie eliminiert manuelle Abstimmungen, indem sie verfügbare Zeitfenster vorschlägt, Antworten verarbeitet und Buchungen automatisch bestätigt.
+
+Diese Funktion ist besonders nützlich für Unternehmen, die auf Termine angewiesen sind, da sie schnellere Antworten, konsistente Kommunikation und eine verbesserte Buchungseffizienz ohne menschliches Eingreifen gewährleistet.
+
+---
+
+## Wichtigste Vorteile der Workflow-Aktion für KI-Terminbuchung
+
+Die richtige Konfiguration dieser Workflow-Aktion sorgt für ein reibungsloses und professionelles Buchungserlebnis und maximiert gleichzeitig die Konversionschancen.
+
+- **Automatisierte Terminplanung:** Beseitigt manuelle Koordination durch direktes Buchen von Terminen über KI-Konversationen
+- **Verbesserte Konversionsraten:** Führt Kontakte mit strukturierten und intelligenten Antworten zur Buchung
+- **Zeitersparnis:** Reduziert den Arbeitsaufwand durch automatische Erledigung wiederkehrender Planungsaufgaben
+- **Konsistente Kommunikation:** Behält einen professionellen und einheitlichen Ton über alle Buchungsinteraktionen hinweg bei
+- **Multi-Kanal-Unterstützung:** Erreiche Kontakte nahtlos über mehrere Kommunikationskanäle
+
+---
+
+## Kalender-Konfiguration
+
+Die Auswahl des richtigen Kalenders ist essenziell, da sie bestimmt, wo Termine gebucht werden und wie die Verfügbarkeit verwaltet wird.
+
+- Der ausgewählte Kalender wird verwendet, um verfügbare Zeitfenster abzurufen
+- Die KI schlägt diese Zeitfenster dem Kontakt während der Konversation vor
+- Sobald ein Zeitfenster ausgewählt wurde, wird der Termin automatisch gebucht
+- **Wichtig:** Wiederkehrende Kalender werden nicht unterstützt
+
+---
+
+## Persönlichkeit und zusätzliche Anweisungen
+
+Das Anpassen von Tonalität und Anweisungen des Assistenten hilft dabei, Konversationen an deine Markenstimme anzupassen und das Nutzerengagement zu verbessern.
+
+- Lege fest, wie der Assistent kommuniziert (förmlich, locker, freundlich etc.)
+- Füge Anweisungen hinzu, um zu steuern, wie der Assistent antworten soll
+- Verbessere den Buchungserfolg, indem Konversationen natürlich und relevant wirken
+- Sorge für Klarheit, damit der Assistent fokussiert auf das Buchen von Terminen bleibt
+
+---
+
+## Limit für maximale Nachrichten
+
+Diese Einstellung steuert, wie viele Versuche die KI unternimmt, bevor sie den Buchungsprozess abbricht.
+
+- Legt die Anzahl der Nachrichten fest, die der Assistent beim Versuch einer Buchung sendet
+- Wird das Limit ohne Erfolg erreicht, wird der Kontakt in den Pfad **„Termin nicht gebucht“** geleitet
+- Mindestlimit: **5 Nachrichten**
+- Maximallimit: **25 Nachrichten**
+- Empfohlene Einstellung: **15 Nachrichten**
+
+---
+
+## Timeout-Wert und -Einheit
+
+Dies bestimmt, wie lange die KI auf eine Antwort wartet, bevor sie die Konversation beendet oder umleitet.
+
+- Legt eine Wartezeit auf die Antwort des Kontakts fest
+- Geht keine Antwort ein, wird der Kontakt in den Pfad **„Time Out“** geleitet
+- Kann in verschiedenen Zeiteinheiten konfiguriert werden (Minuten, Stunden etc.)
+
+**Tipp zur Optimierung:**
+
+Verwende eine Follow-up-Aktion im Timeout-Pfad, um den Kontakt erneut anzusprechen und den Buchungsversuch fortzusetzen.
+
+---
+
+## Kanalauswahl
+
+Die Wahl des richtigen Kommunikationskanals stellt sicher, dass der Assistent dort mit Kontakten interagiert, wo sie am aktivsten sind.
+
+- Zu den unterstützten Kanälen gehören:
+
+  - SMS
+  - WhatsApp
+  - Facebook
+  - Instagram
+- Der Assistent arbeitet ausschließlich auf dem ausgewählten Kanal
+
+---
+
+## Steuerung der Bestätigungsnachricht
+
+Mit dieser Funktion steuerst du, wie Buchungsbestätigungen zugestellt werden.
+
+- Standardmäßig sendet die KI nach der Buchung eine Bestätigungsnachricht
+- Beispiel: „Du bist für den 12. August um 18:00 Uhr eingebucht“
+- Durch Aktivieren dieser Einstellung wird verhindert, dass die KI diese Nachricht automatisch sendet
+
+**Wichtig:**
+
+Falls deaktiviert, stelle sicher, dass später im Workflow eine Bestätigungsnachricht hinzugefügt wird, um den Kontakt zu informieren.
+
+---
+
+## So richtest du die Workflow-Aktion für KI-Terminbuchung ein
+
+Eine korrekte Einrichtung stellt sicher, dass die KI reibungslos funktioniert und ein konsistentes Buchungserlebnis bietet.
+
+1. Füge die Aktion **Terminbuchung AI** zu deinem Workflow hinzu
+2. Wähle den passenden **Kalender** für die Buchung aus
+3. Definiere **Persönlichkeit und Anweisungen** für die KI
+4. Lege das **Limit für maximale Nachrichten** fest
+5. Konfiguriere **Timeout-Wert und -Einheit**
+6. Wähle den **Kommunikationskanal**
+7. Entscheide, ob du **Bestätigungsnachrichten** aktivieren oder deaktivieren möchtest
+8. Speichere und veröffentliche den Workflow
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich wiederkehrende Kalender mit dieser Funktion verwenden?**
+
+Nein, wiederkehrende Kalender werden nicht unterstützt. Verwende Standardkalender für eine genaue Verfügbarkeit.
+
+**F: Was passiert, wenn die KI keinen Termin buchen kann?**
+
+Der Kontakt wird nach Erreichen des Nachrichtenlimits in den Pfad „Termin nicht gebucht“ geleitet.
+
+**F: Kann die KI nach einem Timeout nachhaken?**
+
+Ja, du kannst Follow-up-Aktionen konfigurieren, um Kontakte nach einem Timeout erneut anzusprechen.
+
+**F: Welche Kommunikationskanäle werden unterstützt?**
+
+SMS, WhatsApp, Facebook und Instagram werden unterstützt.
+
+**F: Kann ich die Tonalität und die Antworten der KI anpassen?**
+
+Ja, du kannst Persönlichkeit und Anweisungen festlegen, um sie an deine Markenstimme anzupassen.
+
+**F: Was passiert, wenn ich die Bestätigungsnachricht deaktiviere?**
+
+Du musst später im Workflow einen Bestätigungsschritt hinzufügen, um den Kontakt zu benachrichtigen.
+
+---
+
+## Brauchst du weitere Hilfe?
+
+Wenn du Hilfe bei der Einrichtung der KI-Terminbuchung benötigst:
+
+- Überprüfe deine Workflow- und Kalendereinstellungen
+- Teste den Assistenten, um sicherzustellen, dass er korrekt antwortet
+- Überprüfe Konversationen, um Abbrüche zu identifizieren
+- Passe Prompts an, um den Buchungserfolg zu verbessern
+
+Wenn du weiterhin Probleme hast, wende dich an den UmsatzAgent Support.

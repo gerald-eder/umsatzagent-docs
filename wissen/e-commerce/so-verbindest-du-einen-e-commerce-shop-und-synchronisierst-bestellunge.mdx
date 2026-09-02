@@ -1,0 +1,184 @@
+---
+title: "So verbindest du einen E-Commerce-Shop und synchronisierst Bestellungen, Kontakte und Zahlungen"
+description: "Das Verbinden eines externen Shops ermöglicht es dir, Kunden-, Bestell- und Zahlungsdaten an einem zentralen Ort zusammenzuführen, um Verkaufsaktivitäten…"
+---
+
+Das Verbinden eines externen Shops ermöglicht es dir, Kunden-, Bestell- und Zahlungsdaten an einem zentralen Ort zusammenzuführen, um Verkaufsaktivitäten zu verwalten und Follow-ups effizienter zu automatisieren. Diese Integration unterstützt auch bestellbasierte Workflow-Trigger, was das Versenden von Nachrichten, das Aktualisieren von Datensätzen und das Erstellen von Automatisierungen rund um Kaufaktivitäten erleichtert.
+
+Diese Anleitung erklärt, wie du den Shop verbindest, Importdaten auswählst, die zukünftige Synchronisierung konfigurierst und Bestell- sowie Zahlungs-Trigger in Workflows nutzt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was diese Integration bietet](#was-diese-integration-bietet)
+- [Bestell- und Zahlungs-Trigger](#bestell-und-zahlungs-trigger)
+- [Wichtige Hinweise](#wichtige-hinweise)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Hilfe benötigt](#hilfe-benoetigt)
+
+---
+
+## Was diese Integration bietet
+
+Diese Integration ermöglicht es dir, einen externen E-Commerce-Shop zu verbinden und Shop-Daten in deinen Account zu übertragen. Sobald die Verbindung steht, kannst du bestehende Datensätze importieren und ausgewählte Daten fortlaufend synchronisieren.
+
+Unterstützte Datentypen sind:
+
+- Kontakte
+- Bestellungen
+- Transaktionen oder Zahlungen
+
+Die Integration unterstützt auch die Workflow-Automatisierung über kaufbezogene Trigger, sodass du automatisch reagieren kannst, wenn eine Bestellung aufgegeben oder eine Zahlung empfangen wird.
+
+---
+
+## Bevor du beginnst
+
+Stelle vor dem Start des Verbindungsprozesses sicher, dass du Zugriff auf den Administrationsbereich des Shops sowie die korrekte Shop-URL hast.
+
+Die Shop-URL sollte:
+
+- Das vollständige, sichere Format nutzen (https://)
+- Keinen Schrägstrich am Ende enthalten (Trailing Slash)
+- Die Hauptadresse des Live-Shops sein
+
+Entscheide vorab, ob du historische Daten importieren, die zukünftige Synchronisierung aktivieren oder beides nutzen möchtest.
+
+---
+
+## Shop verbinden
+
+Öffne die Integrations-Einstellungen in deinem Account und starte eine neue Shop-Verbindung. Gib die Shop-URL ein, wenn du dazu aufgefordert wirst, und fahre mit dem Importschritt fort.
+
+###
+
+Dieser Bildschirm erscheint während der Einrichtung nach Eingabe des Shop-Links. Überprüfe die angezeigten Importoptionen und entscheide, ob Kontakte, Bestellungen und Transaktionen importiert werden sollen. Der Hinweis oben erklärt: Wenn du jetzt nur bestimmte Elemente importierst, musst du die Verbindung später eventuell trennen und neu herstellen, um übersprungene Elemente nachzuholen.
+
+---
+
+## Importdaten auswählen
+
+Während der Einrichtung kannst du festlegen, welche Arten historischer Daten aus dem verbundenen Shop importiert werden sollen.
+
+Gängige Importoptionen sind:
+
+- **Kontakt-Import:** Importiert bestehende Kunden, die zuvor Bestellungen aufgegeben haben
+- **Bestell-Import:** Importiert vergangene Shop-Bestellungen
+- **Transaktions-Import:** Importiert Datensätze zu Zahlungstransaktionen aus Shop-Bestellungen
+
+Wähle nur die Daten aus, die du sofort übertragen möchtest. Wenn du bestimmte Elemente beim ersten Import überspringst, erfordert ein späterer Import möglicherweise das erneute Verbinden der Integration.
+
+---
+
+## Zukünftige Synchronisierungseinstellungen konfigurieren
+
+Nachdem du die initialen Importdaten ausgewählt hast, legst du fest, welche Elemente in Zukunft fortlaufend synchronisiert werden sollen. So steuerst du, welche neuen Shop-Aktivitäten automatisch aktualisiert werden.
+
+Optionen für die zukünftige Synchronisierung können sein:
+
+- Kontakte
+- Bestellungen
+- Transaktionen
+- Unterstützung für den Trigger „Bestellung aufgegeben“
+- Unterstützung für den Trigger „Zahlung empfangen“
+
+Speichere nach deiner Auswahl die Konfiguration und warte, bis der Import- und Synchronisierungsprozess abgeschlossen ist.
+
+---
+
+## Importierte Daten verwalten und erneut importieren
+
+Nach Abschluss der Verbindung kannst du jederzeit zu den Integrations-Einstellungen zurückkehren, um die Einstellungen für die zukünftige Synchronisierung anzupassen. Dies ist nützlich, wenn du die Synchronisierung für bestimmte Datensatztypen später aktivieren oder deaktivieren möchtest.
+
+Musst du Daten importieren, die bei der ursprünglichen Einrichtung übersprungen wurden, trenne die Integration und verbinde sie erneut. Dadurch startet der Import-Ablauf von vorn und du kannst die fehlenden Datentypen auswählen.
+
+---
+
+## Bestell- und Zahlungs-Trigger
+
+Diese Integration kann mit Automatisierungen genutzt werden, sodass Bestell- und Zahlungsaktivitäten Workflow-Aktionen auslösen.
+
+### Einen Trigger für „Bestellung aufgegeben“ einrichten
+
+Nutze diesen Trigger, wenn ein Workflow starten soll, sobald eine Bestellung im Shop aufgegeben wird.
+
+###
+
+Dieser Bildschirm zeigt die Suchleiste für Workflow-Trigger. Suche nach **Bestellung aufgegeben** (Order Submitted) und wähle den Trigger aus, um eine Automatisierung basierend auf neuen Bestellungen zu erstellen.
+
+###
+
+Dieser Bildschirm zeigt das Hinzufügen einer Aktion zum Workflow nach Auswahl des Triggers. Nutze diesen Schritt, um Folgeaktionen zu erstellen, wie das Senden einer Nachricht, das Aktualisieren eines Datensatzes oder das Zuweisen der Bestellung zu einem Prozess.
+
+###
+
+Dieser Bildschirm zeigt die Trigger-Filter. Nutze Filter, um sicherzustellen, dass der Workflow nur für die verbundene externe Shop-Quelle ausgeführt wird und nicht für andere Zahlungs- oder Bestellquellen.
+
+### Einen Trigger für „Zahlung empfangen“ einrichten
+
+Nutze diesen Trigger, wenn ein Workflow starten soll, nachdem eine Zahlung für eine Bestellung erfolgreich eingegangen ist.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079805878/original/XhJ5LXECgYHa6PHtREYb7oZ6yN7sO_kGtw.png?1788267241)
+
+Dieser Bildschirm zeigt die Suchleiste für Workflow-Trigger bei Zahlungsereignissen. Suche nach **Zahlung empfangen** (Payment Received) und wähle den Trigger aus, um eine Automatisierung basierend auf erfolgreichen Zahlungen zu erstellen.
+
+###
+
+Dieser Bildschirm zeigt die Zahlungs-Trigger-Filter. Bestätige die Werte für Quelle und Unterquelle, damit der Workflow nur für Zahlungen aus dem verbundenen externen Shop ausgelöst wird.
+
+---
+
+## Wichtige Hinweise
+
+Beachte die folgenden Verhaltensweisen bei der Nutzung der Integration:
+
+- Kunden mit unterstützten Käuferrollen können beim Kontakt-Import übertragen werden.
+- Ist die Kontaktsynchronisierung deaktiviert, die Bestell-Synchronisierung jedoch aktiv, können Kontaktdatensätze dennoch erstellt werden, wenn sie für zugehörige Bestellungen erforderlich sind.
+- Gastbesteller können als Kontakte angelegt werden; zukünftige Synchronisierungen und laufende Aktualisierungen gelten für diese Gast-Datensätze jedoch möglicherweise nicht.
+- Die Auswahl beim historischen Import ist entscheidend. Wenn du bestimmte Elemente beim ersten Import überspringst, erfordert ein nachträglicher Import das Trennen und erneute Verbinden der Integration.
+- Bestellstatus aus dem externen Shop werden bei der Synchronisierung in entsprechende interne Status überführt. Einige Status können in übergeordnete Endzustände wie „Abgeschlossen“, „Storniert“ oder „Ausstehend“ zusammengefasst werden.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich Kontakte, Bestellungen und Transaktionen separat importieren?**
+
+Ja. Während der Einrichtung kannst du festlegen, welche Datentypen importiert werden sollen. Du kannst einzelne, mehrere oder alle verfügbaren Optionen aktivieren.
+
+**F: Kann ich die Synchronisierungseinstellungen nach erfolgreicher Verbindung noch ändern?**
+
+Ja. Nach dem Verbinden kannst du jederzeit in die Einstellungen zurückkehren und zukünftige Synchronisierungsoptionen für unterstützte Datentypen aktivieren oder deaktivieren.
+
+**F: Was passiert, wenn ich die Kontaktsynchronisierung deaktiviere, die Bestell-Synchronisierung aber aktiviert lasse?**
+
+Kontaktdatensätze werden bei Bedarf möglicherweise trotzdem erstellt, um zugehörige Bestelldatensätze zu vervollständigen.
+
+**F: Können Gastbesteller als Kontakte angelegt werden?**
+
+Ja. Aus Gastbestellungen können Kontakte erstellt werden. Zukünftige Synchronisierungen und Aktualisierungen werden für diese Gast-Datensätze jedoch möglicherweise nicht fortgeführt.
+
+**F: Was mache ich, wenn ich bei der Einrichtung vergessen habe, historische Daten zu importieren?**
+
+Trenne die Integration und verbinde sie erneut, um den Import-Ablauf noch einmal zu durchlaufen und die fehlenden Daten auszuwählen.
+
+**F: Kann ich Workflows mit dieser Integration nutzen?**
+
+Ja. Du kannst Automatisierungen auf Basis von bestell- und zahlungsbezogenen Triggern erstellen.
+
+---
+
+## Hilfe benötigt
+
+Lässt sich der Shop nicht verbinden oder verhält sich der Import nicht wie erwartet, prüfe Folgendes:
+
+- Überprüfe, ob die Shop-URL korrekt ist und keinen Schrägstrich am Ende enthält
+- Stelle sicher, dass die Integrationsverbindung vollständig autorisiert wurde
+- Prüfe die ausgewählten Importoptionen und Einstellungen für die zukünftige Synchronisierung
+- Vergewissere dich, dass die Workflow-Trigger-Filter auf die korrekte externe Quelle eingestellt sind
+- Verbinde die Integration neu, falls beim ersten Import historische Daten übersprungen wurden
+
+Besteht das Problem weiterhin, halte die Shop-URL, den fehlenden Datentyp und die konfigurierten Trigger-Einstellungen bereit. Wende dich an den UmsatzAgent Support.
+
+##

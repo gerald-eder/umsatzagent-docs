@@ -1,0 +1,133 @@
+---
+title: "Standardwerte für benutzerdefinierte Werte in E-Mails festlegen"
+description: "Standardwerte sorgen dafür, dass personalisierte E-Mails vollständig bleiben, wenn Kontaktinformationen fehlen. Erfahre, wie Standardwerte funktionieren,…"
+---
+
+Standardwerte sorgen dafür, dass personalisierte E-Mails vollständig bleiben, wenn Kontaktinformationen fehlen. Erfahre, wie Standardwerte funktionieren, wo sie eingesetzt werden können, wie du sie im Editor erkennst und wie du Fallback-Texte zu benutzerdefinierten Werten in E-Mails hinzufügst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Standardwerte für benutzerdefinierte Werte in E-Mails?](#was-sind-standardwerte-fuer-benutzerdefinierte-werte-in-e-mails)
+  - [Wichtigste Vorteile von Standardwerten für benutzerdefinierte Werte](#wichtigste-vorteile-von-standardwerten-fuer-benutzerdefinierte-werte)
+  - [Wie Standardwerte funktionieren](#wie-standardwerte-funktionieren)
+  - [Visuelle Kennzeichnungen für Standardwerte](#visuelle-kennzeichnungen-fuer-standardwerte)
+  - [So legst du Standardwerte für benutzerdefinierte Werte in E-Mails fest](#so-legst-du-standardwerte-fuer-benutzerdefinierte-werte-in-e-mails-fest)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was sind Standardwerte für benutzerdefinierte Werte in E-Mails?
+
+Das Personalisieren von E-Mails mit benutzerdefinierten Werten ist ein effektiver Weg, Nachrichten relevanter zu gestalten. Fehlende Kontaktdaten können jedoch unschöne Lücken hinterlassen. Beispielsweise zeigt eine E-Mail möglicherweise „Hallo ,“ statt „Hallo Sarah,“ an, wenn der Vorname des Kontakts nicht gespeichert ist.
+
+Wenn das zugehörige Kontaktfeld leer ist, wird statt einer Leerstelle der Standardwert angezeigt, den du für diese spezifische Verwendung des benutzerdefinierten Werts konfiguriert hast.
+
+Du kannst Standardwerte zu benutzerdefinierten Werten (auch als Platzhalter genutzt) in Betreffzeilen, Vorschautexten und im E-Mail-Inhalt von E-Mail-Kampagnen, Workflow-E-Mails, Massen-E-Mails und E-Mail-Vorlagen hinzufügen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071832251/original/jA6pJSBFL9zEDhEJvCbbuYAdiYCJ6R5Qzw.png?1779297165)
+
+---
+
+## Wichtigste Vorteile von Standardwerten für benutzerdefinierte Werte
+
+- **Saubere Personalisierung:** Verhindert Leerstellen, wenn Kontaktfelder wie Vorname, Firmenname oder Termindetails fehlen.
+- **Professionellere E-Mails:** Hält Betreffzeilen, Vorschautexte und E-Mail-Inhalte fehlerfrei, bevor sie den Empfänger erreichen.
+- **Flexible Formulierungen:** Ermöglicht unterschiedliche Standardwerte für denselben benutzerdefinierten Wert in verschiedenen E-Mail-Kontexten.
+- **Funktioniert bei unvollständigen CRM-Daten:** Hilft dir, E-Mails auch dann zu personalisieren, wenn einige Kontaktdatensätze unvollständig sind.
+- **Bessere Lesbarkeit:** Hält Nachrichten natürlich und vollständig, sodass Empfänger keine störenden Lücken oder unvollständigen Sätze sehen.
+
+---
+
+## Wie Standardwerte funktionieren
+
+Standardwerte werden nur angezeigt, wenn das Kontaktfeld fehlt oder leer ist. Sie aktualisieren, ersetzen oder überschreiben die gespeicherten CRM-Daten des Kontakts nicht. Du kannst sogar jedes Mal, wenn derselbe benutzerdefinierte Wert vorkommt – auch innerhalb derselben E-Mail –, einen anderen Standardwert verwenden.
+
+Wenn beispielsweise *{{contact.first_name}}* zweimal in einer E-Mail vorkommt, kann an einer Stelle „*du*“ als Fallback genutzt werden und an einer anderen Stelle „*Freund*“.
+
+**Beispiel 1: Fehlender Vorname**
+
+*Hallo {{contact.first_name}}, schön, dass du dich angemeldet hast!*
+
+**Standardwert:** „*du*“
+
+**Ergebnisse:**
+
+- Wenn der Vorname existiert: „*Hallo Sarah, schön, dass du dich angemeldet hast!*“
+- Wenn der Vorname nicht existiert: „*Hallo du, schön, dass du dich angemeldet hast!*“
+
+**Beispiel 2: Personalisierung der Betreffzeile**
+
+„*Hallo {{contact.first_name}}, dein Termin ist bestätigt*“
+
+**Standardwert:** „*Freund*“
+
+**Ergebnisse:**
+
+- Wenn der Vorname existiert: „*Hallo John, dein Termin ist bestätigt*“
+- Wenn der Vorname nicht existiert: „*Hallo Freund, dein Termin ist bestätigt*“
+
+---
+
+## Visuelle Kennzeichnungen für Standardwerte
+
+Tags für benutzerdefinierte Werte nutzen visuelle Kennzeichnungen, damit du direkt erkennst, ob ein Standardwert konfiguriert wurde. Diese Kennzeichnungen erleichtern die Überprüfung einer E-Mail vor dem Versand und zeigen, welche Personalisierungswerte Fallback-Texte enthalten. Wenn du mit dem Mauszeiger über einen konfigurierten benutzerdefinierten Wert fährst, wird der Tooltip mit dem Standardwert angezeigt.
+
+1. **Grün hervorgehobener benutzerdefinierter Wert:** Ein Standardwert wurde festgelegt.
+2. **Standardmäßiger/Grauer benutzerdefinierter Wert:** Es wurde kein Standardwert festgelegt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071826354/original/BwDu1LWBs-onKEljQ9wwcXB6-xwX4vHwhA.png?1779292905)
+
+---
+
+## So legst du Standardwerte für benutzerdefinierte Werte in E-Mails fest
+
+1. Erstelle oder bearbeite eine E-Mail, eine Vorlage, eine Workflow-E-Mail, eine Massen-E-Mail-Aktion oder eine Kampagnen-E-Mail. Füge den benutzerdefinierten Wert ein, den du personalisieren möchtest (wie *{{contact.first_name}}*), oder wähle ihn aus.
+
+   *![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071827538/original/dHBKZljgIpQgk17fSo7UE2NLeJzgLr6vFA.png?1779293570)*
+2. Klicke auf den benutzerdefinierten Wert, um den Editor für den Standardtext zu öffnen.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071827651/original/mCN4zIMYdbA1mg5esW3NNJwalVQM-UuXuQ.png?1779293686)
+3. Gib im Editor für den Standardtext den Fallback-Text ein, der angezeigt werden soll, wenn der Wert fehlt. Klicke auf **Speichern**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071827763/original/tr0Hdf6lYXxxcG-wrREQgeWE0_5NXJ36KQ.png?1779293777)
+4. Vergewissere dich, dass der benutzerdefinierte Wert grün hervorgehoben ist. Dies zeigt an, dass ein Standardwert festgelegt wurde.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071827949/original/vV4NV7fJYZVhgFGkZntqJzMj52woAULmKg.png?1779293835)
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich einen globalen Standardwert für alle benutzerdefinierten Werte festlegen?**
+
+Aktuell nicht. Standardwerte werden individuell für jede Verwendung eines benutzerdefinierten Werts eingerichtet. Das bietet dir mehr Flexibilität je nach Kontext der E-Mail.
+
+**F: Ersetzt der Standardwert vorhandene Kontaktinformationen?**
+
+Nein. Wenn das Kontaktfeld Daten enthält, wird immer der tatsächliche Wert des Kontakts verwendet. Der Standardwert erscheint nur, wenn das Feld leer ist.
+
+**F: Kann ich Standardwerte in Betreffzeilen und Vorschautexten verwenden?**
+
+Ja. Standardwerte können in Betreffzeilen, Vorschautexten und im E-Mail-Inhalt verwendet werden.
+
+**F: Wo kann ich diese Funktion nutzen?**
+
+Du kannst Standardwerte in Workflow-E-Mails, Kampagnen-E-Mails, Massenaktionen und E-Mail-Vorlagen verwenden.
+
+**F: Woran erkenne ich, ob ein benutzerdefinierter Wert bereits einen Standardwert hat?**
+
+Benutzerdefinierte Werte ohne Standardwert erscheinen als graue Tags. Sobald ein Standardwert hinzugefügt wurde, wird der Tag grün.
+
+**F: Kann ich den Standardwert später bearbeiten?**
+
+Ja. Klicke einfach erneut auf den Tag des benutzerdefinierten Werts, um das Bearbeitungsfenster zu öffnen und den Standardwert anzupassen.
+
+**F: Was passiert, wenn ich keinen Standardwert festlege?**
+
+Wenn das Kontaktfeld leer ist und kein Standardwert konfiguriert wurde, zeigt die E-Mail an der Stelle des benutzerdefinierten Werts möglicherweise eine Leerstelle an.
+
+**F: Kann derselbe benutzerdefinierte Wert unterschiedliche Standardwerte haben, wenn er mehrfach in einer E-Mail vorkommt?**
+
+Ja. Jede Verwendung eines benutzerdefinierten Werts kann je nach Text und Kontext einen eigenen Standardwert haben.

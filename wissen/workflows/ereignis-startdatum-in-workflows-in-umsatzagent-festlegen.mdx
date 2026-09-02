@@ -1,0 +1,167 @@
+---
+title: "Ereignis-Startdatum in Workflows in UmsatzAgent festlegen"
+description: "In dieser Anleitung erfährst du mehr über die Workflow-Aktion „Ereignis-Startdatum festlegen“ – ein dynamisches Tool, mit dem du Aufgaben und Erinnerungen…"
+---
+
+In dieser Anleitung erfährst du mehr über die Workflow-Aktion „Ereignis-Startdatum festlegen“ – ein dynamisches Tool, mit dem du Aufgaben und Erinnerungen in deinem Workflow für ein präzises Eventmanagement planen kannst. Diese Funktion ist entscheidend für gut organisierte Webinare, Konferenzen oder personalisierte Benachrichtigungssysteme.
+
+#### Inhalt dieses Artikels:
+
+- #### [Was ist der Schritt „Ereignis-Startdatum festlegen“ in Workflows?](#was-ist-der-schritt-ereignis-startdatum-festlegen-in-workflows)
+
+  - #### [Welche Vorteile bietet diese Funktion?](#welche-vorteile-bietet-diese-funktion)
+  - #### [Welche praktischen Anwendungsfälle gibt es für diese Workflow-Aktion?](#welche-praktischen-anwendungsfaelle-gibt-es-fuer-diese-workflow-aktion)
+- #### [Wie wird die Aktion „Ereignis-Startdatum“ verwendet?](#wie-wird-die-aktion-ereignis-startdatum-verwendet)
+
+  - #### [Schritt 1: Füge die Aktion „Ereignis-Startdatum/-zeit festlegen“ zu deinem Workflow hinzu](#schritt-1-fuege-die-aktion-ereignis-startdatum-zeit-festlegen-zu-deinem-workflow)
+  - #### [Schritt 2: Passe das Ereignis-Startdatum / die Ereignis-Startzeit an](#schritt-2-passe-das-ereignis-startdatum-die-ereignis-startzeit-an)
+  - #### [Schritt 3: Füge eine Aktion „Auf Ereignis-/Terminzeit warten“ hinzu](#schritt-3-fuege-eine-aktion-auf-ereignis-terminzeit-warten-hinzu)
+- #### [FAQs](#faqs)
+
+  - #### [F1: Kann ich die Aktion „Ereignis-Startdatum/-zeit festlegen“ für wiederkehrende Ereignisse verwenden?](#f1-kann-ich-die-aktion-ereignis-startdatum-zeit-festlegen-fuer-wiederkehrende-er)
+  - #### [F2: Kann ich mehrere Ereignis-Startdaten/-zeiten im selben Workflow festlegen?](#f2-kann-ich-mehrere-ereignis-startdaten-zeiten-im-selben-workflow-festlegen)
+  - #### [F3: Was passiert, wenn ein Kontakt in den Workflow gelangt, nachdem das Ereignis-Startdatum / die Ereignis-Startzeit bereits vergangen ist?](#f3-was-passiert-wenn-ein-kontakt-in-den-workflow-gelangt-nachdem-das-ereignis-st)
+  - #### [F4: Kann ich die Aktion „Ereignis-Startdatum/-zeit festlegen“ ohne eine entsprechende Aktion „Auf Ereignis-/Terminzeit warten“ verwenden?](#f4-kann-ich-die-aktion-ereignis-startdatum-zeit-festlegen-ohne-eine-entsprechend)
+  - #### [F5: Wie wirkt es sich auf die Aktion „Ereignis-Startdatum/-zeit festlegen“ aus, wenn meine Workflow-Einstellungen die Zeitzone des Kontakts berücksichtigen?](#f5-wie-wirkt-es-sich-auf-die-aktion-ereignis-startdatum-zeit-festlegen-aus-wenn)
+
+---
+
+## Was ist der Schritt „Ereignis-Startdatum festlegen“ in Workflows?
+
+## <iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/jNf8DaPE-kM?&amp;wmode=opaque"
+  title="Video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+Die Aktion „Ereignis-Startdatum/-zeit festlegen“ ist ein Tool innerhalb von Workflows, mit dem du ein bestimmtes Datum und eine bestimmte Uhrzeit als Referenzpunkt für nachfolgende Schritte in deinem Workflow festlegen kannst. Sie eignet sich besonders für die Planung von Aufgaben, Erinnerungen oder Aktionen, die vor oder nach einem bestimmten Ereignis stattfinden müssen.
+
+Sobald diese Aktion eingerichtet ist, kannst du die Warte-Schritte in deinem Workflow nutzen, um **Auf Ereignis-/Terminzeit zu warten** und die Ausführung bis zu einem festgelegten Zeitpunkt relativ zu diesem Ereignisdatum anzuhalten. Du kannst beispielsweise Erinnerungen einrichten, die einige Tage vor einem Ereignis versendet werden, oder eine Nachfass-Aktion für einige Tage nach dem Ereignis planen.
+
+Dieses Tool bietet Flexibilität und Automatisierung für ein effektives Zeitmanagement innerhalb deines Workflows. Es ist besonders wertvoll für die Verwaltung von Webinaren, Konferenzen, Meetings und Events.
+
+### Welche Vorteile bietet diese Funktion?
+
+Die Aktion „Ereignis-Startdatum/-zeit festlegen“ bietet mehrere praktische Vorteile für die Verwaltung von Workflows und Ereignissen:
+
+**Automatisierte Zeitplanung:** Mit dieser Aktion kannst du Aufgaben, Erinnerungen oder E-Mails so planen, dass sie automatisch zu bestimmten Zeitpunkten relativ zu einem Ereignis ausgeführt werden. Das reduziert manuellen Aufwand erheblich und stellt sicher, dass nichts übersehen oder vergessen wird.
+
+**Rechtzeitige Erinnerungen:** Wenn du Veranstaltungen wie Webinare oder Konferenzen organisierst, kann diese Aktion automatisch Erinnerungen an die Teilnehmer eine bestimmte Anzahl von Tagen oder Stunden vor Beginn der Veranstaltung senden, was das Engagement und die Teilnahmequoten erhöht.
+
+**Nachfass-Aktionen:** Du kannst diese Aktion auch nutzen, um nach einem Ereignis Folgeaufgaben oder Mitteilungen zu planen. Beispielsweise kannst du einige Tage nach einer Veranstaltung automatisch eine Umfrage oder eine Dankes-E-Mail versenden.
+
+**Flexibilität:** Die Aktion „Ereignis-Startdatum/-zeit festlegen“ ist nicht auf feste Daten beschränkt. Sie kann mit jedem datumsbezogenen Feld verwendet werden, sodass du sie basierend auf individuellen Kundendaten wie Verlängerungsdaten oder Geburtstagen auslösen kannst.
+
+**Wiederkehrende Ereignisse:** Sie kann auch wiederkehrende Ereignisse verarbeiten. Wenn du beispielsweise wöchentliche Webinare veranstaltest, kannst du deinen Workflow so einrichten, dass jede Woche automatisch Erinnerungen versendet werden und das Ereignisdatum anschließend für die folgende Woche neu gesetzt wird.
+
+**Zeitgenaue Aktionen:** Manche Aktionen müssen zu einem bestimmten Zeitpunkt stattfinden, wie etwa ein Social-Media-Beitrag oder eine Verkaufsankündigung. Mit dieser Aktion kannst du diese Aktionen präzise terminieren.
+
+### Welche praktischen Anwendungsfälle gibt es für diese Workflow-Aktion?
+
+**Webinar-Verwaltung:** Wenn du ein Webinar organisierst, kannst du mit der Aktion „Ereignis-Startdatum/-zeit festlegen“ das Datum und die Uhrzeit des Webinars festlegen. Anschließend kannst du Schritte für „Auf Ereignis-/Terminzeit warten“ hinzufügen, um Erinnerungs-E-Mails eine Woche, einen Tag und eine Stunde vor Beginn des Webinars zu senden. Eine Nachfass-E-Mail kann so eingerichtet werden, dass sie ein oder zwei Tage nach dem Event versendet wird, um den Teilnehmern zu danken und zusätzliche Ressourcen bereitzustellen.
+
+**Abo-Verlängerungen:** Bei einem Dienst mit jährlicher Verlängerung kannst du diese Aktion mit einem benutzerdefinierten Datumsfeld für das Verlängerungsdatum jedes Kunden verknüpfen. Mithilfe von „Auf Ereignis-/Terminzeit warten“-Schritten können Erinnerungen einen Monat, eine Woche und einen Tag vor dem Verlängerungsdatum jedes Kunden versendet werden, um an die Verlängerung zu erinnern und notwendige Anweisungen zu geben.
+
+**Konferenzplanung:** Lege bei der Organisation einer Konferenz das Konferenzdatum als Ereignis-Startdatum fest und nutze „Auf Ereignis-/Terminzeit warten“-Schritte, um Mitteilungen wie Frühbucher-Erinnerungen, Ticketkauf-Erinnerungen, Zeitpläne oder kurzfristige Aktualisierungen zu automatisieren.
+
+**Geburtstagsaktionen:** Für Unternehmen, die Sonderaktionen zum Geburtstag ihrer Kunden anbieten, kann diese Aktion mit einem benutzerdefinierten Feld für das Geburtsdatum jedes Kunden kombiniert werden. Ein Schritt „Auf Ereignis-/Terminzeit warten“ kann eingerichtet werden, um Geburtstagsgrüße und einen speziellen Rabatt zu versenden.
+
+**Produkteinführungen:** Wenn du ein neues Produkt auf den Markt bringst, kann das Einführungsdatum als Ereignis-Startdatum festgelegt werden. Du kannst eine Reihe von Schritten für „Auf Ereignis-/Terminzeit warten“ einrichten, um Teaser-E-Mails im Vorfeld der Einführung, eine Einführungsankündigung am Tag selbst und Folgemitteilungen nach dem Start zu versenden.
+
+**Schulungssitzungen:** Wenn du Schulungen anbietest, markiere den Beginn der Sitzung mit der Aktion „Ereignis-Startdatum/-zeit festlegen“. Verwende dann die Schritte „Auf Ereignis-/Terminzeit warten“, um Details zur Sitzung, Erinnerungen einige Tage vorher und kurzfristige Erinnerungen eine Stunde vor Beginn zu senden. Du kannst auch eine Nachfass-E-Mail planen, um Aufzeichnungen oder Schulungsunterlagen bereitzustellen.
+
+**Testphasen:** Für ein Produkt oder einen Dienst mit einer kostenlosen Testphase kannst du das Ablaufdatum der Testphase als Ereignis-Startdatum festlegen. Sende über die Schritte „Auf Ereignis-/Terminzeit warten“ Erinnerungen an Nutzer eine Woche, drei Tage und einen Tag vor Ablauf ihrer Testphase, um sie zum Kauf der Vollversion zu bewegen.
+
+**Verkaufs- oder Rabattaktionen:** Wenn dein Unternehmen einen Sale oder eine Aktion durchführt, lege das Startdatum bzw. die Startzeit als Ereignisdatum fest. Plane anschließend Schritte für „Auf Ereignis-/Terminzeit warten“, um Teaser-E-Mails zu versenden, den Verkauf zu starten und kurz vor Ende der Aktion Letzte-Chance-Erinnerungen zu verschicken.
+
+**Jährliche Kontrolltermine oder Wartungen:** Wenn dein Unternehmen jährliche Kontrollen oder Wartungen durchführt, wie etwa ein Handwerksbetrieb oder eine Zahnarztpraxis, kannst du das nächste Termindatum jedes Kunden als Ereignis-Startdatum festlegen. Nutze dann die Schritte „Auf Ereignis-/Terminzeit warten“, um Kunden an ihren bevorstehenden Termin zu erinnern und danach nachzufassen.
+
+**Projektfristen:** Wenn du ein Projekt mit einer bestimmten Frist leitest, kannst du mit der Aktion „Ereignis-Startdatum/-zeit festlegen“ die Frist markieren und über die Schritte „Auf Ereignis-/Terminzeit warten“ im Vorfeld Erinnerungen oder Aufgaben an das Team senden.
+
+---
+
+## Wie wird die Aktion „Ereignis-Startdatum“ verwendet?
+
+### Schritt 1: Füge die Aktion „Ereignis-Startdatum/-zeit festlegen“ zu deinem Workflow hinzu
+
+Navigiere zu dem Workflow, den du bearbeiten möchtest.
+
+Füge die Aktion „Ereignis-Startdatum/-zeit festlegen“ hinzu und passe die Einstellungen an.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155001356731/original/QWfmG6n00V9c5fS3D8pvaM9hLj894HgrPw.png?1687238746)
+
+### Schritt 2: Passe das Ereignis-Startdatum / die Ereignis-Startzeit an
+
+Du kannst beim Typ in der Regel zwischen Benutzerdefiniertem Feld, Bestimmtem Datum / Bestimmter Uhrzeit oder Bestimmtem Tag wählen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155001356729/original/SbBcIMWWNMLqfjr8qyVb65v9jxfkmYI7RQ.png?1687238746)
+
+Für benutzerdefinierte Felder kannst du zuvor erstellte benutzerdefinierte Werte für Datumsfelder verwenden, um dem Workflow das gewünschte Ereignisdatum mitzuteilen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155001356732/original/AJbQPMwVoQpczQ3fyFGtw8g23EhdFtGLSw.png?1687238747)
+
+**Bitte beachten:**
+
+```
+Die Aktion „Ereignis-Startdatum/-zeit festlegen“ unterstützt verschiedene Datums- und Uhrzeitformate. Folgende Formate werden üblicherweise akzeptiert:
+
+MM-DD-YYYY HH:MM: Dieses Format enthält den Monat (MM), den Tag (DD) und das Jahr (YYYY), gefolgt von der Uhrzeit im 24-Stunden-Format (HH:MM). Beispiel: 21. Dezember 2021 um 08:30 Uhr wird als 12-21-2021 08:30 geschrieben.
+DD-MMM-YYYY HH:MM: Dieses Format enthält den Tag (DD), den abgekürzten Monatsnamen (MMM) und das Jahr (YYYY), gefolgt von der Uhrzeit im 24-Stunden-Format (HH:MM). Beispiel: 21. Oktober 2021 um 08:30 Uhr wird als 21-OCT-2021 08:30 geschrieben.
+```
+
+Wähle die gewünschte Option aus und trage die erforderlichen Angaben ein. Wenn du beispielsweise ein bestimmtes Datum und eine Uhrzeit auswählst, musst du das genaue Datum und die Uhrzeit für das Ereignis eingeben.
+
+Speichere die Aktion, um sie deinem Workflow hinzuzufügen.
+
+### Schritt 3: Füge eine Aktion „Auf Ereignis-/Terminzeit warten“ hinzu
+
+Füge nach dem Festlegen des Ereignis-Startdatums bzw. der Startzeit eine Aktion „Auf Ereignis-/Terminzeit warten“ in deinen Workflow ein.
+
+Stelle die Aktion so ein, dass sie eine bestimmte Anzahl von Tagen/Stunden/Minuten vor oder nach dem Ereignis-Startdatum bzw. der Startzeit wartet.
+
+Wenn du dies beispielsweise auf 2 Tage vorher einstellst, wartet der Workflow und führt die nächste Aktion 2 Tage vor dem geplanten Ereignis-Startdatum aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155001356733/original/PMYka5UsU2h3G4JWg0BAoiOmQezJ4zcGXA.png?1687238749)
+
+**Bitte beachten:**
+
+```
+Die Aktion „Auf Ereignis-/Terminzeit warten“ bietet weitere Konfigurationen:
+Ereignis-/Terminzeit: Dieses Feld bezieht sich auf das Ereignis oder den Termin, den du mit der Aktion „Ereignis-Startdatum/-zeit festlegen“ definiert hast. Die Warte-Aktion hält den Ablauf bis zur angegebenen Zeit relativ zu diesem Ereignis oder Termin an.
+BIS - Wann: Mit dieser Einstellung legst du die Wartezeit bis zur nächsten Aktion fest. Dies basiert auf einem Zeitraum aus Monaten, Tagen, Stunden und Minuten. Du kannst beispielsweise einstellen, dass bis 2 Tage und 3 Stunden vor dem Ereigniszeitpunkt gewartet wird. Werte, die das jeweilige Maximum überschreiten, werden auf die größeren Zeiteinheiten umgerechnet (z. B. werden 60 Minuten zu 1 Stunde konvertiert).
+WENN DER ZEITPUNKT DIESES WARTE-SCHRITTS BEREITS IN DER VERGANGENHEIT LIEGT, WIE SOLL DER KONTAKT FORTFAHREN?: Diese Einstellung bestimmt das Verhalten, wenn die Wartezeit bereits verstrichen ist. Folgende Optionen stehen typischerweise zur Auswahl:
+Zum nächsten Schritt wechseln: Der Workflow überspringt das Warten und fährt mit dem nächsten Schritt im Workflow fort.
+Zu einem bestimmten Schritt wechseln: Der Workflow überspringt das Warten und springt zu einem von dir festgelegten Schritt.
+Alle ausgehenden Kommunikationsaktionen überspringen bis zum nächsten Warten oder Ereignis-Startdatum: Der Workflow überspringt alle Aktionen, die das Senden von Nachrichten beinhalten (z. B. E-Mails oder SMS), bis er auf die nächste Aktion „Auf Ereignis-/Terminzeit warten“ oder „Ereignis-Startdatum/-zeit festlegen“ trifft.
+```
+
+Speichere die Aktion, um deine Änderungen zu bestätigen.
+
+Diese Aktionen können innerhalb des Workflows mehrfach wiederholt werden. Du kannst mehrere „Auf Ereignis-/Terminzeit warten“-Aktionen hinzufügen, um Abläufe vor oder nach dem Ereignis-Startdatum zu erstellen.
+
+---
+
+## FAQs
+
+### F1: Kann ich die Aktion „Ereignis-Startdatum/-zeit festlegen“ für wiederkehrende Ereignisse verwenden?
+
+A1: Ja, das ist in der Regel möglich. Du kannst das Ereignis-Startdatum bzw. die Startzeit für das erste Ereignis festlegen und dann eine „Gehe zu“-Aktion verwenden, um für nachfolgende Instanzen an den Anfang des Workflows zurückzuspringen.
+
+### F2: Kann ich mehrere Ereignis-Startdaten/-zeiten im selben Workflow festlegen?
+
+A2: Du kannst im selben Workflow mehrere Aktionen vom Typ „Ereignis-Startdatum/-zeit festlegen“ hinzufügen. Jede Aktion kann einem anderen Ereignis oder Termin entsprechen, und du kannst passende Schritte für „Auf Ereignis-/Terminzeit warten“ nutzen, um Aktionen relativ zu jedem Startdatum bzw. jeder Startzeit zu erstellen.
+
+### F3: Was passiert, wenn ein Kontakt in den Workflow gelangt, nachdem das Ereignis-Startdatum / die Ereignis-Startzeit bereits vergangen ist?
+
+A3: Das Verhalten hängt von deinen Einstellungen in der Aktion „Auf Ereignis-/Terminzeit warten“ ab. Wenn du „Zum nächsten Schritt wechseln“ oder „Zu einem bestimmten Schritt wechseln“ wählst, überspringt der Kontakt die Warte-Aktion. Wenn du „Alle ausgehenden Kommunikationsaktionen überspringen bis zum nächsten Warten oder Ereignis-Startdatum“ wählst, werden ausgehende Kommunikationsschritte übersprungen, bis die nächste Warte- oder Startdatum-Aktion erreicht wird.
+
+### F4: Kann ich die Aktion „Ereignis-Startdatum/-zeit festlegen“ ohne eine entsprechende Aktion „Auf Ereignis-/Terminzeit warten“ verwenden?
+
+A4: Technisch gesehen kannst du ein Ereignis-Startdatum bzw. eine Startzeit ohne eine nachfolgende Aktion „Auf Ereignis-/Terminzeit warten“ setzen, allerdings bietet dies kaum einen praktischen Nutzen. Der Hauptzweck der Aktion besteht darin, einen Referenzzeitpunkt für nachfolgende Aktionen festzulegen.
+
+### F5: Wie wirkt es sich auf die Aktion „Ereignis-Startdatum/-zeit festlegen“ aus, wenn meine Workflow-Einstellungen die Zeitzone des Kontakts berücksichtigen?
+
+A5: Wenn deine Workflow-Einstellungen Zeitzonen berücksichtigen, legst du das Ereignis-Startdatum bzw. die Startzeit in deiner Zeitzone fest, und das System passt den Zeitpunkt automatisch an die Zeitzone des jeweiligen Kontakts an. Liegen keine Zeitzoneninformationen für einen Kontakt vor, wird standardmäßig die Zeitzone deines Kontos verwendet.

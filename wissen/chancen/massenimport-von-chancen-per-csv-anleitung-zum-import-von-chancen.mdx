@@ -1,0 +1,373 @@
+---
+title: "Massenimport von Chancen per CSV | Anleitung zum Import von Chancen"
+description: "Der Massenimport von Chancen ermöglicht es dir, mithilfe einer CSV-Datei mehrere Chancen-Datensätze gleichzeitig zu erstellen oder zu aktualisieren.…"
+---
+
+Der Massenimport von Chancen ermöglicht es dir, mithilfe einer CSV-Datei mehrere Chancen-Datensätze gleichzeitig zu erstellen oder zu aktualisieren. Dieser Prozess spart Zeit, reduziert manuelle Dateneingaben und sorgt dafür, dass deine Vertriebs-Pipeline stets aktuell bleibt.
+
+Wenn du deine Datei korrekt vorbereitest und die unten beschriebenen Schritte befolgst, kannst du große Datenmengen hochladen und Chancen effizient verwalten.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Daten vorbereiten](#daten-vorbereiten)
+- [Unterstützte Dateitypen](#unterstuetzte-dateitypen)
+- [Anforderungen an die Dateivorbereitung](#anforderungen-an-die-dateivorbereitung)
+- [Strukturierung deiner Datei](#strukturierung-deiner-datei)
+- [Importfortschritt überwachen](#importfortschritt-ueberwachen)
+- [Importstatistiken anzeigen](#importstatistiken-anzeigen)
+- [Zusätzliche Tipps](#zusaetzliche-tipps)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Hilfe benötigt](#hilfe-benoetigt)
+
+---
+
+## Daten vorbereiten
+
+Bereite deine Tabelle vor dem Import von Chancen so vor, dass sie der erforderlichen Struktur und den Formatierungsregeln entspricht.
+
+Eine sorgfältige Vorbereitung stellt sicher, dass das System jede Spalte korrekt erkennt und die Informationen den passenden Chancenfeldern zuordnet.
+
+---
+
+## Unterstützte Dateitypen
+
+Für den Import von Chancen wird ausschließlich folgendes Dateiformat unterstützt:
+
+**CSV (.csv)**
+
+Stelle sicher, dass deine Tabelle vor dem Hochladen als CSV-Datei exportiert wird.
+
+---
+
+## Anforderungen an die Dateivorbereitung
+
+Damit der Importprozess reibungslos funktioniert, muss deine Datei folgende Anforderungen erfüllen:
+
+- Die Datei darf **nur ein Tabellenblatt** enthalten
+- Die Dateigröße muss **kleiner als 30 MB** sein
+- Die erste Zeile muss **Spaltenüberschriften** enthalten
+- Mindestens eine Spalte muss mit einem Systemfeld übereinstimmen
+
+Das Einhalten dieser Anforderungen verhindert Fehler beim Hochladen oder bei der Feldzuordnung.
+
+---
+
+## Pflichtfelder
+
+Je nachdem, ob du Chancen erstellst oder aktualisierst, müssen bestimmte Felder enthalten sein.
+
+### Pflichtfelder zum Erstellen von Chancen
+
+Beim Erstellen neuer Chancen muss deine Datei Folgendes enthalten:
+
+- Kontakt-ID
+- Chancenname
+- Pipeline-ID oder Pipeline-Name
+
+### Automatisch angewendete Standardwerte
+
+Wenn bestimmte optionale Felder fehlen, wendet das System Standardwerte an:
+
+- **Phase** → Standardmäßig die erste Phase in der ausgewählten Pipeline
+- **Chancenwert** → Standardmäßig 0
+- **Chancenstatus** → Standardmäßig Offen
+- **Verlustgrund** → Wird ein gültiger Verlustgrund angegeben, wechselt der Status automatisch zu Verloren
+
+### Wo die erforderlichen IDs zu finden sind
+
+Einige Werte müssen möglicherweise zuerst exportiert werden:
+
+- Chancen-ID, Pipeline-ID und Phasen-ID können durch den Export von Chancen abgerufen werden
+- Kontakt-ID kann durch den Export von Kontakten abgerufen werden
+
+### Pflichtfelder zum Aktualisieren von Chancen
+
+Um bestehende Chancen zu aktualisieren, ist Folgendes erforderlich:
+
+- Chancen-ID
+
+---
+
+## Importoptionen verstehen
+
+Beim Import legst du fest, wie die hochgeladenen Datensätze verarbeitet werden sollen.
+
+###
+
+### Chancen erstellen
+
+Lädt ausschließlich neue Chancen-Datensätze hoch.
+
+### Chancen aktualisieren
+
+Aktualisiert bestehende Datensätze anhand der Chancen-ID.
+
+### Chancen erstellen und aktualisieren
+
+Erstellt neue Chancen und aktualisiert gleichzeitig bestehende innerhalb desselben Imports.
+
+---
+
+## Strukturierung deiner Datei
+
+Stelle sicher, dass jede Spalte den korrekten Formatierungsregeln folgt.
+
+### Richtlinien zur Feldformatierung
+
+#### Datumsfelder
+
+Akzeptierte Formate:
+
+- mm/dd/yyyy
+- yyyy/mm/dd
+- mm-dd-yyyy
+- yyyy-mm-dd
+
+Beispiel: 10/28/2020 oder 2020-10-28
+
+### Multiple-Choice- oder Kontrollkästchen-Felder
+
+Werte sollten durch Kommas, Semikolons oder Punkte getrennt werden.
+
+Beispiel:
+
+Blau, Gelb, Grün
+
+### Einfachauswahl-Felder
+
+Es darf nur ein Wert vorhanden sein.
+
+Beispiel:
+
+Blau
+
+### Chanceninhaber
+
+Verwende das Format:
+
+Vorname Nachname
+
+Beispiel:
+
+Logan Paul
+
+### Tags
+
+Trenne mehrere Tags durch Kommas oder Semikolons.
+
+Beispiel:
+
+Lead, Follow-up, VIP
+
+### Telefonnummern
+
+Empfohlenes Format:
+
++1 1234567890
+
+Für US-Nummern funktionieren auch diese Formate:
+
+123-456-7890
+
+(123) 456-7890
+
+### Numerische Werte
+
+Akzeptierte Formate:
+
+1.23
+
+1234
+
+.123
+
+### Währungswerte
+
+Akzeptierte Formate:
+
+1234
+
+1,234,234.33
+
+### Chancen-Follower
+
+Mehrere Namen sollten durch Kommas getrennt werden.
+
+Beispiel:
+
+Adam Smith, David Lee
+
+---
+
+## Datei importieren
+
+Befolge diese Schritte, um Chancen hochzuladen und zu importieren.
+
+### Bereich „Chancen“ aufrufen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828757/original/nIyk2TZF1SSXIbnFm1oDeN2VfpXb9RW7wQ.png?1773344297)**
+
+Dieser Screenshot zeigt den Navigationsbereich, über den auf Chancen zugegriffen werden kann.
+
+Öffne den Bereich „Chancen“, um deine Chancen-Pipeline zu verwalten.
+
+### Importoption öffnen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828742/original/qD1YldBb5KOqq22KXEfYRHzchQhJUHMZFg.png?1773344275)**
+
+Dieser Screenshot zeigt das Optionsmenü, in dem die Importaktion verfügbar ist.
+
+Klicke auf das Menüsymbol und wähle **Importieren**, um den Importvorgang zu starten.
+
+### Objekt „Chancen“ auswählen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828717/original/OeL5VWwEQNbGlYCk4Gdna4epTWoUv9e_Gw.jpeg?1773344227)**
+
+Dieser Bildschirm ermöglicht es dir, den Datentyp auszuwählen, den du importieren möchtest.
+
+Wähle **Chancen** und fahre mit dem nächsten Schritt fort.
+
+### CSV-Datei hochladen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828672/original/H2UkUbVyVy_KQOIYH0wU3rP0vFIBAsHNIw.png?1773344169)**
+
+Lade die CSV-Datei hoch, die deine Chancendaten enthält.
+
+Wähle nach dem Hochladen der Datei aus, ob du:
+
+- Chancen erstellen
+- Chancen aktualisieren
+- Chancen erstellen und aktualisieren
+
+möchtest. Fahre anschließend mit dem Schritt zur Feldzuordnung fort.
+
+### Felder zuordnen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828657/original/HO4DvXlb2NgjnW2ceOeECfwLEaPszTuN3A.png?1773344110)**
+
+Dieser Bildschirm zeigt die Spalten aus deiner CSV-Datei und ermöglicht es dir, sie den Feldern für Chancen zuzuordnen.
+
+Überprüfe jede Spalte und bestätige, dass sie dem richtigen Feld zugeordnet ist.
+
+Wichtige Hinweise:
+
+- Pflichtfelder müssen zugeordnet werden
+- Nicht zugeordnete Spalten können bei Bedarf ignoriert werden
+- Leere Werte können mit der Option **Leere Werte nicht aktualisieren** übersprungen werden
+
+### Import prüfen und bestätigen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828576/original/WEPXdR7lJ4q6HZHipTEhsuVuLBJJtl99cA.png?1773344042)**
+
+Dieser Bildschirm ermöglicht es dir, die importierte Datei zu prüfen und deine Zuordnungen zu bestätigen.
+
+Vor dem Starten des Imports:
+
+- Bestätige, dass alle Zuordnungen korrekt sind
+- Wähle alle Tags aus, die auf Kontakte oder Chancen angewendet werden sollen
+- Aktiviere das erforderliche Bestätigungskästchen
+
+Klicke dann auf **Massenimport starten**.
+
+---
+
+## Importfortschritt überwachen
+
+Nach dem Starten des Imports kannst du die Ergebnisse überwachen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828535/original/M7mFrSnxs95pmsVkO7CZdLhhJ-T_LGCstg.png?1773343992)**
+
+Die Seite für Massenaktionen zeigt den Verlauf der Importaufträge an.
+
+Jeder Import zeigt den Status, die Abschlusszeit und verfügbare Statistiken an.
+
+---
+
+## Importstatistiken anzeigen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066828351/original/IX33-4cbPgY0dd4ceBfq7unEOzOG5BzqFQ.png?1773343631)**
+
+Die Auswahl von **Statistiken anzeigen** öffnet einen detaillierten Bericht mit folgenden Informationen:
+
+- Gesamtzahl der verarbeiteten Datensätze
+- Erfolgreiche Importe
+- Warnungen
+- Fehler
+
+Warnungen betreffen meist optionale Felder, während Fehler den Import bestimmter Zeilen verhindern.
+
+---
+
+## Fehlerbehebung bei häufigen Fehlern
+
+### Ungültige Option für Mehrfachauswahlfelder
+
+Prüfe, ob der Wert in deiner Datei exakt mit einer vorhandenen Option übereinstimmt.
+
+### Ungültige Kontakt-ID
+
+Stelle sicher, dass die Kontakt-ID im System existiert, oder entferne den Wert, wenn ein neuer Datensatz erstellt wird.
+
+### Fehler beim Datumsformat
+
+Stelle sicher, dass Datumswerte einem der akzeptierten Formate entsprechen.
+
+### Doppelter eindeutiger Eigenschaftswert
+
+Stelle sicher, dass eindeutige Felder wie Bezeichner keine doppelten Werte enthalten.
+
+### Datei nicht gefunden
+
+Bestätige, dass die hochgeladene Datei eine gültige CSV-Datei ist und der Dateipfad korrekt ist.
+
+### Fehlende Pflichtfelder
+
+Stelle sicher, dass alle Pflichtfelder wie Chancenname, Kontakt-ID und Pipeline-ID enthalten sind.
+
+### Zusätzliche Tipps
+
+- Prüfe deine Datei vor dem Import sorgfältig
+- Stelle sicher, dass die Spaltenüberschriften nach Möglichkeit mit vorhandenen Feldern übereinstimmen
+- Teste Importe zunächst mit einem kleineren Datensatz
+- Überprüfe vor dem Bestätigen des Imports immer die Feldzuordnung
+
+Das Befolgen dieser Tipps hilft, Fehler zu vermeiden und die Genauigkeit deiner Daten zu verbessern.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich bestehende Chancen mithilfe einer CSV-Datei aktualisieren?**
+
+Ja. Füge die Chancen-ID in deine Datei ein und wähle beim Import die Aktualisierungsoption.
+
+**F: Was passiert, wenn eine Phase nicht in der Datei enthalten ist?**
+
+Wird keine Phase angegeben, wird die Chance automatisch der ersten Phase in der ausgewählten Pipeline zugewiesen.
+
+**F: Kann ich gleichzeitig neue und bestehende Chancen importieren?**
+
+Ja. Wähle während des Imports die Option „Erstellen und aktualisieren“.
+
+**F: Warum konnten einige Zeilen nicht importiert werden?**
+
+Zeilen können fehlschlagen, wenn Pflichtfelder fehlen, IDs ungültig sind oder die Datenformatierung nicht den akzeptierten Formaten entspricht.
+
+**F: Kann ich während des Importvorgangs Tags hinzufügen?**
+
+Ja. Tags können Kontakten oder Chancen während des Bestätigungsschritts vor dem Starten des Imports zugewiesen werden.
+
+---
+
+## Hilfe benötigt
+
+Wenn der Chancen-Import fehlschlägt oder unerwartete Ergebnisse liefert:
+
+- Überprüfe Struktur und Formatierung deiner CSV-Datei
+- Stelle sicher, dass Pflichtfelder enthalten sind
+- Verifiziere, dass IDs wie Kontakt-ID und Pipeline-ID existieren
+- Prüfe die Seite mit den Importstatistiken, um Fehler zu identifizieren
+
+Sollten weiterhin Probleme auftreten, halte deine CSV-Datei sowie die Importdetails bereit und wende dich an den UmsatzAgent Support.

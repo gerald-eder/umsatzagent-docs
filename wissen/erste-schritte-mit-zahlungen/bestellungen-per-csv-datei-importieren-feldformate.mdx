@@ -1,0 +1,53 @@
+---
+title: "Bestellungen per CSV-Datei importieren – Feldformate"
+description: "Diese Anleitung zeigt dir, wie du eine CSV-Datei vorbereitest und hochlädst, um Bestellungen in UmsatzAgent zu importieren. Befolge das Format und die…"
+---
+
+Diese Anleitung zeigt dir, wie du eine CSV-Datei vorbereitest und hochlädst, um Bestellungen in UmsatzAgent zu importieren. Befolge das Format und die Anweisungen unten, um einen erfolgreichen Import sicherzustellen.
+
+---
+
+## Dateianforderungen
+
+- Die Datei muss im .csv-Format vorliegen.
+- Die **Spaltenüberschriften müssen exakt mit denen der Beispieldatei übereinstimmen**.
+- Jede Zeile stellt eine einzelne Bestellposition dar. Enthält eine Bestellung mehrere Positionen, muss jede Position in einer eigenen Zeile stehen, wobei alle Felder auf Bestellebene wiederholt werden.
+- Alle Pflichtfelder müssen ausgefüllt sein, um Fehler beim Upload zu vermeiden.
+
+---
+
+## CSV-Spaltenbeschreibungen und Beispiele
+
+| **Spaltenname** | **Beschreibung** | **Beispiel** |
+| --- | --- | --- |
+| **Customer First Name** | Vorname des Kunden. | Jane |
+| **Customer Last Name** | Nachname des Kunden. | Smith |
+| **Customer Email** | E-Mail-Adresse des Kunden. | jane.smith@example.com |
+| **Customer Phone** | Telefonnummer des Kunden (Ländervorwahl angeben, falls verfügbar). | +14155552671 |
+| **Currency** | Für die Bestellung verwendete Währung (ISO-Code). | USD |
+| **Subtotal** | Gesamtkosten der Bestellung vor Steuern, Rabatt und Versand. | 120.00 |
+| **Discount** | Auf die Bestellung angewendeter Rabatt. | 10.00 |
+| **Total Tax Amount** | Berechneter Gesamtsteuerbetrag. | 8.40 |
+| **Amount** | Gezahlter Endbetrag für die Bestellung (Subtotal - Discount + Tax). | 118.40 |
+| **Order Date** | Bestelldatum (Format: DD/MM/YYYY). | 25/01/2025 |
+| **Order Time** | Uhrzeit der Bestellung (24-Stunden-Format HH:MM). | 12:45 AM |
+| **Payment Method** | Verwendete Zahlungsmethode (z. B. Credit Card, PayPal, Cash, ACH). | Credit Card |
+| **Payment Provider** | Zahlungs-Gateway oder Anbieter, der die Transaktion abgewickelt hat. | Stripe |
+| **Line Item Name** | Name des einzelnen Artikels in der Bestellung. | Blue T-Shirt |
+| **Line Item Quantity** | Menge der einzelnen Bestellposition. | 2 |
+| **Line Item Price** | Artikelpreis (pro Einheit, vor Steuern/Rabatt). | 25.00 |
+| **Address Line 1** | Adresszeile 1 der Käuferadresse. | 123 Main St |
+| **City** | Stadt der Käuferadresse. | San Francisco |
+| **State** | Bundesland/Kanton der Käuferadresse. | CA |
+| **Country** | Land der Käuferadresse (2-stelliger ISO-Code oder vollständiger Name empfohlen). | US |
+| **Postal Code** | Postleitzahl der Käuferadresse. | 94105 |
+
+---
+
+## ⚠️ Häufige Upload-Fehler vermeiden
+
+- Falsche oder fehlende Datums- und Uhrzeitformate.
+- Währung nicht im 3-stelligen ISO-Format (z. B. `USD` verwenden, nicht `$`).
+- E-Mail-Adressen oder Telefonnummern in ungültigen Formaten.
+- Bestellungen mit mehreren Positionen nicht korrekt gruppiert.
+- Betragsabweichung: Stelle sicher, dass `Amount = Subtotal - Discount + Total Tax Amount` gilt.

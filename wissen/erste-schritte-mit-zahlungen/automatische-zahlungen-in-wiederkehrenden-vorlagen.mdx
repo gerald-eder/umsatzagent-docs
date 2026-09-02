@@ -1,0 +1,112 @@
+---
+title: "Automatische Zahlungen in wiederkehrenden Vorlagen"
+description: "Automatische Zahlungen in wiederkehrenden Vorlagen: Eine optimierte Abrechnungslösung"
+---
+
+Automatische Zahlungen in wiederkehrenden Vorlagen: Eine optimierte Abrechnungslösung
+
+Die Verwaltung von Kundenzahlungen kann aufwendig sein, insbesondere bei wiederkehrenden Rechnungen. Mit der Funktion für automatische Zahlungen in wiederkehrenden Vorlagen stellst du pünktliche Zahlungen sicher, ohne auf Aktionen deiner Kunden warten zu müssen.
+
+Diese Funktion ermöglicht es, den Rechnungsbetrag am Fälligkeitsdatum automatisch von der Kreditkarte des Kunden abzubuchen.
+
+#### Themen in diesem Artikel
+
+#### [Was bedeutet die automatische Zahlung in einer wiederkehrenden Vorlage?](#was-bedeutet-die-automatische-zahlung-in-einer-wiederkehrenden-vorlage)
+
+#### [Wie wird der Kunde automatisch belastet?](#wie-wird-der-kunde-automatisch-belastet)
+
+#### [Was bedeutet Kundenkarte hier?](#was-bedeutet-kundenkarte-hier)
+
+#### [Wie werde ich über automatische Zahlungen benachrichtigt?](#wie-werde-ich-ueber-automatische-zahlungen-benachrichtigt)
+
+#### [Was passiert, wenn eine automatische Zahlung fehlschlägt?](#was-passiert-wenn-eine-automatische-zahlung-fehlschlaegt)
+
+#### [Wie oft wird die Zahlung bei einem Fehlschlag wiederholt?](#wie-oft-wird-die-zahlung-bei-einem-fehlschlag-wiederholt)
+
+#### [Was bedeutet das automatische Belasten einer gespeicherten Karte?](#was-bedeutet-das-automatische-belasten-einer-gespeicherten-karte)
+
+#### [Was bedeutet das automatische Belasten einer neuen Karte?](#was-bedeutet-das-automatische-belasten-einer-neuen-karte)
+
+#### [Wie beendet man automatische Zahlungen in einer wiederkehrenden Vorlage?](#wie-beendet-man-automatische-zahlungen-in-einer-wiederkehrenden-vorlage)
+
+---
+
+## Was bedeutet die automatische Zahlung in einer wiederkehrenden Vorlage?
+
+Automatische Zahlungen in wiederkehrenden Vorlagen bedeuten, dass du nicht darauf warten musst, dass der Kunde deine Rechnung rechtzeitig bezahlt. Die Einstellung bucht den Rechnungsbetrag am Fälligkeitsdatum automatisch über die Kreditkarte des Kunden ab.
+
+Die Karte, die für den Einzug der automatischen Zahlungen am Fälligkeitstag der Rechnung verwendet werden soll, kann wie folgt festgelegt werden:
+
+- Kundenkarte – Ermöglicht die automatische Belastung derselben Karte, mit der die erste Zahlung für die wiederkehrende Vorlage getätigt wurde.
+- Gespeicherte Karte – Wenn gespeicherte Karten für den Endkunden vorhanden sind, kann diese Karte verwendet werden, um den Endkunden an jedem Fälligkeitsdatum der wiederkehrenden Vorlage automatisch zu belasten.
+- Neue Karte – Es können auch neue Kartendaten eingegeben werden, um den Kunden bei jeder fälligen Rechnung der wiederkehrenden Vorlage über diese bestimmte Karte zu belasten.
+
+## Wie wird der Kunde automatisch belastet?
+
+- Automatische Zahlungen können bei der Zeitplanung der wiederkehrenden Vorlage aktiviert werden, wie unten dargestellt.
+
+  ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48242859063/original/ITni0cQc1eUZ7DTw2wRWO4Yaa7guwqmH3g.png?1659534278)
+
+## Was bedeutet Kundenkarte hier?
+
+Diese Option ermöglicht es, den Endkunden über die Karte zu belasten, die er für die erste Zahlung in der wiederkehrenden Vorlage verwendet hat. Dies gilt ab dem unmittelbar nächsten Auftreten der Rechnung, unabhängig davon, welche Rechnung bezahlt wurde (dies kann die erste, zweite oder n-te Rechnung sein).
+
+Zur Verdeutlichung: Zahlt der Kunde zum ersten Mal bei der 4. Rechnung, ohne die ersten drei Rechnungen bezahlt zu haben, startet die automatische Zahlung mit dieser Karte ab der 5. Rechnung der wiederkehrenden Vorlage (sofern vorhanden).
+
+## Wie werde ich über automatische Zahlungen benachrichtigt?
+
+- Bei jedem erfolgreichen oder fehlgeschlagenen Vorgang einer untergeordneten Rechnung in der wiederkehrenden Vorlage wird eine Benachrichtigung an dich und den Endkunden gesendet.
+- Der Endkunde wird zudem vor der automatischen Abbuchung benachrichtigt. Diese Benachrichtigung wird "x" Tage im Voraus gesendet, wie im Intervall der wiederkehrenden Einstellung festgelegt.
+- Die Zahlung wird nicht automatisch verarbeitet, wenn eine untergeordnete Rechnung vor dem automatischen Einzug aktualisiert wird. Du wirst darüber per E-Mail informiert und solltest die aktualisierte Rechnung an den Endkunden senden, um Umsatzausfälle bei wiederkehrenden Einnahmen zu vermeiden.
+
+|  |  |
+| --- | --- |
+| Fall | Wer erhält die E-Mail? |
+| Automatische Zahlung fehlgeschlagen | Empfänger |
+| Automatische Zahlung fehlgeschlagen | Absender |
+| Rechnungszahlung erfolgreich | Absender |
+| Rechnungszahlung erfolgreich | Empfänger |
+| Information zur automatischen Zahlung | Empfänger |
+| Untergeordnete Rechnung aktualisiert | Empfänger |
+
+## Was passiert, wenn eine automatische Zahlung fehlschlägt?
+
+- Schlägt die automatische Zahlung über die hinterlegte Karte fehl, werden der Endkunde und der Rechnungsaussteller per E-Mail benachrichtigt.
+- Bezahlt der Endkunde nach der Benachrichtigung erfolgreich mit derselben oder einer neuen Karte, wird die neue Karte für alle zukünftigen Abbuchungen hinterlegt.
+- Andernfalls wird die Zahlung noch zwei weitere Male im Abstand von jeweils 24 Stunden versucht. Wenn die Zahlung nicht verarbeitet werden konnte, erfolgt kein weiterer automatischer Versuch für diese Instanz, und der Kunde muss die Rechnung manuell begleichen.
+
+## Wie oft wird die Zahlung bei einem Fehlschlag wiederholt?
+
+Schlägt der automatische Einzug über die festgelegte Karte fehl, erfolgen zwei automatische Wiederholungsversuche im Abstand von jeweils 24 Stunden nach dem ersten Fehlschlag. Kann die Zahlung weiterhin nicht verarbeitet werden, muss der Endkunde die Rechnung manuell bezahlen.
+
+## Was bedeutet das automatische Belasten einer gespeicherten Karte?
+
+Diese Option ermöglicht es, den Endkunden über eine der hinterlegten gespeicherten Karten zu belasten. Ab dem ersten Rechnungsdurchlauf wird der Rechnungsbetrag von der ausgewählten gespeicherten Karte abgebucht.
+
+Jeder Fehler bei der Abbuchung von der gespeicherten Karte löst eine Benachrichtigung an dich und den Endkunden aus. Die gespeicherte Karte wird bei der Planung der Vorlage nicht autorisiert.
+
+## Was bedeutet das automatische Belasten einer neuen Karte?
+
+Diese Option ermöglicht es, den Endkunden über neu eingegebene Kartendaten zu belasten. Ab dem ersten Rechnungsdurchlauf wird der Rechnungsbetrag von der gewünschten Karte abgebucht.
+
+Jeder Fehler bei der Abbuchung von der ausgewählten Karte löst eine Benachrichtigung an dich und den Endkunden aus. Jede neu ausgewählte Karte wird bei der Planung der Vorlage mit dem Mindestbetrag in der jeweiligen Währung autorisiert.
+
+Jede erfolgreich hinzugefügte Karte wird auch für zukünftige Zwecke gespeichert.
+
+## Wie beendet man automatische Zahlungen in einer wiederkehrenden Vorlage?
+
+Automatische Zahlungen können bei einer aktiven wiederkehrenden Vorlage beendet werden, indem du im Rechnungs-Builder die Option "Automatische Zahlungen verwalten" wählst, wie unten dargestellt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48242640177/original/Ofz7DZ8pfpvGRMTZWek3tfVv1UJzoSu9qA.png?1659457401)
+
+Dadurch öffnet sich das Fenster zur Zeitplanung für automatische Zahlungen mit aktiviertem Schalter und ausgewählter Zahlungsoption. Deaktiviere den Schalter, um automatische Zahlungen ab der nächsten Ausführung auszuschalten.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48245831218/original/1D6-aru93aKFHnuedU4CVieJX5PT17utCA.png?1660737284)
+
+Kann ich automatische Zahlungen in einer laufenden wiederkehrenden Vorlage aktivieren?
+
+Ja, automatische Zahlungen können in einer laufenden wiederkehrenden Vorlage über die Option "Automatische Zahlungen verwalten" im Builder aktiviert werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48242640181/original/ZHrH2tOucpRTfouEBosgRkSJRrGgALK_tA.png?1659457401)
+
+Dadurch öffnet sich das Fenster für automatische Zahlungen mit deaktiviertem Schalter. Aktiviere den Schalter und wähle die gewünschte Zahlungsoption aus (Kundenkarte, gespeicherte Karte oder neue Karte).

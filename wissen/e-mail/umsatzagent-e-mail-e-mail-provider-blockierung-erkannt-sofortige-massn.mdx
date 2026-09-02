@@ -1,0 +1,311 @@
+---
+title: "UmsatzAgent E-Mail: E-Mail-Provider-Blockierung erkannt – Sofortige Maßnahmen zur Wiederherstellung des E-Mail-Versands erforderlich"
+description: "E-Mail-Zustellbarkeit"
+---
+
+E-Mail-Zustellbarkeit
+
+Neue Richtlinie für ESP-Blockierungen
+
+Erfahre, wie ESP-Blockierungsraten, Warnungen und vorübergehende Sperren funktionieren – und was du tun musst, bevor die Richtlinie in Kraft tritt.
+
+Zeitplan für die Einführung
+
+**Gültig ab: 12. Februar 2026.** Diese neue Richtlinie für ESP-Blockierungen wird am 12. Februar 2026 eingeführt. Bestehende Nutzer erhalten vorab eine Benachrichtigung und haben Zeit, ihre E-Mail-Praktiken zu überprüfen, bevor die Durchsetzung beginnt.
+
+**Was du jetzt tun solltest:** Überprüfe deine aktuellen Daten zur Bounce-Klassifizierung, richte die empfohlene E-Mail-Authentifizierung und Best Practices ein, bereinige deine E-Mail-Listen, verbessere die Inhaltsqualität und überwache deine ESP-Blockierungsraten sorgfältig.
+
+Inhaltsverzeichnis
+
+1
+
+[Was sind ESP-Blockierungen?](#was-sind-esp-blockierungen)
+
+2
+
+[Das ESP-Blockierungssystem](#das-esp-blockierungssystem)
+
+3
+
+[Was du bei einer Blockierung siehst](#was-du-bei-einer-blockierung-siehst)
+
+4
+
+[So forderst du eine dauerhafte Entsperrung an](#so-forderst-du-eine-dauerhafte-entsperrung-an)
+
+5
+
+[Warum das wichtig ist](#warum-das-wichtig-ist)
+
+6
+
+[Nächste Schritte](#naechste-schritte)
+
+7
+
+[Support-Ressourcen](#support-ressourcen)
+
+8
+
+[Dringende Maßnahmen](#dringende-massnahmen)
+
+9
+
+[Wichtige Hinweise](#wichtige-hinweise)
+
+10
+
+[ESP-Block-Sperre — AUP-Update (13. August 2026)](#esp-block-sperre-aup-update-13-august-2026)
+
+11
+
+[Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+1
+
+## Was sind ESP-Blockierungen?
+
+ESP-Blockierungen treten auf, wenn große E-Mail-Provider (Gmail, Yahoo, Outlook usw.) deine E-Mails aus folgenden Gründen ablehnen:
+
+- Fehlgeschlagene Authentifizierung (Probleme mit DMARC, SPF, DKIM)
+- Schlechte Absender-Reputation
+- Spam-ähnliche Inhalte
+- Richtlinienverstöße
+- Technische Konfigurationsprobleme
+
+Warum das wichtig ist
+
+Im Gegensatz zu regulären Bounces werden ESP-Blockierungen separat berechnet und lösen sofortige Einschränkungen aus, um deine langfristige E-Mail-Zustellbarkeit zu schützen.
+
+2
+
+## Das ESP-Blockierungssystem
+
+Das Blockierungssystem eskaliert über drei temporäre Stufen, wobei vor jeder Stufe Warn-E-Mails versendet werden. Hier ist der genaue Ablauf:
+
+| ESP-Blockierungsrate | Aktion | Dauer | Blockierungsstufe |
+| --- | --- | --- | --- |
+| 3% | Warn-E-Mail gesendet | Sofortige Benachrichtigung | Warnung vor Blockierung |
+| 5% | E-Mail-Versand ausgesetzt | 12 Stunden | 1. Blockierung |
+| 3% (nach 1. Blockierung) | Kritische Warn-E-Mail gesendet | Sofortige Benachrichtigung | Warnung vor 2. Blockierung |
+| 5% (nach 1. Blockierung) | E-Mail-Versand ausgesetzt | 24 Stunden | 2. Blockierung |
+| 3% (nach 2. Blockierung) | Letzte Warn-E-Mail gesendet | Sofortige Benachrichtigung | Letzte Warnung vor 3. Blockierung |
+| 5% (nach 2. Blockierung) | DAUERHAFTE SPERRE | Dauerhaft | 3. Blockierung — FINAL |
+
+Wichtig
+
+Alle Blockierungen werden zurückgesetzt, wenn die ESP-Blockierungsrate an 7 aufeinanderfolgenden Tagen unter 1 % bleibt.
+
+Gut zu wissen
+
+In dieser Version wird der E-Mail-Versand nicht dauerhaft deaktiviert. Jede Blockierung ist vorübergehend und auf maximal 24 Stunden begrenzt.
+
+3
+
+## Was du bei einer Blockierung siehst
+
+Wenn dein E-Mail-Dienst aufgrund von **ESP Block Detected** **blockiert** ist, wird dir die folgende Fehlermeldung als **oberes Banner** in deinem Konto angezeigt:
+
+Email sending is blocked due to a high number of spam blocks from email providers.
+
+![Fehlermeldungs-Banner für ESP-Blockierung](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586799/original/JlonClqbu36ieXCbWFXoaqoFjTaM46sUxg.png?1787946857)
+
+Diese Blockierung wird durchgesetzt, um die E-Mail-Zustellbarkeit zu schützen und weitere Schäden an der Absender-Reputation bei E-Mail-Providern (ESPs) zu verhindern.
+
+4
+
+## So forderst du eine dauerhafte Entsperrung an
+
+Eine dauerhafte Entsperrung **kann nicht automatisch erfolgen**. Wende dich an den UmsatzAgent Support, um die Entsperrung zu veranlassen.
+
+Hinweis
+
+Der UmsatzAgent Support prüft jede Anfrage manuell, bevor eine dauerhafte Sperre aufgehoben wird, um sicherzustellen, dass die zugrunde liegenden Zustellbarkeitsprobleme behoben wurden.
+
+5
+
+## Warum das wichtig ist
+
+Schutz deines Unternehmens
+
+- ESP-Blockierungen beschädigen deine Absender-Reputation dauerhaft
+- Eine schlechte Absender-Reputation führt dazu, dass E-Mails im Spam-Ordner landen
+- Eine verringerte Zustellbarkeit wirkt sich negativ auf deinen Umsatz aus
+- Die Wiederherstellung kann ohne entsprechende Maßnahmen Wochen oder Monate dauern
+
+Branchenstandards
+
+- Große ESPs stellen immer strengere Anforderungen an die E-Mail-Qualität
+- Authentifizierungsanforderungen sind mittlerweile verpflichtend
+- Die Inhaltsfilterung ist deutlich anspruchsvoller geworden
+- Die Absender-Reputation beeinflusst alle zukünftigen Kampagnen
+
+6
+
+## Nächste Schritte
+
+Schritt 1 — Analysieren
+
+Nutze die Bounce-Klassifizierung, um deine spezifischen ESP-Blockierungen zu verstehen.
+
+Schritt 2 — Beheben
+
+Behebe die identifizierten Probleme mithilfe der detaillierten Hilfe-Artikel.
+
+Schritt 3 — Überwachen
+
+Verfolge deine Verbesserungen über das Analyse-Dashboard.
+
+Schritt 4 — Überprüfen
+
+Stelle sicher, dass die Korrekturen wirksam sind, bevor du den normalen Versand wieder aufnimmst.
+
+7
+
+## Support-Ressourcen
+
+Bounce-Klassifizierung
+
+- Greife auf detaillierte Analysen zu ESP-Blockierungen zu
+- Sieh dir Fehlerkategorien und Mengen an
+- Erhalte spezifische Empfehlungen für dein Konto
+- Überwache den Fortschritt deiner Verbesserungen
+
+**Kategoriespezifische Hilfe-Artikel.** Jede ESP-Blockierungskategorie in deinem Analyse-Dashboard verlinkt auf detaillierte Anleitungen zur Problembehebung:
+
+**DMARC-Authentifizierungsfehler**
+
+**Probleme mit der Domain-/IP-Reputation**
+
+**Inhalts- und Spam-Filterung**
+
+**Technische Konfigurationsprobleme**
+
+**Und mehr...**
+
+8
+
+## Dringende Maßnahmen
+
+Vor Einführung der Richtlinie
+
+- Schließe die Einrichtung der E-Mail-Authentifizierung ab
+- Bereinige alle E-Mail-Listen gründlich
+- Optimiere E-Mail-Inhalte und -Vorlagen
+- Teste die E-Mail-Zustellung bei großen Providern
+- Überwache das Analyse-Dashboard täglich
+
+Innerhalb von 24 Stunden nach einer Warnung
+
+- Überprüfe umgehend die Analysedaten
+- Identifiziere die 3 häufigsten ESP-Blockierungskategorien
+- Beginne mit der Umsetzung kritischer Korrekturen (Authentifizierung, wesentliche Inhaltsprobleme)
+
+Innerhalb von 48 Stunden nach einer Blockierung
+
+- Schließe alle technischen Korrekturen ab
+- Bereinige E-Mail-Listen und entferne problematische Inhalte
+- Teste die E-Mail-Zustellung an die großen Provider
+
+Fortlaufend
+
+- Überwache das Analyse-Dashboard täglich
+- Halte E-Mail-Best-Practices ein
+- Führe regelmäßige Listenhygiene und Engagement-Überwachung durch
+
+9
+
+## Wichtige Hinweise
+
+- **ESP-Blockierungen sind getrennt von regulären Bounces zu betrachten** – sie erfordern sofortige Aufmerksamkeit.
+- **Jeder Provider hat unterschiedliche Anforderungen** – nutze die Analysen, um providerspezifische Probleme zu erkennen.
+- **Vorbeugen ist besser als Heilen** – wende von Beginn an saubere E-Mail-Praktiken an.
+- **Zeit ist entscheidend** – Verzögerungen bei der Behebung von Problemen können zu dauerhaften Einschränkungen führen.
+- **Du hast 30 Tage Zeit zur Vorbereitung** – nutze diese Zeit, um deine E-Mail-Praktiken zu optimieren.
+
+Jetzt handeln
+
+Deine E-Mail-Zustellbarkeit und dein Geschäftserfolg hängen davon ab, jetzt Maßnahmen zu ergreifen. Beginne mit dem E-Mail-Analyse-Dashboard und bereite dich auf die Umsetzung der neuen Richtlinie vor.
+
+10
+
+## ESP-Block-Sperre — AUP-Update
+
+Unabhängig von der oben beschriebenen ESP-Blockierungsrichtlinie wird auch der zugrunde liegende Mechanismus der **ESP-Block-Sperre** aktualisiert – das automatisierte System, das einen Absender vorübergehend sperrt, wenn die geteilte IP-Reputation gefährdet wird. Diese Änderungen erhöhen die erforderliche Schwelle, bevor eine Sperre ausgelöst wird, sodass gelegentliche Sendespitzen nicht mehr fälschlicherweise als schlechtes Sendeverhalten gewertet werden.
+
+Gültig ab
+
+**13. August 2026.** Dieses Update gilt ausschließlich für die Auswertungslogik der ESP-Block-Sperre und ist unabhängig vom oben genannten Zeitplan der ESP-Blockierungsrichtlinie zum 12. Februar 2026.
+
+Änderung 1
+
+Staffelung der Mindestsendeanzahl: 50 → 500
+
+**Vorher:** Das System wertete die ESP-Blockierungsrate bereits nach 15 Sendungen aus – eine extrem geringe Datenbasis.
+
+**Nachher:** Die Mindestsendeanzahl, bevor eine Sperre ausgelöst werden kann, ist nun basierend auf der ESP-Blockierungsrate gestaffelt – analog zur Logik bei Bounces.
+
+Änderung 2
+
+Mindestanzahl an ESP-Blockierungen: 15 → 25
+
+**Vorher:** Bereits 15 ESP-Blockierungsereignisse konnten zu einer Sperre führen.
+
+**Nachher:** Es müssen mindestens 25 ESP-Blockierungen auftreten, bevor das System eine Sperre in Betracht zieht – wodurch Sperren durch einmalige kleine Sendespitzen vermieden werden.
+
+| Parameter | Vorher | Nachher |
+| --- | --- | --- |
+| Mindestsendeanzahl | Pauschal 50 Sendungen | Gestaffelt bis zu 500 Sendungen, basierend auf der ESP-Blockierungsrate |
+| Mindestanzahl an ESP-Blockierungen | 15 Blockierungen | 25 Blockierungen |
+
+Das gelöste Problem
+
+3 von 10 ESP-Block-Sperren wurden durch Sendespitzen bei Massenkampagnen ausgelöst – nicht durch unzulässige Absender. Ein legitimer Absender, der eine große Liste auf einmal anschrieb, konnte den Schwellenwert rein volumenseitig erreichen, gesperrt werden und nach der Entsperrung innerhalb einer Stunde erneut die Sperre auslösen.
+
+Das Ergebnis
+
+Das System erfordert nun eine größere bestätigte Datenmenge vor einer Sperrung. Wiederholungstäter, die der geteilten IP tatsächlich schaden, bleiben weiterhin blockiert. Absender von Kampagnen mit einmaligen Spitzen werden nicht mehr fälschlicherweise gesperrt.
+
+11
+
+## Häufig gestellte Fragen
+
+F: Wann tritt diese neue Richtlinie in Kraft?
+
+Das ESP-Blockierungssystem wird am **12. Februar 2026** eingeführt. Damit bleiben 30 Tage Zeit, um sich vorzubereiten und die E-Mail-Praktiken zu optimieren.
+
+F: Was passiert mit meinen aktuellen ESP-Blockierungen?
+
+Deine bisherige Historie an ESP-Blockierungen wird zum Einführungsdatum zurückgesetzt. Es wird jedoch dringend empfohlen, bestehende Probleme vor Inkrafttreten der Richtlinie zu beheben, um einen reibungslosen Betrieb zu gewährleisten.
+
+F: Wie werden Blockierungen zurückgesetzt?
+
+Blockierungen werden nach **7 aufeinanderfolgenden Tagen** mit einer ESP-Blockierungsrate von unter 1 % zurückgesetzt. Wenn jedoch innerhalb eines Zeitraums von 7 Tagen 3 Blockierungen auftreten, erfolgt eine dauerhafte Sperre.
+
+F: Können dauerhafte Sperren aufgehoben werden?
+
+Eine dauerhafte Entsperrung **kann nicht automatisch erfolgen**. Wende dich an den UmsatzAgent Support, um die Entsperrung zu veranlassen.
+
+F: Erhalte ich vor jeder Blockierung Benachrichtigungen?
+
+Ja – du erhältst Warn-E-Mails, sobald deine ESP-Blockierungsrate 3 % erreicht. So bleibt Zeit für Korrekturmaßnahmen, bevor der Schwellenwert von 5 % eine Blockierung auslöst.
+
+F: Was passiert, wenn meine ESP-Blockierungsrate derzeit über 3 % liegt?
+
+Nutze die Vorbereitungszeit vor dem 12. Februar 2026, um diese Probleme zu beheben. Das Blockierungssystem wird erst ab dem Einführungsdatum durchgesetzt, sodass genügend Zeit zur Fehlerbehebung bleibt.
+
+F: Wie unterscheidet sich das vom regulären Bounce-Management?
+
+ESP-Blockierungen werden getrennt von regulären Bounces berechnet und verfügen über ein eigenes Blockierungssystem. Reguläre Bounces (ungültige Adressen, volle Postfächer) werden anders behandelt als ESP-Blockierungen (Reputation, Authentifizierung, Richtlinienprobleme).
+
+F: Ist die ESP-Block-Sperre dasselbe wie die ESP-Blockierungsrichtlinie?
+
+Nein. Die ESP-Blockierungsrichtlinie (gültig ab 12. Februar 2026) regelt die in den Abschnitten 2–3 beschriebene Warn- und Sperreskalation. Die ESP-Block-Sperre ist die zugrunde liegende Erkennungslogik, die festlegt, wie viele bestätigte Ereignisse erforderlich sind, bevor eine Sperre ausgelöst wird. Diese wird separat am **13. August 2026** aktualisiert.
+
+F: Kann ein einzelner großer Kampagnenversand mein Konto nach dem 13. August 2026 weiterhin sperren?
+
+Das ist deutlich unwahrscheinlicher. Mit der auf bis zu 500 gestaffelten Mindestsendeanzahl und der Anhebung der Mindestanzahl an ESP-Blockierungen auf 25 ist es viel unwahrscheinlicher, dass eine einmalige Sendespitze einer legitimen Kampagne allein beide Schwellenwerte erreicht. Konten mit einem dauerhaften Muster an ESP-Blockierungen werden weiterhin gesperrt.
+
+Wir unterstützen dich
+
+Diese Richtlinie dient dem Schutz deiner Absender-Reputation und soll langfristigen Erfolg bei der E-Mail-Zustellbarkeit sichern. Bei Fragen zur Vorbereitung und Umsetzung dieser Anforderungen steht dir Unterstützung bereit.

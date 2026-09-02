@@ -1,0 +1,90 @@
+---
+title: "So fügst du eine Domain hinzu und verifizierst DNS-Einträge"
+description: "Diese Anleitung hilft dir beim Hinzufügen und Verifizieren deiner E-Mail-Domain."
+---
+
+Diese Anleitung hilft dir beim Hinzufügen und Verifizieren deiner E-Mail-Domain.
+
+Die Verifizierung deiner Domain ist vor dem E-Mail-Versand wichtig. Sie dient dazu, Öffnungen und Klicks zu erfassen, Spam zu verhindern und sicherzustellen, dass nur du und dein Team E-Mails über deine Domain versenden können.
+
+**INHALTSVERZEICHNIS**
+
+- [Domain hinzufügen](#domain-hinzufuegen)
+- [Domain verifizieren](#domain-verifizieren)
+  - [Option 1: Domain verbinden (Automatische DNS-Konfiguration)](#option-1-domain-verbinden-automatische-dns-konfiguration))
+  - [Option 2: Manuell einrichten](#option-2-manuell-einrichten)
+
+---
+
+## Domain hinzufügen - Klicke in den Einstellungen > E-Mail-Dienste > Dedizierte Domain und IP > + Domain hinzufügen. - Gib die Domain ein, die du nutzen möchtest, und klicke auf „Hinzufügen & Verifizieren“. ``` Wir empfehlen die Nutzung einer Subdomain für eine bessere E-Mail-Zustellbarkeit. ```
+
+---
+
+## Domain verifizieren
+
+Hierfür gibt es zwei Optionen: Verbindung über deinen DNS-Anbieter oder manuelle Einrichtung.
+
+- ### **Option 1: Domain verbinden (Automatische DNS-Konfiguration)**
+
+  Dies ist die einfachste Methode zur Verifizierung und Authentifizierung deiner Domain. Sie nutzt die integrierte Schnittstelle zu vielen führenden DNS-Anbietern, um DNS-Einträge automatisch einzurichten. So kannst du deine Domain in einem einzigen Vorgang verifizieren und authentifizieren.
+  1. Klicke im nächsten Fenster auf „**Weiter**“.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024040511/original/GyJoW9Ue2OD_SqbajlFvGWmD6V5GIqfn5w.png?1712317583)
+  2. Das System erkennt deinen DNS-Anbieter und leitet dich direkt zu dessen Plattform weiter.
+
+     ```
+     Hinweis: Die automatische Konfiguration ist möglicherweise nicht mit allen DNS-Anbietern kompatibel. Wenn das System deinen Anbieter nicht erkennen kann, werden die Einträge in einem Fenster angezeigt. Klicke hier, um die DNS-Einträge manuell hinzuzufügen.
+     ```
+
+     **Das folgende Beispiel zeigt den DNS-Anbieter Cloudflare.** Um fortzufahren, benötigst du die Zugangsdaten für deinen DNS-Anbieter.
+
+     Klicke im nächsten Fenster auf „**Domain autorisieren**“.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024040695/original/Gxh0EoqEsLQdKybkYn8ane4ymf89pwHV7A.png?1712317729)
+  3. Melde dich bei deinem DNS-Anbieter an. Die Anmeldeseite sieht je nach Anbieter unterschiedlich aus. Dieses Beispiel zeigt Cloudflare.
+
+     Der jeweilige DNS-Anbieter fordert dich möglicherweise auf, einen Bestätigungscode einzugeben, der dir per E-Mail oder SMS zugeschickt wurde.
+
+     Klicke auf der Cloudflare-Seite auf „**Autorisieren**“.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024182925/original/dASFIiw7X2yNMgxetHyCI9i154eWIxYdNg.png?1712635985)
+  4. Du wirst zur Domain-Verifizierungsseite weitergeleitet.
+
+     ```
+     Hinweis: Es kann 1 bis 10 Minuten dauern, bis sich DNS-Änderungen im Internet verbreiten. In der Regel geht es schneller.
+
+     DMARC: Wenn du den Eintrag bereits zu deiner Hauptdomain hinzugefügt hast, kannst du das Hinzufügen des DMARC-Eintrags für die Subdomain überspringen.
+     ```
+
+     Wenn alles korrekt eingerichtet ist, siehst du den Status **Verifiziert**:
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024182966/original/lJgc5zwDjmAYfgdlqsFFd-4Ef00pan1idQ.png?1712636006)
+- ### **Option 2: Manuell einrichten**
+
+  1. Wenn das System deinen Anbieter nach dem Hinzufügen der Domain nicht automatisch erkennen konnte, werden die erforderlichen Einträge angezeigt.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024182970/original/eYNLZZMFxs-Q1_vJzutB8MfStvdqJroOWg.png?1712636025)Die meisten DNS-Anbieter verlangen typischerweise folgende Angaben:
+     - **Beispiel für Hauptdomain (Root Domain):**
+
+       |  |  |
+       | --- | --- |
+       | Typ | Wähle den Typ für jede Zeile: TXT, CNAME und MX |
+       | Name oder Hostname | Kopiere den „Namen“ für jeden DNS-Eintrag wie folgt: Verwende „@“, falls deine Domain nicht verifiziert wird. Entferne das „@“ und trage stattdessen deinen Hauptdomain-Namen ein. **Beispiel:** Wenn deine Domain „deinedomain.de“ lautet, ersetze „@“ durch „deinedomain.de“. |
+       | Wert oder Eintrag | Kopiere den jeweils angezeigten „Wert“ für jeden DNS-Eintrag. |
+       | TTL | 5 Minuten |
+     - **Beispiel für Subdomain:**
+
+       |  |  |
+       | --- | --- |
+       | Typ | Wähle den Typ für jede Zeile: TXT, CNAME und MX |
+       | Name oder Hostname | Kopiere den „Namen“ für jeden DNS-Eintrag. **Beispiel:** Wenn der Hostname mail.deinedomain.de lautet, musst du oft nur die Subdomain eintragen, also „mail“. Wird der Eintrag nicht verifiziert, trage den vollständigen Namen wie mail.deinedomain.de ein. |
+       | Wert oder Eintrag | Kopiere den jeweils angezeigten „Wert“ für jeden DNS-Eintrag. |
+       | TTL | 5 Minuten |
+  2. Wenn alles korrekt eingerichtet ist, siehst du den Status Verifiziert:
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024182979/original/omeIHk6jeE3QTNJJEjqI0ZvCWkLLgBc7QQ.png?1712636046)
+  3. Du wirst zur Seite für dedizierte Domains weitergeleitet, auf der der aktive Status angezeigt wird.
+
+     ```
+     Hinweis: Nach der Verifizierung deiner Domain kann die Ausstellung des SSL-Zertifikats 1 bis 10 Minuten dauern.
+     ```
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155024075588/original/KlEFbcsAmeCfWZFwZnHW5y8l4oepCRgHAw.png?1712388479)

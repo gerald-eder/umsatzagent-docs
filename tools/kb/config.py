@@ -32,6 +32,13 @@ MODELL = "gemini-3.7-flash"
 # Fremdmarken, die in keinem ausgelieferten Text stehen dürfen. Reihenfolge
 # zählt: längere Begriffe zuerst, sonst zerlegt eine kürzere Regel sie.
 MARKEN = [
+    # Domains zuerst. Stünde "LeadConnector" davor, zerlegte es
+    # "help.leadconnectorhq.com" zu "help.UmsatzAgenthq.com".
+    ("help.leadconnectorhq.com", "support.umsatzagent.com"),
+    ("app.gohighlevel.com", "app.umsatzagent.com"),
+    ("leadconnectorhq.com", "umsatzagent.com"),
+    ("gohighlevel.com", "umsatzagent.com"),
+
     ("GoHighLevel", "UmsatzAgent"),
     ("Go High Level", "UmsatzAgent"),
     ("HighLevel", "UmsatzAgent"),
@@ -41,10 +48,19 @@ MARKEN = [
     ("LC Phone", "UmsatzAgent Telefon"),
     ("LC Email", "UmsatzAgent E-Mail"),
     ("LC-Phone", "UmsatzAgent Telefon"),
-    ("help.leadconnectorhq.com", "support.umsatzagent.com"),
-    ("leadconnectorhq.com", "umsatzagent.com"),
-    ("gohighlevel.com", "umsatzagent.com"),
-    ("app.gohighlevel.com", "app.umsatzagent.com"),
+    # Agentur-Sprache mechanisch geradeziehen. Das Modell hält sich nicht
+    # zuverlässig daran, die Begriffe sind aber eindeutig ersetzbar: Der
+    # Leser hat genau ein Konto.
+    ("in deinem Sub-Account", "in deinem Konto"),
+    ("in deinem Unterkonto", "in deinem Konto"),
+    ("des Sub-Accounts", "des Kontos"),
+    ("des Unterkontos", "des Kontos"),
+    ("Sub-Account-Einstellungen", "Kontoeinstellungen"),
+    ("Unterkonto-Einstellungen", "Kontoeinstellungen"),
+    ("Sub-Accounts", "Konten"),
+    ("Sub-Account", "Konto"),
+    ("Unterkonten", "Konten"),
+    ("Unterkonto", "Konto"),
 ]
 
 # Begriffe, die nach dem Übersetzen NICHT vorkommen dürfen. Findet der Prüfer
@@ -52,6 +68,8 @@ MARKEN = [
 VERBOTEN = [
     "highlevel", "high level", "gohighlevel", "leadconnector", "lead connector",
     "leadconnectorhq", "freshdesk", "twilio", "mailgun",
+    # Agentur-Sprache. Der Leser hat ein Konto, keine Konten-Hierarchie.
+    "unterkonto", "sub-account", "subaccount", "agenturkonto",
 ]
 
 # --- Terminologie ----------------------------------------------------------
@@ -140,6 +158,13 @@ HINWEISE = [
     'Übernimm diese Schreibweisen genau so, auch wenn sie uneinheitlich wirken.',
     'Der Bereich für Websites, Funnels, Formulare und Umfragen heißt im Menü '
     '"Seiten".',
+    '"Reputation" heißt nur dann "Ruf", wenn der Menüpunkt für Bewertungen '
+    'gemeint ist. Geht es um E-Mail-Zustellbarkeit, ist die Absender-Reputation '
+    'gemeint — dann schreibe "Absender-Reputation", niemals "Ruf".',
+    'Der Leser hat genau ein Konto. Schreibe nie "Unterkonto", "Sub-Account", '
+    '"Agentur" oder "Hauptkonto" — die Quelle sieht eine Agentur mit vielen '
+    'Konten, unser Leser nicht. Aus "in your sub-account settings" wird '
+    'schlicht "in den Einstellungen".',
 ]
 
 # --- Navigation ------------------------------------------------------------

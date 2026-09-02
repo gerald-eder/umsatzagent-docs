@@ -1,0 +1,247 @@
+---
+title: "DMARC-Validierungsfunktion – E-Mail-Authentifizierungswarnungen verstehen und beheben"
+description: "Die E-Mail-Absender-Validierungsfunktion prüft deine E-Mail-Konfiguration vor dem Versenden von Kampagnen proaktiv, um maximale Zustellbarkeit zu sichern…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [E-Mail-Absender-Validierungsfunktion – Vollständige Anleitung](#e-mail-absender-validierungsfunktion-vollstaendige-anleitung)
+  - [Warum diese Funktion eingeführt wurde](#warum-diese-funktion-eingefuehrt-wurde)
+  - [Drei Validierungsfälle, die geprüft werden](#drei-validierungsfaelle-die-geprueft-werden)
+    - [Fall 1: Kein DMARC-Eintrag gefunden](#fall-1-kein-dmarc-eintrag-gefunden)
+      - [Lösungen für Fall 1](#loesungen-fuer-fall-1)
+    - [Fall 2: Ungültiges DMARC-Eintragsformat](#fall-2-ungueltiges-dmarc-eintragsformat)
+      - [Lösungen für Fall 2](#loesungen-fuer-fall-2)
+    - [Fall 3: Domain-Abweichung](#fall-3-domain-abweichung)
+      - [Lösungen für Fall 3](#loesungen-fuer-fall-3)
+  - [Fehlerbehebung bei häufigen Problemen](#fehlerbehebung-bei-haeufigen-problemen)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+  - [Kurzübersicht](#kurzuebersicht)
+
+## E-Mail-Absender-Validierungsfunktion – Vollständige Anleitung
+
+Die E-Mail-Absender-Validierungsfunktion prüft deine E-Mail-Konfiguration vor dem Versenden von Kampagnen proaktiv, um maximale Zustellbarkeit zu sichern und deine Absender-Reputation zu schützen.
+
+Diese Anleitung behandelt die drei Validierungsfälle, zeigt die Fehlermeldungen und bietet Schritt-für-Schritt-Lösungen.
+
+---
+
+## Warum diese Funktion eingeführt wurde
+
+Seit Februar 2024 verlangen Gmail und Yahoo eine korrekte E-Mail-Authentifizierung. Ohne diese Validierung:
+
+- E-Mails landen unbemerkt im Spam-Ordner
+- Große E-Mail-Provider weisen deine Nachrichten ab
+- Geringe Zustellbarkeit ohne Begründung
+- Schäden an der Absender-Reputation
+- Geringerer Kampagnen-ROI
+
+Die Validierung erkennt diese Probleme, bevor sie deinen Kampagnen schaden.
+
+---
+
+## Drei Validierungsfälle, die geprüft werden
+
+Das System validiert drei wesentliche Punkte der E-Mail-Konfiguration:
+
+### Fall 1: Kein DMARC-Eintrag gefunden
+
+**FEHLERMELDUNG:** "No DMARC record found for this domain. Please try a different email."
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155060775097/original/h_-zSf2t4b801C39Omtbzt5Uriu2M_B_Ag.png?1765941156)**
+
+**BEDEUTUNG:** Für die Domain deiner Absender-E-Mail-Adresse ist kein DMARC-Eintrag im DNS hinterlegt.
+
+**BEISPIELSZENARIO:**
+
+- Absender-Domain: inbox.deinedomain.de (authentifiziert)
+- Absender-E-Mail: info@deinedomain.de
+- Problem: deinedomain.de hat keinen DMARC-Eintrag
+
+####
+
+#### Lösungen für Fall 1
+
+**DAUERHAFTE LÖSUNG (1–2 Stunden):**
+
+Füge dem DNS deiner Hauptdomain einen DMARC-Eintrag hinzu:
+
+| Feld | Wert |
+| --- | --- |
+| Eintragstyp | TXT |
+| Name/Host | \_dmarc.deinedomain.de |
+| Wert | v=DMARC1; p=none; rua=mailto:dmarc@deinedomain.de |
+| TTL | 3600 (oder Standard) |
+
+**SCHNELLE LÖSUNG (5 Minuten):**
+
+Passe deine Absender-E-Mail-Adresse an deine authentifizierte Versanddomain an:
+
+- **Aktuell:** info@deinedomain.de
+- **Ändern zu:** info@inbox.deinedomain.de
+
+---
+
+### Fall 2: Ungültiges DMARC-Eintragsformat
+
+**FEHLERMELDUNG:** "Invalid DMARC record format detected for the Sender Email's domain. Please use a different email."
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155060775038/original/-Ca4TaH4ygc_fa_xB_p92Ynzb6MBqSov3w.png?1765940981)**
+
+**BEDEUTUNG:** Deine Domain verfügt über einen DMARC-Eintrag, dieser enthält jedoch Syntaxfehler oder eine ungültige Konfiguration.
+
+**HÄUFIGE FEHLERHAFTE BEISPIELE:**
+
+- Falsche Version: v=DMARC2; p=none;
+- Ungültige Richtlinie: v=DMARC1; p=invalid;
+- Fehlende Semikolons: v=DMARC1 p=none
+- Falsches E-Mail-Format: rua=reports@domain.de (fehlendes mailto:)
+
+#### Lösungen für Fall 2
+
+**PRÜFE DIESE HÄUFIGEN PROBLEME:**
+
+| Problem | Falsch | Richtig |
+| --- | --- | --- |
+| Version | v=DMARC2 oder v=dmarc1 | v=DMARC1 |
+| Richtlinie | p=invalid oder p=block | p=none, p=quarantine, p=reject |
+| Syntax | v=DMARC1 p=none (ohne Semikolon) | v=DMARC1; p=none; |
+| E-Mail-Format | rua=reports@domain.de | rua=mailto:reports@domain.de |
+
+**BEISPIEL FÜR EINEN KORREKTEN DMARC-EINTRAG:**
+
+```
+_dmarc.deinedomain.de TXT "v=DMARC1; p=none; rua=mailto:reports@deinedomain.de"
+```
+
+---
+
+### Fall 3: Domain-Abweichung
+
+**FEHLERMELDUNG:** "The sender email's domain doesn't match the selected sender domain. Please try a different email."
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155060774877/original/SPOO57LateAjcyO5ASy0LNx-w1gtaoavRg.png?1765940459)**
+
+**BEDEUTUNG:** Deine Absender-E-Mail-Adresse verwendet eine andere Domain als die ausgewählte Versanddomain.
+
+**BEISPIELSZENARIO:**
+
+- Absender-Domain: inbox.deinedomain.de
+- Absender-E-Mail: max@fremdedomain.de
+- Problem: fremdedomain.de ≠ inbox.deinedomain.de
+
+#### Lösungen für Fall 3
+
+**OPTION 1: Absender-E-Mail anpassen (Sofortige Wirkung)**
+
+Passe deine Absender-E-Mail-Adresse an deine Versanddomain an:
+
+- **Falsch:** max@fremdedomain.de
+- **Richtig:** max@inbox.deinedomain.de
+
+**OPTION 2: Eigene authentifizierte Domain nutzen**
+
+Wenn du eine eigene Domain eingerichtet hast:
+
+- Wähle deine authentifizierte Domain als Absender-Domain aus
+- Verwende eine passende E-Mail-Adresse (z. B. max@deinedomain.de)
+- Stelle sicher, dass die Domain über SPF, DKIM und DMARC verfügt
+
+**OPTION 3: Subdomain-Strategie**
+
+Erstelle abgestimmte Subdomains:
+
+- Versanddomain: mail.deinedomain.de
+- Absender-E-Mail: info@mail.deinedomain.de
+- Vorteil: Wahrt die Markenkonsistenz
+
+---
+
+## Schritt-für-Schritt-DNS-Konfiguration
+
+Befolge diese Schritte, um deiner Domain einen DMARC-Eintrag hinzuzufügen:
+
+### Schritt 1: DNS-Anbieter aufrufen
+
+Melde dich bei deinem Domain-Registrar oder DNS-Hostinganbieter an:
+
+- GoDaddy: Gehe zu DNS-Verwaltung
+- Cloudflare: Navigiere zum Reiter DNS
+- Namecheap: Öffne Advanced DNS
+- Google Domains: Gehe zu den DNS-Einstellungen
+
+### Schritt 2: TXT-Eintrag hinzufügen
+
+Erstelle einen neuen TXT-Eintrag mit diesen Werten:
+
+| Feld | Wert | Beispiel |
+| --- | --- | --- |
+| Eintragstyp | TXT | TXT |
+| Name/Host | \_dmarc | \_dmarc.deinedomain.de |
+| Wert | v=DMARC1; p=none; rua=mailto:dmarc@deinedomain.de | Grundlegende Überwachungsrichtlinie |
+| TTL | 3600 | 1 Stunde |
+
+### Schritt 3: Speichern und warten
+
+Nach dem Speichern des DNS-Eintrags:
+
+- Die DNS-Propagierung dauert weltweit 24–48 Stunden
+- Manche Anbieter aktualisieren schneller (1–4 Stunden)
+- Prüfe den Propagierungsstatus mit Online-DNS-Lookup-Tools
+
+### Schritt 4: Eintrag überprüfen
+
+Nutze diese Tools zur Überprüfung deines DMARC-Eintrags:
+
+- MXToolbox DMARC Lookup
+- DMARC Analyzer
+- Google Admin Toolbox
+- Befehlszeile: nslookup -type=txt \_dmarc.deinedomain.de
+
+---
+
+## Fehlerbehebung bei häufigen Problemen
+
+| Problem | Ursache | Lösung |
+| --- | --- | --- |
+| Warnungen erscheinen nach dem Hinzufügen von DMARC weiterhin | Verzögerung bei der DNS-Propagierung | Warte 24–48 Stunden für die vollständige Propagierung |
+| Eintrag wird nach Korrektur als ungültig angezeigt | Syntaxfehler oder nicht unterstützte Werte | Verwende DMARC-Generatoren zur Erstellung gültiger Einträge |
+| Fehler wegen Domain-Abweichung bleibt bestehen | Externe E-Mail-Provider (Gmail, Yahoo) als Absenderadresse verwendet | Wechsle zu deiner authentifizierten Domain oder Subdomain |
+| E-Mails landen weiterhin im Spam | Andere Authentifizierungsprobleme (SPF, DKIM) | Richte die vollständige E-Mail-Authentifizierung ein |
+
+---
+
+## Häufig gestellte Fragen
+
+**Frage: Kann ich diese Validierung deaktivieren?**
+Antwort: Nein, diese Validierung schützt deine E-Mail-Zustellbarkeit. Es stehen jedoch mehrere Optionen zur schnellen Fehlerbehebung bereit.
+
+**Frage: Hat dies Auswirkungen auf meine bestehenden Kampagnen?**
+Antwort: Nur neue Kampagnen werden validiert. Bereits geplante Kampagnen werden wie vorgesehen ausgeführt.
+
+**Frage: Kann ich Gmail oder Yahoo als Absenderadresse verwenden?**
+Antwort: Dies wird nicht empfohlen. Verwende deine authentifizierte Domain für eine bessere Zustellbarkeit und um die Validierung zu bestehen.
+
+**Frage: Wie lange dauert die DNS-Propagierung?**
+Antwort: In der Regel 24–48 Stunden, abhängig vom jeweiligen DNS-Anbieter.
+
+**Frage: Was tun, wenn kein Zugriff auf die DNS-Einstellungen besteht?**
+Antwort: Kontaktiere dein IT-Team, deinen Domain-Registrar oder gleiche deine E-Mail-Domains an.
+
+---
+
+## Kurzübersicht
+
+**VALIDIERUNGSFEHLER UND SCHNELLE LÖSUNGEN:**
+
+| Fehlermeldung | Schnelle Lösung | Dauerhafte Lösung |
+| --- | --- | --- |
+| Kein DMARC-Eintrag gefunden | Absender-E-Mail an die Versanddomain anpassen | DMARC-Eintrag zur Hauptdomain hinzufügen |
+| Ungültiges DMARC-Eintragsformat | Absender-E-Mail mit funktionierendem DMARC nutzen | DMARC-Syntaxfehler korrigieren |
+| Domain stimmt nicht überein | Absender-E-Mail an die Versanddomain angleichen | Vollständige Domain-Authentifizierung einrichten |
+
+**VORLAGE FÜR EINEN BASIS-DMARC-EINTRAG:**
+
+```
+_dmarc.deinedomain.de TXT "v=DMARC1; p=none; rua=mailto:dmarc@deinedomain.de"
+```

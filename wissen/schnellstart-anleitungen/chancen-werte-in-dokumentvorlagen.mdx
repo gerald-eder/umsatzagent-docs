@@ -1,0 +1,169 @@
+---
+title: "Chancen-Werte in Dokumentvorlagen"
+description: "Benutzerdefinierte Chancen-Werte ermöglichen es dir, Vorlagen für Dokumente & Verträge mit deal-spezifischen Informationen wie Projektbudget,…"
+---
+
+Benutzerdefinierte Chancen-Werte ermöglichen es dir, Vorlagen für Dokumente & Verträge mit deal-spezifischen Informationen wie Projektbudget, Dienstleistungsart oder Abschlussdatum zu personalisieren. Wenn ein Workflow das Dokument erstellt, ersetzt UmsatzAgent jeden Platzhalter durch die Informationen aus der entsprechenden Chance. Das reduziert manuelle Anpassungen und sorgt für fehlerfreie und einheitliche Dokumente.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind benutzerdefinierte Chancen-Werte in Vorlagen für Dokumente & Verträge?](#was-sind-benutzerdefinierte-chancen-werte-in-vorlagen-fuer-dokumente-vertraege)
+- [Wichtigste Vorteile von benutzerdefinierten Chancen-Werten](#wichtigste-vorteile-von-benutzerdefinierten-chancen-werten)
+- [Bevor du beginnst](#bevor-du-beginnst)
+- [So richtest du benutzerdefinierte Chancen-Werte in einer Vorlage ein](#so-richtest-du-benutzerdefinierte-chancen-werte-in-einer-vorlage-ein)
+- [So verwendest du die Vorlage in einem Workflow](#so-verwendest-du-die-vorlage-in-einem-workflow)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was sind benutzerdefinierte Chancen-Werte in Vorlagen für Dokumente & Verträge?
+
+Benutzerdefinierte Chancen-Felder speichern Informationen zu einem bestimmten Deal. Ein Platzhalter dient als Variable innerhalb der Vorlage und zeigt den gespeicherten Wert der Chance an, sobald der Workflow das Dokument erstellt. Im Gegensatz zu Kontakt-Feldern können Chancen-Werte für jeden Deal desselben Kontakts unterschiedlich sein.
+
+**Wichtig:** Diese Anleitung gilt für wiederverwendbare Vorlagen, nicht für einzelne Dokumente. Öffne **Zahlungen → Dokumente & Verträge → Vorlagen** und stelle sicher, dass der Reiter **Vorlagen** ausgewählt ist.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079384195/original/gObEADKeP9BkO-lY35T-ccvqgeLCLtoTig.png?1787769006)*
+
+Beim Bearbeiten einer Vorlage enthält die Browser-Adresse ebenfalls `/templates/`.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647671/original/qcZg8-1VjKXiTbazub2Q7eTA50BJ51VIvQ.png?1787024682)*
+
+---
+
+## Wichtigste Vorteile von benutzerdefinierten Chancen-Werten
+
+Chancen-Platzhalter ermöglichen es, eine einzige Vorlage automatisch an verschiedene Deals anzupassen.
+
+- **Schnellere Dokumentenerstellung:** Reduziere manuelle Bearbeitungen vor dem Versenden von Angeboten oder Verträgen.
+- **Präzise Deal-Informationen:** Übernimm Werte direkt aus dem Datensatz der Chance.
+- **Wiederverwendbare Automatisierung:** Nutze dieselbe Vorlage für mehrere Chancen und Pipelines.
+- **Einheitliche Dokumente:** Halte Formatierung und Deal-Informationen im gesamten Team standardisiert.
+
+---
+
+## Bevor du beginnst
+
+Chancen-Werte können nur eingefügt werden, wenn das erforderliche Feld, der Wert, die Vorlage und der Workflow-Kontext vorhanden sind.
+
+Stelle Folgendes sicher:
+
+- Das erforderliche Feld wurde als benutzerdefiniertes **Chancen**-Feld erstellt.
+- Die Chance enthält einen Wert für dieses Feld.
+- Die Chance ist mit dem richtigen Kontakt verknüpft.
+- Die Vorlage wird gespeichert, bevor sie in einem Workflow ausgewählt wird.
+- Der Workflow nutzt einen Trigger mit Chancen-Bezug, wenn Deal-Informationen befüllt werden müssen.
+- Der Kontakt besitzt eine gültige E-Mail-Adresse, wenn das Dokument versendet werden soll.
+
+**Vorlagen mit mehreren Rollen:** Weise mindestens ein ausfüllbares Element dem **Kontakt** zu, bevor du die Vorlage in einem Workflow verwendest. Im Workflow eingegebene Rollendetails überschreiben die entsprechenden Standardwerte der Vorlage.
+
+---
+
+## So richtest du benutzerdefinierte Chancen-Werte in einer Vorlage ein
+
+Die Verwendung des Platzhalter-Menüs fügt den korrekten Feld-Token ein und verhindert Formatierungs- oder Syntaxfehler.
+
+1. Öffne **Zahlungen → Dokumente & Verträge → Vorlagen**.
+2. Klicke auf **+ Neu** oder öffne eine bestehende Vorlage.
+3. Klicke auf das **+**-Symbol und füge einen **Text**-Block oder eine **Tabelle** an der Stelle ein, an der die Chancen-Informationen erscheinen sollen.
+4. Platziere den Cursor an der gewünschten Stelle und klicke auf das Symbol für **Platzhalter**.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855400/original/2_gIW0vs2Me8Gh7SDNaDuR815N1-Q-VfBg.png?1788305788)*
+
+5. Wähle aus:
+
+   **Kontakt → Benutzerdefinierte Felder → Chancen-Details → Feldname**
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647578/original/BSMYpKnRcoGJX0FIUVkEGeM84F6jaCX6Fw.png?1787024398)*
+
+6. Prüfe, ob der Platzhalter-Token an der richtigen Stelle erscheint.
+7. Klicke auf **Speichern**.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647569/original/MqJGtC5dR-z4i7miIuErmapxWI_2hQ4OhA.png?1787024345)*
+
+**Tipp:** Wähle Felder über das Platzhalter-Menü aus, anstatt einen Platzhalter wie `{{`[`opportunity.xyz`](http://opportunity.xyz)`}}` manuell einzutippen. Das Menü fügt den exakten Token für das ausgewählte Feld ein.
+
+---
+
+## So verwendest du die Vorlage in einem Workflow
+
+Ein Workflow-Trigger mit Chancen-Bezug liefert UmsatzAgent den nötigen Deal-Kontext, um die Chancen-Platzhalter der Vorlage zu befüllen.
+
+1. Öffne **Automatisierung → Workflows**.
+2. Erstelle einen Workflow oder öffne einen bestehenden.
+3. Füge den Trigger hinzu, der zu deinem Prozess passt:
+
+   - **Pipeline-Phase geändert:** Startet den Workflow, wenn eine Chance eine ausgewählte Phase erreicht.
+   - **Chancen-Status geändert:** Startet den Workflow, wenn eine Chance in einen Status wie Gewonnen oder Verloren wechselt.
+
+Du benötigst beide Trigger nur dann, wenn jedes der beiden Ereignisse den Workflow starten soll.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647697/original/nOEtTsfMyPCT_InLa9A8nT-WYw72lX0v5w.png?1787024775)*
+
+4. Konfiguriere die Trigger-Filter wie Pipeline, Phase oder Status.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647558/original/HvrPOe_pxZztzWDhVUrYYuyRz2v4FXnCNg.png?1787024302)*
+
+5. Klicke auf **+ Aktion hinzufügen** und wähle **Dokumente & Verträge senden**.
+6. Konfiguriere die Aktion:
+
+   - Wähle den **Absender-Nutzer**.
+   - Wähle die gespeicherte Vorlage aus.
+   - Wähle **Als Entwurf erstellen** oder **Direkt senden**.
+   - Wähle den Versandkanal.
+   - Ergänze alle erforderlichen Empfänger- oder Unterzeichner-Informationen.
+7. Klicke auf **Aktion speichern** und veröffentliche anschließend den Workflow.
+
+Verwende beim Testen **Als Entwurf erstellen**. Öffne den erstellten Entwurf und prüfe, ob jedes Chancen-Feld den erwarteten Wert enthält, bevor du die Aktion auf **Direkt senden** umstellst.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum ist ein Chancen-Wert im erstellten Dokument leer?**
+
+Stelle sicher, dass das Feld in der Chance, die den Workflow ausgelöst hat, einen Wert enthält. Prüfe außerdem, ob du das Feld unter **Chancen-Details** ausgewählt und die Vorlage vor Ausführung des Workflows gespeichert hast.
+
+**F: Warum ist der Platzhalter-Token immer noch sichtbar?**
+
+Der Token bleibt beim Bearbeiten der Vorlage normalerweise sichtbar. Er wird ersetzt, sobald der Workflow das Dokument generiert. Bleibt er auch im erstellten Dokument sichtbar, füge das Feld erneut über das Platzhalter-Menü ein und teste den Vorgang nochmals.
+
+**F: Kann ich einen Chancen-Platzhalter manuell eintippen?**
+
+Ja, aber der Token muss exakt mit dem Platzhalter-Schlüssel des Feldes übereinstimmen. Die Auswahl über das Platzhalter-Menü wird empfohlen, um Tipp- und Formatierungsfehler zu vermeiden.
+
+**F: Welchen Workflow-Trigger sollte ich verwenden?**
+
+Verwende **Pipeline-Phase geändert**, wenn das Dokument in einer bestimmten Pipeline-Phase erstellt werden soll. Verwende **Chancen-Status geändert**, wenn es nach einer Statusänderung erstellt werden soll, beispielsweise wenn ein Deal als Gewonnen markiert wird.
+
+**F: Warum wird meine Vorlage in der Workflow-Aktion nicht angezeigt?**
+
+Vergewissere dich, dass du eine Vorlage und kein einzelnes Dokument erstellt und auf **Speichern** geklickt hast. Nur gespeicherte Vorlagen stehen in der Aktion „Dokumente & Verträge senden“ zur Auswahl.
+
+**F: Warum verblieb das Dokument im Status „Entwurf“, anstatt versendet zu werden?**
+
+Prüfe, ob die Aktion **Als Entwurf erstellen** verwendet. Vergewissere dich außerdem, dass der Kontakt eine gültige E-Mail-Adresse hat – diese ist auch beim SMS-Versand erforderlich.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Chancen-Werte in einem erstellten Dokument nicht korrekt ausgefüllt werden, stelle zuerst sicher, dass der Workflow Zugriff auf die richtige Chance hat und die benötigten Informationen vor der Dokumentenerstellung hinterlegt sind.
+
+Prüfe Folgendes:
+
+- Das Feld wurde als **benutzerdefiniertes Chancen-Feld** erstellt.
+- Die Chance enthält einen Wert für das Feld.
+- Die richtige Chance ist mit dem Kontakt verknüpft.
+- Der Platzhalter wurde im Menü über **Chancen-Details** eingefügt.
+- Die Vorlage wurde vor dem Ausführen des Workflows gespeichert.
+- Der Workflow nutzt einen Trigger mit Chancen-Bezug, wenn Chancen-Daten erforderlich sind.
+- Die Aktion **Dokumente & Verträge senden** verwendet die richtige Vorlage.
+- Der Kontakt besitzt eine gültige E-Mail-Adresse, falls diese für den Versand erforderlich ist.
+
+Nutze bei der Fehlerbehebung **Als Entwurf erstellen** und prüfe das erstellte Dokument, bevor du **Direkt senden** aktivierst.
+
+So lassen sich fehlende oder fehlerhafte Werte leicht erkennen, ohne ein unvollständiges Dokument zu versenden.
+
+Besteht das Problem weiterhin, erstelle Screenshots vom Datensatz der Chance, dem Vorlagen-Platzhalter, dem Workflow-Trigger und der Konfiguration der Aktion **Dokumente & Verträge senden**. Wende dich an den UmsatzAgent Support.

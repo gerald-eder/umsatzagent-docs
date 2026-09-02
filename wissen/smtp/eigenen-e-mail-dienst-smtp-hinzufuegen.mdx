@@ -1,0 +1,272 @@
+---
+title: "Eigenen E-Mail-Dienst (SMTP) hinzufügen"
+description: "E-Mail-Infrastruktur"
+---
+
+E-Mail-Infrastruktur
+
+Eigenen SMTP-Dienst einrichten
+
+Verbinde deinen eigenen Drittanbieter-E-Mail-Versanddienst – Gmail, SendGrid, Amazon SES und mehr – direkt in deinen Einstellungen.
+
+Übersicht
+
+Die Plattform ermöglicht es dir, deinen eigenen Drittanbieter-E-Mail-Versanddienst (SMTP) anstelle des standardmäßigen UmsatzAgent E-Mail-Systems zu nutzen. Das ist nützlich, wenn du bereits eine etablierte Absender-Reputation hast, höhere Sendelimits benötigst oder deine eigene E-Mail-Infrastruktur verwalten möchtest.
+
+Diese Anleitung führt dich durch das Hinzufügen, Konfigurieren und Aktivieren eines benutzerdefinierten SMTP-Dienstes.
+
+Inhaltsverzeichnis
+
+1
+
+[Wo E-Mail-Dienste zu finden sind](#wo-e-mail-dienste-zu-finden-sind)
+
+2
+
+[Standard- vs. benutzerdefinierter E-Mail-Dienst](#standard-vs-benutzerdefinierter-e-mail-dienst)
+
+3
+
+[Unterstützte SMTP-Anbieter](#unterstuetzte-smtp-anbieter)
+
+4
+
+[Schritt für Schritt: Eigenen SMTP-Dienst hinzufügen](#schritt-fuer-schritt-eigenen-smtp-dienst-hinzufuegen)
+
+5
+
+[Referenz gängiger SMTP-Einstellungen](#referenz-gaengiger-smtp-einstellungen)
+
+6
+
+[Wichtig: Einschränkungen bei Drittanbieter-SMTP](#wichtig-einschraenkungen-bei-drittanbieter-smtp)
+
+7
+
+[Antworten für SMTP aktivieren](#antworten-fuer-smtp-aktivieren)
+
+8
+
+[Zurück zum UmsatzAgent E-Mail-System wechseln](#zurueck-zum-umsatzagent-e-mail-system-wechseln)
+
+9
+
+[Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+Video-Anleitung
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://watchclueso.com/embed/k7r7o58vyz1osu9c"
+  title="Video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+1
+
+## Wo E-Mail-Dienste zu finden sind
+
+Navigiere mit den folgenden Schritten zu den Einstellungen für E-Mail-Dienste:
+
+1. Melde dich in deinem Konto an
+2. Klicke in der linken Seitenleiste auf **Einstellungen**
+3. Wähle **E-Mail-Dienste**
+4. Gehe zum Reiter **SMTP-Dienst** (oder **Erweiterte Einstellungen**, abhängig von deiner Version der Benutzeroberfläche)
+
+Tipp
+
+Deine Oberfläche zeigt möglicherweise Reiter namens **„SMTP-Dienst“** oder **„Erweiterte Einstellungen“** – beide führen zum selben SMTP-Konfigurationsbereich.
+
+2
+
+## Standard- vs. benutzerdefinierter E-Mail-Dienst
+
+Ein direkter Vergleich zur Entscheidung, welche Option am besten zu deinem Unternehmen passt:
+
+| UmsatzAgent (Standard) | Eigener SMTP-Dienst (Drittanbieter) |
+| --- | --- |
+| Von der Plattform verwaltet | Von dir / deinem Anbieter verwaltet |
+| Vollständiger Zugriff auf alle integrierten Zustellbarkeits-Tools | Einige integrierte Tools sind nicht verfügbar (siehe Einschränkungen) |
+| Keine zusätzliche Einrichtung erforderlich | Erfordert SMTP-Zugangsdaten deines Anbieters |
+| Empfohlen für die meisten Nutzer | Am besten für Nutzer mit bestehender Versand-Infrastruktur |
+
+3
+
+## Unterstützte SMTP-Anbieter
+
+Wenn du auf **+ Dienst hinzufügen** klickst, kannst du aus den folgenden Anbietern wählen:
+
+**Gmail** — Google Workspace oder persönliches Gmail
+
+**Yahoo Mail**
+
+**SendGrid**
+
+**Sonstige** — umfasst Amazon SES, Postmark, Zoho und jeden SMTP-kompatiblen Dienst
+
+Einrichtungsanleitung
+
+Eigenen SMTP-Dienst hinzufügen
+
+Befolge diese fünf Schritte, um deinen Drittanbieter-E-Mail-Dienst zu verbinden.
+
+4
+
+## Schritt für Schritt: Eigenen SMTP-Dienst hinzufügen
+
+Schritt 1
+
+E-Mail-Dienste öffnen
+
+Gehe zu **Einstellungen → E-Mail-Dienste → SMTP-Dienst**.
+
+Schritt 2
+
+Auf + Dienst hinzufügen klicken
+
+Klicke oben rechts auf der Seite auf die Schaltfläche **+ Dienst hinzufügen**. Es öffnet sich ein Pop-up-Fenster namens **„Eigenen E-Mail-Dienst hinzufügen“**.
+
+![Klicke auf Dienst hinzufügen, um das SMTP-Einrichtungsfenster zu öffnen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069981836/original/bajlYiGnuLKVa_nG4mR8iX7i8b3voPsfgg.png?1777263794)
+
+Schritt 3
+
+SMTP-Anbieter auswählen
+
+Wähle deinen Anbieter aus dem Dropdown-Menü für SMTP-Anbieter aus:
+
+- Gmail
+- Yahoo Mail
+- SendGrid
+- Sonstige (für Amazon SES, Postmark etc.)
+
+![Wähle deinen SMTP-Anbieter aus dem Dropdown-Menü](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069981801/original/WRn4tN6qIe17oF2bB2eVYO_GugVC8Dp2MQ.png?1777263715)
+
+Schritt 4
+
+SMTP-Zugangsdaten eingeben
+
+Fülle die erforderlichen Felder aus. Diese Angaben stammen aus dem Dashboard deines E-Mail-Anbieters:
+
+| Feld | Beschreibung |
+| --- | --- |
+| SMTP-Host | Die Adresse des Postausgangsservers (z. B. smtp.sendgrid.net) |
+| Port | Meist 587 (TLS) oder 465 (SSL) |
+| Benutzername | Dein SMTP-Benutzername oder deine API-Schlüssel-Kennung |
+| Passwort / API-Schlüssel | Dein SMTP-Passwort oder API-Schlüssel des Anbieters |
+| Absendername | Der Anzeigename, den Empfänger sehen |
+| Absender-E-Mail | Die E-Mail-Adresse, von der aus E-Mails gesendet werden |
+
+![Gib deine SMTP-Zugangsdaten ein](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069981857/original/TydsvLo8_i1wRWr6NR-Lt0CYdi0xk9_CLg.png?1777263854)
+
+Schritt 5
+
+Speichern und als aktiv festlegen
+
+Nach dem Speichern erscheint dein neuer SMTP-Dienst in der Anbieterliste. Um ihn zu nutzen:
+
+1. Suche deinen neu hinzugefügten Dienst in der Liste
+2. Klicke auf **Als aktiv festlegen**
+3. Bestätige die Auswahl
+
+Tipp
+
+Du kannst mehrere SMTP-Dienste speichern und jederzeit zwischen ihnen wechseln. Es kann immer nur ein Dienst aktiv sein.
+
+5
+
+## Referenz gängiger SMTP-Einstellungen
+
+Schnellübersicht für beliebte Anbieter – überprüfe die Werte vor der Eingabe im Dashboard deines Anbieters.
+
+| Anbieter | SMTP-Host | Port | Hinweise |
+| --- | --- | --- | --- |
+| Gmail | smtp.gmail.com | 587 / 465 | Erfordert App-Passwort bei aktivierter 2FA |
+| SendGrid | smtp.sendgrid.net | 587 | Verwende „apikey“ als Benutzernamen |
+| Amazon SES | email-smtp.[region].amazonaws.com | 587 | Erfordert IAM-SMTP-Zugangsdaten |
+| Postmark | smtp.postmarkapp.com | 587 | Server-API-Token als Zugangsdaten verwenden |
+| Yahoo Mail | smtp.mail.yahoo.com | 587 | Erfordert App-Passwort |
+| Zoho Mail | smtp.zoho.com | 587 | Zugangsdaten deines Zoho-Kontos verwenden |
+
+6
+
+## Wichtig: Einschränkungen bei Drittanbieter-SMTP
+
+Wenn du einen benutzerdefinierten SMTP-Dienst anstelle von UmsatzAgent nutzt, sind einige Funktionen der Plattform nicht verfügbar. Prüfe diese Einschränkungen vor dem Wechsel:
+
+Funktionen, die mit Drittanbieter-SMTP NICHT verfügbar sind
+
+- Eigene Versand-Domain direkt in der App erstellen
+- Integration von Google Postmaster Tools
+- Integration von Microsoft Postmaster Tools
+- Risikobewertung
+- Bounce-Klassifizierung
+- Posteingangsplatzierungs-Tests
+- Spam-Score-Prüfung
+- Blacklist-Überwachung
+- Verwaltete Domains und IPs
+
+Wichtig
+
+Wenn diese Funktionen für deine E-Mail-Strategie wichtig sind, bleibe beim **UmsatzAgent E-Mail-System**, das dir vollen Zugriff auf alle integrierten Zustellbarkeits-Tools bietet.
+
+7
+
+## Antworten für SMTP aktivieren
+
+Wenn du deinen aktiven SMTP-Dienst anzeigst, siehst du das Kontrollkästchen **Antworten aktivieren**. Wenn du dies aktivierst, können eingehende Antworten auf E-Mails, die über dein SMTP gesendet wurden, empfangen und in Konversationen verfolgt werden.
+
+Tipp
+
+Wenn du eine bidirektionale E-Mail-Kommunikation mit deinen Kontakten benötigst, stelle sicher, dass **Antworten aktivieren** für deinen aktiven SMTP-Dienst ausgewählt ist.
+
+8
+
+## Zurück zum UmsatzAgent E-Mail-System wechseln
+
+Du kannst jederzeit zum standardmäßigen UmsatzAgent E-Mail-System zurückkehren:
+
+1. Gehe zu **Einstellungen → E-Mail-Dienste → SMTP-Dienst**
+2. Klicke auf **UmsatzAgent E-Mail-System**
+3. Klicke auf **Als aktiv festlegen** (oder wähle es als Standard)
+
+Gut zu wissen
+
+Alle deine benutzerdefinierten SMTP-Dienste bleiben gespeichert und können später wieder aktiviert werden.
+
+9
+
+## Häufig gestellte Fragen
+
+F: Kann ich mehrere SMTP-Dienste speichern?
+
+Ja. Du kannst beliebig viele SMTP-Dienste speichern. Für ausgehende E-Mails kann jedoch immer nur ein Dienst gleichzeitig aktiv sein.
+
+F: Sehen meine Kontakte Details zum SMTP-Anbieter?
+
+Nein. Kontakte sehen nur den von dir konfigurierten **Absendernamen** und die **Absender-E-Mail** – nicht die Details des zugrunde liegenden SMTP-Anbieters.
+
+F: Was passiert mit bereits gesendeten E-Mails, wenn ich den Anbieter wechsle?
+
+Der Wechsel des Anbieters wirkt sich nur auf zukünftige E-Mails aus. Zuvor gesendete E-Mails sind nicht betroffen.
+
+F: Meine SMTP-Verbindung schlägt fehl – was sollte ich prüfen?
+
+- Prüfe, ob SMTP-Host, Port, Benutzername und Passwort korrekt sind
+- Stelle sicher, dass Port 587 oder 465 nicht von deinem E-Mail-Anbieter blockiert wird
+- Stelle bei Gmail sicher, dass du ein **App-Passwort** (nicht dein normales Login-Passwort) verwendest, wenn die Bestätigung in zwei Schritten aktiviert ist
+- Stelle bei SendGrid sicher, dass deine Versand-Domain in deinem SendGrid-Konto verifiziert ist
+- Prüfe, ob deine Absender-E-Mail-Adresse im Konto deines SMTP-Anbieters autorisiert ist
+
+F: Beeinträchtigt die Nutzung eines eigenen SMTP meine integrierten E-Mail-Zustellbarkeits-Tools?
+
+Ja. Mehrere integrierte Zustellbarkeits-Tools (Postmaster-Integrationen, Risikobewertung, Bounce-Klassifizierung, Posteingangsplatzierung, Spam-Score-Prüfung, Blacklist-Überwachung und verwaltete Domains/IPs) sind nach dem Wechsel zu einem Drittanbieter-SMTP nicht mehr verfügbar. Siehe dazu den Abschnitt zu den Einschränkungen oben.
+
+F: Welchen SMTP-Port sollte ich verwenden – 587 oder 465?
+
+Verwende **587** mit TLS (von den meisten modernen Anbietern empfohlen) und **465** mit SSL. Wenn ein Port durch dein Netzwerk blockiert wird, probiere den anderen aus.
+
+F: Werden Antworten auf meine E-Mails in die Plattform zurückgeleitet?
+
+Nur wenn du die Option **Antworten aktivieren** bei deinem aktiven SMTP-Dienst auswählst. Ist dies aktiviert, werden eingehende Antworten empfangen und in Konversationen erfasst.

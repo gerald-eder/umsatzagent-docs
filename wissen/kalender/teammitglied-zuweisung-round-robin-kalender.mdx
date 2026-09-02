@@ -1,0 +1,114 @@
+---
+title: "Teammitglied-Zuweisung (Round-Robin-Kalender)"
+description: "Du kannst konfigurieren, welches Teammitglied einem Termin in einem Round-Robin-Kalender zugewiesen wird. Dir stehen Optionen für…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [Präferenz für Terminverschiebungen](#praeferenz-fuer-terminverschiebungen)
+- [So funktioniert es:](#so-funktioniert-es)
+- [Präferenz für neue Termine: Immer mit dem zugewiesenen Nutzer des Kontakts buchen](#praeferenz-fuer-neue-termine-immer-mit-dem-zugewiesenen-nutzer-des-kontakts-buch)
+  - [Voraussetzungen:](#voraussetzungen)
+  - [So funktioniert es:](#so-funktioniert-es)
+- [Wichtige Hinweise vor der Nutzung dieser Funktion:](#wichtige-hinweise-vor-der-nutzung-dieser-funktion)
+
+### Übersicht
+
+Du kannst konfigurieren, welches Teammitglied einem Termin in einem Round-Robin-Kalender zugewiesen wird. Dir stehen Optionen für Terminverschiebungs-Präferenzen und Präferenzen für neue Termine zur Verfügung.
+
+**Präferenz für Terminverschiebungen:** Wähle, wem der Termin zugewiesen werden soll, wenn ein Kontakt den Termin über das Buchungs-Widget verschiebt.
+
+**Präferenz für neue Termine:** Wähle, ob neue Termine immer mit dem zugewiesenen Nutzer des Kontakts gebucht werden sollen.
+
+**Termin-Inhaber**
+
+Der Termin-Inhaber ist der Nutzer, der einem bestimmten Termin zugewiesen ist.
+
+**Zugewiesener Nutzer**
+
+Der zugewiesene Nutzer ist der dem Kontakt zugewiesene Nutzer, den du in den Kontaktdetails einsehen kannst.
+
+---
+
+### Präferenz für Terminverschiebungen
+
+Du kannst festlegen, wer einem verschobenen Termin zugewiesen werden soll, wenn ein Kontakt den Termin über das Buchungs-Widget verschiebt. Du kannst Termine entweder per Round-Robin neu zuweisen oder denselben Termin-Inhaber beibehalten. Dies stellt sicher, dass derselbe Nutzer dem verschobenen Termin zugewiesen bleibt.
+
+Diese Einstellungen findest du in jedem Round-Robin-Kalender > Termindetails > Teammitglieder > Erweiterte Einstellungen
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028326117/original/_9UKZSeGPfLl3vcyX9yqMlIrFjzSf23Qbw.png?1719490662)
+
+###
+
+### So funktioniert es:
+
+**Über Round-Robin neu zuweisen:** Wenn du die Neuzuweisung per Round-Robin wählst, wird der verschobene Termin basierend auf dem Round-Robin-Algorithmus einem Teammitglied zugewiesen.
+
+**Gleichen Termin-Inhaber beibehalten:** Wenn du diese Einstellung aktivierst und ein Kontakt einen Termin über den Verschiebungslink verschiebt, werden im Buchungs-Widget nur die Zeitfenster des ursprünglichen Termin-Inhabers angezeigt.
+
+Beispiel: War Nutzer A der ursprüngliche Termin-Inhaber und der Kontakt verschiebt den Termin, werden für die Neuplanung nur die verfügbaren Zeitfenster von Nutzer A angezeigt.
+
+**Hinweis:** Du kannst „Mitarbeiterauswahl erlauben“ deaktivieren, um zu verhindern, dass Buchende das Teammitglied im Buchungs-Widget ändern.
+
+---
+
+### Präferenz für neue Termine: Immer mit dem zugewiesenen Nutzer des Kontakts buchen
+
+Mit dieser Funktion buchst du neue Termine mit dem zugewiesenen Nutzer des Kontakts anstelle der Round-Robin-Zuweisung. Du kannst festlegen, ob der Kontakt jedes Mal mit demselben Nutzer gebucht werden soll, wenn er einen neuen Termin vereinbart.
+
+Diese Einstellungen findest du in jedem Round-Robin-Kalender > Termindetails > Teammitglieder > Erweiterte Einstellungen
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028323732/original/dmGq8BtYXRT36n25_S7TWGg9AaRJxHuQjQ.png?1719489198)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028323758/original/oERlSBCpybC5YbTB3qaZHcpltZchOO0r8w.png?1719489231)
+
+---
+
+#### Voraussetzungen:
+
+Das Formular muss in der Reihenfolge des Buchungs-Widgets an erster Stelle stehen. Du kannst das Widget im Reiter „Formulare & Zahlungen“ neu anordnen, um diese Funktion zu nutzen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028323438/original/N2Cl5OgZe8dF5vJUHvR_teVrHQZc5VKX8A.png?1719488987)
+
+---
+
+#### So funktioniert es:
+
+Steht das Formular an erster Stelle, gibt der Kontakt seine Daten ein. Anhand der E-Mail-Adresse oder Telefonnummer des Kontakts prüft das System, wer der zugewiesene Nutzer des Kontakts ist. Es gibt drei mögliche Szenarien:
+
+- **Kein zugewiesener Nutzer:** Hat der Kontakt keinen zugewiesenen Nutzer, wird der Termin per Round-Robin zugewiesen.
+- **Zugewiesener Nutzer ist nicht Teil des Kalenders:** Hat der Kontakt einen zugewiesenen Nutzer (z. B. Nutzer A), der nicht Teil des Kalenders ist, wird der Termin per Round-Robin unter den Kalender-Teammitgliedern zugewiesen.
+- **Zugewiesener Nutzer ist Teil des Kalenders:** Hat der Kontakt einen zugewiesenen Nutzer (z. B. Nutzer A), der Teil des Kalenders ist, werden die Zeitfenster von Nutzer A im Buchungs-Widget angezeigt und der Termin wird mit Nutzer A gebucht.
+
+Wenn diese Einstellung deaktiviert ist, wird jeder neue Termin über Round-Robin geplant.
+
+---
+
+### Wichtige Hinweise vor der Nutzung dieser Funktion:
+
+- **Tipp 1:** Du kannst „Mitarbeiterauswahl erlauben“ deaktivieren, um zu verhindern, dass Buchende das Teammitglied im Buchungs-Widget ändern.
+- **Tipp 2:** Sorge für einheitliche Einstellungen in allen deinen Kalendern, um Konflikte bei der Aktualisierung des zugewiesenen Nutzers zu vermeiden.
+- **Tipp 3:** Überprüfe deine Einstellungen für die Nutzerzuweisung unter „Benachrichtigungen & Zusätzliche Optionen“.
+
+**Einstellung 1**
+
+**„Kontakte bei jeder Terminbuchung dem jeweiligen Kalender-Teammitglied zuweisen“**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028323245/original/4ExLAWiqWoYimyRIZFvzSmWnoTAED6rL-g.png?1719488813)
+
+**So funktioniert es:**
+
+Sobald ein Termin gebucht wird, wird der zugewiesene Nutzer des Kontakts auf den für den Termin zugewiesenen Nutzer aktualisiert.
+
+Beispiel: Findet der erste Termin mit Nutzer A statt, wird der zugewiesene Nutzer des Kontakts auf Nutzer A aktualisiert. Findet der zweite Termin mit Nutzer B statt, wird der zugewiesene Nutzer auf Nutzer B aktualisiert, und so weiter.
+
+**Einstellung 2**
+
+**„Kontaktzuweisung überspringen, wenn der Kontakt bereits einen zugewiesenen Nutzer hat:“**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155028323321/original/GPxASkP5uB3yE9itCLmHX-KO7EZxx3JhCA.png?1719488898)
+
+**So funktioniert es:**
+
+Hat ein Kontakt bereits Nutzer A als zugewiesenen Nutzer, stellt diese Einstellung sicher, dass Nutzer A der zugewiesene Nutzer bleibt – unabhängig davon, wer für nachfolgende Termine gebucht wird.

@@ -1,0 +1,219 @@
+---
+title: "Übersicht über Platzhalter &amp; benutzerdefinierte Variablen"
+description: "Dieser Artikel erklärt Platzhalter und benutzerdefinierte Variablen. Du erfährst mehr über verschiedene Feldtypen wie benutzerdefinierte Felder,…"
+---
+
+Dieser Artikel erklärt **Platzhalter und benutzerdefinierte Variablen**. Du erfährst mehr über verschiedene Feldtypen wie benutzerdefinierte Felder, benutzerdefinierte Werte, benutzerdefinierte Objekte sowie benutzerdefinierte Links (Trigger-Links und Zahlungslinks) und wie du sie zur Personalisierung der Kommunikation und Automatisierung von Workflows einsetzt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Platzhalter und benutzerdefinierte Variablen?](#was-sind-platzhalter-und-benutzerdefinierte-variablen)
+- [Vorteile der Nutzung von Platzhaltern und benutzerdefinierten Variablen](#vorteile-der-nutzung-von-platzhaltern-und-benutzerdefinierten-variablen)
+- [Standardfelder](#standardfelder)
+- [Benutzerdefinierte Felder](#benutzerdefinierte-felder)
+- [Benutzerdefinierte Werte](#benutzerdefinierte-werte)
+- [Benutzerdefinierte Objekte](#benutzerdefinierte-objekte)
+- [Trigger-Links](#trigger-links)
+- [Zahlungslinks](#zahlungslinks)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Verwandte Artikel](#verwandte-artikel)
+
+---
+
+## Was sind Platzhalter und benutzerdefinierte Variablen?
+
+Platzhalter und benutzerdefinierte Variablen dienen dazu, personalisierte Informationen dynamisch einzufügen. Ein Platzhalter sieht so aus: {{something.here}}. Diese Felder unterstützen die Automatisierung und Personalisierung der Kommunikation, indem Daten aus dem CRM oder anderen Modulen abgerufen und anstelle des Platzhalters eingefügt werden.
+
+Wenn du einen kontaktbasierten Workflow erstellst, kannst du in der Variablenauswahl neben Kontaktfeldern auch Unternehmensfelder auswählen. Ist der Kontakt mit einem Unternehmensdatensatz verknüpft, können Workflow-Schritte und Bedingungen Unternehmensdetails abrufen (zum Beispiel Unternehmensname, Telefon, E-Mail, Website und Adresse). Ist der Kontakt keinem Unternehmen zugeordnet, bleiben die Unternehmenswerte leer.
+
+Zu den Arten von Platzhaltern und benutzerdefinierten Variablen gehören:
+
+- **Standardfelder:** Vordefinierte, nicht anpassbare Felder wie Kontaktnamen, Terminzeiten und Benutzerdetails.
+- **Benutzerdefinierte Felder**: Vom Nutzer definierte Felder für Kontakte und Chancen.
+- **Benutzerdefinierte Werte**: Wiederverwendbare Werte, die in Vorlagen und Workflows genutzt werden können.
+- **Benutzerdefinierte Objekte**: Eigens erstellte Datenstrukturen für eine erweiterte Datenverwaltung.
+- **Trigger-Links**: Spezielle Links, die beim Anklicken automatisierte Aktionen in Workflows und Kampagnen auslösen können.
+- **Zahlungslinks**: Links, über die Kunden Zahlungen für Produkte oder Dienstleistungen direkt vornehmen können.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155038179987/original/CIMPjRzS7O5MF0Jw2hVtWWl5yxJQWTGeuw.gif?1733950909)
+
+---
+
+## Vorteile der Nutzung von Platzhaltern und benutzerdefinierten Variablen
+
+- **Kommunikation personalisieren**: Füge Kontaktnamen, Datumsangaben und andere Details automatisch in E-Mails und SMS-Nachrichten ein.
+- **Prozesse automatisieren**: Verwende Platzhalter in Workflows, um Zeit zu sparen und manuelle Arbeit zu reduzieren.
+- **Datenkonsistenz verbessern**: Stelle korrekte und aktuelle Informationen in der gesamten Kommunikation sicher.
+- **Wiederkehrende Aufgaben vereinfachen**: Verwende benutzerdefinierte Werte und Trigger-Links für mehr Effizienz mehrfach.
+
+---
+
+## Standard- oder Fallback-Werte für leere Felder
+
+Derzeit gibt es keine direkte Unterstützung für Fallback- oder Standardwerte, wenn eine Variable leer ist. Der Platzhalter bleibt in diesem Fall einfach leer.
+
+Als Alternative kannst du Inhaltsblöcke ein- oder ausblenden.
+
+Im E-Mail-Builder kannst du beispielsweise das bedingte Senden nutzen, um einen Inhaltsblock nur dann anzuzeigen, wenn bestimmte Bedingungen erfüllt sind. Wenn du einen Block mit dem Vornamen-Platzhalter (Hallo {{contact.first_name}},) so einstellst, dass er gesendet wird, wenn first_name nicht leer ist, und einen zweiten Block ohne den Platzhalter (mit einem Standardwert wie „Hallo,“), der gesendet wird, wenn das Feld first_name leer ist, erzielst du ein ähnliches Ergebnis.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155050627933/original/0hvzLjck-ePx1lATFQVAewPGB8OeM9WjSg.png?1753830747)
+
+---
+
+## Standardfelder
+
+Standardfelder sind vordefinierte Platzhalter, die standardmäßig in jedem Konto verfügbar sind. Diese Felder decken grundlegende Datenpunkte ab, wie Kontaktnamen, E-Mail-Adressen, Telefonnummern, Termindetails (z. B. Uhrzeit und Datum) und mehr. Im Gegensatz zu benutzerdefinierten Feldern sind diese Felder fest integriert und können weder bearbeitet noch gelöscht werden. Typische Anwendungsfälle für Standardfelder sind:
+
+- **Vorname des Kontakts**: Der Vorname des Kontakts.
+- **E-Mail des Kontakts**: Die E-Mail-Adresse des Kontakts.
+- **Termindatum und -uhrzeit**: Das geplante Datum und die Uhrzeit eines Termins.
+- **Vollständiger Name des Benutzers**: Der vollständige Name des zugewiesenen Benutzers.
+- **Unternehmensname**: Der Name deines Unternehmens oder deiner Organisation.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155038180066/original/1U_pnxGaeBpxPQ0iwghG44A_fA39DpxSSQ.gif?1733951039)*
+
+```
+Hier klicken, um eine Liste der Standard-Platzhalter anzuzeigen.
+
+⚠️ Bitte beachte, dass einige Felder in der Liste fehlen können ⚠️
+```
+
+---
+
+## Benutzerdefinierte Felder
+
+Benutzerdefinierte Datenpunkte für jeden Kontakt oder jede Chance, um individuelle Informationen wie Geburtstage oder Präferenzen für eine detaillierte Segmentierung und Kommunikation zu speichern. Anwendungsfälle für benutzerdefinierte Felder sind unter anderem:
+
+- **Kundenpräferenzen**: Erfasse spezifische Kundeninteressen, wie die bevorzugte Kommunikationsmethode (E-Mail, SMS, Telefonanruf).
+- **Mitgliedschaftsdetails**: Speichere Mitgliedsstufen (z. B. Gold, Silber, Platin), um stufenspezifische Angebote bereitzustellen.
+- **Produktinteresse**: Ergänze Felder, um zu dokumentieren, an welchen Produkten oder Dienstleistungen ein Kunde interessiert ist, für gezielte Nachfassaktionen.
+- **Veranstaltungsteilnahme**: Erfasse Anmelde- oder Teilnahmedetails zu Veranstaltungen, um Einladungen oder Follow-up-Nachrichten zu personalisieren.
+- **Account-Manager-Zuweisung**: Speichere den Namen des Account Managers, der einen bestimmten Kontakt betreut.
+- **Vertragsverlängerungsdaten**: Verfolge Vertragsablauf- oder Verlängerungsdaten für rechtzeitige Erinnerungen.
+- **Lead-Quelle**: Dokumentiere die Herkunft eines Kontakts (z. B. Facebook, Google Ads, Empfehlung), um die Marketingleistung auszuwerten.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155038181649/original/XY9sK9lfsJXm_0wAF65f326NHZC_bGbHMA.png?1733954688)*
+
+---
+
+## Zusätzliche Workflow-Felder in der Auswahl
+
+Platzhalter und benutzerdefinierte Werte in Workflows können neben deinen gespeicherten benutzerdefinierten Werten auch integrierte Systemfelder enthalten. Das System unterstützt zusätzliche Workflow-Felder in der Auswahl für Platzhalter und Wenn/Sonst-Bedingungen.
+
+Diese Felder umfassen:
+
+- Kontakt-Engagement-Score
+- Kontakt → Attribution Medium ID
+- Notiz erstellt von (Name)
+- Aufgaben-ID
+
+Diese Felder helfen dir, spezifischere Automatisierungen auf Basis von Engagement, Attribution, Notizaktivitäten und Aufgabenkontexten zu erstellen.
+
+```
+Wichtig:
+
+Einige Felder erscheinen nur, wenn der Workflow den passenden Kontext enthält. Beispielsweise erscheint die Aufgaben-ID in aufgabenbezogenen Workflows und „Notiz erstellt von (Name)“ in notizbezogenen Workflows. Der Kontakt-Engagement-Score ist verfügbar, wenn Engagement Scoring in den Einstellungen aktiviert ist.
+```
+
+---
+
+## Benutzerdefinierte Werte
+
+Wiederverwendbare Platzhalter für statische Informationen (z. B. Unternehmensdaten), die Konsistenz gewährleisten und Aktualisierungen in mehreren Bereichen deines CRM vereinfachen – einschließlich E-Mail-Vorlagen, Websites, Funnels, Workflows und mehr. Anwendungsfälle für benutzerdefinierte Werte sind:
+
+- **Unternehmens-Kontaktdaten**: Nutze einen benutzerdefinierten Wert, um die Telefonnummer, E-Mail-Adresse und Anschrift deines Unternehmens in E-Mail-Fußzeilen einzufügen.
+- **Standard-Grußformeln**: Verwende einen benutzerdefinierten Wert für eine einheitliche Schlussformel, wie „Viele Grüße, [Unternehmensname]“.
+- **Website-Links**: Nutze einen benutzerdefinierten Wert für häufig verwendete URLs, wie deine Website oder Support-Seite.
+- **Rechtliche Hinweise**: Binde rechtliche Hinweise oder Datenschutzerklärungen einheitlich in alle Vorlagen ein.
+- **Marken-Slogans**: Füge Marketingmaterialien und Kampagnen einen einheitlichen Unternehmens-Slogan hinzu.
+- **Feiertagsgrüße**: Erstelle wiederverwendbare saisonale Grüße für Newsletter oder Kampagnennachrichten.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155038181655/original/AC2Btejbek4Zd1s_Iqp37FuV_y40rrl7LQ.png?1733954701)*
+
+---
+
+## Benutzerdefinierte Objekte
+
+Benutzerdefinierte Objekte ermöglichen es dir, eigene Datenstrukturen über die Standardfelder hinaus zu erstellen. Anwendungsfälle für benutzerdefinierte Objekte sind:
+
+- **Abopläne**: Details zu Abos wie Plantyp, Verlängerungsdatum und Abrechnungsintervall verwalten.
+- **Bestandsverwaltung**: Objekte zur Verwaltung des Produktbestands erstellen, einschließlich Artikelnummern (SKUs), Stückzahlen und Lieferantendaten.
+- **Immobilienangebote**: Für Immobilienunternehmen Details zu Objekten speichern, einschließlich Lage, Preis und Ausstattung.
+- **Lieferantendetails**: Lieferanteninformationen verwalten, einschließlich Verträgen, Ansprechpartnern und Zahlungsbedingungen.
+- **Erweiterte Termindetails**: Spezifische Termindetails wie Leistungsart, Ort und zugewiesene Mitarbeiter erfassen.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155038181657/original/UoIjYlXVO56LaHBIYRYtRgKO3G24PZeSZQ.png?1733954714)*
+
+---
+
+## Trigger-Links
+
+Trigger-Links sind spezielle Links, die beim Anklicken bestimmte Aktionen in Workflows und Kampagnen auslösen können. Anwendungsfälle für Trigger-Links sind:
+
+- **Webinar-Anmeldung**: Sende einen Link zur Webinar-Registrierung und löse beim Anklicken eine Bestätigungs-E-Mail aus.
+- **Umfrage-Nachfassaktionen**: Erfasse, wer auf einen Umfragelink klickt, und sende automatisch eine Dankesnachricht.
+- **Content-Downloads**: Stelle Links zum Download von Ressourcen wie E-Books oder Whitepapern bereit und verfolge Interaktionen.
+- **Upsell-Möglichkeiten**: Biete einen Link zu einem erweiterten Angebot an und löse Folge-E-Mails für Personen aus, die darauf klicken.
+- **Veranstaltungseinladungen**: Verfolge Rückmeldungen zu Veranstaltungen, indem du einen Einladungslink sendest und Follow-ups basierend auf Klicks automatisierst.
+- **Sonderangebote**: Sende einen Link zu einem zeitlich begrenzten Angebot und löse eine Erinnerungs-E-Mail aus, wenn der Link nicht angeklickt wird.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079787341/original/_B5yY9xJeoqPeHVEg-DOmtPJH68v3Jl_MQ.png?1788259291)*
+
+---
+
+## Zahlungslinks
+
+Zahlungslinks ermöglichen es dir, Produkte oder Dienstleistungen zu verkaufen, indem du einen Link erstellst, über den Kunden Zahlungen vornehmen können. Anwendungsfälle für Zahlungslinks sind:
+
+- **Veranstaltungstickets**: Zahlungen für Tickets zu Workshops oder Konferenzen einziehen.
+- **Abonnements**: Links für wiederkehrende Abos oder Mitgliedschaften erstellen.
+- **Produktverkäufe**: Zahlungslinks für physische oder digitale Produkte (z. B. Bücher, Kurse) erstellen.
+- **Anzahlungen**: Anzahlungen für Buchungen oder Reservierungen anfordern.
+- **Spenden**: Einen Zahlungslink für Spendenaktionen bereitstellen.
+
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079787272/original/yQRRwNrFJ2NPK3F94wabSCVoxk2SFewQhw.png?1788259264)*
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Was ist der Unterschied zwischen benutzerdefinierten Feldern und benutzerdefinierten Werten?**
+Benutzerdefinierte Felder beziehen sich auf einzelne Kontakte oder Chancen und speichern individuelle Daten wie Geburtstage oder Präferenzen. Benutzerdefinierte Werte sind wiederverwendbare Platzhalter für einheitliche Informationen in deiner gesamten Kommunikation, wie Unternehmensdaten oder Standardtexte.
+
+**F: Warum funktioniert mein Platzhalter nicht oder wird nicht korrekt angezeigt?**
+Das kann an einem fehlerhaften Format des Platzhalters liegen. Stelle sicher, dass du die richtige Syntax verwendest (z. B. `{{contact.email}}`). Überprüfe außerdem, ob die Daten für dieses Feld im Kontakt- oder Benutzerdatensatz hinterlegt sind.
+
+**F: Wird bei Platzhaltern zwischen Groß- und Kleinschreibung unterschieden?**
+Ja, Platzhalter unterscheiden zwischen Groß- und Kleinschreibung. Beispielsweise funktioniert `{{contact.name}}`, während `{{Contact.Name}}` nicht funktioniert.
+
+**F: Wie kann ich testen, ob meine Platzhalter korrekt funktionieren?**
+Sende eine Test-E-Mail oder -SMS an dich selbst oder nutze die Vorschau im Vorlagen-Editor. So stellst du sicher, dass die Platzhalter die richtigen Daten abrufen.
+
+**F: Was passiert, wenn für einen Platzhalter keine Daten vorhanden sind?**
+Wenn für einen Platzhalter keine Daten vorliegen, bleibt die entsprechende Stelle leer. Achte darauf, dass die Kontakt- oder Benutzerdaten vollständig gepflegt sind.
+
+**F: Kann ich einen benutzerdefinierten Wert aktualisieren und wirkt sich das auf alle Vorlagen aus?**
+Ja. Wenn du einen benutzerdefinierten Wert in den Einstellungen aktualisierst, wird er automatisch in allen Vorlagen und Workflows aktualisiert, in denen er verwendet wird.
+
+**F: Wie unterscheiden sich Standardfelder von benutzerdefinierten Feldern?**
+Standardfelder sind im CRM fest vorgegeben, während benutzerdefinierte Felder vom Nutzer erstellt werden, um spezifische Daten für Kontakte und Chancen zu erfassen.
+
+**F: Wie unterscheiden sich benutzerdefinierte Objekte von benutzerdefinierten Feldern und Werten?**
+Benutzerdefinierte Objekte sind erweiterte Datenstrukturen, die komplexere Verknüpfungen und Datenverwaltungen ermöglichen, die über die Möglichkeiten von Feldern und Werten hinausgehen.
+
+**F: Gibt es Begrenzungen bei der Anzahl der benutzerdefinierten Felder oder Werte?**
+Nein, es gibt keine feste Begrenzung. Es empfiehlt sich jedoch, sie strukturiert zu verwalten, um die Übersicht im Konto zu behalten.
+
+**F: Kann ich benutzerdefinierte Werte auf Websites und in Funnels verwenden?**
+Ja, benutzerdefinierte Werte können genutzt werden, um einheitliche Informationen auf deinen Websites und Funnels dynamisch darzustellen.
+
+**F: Wie kann ich benutzerdefinierte Werte organisieren?**
+Du kannst benutzerdefinierte Werte in Ordnern organisieren, um sie auch bei einer wachsenden Liste übersichtlich zu verwalten.
+
+**F: Ist es möglich, benutzerdefinierte Felder oder Werte per Massenimport anzulegen?**
+Derzeit wird das massenhafte Erstellen oder Hochladen von benutzerdefinierten Feldern und Werten nicht unterstützt; sie müssen einzeln angelegt werden.
+
+**F: Kann ich Standardfelder bearbeiten oder löschen?**
+Nein, Standardfelder sind fest im System integriert und können weder bearbeitet noch gelöscht werden. Du kannst jedoch frei entscheiden, ob du sie in deinen Vorlagen und Workflows verwendest.

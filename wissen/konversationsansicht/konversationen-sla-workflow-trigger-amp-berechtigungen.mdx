@@ -1,0 +1,76 @@
+---
+title: "Konversationen: SLA-Workflow-Trigger &amp; Berechtigungen"
+description: "Mit Konversations-SLA-Workflows kannst du Nachfassaktionen automatisieren, wenn eine Konversation Bald fällig oder Überfällig wird oder wenn ein SLA…"
+---
+
+Mit Konversations-SLA-Workflows kannst du Nachfassaktionen automatisieren, wenn eine Konversation **Bald fällig** oder **Überfällig** wird oder wenn ein SLA manuell verworfen wird. Du kannst diese Ereignisse nutzen, um Benutzer zu benachrichtigen, Konversationen neu zuzuweisen oder andere Workflow-Aktionen auszulösen, während optionale Filter und Einstellungen zur Vermeidung wiederholter Trigger dafür sorgen, dass die Automatisierung zielgerichtet bleibt und unnötige Benachrichtigungen verhindert werden.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [Verwendung](#verwendung)
+- [Konversations-SLA-Workflows erstellen](#konversations-sla-workflows-erstellen)
+- [Berechtigungen für das manuelle Entfernen von SLAs konfigurieren](#berechtigungen-fuer-das-manuelle-entfernen-von-slas-konfigurieren)
+
+## Übersicht
+
+Du kannst jetzt Workflows erstellen, die automatisch ausgeführt werden, wenn das SLA einer Konversation bald fällig oder überfällig wird oder manuell verworfen wird. Anstatt darauf zu vertrauen, dass Benutzer oder Manager SLA-Timer überwachen, kannst du genau festlegen, was bei diesen Ereignissen geschehen soll.
+
+Du kannst zum Beispiel: Einen Benutzer benachrichtigen, wenn eine Konversation überfällig wird, oder Kontakte zur Eskalation neu zuweisen. Um übermäßige Benachrichtigungen zu vermeiden, gibt es außerdem die Option „Wiederholte Trigger vermeiden“. Wenn diese Option aktiviert ist, wird der Workflow innerhalb eines Zeitraums von 24 Stunden nur einmal pro Konversation ausgeführt, selbst wenn mehrere Nachrichten desselben Kontakts weitere SLA-Ereignisse auslösen.
+
+Außerdem gibt es verbesserte Steuerungsmöglichkeiten für das manuelle Entfernen von SLAs. Bei Konversationen, die keine Antwort erfordern – wie Nachrichten mit dem Inhalt „Danke“, „Verstanden“ oder „Kein Interesse“ –, können Benutzer das SLA manuell verwerfen, ohne zu antworten. Administratoren können festlegen, ob diese Aktion allen Benutzern zur Verfügung steht oder nur auf Administratoren beschränkt ist.
+
+## Verwendung
+
+Um zu verstehen, wie SLAs in Konversationen funktionieren und wie du sie einrichtest, lies diese Anleitung: [hier](/wissen/konversationsansicht/konversations-slas-einrichten-und-nachverfolgen)
+
+## Konversations-SLA-Workflows erstellen
+
+1. Gehe zu Automatisierung, erstelle einen neuen Workflow und wähle „Konversations-SLA“ als Trigger. Wähle das SLA-Ereignis: Bald fällig / Überfällig / SLA verworfen
+
+![Bild](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079858280/original/B5TCThimIOHEvwwxMnmYDBHRtYxdIHztBw.png?1788315472)
+
+2. Du kannst auch optionale Filter hinzufügen, wie zum Beispiel: Nachrichtenkanal, Tags, Zuständiger, benutzerdefinierte Felder, und die Aktionen definieren, die der Workflow ausführen soll, und ihn anschließend veröffentlichen.
+
+![Bild](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079858285/original/VoNMIg9QD_bp3t-TB2ofaHkNgqvcWZhZOQ.png?1788315496)
+
+## Berechtigungen für das manuelle Entfernen von SLAs konfigurieren
+
+1. Gehe zu den Einstellungen für Konversationen. Wähle unter „Wer kann SLAs aus Konversationen manuell verwerfen?“ Folgendes aus: Alle Benutzer oder Nur Administratoren. Speichere deine Änderungen.
+
+![Bild](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079858295/original/Ubz10fbe7Lu6wSzzmQT2hN7y-9USFmcANw.png?1788315514)
+
+2. Jeder Benutzer mit der Berechtigung zum Verwerfen von SLAs kann im mittleren Bereich auf den SLA-Timer klicken und das SLA verwerfen.
+
+![Bild](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079858333/original/kbn9kn7QACSSwXoS-EfMTEWpAblpQyDLwA.png?1788315577)
+
+3. Wenn ein SLA verworfen wird, wird in der Konversation ein Protokolleintrag erstellt, der anzeigt, welcher Benutzer das SLA verworfen hat und welchen SLA-Status die Konversation zu diesem Zeitpunkt hatte.
+
+![Bild](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079858310/original/KD_RWVwPUY0D0Nug9iKJsXKvYVPR49qALg.png?1788315539)
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Konversations-SLA-Workflows nicht ausgelöst werden oder das Verwerfen von SLAs nicht verfügbar ist, prüfe zuerst den Workflow-Trigger, die Filter, den SLA-Status und die Berechtigungen zum Verwerfen.
+
+Stelle Folgendes sicher:
+
+- Konversations-SLAs sind aktiviert und konfiguriert.
+- Der Workflow verwendet **Konversations-SLA** als Trigger.
+- Das richtige SLA-Ereignis ist ausgewählt: **Bald fällig**, **Überfällig** oder **SLA verworfen**.
+- Der Workflow ist veröffentlicht und aktiv.
+- Optionale Filter wie Kanal, Tags, Zuständiger oder benutzerdefinierte Felder stimmen mit der betroffenen Konversation überein.
+- **Wiederholte Trigger vermeiden** verhindert nicht, dass der Workflow innerhalb des konfigurierten 24-Stunden-Zeitraums erneut ausgeführt wird.
+- Die Konversation hat tatsächlich den im Workflow ausgewählten SLA-Status erreicht.
+- Die gewünschten Workflow-Aktionen sind korrekt konfiguriert.
+- Die Berechtigungen zum manuellen Verwerfen von SLAs sind wie gewünscht auf **Alle Benutzer** oder **Nur Administratoren** eingestellt.
+- Der Benutzer, der versucht, das SLA zu verwerfen, verfügt über den erforderlichen Zugriff.
+- Das SLA wurde über den SLA-Timer der Konversation verworfen.
+- In der Konversation erscheint ein Protokolleintrag zum Verwerfen, der zeigt, wer das SLA verworfen hat und welchen Status es zu diesem Zeitpunkt hatte.
+
+Wenn der Workflow nicht auslöst, teste ihn mit einer Konversation, die das ausgewählte SLA-Ereignis eindeutig erfüllt, und überprüfe oder entferne vorübergehend optionale Filter, um festzustellen, ob eine Bedingung die Ausführung blockiert.
+
+Wenn das Problem weiterhin besteht, sammle den Workflow-Namen, das ausgewählte SLA-Ereignis, aktive Filter, den Konversationsstatus, die Benutzerberechtigungen, das erwartete Ergebnis sowie Screenshots der Workflow- und SLA-Einstellungen. Wende dich an den UmsatzAgent Support.

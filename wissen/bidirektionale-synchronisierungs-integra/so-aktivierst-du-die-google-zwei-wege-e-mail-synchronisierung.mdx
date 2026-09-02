@@ -1,0 +1,320 @@
+---
+title: "So aktivierst du die Google-Zwei-Wege-E-Mail-Synchronisierung"
+description: "Die Zwei-Wege-E-Mail-Synchronisierung ermöglicht den bidirektionalen E-Mail-Abgleich zwischen dem CRM und einem E-Mail-Programm. Jede auf einer Plattform…"
+---
+
+Die Zwei-Wege-E-Mail-Synchronisierung ermöglicht den bidirektionalen E-Mail-Abgleich zwischen dem CRM und einem E-Mail-Programm. Jede auf einer Plattform gesendete, empfangene oder aktualisierte E-Mail wird automatisch mit der anderen synchronisiert. Dies wird derzeit für Gmail und Outlook unterstützt.
+
+#### In diesem Artikel:
+
+#### [Was ist die Zwei-Wege-E-Mail-Synchronisierung?](#was-ist-die-zwei-wege-e-mail-synchronisierung)
+
+#### [Outlook:](#outlook)
+
+#### [Gmail:](#gmail)
+
+#### [Schritte zum Verbinden](#schritte-zum-verbinden)
+
+#### [Gmail-Zwei-Wege-Synchronisierung:](#gmail-zwei-wege-synchronisierung)
+
+#### [Google-Ratenbegrenzungen](#google-ratenbegrenzungen)
+
+#### [Wie funktioniert die Gmail-Zwei-Wege-Synchronisierung zwischen dem CRM und deinem E-Mail-Konto?](#wie-funktioniert-die-gmail-zwei-wege-synchronisierung-zwischen-dem-crm-und-deine)
+
+#### [Outlook-Zwei-Wege-Synchronisierung:](#outlook-zwei-wege-synchronisierung)
+
+#### [Wie funktioniert die Outlook-Zwei-Wege-Synchronisierung zwischen dem CRM und deinem E-Mail-Konto?](#wie-funktioniert-die-outlook-zwei-wege-synchronisierung-zwischen-dem-crm-und-dei)
+
+#### [Weitere Funktionen für die Zwei-Wege-Synchronisierung mit Outlook und Gmail](#weitere-funktionen-fuer-die-zwei-wege-synchronisierung-mit-outlook-und-gmail)
+
+#### [E-Mail aktualisieren:](#e-mail-aktualisieren)
+
+#### [E-Mail trennen:](#e-mail-trennen)
+
+#### [BCC-Adresse](#bcc-adresse)
+
+#### [Funktioniert die Zwei-Wege-Synchronisierung nur mit einzelnen E-Mails oder auch mit Massen-E-Mails und Workflows?](#funktioniert-die-zwei-wege-synchronisierung-nur-mit-einzelnen-e-mails-oder-auch)
+
+#### [Häufig gestellte Fragen (nur Gmail)](#haeufig-gestellte-fragen-nur-gmail))
+
+#### [Was passiert mit E-Mails, die von bestehenden Kontakten eingehen?](#was-passiert-mit-e-mails-die-von-bestehenden-kontakten-eingehen)
+
+#### [Werden beim Entfernen eines synchronisierten Kontos bestehende E-Mails gelöscht?](#werden-beim-entfernen-eines-synchronisierten-kontos-bestehende-e-mails-geloescht)
+
+#### [Werden neue E-Mails synchronisiert, nachdem ein Konto entfernt wurde?](#werden-neue-e-mails-synchronisiert-nachdem-ein-konto-entfernt-wurde)
+
+#### [Werden alle meine bestehenden Kontakte in Gmail mit dem CRM synchronisiert?](#werden-alle-meine-bestehenden-kontakte-in-gmail-mit-dem-crm-synchronisiert)
+
+#### [Was passiert, wenn eine neue E-Mail von einem Kontakt eingeht?](#was-passiert-wenn-eine-neue-e-mail-von-einem-kontakt-eingeht)
+
+#### [Was passiert mit gesendeten E-Mails aus dem CRM oder Gmail?](#was-passiert-mit-gesendeten-e-mails-aus-dem-crm-oder-gmail)
+
+#### [Wie werden CC- und BCC-Empfänger bei der Synchronisierung behandelt?](#wie-werden-cc-und-bcc-empfaenger-bei-der-synchronisierung-behandelt)
+
+#### [Was passiert, wenn ein Kontakt jemand anderem schreibt, aber den CRM-Benutzer in Kopie setzt?](#was-passiert-wenn-ein-kontakt-jemand-anderem-schreibt-aber-den-crm-benutzer-in-k)
+
+#### [Wie wird der Konversationsverlauf verwaltet, wenn mehrere Empfänger beteiligt sind?](#wie-wird-der-konversationsverlauf-verwaltet-wenn-mehrere-empfaenger-beteiligt-si)
+
+#### [Was passiert, wenn derselbe Kontakt an mehreren Stellen für dieselbe synchronisierte E-Mail-Adresse existiert?](#was-passiert-wenn-derselbe-kontakt-an-mehreren-stellen-fuer-dieselbe-synchronisi)
+
+#### [Was ist die automatische BCC-Synchronisierung und wie funktioniert sie?](#was-ist-die-automatische-bcc-synchronisierung-und-wie-funktioniert-sie)
+
+#### [Wie wird die sichere Verbindung gehandhabt, wenn sich die Gmail-Zugangsdaten ändern?](#wie-wird-die-sichere-verbindung-gehandhabt-wenn-sich-die-gmail-zugangsdaten-aend)
+
+#### [Was passiert, wenn eine E-Mail aus Gmail weitergeleitet wird?](#was-passiert-wenn-eine-e-mail-aus-gmail-weitergeleitet-wird)
+
+#### [Was passiert bei doppelten E-Mails mit mehreren Kontakten?](#was-passiert-bei-doppelten-e-mails-mit-mehreren-kontakten)
+
+---
+
+## Was ist die Zwei-Wege-E-Mail-Synchronisierung?
+
+Benutzer können ihre persönlichen Gmail- oder Outlook-Konten verknüpfen und ausgehende sowie eingehende E-Mails zwischen dem CRM und ihrem Postfach synchronisieren. So lassen sich E-Mails direkt über das eigene E-Mail-Konto senden, empfangen und nachverfolgen.
+
+### Outlook:
+
+Sobald ein E-Mail-Verlauf aus dem CRM heraus gestartet wird (erste ausgehende Nachricht), werden alle nachfolgenden E-Mails in diesem Verlauf zwischen beiden Plattformen synchronisiert. Dies ist eine Einstellung auf Benutzerebene und hat keine Auswirkungen auf andere Benutzer.
+
+### Gmail:
+
+Die Synchronisierung kann auf zwei Wegen zustande kommen:
+
+1. Du sendest eine E-Mail an einen Kontakt aus dem CRM heraus, um die Synchronisierung zwischen beiden Plattformen zu starten.
+2. Ein bereits im CRM gespeicherter Kontakt sendet eine E-Mail an die Gmail-Adresse des Benutzers, der die Gmail-Zwei-Wege-Synchronisierung eingerichtet hat. Die E-Mail wird im Reiter Konversationen synchronisiert. **Der Kontakt muss dem Benutzer zuvor zugewiesen sein.**
+
+**Bitte beachten**
+
+```
+Ist der Benutzer in mehreren Konten aktiv und hat in allen dasselbe Gmail-Konto verknüpft, wird die E-Mail des Kontakts zunächst im Reiter Konversationen angezeigt. Die Synchronisierung bleibt jedoch nur für das Konto aktiv, in dem der Benutzer antwortet, und wird für alle anderen getrennt. Die Zuweisung des Kontakts an den Benutzer stellt sicher, dass Nachrichten nicht in Konten landen, zu denen der Kontakt nicht gehört.
+```
+
+---
+
+## Schritte zum Verbinden
+
+Öffne die **Einstellungen**. Gehe zum Reiter **Profil**, dann auf **Allgemein** und scrolle nach unten zum Bereich **E-Mail (2-Wege-Sync)**.
+
+**Bitte beachten:**
+
+```
+Der Reiter Profil wird nur angezeigt, wenn du dem aktuell geöffneten Konto als Benutzer zugewiesen bist.
+```
+
+### Gmail-Zwei-Wege-Synchronisierung:
+
+Wähle unter E-Mail (2-Wege-Sync) die Option **Gmail** aus und klicke auf **Verbinden**.
+
+![Gmail verbinden](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172202/original/Ov8ZL5bpsQ11-hYQtBEojRIcukahg4g4LQ.png?1678806836)
+
+Wähle eines der im Browser verfügbaren Google-Konten aus oder gib die Zugangsdaten deines Kontos im Pop-up-Fenster ein.
+
+![Google-Konto auswählen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172195/original/3CsRgPoAgMOfw8ALOdS6pc-DDLAUd-ZB7w.png?1678806834)
+
+Bestätige anschließend die Berechtigungen für UmsatzAgent. Gewähre alle angeforderten Zugriffsrechte und klicke auf **Weiter**.
+
+![Berechtigungen für UmsatzAgent erteilen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172136/original/eEHiU83lWrnWYIoNWE57sQC-oZQqucXvww.png?1678806825)
+
+Nach dem Klick auf **Weiter** wird das verknüpfte Gmail-Konto im Bereich E-Mail (2-Wege-Sync) angezeigt:
+
+![Verbundenes Gmail-Konto](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172189/original/FLuw6y9A-vvCxMjw_0KP04tsy1e_QOY5BQ.png?1678806834)
+
+#### Google-Ratenbegrenzungen
+
+![Google-Ratenbegrenzungen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155002826972/original/oH7znyWMP4LtMBU1U9ckgwxUUTr-bkn18g.png?1689218041)
+
+---
+
+#### Wie funktioniert die Gmail-Zwei-Wege-Synchronisierung zwischen dem CRM und deinem E-Mail-Konto?
+
+Die Synchronisierung kann auf zwei Wegen zustande kommen:
+
+1. Du sendest eine E-Mail an einen Kontakt aus dem CRM heraus, um die Synchronisierung zwischen beiden Plattformen zu starten.
+2. Ein bereits im CRM gespeicherter Kontakt sendet eine E-Mail an die Gmail-Adresse des Benutzers, der die Gmail-Zwei-Wege-Synchronisierung eingerichtet hat. Die E-Mail wird im Reiter Konversationen synchronisiert. **Der Kontakt muss dem Benutzer zuvor zugewiesen sein.**
+
+**Bitte beachten**
+
+```
+Ist der Benutzer in mehreren Konten aktiv und hat in allen dasselbe Gmail-Konto verknüpft, wird die E-Mail des Kontakts zunächst im Reiter Konversationen angezeigt. Die Synchronisierung bleibt jedoch nur für das Konto aktiv, in dem der Benutzer antwortet, und wird für alle anderen getrennt. Die Zuweisung des Kontakts an den Benutzer stellt sicher, dass Nachrichten nicht in Konten landen, zu denen der Kontakt nicht gehört.
+```
+
+![E-Mail im CRM senden](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287099381/original/5yv1sSHvgI7kZ4JHVVjfZBO59-h2hC2NiQ.png?1678791637)
+
+Die gesendete E-Mail erscheint im Ordner „Gesendet“ des verknüpften Gmail-Kontos:
+
+![Gesendete E-Mail in Gmail](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287099648/original/TkUibkPnbsnocvJ7Pe29R3EjDO-IdqMbCg.png?1678791736)
+
+**Bitte beachten:**
+
+```
+Gmail erlaubt maximal ca. 500 E-Mails pro Tag. E-Mails darüber hinaus können nicht zugestellt werden.
+```
+
+Alle nachfolgenden Nachrichten im E-Mail-Verlauf werden synchronisiert. Ausgehende E-Mails aus deinem Postfach erscheinen im CRM und umgekehrt.
+
+![E-Mail-Verlauf im CRM](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287100068/original/KFFk82QyDSizlj8oZgSFpmo62DMwDOMUmQ.png?1678791842)
+![E-Mail-Verlauf im Postfach](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287100403/original/bvqjrVOEvFHoWUWu56obXKkhDBc9638gvQ.png?1678791938)
+
+**Bitte beachten:**
+
+```
+Die maximale Dateigröße für Anhänge bei der Gmail-Zwei-Wege-Synchronisierung beträgt 25 MB.
+```
+
+---
+
+### Outlook-Zwei-Wege-Synchronisierung:
+
+Wähle unter E-Mail (2-Wege-Sync) die Option **Outlook** als E-Mail-Anbieter aus und klicke auf **Verbinden**.
+
+![Outlook auswählen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172972/original/eIXwK85vdb6ar3wz96e5oFZi9XhO9yRoXA.png?1678806993)
+
+Schließe die Autorisierung ab, indem du deine Outlook-Zugangsdaten eingibst.
+
+![Outlook-Anmeldung](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173057/original/Daj_APA9d_Q-I9r9ZCokna65RMm2KCe-ZA.png?1678807007)
+
+![Outlook-Passwort](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173059/original/BR0E9H1Kq-zRARo6Zn0yhTFCJtpCj4j7gw.png?1678807007)
+
+Bestätige die angeforderten Zugriffsrechte für **UmsatzAgent**:
+
+![Berechtigungen bestätigen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173015/original/x7BbOXuVpLR_x9VOtLHn9wvkiRs3JYpbxw.png?1678807000)
+
+![Zugriff erlauben](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287172979/original/Kaw9-ZO4dRY4cVBBYoasnMZbZqRJVq3DgQ.png?1678806994)
+
+Scrolle auf der Profilseite zum Bereich E-Mail (2-Wege-Sync), um den Verbindungsstatus deiner E-Mail-Adresse zu prüfen.
+
+![Outlook-Verbindungsstatus](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173043/original/vthvUmX6mIVBuwVStPpDG9PTN68x6vvviw.png?1678807005)
+
+---
+
+#### Wie funktioniert die Outlook-Zwei-Wege-Synchronisierung zwischen dem CRM und deinem E-Mail-Konto?
+
+Sende eine E-Mail an einen Kontakt aus dem CRM heraus, um die Synchronisierung zwischen beiden Plattformen zu starten.
+
+**Bitte beachten**
+
+```
+Die erste ausgehende E-Mail muss aus dem CRM gesendet werden, um die Synchronisierung einzurichten.
+```
+
+![Ausgehende Nachricht im CRM](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173042/original/7oxQxp_6W7ZY-RwNj7OY74lo_nfFKtSKKQ.png?1678807004)
+
+![E-Mail an Kontakt senden](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173061/original/EDcuU_y8RqC6s794ZWZiywSpWeS9xVMFxg.png?1678807008)
+
+![E-Mail-Verlauf anzeigen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173058/original/IsrUAmxqm3mT_Ut-2S-cG5dBnZBevGjw9w.png?1678807007)
+
+Alle nachfolgenden Nachrichten im aus dem CRM gestarteten E-Mail-Verlauf werden synchronisiert. Ausgehende E-Mails aus deinem Postfach erscheinen im CRM und umgekehrt.
+
+![Synchronisierter Verlauf 1](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173062/original/7Me67gV0KCOl0GVFM5493Q8jY7A9IKyyLA.png?1678807008)![Synchronisierter Verlauf 2](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173060/original/oLPD0weRLE5l_DQ8BGGjETrFzpAHOpUWNg.png?1678807008)
+
+Ein E-Mail-Verlauf, der direkt aus deinem Postfach gestartet wird, wird nicht mit dem CRM synchronisiert. Es werden nur Verläufe abgeglichen, die im CRM begonnen wurden.
+
+Wurde eine ausgehende E-Mail bei aktiver Synchronisierung gesendet und die Verbindung später im CRM getrennt, stoppt der Abgleich nachfolgender Nachrichten in diesem Verlauf. Auch neue ausgehende E-Mails aus dem CRM werden dann nicht mehr synchronisiert.
+
+**Bitte beachten**
+
+```
+Dateianhänge bis zu einer Größe von 3 MB werden synchronisiert. Größere Anhänge führen dazu, dass die Nachricht nicht übertragen wird.
+Unterstützte Dateitypen: JPG, JPEG, PNG, MP4, MPEG, ZIP, RAR, PDF, DOC, DOCX, TXT
+```
+
+---
+
+## Weitere Funktionen für die Zwei-Wege-Synchronisierung mit Outlook und Gmail
+
+### E-Mail aktualisieren:
+
+Ermöglicht das Ändern der verknüpften E-Mail-Adresse, ohne die bestehende Verbindung zuvor manuell trennen zu müssen.
+
+![E-Mail-Adresse bearbeiten](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173780/original/Z2tWxdGBQs-6ByjzvhBss7rZIabcgOgkbQ.png?1678807137)
+
+Neue ausgehende E-Mails aus dem CRM werden ab diesem Zeitpunkt mit der neuen E-Mail-Adresse synchronisiert. Eingehende Nachrichten für die zuvor verknüpfte Adresse (im selben Verlauf) werden nicht mehr zwischen CRM und persönlichem Postfach abgeglichen.
+
+### E-Mail trennen:
+
+Trennt die Verknüpfung und beendet die Synchronisierung mit dem CRM. Nach dem Trennen werden keine E-Mails oder Nachrichten mehr zwischen beiden Plattformen übertragen.
+
+![E-Mail trennen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48287173779/original/Ej3-tK6PgUJyMdY_XrThv_WkoiD8d5YMcg.png?1678807137)
+
+### BCC-Adresse
+
+Füge beim Senden einer E-Mail aus Gmail oder Outlook die BCC-Adresse in das CC- oder BCC-Feld ein. Dadurch werden der Kontakt und die Konversation automatisch im CRM angelegt. Alle künftigen E-Mails dieses Kontakts im Gmail- oder Outlook-Postfach werden daraufhin automatisch mit dem CRM synchronisiert.
+
+![BCC-Adresse verwenden](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155003796789/original/y8e4pNvsjXgTN9G3mDxS0Ro04NP8gkUtfA.png?1690445519)
+
+---
+
+## Funktioniert die Zwei-Wege-Synchronisierung nur mit einzelnen E-Mails oder auch mit Massen-E-Mails und Workflows?
+
+Zuordnung der Absender-Domain je nach E-Mail-Typ:
+
+**Einzelne E-Mails:** Nach dem Verbinden eines persönlichen E-Mail-Kontos (z. B. Gmail) wird die entsprechende E-Mail-Adresse als Absender für individuelle Nachrichten verwendet. Diese werden bei aktiver Zwei-Wege-Synchronisierung direkt über Gmail versendet. Beachte hierbei das Google-Limit von 500 E-Mails pro Tag.
+
+**Massen-E-Mails:** Werden weiterhin über den im System hinterlegten Standard-E-Mail-Dienst versendet. Die Zwei-Wege-Synchronisierung hat darauf keinen Einfluss.
+
+**Workflows & Automatisierung:** Automatisierte E-Mails werden über den Standard-E-Mail-Dienst versendet. Dies stellt den reibungslosen Ablauf deiner automatisierten Workflows sicher.
+
+**Bitte beachten:**
+
+```
+Diese Aufteilung ermöglicht es, die Zwei-Wege-Synchronisierung für den direkten 1:1-Austausch zu nutzen, während Massen-E-Mails separat über den Mail-Server laufen. Das Gmail-Limit von 500 E-Mails pro Tag gilt nur für einzelne E-Mails, sodass größere Kampagnen nicht durch Gmail-Beschränkungen blockiert werden.
+```
+
+---
+
+## Häufig gestellte Fragen (nur Gmail)
+
+### Was passiert mit E-Mails, die von bestehenden Kontakten eingehen?
+
+Alle eingehenden E-Mails von bestehenden Kontakten werden sowohl im CRM als auch im Posteingang von Gmail/Outlook angezeigt.
+
+### Werden beim Entfernen eines synchronisierten Kontos bestehende E-Mails gelöscht?
+
+Nein. Zuvor synchronisierte E-Mails bleiben erhalten. Die Trennung betrifft nur E-Mails, die nach dem Entfernen gesendet oder empfangen werden.
+
+### Werden neue E-Mails synchronisiert, nachdem ein Konto entfernt wurde?
+
+Nein. Nach dem Entfernen des Kontos werden neu eingehende oder ausgehende E-Mails nicht mehr zwischen CRM und Gmail/Outlook synchronisiert.
+
+### Werden alle meine bestehenden Kontakte in Gmail mit dem CRM synchronisiert?
+
+Die Zwei-Wege-Synchronisierung erkennt bestehende Kontakte aus Gmail und ordnet eingehende Nachrichten dem jeweiligen Kontakt im CRM zu. E-Mails, die vor der Einrichtung der Verknüpfung empfangen wurden, werden jedoch nicht nachträglich synchronisiert.
+
+### Was passiert, wenn eine neue E-Mail von einem Kontakt eingeht?
+
+Neue eingehende E-Mails von bestehenden Kontakten erscheinen im CRM und in Gmail. Gehört die E-Mail zu einem bestehenden Verlauf, wird sie innerhalb dieses Threads einsortiert.
+
+### Was passiert mit gesendeten E-Mails aus dem CRM oder Gmail?
+
+Aus dem CRM gesendete E-Mails werden im Ordner „Gesendet“ des synchronisierten Postfachs abgelegt. Umgekehrt erscheinen aus dem Postfach gesendete Nachrichten im CRM unter den Konversationen des jeweiligen Kontakts.
+
+### Wie werden CC- und BCC-Empfänger bei der Synchronisierung behandelt?
+
+Befindet sich ein Benutzer in CC oder BCC oder gibt es mehrere Empfänger, wird dies beim Kontakt im CRM abgebildet. Für reine CC- und BCC-Adressen werden keine neuen Kontakte im CRM erstellt.
+
+### Was passiert, wenn ein Kontakt jemand anderem schreibt, aber den CRM-Benutzer in Kopie setzt?
+
+Die E-Mail wird im CRM erfasst, dem Kontakt zugeordnet und im Konversationsverlauf hinterlegt.
+
+### Wie wird der Konversationsverlauf verwaltet, wenn mehrere Empfänger beteiligt sind?
+
+Befinden sich mehrere Empfänger im An-Feld, wird die Konversation im CRM unter dem ersten Kontakt geführt. Alle weiteren Nachrichten erscheinen in diesem Verlauf.
+
+### Was passiert, wenn derselbe Kontakt an mehreren Stellen für dieselbe synchronisierte E-Mail-Adresse existiert?
+
+Aus dem CRM gesendete E-Mails werden nur im jeweiligen Kontext erfasst. Nachfolgende Antworten und Mitteilungen bleiben ebenfalls diesem Kontext zugeordnet. E-Mails, die direkt vom Kontakt an den Benutzer gesendet werden, erscheinen an allen relevanten Stellen.
+
+### Was ist die automatische BCC-Synchronisierung und wie funktioniert sie?
+
+Füge beim Senden aus Gmail oder Outlook die BCC-Adresse in das CC- oder BCC-Feld ein. Dadurch werden der Kontakt und die Konversation automatisch im CRM angelegt. Alle künftigen E-Mails dieses Kontakts werden daraufhin synchronisiert.
+
+### Wie wird die sichere Verbindung gehandhabt, wenn sich die Gmail-Zugangsdaten ändern?
+
+Wenn sich die Zugangsdaten ändern, fordert das CRM eine erneute Authentifizierung an, um die Synchronisierung wiederherzustellen.
+
+### Was passiert, wenn eine E-Mail aus Gmail weitergeleitet wird?
+
+Jede an einen bestehenden Kontakt weitergeleitete E-Mail wird als gesendete Nachricht behandelt und im CRM unter diesem Kontakt synchronisiert.
+
+### Was passiert bei doppelten E-Mails mit mehreren Kontakten?
+
+Werden E-Mails an mehrere Kontakte mit denselben Angaben gesendet, wird die Nachricht dem zuerst erstellten Kontakt im CRM zugeordnet.

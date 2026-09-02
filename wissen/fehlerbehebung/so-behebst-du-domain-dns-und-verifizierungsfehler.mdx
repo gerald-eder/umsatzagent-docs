@@ -1,0 +1,245 @@
+---
+title: "So behebst du Domain-DNS- und Verifizierungsfehler"
+description: "Das Verbinden einer Domain dauert in der Regel nur wenige Minuten. DNS-Konflikte oder fehlerhafte Einträge können jedoch manchmal verhindern, dass die…"
+---
+
+Das Verbinden einer Domain dauert in der Regel nur wenige Minuten. DNS-Konflikte oder fehlerhafte Einträge können jedoch manchmal verhindern, dass die Verifizierung erfolgreich abgeschlossen wird. Diese Anleitung erklärt die häufigsten Fehler bei der Domain-Anbindung, was sie bedeuten und wie du sie schnell behebst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [Konflikte durch mehrere A-Records](#konflikte-durch-mehrere-a-records)
+- [AAAA-Record-Konflikte](#aaaa-record-konflikte)
+- [CAA-Record-Konflikte](#caa-record-konflikte)
+- [DNS-Einträge stimmen nicht überein](#dns-eintraege-stimmen-nicht-ueberein)
+- [Domain anderweitig verbunden](#domain-anderweitig-verbunden)
+- [DNS-Propagierung und zusätzliche Hinweise](#dns-propagierung-und-zusaetzliche-hinweise)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Übersicht
+
+Probleme bei der Domain-Verbindung entstehen meist durch widersprüchliche DNS-Einträge, falsche Werte oder bereits bestehende Domain-Verbindungen.
+
+Diese Anleitung hilft dir bei der Fehlerbehebung von:
+
+- Konflikten durch mehrere A-Records
+- AAAA-Record-Konflikten
+- CAA-Record-Konflikten
+- Fehlerhaften DNS-Konfigurationen
+- Problemen mit bestehenden Domain-Verbindungen
+
+Die meisten DNS-Änderungen greifen innerhalb weniger Minuten, die vollständige Propagierung kann jedoch bis zu 48 Stunden dauern.
+
+---
+
+## Konflikte durch mehrere A-Records
+
+Ein A-Record verbindet deine Domain mit einer bestimmten IPv4-Adresse.
+
+Wenn mehrere A-Records für dieselbe Root-Domain existieren, wissen DNS-Provider unter Umständen nicht, welcher Server antworten soll. Das führt zu Verifizierungsfehlern oder Problemen beim Laden der Website.
+
+###
+
+Dieses Bild zeigt den Fehler, der angezeigt wird, wenn mehrere A-Records für die Domain erkannt werden.
+
+Überprüfe deine DNS-Einträge und entferne doppelte oder in Konflikt stehende A-Records, die auf unterschiedliche IP-Adressen verweisen.
+
+### So behebst du es
+
+- Öffne die Einstellungen deines Domain-Registrars oder DNS-Anbieters
+- Navigiere zu deiner DNS-Verwaltung
+- Suche nach A-Records mit:
+
+  - `@`
+  - deiner Root-Domain
+  - Subdomains, die auf unterschiedliche IPs verweisen
+- Entferne unnötige oder doppelte A-Records
+- Speichere die Änderungen
+- Warte einige Minuten, bevor du die Verifizierung wiederholst
+
+---
+
+## AAAA-Record-Konflikte
+
+AAAA-Records werden für IPv6-Adressen verwendet.
+
+Wenn ein AAAA-Record vorhanden ist, während das System nur IPv4-Einträge erwartet, kann der Verbindungsvorgang fehlschlagen.
+
+###
+
+Dieses Bild zeigt die Warnung, die angezeigt wird, wenn ein IPv6-AAAA-Record im Konflikt mit dem erforderlichen DNS-Setup steht.
+
+Lösche unnötige AAAA-Records, bevor du die Verifizierung wiederholst.
+
+### So behebst du es
+
+- Öffne deine DNS-Verwaltung
+- Suche nach Einträgen mit der Bezeichnung:
+
+  - `AAAA`
+  - `IPv6`
+- Entferne den in Konflikt stehenden AAAA-Record
+- Speichere die Änderungen
+- Wiederhole die Domain-Verifizierung nach einigen Minuten
+
+### Wichtiger Hinweis für Cloudflare-Nutzer
+
+Cloudflare zeigt aufgrund des Proxy-Verhaltens mitunter IPv6-Ergebnisse an, selbst wenn kein sichtbarer AAAA-Record existiert.
+
+Prüfe vor Änderungen immer direkt in der Liste der DNS-Einträge, ob tatsächlich ein AAAA-Record existiert.
+
+---
+
+## CAA-Record-Konflikte
+
+CAA-Records steuern, welche Zertifizierungsstellen SSL-Zertifikate für deine Domain ausstellen dürfen.
+
+Ist die erforderliche Zertifizierungsstelle nicht autorisiert, schlägt die SSL-Generierung unter Umständen fehl.
+
+###
+
+Dieses Bild zeigt die Warnung, die angezeigt wird, wenn eine erforderliche Zertifizierungsstelle durch einen bestehenden CAA-Record blockiert wird.
+
+Die Meldung gibt den erforderlichen Autorisierungswert an, der für die SSL-Ausstellung benötigt wird.
+
+### So behebst du es
+
+#### Empfohlene Lösung
+
+- Öffne deine DNS-Einstellungen
+- Suche den CAA-Record
+- Entferne den in Konflikt stehenden CAA-Record
+- Speichere die Änderungen
+- Wiederhole die Verifizierung
+
+#### Erweiterte Option
+
+Anstatt den CAA-Record vollständig zu löschen, können fortgeschrittene Nutzer den erforderlichen Autorisierungswert hinzufügen:
+
+`pki.goog`
+
+Dadurch können SSL-Zertifikate ausgestellt werden, während andere CAA-Einschränkungen bestehen bleiben.
+
+---
+
+## DNS-Einträge stimmen nicht überein
+
+Dieser Fehler tritt auf, wenn die erforderlichen DNS-Einträge nicht erkannt werden können oder nicht mit den erwarteten Werten übereinstimmen.
+
+Mögliche Ursachen:
+
+- Falsche DNS-Werte
+- Fehlende Einträge
+- In Konflikt stehende Einträge
+- Verzögerungen bei der DNS-Propagierung
+- Alte, noch im Cache gespeicherte DNS-Konfigurationen
+
+###
+
+Dieses Bild zeigt den Verifizierungsfehler, der angezeigt wird, wenn der erforderliche A-Record oder CNAME-Record nicht gefunden werden kann.
+
+Die Meldung hilft dabei zu erkennen, welcher DNS-Eintrag fehlt oder falsch konfiguriert ist.
+
+###
+
+### So behebst du es
+
+#### Überprüfe deine DNS-Einträge
+
+Nutze ein DNS-Lookup-Tool, um zu prüfen, ob deine Einträge öffentlich sichtbar sind.
+
+Stelle sicher, dass:
+
+- A-Records auf die korrekte IP-Adresse verweisen
+- CNAME-Records auf das korrekte Ziel verweisen
+- Keine in Konflikt stehenden Einträge vorhanden sind
+
+  ###
+
+#### Konflikte entfernen
+
+- Entferne doppelte A-Records, wenn nur einer erforderlich ist
+- Entferne in Konflikt stehende AAAA-Records bei reiner IPv4-Nutzung
+- Entferne gegebenenfalls in Konflikt stehende CNAME-Einträge
+
+#### Verifizierung wiederholen
+
+- Speichere alle DNS-Änderungen
+- Warte einige Minuten
+- Wiederhole die Domain-Verifizierung
+
+#### Wichtiger Hinweis für GoDaddy-Nutzer
+
+Wenn deine Domain geparkt ist, kann sie unter Umständen nicht ordnungsgemäß verbunden werden.
+
+So behebst du das:
+
+- Öffne deine Domain-Einstellungen
+- Entferne das Domain-Parking
+- Speichere die Änderungen
+- Wiederhole die Verifizierung
+
+---
+
+## Domain anderweitig verbunden
+
+Manchmal ist eine Domain bereits mit einem anderen Konto oder Arbeitsbereich verbunden.
+
+Wenn das passiert:
+
+- Trenne die Domain am vorherigen Ort
+- Oder wende dich an den UmsatzAgent Support, um Hilfe beim Freigeben der Domain-Verbindung zu erhalten
+
+---
+
+## DNS-Propagierung und zusätzliche Hinweise
+
+DNS-Änderungen werden nicht immer sofort wirksam.
+
+Beachte Folgendes:
+
+- Die meisten Änderungen werden innerhalb von Minuten übernommen
+- Die vollständige DNS-Propagierung kann bis zu 48 Stunden dauern
+- Der Browser-Cache zeigt vorübergehend möglicherweise veraltete Ergebnisse an
+- Der Inkognito-Modus hilft beim Überprüfen des aktualisierten DNS-Verhaltens
+
+Ein DNS-Lookup-Tool hilft dir festzustellen, ob deine Änderungen korrekt propagiert wurden.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum schlägt die Verifizierung meiner Domain nach der DNS-Aktualisierung immer noch fehl?**
+
+Die DNS-Propagierung ist möglicherweise noch im Gange. Warte einige Minuten und wiederhole die Verifizierung.
+
+**F: Was ist ein A-Record?**
+
+Ein A-Record verbindet deine Domain mit einer IPv4-Serveradresse.
+
+**F: Was ist ein AAAA-Record?**
+
+Ein AAAA-Record verbindet deine Domain mit einer IPv6-Adresse.
+
+**F: Kann ich meine CAA-Records behalten?**
+
+Ja. Fortgeschrittene Nutzer können bestehende CAA-Records anpassen, anstatt sie vollständig zu löschen.
+
+**F: Warum zeigt Cloudflare weiterhin IPv6-Ergebnisse an?**
+
+Das Proxy-Verhalten von Cloudflare kann IPv6-Routing auch ohne sichtbaren AAAA-Record anzeigen.
+
+**F: Wie lange dauern DNS-Änderungen?**
+
+Die meisten DNS-Änderungen greifen schnell, die weltweite Propagierung kann jedoch bis zu 48 Stunden dauern.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn sich deine Domain nach dem Korrigieren der DNS-Einträge und dem Abwarten der Propagierung immer noch nicht verbinden lässt, wende dich an den UmsatzAgent Support für weitere Unterstützung bei der Fehlerbehebung.

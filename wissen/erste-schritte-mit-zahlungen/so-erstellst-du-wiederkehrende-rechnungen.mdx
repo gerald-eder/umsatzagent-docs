@@ -1,0 +1,161 @@
+---
+title: "So erstellst du wiederkehrende Rechnungen"
+description: "Vielleicht hast du schon vom Begriff „wiederkehrende Rechnungsstellung“ gehört. Damit können Kunden automatisch bezahlen, ohne bei jedem Kauf ihre…"
+---
+
+Vielleicht hast du schon vom Begriff „wiederkehrende Rechnungsstellung“ gehört. Damit können Kunden automatisch bezahlen, ohne bei jedem Kauf ihre Zahlungsdaten manuell eingeben zu müssen.
+
+Das ist nützlich, wenn du Produkte im Abo anbietest und Kunden monatlich oder in festen Abständen eine Rechnung über den fälligen Betrag im Voraus senden möchtest.
+
+Dieser Artikel zeigt dir, wie du eine einfache wiederkehrende Rechnung einrichtest und nutzt.
+
+#### In diesem Artikel:
+
+#### [Was ist eine wiederkehrende Rechnung?](#was-ist-eine-wiederkehrende-rechnung)
+
+#### [So erstellst du eine wiederkehrende Rechnung](#so-erstellst-du-eine-wiederkehrende-rechnung)
+
+#### [Die Rechnungsfrequenz verstehen](#die-rechnungsfrequenz-verstehen)
+
+#### [Status- und Aktionstypen in wiederkehrenden Vorlagen](#status-und-aktionstypen-in-wiederkehrenden-vorlagen)
+
+#### [Gesendete Rechnungen und deren Zahlungsstatus ansehen](#gesendete-rechnungen-und-deren-zahlungsstatus-ansehen)
+
+#### [FAQ](#faq)
+
+#### [Was wird in der Listenansicht angezeigt?](#was-wird-in-der-listenansicht-angezeigt)
+
+#### [Wie werde ich benachrichtigt, wenn eine Zahlung eingeht?](#wie-werde-ich-benachrichtigt-wenn-eine-zahlung-eingeht)
+
+#### [Wie stoppe ich den Versand zukünftiger Rechnungen?](#wie-stoppe-ich-den-versand-zukuenftiger-rechnungen)
+
+#### [Kann ich Preis, Rabatt oder Steuern ab der nächsten Wiederholung ändern?](#kann-ich-preis-rabatt-oder-steuern-ab-der-naechsten-wiederholung-aendern)
+
+#### [Kann ich die Frequenzeinstellung einer laufenden wiederkehrenden Rechnung ändern?](#kann-ich-die-frequenzeinstellung-einer-laufenden-wiederkehrenden-rechnung-aender)
+
+#### [Welche Produkte kann ich zu wiederkehrenden Rechnungen hinzufügen?](#welche-produkte-kann-ich-zu-wiederkehrenden-rechnungen-hinzufuegen)
+
+---
+
+## Was ist eine wiederkehrende Rechnung?
+
+Eine wiederkehrende Rechnung kann im Voraus geplant werden, um automatisch an Kunden versendet zu werden, die eine wiederkehrende Dienstleistung oder ein wiederkehrendes Produkt erworben haben. So planst du den Rechnungsversand einmalig und musst dich nicht mehr manuell darum kümmern.
+
+**Bitte beachten:**
+
+```
+Wir empfehlen die Nutzung von Stripe Connect für Rechnungen. Falls du Stripe Connect nicht nutzen möchtest, müssen Zahlungen manuell erfasst werden.
+```
+
+## So erstellst du eine wiederkehrende Rechnung
+
+- Öffne den Tab **Rechnungen** unter **Zahlungen**.
+- Wähle **Neue wiederkehrende Vorlage**, indem du auf der Seite „Alle Rechnungen“ oder „Wiederkehrende Vorlagen“ auf **Neu** klickst.
+
+##
+
+## Die Rechnungsfrequenz verstehen
+
+Die folgende Tabelle erklärt verschiedene Fälle beim Einstellen der Rechnungsfrequenz:
+
+|  |  |
+| --- | --- |
+|  | - Die erste Rechnung ist am 5. Juli 2022 fällig<br>- Die zweite Rechnung ist am 7. Juli 2022 fällig<br>- Die Rechnungserstellung stoppt nie automatisch |
+|  | - Die erste Rechnung ist am 5. Juli 2022 fällig<br>- Die zweite Rechnung ist am 7. Juli 2022 fällig<br>- Die folgenden Rechnungen sind am 9., 11. und 13. Juli fällig |
+|  | - Die erste Rechnung ist am 5. Juli 2022 fällig<br>- Die zweite Rechnung ist am 7. Juli 2022 fällig<br>- Die folgenden Rechnungen sind am 9. und 11. Juli fällig<br>- Am 12. Juli ist keine Rechnung fällig |
+|  | - Der 5. Juli 2022 ist als Referenz ein Dienstag<br>- Die erste Rechnung ist am 18. Juli fällig, wird aber 2 Tage im Voraus gesendet, also am 16. Juli 2022<br>- Die zweite Rechnung ist am 1. August 2022 fällig, wird aber 2 Tage im Voraus gesendet, also am 30. Juli 2022<br>- Wäre der 5. Juli ein Montag gewesen, wäre die erste Rechnung am selben Tag (5. Juli 2022) fällig gewesen und sofort versendet worden<br>- Die zweite Rechnung wäre am 19. Juli fällig und 2 Tage im Voraus gesendet worden, also am 17. Juli 2022 |
+|  | - Die erste Rechnung ist am 2. September fällig und wird 0 Tage im Voraus gesendet, also am selben Tag<br>- Die zweite Rechnung ist am 2. November fällig und wird am selben Tag an den Kunden gesendet<br>- Der Zeitplan ist abgeschlossen, nachdem 3 Rechnungen wie in den Einstellungen festgelegt an den Kunden versendet wurden |
+|  | - Wenn im obigen Beispiel die erste Rechnung ab dem nächsten Monat, aber im Abstand von 2 Monaten gesendet werden soll: Wähle als Startdatum einfach den 2. August<br>- Der Zeitplan ist abgeschlossen, nachdem 3 Rechnungen wie in den Einstellungen festgelegt an den Kunden versendet wurden |
+|  | - Diese Einstellung ermöglicht es, dem Kunden ab dem nächsten Monat am ersten Montag jedes Monats eine Rechnung zu senden<br>- Die erste Rechnung ist direkt am 1. August fällig, da der 1. August der erste Montag im August ist<br>- Die Rechnungen werden einen Tag im Voraus gesendet<br>- Der Ablauf endet nach Jahresende: Die letzte Rechnung ist am 5. Dezember (dem ersten Montag im Dezember) fällig<br>- Nach dem 5. Dezember werden keine weiteren Rechnungen für den Kunden fällig |
+|  | - Diese Frequenzeinstellung ermöglicht es, dem Kunden jedes Jahr am letzten Tag im Dezember (31. Dezember) eine Rechnung zu senden<br>- Der Rechnungszeitplan endet nach dem Versand von 5 Rechnungen an den Kunden |
+
+## Status- und Aktionstypen in wiederkehrenden Vorlagen
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| **Aktion / Status -->** | **Entwurf** | **Aktiv** | **Geplant** | **Storniert** | **Abgeschlossen** |
+| **Bearbeiten** | Ja | Nein | Nein | Nein | Nein |
+| **Ansehen** | Nein | Ja | Ja | Ja | Ja |
+| **Löschen** | Ja | Nein | Ja | Nein\* | Nein\* |
+| **Beenden** | k. A. | Ja | Ja | k. A. | k. A. |
+
+**Bitte beachten:**
+
+```
+Stornierte und abgeschlossene Rechnungen können nur gelöscht werden, wenn noch keine Rechnung an den Kunden versendet wurde. Gelöschte wiederkehrende Vorlagen werden nicht in der Listenansicht angezeigt.
+```
+
+---
+
+## Gesendete Rechnungen und deren Zahlungsstatus ansehen
+
+Klicke auf **Details** (wie unten gezeigt), um die gesendeten Rechnungen und deren Status in der rechten Leiste anzuzeigen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735890/original/qZQsWzG-cn5bKBA60Yjqm6_5ScTbDudsTA.png?1679505907)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735901/original/a514hV51maZ8b-v0RlYKC7V0tF-whDo22A.png?1679505911)
+
+Es gibt **vier Arten** von Rechnungsstatus, die auch als Tooltips über den Symbolen angezeigt werden:
+
+- **Gesendet**: Die Rechnung wurde erfolgreich an den Kunden gesendet.
+- **Überfällig**: Die Rechnung wurde rechtzeitig gesendet, aber vom Kunden noch nicht bezahlt.
+- **Bezahlt**: Der Kunde hat die Rechnung bezahlt.
+- **Nicht gesendet**: Es gab einen Systemfehler bei der Zustellung der Rechnung an den Kunden; die Rechnung muss erneut gesendet werden.
+
+Der Rechnungsstatus kann auch im Rechnungs-Builder geprüft werden, sobald die wiederkehrende Vorlage **Geplant** ist; dabei öffnet sich ebenfalls die rechte Leiste.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735900/original/Gm1tYzRJmADihVwWTajzsJjquktVkBm5Uw.jpeg?1679505910)
+
+#
+
+---
+
+## FAQ
+
+### Was wird in der Listenansicht angezeigt?
+
+Die Liste auf der Seite „Wiederkehrende Vorlagen“ zeigt die erstellten wiederkehrenden Vorlagen. Diese erstellen und versenden einzelne Rechnungen an den festgelegten Kunden gemäß den jeweils definierten Frequenzeinstellungen.
+
+Zur besseren Übersicht zeigt die Liste die übergeordnete Vorlage, die Rechnungen anhand der festgelegten Frequenzeinstellungen und Kundendaten generiert und versendet.
+
+### Wie werde ich benachrichtigt, wenn eine Zahlung eingeht?
+
+Die folgende Tabelle zeigt die Standardbenachrichtigungen, die an Absender und Empfänger gesendet werden. Du kannst über Rechnungs-Trigger in Workflows weitere Automatisierungen basierend auf dem Rechnungsstatus (gesendet/bezahlt) erstellen.
+
+| **Fall** | **Wer erhält die E-Mail?** |
+| --- | --- |
+| Rechnungszahlung erfolgreich | Empfänger |
+| Rechnungszahlung fehlgeschlagen | Empfänger |
+| Rechnung erhalten | Empfänger |
+| Rechnungszahlung erfolgreich | Absender |
+| Rechnungszahlung fehlgeschlagen | Absender |
+
+### Wie stoppe ich den Versand zukünftiger Rechnungen?
+
+Der Versand zukünftiger Rechnungen für aktive oder geplante wiederkehrende Rechnungen kann auf der Listenseite „Wiederkehrende Vorlagen“ gestoppt werden. Wähle im Dropdown-Menü **Aktionen** die Option **Beenden** und bestätige den Vorgang:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735905/original/dzUvqif-nG1Y40t3olEN49BSDelm7DGdFA.jpeg?1679505912)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735904/original/T6B14Odaw5VUH66ofNs8al3YAXxt8JwY9A.jpeg?1679505912)
+
+Du kannst die wiederkehrende Rechnung auch direkt im Rechnungs-Builder beenden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735877/original/A6A7DHh9E2VyCbIM1gw3QHAtc8Pdt0pqpQ.jpeg?1679505904)
+
+### Kann ich Preis, Rabatt oder Steuern ab der nächsten Wiederholung ändern?
+
+Nein, du kannst Preis, Rabatt oder Steuern nicht mehr ändern, nachdem du die wiederkehrende Rechnung geplant hast.
+
+Du kannst zwar einzelne bereits versendete Rechnungen bearbeiten und erneut an den Kunden senden, dies lässt sich jedoch nicht automatisiert anpassen.
+
+### Kann ich die Frequenzeinstellung einer laufenden wiederkehrenden Rechnung ändern?
+
+Nein, du kannst die Frequenzeinstellungen nicht mehr ändern, nachdem du die wiederkehrende Rechnung geplant hast.
+
+##
+
+### Welche Produkte kann ich zu wiederkehrenden Rechnungen hinzufügen?
+
+Es können nur **einmalige Produkte (KEINE Abos)** zu einer wiederkehrenden Rechnung hinzugefügt werden. Bei wiederkehrenden Produkten wird das Intervall über die Frequenzeinstellung der Rechnung festgelegt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48288735902/original/dexdkPflmTagi2VtYYDWRiyrT5Cnbk7Ztw.png?1679505911)**

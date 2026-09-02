@@ -1,0 +1,204 @@
+---
+title: "E-Mail-Authentifizierungsfehler – SPF-, DKIM- und DMARC-Probleme beheben"
+description: "Deine E-Mails werden abgelehnt, weil deine Domain die von den empfangenden Mailservern geforderten Authentifizierungsprüfungen nicht bestanden hat. SPF,…"
+---
+
+## SPF-/DKIM-/DMARC-Authentifizierungsfehler beheben
+
+**INHALTSVERZEICHNIS**
+
+- [Was passiert hier?](#was-passiert-hier)
+- [Schnelldiagnose: Authentifizierungsfehler erkennen](#schnelldiagnose-authentifizierungsfehler-erkennen)
+- [E-Mail-Authentifizierung verstehen](#e-mail-authentifizierung-verstehen)
+- [Schritt-für-Schritt-Einrichtung der Authentifizierung](#schritt-fuer-schritt-einrichtung-der-authentifizierung)
+- [Zeitplan und Erwartungen zur Wiederherstellung](#zeitplan-und-erwartungen-zur-wiederherstellung)
+- [Erweitertes Authentifizierungs-Monitoring](#erweitertes-authentifizierungs-monitoring)
+- [Häufige Fallstricke bei der Authentifizierung](#haeufige-fallstricke-bei-der-authentifizierung)
+- [Weiterhin Probleme?](#weiterhin-probleme)
+
+## Was passiert hier?
+
+Deine E-Mails werden abgelehnt, weil deine Domain die von den empfangenden Mailservern geforderten Authentifizierungsprüfungen nicht bestanden hat. SPF, DKIM und DMARC sind Sicherheitsprotokolle, die überprüfen, ob deine E-Mails legitim sind und nicht gefälscht wurden. Wenn diese Authentifizierungsmethoden fehlschlagen oder fehlen, weisen große E-Mail-Anbieter wie Gmail, Outlook und Yahoo deine Nachrichten ab, um ihre Nutzer vor potenziellen Spam- oder Phishing-Versuchen zu schützen.
+
+## Schnelldiagnose: Authentifizierungsfehler erkennen
+
+### Häufige Fehlermeldungen bei der Authentifizierung
+
+- „The sender's domain failed DMARC authentication, which is required by the recipient's server“
+- „Message rejected due to failing DMARC authentication or related sender policy checks“
+- „Email rejected due to failed or missing SPF or DMARC authentication for the sending domain“
+- „The sender domain lacks proper SPF authentication, causing delivery to be blocked“
+- „The sender's domain failed DKIM authentication, not meeting recipient's authentication standards“
+- „The From header domain does not align with authenticated SPF or DKIM domains“
+- „Sender was not authenticated, so delivery to the group was blocked by recipient policy“
+- „The sending server failed authentication checks or lacks valid security certificates“
+
+---
+
+## E-Mail-Authentifizierung verstehen
+
+### Wichtige Konzepte
+
+**Das Trio der E-Mail-Authentifizierung:**
+
+- **SPF (Sender Policy Framework):** Prüft, welche Server berechtigt sind, E-Mails im Namen deiner Domain zu senden
+- **DKIM (DomainKeys Identified Mail):** Fügt eine digitale Signatur hinzu, um die Echtheit der E-Mail zu bestätigen
+- **DMARC (Domain-based Message Authentication):** Teilt Empfängern mit, wie sie verfahren sollen, wenn SPF-/DKIM-Prüfungen fehlschlagen
+- **Domain-Alignment:** Deine Absenderadresse („Von“) muss mit deiner authentifizierten Absendedomain übereinstimmen
+
+### Kategorien von Authentifizierungsfehlern
+
+SPF-Fehler:
+
+- Fehlender SPF-Eintrag im DNS
+- Zu viele DNS-Lookups im SPF-Eintrag (überschreitet das Limit von 10)
+
+DKIM-Fehler:
+
+- DKIM-Schlüssel nicht im DNS veröffentlicht
+- Nicht übereinstimmende DKIM-Signaturen
+
+DMARC-Fehler:
+
+- Keine DMARC-Richtlinie veröffentlicht
+- DMARC-Richtlinie auf „reject“ gesetzt ohne korrekte SPF-/DKIM-Einrichtung
+- Probleme mit dem Domain-Alignment zwischen Absenderadresse und authentifizierter Domain
+
+---
+
+## Schritt-für-Schritt-Einrichtung der Authentifizierung
+
+### Schritt 1: Dedizierte Domain konfigurieren
+
+**Anleitung:**
+
+1. **Zu den E-Mail-Einstellungen navigieren:**
+   - Gehe zu **Einstellungen** → **E-Mail-Dienste** → **Absendedomain**
+   - Klicke auf **„Domain hinzufügen“**
+   - Gib deinen Domainnamen ein (z. B. deinedomain.de)
+2. **Authentifizierungseinträge generieren:**
+   - Unser System zeigt die erforderlichen DNS-Einträge an
+   - Kopiere die bereitgestellten SPF-, DKIM-, MX-, CNAME- und DMARC-Einträge
+   - Lass diese Seite als Referenz geöffnet
+
+### Schritt 2: DNS-Einträge hinzufügen
+
+**Anleitung:**
+
+1. **DNS-Anbieter aufrufen:**
+   - Melde dich bei deinem Domain-Registrar oder DNS-Hosting-Anbieter an
+   - Navigiere zur DNS-Verwaltung oder zum DNS-Zoneneditor
+2. **SPF-Eintrag hinzufügen:**
+   - Erstelle einen neuen **TXT-Eintrag**
+   - Name/Host: **@** (oder leer lassen für die Hauptdomain)
+   - Wert: Kopiere den SPF-Eintrag aus unserem System
+3. **DKIM-Eintrag hinzufügen:**
+   - Erstelle einen neuen **TXT-Eintrag**
+   - Name/Host: Verwende den bereitgestellten DKIM-Selektor
+   - Wert: Kopiere den öffentlichen DKIM-Schlüssel
+4. **MX-Eintrag hinzufügen:**
+   - Erstelle einen neuen **MX-Eintrag**
+   - Name/Host: Verwende den bereitgestellten MX-Selektor
+   - Wert: Kopiere die MX-Einträge
+5. **CNAME-Eintrag hinzufügen (Tracking-URL):**
+   - Erstelle einen neuen **CNAME-Eintrag**
+   - Name/Host: Verwende den bereitgestellten CNAME-Selektor
+   - Wert: Kopiere die CNAME-Einträge
+6. **DMARC-Eintrag hinzufügen:**
+   - Erstelle einen neuen **TXT-Eintrag**
+   - Name/Host: **\_dmarc**
+   - Wert: Starte mit „v=DMARC1; p=none;“
+
+#### Indikatoren für eine erfolgreiche DNS-Propagierung
+
+- Unsere Plattform zeigt den Status „Verifiziert“ für deine Domain an
+- DNS-Lookup-Tools bestätigen, dass deine Einträge aktiv sind
+- Test-E-Mails zur Authentifizierung bestehen die SPF-/DKIM-/DMARC-Prüfungen
+- Die Bounce-Raten sinken innerhalb von 24 bis 48 Stunden deutlich
+
+### Schritt 3: Authentifizierungs-Setup überprüfen
+
+**Anleitung:**
+
+1. **Status prüfen:**
+   - Kehre zurück zu **Einstellungen** → **E-Mail-Dienste** → **Absendedomain**
+   - Klicke auf die Schaltfläche **„Domain verifizieren“**
+   - Warte, bis alle Authentifizierungsprüfungen „Verifiziert“ anzeigen
+2. **Externe Verifizierungstools:**
+   - Nutze SPF-/DKIM-/DMARC-Lookup-Tools auf MXToolbox.com
+   - Teste mit Mail-Tester.com für eine umfassende Authentifizierungsanalyse
+   - Sende Test-E-Mails an Gmail-/Outlook-Konten und überprüfe die Header
+
+### Schritt 4: Absenderadressen aktualisieren
+
+**Anleitung:**
+
+1. **Absenderadressen anpassen:**
+   - Aktualisiere alle Absender-E-Mail-Adressen („Von“), sodass sie deine authentifizierte Domain nutzen
+   - Beispiel: Ändere „noreply@beliebigedomain.de“ in „noreply@deinedomain.de“
+2. **Kampagnen und Automatisierungen aktualisieren:**
+   - Überprüfe bestehende E-Mail-Kampagnen und Sequenzen
+   - Aktualisiere die Absenderadressen in allen aktiven Kampagnen und Automatisierungen
+   - Sende einen Test, um sicherzustellen, dass die Authentifizierung erfolgreich ist
+
+---
+
+## Zeitplan und Erwartungen zur Wiederherstellung
+
+### Phase 1: DNS-Propagierung (2–48 Stunden)
+
+- **Aktion:** DNS-Einträge werden weltweit propagiert
+- **Erwartetes Ergebnis:** Unsere Plattform zeigt die Domain als verifiziert an, externe Tools bestätigen die Einträge
+
+### Phase 2: Erkennung der Authentifizierung (1–7 Tage)
+
+- **Aktion:** E-Mail-Anbieter erkennen deine Authentifizierungseinrichtung an
+- **Erwartetes Ergebnis:** Bounce-Raten sinken, authentifizierungsbezogene Ablehnungen hören auf
+
+### Phase 3: Aufbau der Absender-Reputation (2–4 Wochen)
+
+- **Aktion:** Kontinuierlicher authentifizierter Versand baut eine positive Absender-Reputation auf
+- **Erwartetes Ergebnis:** Verbesserte Posteingangsplatzierung, höhere Zustellraten
+
+---
+
+## Erweitertes Authentifizierungs-Monitoring
+
+### Wichtige Monitoring-Tools
+
+**Kostenlose Authentifizierungs-Prüfprogramme:**
+
+- **MXToolbox.com:** Abfrage und Validierung von SPF-, DKIM- und DMARC-Einträgen
+- **DMARC Analyzer:** Kostenlose Überprüfung von DMARC-Einträgen und Validierung von Richtlinien
+- **Mail-Tester.com:** Umfassende E-Mail-Authentifizierungstests
+- **Google Admin Toolbox:** Dig-Tool zur Überprüfung von DNS-Einträgen
+
+**Einrichtung von DMARC-Reports:**
+
+1. Füge eine Reporting-E-Mail zu deinem DMARC-Eintrag hinzu: „rua=mailto:dmarc-reports@deinedomain.de“
+2. Richte eine E-Mail-Weiterleitung für DMARC-Reports ein
+3. Nutze kostenlose DMARC-Analysetools wie DMARC Digests von Postmark
+4. Überwache wöchentliche Berichte auf Authentifizierungsfehler
+
+---
+
+## Häufige Fallstricke bei der Authentifizierung
+
+#### Warnsignale, die du vermeiden solltest
+
+- **Mehrere SPF-Einträge:** Pro Domain ist nur ein einziger SPF-Eintrag zulässig
+- **Sofortige DMARC-Reject-Richtlinie:** Starte mit „p=none“ zur Überwachung
+- **Fehlende Include-Anweisungen:** Stelle sicher, dass der SPF-Eintrag alle versendenden Dienste enthält
+- **Subdomain-Verwirrung:** Stimme deine Absenderdomain exakt mit der authentifizierten Domain ab
+- **DNS-Syntaxfehler:** Zusätzliche Leerzeichen oder Anführungszeichen können die Authentifizierung beschädigen
+
+---
+
+## Weiterhin Probleme?
+
+Wenn weiterhin Authentifizierungsfehler auftreten:
+
+1. **DNS-Einträge genau prüfen:** Nutze mehrere DNS-Lookup-Tools, um sicherzustellen, dass alle Einträge korrekt und propagiert sind
+2. **DMARC-Berichte analysieren:** Untersuche Fehlermuster, um spezifische Authentifizierungsprobleme zu identifizieren
+3. **Mit verschiedenen Empfängern testen:** Sende E-Mails an Gmail, Outlook und Yahoo, um anbieterspezifische Probleme zu erkennen
+4. **Auf widersprüchliche Einträge prüfen:** Stelle sicher, dass keine doppelten oder widersprüchlichen SPF-/DKIM-Einträge vorhanden sind

@@ -228,12 +228,21 @@ def main():
     struct = json.load(open(os.path.join(CACHE, "struktur.json")))
     os.makedirs(os.path.join(CACHE, "de"), exist_ok=True)
 
-    # Artikel-ID -> Ordnername
+    # Artikel-ID -> Ordnername. Maßgeblich ist die Brotkrume aus zuordnung.py;
+    # der Ordner-Crawl kennt nur einen Ausschnitt und wird nur als Notnagel
+    # verwendet.
     heimat = {}
     for u, k in struct.items():
         if k["art"] == "ordner":
             for aid in k["artikel"]:
                 heimat[aid] = k["name"]
+    zpfad = os.path.join(CACHE, "zuordnung.json")
+    if os.path.exists(zpfad):
+        for aid, v in json.load(open(zpfad)).items():
+            heimat[aid] = v["ordner"]
+    else:
+        print("Hinweis: keine zuordnung.json — erst tools/kb/zuordnung.py laufen lassen,")
+        print("         sonst landen hunderte Artikel unter 'Sonstiges'.")
 
     # Relevanzurteile aus auswahl.py. Fehlen sie, wird alles gebaut.
     apfad = os.path.join(CACHE, "auswahl.json")
@@ -271,7 +280,10 @@ def main():
         rec, ordner = paar
         cpfad = os.path.join(CACHE, "de", f'{rec["id"]}.json')
         if os.path.exists(cpfad) and not a.force:
-            return json.load(open(cpfad)) | {"cache": True}
+            # Der Ordner wird auch bei Cache-Treffern neu gesetzt: die
+            # Zuordnung kann sich seit der Übersetzung verbessert haben,
+            # und sie bestimmt, wo die Datei landet.
+            return json.load(open(cpfad)) | {"cache": True, "ordner": ordner}
 
         md, videos = zu_markdown(rec["html"])
         titel_en = rec["titel_en"] or rec["slug"].replace("-", " ").title()
@@ -328,12 +340,30 @@ def main():
         return
 
     # --- Ausgabe ----------------------------------------------------------
+    # Zielordner leeren. Ändert sich ein Titel, ändert sich der Dateiname —
+    # die alte Datei bliebe sonst als Dublette liegen und landete über den
+    # Cache sogar wieder in der Navigation.
+    npfad = os.path.join(CACHE, "ordnernamen.json")
+    ordnernamen = json.load(open(npfad)) if os.path.exists(npfad) else {}
+
+    zielwurzel = os.path.join(ROOT, config.ZIEL)
+    if os.path.isdir(zielwurzel) and not a.ordner:
+        for wurzel, _, dateien_ in os.walk(zielwurzel):
+            for d in dateien_:
+                if d.endswith(".mdx"):
+                    os.remove(os.path.join(wurzel, d))
+
     geschrieben = 0
     belegt = {}
     for b in gut:
         # Der Dateiname kommt aus dem deutschen Titel, nicht aus dem Quell-Slug:
-        # der trägt die Fremdmarke bis in die URL.
-        ordner_slug = slugify(config.KATEGORIEN.get(b["ordner"], b["ordner"]), 40)
+        # der trägt die Fremdmarke bis in die URL. Für den Ordner gilt
+        # dasselbe — aus "LeadConnector Phone" würde sonst der Pfad
+        # /wissen/leadconnector-phone/.
+        ordner_de = (ordnernamen.get(b["ordner"])
+                     or config.KATEGORIEN.get(b["ordner"])
+                     or b["ordner"])
+        ordner_slug = slugify(marken_ersetzen(ordner_de), 40)
         art_slug = slugify(b["titel"]) or slugify(b["slug"])
         if belegt.get((ordner_slug, art_slug)):
             art_slug = f'{art_slug}-{b["id"][-4:]}'
@@ -362,9 +392,48 @@ def main():
         if os.path.exists(cpfad):
             c = json.load(open(cpfad))
             c["pfad"] = b["pfad"]
+            c["ordner"] = b["ordner"]
             json.dump(c, open(cpfad, "w"), ensure_ascii=False)
 
     print(f"{geschrieben} .mdx-Dateien geschrieben nach {config.ZIEL}/")
+
+    # --- Querverweise ------------------------------------------------------
+    # Die Artikel verlinken einander über Adressen der Quelle. Die Marken-
+    # ersetzung macht daraus Adressen auf unserer Domain, die es dort nicht
+    # gibt. Aus der Artikelnummer in der Adresse lässt sich aber ableiten,
+    # wohin der Verweis bei uns gehört.
+    pfad_von_id = {b["id"]: b["pfad"] for b in gut if b.get("pfad")}
+    quelle_muster = re.compile(
+        r"\((?:https?://)?(?:support|help|app)?\.?umsatzagent\.com/[^)\s]*?/articles/(\d+)[^)\s]*\)")
+
+    intern = tot = 0
+
+    def ersetze(m):
+        nonlocal intern
+        ziel = pfad_von_id.get(m.group(1))
+        if ziel:
+            intern += 1
+            return f"(/{ziel})"
+        return m.group(0)
+
+    for b in gut:
+        if not b.get("pfad"):
+            continue
+        p = os.path.join(ROOT, b["pfad"] + ".mdx")
+        text = open(p).read()
+        neu = quelle_muster.sub(ersetze, text)
+        # Was übrig bleibt, zeigt auf einen nicht übernommenen Artikel. Der
+        # Link käme im Nichts an, also bleibt nur der Text stehen.
+        neu, n = re.subn(
+            r"\[([^\]]+)\]\((?:https?://)?(?:support|help|app)?\.?umsatzagent\.com/[^)\s]*?/articles/\d+[^)\s]*\)",
+            r"\1", neu)
+        tot += n
+        if neu != text:
+            open(p, "w").write(neu)
+
+    if intern or tot:
+        print(f"Querverweise: {intern} auf interne Seiten umgebogen, "
+              f"{tot} ins Leere zeigende entschärft")
 
     bericht = os.path.join(CACHE, "nacharbeit.json")
     json.dump({"fremdmarke": [{"slug": b["slug"], "begriffe": b["rest"]} for b in mit_rest],

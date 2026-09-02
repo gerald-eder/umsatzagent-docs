@@ -1,0 +1,236 @@
+---
+title: "Unternehmen &amp; benutzerdefinierte Objekte über eine CSV-Datei importieren"
+description: "Dieser Artikel erklärt, wie du Unternehmen und Datensätze benutzerdefinierter Objekte per CSV-Datei massenhaft importierst. Du kannst neue Datensätze…"
+---
+
+Dieser Artikel erklärt, wie du **Unternehmen** und **Datensätze benutzerdefinierter Objekte** per CSV-Datei massenhaft importierst. Du kannst neue Datensätze erstellen, bestehende aktualisieren oder beides in einem einzigen Import durchführen.
+
+Diese Funktion ist nützlich bei der Migration von Daten aus einem anderen CRM, beim Onboarding neuer Kunden oder bei der Verwaltung strukturierter Datensätze im großen Umfang.
+
+## WICHTIG
+
+Der Import unterstützt **nur CSV-Dateien (.csv)**.
+
+Excel-Dateien (.xlsx) und Google-Sheets-Links werden nicht unterstützt.
+
+**INHALTSVERZEICHNIS**
+
+- Voraussetzungen
+
+  - Benutzerberechtigungen
+  - Dateianforderungen
+  - Feldvorbereitung
+- Häufige Fehler vermeiden
+- Import-Modi erklärt
+  - 1️⃣ Erstellen
+  - 2️⃣ Aktualisieren
+  - 3️⃣ Erstellen & Aktualisieren
+- So importierst du Unternehmen oder benutzerdefinierte Objekte
+  - Schritt 1: Zum Import navigieren
+  - Schritt 2: Objekt auswählen
+  - Schritt 3: CSV-Datei hochladen
+  - Schritt 4: Spalten zu Feldern zuordnen
+    - „Leere Werte nicht aktualisieren“
+- Duplikatsbehandlung & eindeutige Felder
+- Einschränkungen beim Aktualisieren leerer Werte
+- Import-Status überwachen
+  - Import-Statistiken
+- Häufig gestellte Fragen
+
+  - F: Kann ich mehrere benutzerdefinierte Objekte gleichzeitig importieren?
+  - F: Kann ich Systemfelder wie „Erstellt am“ importieren?
+  - F: Was passiert bei Konflikten mit eindeutigen Feldern?
+  - F: Kann ich einen Import rückgängig machen?
+  - F: Wo sehe ich vergangene Importe?
+
+## Voraussetzungen
+
+Vor dem Start des Imports:
+
+### Benutzerberechtigungen
+
+Du benötigst **Administrator-Zugriff**, um Importe durchzuführen.
+
+### Dateianforderungen
+
+- Dateiformat muss **.csv** sein
+- Maximale Dateigröße: **30 MB**
+- Nur **ein Tabellenblatt/Tab**
+- Die erste Zeile muss Kopfzeilen enthalten
+- Kopfzeilen sollten mit bestehenden Standard- oder benutzerdefinierten Feldern übereinstimmen
+
+### Feldvorbereitung
+
+- Pflichtfelder müssen gültige Werte enthalten
+- Benutzerdefinierte Felder müssen bereits in deinem Konto vorhanden sein
+- Wenn du Datensätze aktualisierst, stelle sicher, dass du die richtige Kennung (z. B. Record ID) angibst
+
+## Häufige Fehler vermeiden
+
+❌ Fehlende Pflichtfelder
+
+❌ Leere Werte im Primärfeld
+
+❌ Falsche Datensatz-IDs im Aktualisierungsmodus
+
+❌ Konflikte bei eindeutigen Feldern
+
+❌ CSV-Kopfzeilen, die nicht mit den CRM-Feldnamen übereinstimmen
+
+Teste immer zuerst mit einer kleinen Datei.
+
+## Import-Modi erklärt
+
+Beim Hochladen deiner CSV wählst du einen von drei Modi:
+
+## 1️⃣ Erstellen
+
+Erstellt nur neue Datensätze.
+
+- Erfordert das Primärfeld
+- Bestehende Datensätze werden nicht aktualisiert
+- Duplikatsbehandlung folgt den Regeln für eindeutige Felder (falls zutreffend)
+
+## 2️⃣ Aktualisieren
+
+Aktualisiert nur bestehende Datensätze.
+
+- Erfordert die **Record ID oder eindeutige Felder bei benutzerdefinierten Objekten**
+- Zeilen ohne passende Record ID oder passendes eindeutiges Feld werden übersprungen
+
+## 3️⃣ Erstellen & Aktualisieren
+
+Erstellt neue Datensätze und aktualisiert bestehende.
+
+- Wenn Record ID oder eindeutiges Feld übereinstimmen → Datensatz wird aktualisiert
+- Wenn keine Übereinstimmung vorliegt → Datensatz wird erstellt
+- Regeln für eindeutige Felder gelten, sofern konfiguriert
+
+## So importierst du Unternehmen oder benutzerdefinierte Objekte
+
+## Schritt 1: Zum Import navigieren
+
+**Für Unternehmen**
+
+- Gehe zu **Unternehmen**
+- Klicke oben rechts auf **Importieren**
+
+**Für benutzerdefinierte Objekte**
+
+- Gehe zu **Benutzerdefiniertes Objekt**
+- Klicke oben rechts auf **Importieren**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686100/original/uLPSIrhNKxA7elGRf1D6VygCSXmZ5WO75A.jpeg?1772024407)**
+
+## Schritt 2: Objekt auswählen
+
+- Wähle das Unternehmen oder das benutzerdefinierte Objekt aus, das du importieren möchtest
+- Es kann jeweils nur ein benutzerdefiniertes Objekt importiert werden
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686097/original/T_5JEj4jpTBORV1TpCxt1ZiY6tqgkbUPlg.jpeg?1772024406)
+
+## Schritt 3: CSV-Datei hochladen
+
+- Lade deine CSV-Datei hoch
+- Wähle deinen Import-Modus
+- ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686098/original/ITeVr_TSZ1MarBvmthkm8gjnCrVbYOghpQ.jpeg?1772024406)
+- Wähle gegebenenfalls das eindeutige Feld für die Deduplizierung aus
+
+## Schritt 4: Spalten zu Feldern zuordnen
+
+Ordne jede CSV-Spalte dem passenden CRM-Feld zu.
+
+- Pflichtfelder müssen zugeordnet werden
+- Nicht zugeordnete Spalten können ignoriert werden
+- Erfolgreich zugeordnete Felder werden grün gekennzeichnet
+- Fehler oder Warnungen werden hervorgehoben
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686099/original/6IQfTTOx-tDafRkGRVj-dHoM7jU5tqgbLg.jpeg?1772024407)
+
+### „Leere Werte nicht aktualisieren“
+
+Wenn aktiviert:
+
+- Leere Zellen in deiner CSV überschreiben bestehende Werte NICHT.
+
+Wenn deaktiviert:
+
+- Leere Zellen löschen bestehende Werte (außer bei geschützten Feldern).
+
+## Duplikatsbehandlung & eindeutige Felder
+
+Wenn dein Unternehmen oder benutzerdefiniertes Objekt eindeutige Felder enthält:
+
+- Du musst die Record ID oder ein eindeutiges Feld als Deduplizierungsfeld auswählen (falls mehrere zugeordnet sind)
+- Das System prüft andere eindeutige Felder auf Konflikte
+- Tritt bei einem nicht ausgewählten eindeutigen Feld ein Konflikt auf, schlägt diese Zeile fehl
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686096/original/QW1YEyXq_YptWUnuqMTbRU3-jE8rUZFRZQ.jpeg?1772024406)
+
+Dies stellt saubere, konfliktfreie Daten sicher.
+
+## Einschränkungen beim Aktualisieren leerer Werte
+
+Folgende Felder können nicht auf leer gesetzt werden:
+
+- Primärfeld
+- Pflichtfelder
+
+Diese Schutzmaßnahmen verhindern versehentlichen Datenverlust.
+
+## Import-Status überwachen
+
+Alle Importe können unter **Massenaktionen** verfolgt werden.
+
+Unter Massenaktionen kannst du:
+
+- Status einsehen (In Bearbeitung, Abgeschlossen, Fehlgeschlagen)
+- Pausieren, Fortsetzen oder Abbrechen (während der Ausführung)
+- Detaillierte Statistiken anzeigen
+- Fehlerprotokolle herunterladen
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686091/original/nn3hmpAXP7BPw562FyfwMMjrqgvdc3TXfA.jpeg?1772024405)
+
+## Import-Statistiken
+
+Jeder Import bietet:
+
+Reiter:
+
+- Alle
+- Erfolgreich
+- Fehler
+- Warnung
+
+Details auf Zeilenebene:
+
+- Zeilennummer
+- Datensatz-ID
+- Primärfeld
+- Status
+- Fehler-/Warnmeldung
+- Lösungshinweise
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065686092/original/Gp31DhQtAG-bxzsDn9qDRS4wnIiW28IKng.jpeg?1772024405)
+
+## Häufig gestellte Fragen
+
+### F: Kann ich mehrere benutzerdefinierte Objekte gleichzeitig importieren?
+
+Nein. Es kann jeweils nur ein benutzerdefiniertes Objekt importiert werden.
+
+### F: Kann ich Systemfelder wie „Erstellt am“ importieren?
+
+Nein. Systemfelder können nicht über Importe geändert werden.
+
+### F: Was passiert bei Konflikten mit eindeutigen Feldern?
+
+Die entsprechende Zeile schlägt fehl. Der Rest des Imports wird fortgesetzt.
+
+### F: Kann ich einen Import rückgängig machen?
+
+Nein. Importe können nicht rückgängig gemacht werden. Überprüfe deine CSV-Datei immer vor dem Start.
+
+### F: Wo sehe ich vergangene Importe?
+
+Gehe zu **Massenaktionen**, um den Import-Verlauf und Statistiken einzusehen.

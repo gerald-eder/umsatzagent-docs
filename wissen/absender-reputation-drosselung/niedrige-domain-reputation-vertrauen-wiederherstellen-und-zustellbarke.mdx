@@ -1,0 +1,306 @@
+---
+title: "Niedrige Domain-Reputation – Vertrauen wiederherstellen und Zustellbarkeit verbessern"
+description: "Deine Domain hat bei E-Mail-Anbietern und Sicherheitsdiensten eine schlechte Reputation aufgebaut. Das führt dazu, dass deine E-Mails blockiert, verzögert…"
+---
+
+## Probleme mit niedriger Domain-Reputation beheben
+
+**INHALTSVERZEICHNIS**
+
+- [Probleme mit niedriger Domain-Reputation beheben](#probleme-mit-niedriger-domain-reputation-beheben)
+  - [Was ist passiert?](#was-ist-passiert)
+  - [Schnelldiagnose: Reputationsprobleme erkennen](#schnelldiagnose-reputationsprobleme-erkennen)
+  - [Domain-Reputation verstehen](#domain-reputation-verstehen)
+  - [Schritt-für-Schritt-Wiederherstellung der Reputation](#schritt-fuer-schritt-wiederherstellung-der-reputation)
+  - [Alternative Methoden zur Reputationsüberwachung](#alternative-methoden-zur-reputationsueberwachung)
+  - [Best Practices für eine langfristig gesunde Reputation](#best-practices-fuer-eine-langfristig-gesunde-reputation)
+  - [Zeitrahmen und Erwartungen für die Wiederherstellung](#zeitrahmen-und-erwartungen-fuer-die-wiederherstellung)
+  - [Warnsignale, auf die du achten solltest](#warnsignale-auf-die-du-achten-solltest)
+  - [Immer noch Probleme?](#immer-noch-probleme)
+
+## Was ist passiert?
+
+Deine Domain hat bei E-Mail-Anbietern und Sicherheitsdiensten eine schlechte Reputation aufgebaut. Das führt dazu, dass deine E-Mails blockiert, verzögert oder in den Spam-Ordner verschoben werden. Die Domain-Reputation funktioniert wie eine Bonitätsauskunft für deinen E-Mail-Versand: Sie baut sich über die Zeit auf und basiert auf deinem Versandverhalten, der Interaktion der Empfänger und den Beschwerderaten.
+
+Wenn deine Domain-Reputation niedrig ist, lehnen große E-Mail-Anbieter wie Gmail, Outlook und Yahoo deine Nachrichten automatisch ab oder isolieren sie, um ihre Nutzer vor möglichem Spam oder schädlichen Inhalten zu schützen.
+
+## Schnelldiagnose: Reputationsprobleme erkennen
+
+Achte auf folgende Bounce-Nachrichten, die auf Probleme mit der Domain-Reputation hinweisen:
+
+### Reputationsblockaden bei Gmail
+
+- „The sending domain has a very low reputation, causing Gmail to block the message as potentially suspicious or spam“
+- „The sending domain has a poor reputation, causing Gmail to block or defer messages as potential spam“
+- „The sending domain has a very low reputation, causing Gmail to block the message as suspicious or spam-like“
+
+### Allgemeine Reputationsprobleme
+
+- „The sending domain has a poor reputation, causing the recipient's mail system to reject the message“
+
+### Probleme im Zusammenhang mit Blacklists
+
+- „The sending domain is blacklisted by Spamhaus, causing email rejection“
+- „The sending domain is listed on industry blocklists, causing emails to be rejected for potential spam or abuse“
+- „The sending domain is blacklisted by reputation services like Spamhaus or Abusix“
+
+---
+
+## Domain-Reputation verstehen
+
+### Was beeinflusst die Domain-Reputation?
+
+**Domain-Alter:** Neue Domains (jünger als 3 Monate) werden von Internetdienstanbietern mit Skepsis betrachtet und müssen sorgfältig aufgewärmt werden.
+
+**Authentifizierungsstatus:** Fehlende oder falsch konfigurierte SPF-, DKIM- und DMARC-Einträge schaden der Reputation erheblich.
+
+**Interaktionsmetriken:** Niedrige Öffnungsraten, hohe Bounce-Raten und Spam-Beschwerden wirken sich direkt auf deinen Reputationswert aus.
+
+**Versandmuster:** Plötzliche Volumenspitzen, unregelmäßige Versandpläne und mangelhafte Listenhygiene schaden der Reputation.
+
+**Inhaltsqualität:** Spam-ähnliche Inhalte, irreführende Betreffzeilen und fehlerhafte Formatierungen führen zu Reputationsverlusten.
+
+### Wie die Domain-Reputation funktioniert
+
+**Stelle dir die Domain-Reputation wie einen Score von 0 bis 100 vor:**
+
+- **85–100:** Exzellente Reputation – sehr hohe Zustellrate in den Posteingang
+- **70–84:** Gute Reputation – größtenteils Posteingang, teilweise Werbe-Tab
+- **50–69:** Mäßige Reputation – gemischte Zustellung in Posteingang und Spam-Ordner
+- **Unter 50:** Schlechte Reputation – überwiegend Spam-Ordner oder blockiert
+
+---
+
+## Schritt-für-Schritt-Wiederherstellung der Reputation
+
+### Schritt 1: Überprüfe den Authentifizierungsstatus deiner Domain
+
+1. Melde dich in deinem Konto an.
+2. Navigiere zu **Einstellungen** → **E-Mail-Dienste** → Dedizierte Domain und IP.
+3. Klicke bei deiner Domain auf **Domain verifizieren**.
+4. Überprüfe, ob alle sechs Einträge korrekt konfiguriert sind.
+5. Falls ein Eintrag fehlschlägt, befolge die angezeigten DNS-Einrichtungsanweisungen.
+6. Warte 2 Minuten auf die DNS-Verbreitung.
+
+### Schritt 2: Nutze externe Tools zur Überwachung deiner Reputation
+
+**Wichtige Tools zur Reputationsprüfung:**
+
+- **Google Postmaster Tools** – Einrichtung unter `postmaster.google.com`
+  - Zeigt Domain-Reputation, Spam-Rate und Zustellfehler für Gmail an
+  - Liefert Daten zur IP-Reputation und Authentifizierung
+  - Unerlässlich, da Gmail über 60 % der meisten E-Mail-Listen ausmacht
+- **Sender Score** – Kostenloser Reputationswert (0–100)
+  - Besuche `senderscore.org`
+  - Gib deine Domain ein, um deinen Reputationswert abzurufen
+  - Werte unter 70 weisen auf Reputationsprobleme hin
+
+**Blacklist-Prüfung:**
+
+- **MXToolbox Blacklist Check** – Umfassende Überwachung von Sperrlisten
+
+### Schritt 3: Analysiere deine aktuelle Leistung
+
+1. Gehe zu **Marketing** → **E-Mail** → **Statistiken**.
+2. Überprüfe die Leistung der letzten Kampagnen:
+   - **Zustellrate:** Sollte >95 % sein (liegt sie darunter, bestehen wahrscheinlich Reputationsprobleme)
+   - **Öffnungsrate:** Sollte >20 % sein (liegt sie darunter, landen E-Mails womöglich im Spam-Ordner)
+   - **Bounce-Rate:** Sollte <2 % sein (liegt sie höher, deutet das auf mangelnde Listenqualität hin)
+   - **Abmelderate:** Sollte <2 % sein (liegt sie höher, gibt es Probleme mit Inhalt oder Zielgruppe)
+3. **Wichtiger Indikator:** Wenn die Zustellraten sinken, die Bounce-Raten aber nicht steigen, landen E-Mails aufgrund von Reputationsproblemen wahrscheinlich im Spam-Ordner.
+4. Gehe zu **Einstellungen** → **E-Mail-Dienste** → **Bounce-Klassifizierung**.
+5. Suche nach Mustern in der Bounce-Klassifizierung – Reputationsprobleme zeigen spezifische Fehlermeldungen.
+
+### Schritt 4: Führe Tests zur Posteingangsplatzierung durch
+
+**Da direkte Reputationswerte schwer zu ermitteln sind, teste die tatsächliche Posteingangsplatzierung:**
+
+1. **Manuelle Seed-Tests:**
+   - Erstelle Testkonten bei Gmail, Outlook, Yahoo und Apple Mail.
+   - Sende Testkampagnen an diese Konten.
+   - Prüfe die Platzierung: Posteingang vs. Spam-Ordner.
+   - Dokumentiere die Platzierungsraten bei den verschiedenen Anbietern.
+2. **Test-Tools von Drittanbietern:**
+   - Mail-Tester.com – Kostenlose Spam-Score-Prüfung
+   - GlockApps – Prüfung der Posteingangsplatzierung
+   - EmailOnAcid – Zustellbarkeitstests
+   - 250ok (jetzt Validity) – Professionelle Überwachung der Zustellbarkeit
+
+### Schritt 5: Blacklist-Einträge prüfen und entfernen
+
+1. Nutze die oben genannten Blacklist-Prüfprogramme, um bestehende Einträge zu identifizieren.
+2. Besuche für jede Blacklist, auf der du gelistet bist, die entsprechende Entfernungsseite (Delisting).
+3. Reiche Entfernungsanträge mit folgenden Informationen ein:
+   - Deinem Domainnamen
+   - Erklärung zur Behebung des Problems
+   - Maßnahmen, die ergriffen wurden, um ein erneutes Auftreten zu verhindern
+4. Überprüfe den Entfernungsstatus täglich (kann 24 Stunden bis 7 Tage dauern).
+
+### Schritt 6: E-Mail-Listen gründlich bereinigen
+
+**Entferne problematische Kontakte:**
+
+1. Gehe zu **Kontakte**.
+2. Erstelle Filter, um folgende Kontakte zu identifizieren und zu entfernen:
+   - **Hard Bounces** – Filtere nach **Gültige E-Mail** ist **Ungültig**
+   - **Inaktive Kontakte** – Keine Öffnungen/Klicks in mehr als 90 Tagen
+     - **Datum der letzten geöffneten E-Mail – Mehr als – vor 90 Tagen**
+     - **Datum des letzten Klicks in E-Mail – Mehr als – vor 90 Tagen**
+   - **Rollenbasierte E-Mail-Adressen** – info@, admin@, noreply@
+3. **Schließe diese Kontakte aus** oder lösche sie für zukünftige Kampagnen.
+4. Konzentriere dich **ausschließlich auf aktive Abonnenten mit Opt-in**.
+
+### Schritt 7: Strategie zum Aufwärmen der Domain umsetzen
+
+**Beginne mit minimalem Versandvolumen:**
+
+1. Kontrolliere dein Versandvolumen.
+2. Folge diesem Plan zur schrittweisen Steigerung:![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586672/original/qmBrEs2PwWvpBau-3OJ18mgvHFjKg2__Yg.png?1787946613)
+3. **Sende zuerst an deine aktivsten Abonnenten.**
+4. Überwache externe Reputationstools und die Posteingangsplatzierung täglich.
+5. Erhöhe das Volumen nur, wenn die Interaktion hoch bleibt (>20 % Öffnungsrate).
+
+### Schritt 8: E-Mail-Inhalte und -Praktiken optimieren
+
+**Überprüfe und verbessere kürzlich versendete Kampagnen:**
+
+1. Gehe zu **Marketing** → **E-Mail** → **Statistiken**.
+2. Identifiziere Kampagnen mit schwacher Leistung und optimiere Folgendes:
+   - Entferne Spam-Signalwörter („Kostenlos“, „Garantiert“, „Jetzt handeln“, „Begrenzte Zeit“)
+   - Stelle eine klare Absenderidentifikation sicher
+   - Füge eine physische Adresse und einen einfachen Abmeldelink ein
+   - Nutze Personalisierung und relevante Inhalte
+   - Behalte einen einheitlichen Absendernamen und eine konsistente Absenderadresse bei
+   - Stelle sowohl eine HTML- als auch eine reine Textversion bereit
+
+---
+
+## Alternative Methoden zur Reputationsüberwachung
+
+### Leistungsbasierte Reputationsbewertung
+
+**Da direkte Reputationswerte oft begrenzt sind, überwache diese Schlüsselindikatoren:**
+
+**Wöchentlich zu verfolgende Metriken:**
+
+- **Trends der Zustellrate:** Konstant >95 % weist auf eine gute Reputation hin
+- **Stabilität der Öffnungsrate:** Plötzliche Einbrüche deuten auf Zustellung in den Spam-Ordner hin
+- **Interaktionsmuster:** Hohe Interaktion spricht für eine gute Posteingangsplatzierung
+- **Analyse von Bounce-Nachrichten:** Suche nach reputationsbezogenen Fehlermeldungen
+
+**Indikatoren für die Posteingangsplatzierung:**
+
+- **Konstante Öffnungsraten:** Gutes Zeichen für Posteingangsplatzierung
+- **Klickraten:** Eine hohe Klickrate zeigt, dass E-Mails gesehen werden
+- **Antwortraten:** Antworten sind starke positive Signale
+- **Weiterleitungsraten:** Weiterleitungen weisen auf hohe Interaktion hin
+
+### Regelmäßiger Überwachungszeitplan
+
+**Täglich:**
+
+- Kampagnenleistung prüfen
+- Bounce-Klassifizierung auf Reputationshinweise analysieren
+- Spam-Raten in Google Postmaster Tools überwachen
+
+**Wöchentlich:**
+
+- Blacklist-Prüfungen durchführen
+- Sender Score prüfen
+- Tests zur Posteingangsplatzierung durchführen
+- Interaktionstrends analysieren
+
+**Monatlich:**
+
+- Authentifizierungsstatus verifizieren
+- E-Mail-Listen bereinigen
+- Gesamte Leistungstrends überprüfen
+- Überwachungstools und -prozesse aktualisieren
+
+---
+
+## Best Practices für eine langfristig gesunde Reputation
+
+### Exzellentes Listenmanagement
+
+- **Nutze Double-Opt-in** für alle neuen Abonnenten
+- **Regelmäßige Listenbereinigung** – Inaktive Abonnenten monatlich entfernen
+- **Listen nach Interaktion segmentieren** – Häufiger an aktive Nutzer senden
+- **Niemals E-Mail-Listen kaufen** – Ausschließlich organisch aufgebaute Listen nutzen
+- **Reaktivierungskampagnen durchführen**, bevor inaktive Abonnenten entfernt werden
+
+### Best Practices für Inhalt und Versand
+
+- **Konsistenten Versandplan einhalten** – Plötzliche Volumenspitzen vermeiden
+- **Klare, relevante Betreffzeilen nutzen** – Irreführende Betreffzeilen oder Clickbait vermeiden
+- **Sofortigen Mehrwert bieten** – Jede E-Mail sollte das Öffnen wert sein
+- **Klare Absenderidentifikation einbinden** – Wiedererkennbare Absendernamen nutzen
+
+### Technische Wartung
+
+- **Authentifizierungseinträge aktuell halten** – SPF, DKIM und DMARC monatlich prüfen
+- **Einheitliche Absender-Domains nutzen** – Domains nicht häufig wechseln
+- **Reputation von Subdomains überwachen** – Schlechte Subdomains können die Hauptdomain negativ beeinflussen
+
+---
+
+## Zeitrahmen und Erwartungen für die Wiederherstellung
+
+### Sofortmaßnahmen (Tage 1–7)
+
+- Verfügbare Überwachungstools einrichten (Sender Score)
+- Aus aktiven Blacklists austragen lassen
+- Authentifizierungsprobleme beheben
+- E-Mail-Listen gründlich bereinigen
+- Versandvolumen auf ein Minimum reduzieren
+- Tests zur Posteingangsplatzierung starten
+
+### Kurzfristige Erholung (Wochen 2–8)
+
+- Verfügbare Reputationstools täglich überwachen
+- Wöchentliche Tests zur Posteingangsplatzierung durchführen
+- Versandvolumen schrittweise steigern
+- Verbesserungen der Zustellrate beobachten (sollte >95 % erreichen)
+- Positive Interaktionsmetriken aufbauen
+
+### Langfristiger Reputationsaufbau (Monate 2–6)
+
+- Konstant hohe Interaktionsraten erzielen
+- Niedrige Beschwerde- und Bounce-Raten beibehalten
+- Stabile Versandmuster etablieren
+- Vollständige Wiederherstellung der Reputation und Posteingangsplatzierung
+- Rückkehr zu normalen Versandvolumina
+
+---
+
+## Warnsignale, auf die du achten solltest
+
+### In den Plattform-Analysen
+
+- **Zustellraten unter 95 %** – Weist auf Reputationsprobleme hin
+- **Deutlich sinkende Öffnungsraten** – Kann auf Spam-Ordner-Platzierung hinweisen
+- **Steigende Bounce-Raten** – Listenqualität verschlechtert sich
+- **Steigende Abmelderaten** – Probleme mit Inhalten oder Zielgruppenansprache
+
+### In externen Tools
+
+- **Sender Score:** Wert fällt unter 70
+- **Talos Intelligence:** Status wechselt von „Gut“ zu „Neutral“ oder „Schlecht“
+- **Blacklist-Checker:** Neue Einträge auf Sperrlisten
+- **Google Postmaster:** Spam-Raten steigen über 0,1 %
+- **Tests zur Posteingangsplatzierung:** Sinkende Platzierungsraten im Posteingang
+
+---
+
+## Immer noch Probleme?
+
+Wenn die Reputationsprobleme nach Durchführung dieser Schritte weiterhin bestehen:
+
+1. **Warte 30–90 Tage**, bis Reputationsverbesserungen ihre volle Wirkung entfalten.
+2. **Überwache weiterhin verfügbare Tools** – Konzentriere dich auf Leistungsmetriken und die Posteingangsplatzierung.
+3. **Dokumentiere alle Behebungsmaßnahmen** für eventuelle Einsprüche bei Internetdienstanbietern.
+4. **Ziehe die Nutzung einer Subdomain in Betracht**, um einen Neuanfang zu machen, während sich die Hauptdomain erholt.
+
+**Wichtig:** Da Google Postmaster Tools keine direkten Reputationswerte mehr anzeigt, musst du dich verstärkt auf Leistungsmetriken stützen. Konzentriere dich auf konsistente Interaktionsmetriken und die Zustellleistung als primäre Indikatoren für die Gesundheit deiner Reputation.
+
+Die Wiederherstellung der Domain-Reputation dauert 30 bis 90 Tage mit konsequent guten Versandpraktiken. Die Überwachung erfordert dabei die Nutzung mehrerer Datenquellen und den Fokus auf die tatsächliche Posteingangsplatzierung anstelle reiner Reputationswerte.

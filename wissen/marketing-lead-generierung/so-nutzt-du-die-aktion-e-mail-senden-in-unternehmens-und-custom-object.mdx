@@ -1,0 +1,228 @@
+---
+title: "So nutzt du die Aktion „E-Mail senden“ in Unternehmens- und Custom-Object-Workflows"
+description: "Automatisiere die E-Mail-Kommunikation direkt aus Unternehmens- und Custom-Object-Workflows, ohne separate kontaktbasierte Workflows zu erstellen. Mit der…"
+---
+
+Automatisiere die E-Mail-Kommunikation direkt aus Unternehmens- und Custom-Object-Workflows, ohne separate kontaktbasierte Workflows zu erstellen. Mit der Aktion **E-Mail senden** kannst du E-Mails an verknüpfte Kontakte basierend auf deren Beziehung zu einem Unternehmen oder Custom Object senden. Das erleichtert die Automatisierung von Onboarding, Benachrichtigungen, Erinnerungen und weiterer geschäftlicher Kommunikation aus einem einzigen Workflow. Diese Funktion ist derzeit über **Labs** verfügbar. Aktiviere **Email Action in Company & Custom Object Workflows**, bevor du die Aktion „E-Mail senden“ nutzt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Aktion „E-Mail senden“?](#was-ist-die-aktion-e-mail-senden)
+- [Wichtigste Vorteile](#wichtigste-vorteile)
+- [Häufige Anwendungsfälle](#haeufige-anwendungsfaelle)
+- [So richtest du die Aktion „E-Mail senden“ ein](#so-richtest-du-die-aktion-e-mail-senden-ein)
+- [Wichtige Hinweise](#wichtige-hinweise)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist die Aktion „E-Mail senden“?
+
+Workflows für Unternehmen und Custom Objects beziehen sich oft auf Kontakte, die mit demselben Datensatz verknüpft sind. Bisher erforderte das Versenden automatisierter E-Mails aus diesen Workflows zusätzliche kontaktbasierte Workflows oder zusätzliche Automatisierungsschritte.
+
+Die Aktion **E-Mail senden** beseitigt diesen Mehraufwand, indem sie das Senden von E-Mails direkt aus Unternehmens- und Custom-Object-Workflows an verknüpfte Kontakte ermöglicht.
+
+Statt mehrere Workflows für verschiedene Datensatztypen zu erstellen, kannst du deine Kommunikation über eine einzige Automatisierung verwalten und genau festlegen, welche verknüpften Kontakte die jeweilige E-Mail erhalten sollen.
+
+---
+
+## Wichtigste Vorteile
+
+Die Verwendung der Aktion „E-Mail senden“ vereinfacht die Workflow-Automatisierung und stellt sicher, dass die Kommunikation die richtigen Kontakte erreicht.
+
+- **E-Mails direkt aus Unternehmens- und Custom-Object-Workflows automatisieren**
+- **Workflow-Komplexität reduzieren**, indem unnötige Kontakt-Workflows entfallen
+- **Gezielt bestimmte verknüpfte Kontakte ansprechen** über Empfängeroptionen und Verknüpfungs-Labels
+- **Den vertrauten E-Mail-Editor wiederverwenden** mit Personalisierungs-Platzhaltern und Formatierungswerkzeugen
+- **Doppelte E-Mails automatisch verhindern**, wenn Kontakte mehreren Verknüpfungen entsprechen
+- **Onboarding, Erinnerungen, Freigaben und Benachrichtigungen aus einem Workflow unterstützen**
+
+---
+
+## Häufige Anwendungsfälle
+
+Die Aktion „E-Mail senden“ unterstützt verschiedene Geschäftsprozesse, bei denen die Kommunikation von Unternehmens- oder Custom-Object-Aktivitäten abhängt.
+
+Einige typische Beispiele:
+
+- Willkommens-E-Mails versenden, wenn ein neues Unternehmen erstellt wird.
+- Verlängerungserinnerungen vor dem Ablauf von Verträgen oder Mitgliedschaften versenden.
+- Beteiligte benachrichtigen, wenn Projekte oder Deals wichtige Meilensteine erreichen.
+- Updates zum Abschluss von Bestellungen oder Dienstleistungen versenden.
+- Freigaben von internen Teammitgliedern anfordern.
+- Automatisch nachfassen, wenn ein Unternehmen oder Custom Object eine bestimmte Phase erreicht.
+
+---
+
+## So richtest du die Aktion „E-Mail senden“ ein
+
+Mit wenigen Konfigurationsschritten kannst du automatisierte E-Mails direkt aus Unternehmens- und Custom-Object-Workflows versenden.
+
+### Labs-Funktion aktivieren
+
+Aktiviere vor der Nutzung der Aktion „E-Mail senden“ die Labs-Funktion.
+
+Navigiere zu:
+
+**Einstellungen → Labs**
+
+Suche nach **Email Action in Company & Custom Object Workflows** und aktiviere die Option.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079847143/original/rCIOtvCCpUHBt3le2ef-jz_UzLoujYBJOw.png?1788291131)**
+
+*Öffne die Labs-Seite und aktiviere ****Email Action in Company & Custom Object Workflows****, bevor du deinen Workflow erstellst.*
+
+### Workflow öffnen oder erstellen
+
+Navigiere zu **Automatisierung → Workflows**.
+
+Erstelle einen neuen Unternehmens- oder Custom-Object-Workflow oder öffne einen bestehenden.
+
+### Aktion „E-Mail senden“ hinzufügen
+
+Klicke innerhalb des Workflows auf **+ Hinzufügen**.
+
+Wähle **E-Mail senden** aus den Kommunikationsaktionen aus oder suche über die Aktionssuche nach **E-Mail senden**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079847148/original/pgCMaPhR77Aw2RRXFxrPBB_LENRIr-u_FQ.png?1788291152)
+
+*Füge die Aktion „E-Mail senden“ zu deinem Unternehmens-Workflow hinzu. Die E-Mail-Aktion wird nach Aktivierung der Labs-Funktion verfügbar.*
+
+### E-Mail-Empfänger auswählen
+
+Wähle über das Dropdown-Menü **E-Mail-Empfänger** aus, wer die E-Mail erhalten soll.
+
+Verfügbare Optionen:
+
+- **Alle verknüpften Kontakte**
+- **Zuletzt verknüpfter Kontakt** *(nur Custom-Object-Workflows)*
+- **Zuerst verknüpfter Kontakt** *(nur Custom-Object-Workflows)*
+
+Die Auswahl des richtigen Empfängers stellt sicher, dass deine Automatisierung den beabsichtigten Kontakt erreicht.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077512882/original/zAtNYo3pZL9tbZcbvqkbpZigNPsmdtY5ZA.png?1785776187)**
+
+*Wähle aus, ob die E-Mail an alle verknüpften Kontakte oder an einen bestimmten verknüpften Kontakt gesendet werden soll.*
+
+### Empfänger mit Verknüpfungs-Labels filtern
+
+Mit Verknüpfungs-Labels kannst du gezielt bestimmte Arten verknüpfter Kontakte ansprechen.
+
+Anstatt beispielsweise jedem verknüpften Kontakt eine E-Mail zu senden, kannst du den Versand auf Kontakte beschränken, die ausgewählten Beziehungstypen entsprechen.
+
+Wenn kein Verknüpfungs-Label ausgewählt ist, wird die E-Mail gemäß der im vorherigen Schritt gewählten Empfängeroption zugestellt.
+
+### E-Mail-Einstellungen konfigurieren
+
+Vervollständige die standardmäßigen E-Mail-Einstellungen:
+
+- Absendername
+- Absender-E-Mail
+- Betreff
+- CC
+- BCC
+
+Wenn **Absendername** oder **Absender-E-Mail** leer gelassen wird, verwendet das System die für dein Konto konfigurierten Standardwerte.
+
+### E-Mail erstellen
+
+Verfasse deine E-Mail mit dem integrierten E-Mail-Editor.
+
+Der Editor unterstützt dieselben Formatierungs- und Personalisierungsfunktionen wie andere E-Mail-Aktionen in Workflows, darunter:
+
+- Rich-Text-Formatierung
+- Personalisierungs-Platzhalter
+- Benutzerdefinierte Felder
+- Anhänge (sofern unterstützt)
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079847155/original/mYwzZFF-k6jzWKQuk6n8ydSVZgWwkVfhuQ.png?1788291175)**
+
+*Erstelle deine E-Mail mit dem Workflow-E-Mail-Editor. Personalisierungs-Platzhalter und Formatierungsoptionen stehen wie bei anderen Workflow-E-Mail-Aktionen zur Verfügung.*
+
+### Speichern und veröffentlichen
+
+Klicke nach Abschluss der E-Mail-Konfiguration auf **Aktion speichern**.
+
+Veröffentliche deinen Workflow, um E-Mails automatisch zu versenden, sobald der Workflow-Trigger ausgelöst wird.
+
+Zur Laufzeit werden E-Mails basierend auf den konfigurierten Empfängeroptionen und Verknüpfungs-Labels an die ausgewählten verknüpften Kontakte zugestellt.
+
+---
+
+## Wichtige Hinweise
+
+Das Verständnis der Funktionsweise der Aktion „E-Mail senden“ stellt sicher, dass E-Mails an die richtigen Empfänger zugestellt werden, und verhindert unerwartete Ergebnisse bei der Workflow-Ausführung.
+
+- E-Mails werden über die für dein Konto konfigurierte **Massen-E-Mail**-Absenderdomain gesendet.
+- Die E-Mail-Zustellung richtet sich nach der für dein Konto eingestellten Zeitzone.
+- Wenn **Absendername** oder **Absender-E-Mail** leer bleibt, werden automatisch die Standardwerte des Kontos verwendet.
+- Wenn ein Kontakt mehreren ausgewählten Verknüpfungs-Labels entspricht, erhält er **nur eine E-Mail**. Doppelte E-Mails werden automatisch verhindert.
+- Unternehmens-Workflows senden E-Mails an verknüpfte Kontakte basierend auf der ausgewählten Empfängerkonfiguration.
+- Custom-Object-Workflows bieten zusätzliche Empfängeroptionen, einschließlich des zuerst oder zuletzt verknüpften Kontakts.
+
+---
+
+## Häufig gestellte Fragen
+
+### F: Muss ich diese Funktion aktivieren, bevor ich sie nutzen kann?
+
+Ja. Diese Funktion ist derzeit über **Labs** verfügbar. Aktiviere **Email Action in Company & Custom Object Workflows**, damit die Aktion „E-Mail senden“ in Unternehmens- oder Custom-Object-Workflows angezeigt wird.
+
+### F: Wo finde ich die Aktion „E-Mail senden“?
+
+Öffne deinen Workflow, klicke auf **+ Hinzufügen** und wähle **E-Mail senden** aus der Kategorie **Kommunikation**. Du kannst auch über die Aktions-Suchleiste nach **E-Mail senden** suchen.
+
+### F: Was ist der Unterschied zwischen „Alle verknüpften Kontakte“ und Verknüpfungs-Labels?
+
+**Alle verknüpften Kontakte** sendet die E-Mail an jeden Kontakt, der mit dem Unternehmen oder Custom Object verknüpft ist.
+
+Verknüpfungs-Labels dienen als zusätzlicher Filter, mit dem du E-Mails nur an Kontakte mit bestimmten Beziehungstypen senden kannst.
+
+### F: Was passiert, wenn ein Kontakt mehreren Verknüpfungs-Labels entspricht?
+
+Der Kontakt erhält nur eine E-Mail. Die doppelte Zustellung wird automatisch verhindert, selbst wenn mehrere ausgewählte Labels auf denselben Kontakt zutreffen.
+
+### F: Kann ich auswählen, welcher verknüpfte Kontakt die E-Mail erhält?
+
+Ja.
+
+Bei **Custom-Object-Workflows** kannst du die E-Mail senden an:
+
+- Alle verknüpften Kontakte
+- Zuerst verknüpfter Kontakt
+- Zuletzt verknüpfter Kontakt
+
+Unternehmens-Workflows senden E-Mails an verknüpfte Kontakte basierend auf der ausgewählten Empfängerkonfiguration.
+
+### F: Kann ich diese E-Mails personalisieren?
+
+Ja. Der E-Mail-Editor unterstützt Personalisierungs-Platzhalter, benutzerdefinierte Felder, Formatierungen und dieselben Bearbeitungsfunktionen wie andere E-Mail-Aktionen in Workflows.
+
+### F: Was passiert, wenn keine verknüpften Kontakte den ausgewählten Verknüpfungs-Labels entsprechen?
+
+Wenn keine verknüpften Kontakte den konfigurierten Empfängerkriterien entsprechen, wird keine E-Mail gesendet. Der Workflow fährt mit der nächsten Aktion fort, ohne einen Fehler zu erzeugen.
+
+### F: Welche Absenderdomain wird verwendet?
+
+E-Mails verwenden die für dein Konto konfigurierte **Massen-E-Mail**-Absenderdomain. Prüfe, ob deine Absenderdomain korrekt konfiguriert ist, um eine erfolgreiche Zustellung sicherzustellen.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn E-Mails nicht wie erwartet gesendet werden, prüfe zuerst, ob die Labs-Funktion aktiviert ist, der Workflow veröffentlicht wurde und die richtige Empfängeroption ausgewählt ist. Stelle außerdem sicher, dass verknüpfte Kontakte für das Unternehmen oder das Custom Object existieren und dass eventuelle Verknüpfungs-Labels den Zielbeziehungen entsprechen.
+
+Prüfe vor weiteren Schritten Folgendes:
+
+- Die Labs-Funktion ist aktiviert.
+- Der Workflow ist aktiv und veröffentlicht.
+- Für den Datensatz existieren verknüpfte Kontakte.
+- Die Empfängeroptionen sind korrekt konfiguriert.
+- Verknüpfungs-Labels stimmen mit den beabsichtigten Kontakten überein.
+- Deine Massen-E-Mail-Absenderdomain ist konfiguriert.
+- Die Werte für Absendername und Absender-E-Mail sind gültig oder es sind Konto-Standardwerte vorhanden.
+
+Wenn weiterhin Probleme auftreten, erstelle Screenshots deiner Workflow-Konfiguration, der Empfängereinstellungen, der Verknüpfungs-Labels sowie der E-Mail-Aktion. Wende dich an den UmsatzAgent Support.

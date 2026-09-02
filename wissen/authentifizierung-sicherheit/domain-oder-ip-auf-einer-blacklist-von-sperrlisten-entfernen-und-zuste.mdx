@@ -1,0 +1,176 @@
+---
+title: "Domain oder IP auf einer Blacklist – Von Sperrlisten entfernen und Zustellung wiederherstellen"
+description: "Deine E-Mails werden blockiert, weil mindestens ein Bestandteil deiner E-Mail-Kampagne auf öffentlichen Sperrlisten (RBLs/DBLs) erfasst wurde. Das kann…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was passiert hier?](#was-passiert-hier)
+- [Schnelldiagnose: Blacklist-Probleme identifizieren](#schnelldiagnose-blacklist-probleme-identifizieren)
+- [Blacklist-Sperren verstehen](#blacklist-sperren-verstehen)
+- [Schritt-für-Schritt-Anleitung zur Blacklist-Bereinigung](#schritt-fuer-schritt-anleitung-zur-blacklist-bereinigung)
+- [Zeitrahmen und Erwartungen zur Wiederherstellung](#zeitrahmen-und-erwartungen-zur-wiederherstellung)
+- [Laufende Überwachung und Vorbeugung](#laufende-ueberwachung-und-vorbeugung)
+- [Bestehen weiterhin Probleme?](#bestehen-weiterhin-probleme)
+
+## E-Mail-Sperren durch Blacklists für URLs/IPs/Domains beheben
+
+## Was passiert hier?
+
+Deine E-Mails werden blockiert, weil mindestens ein Bestandteil deiner E-Mail-Kampagne auf öffentlichen Sperrlisten (RBLs/DBLs) erfasst wurde. Das kann deine Absender-IP-Adresse, deine Domain oder in deinem E-Mail-Inhalt enthaltene URLs betreffen. E-Mail-Anbieter nutzen diese Blacklists als ersten Schutz gegen Spam. Ein Eintrag auf einer solchen Liste kann deine E-Mail-Zustellbarkeit über mehrere Plattformen hinweg massiv beeinträchtigen.
+
+## Schnelldiagnose: Blacklist-Probleme identifizieren
+
+### Beispiele für Bounce-Nachrichten
+
+- Email blocked due to listed URLs or IPs/domains on public blacklists (RBLs/DBLs).
+
+---
+
+## Blacklist-Sperren verstehen
+
+### Wichtige Konzepte
+
+**Wichtige Informationen:**
+
+- Blacklists sind externe Datenbanken, die verdächtige IPs, Domains und URLs erfassen
+- Große E-Mail-Anbieter (Gmail, Outlook, Yahoo) prüfen mehrere Blacklists, bevor sie E-Mails annehmen
+- Ein Eintrag auf einer Blacklist betrifft ALLE E-Mails aus deinem Konto, nicht nur bestimmte Kampagnen
+- Die Entfernung von einer Blacklist kann 24 bis 72 Stunden dauern, selbst nachdem die Ursache behoben wurde
+- Einige Blacklists entfernen Einträge nach einer Phase unauffälligen Versands automatisch
+
+### Häufige Blacklist-Typen
+
+IP-basierte Blacklists (RBLs):
+
+- Spamhaus SBL/CSS/XBL/PBL – Am weitesten verbreitet
+- Barracuda Reputation Block List
+- SURBL – Fokus auf Spam-URLs
+- SpamCop – Community-basierte Meldungen
+
+Domain-/URL-Blacklists (DBLs):
+
+- Spamhaus DBL – Domain-Reputation
+- URIBL – Nachverfolgung von URL-Reputation
+- SURBL – Echtzeit-Sperrliste für Spam-URLs
+- Google Safe Browsing – Schutz vor Malware und Phishing
+
+---
+
+## Schritt-für-Schritt-Anleitung zur Blacklist-Bereinigung
+
+### Schritt 1: Finde heraus, was auf der Sperrliste steht
+
+**Prüfe deine Versand-Infrastruktur:**
+
+1. **Finde deine Absender-IP:**
+   - Gehe zu **Einstellungen** → **E-Mail-Dienste** → **Versand-Domain und IP**
+   - Notiere deine konfigurierte Versand-Domain und alle angezeigten IP-Informationen
+   - Falls du eine geteilte Infrastruktur nutzt: Wende dich an den UmsatzAgent Support für Details zu deiner IP
+2. **Nutze externe Blacklist-Prüftools:**
+   - Besuche MXToolbox.com → Blacklist Check
+   - Gib deine Absender-IP-Adresse ein
+   - Prüfe deine Versand-Domain separat
+   - Teste alle URLs, die du häufig in deinen Kampagnen verwendest
+
+### Schritt 2: E-Mail-Inhalt analysieren
+
+**Überprüfe kürzlich versendete Kampagnen:**
+
+1. **Rufe deinen Kampagnenverlauf auf:**
+   - Gehe zu **Marketing** → **E-Mails** → **Kampagnen**
+   - Prüfe die in den letzten 7 bis 14 Tagen versendeten Kampagnen
+   - Achte auf neue URLs, Domains oder gekürzte Links
+2. **Prüfe auf problematische Inhalte:**
+   - Gekürzte URLs (bit.ly, tinyurl usw.)
+   - Kürzlich registrierte Domains
+   - URLs mit verdächtigen Endungen (.tk, .ml, .ga)
+   - Links zu File-Sharing-Diensten
+
+### Schritt 3: Anträge auf Aufhebung der Sperre stellen (Delisting)
+
+**Kontaktiere die Blacklist-Betreiber:**
+
+1. **Bei Spamhaus-Einträgen:**
+   - Besuche spamhaus.org → SBL/CSS/PBL Removal
+   - Gib deine IP/Domain ein und folge dem Entfernungsprozess
+   - Erkläre detailliert die ergriffenen Korrekturmaßnahmen
+2. **Bei anderen großen Blacklists:**
+   - Barracuda: barracudacentral.org/rbl/removal-request
+   - SpamCop: spamcop.net → Reporting → Remove
+   - SURBL: surbl.org → Whitelist Request
+
+#### Anzeichen für ein erfolgreiches Delisting
+
+- Blacklist-Prüftool zeigt den Status „Not Listed“
+- Test-E-Mails landen im Posteingang statt abgewiesen zu werden
+- Bounce-Raten normalisieren sich wieder (unter 2 %)
+- E-Mail-Zustellberichte zeigen verbesserte Annahmeraten
+
+### Schritt 4: Vorbeugende Maßnahmen umsetzen
+
+**Optimiere deine E-Mail-Praktiken:**
+
+1. **Aktualisiere E-Mail-Vorlagen:**
+   - Gehe zu **Marketing** → **E-Mails** → **Vorlagen**
+   - Entferne alle markierten URLs oder Domains
+   - Ersetze gekürzte URLs durch vollständige, vertrauenswürdige Links
+   - Füge deutliche Abmeldelinks und eine physische Adresse ein
+2. **Verbessere die Listenhygiene:**
+   - Gehe zu **Kontakte** → **Smart Lists**
+   - Erstelle Segmente nur für aktive Kontakte
+   - Entferne abgewiesene und inaktive Kontakte regelmäßig
+
+---
+
+## Zeitrahmen und Erwartungen zur Wiederherstellung
+
+### Phase 1: Sofortige Maßnahmen (0–24 Stunden)
+
+- **Maßnahme:** Gesperrte Komponenten identifizieren und Anträge auf Entfernung stellen
+- **Erwartetes Ergebnis:** Bestätigung des Blacklist-Status und Einreichung des Entfernungsantrags
+
+### Phase 2: Delisting-Prozess (24–72 Stunden)
+
+- **Maßnahme:** Blacklist-Status überwachen und Entfernungsanträge nachverfolgen
+- **Erwartetes Ergebnis:** Schrittweise Entfernung von den Sperrlisten, verbesserte Zustellraten
+
+### Phase 3: Wiederherstellung der Absender-Reputation (1–4 Wochen)
+
+- **Maßnahme:** Saubere Versandpraktiken beibehalten und Zustellbarkeit überwachen
+- **Erwartetes Ergebnis:** Vollständige Wiederherstellung der E-Mail-Zustellbarkeit und der Absender-Reputation
+
+---
+
+## Laufende Überwachung und Vorbeugung
+
+### Wöchentliche Überwachungsroutine
+
+1. **Blacklist-Status prüfen:**
+   - Nutze die wöchentliche Blacklist-Überwachung auf MXToolbox.com
+   - Richte Benachrichtigungen für neue Sperrungen ein
+   - Überwache deinen Sender Score auf senderscore.org
+2. **Metriken prüfen:**
+   - Gehe zu **Berichterstattung** → **E-Mail-Analysen**
+   - Überwache Bounce-Raten (sollten unter 2 % bleiben)
+   - Achte auf plötzliche Einbrüche bei den Zustellraten
+
+### Best Practices zur Vorbeugung
+
+**Richtlinien für Inhalte:**
+
+- Nutze nach Möglichkeit für alle Links deine eigene Domain
+- Vermeide URL-Shortener, sofern nicht unbedingt erforderlich
+- Teste alle URLs, bevor du sie in Kampagnen einbindest
+- Behalte konsistente Versandmuster und -volumen bei
+- Biete eine klare Absenderidentifikation und Abmeldeoptionen
+
+---
+
+## Bestehen weiterhin Probleme?
+
+Wenn weiterhin durch Blacklists verursachte Zustellprobleme auftreten:
+
+1. **Dokumentiere alles:** Führe Protokoll über alle Delisting-Anträge und Antworten
+2. **Ziehe eine dedizierte IP in Betracht:** Prüfe Optionen für dedizierte IPs, falls verfügbar
+3. **Überprüfe deine Versandpraktiken:** Überprüfe deine gesamte E-Mail-Strategie auf Compliance-Probleme

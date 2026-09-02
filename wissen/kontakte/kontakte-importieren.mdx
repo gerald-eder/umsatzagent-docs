@@ -1,0 +1,210 @@
+---
+title: "Kontakte importieren"
+description: "Das Importieren von Dateien in UmsatzAgent ist unkompliziert, wenn du die folgenden Richtlinien und Schritte befolgst. Diese Anleitung hilft dir bei einem…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Bereite deine Daten vor](#bereite-deine-daten-vor)
+  - [Unterstützte Dateitypen](#unterstuetzte-dateitypen)
+  - [Anforderungen an die Dateivorbereitung](#anforderungen-an-die-dateivorbereitung)
+  - [Pflichtfelder](#pflichtfelder)
+- [Importoptionen verstehen](#importoptionen-verstehen)
+- [Strukturierung deiner Datei](#strukturierung-deiner-datei)
+- [Importieren deiner Datei](#importieren-deiner-datei)
+- [Fehlerbehebung bei häufigen Fehlern](#fehlerbehebung-bei-haeufigen-fehlern)
+- [Zusätzliche Tipps](#zusaetzliche-tipps)
+
+Das Importieren von Dateien in UmsatzAgent ist unkompliziert, wenn du die folgenden Richtlinien und Schritte befolgst. Diese Anleitung hilft dir bei einem reibungslosen und erfolgreichen Importprozess.
+
+```
+Nur Administratoren haben die Berechtigung, Dateien in das System zu importieren
+```
+
+Beispieldatei für den Import oder die Aktualisierung von Kontakten: [Beispieldatei](https://drive.google.com/file/d/1RW60QOJI3ZVJmNm0_bn1cvCW05LjBwI5/view?usp=sharing)
+
+## Bereite deine Daten vor
+
+### Unterstützte Dateitypen
+
+1. Stelle sicher, dass deine Datei im .csv-Format vorliegt.
+
+### Anforderungen an die Dateivorbereitung
+
+1. Tabellenblätter: Nur eines
+2. Dateigröße: Kleiner als 30 MB
+3. Kopfzeilen: Füge eine Kopfzeile ein, bei der mindestens eine Spalte einem Standardfeld oder einem benutzerdefinierten Feld im System entspricht. Beachte, dass alle benutzerdefinierten Felder vor dem ersten Import im System angelegt sein müssen.
+
+```
+Bitte beachte: Nur der Import neuer Kontakte kann rückgängig gemacht werden. Das Aktualisieren von Kontakten lässt sich nicht rückgängig machen.
+```
+
+### Pflichtfelder
+
+**1. Für das Erstellen von Kontakten:** Mindestens Kontaktname, Telefonnummer oder E-Mail-Adresse
+
+**2. Für das Aktualisieren von Kontakten:** Kontakt-ID, Name, E-Mail-Adresse oder Telefonnummer (gemäß den festgelegten Dubletten-Einstellungen)
+
+---
+
+## Importoptionen verstehen
+
+Beim Importieren stehen drei Optionen zur Auswahl:
+
+1. **Chancen erstellen:** Verwende diese Option, um ausschließlich neue Datensätze in das System hochzuladen.
+2. **Chancen aktualisieren:** Wähle diese Option, um Informationen bestehender Datensätze zu aktualisieren.
+3. **Chancen erstellen und aktualisieren:** Wähle diese Option für eine Kombination aus dem Hinzufügen neuer und dem Aktualisieren bestehender Datensätze.
+
+---
+
+## Strukturierung deiner Datei
+
+Feldformatierung
+
+- **Datumsauswahl:**
+  - Akzeptierte Formate: mm/dd/yyyy (z. B. 10/28/2020), yyyy/mm/dd (z. B. 2020/10/28), mm-dd-yyyy (z. B. 10-28-2020), yyyy-mm-dd (z. B. 2020-10-28).
+- **Mehrfachauswahl, Checkbox, Textfeld-Liste:**
+  - Akzeptierte Formate: Wert 1, Wert 2, Wert 3 (z. B. Blau, Gelb, Grün). Du kannst auch ; oder . als Trennzeichen verwenden.
+- **Radio-Button, Einzelauswahl:**
+  - Akzeptierte Formate: Wert 1 (z. B. Blau).
+- **Kontaktinhaber:**
+  - Format: Vorname Nachname (z. B. Logan Paul).
+- **Tags:**
+  - Akzeptierte Formate: Wert 1, Wert 2, Wert 3 (z. B. Blau, Gelb, Grün). Du kannst auch ; oder . als Trennzeichen verwenden.
+- **Telefonnummer:**
+  - Format in E.164 (z. B. +1 1234567890). Für US-Nummern sind auch Formate wie 123-456-7890 oder (123) 456-7890 zulässig.
+- **Zahlen:**
+  - Akzeptierte Formate: 1.23, 1234, .123.
+- **Währungsbeträge:**
+  - Akzeptierte Formate: 1234, 1,234,234.33.
+- **Kontakt-Follower:**
+  - Akzeptiertes Format: Vorname Nachname, Vorname2 Nachname2 (z. B. Adam Smith, David Lee)
+- **Zusätzliche E-Mail-Adressen:**
+  - Wenn du Kontakte mit mehreren E-Mail-Adressen importierst, füge eine Spalte für zusätzliche E-Mail-Adressen mit den sekundären E-Mail-Adressen ein.
+  - Akzeptiertes Format: [abc@email.com,](mailto:abc@email.com,) [abc1@email.com](mailto:abc1@email.com)
+- **Zusätzliche Telefonnummern:**
+  - Wenn du Kontakte mit mehreren Telefonnummern importierst, füge eine Spalte für zusätzliche Telefonnummern mit den sekundären Telefonnummern ein.
+  - Akzeptiertes Format: +1 7877123460,+1 7877123461
+
+---
+
+## Importieren deiner Datei
+
+**Schritte zum Importieren:**
+
+1. Gehe zu Kontakte.
+2. Klicke in der oberen Zeile mit den Aktionen auf "Kontakte importieren".
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405397/original/gPG305y4PVcT5_OYjZWxF1NxuNfFrxrwiA.png?1736256506)
+3. Wähle aus, ob du nur Kontakte oder sowohl Kontakte als auch Chancen importieren möchtest.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405400/original/LqzxyhY3a934Y7SAsD7QC6UgirHSuSiOVA.jpeg?1736256508)
+4. Lade die Importdatei hoch und klicke auf "Wähle, wie Kontakte importiert werden sollen", um festzulegen, ob du Datensätze erstellen, aktualisieren oder beides möchtest.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405398/original/tS6rglsznL9nkqQ_6uKumF-1ZU3fOBBuXA.jpeg?1736256506)Die Dubletten-Einstellungen werden bei der Zuordnung zum Erstellen und Aktualisieren von Kontakten berücksichtigt.
+5. **Felder zuordnen:** Stelle sicher, dass jede Spalte deiner Datei dem entsprechenden Feld im System zugeordnet ist.
+   Passe die Zuordnungen bei Bedarf an.
+
+   Wichtige Hinweise:
+
+1. Wenn du das Kontrollkästchen "Leere Werte nicht aktualisieren" aktivierst, wird kein Feld überschrieben, falls die Importdatei leere Werte enthält und das Feld für die Chance bereits einen Wert hat.
+2. Wenn du ein bestimmtes Feld nicht importieren möchtest, kannst du es unzugeordnet lassen und das Kontrollkästchen unten aktivieren, um fortzufahren: "Bitte stelle sicher, dass alle Pflichtfelder zugeordnet sind. Um fortzufahren, ordne alle Felder zu oder wähle 'Daten für nicht zugeordnete Spalten nicht importieren'".
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405415/original/zP6U8hTpDhHZ7WFE8s5xyE3Tvmeo4taH2A.jpeg?1736256509)
+
+6. **Prüfen und bestätigen:** Überprüfe die Datenvorschau, um sicherzustellen, dass alles korrekt aussieht. Bestätige den Import, um fortzufahren.
+
+Beachte, dass das Kontrollkästchen unten aktiviert und der Hinweis bestätigt werden muss, um den Import zu starten.
+Du kannst auf dieser Ansicht auch Tags zu den entsprechenden Kontakten für diese Chancen hinzufügen.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405414/original/DCjWAm_2dJpXUZVXLiVwKWAKIgbtEcKY0w.jpeg?1736256509)
+
+7. **Import überwachen:** Überprüfe den Fortschritt unter Chancen > Massenaktionen. Wenn Fehler auftreten, beachte die angezeigten Fehlermeldungen zur Behebung.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405408/original/K3khqnW9f2qJ8_EEGmrAt1Wu8lOup1Os_w.jpeg?1736256509)
+
+8. Überwache Statistiken, Fehler und Warnungen, indem du bei einem Import auf "Statistiken anzeigen" klickst.
+**Fehler:** Probleme bei Pflichtfeldern, die dazu führen, dass der Import für diese Zeile fehlschlägt.
+
+**Warnungen:** Probleme bei optionalen Feldern, bei denen die Zeile zwar importiert, das jeweilige Feld jedoch nicht aktualisiert wird.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039405399/original/rTi5p20-ofH69rcoBCfqQXWZVp9UJ_5mQA.jpeg?1736256506)
+
+---
+
+## Fehlerbehebung bei häufigen Fehlern
+
+- **Fehler**: Erforderliche Felder zum Erstellen/Aktualisieren von Kontakten fehlen
+  **Lösung**: Um Kontakte beim Importieren erfolgreich zu erstellen:
+  - Mindestens eines der folgenden Felder ist für die Erstellung eines neuen Kontakts erforderlich: **Name**, **Telefon** oder **E-Mail**. Stelle sicher, dass diese Felder in deiner CSV enthalten und beim Import korrekt zugeordnet sind.
+
+    Für das Aktualisieren von Kontakten:
+  - Überprüfe deine Dubletten-Einstellungen unter **Einstellungen > "Doppelte Kontakte zulassen"**.
+  - Je nach Einstellung werden Kontakte anhand der **Kontakt-ID** oder einer Kombination aus **Telefon** und **E-Mail** identifiziert. Binde diese Felder ein und ordne sie zu, um eine erfolgreiche Aktualisierung durchzuführen.
+- **Fehler**: Doppelte Telefonnummer gefunden / Doppelte E-Mail-Adresse gefunden
+  **Lösung**: Dieser Fehler tritt auf, wenn das Import-Tool basierend auf deinen Dubletten-Einstellungen eine doppelte Telefonnummer oder E-Mail-Adresse in deiner Datei erkennt.
+  1. Überprüfe deine Dubletten-Einstellungen unter **Einstellungen > "Doppelte Kontakte zulassen"**.
+  2. Wenn deine Einstellungen Dubletten anhand von **Telefon** oder **E-Mail** einschränken:
+     - Ändere die Telefonnummer oder E-Mail-Adresse in deiner Datei, damit sie eindeutig ist.
+     - Passe alternativ die Dubletten-Einstellung an, um doppelte Kontakte grundsätzlich zuzulassen.
+- Sobald die Datei deinen Dubletten-Einstellungen entspricht oder die Einstellungen angepasst wurden, kannst du den Import erfolgreich abschließen.
+- **Fehler**: Kontakt ist ungültig oder nicht vorhanden
+  **Lösung**: Dieser Fehler tritt auf, wenn die in der Importdatei angegebene **Kontakt-ID** entweder:
+  1. Nicht vorhanden ist.
+  2. Ungültig ist oder zu einem gelöschten Kontakt gehört.
+- **So behebst du das:**
+
+  1. Stelle sicher, dass die **Kontakt-ID** in deiner Datei mit einem gültigen Kontakt übereinstimmt.
+  2. Wenn der Kontakt gelöscht wurde, ermittle die aktuelle und korrekte **Kontakt-ID** für den Datensatz.
+  3. Aktualisiere deine Datei mit der gültigen **Kontakt-ID** und ordne sie beim Import korrekt zu.
+- Mit einer korrekten und gültigen Kontakt-ID kannst du den Import oder die Aktualisierung erfolgreich durchführen.
+- **Fehler**: Telefonnummer konnte nicht gelesen werden
+  **Lösung**: In den allermeisten Fällen erkennt das System die Telefonnummer als gültig, solange sie im Format E.164 formatiert ist (z. B. [+1 1234567890](tel:+11234567890)) – unabhängig vom eingestellten Standardland.
+  Wenn als Land die USA eingestellt ist, funktionieren auch folgende Formate:
+- [123-456-7890](tel:1234567890)
+- [(123) 4567890](tel:1234567890)
+- 1234567890
+
+- Bei internationalen Rufnummern außerhalb der USA kannst du das Format unter <https://libphonenumber.appspot.com/> zusammen mit der Ländervorwahl überprüfen, um die Gültigkeit für den Upload sicherzustellen.
+
+- **Fehler**: Datum konnte nicht gelesen werden
+  **Lösung**: Stelle sicher, dass die Datumsangaben in deiner Datei einem der folgenden unterstützten Formate entsprechen:
+  - `YYYY-MM-DD` (z. B. 2024-09-08 oder 2024-9-8)
+  - `YYYY/M/D` (z. B. 2024/09/08 oder 2024/9/8)
+  - `YYYY.MM.DD` (z. B. 2024.09.08 oder 2024.9.8)
+  - `M.D.YYYY` (z. B. 09.08.2024 oder 9.8.2024)
+  - `M/D/YYYY` (z. B. 09/08/2024 oder 9/8/2024)
+  - `M-D-YYYY` (z. B. 09-08-2024 oder 9-8-2024)
+  - `YYYY/MM/DD` (z. B. 2024/09/08)
+  - `MM/DD/YYYY` (z. B. 09/08/2024 oder 9/8/2024)
+  - `MM-DD-YYYY` (z. B. 09-08-2024 oder 9-8-2024)
+  - `MM.DD.YYYY` (z. B. 09.08.2024 oder 9.8.2024)
+  - `DD MMM YYYY` (z. B. 08 Sep 2024 oder 8 Sep 2024)
+  - `MMM DD YYYY` (z. B. Sep 08 2024 oder Sep 8 2024)
+  - `YYYY MMM DD` (z. B. 2024 Sep 08 oder 2024 Sep 8)
+  - `DD-MMM-YYYY` (z. B. 08-Sep-2024 oder 8-Sep-2024)
+  - `MMM-DD-YYYY` (z. B. Sep-08-2024 oder Sep-8-2024)
+  - `YYYY-MMM-DD` (z. B. 2024-Sep-08 oder 2024-Sep-8)
+  - `DD MMM, YYYY` (z. B. 08 Sep, 2024 oder 8 Sep, 2024)
+  - `MMM DD, YYYY` (z. B. Sep 08, 2024 oder Sep 8, 2024)
+  - `DDth MMM YYYY` (z. B. 08th Sep 2024 oder 8th Sep 2024)
+  - `MMM DDth YYYY` (z. B. Sep 08th 2024 oder Sep 8th 2024)
+  - `DDth MMM, YYYY` (z. B. 08th Sep, 2024 oder 8th Sep, 2024)
+  - `MMM DDth, YYYY` (z. B. Sep 08th, 2024 oder Sep 8th, 2024)
+  - `DD MMMM YYYY` (z. B. 08 September 2024 oder 8 September 2024)
+  - `MMMM DD YYYY` (z. B. September 08 2024 oder September 8 2024)
+  - `YYYY MMMM DD` (z. B. 2024 September 08 oder 2024 September 8)
+  - `MMMM DD, YYYY` (z. B. September 08, 2024 oder September 8, 2024)
+  - `DD MMMM, YYYY` (z. B. 08 September, 2024 oder 8 September, 2024)
+- Passe die Datumsangaben in deiner Datei an eines dieser Formate an und starte den Import erneut.
+- **Fehler**: Ungültige E-Mail-Adresse
+  **Lösung**: Dieser Fehler tritt auf, wenn die E-Mail-Adresse in deiner Datei kein gültiges Format aufweist (z. B. fehlendes "@" oder fehlende Domain-Endung).
+  1. Überprüfe das Format aller E-Mail-Adressen in deiner Datei.
+     - Eine gültige E-Mail-Adresse hat folgendes Format: `beispiel@domain.de`.
+  2. Korrigiere ungültige E-Mail-Adressen in deiner Datei (z. B. Tippfehler beheben, fehlende Teile ergänzen).
+  3. Starte den Import mit der korrigierten Datei erneut.
+- Korrekte E-Mail-Formate verhindern diesen Fehler und ermöglichen einen erfolgreichen Import.
+
+---
+
+## Zusätzliche Tipps
+
+- Überprüfe deine Datei vor dem Import, um Fehler zu vermeiden.
+- Wenn während des Importvorgangs Probleme auftreten, schlage in dieser Anleitung nach oder wende dich an den UmsatzAgent Support.

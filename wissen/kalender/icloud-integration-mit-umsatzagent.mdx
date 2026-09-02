@@ -1,0 +1,61 @@
+---
+title: "iCloud-Integration mit UmsatzAgent"
+description: "Vor den Details zur iCloud-Integration sind einige wichtige Punkte zu beachten:"
+---
+
+**In diesem Artikel**
+
+- [Übersicht](#uebersicht)
+- [Datenfluss: UmsatzAgent zu iCloud](#datenfluss-umsatzagent-zu-icloud)
+- [Datenfluss: iCloud zu UmsatzAgent](#datenfluss-icloud-zu-umsatzagent)
+
+**Verwandter Artikel**
+
+- Wie verbinde ich iCloud mit UmsatzAgent?
+
+---
+
+### Übersicht
+
+Vor den Details zur iCloud-Integration sind einige wichtige Punkte zu beachten:
+
+- Die iCloud-Kalender-Integration ist speziell für Round-Robin-, Kollektiv-, Gruppenbuchungs- und Service-Kalender vorgesehen.
+- Mit der iCloud-Integration ist eine bidirektionale Ereignissynchronisierung möglich: In UmsatzAgent erstellte Ereignisse können mit iCloud synchronisiert werden und in iCloud erstellte Ereignisse mit UmsatzAgent.
+
+```
+Die iCloud-Integration wird für einfache Kalender nicht unterstützt.
+```
+
+---
+
+### Datenfluss: UmsatzAgent zu iCloud
+
+Wenn Ereignisse in UmsatzAgent erstellt und mit iCloud synchronisiert werden:
+
+- Alle in UmsatzAgent vorgenommenen Änderungen werden im verbundenen iCloud-Kalender des Benutzers übernommen.
+- Alle im iCloud-Kalender vorgenommenen Änderungen werden im UmsatzAgent-Kalender übernommen **(mit Ausnahme gelöschter Ereignisse)**.
+
+Dadurch wird sichergestellt, dass in UmsatzAgent erstellte oder geänderte Ereignisse nahtlos an deinen iCloud-Kalender übertragen werden und umgekehrt.
+
+```
+Wird ein Ereignis im iCloud-Kalender gelöscht, wird dies nicht im UmsatzAgent-Kalender aktualisiert. Dies ist eine Einschränkung der iCloud-Integration.
+
+In UmsatzAgent erstellte blockierte Zeitfenster werden nicht mit iCloud synchronisiert.
+```
+
+### Datenfluss: iCloud zu UmsatzAgent
+
+Wenn Ereignisse in iCloud erstellt und an UmsatzAgent übertragen werden:
+
+- Alle im iCloud-Kalender vorgenommenen Änderungen werden im UmsatzAgent-Kalender übernommen.
+- Alle im UmsatzAgent-Kalender vorgenommenen Änderungen werden in iCloud übernommen.
+
+Wenn du beispielsweise einen Termin in iCloud erstellst, wie z. B. „John von der Schule abholen“, wird dieser ebenfalls synchronisiert und im UmsatzAgent-Kalender angezeigt. Alle nachfolgenden Änderungen in iCloud werden im UmsatzAgent-Kalender gespiegelt.
+
+```
+Wichtige Informationen zur iCloud-Integration
+
+Das Erstellen von Kontakten aus iCloud-Ereignissen in UmsatzAgent wird nicht unterstützt. Das bedeutet auch, dass alle aus iCloud eingehenden Ereignisse als blockierte Zeitfenster und nicht als Termine behandelt werden.
+
+Wenn ein blockiertes Zeitfenster im UmsatzAgent-Kalender für einen Benutzer erstellt wird, wird dieses nicht mit dem iCloud-Kalender synchronisiert.
+```

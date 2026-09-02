@@ -1,0 +1,40 @@
+---
+title: "WhatsApp-Vorlagenfehler: „body: Parameter at index contains URL“"
+description: "Deine Nachrichtenvorlage wurde ohne eine URL innerhalb der Variable(n) im Text freigegeben, aber beim Senden fügst du eine URL in einen Text-Parameter ein…"
+---
+
+## Was das bedeutet
+
+Deine Nachrichtenvorlage wurde **ohne** eine URL innerhalb der Variable(n) im Text freigegeben, aber beim Senden fügst du eine **URL in einen Text-Parameter** ein (z. B. `{{1}}`). Aus Gründen des Phishing-Schutzes und der Qualität **erlaubt Meta keine vollständigen URLs in Text-Platzhaltern**. Links müssen Teil der Vorlage selbst sein oder in **Buttons** platziert werden (mit optionalen dynamischen Endungen).
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155051772003/original/KEPgYVPEZhXjVxYEcMTTet1OnBTAXJDUHg.png?1755499219)
+
+---
+
+## Warum das passiert
+
+- Du übergibst Text wie `https://example.com/deal/123` an eine Variable `{{1}}`.
+- Der Textkörper der Vorlage wurde als reiner Text freigegeben (Variablen sind für Namen, Codes oder Daten vorgesehen – nicht für Links).
+- Du hast einen URL-Shortener in einer Variable verwendet (viele davon sind in Parametern blockiert).
+- Du benötigst einen **URL-Button** anstelle einer Text-Variable.
+
+---
+
+## So behebst du den Fehler (wähle eine Option)
+
+### Option A — Mache den Link im Text statisch
+
+Verwende eine Vorlage, bei der die **vollständige URL** direkt im freigegebenen Text steht (keine Variable).
+**Beispieltext:**
+„Hallo {{1}}, bitte prüfe dein Angebot: https://example.com/offers“
+
+**Wann zu verwenden:** Der Link ist für alle Empfänger identisch.
+
+---
+
+### Option B — Verwende einen CTA-Website-Button
+
+Erstelle oder bearbeite die Vorlage so, dass sie einen **Call-to-Action (CTA)-Website-Button** enthält:
+
+- **Button-URL (Basis):** `https://example.com/order/`
+- **Button-Text:** „Bestellung ansehen“

@@ -1,0 +1,118 @@
+---
+title: "Domain-Löschung wegen aktiver Kampagnenzuweisung blockiert"
+description: "E-Mail-Infrastruktur"
+---
+
+E-Mail-Infrastruktur
+
+So trennst du eine Domain vor dem Löschen von aktiven Kampagnen
+
+Schritt-für-Schritt-Anleitung zum sicheren Entfernen einer Domain, die noch mit geplanten Kampagnen verknüpft ist – ohne laufende Prozesse zu unterbrechen.
+
+Das lernst du
+
+Wenn du versuchst, eine Domain zu löschen, aber die Fehlermeldung erhältst, dass sie noch mit einer aktiven Kampagne verknüpft ist, folge dieser Anleitung.
+
+Hier erfährst du, wie du die Verknüpfung der Domain mit allen Kampagnen aufhebst, um sie sauber zu entfernen – ohne Auswirkungen auf die Zustellbarkeit oder aktuell versendete Kampagnen.
+
+Inhaltsverzeichnis
+
+1
+
+[Versuche, die Domain zu löschen](#versuche-die-domain-zu-loeschen)
+
+2
+
+[Öffne den Domain-Konfigurator](#oeffne-den-domain-konfigurator)
+
+3
+
+[Öffne Kampagne verwalten](#oeffne-kampagne-verwalten)
+
+4
+
+[Trenne die Domain von allen Kampagnen](#trenne-die-domain-von-allen-kampagnen)
+
+5
+
+[Wende die Änderungen an](#wende-die-aenderungen-an)
+
+6
+
+[Überprüfe die Kampagnen-Verknüpfungen](#ueberpruefe-die-kampagnen-verknuepfungen)
+
+7
+
+[Lösche die Domain](#loesche-die-domain)
+
+Einrichtungsanleitung
+
+Schritt für Schritt: Verknüpfung aufheben, dann löschen
+
+Befolge diese sieben Schritte der Reihe nach. Der gesamte Vorgang dauert unter zwei Minuten.
+
+1
+
+## Versuche, die Domain zu löschen
+
+Klicke bei der Domain, die du entfernen möchtest, auf **Delete Domain**. Ist die Domain noch mit einer Kampagne verknüpft, erscheint ein Warnhinweis, dass sie noch nicht gelöscht werden kann.
+
+Fehlermeldung
+
+„The domain is currently assigned to a scheduled Campaign Domain (except test campaign). Try again after the campaign has finished sending, or remove the domain from the Campaign Domain (except test campaign).“
+
+![Fehlermeldung beim Löschen der Domain, die anzeigt, dass die Domain einer geplanten Kampagne zugewiesen ist](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586884/original/15zcyrEEYZ5nqWh0RAC_G-YVe0VoSLd_5w.png?1787947030)
+
+2
+
+## Öffne den Domain-Konfigurator
+
+Wähle im Menü die Option **Domain Configurator**. Suche die Domain, die den Löschfehler verursacht, und wähle sie aus.
+
+![Menü des Domain-Konfigurators mit der ausgewählten betroffenen Domain](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586896/original/JrEU5DG6Pxh4ityWzZdfw_2xkklYkHhbsw.png?1787947043)
+
+3
+
+## Öffne Kampagne verwalten
+
+Klicke bei dieser Domain auf **Manage Campaign**, um alle aktuell damit verknüpften Kampagnen anzuzeigen.
+
+![Ansicht „Kampagne verwalten“ mit allen mit der Domain verknüpften Kampagnen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586909/original/TNfxCw0vN1jRqE1TqknJiCj5VlVNDHdG1Q.png?1787947065)
+
+4
+
+## Trenne die Domain von allen Kampagnen
+
+Wähle alle mit der Domain verknüpften Kampagnen aus und nutze die Option **Remove**, um die Domain von jeder Kampagne in der Liste zu trennen.
+
+Hinweis
+
+Stelle sicher, dass du die Domain aus **jeder** angezeigten Kampagne entfernst. Wenn auch nur eine fehlt, wird das Löschen im nächsten Schritt blockiert.
+
+![Alle Kampagnen auswählen und auf Remove klicken, um die Verknüpfung der Domain aufzuheben](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586938/original/T8OlrrR4Fk4VbIQ8YNmtTIVPy6AmBK44kw.png?1787947090)
+
+5
+
+## Wende die Änderungen an
+
+Klicke auf **Apply**, um das Entfernen zu bestätigen. Das System speichert die aufgehobene Verknüpfung für alle ausgewählten Kampagnen.
+
+6
+
+## Überprüfe die Kampagnen-Verknüpfungen
+
+Gehe zurück zu **Manage Campaign**, um zu prüfen, dass keine Kampagnen mehr verknüpft sind. Die Liste sollte nun vollständig leer sein.
+
+![Liste „Kampagne verwalten“ ist jetzt leer und bestätigt, dass alle Kampagnen getrennt wurden](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586957/original/Kir5UN8itEX8sq5vUj_i7uOxfAygcsUm9w.png?1787947116)
+
+7
+
+## Lösche die Domain
+
+Kehre zur Hauptübersicht der Domains zurück. Jetzt ist die Option zum Löschen der Domain verfügbar. Gib den erforderlichen Bestätigungstext ein (z. B. „delete“) und klicke auf **Delete**.
+
+Abgeschlossen
+
+Die Domain ist nun vollständig entfernt. Das Aufheben der Verknüpfung vor dem Löschen verhindert versehentlichen Datenverlust und stellt sicher, dass deine aktiven Kampagnen fehlerfrei weiterlaufen.
+
+![Endgültige Bestätigung zum Löschen der Domain mit eingegebenem Bestätigungstext](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079586979/original/iz8opBodFO_HMqsLleGdD-tMa2_wtX7Jgg.png?1787947150)

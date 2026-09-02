@@ -1,0 +1,468 @@
+---
+title: "Fehlerbehebung: Domain verbinden"
+description: "Das Verbinden einer Domain ermöglicht es dir, gebrandete URLs für Websites, Funnels, WordPress-Seiten, Webinare, Kundenportale und andere Kundenbereiche…"
+---
+
+Das Verbinden einer Domain ermöglicht es dir, gebrandete URLs für Websites, Funnels, WordPress-Seiten, Webinare, Kundenportale und andere Kundenbereiche zu nutzen. Wenn deine Domain nicht erfolgreich verbunden wird, liegt das meist an fehlerhaften DNS-Einträgen, widersprüchlichen Einträgen oder daran, dass die Domain bereits einem anderen Produkt zugewiesen ist. Nutze diese Anleitung, um den angezeigten Fehler zu identifizieren, seine Bedeutung zu verstehen und die richtige Korrektur vorzunehmen, ohne unbeteiligte DNS-Einträge zu verändern.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Fehlerbehebung bei Domain-Verbindungen?](#was-ist-die-fehlerbehebung-bei-domain-verbindungen)
+- [Hauptvorteile der Fehlerbehebung bei Domain-Verbindungen](#hauptvorteile-der-fehlerbehebung-bei-domain-verbindungen)
+- [Vor der Fehlerbehebung](#vor-der-fehlerbehebung)
+- [Fehler-Schnellübersicht](#fehler-schnelluebersicht)
+- [Gängige DNS-Begriffe](#gaengige-dns-begriffe)
+- [Wo DNS-Änderungen vorgenommen werden](#wo-dns-aenderungen-vorgenommen-werden)
+- [Domain Connect nutzen, wenn verfügbar](#domain-connect-nutzen-wenn-verfuegbar)
+- [Die Felder für das manuelle Hinzufügen verstehen](#die-felder-fuer-das-manuelle-hinzufuegen-verstehen)
+- [Fehlerbehebung bei A-Record-Konflikten](#fehlerbehebung-bei-a-record-konflikten)
+- [Fehlerbehebung bei AAAA-Record-Konflikten](#fehlerbehebung-bei-aaaa-record-konflikten)
+- [Fehlerbehebung bei CAA-Record-Problemen](#fehlerbehebung-bei-caa-record-problemen)
+- [Fehlerbehebung bei nicht übereinstimmenden DNS-Einträgen](#fehlerbehebung-bei-nicht-uebereinstimmenden-dns-eintraegen)
+- [Fehlerbehebung bei Produktkonflikten](#fehlerbehebung-bei-produktkonflikten)
+- [Fehlerbehebung bei anderweitig verbundenen Domains](#fehlerbehebung-bei-anderweitig-verbundenen-domains)
+- [DNS-Einstellungen bei deinem Domain-Anbieter finden](#dns-einstellungen-bei-deinem-domain-anbieter-finden)
+- [Ablauf der Domain-Fehlerbehebung](#ablauf-der-domain-fehlerbehebung)
+- [Fehler mit mehreren A-Records beheben](#fehler-mit-mehreren-a-records-beheben)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist die Fehlerbehebung bei Domain-Verbindungen?
+
+Die Fehlerbehebung bei Domain-Verbindungen hilft dir festzustellen, warum eine Domain oder Subdomain nicht mit einem Produkt verbunden werden kann. Die meisten Probleme entstehen, wenn die DNS-Einträge bei deinem Domain-Anbieter nicht mit den erforderlichen Einträgen übereinstimmen oder wenn dieselbe Domain bereits an anderer Stelle verbunden ist. Das Verständnis des Fehlertyps vor dem Vornehmen von Änderungen verhindert unnötige Bearbeitungen und verringert das Risiko von Störungen bei E-Mails, Websites oder anderen Diensten, die mit derselben Domain verknüpft sind.
+
+---
+
+## Hauptvorteile der Fehlerbehebung bei Domain-Verbindungen
+
+Ein strukturierter Fehlerbehebungsprozess hilft dir, Verbindungsfehler schneller zu beheben und versehentliche DNS-Änderungen zu vermeiden. Anstatt zu raten, welcher Eintrag bearbeitet werden muss, kannst du den Fehler der passenden Lösung zuordnen und erkennen, wann das Problem auf das DNS oder auf einen Produktzuweisungskonflikt zurückzuführen ist.
+
+- **Schnellere Problemlösung:** Ordne die Fehlermeldung dem richtigen Lösungsweg zu, um das Problem effizienter zu beheben.
+- **Sicherere DNS-Aktualisierungen:** Erfahre, welche Einträge das Problem verursachen könnten, ohne unbeteiligte Einträge zu löschen, die für E-Mails, Websites oder andere Dienste benötigt werden.
+- **Klarere Produktzuweisung:** Verstehe, wann eine Domain bereits mit einem anderen Produkt verbunden ist und warum DNS-Änderungen ein solches Problem nicht beheben können.
+- **Höhere Einrichtungsgenauigkeit:** Stelle sicher, dass die Einträge bei deinem DNS-Anbieter exakt mit den angezeigten Werten übereinstimmen.
+- **Kürzere Support-Wartezeiten:** Wisse, welche Informationen vor einer Kontaktaufnahme mit dem Support bezüglich Domain-Inhaberschaft oder Kontokonflikten gesammelt werden müssen.
+
+---
+
+## Vor der Fehlerbehebung
+
+Domain-Probleme lassen sich leichter lösen, wenn du weißt, wo dein DNS verwaltet wird und welches Produkt du verbinden möchtest. DNS-Einträge werden nicht immer dort verwaltet, wo die Domain gekauft wurde. Prüfe daher vorab den zuständigen DNS-Host.
+
+Prüfe vor dem Bearbeiten von DNS-Einträgen folgende Punkte:
+
+- Du hast Zugriff auf den DNS-Anbieter oder DNS-Host der Domain.
+- Du weißt, ob die Domain direkt über UmsatzAgent oder über einen externen Registrar erworben wurde.
+- Du verbindest die richtige Hauptdomain oder Subdomain.
+- Du hast die exakten DNS-Werte kopiert.
+- Du hast geprüft, ob Domain Connect für deinen Anbieter verfügbar ist.
+- Du hast geprüft, ob die Domain bereits mit einem anderen Produkt verbunden ist.
+- Du bist dir bewusst, dass die Verifizierung von DNS-Aktualisierungen nach den Änderungen etwas Zeit in Anspruch nehmen kann.
+
+```
+Wichtig: Lösche keine DNS-Einträge, die du nicht kennst, es sei denn, du bist sicher, dass sie nicht benötigt werden. Einige Einträge unterstützen E-Mail-Dienste, bestehende Websites, Tracking-Tools, Verifizierungsdienste oder andere geschäftskritische Systeme.
+```
+
+---
+
+## Fehler-Schnellübersicht
+
+Nutze die angezeigte Fehlermeldung oder das Problem, um den passenden Lösungsweg zu wählen. DNS-Eintragsfehler müssen in der Regel bei deinem DNS-Anbieter behoben werden, während Produktkonflikte innerhalb der Plattform gelöst werden müssen.
+
+| Fehler oder Problem | Bedeutung | Hier beginnen |
+| --- | --- | --- |
+| A-Record-Konflikt | Ein bestehender A-Record leitet die Domain an ein Ziel weiter, das einen Konflikt verursacht | A-Records prüfen |
+| AAAA-Record-Konflikt | Ein IPv6-Eintrag existiert, wo das Produkt IPv4-Routing erwartet | Den widersprüchlichen AAAA-Record entfernen |
+| CAA-Record-Problem | Die Zertifikatsregeln der Domain erlauben den SSL-Anbieter nicht | Den CAA-Record aktualisieren |
+| DNS-Einträge stimmen nicht überein | Die Einträge beim DNS-Anbieter stimmen nicht mit den angezeigten Werten überein | DNS-Werte vergleichen |
+| Produktkonflikt | Die Domain ist bereits einem anderen Produkt zugewiesen | Produktzuweisung prüfen |
+| Domain anderweitig verbunden | Die Domain ist möglicherweise in einem anderen Konto verbunden | Zugriffsrechte prüfen und bei Bedarf an den Support wenden |
+| Verifizierung noch ausstehend | DNS-Änderungen wurden möglicherweise noch nicht vollständig übernommen | DNS-Propagation abwarten und Einträge erneut prüfen |
+
+---
+
+## Gängige DNS-Begriffe
+
+DNS-Einträge teilen dem Internet mit, wohin der Datenverkehr deiner Domain geleitet werden soll. Das Verständnis der grundlegenden Begriffe erleichtert es dir, den relevanten Eintrag zu identifizieren und unbeteiligte Einträge unberührt zu lassen.
+
+- **Hauptdomain (Root Domain):** Die primäre Domain, wie z. B. `beispiel.de`.
+- **Subdomain:** Ein der Hauptdomain vorangestellter Präfix, wie z. B. `www.beispiel.de`, `angebote.beispiel.de` oder `portal.beispiel.de`.
+- **DNS-Anbieter / DNS-Host:** Die Plattform, auf der die DNS-Einträge verwaltet werden. Dies kann dein Registrar sein, wie GoDaddy oder Namecheap, oder ein DNS-Host wie Cloudflare.
+- **A-Record:** Verweist eine Domain oder Subdomain auf eine IPv4-Adresse.
+- **CNAME-Record:** Verweist eine Subdomain auf einen anderen Domainnamen anstelle einer IP-Adresse.
+- **AAAA-Record:** Verweist eine Domain oder Subdomain auf eine IPv6-Adresse. Manche Verbindungen schlagen fehl, wenn ein AAAA-Record mit der erforderlichen Konfiguration in Konflikt steht.
+- **CAA-Record:** Legt fest, welche Zertifizierungsstellen SSL-Zertifikate für die Domain ausstellen dürfen.
+- **DNS-Propagation:** Die Zeit, die benötigt wird, bis DNS-Änderungen im gesamten Internet wirksam werden. Manche Änderungen werden sofort verifiziert, andere benötigen bis zu 24–48 Stunden.
+
+---
+
+## Wo DNS-Änderungen vorgenommen werden
+
+Der richtige Ort für DNS-Aktualisierungen hängt davon ab, wo die Domain verwaltet wird. Das Bearbeiten von Einträgen auf der falschen Plattform löst das Verbindungsproblem nicht.
+
+- **In UmsatzAgent gekaufte Domains:** Verwalte die DNS-Einträge unter **Einstellungen > Domains > Gekaufte Domains**.
+- **Extern gekaufte Domains:** Verwalte die DNS-Einträge beim zuständigen DNS-Anbieter oder DNS-Host der Domain.
+- **Domains mit externen Nameservern:** Prüfe, wohin die Nameserver der Domain verweisen. Der DNS-Host kann sich vom Registrar unterscheiden, bei dem die Domain gekauft wurde.
+
+---
+
+## Domain Connect nutzen, wenn verfügbar
+
+Domain Connect kann die erforderlichen DNS-Einträge bei unterstützten Anbietern automatisch hinzufügen. Dies verringert manuelle Einrichtungsfehler und ist meist der einfachste Weg, eine Domain zu verbinden.
+
+Nutze Domain Connect bevorzugt, wenn dein DNS-Anbieter dies unterstützt. Eine manuelle DNS-Fehlerbehebung ist in der Regel nur erforderlich, wenn Domain Connect nicht verfügbar ist, fehlschlägt oder die DNS-Einträge nach der automatischen Einrichtung geändert wurden.
+
+So nutzt du Domain Connect:
+
+1. Gehe in den Einrichtungsbereich des Produkts oder der Domain, wo du die Verbindung herstellen möchtest.
+2. Gib die Hauptdomain oder Subdomain ein, die du verbinden möchtest.
+3. Wähle die Option Domain Connect, falls diese angezeigt wird.
+4. Melde dich bei Aufforderung bei deinem DNS-Anbieter an.
+5. Bestätige die DNS-Änderungen.
+6. Kehre zurück und verifiziere die Verbindung.
+
+---
+
+## Die Felder für das manuelle Hinzufügen verstehen
+
+Die Option für das manuelle Hinzufügen zeigt die DNS-Einträge an, die du bei deinem DNS-Anbieter anlegen musst. Diese Felder dürfen nicht mit deinem eigenen Domainnamen überschrieben werden. Kopiere stattdessen Eintragstyp, Host/Name und Wert exakt wie angegeben und füge sie in die DNS-Einstellungen deines DNS-Anbieters ein.
+
+Beim manuellen Hinzufügen:
+
+- **Typ:** Zeigt die Art des zu erstellenden DNS-Eintrags an, wie z. B. A, CNAME, TXT, CAA oder einen anderen unterstützten Typ.
+- **Host/Name:** Zeigt an, wo der Eintrag hinzugefügt werden soll, wie z. B. @, www oder eine bestimmte Subdomain.
+- **Wert/Ziel:** Zeigt an, wohin dieser Host verweisen soll. Dies kann eine IP-Adresse, ein Domain-Ziel oder ein bereitgestellter Verifizierungswert sein.
+- **TTL:** Steuert, wie lange DNS-Server den Eintrag im Zwischenspeicher halten. Die Standard- oder Automatik-Option deines DNS-Anbieters ist in der Regel ausreichend.
+
+Ändere den angezeigten Wert nicht zu deinem eigenen Domainnamen, es sei denn, du wirst ausdrücklich dazu aufgefordert. Das Ändern des generierten Werts kann die Verifizierung oder das Routing der Domain verhindern.
+
+```
+Beispiel:
+
+Wird ein CNAME-Record mit dem Host/Namen www und einem generierten Zielwert angezeigt, trage www als Host/Name bei deinem DNS-Anbieter ein und füge das generierte Ziel in das Feld Wert/Ziel ein. Ersetze das generierte Ziel nicht durch www.deinedomain.de.
+```
+
+---
+
+## Fehlerbehebung bei A-Record-Konflikten
+
+Ein A-Record-Konflikt bedeutet, dass die Hauptdomain oder Subdomain auf eine IP-Adresse verweist, die mit dem erforderlichen Eintrag in Konflikt steht. Dies geschieht häufig, wenn die Domain zuvor für eine andere Website, eine Parkseite, ein Hosting-Paket oder Standardeinstellungen des Registrars genutzt wurde.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155074946066/original/iM3TFNk1eOqQyzuWQdgehtchgmrcvrteEw.png?1782908462)
+
+**Bedeutung:**
+
+Ein bestehender A-Record steuert bereits, wohin die Domain oder Subdomain den Datenverkehr leitet.
+
+**Ursache:**
+
+Die Domain enthält möglicherweise alte Hosting-Einträge, Standard-Parkeinträge, Weiterleitungen oder Einträge eines vorherigen Website-Anbieters.
+
+**Lösung:**
+
+1. Öffne die DNS-Verwaltung bei deinem DNS-Anbieter.
+2. Suche den A-Record für die exakte Domain oder Subdomain, die du verbindest.
+   - Prüfe bei einer Hauptdomain die Einträge für `@` oder den Hauptdomain-Namen.
+   - Prüfe bei einer Subdomain Einträge wie `www`, `angebote`, `links` oder das jeweilige Subdomain-Präfix.
+3. Vergleiche den bestehenden Wert mit dem in UmsatzAgent angezeigten Wert.
+4. Entferne oder ersetze ausschließlich den widersprüchlichen A-Record für die betroffene Domain oder Subdomain.
+5. Speichere die DNS-Änderungen.
+6. Kehre zurück und verifiziere die Domain erneut.
+
+```
+Wichtig: Lösche nicht alle A-Records, es sei denn, du bist sicher, dass sie nicht mehr benötigt werden. Bearbeite nur den Eintrag, der mit der aktuell zu verbindenden Domain oder Subdomain in Konflikt steht.
+```
+
+---
+
+## Fehlerbehebung bei AAAA-Record-Konflikten
+
+Ein AAAA-Record verweist eine Domain oder Subdomain auf eine IPv6-Adresse. Manche Domain-Verbindungen erfordern ein reines IPv4-Routing. Ein aktiver AAAA-Record kann daher die Verifizierung oder das korrekte Routing verhindern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155074946167/original/JNrZqxgqQINaJsZCF2x3clUgts_HcJxV_Q.png?1782908529)
+
+**Bedeutung:**
+
+Der DNS-Host enthält einen AAAA-Record für die Domain oder Subdomain, der mit der erforderlichen Konfiguration in Konflikt steht.
+
+**Ursache:**
+
+Manche DNS-Anbieter erstellen automatisch AAAA-Records, oder die Domain hat zuvor IPv6-Einträge für einen früheren Hosting-Anbieter genutzt.
+
+**Lösung:**
+
+1. Öffne die DNS-Verwaltung bei deinem DNS-Anbieter.
+2. Suche nach AAAA-Records für die exakte Hauptdomain oder Subdomain, die du verbinden möchtest.
+3. Entferne den widersprüchlichen AAAA-Record.
+4. Speichere die DNS-Änderungen.
+5. Kehre zurück und verifiziere die Domain erneut.
+
+---
+
+## Fehlerbehebung bei CAA-Record-Problemen
+
+CAA-Records legen fest, welche Zertifizierungsstellen SSL-Zertifikate für deine Domain ausstellen dürfen. Für die Zertifikatsausstellung wird möglicherweise die Berechtigung für Google Trust Services über den Wert `pki.goog` benötigt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155074946315/original/fsalmQOgE4-RzC69-ZyiyHHQvOMizxnx7Q.png?1782908597)
+
+**Bedeutung:**
+
+Der CAA-Record der Domain erlaubt den für die SSL-Ausstellung benötigten Zertifikatsanbieter nicht.
+
+**Ursache:**
+
+Eine frühere Website, ein Hosting-Anbieter oder eine Sicherheitskonfiguration hat die Zertifizierungsstellen für die Domain eingeschränkt.
+
+**Lösung:**
+
+1. Öffne die DNS-Verwaltung bei deinem DNS-Anbieter.
+2. Suche nach bestehenden CAA-Records.
+3. Falls ein CAA-Record existiert, prüfe, ob `pki.goog` als erlaubter Wert enthalten ist.
+4. Füge den CAA-Record hinzu oder aktualisiere ihn so, dass `pki.goog` erlaubt ist.
+5. Speichere die DNS-Änderungen.
+6. Kehre zurück und verifiziere die Domain erneut.
+
+```
+Wichtig: Wenn in deinem Unternehmen strenge SSL- oder Sicherheitsrichtlinien gelten, halte vor dem Bearbeiten von CAA-Records Rücksprache mit deiner IT-Abteilung.
+```
+
+---
+
+## Fehlerbehebung bei nicht übereinstimmenden DNS-Einträgen
+
+Eine DNS-Nichtübereinstimmung bedeutet, dass die Einträge bei deinem DNS-Anbieter nicht mit den erwarteten Werten übereinstimmen. Bereits ein falsches Zeichen, ein überflüssiger Eintrag, ein fehlender Eintrag oder eine Proxy-Einstellung kann die Verifizierung verhindern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155074946375/original/I3Nujg9duLc9BVSMwj0IzzjJn4IGScA87g.png?1782908622)
+
+**Bedeutung:**
+
+Die Live-Einträge im DNS stimmen nicht mit den bei der Einrichtung angezeigten Werten überein.
+
+**Ursache:**
+
+Einträge wurden fehlerhaft kopiert, beim falschen DNS-Host hinterlegt, der falschen Domain zugewiesen oder nach der Verbindung verändert.
+
+**Lösung:**
+
+1. Öffne die Domain-Einrichtung in UmsatzAgent und kopiere die erforderlichen DNS-Werte.
+2. Öffne den DNS-Anbieter, bei dem die aktiven Nameserver der Domain verwaltet werden.
+3. Vergleiche jeden Eintragstyp, Host/Namen und Wert.
+4. Prüfe, ob der Eintrag für die richtige Hauptdomain oder Subdomain hinterlegt wurde.
+5. Entferne oder aktualisiere widersprüchliche Einträge nur für die exakt betroffene Domain oder Subdomain.
+6. Speichere die DNS-Änderungen.
+7. Warte, bis die DNS-Aktualisierungen angewendet wurden.
+8. Kehre zurück und führe die Verifizierung erneut durch.
+
+```
+Hinweis zu Cloudflare: Wenn du Cloudflare nutzt, müssen manche Einträge je nach Produkt und Anleitung auf "Nur DNS" (DNS-only) statt "Proxied" gesetzt werden.
+```
+
+---
+
+## Fehlerbehebung bei Produktkonflikten
+
+Ein Produktkonflikt bedeutet, dass die Domain bereits einem Produkt zugewiesen ist, das mit dem neu zu verbindenden Produkt in Konflikt steht. Dies ist kein DNS-Problem; eine Änderung der DNS-Einträge behebt diesen Fehler nicht.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155074946421/original/SIZ4iaQi8JvqQcbhNi8ivLWx44aXobzcdw.png?1782908658)
+
+**Bedeutung:**
+
+Die Domain oder Subdomain wird bereits von einem anderen Produkt genutzt (z. B. Website, Funnel, WordPress-Seite, Webinar oder Kundenportal).
+
+**Ursache:**
+
+Eine Domain oder Subdomain kann nur dort zugewiesen werden, wo das Routing eindeutig ist. Ist dieselbe Domain bereits mit einem anderen Produkt verknüpft, wird die neue Verbindung blockiert, um Fehlleitungen des Datenverkehrs zu verhindern.
+
+**Lösung:**
+
+1. Prüfe die angezeigte Fehlermeldung.
+2. Ermittle, welches Produkt die Domain aktuell verwendet.
+3. Gehe zu dem Produkt, mit dem die Domain derzeit verknüpft ist.
+4. Entferne oder ersetze die Domain in diesem Produkt, falls sie dort nicht mehr benötigt wird.
+5. Gehe zurück zum Einrichtungsbereich des neuen Produkts.
+6. Verbinde die Domain erneut.
+7. Verifiziere die Domain-Verbindung.
+
+```
+Wichtig: Soll die Domain mit dem bestehenden Produkt verbunden bleiben, verwende eine andere Subdomain für das neue Produkt. Nutze beispielsweise www.beispiel.de für deine Website und portal.beispiel.de für dein Kundenportal.
+```
+
+---
+
+## Fehlerbehebung bei anderweitig verbundenen Domains
+
+Die Meldung, dass eine Domain anderweitig verbunden ist, weist darauf hin, dass die Domain möglicherweise bereits in einem anderen Bereich oder Konto hinterlegt ist. In diesem Fall müssen Zugriffsrechte und Inhaberschaft geklärt werden, bevor die Domain freigegeben oder neu zugewiesen werden kann.
+
+**Bedeutung:**
+
+Die Domain ist an einer Stelle verknüpft, auf die aktuell kein direkter Zugriff besteht.
+
+**Ursache:**
+
+Die Domain wurde möglicherweise durch ein anderes Teammitglied oder einen früheren Kontoinhaber verknüpft. Doppelte Nutzungen werden blockiert, um Routing- und Inhaberschaftskonflikte zu vermeiden.
+
+**Lösung:**
+
+1. Prüfe alternative Bereiche, auf die du Zugriff hast.
+2. Kontrolliere Websites, Funnels, WordPress-Seiten, Webinare, Kundenportale und andere Produktbereiche, in denen die Domain verbunden sein könnte.
+3. Wenn du die Domain findest, entferne sie aus dem vorherigen Produkt, falls sie dort nicht mehr benötigt wird.
+4. Kannst du den Ort der Verbindung nicht finden oder darauf zugreifen, wende dich an den Kontoinhaber oder an den UmsatzAgent Support.
+5. Halte folgende Angaben für die Anfrage bereit:
+   - Domain oder Subdomain
+   - Bereich, in dem du die Verbindung herstellen möchtest
+   - Produkt, mit dem du sie verbinden möchtest
+   - Screenshot der Fehlermeldung
+   - Nachweis, dass du Inhaber oder Verwalter der Domain bist
+   - Informationen über vorherige Konten, in denen die Domain möglicherweise genutzt wurde
+
+---
+
+## DNS-Einstellungen bei deinem Domain-Anbieter finden
+
+Jeder Domain-Anbieter verwendet eigene Bezeichnungen, der Ablauf ist jedoch stets derselbe: Öffne die DNS-Einträge der Domain, suche den in der Fehlermeldung genannten Eintragstyp und bearbeite ausschließlich den Eintrag für die zu verbindende Domain oder Subdomain.
+
+Typische Menübezeichnungen bei Anbietern:
+
+- DNS
+- DNS verwalten / Manage DNS
+- DNS-Einträge / DNS Records
+- Erweitertes DNS / Advanced DNS
+- Zone Editor
+- Domain-Einstellungen
+- Nameserver-Einstellungen
+
+Gängige Anbieter sind unter anderem GoDaddy, Cloudflare, Namecheap, Squarespace Domains, IONOS, Bluehost, Hostinger und andere Registrare oder DNS-Hosts.
+
+```
+Wichtig: Der Anbieter, bei dem du die Domain gekauft hast, ist nicht zwingend der Ort, an dem das DNS verwaltet wird. Verwendet deine Domain externe Nameserver, nimm die DNS-Änderungen beim dort eingetragenen DNS-Host vor.
+```
+
+---
+
+## Ablauf der Domain-Fehlerbehebung
+
+Eine strukturierte Prüfung stellt sicher, ob das Problem durch DNS-Einträge, einen Produktkonflikt oder eine anderweitig verknüpfte Domain verursacht wird. Dies verhindert unnötige DNS-Änderungen.
+
+1. **Zu verbindende Domain oder Subdomain prüfen**
+   - Beispiel Hauptdomain: `beispiel.de`
+   - Beispiel Subdomain: `www.beispiel.de` oder `portal.beispiel.de`
+2. **Zu verbindendes Produkt prüfen**
+   - Website
+   - Funnel
+   - WordPress
+   - Webinar
+   - Kundenportal
+3. **Exakte Fehlermeldung ablesen**
+   - Ordne den Fehler der Schnellübersichtstabelle zu.
+   - Ändere keine DNS-Einträge, bevor feststeht, ob die Ursache im DNS oder im Produkt liegt.
+4. **Verwaltungsort des DNS ermitteln**
+   - Wurde die Domain über UmsatzAgent gekauft, prüfe **Einstellungen > Domains > Gekaufte Domains**.
+   - Wurde die Domain extern gekauft, prüfe den aktiven DNS-Host.
+   - Prüfe im Zweifel die Nameserver der Domain.
+5. **Domain Connect nutzen, falls verfügbar**
+   - Nutze die automatische Option bei unterstützten Anbietern.
+   - Wechsle nur zur manuellen Einrichtung, wenn Domain Connect nicht verfügbar oder nicht erfolgreich ist.
+6. **DNS-Einträge genau vergleichen**
+   - Eintragstyp abgleichen.
+   - Host/Name-Feld abgleichen.
+   - Wert/Ziel-Feld abgleichen.
+   - Auf widersprüchliche A-, AAAA- oder CAA-Records prüfen.
+   - Proxy-Einstellungen prüfen (bei Nutzung von Cloudflare).
+7. **Produktkonflikte auflösen**
+   - Prüfen, ob die Domain bereits einem anderen Produkt zugewiesen ist.
+   - Domain aus dem alten Produkt entfernen, wenn sie neu zugewiesen werden soll.
+   - Eine andere Subdomain nutzen, wenn die bisherige Verknüpfung bestehen bleiben soll.
+8. **DNS-Aktualisierung abwarten**
+   - DNS-Änderungen greifen oft schnell, können in manchen Fällen jedoch 24–48 Stunden dauern.
+   - Prüfe die Domain nach einer angemessenen Wartezeit erneut.
+9. **Support kontaktieren, falls die Domain anderweitig verbunden ist**
+   - Wende dich an den UmsatzAgent Support mit Angaben zu Domain, Produkt, Screenshot und Inhaberschaftsnachweis.
+
+---
+
+## Fehler mit mehreren A-Records beheben
+
+Ein Fehler durch mehrere A-Records bedeutet, dass deine Domain gleichzeitig auf mehr als ein Ziel verweist. Die Domain oder Subdomain muss auf das exakte Ziel verweisen, damit die Verifizierung gelingt. Dieses Problem wird in der DNS-Verwaltung deines Domain- oder Nameserver-Anbieters behoben.
+
+Schritte zur Behebung:
+
+1. **Domain- oder DNS-Anbieter öffnen**
+   - Melde dich bei der Plattform an, auf der die DNS-Einträge deiner Domain verwaltet werden (z. B. GoDaddy, Cloudflare, Namecheap, IONOS, Hostinger etc.).
+2. **DNS-Verwaltungsbereich aufrufen**
+   - Suche nach Menüpunkten wie DNS, DNS-Einträge, DNS verwalten, Erweitertes DNS, Zone Editor oder Domain-Einstellungen.
+3. **A-Records heraussuchen**
+   - Filtere nach Einträgen mit dem Typ A.
+   - Prüfe den Namen des Eintrags:
+     - `@` steht in der Regel für die Hauptdomain (z. B. beispiel.de).
+     - `www` steht für www.beispiel.de.
+     - Ein Begriff wie `angebote` steht für angebote.beispiel.de.
+4. **Auf doppelte A-Records für denselben Namen prüfen**
+   - Verbindest du beispiel.de, prüfe die A-Records für `@`.
+   - Verbindest du www.beispiel.de, prüfe die A-Records für `www`.
+   - Verbindest du eine andere Subdomain, prüfe den entsprechenden Subdomain-Namen.
+5. **Widersprüchlichen A-Record entfernen oder anpassen**
+   - Behalte nur den A-Record, der dem von UmsatzAgent vorgegebenen Wert entspricht.
+   - Entferne oder aktualisiere alle anderen A-Records desselben Namens, die auf andere Ziele verweisen.
+   - Lösche keine unbeteiligten Einträge für E-Mail (MX), TXT-Verifizierungen oder sonstige Dienste.
+6. **DNS-Änderungen speichern**
+   - Klicke auf Speichern, Aktualisieren oder Bestätigen.
+7. **Domain erneut verifizieren**
+   - Kehre zum Einrichtungsbereich in UmsatzAgent zurück.
+   - Klicke auf Verifizieren, Status prüfen oder erneut verbinden.
+8. **Zeit für die DNS-Aktualisierung einplanen**
+   - Manche Änderungen greifen sofort.
+   - Andere Änderungen benötigen bis zu 24–48 Stunden zur vollständigen Aktualisierung.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum wird nach der Aktualisierung der DNS-Einträge immer noch ein Fehler angezeigt?**
+A: DNS-Änderungen benötigen Zeit, um sich im Internet zu verbreiten. Prüfe außerdem, ob die Einträge beim richtigen DNS-Host vorgenommen wurden und die Werte exakt übereinstimmen.
+
+**F: Kann dieselbe Domain mit mehreren Produkten verbunden werden?**
+A: Nicht mit überlappenden Routing-Konflikten. Wird die Domain bereits von einem Produkt genutzt, entferne sie dort oder nutze eine separate Subdomain für das neue Produkt.
+
+**F: Was ist der Unterschied zwischen einer Hauptdomain und einer Subdomain?**
+A: Eine Hauptdomain ist die Basisadresse wie `beispiel.de`. Eine Subdomain ergänzt ein Präfix, wie `www.beispiel.de`, `angebote.beispiel.de` oder `portal.beispiel.de`.
+
+**F: Sollten unbekannte DNS-Einträge gelöscht werden?**
+A: Nein. Unbekannte Einträge können E-Mail-Dienste, Websites oder Verifizierungstools steuern. Bearbeite ausschließlich den Eintrag, der direkt zu der Domain oder Subdomain gehört, die du einrichtest.
+
+**F: Warum wird ein Produktkonflikt vor der DNS-Prüfung angezeigt?**
+A: UmsatzAgent prüft vorab, ob die Domain bereits anderweitig zugewiesen ist. Ist sie in Verwendung, muss dieser Konflikt zuerst behoben werden.
+
+**F: Was ist zu tun, wenn der DNS-Host unbekannt ist?**
+A: Prüfe die Nameserver der Domain. Die Nameserver verweisen auf den Anbieter, der die aktiven DNS-Einträge verwaltet.
+
+**F: Wann sollte Domain Connect statt der manuellen Einrichtung genutzt werden?**
+A: Nutze Domain Connect immer, wenn es für deinen Anbieter zur Verfügung steht. Es richtet die Einträge automatisch ein und minimiert Fehlerquellen.
+
+---
+
+## Benötigst du Hilfe?
+
+Verbindet sich eine Domain nach der DNS-Aktualisierung weiterhin nicht, prüfe zunächst, ob ein DNS-Abweichungsfehler, ein Eintragskonflikt, eine Produktzuweisung oder ein Zugriffsproblem vorliegt.
+
+Stelle Folgendes sicher:
+
+- Du bearbeitest die richtige Hauptdomain oder Subdomain.
+- Du nimmst Änderungen beim aktiven DNS-Host vor, nicht nur beim Registrar des Domainkaufs.
+- Eintragstyp, Host/Name und Wert/Ziel stimmen exakt mit den Vorgaben überein.
+- Domain Connect wurde genutzt (sofern verfügbar) oder manuelle Einträge wurden korrekt gesetzt.
+- Es gibt keine konkurrierenden **A-Records** für denselben Host.
+- Es gibt keine störenden **AAAA-Records**, wenn IPv4-Routing erforderlich ist.
+- Erforderliche **CAA-Werte** sind freigegeben, falls die SSL-Ausstellung dies voraussetzt.
+- Cloudflare-Einträge stehen auf dem passenden Proxy-Status.
+- Die Domain ist nicht bereits einer anderen Website, einem Funnel, einer WordPress-Seite, einem Webinar oder einem Kundenportal zugewiesen.
+- Die Domain ist nicht in einem anderen Bereich verknüpft.
+- Es wurden keine unbeteiligten DNS-Einträge für E-Mails oder Verifizierungen gelöscht.
+- Es wurde ausreichend Zeit für die DNS-Propagation abgewartet.
+- Die Domain wurde nach dem Speichern der DNS-Änderungen erneut getestet.
+
+Handelt es sich um einen **Produktkonflikt** oder die Meldung **Domain anderweitig verbunden**, lässt sich dies nicht über DNS-Änderungen beheben. Prüfe die bisherige Zuweisung, entferne die Domain dort oder wähle eine andere Subdomain.
+
+Besteht das Problem weiterhin, notiere die Domain/Subdomain, das Zielprodukt, die aktuellen DNS-Einträge, die aktiven Nameserver, die genaue Fehlermeldung sowie den Zeitpunkt der letzten DNS-Änderung und erstelle Screenshots der Einstellungen. Wende dich an den UmsatzAgent Support.

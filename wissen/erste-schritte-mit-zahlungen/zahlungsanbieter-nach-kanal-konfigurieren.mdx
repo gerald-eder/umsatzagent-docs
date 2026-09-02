@@ -1,0 +1,118 @@
+---
+title: "Zahlungsanbieter nach Kanal konfigurieren"
+description: "Dieser Artikel erklärt, wie Zahlungsanbieter über verschiedene Kanäle hinweg funktionieren, was aktuell unterstützt wird, was geplant ist und wie sich…"
+---
+
+Dieser Artikel erklärt, wie Zahlungsanbieter über verschiedene Kanäle hinweg funktionieren, was aktuell unterstützt wird, was geplant ist und wie sich Standard- und bevorzugte Anbietereinstellungen auf den Checkout auswirken.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Überblick über die Konfiguration von Zahlungsanbietern nach Kanal](#ueberblick-ueber-die-konfiguration-von-zahlungsanbietern-nach-kanal)
+- [Wichtigste Vorteile der Konfiguration von Zahlungsanbietern nach Kanal](#wichtigste-vorteile-der-konfiguration-von-zahlungsanbietern-nach-kanal)
+- [Unterstützte Kanäle](#unterstuetzte-kanaele)
+- [So funktioniert die Anbieterauswahl](#so-funktioniert-die-anbieterauswahl)
+- [Live-Modus vs. Test-Modus](#live-modus-vs-test-modus)
+- [So konfigurierst du Zahlungsanbieter nach Kanal](#so-konfigurierst-du-zahlungsanbieter-nach-kanal)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Überblick über die Konfiguration von Zahlungsanbietern nach Kanal
+
+Die Konfiguration von Zahlungsanbietern nach Kanal ermöglicht es dir, verschiedenen Bereichen deines Unternehmens wie Funnels, Formularen, Shops und Rechnungen spezifische Zahlungsanbieter zuzuweisen. Anstatt dich auf einen einzigen globalen Standardanbieter zu verlassen, ermöglicht dies eine Kontrolle auf Kanalebene, sodass Zahlungen basierend auf dem Ursprung der Transaktion weitergeleitet werden. Dies bietet Flexibilität zur Optimierung des Zahlungserlebnisses, Senkung von Gebühren und Anpassung der Anbieternutzung an spezifische Anwendungsfälle.
+
+---
+
+## Wichtigste Vorteile der Konfiguration von Zahlungsanbietern nach Kanal
+
+- **Mehr Flexibilität:** Nutze unterschiedliche Zahlungsanbieter für verschiedene Verkaufserlebnisse
+- **Bessere Optimierung:** Leite Zahlungen basierend auf Gebühren, Regionen oder Stärken der Anbieter weiter
+- **Sichereres Testen:** Probiere neue Anbieter im Test-Modus aus, ohne Live-Transaktionen zu beeinflussen
+- **Übersichtlichere Einrichtung:** Kein ständiges Wechseln des Standardanbieters deines Kontos erforderlich
+
+---
+
+## Unterstützte Kanäle
+
+Unterstützte Kanäle sind Funnels – 1-Schritt-Bestellformulare, Funnels – 2-Schritt-Bestellformulare, Formulare, Shops, Kalender,
+
+Rechnungen, automatische Rechnungszahlung, Zahlungslinks, Kurse, Communities und Umfragen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079844756/original/J2EmCfnMDXlsO7j58wg6TqvXFHKE4UykwQ.png?1788288063)
+
+---
+
+## So funktioniert die Anbieterauswahl
+
+Die Auswahl des Zahlungsanbieters folgt einfachen Regeln, die bestimmen, welcher Anbieter beim Checkout verwendet wird.
+
+- **Anbieterpriorität:** Einstellungen auf Kanalebene überschreiben den globalen Standardanbieter. Wenn für einen Kanal kein Anbieter festgelegt ist, wird der globale Standardanbieter verwendet. Bei der Auswahl eines Anbieters stehen nur verbundene Anbieter zur Verfügung.
+- **Unterstützte Anbieterkombinationen:** Du kannst **PayPal + einen weiteren Anbieter** (z. B. Stripe oder NMI) verwenden. Mehrere Nicht-PayPal-Anbieter zusammen werden nicht unterstützt (z. B. Stripe + NMI).
+- **Anbieter bearbeiten:** Du kannst jeden ausgewählten Anbieter entfernen. PayPal kann neben einem anderen Anbieter hinzugefügt oder entfernt werden. PayPal kann nicht direkt durch einen anderen Anbieter ersetzt werden (muss zuerst entfernt werden).
+
+---
+
+## Live-Modus vs. Test-Modus
+
+Die Trennung von Live- und Test-Konfigurationen ermöglicht es dir, mit Anbietern zu experimentieren, ohne echte Transaktionen zu beeinflussen. Dies ist wichtig, um Integrationen zu validieren und Checkout-Abläufe sicher zu testen.
+
+- **Live-Modus:** Wird für echte Kundentransaktionen verwendet
+- **Test-Modus:** Wird zum Testen von Zahlungsabläufen ohne echte Zahlungen verwendet
+- Jedem Modus können pro Kanal unterschiedliche Anbieter zugewiesen werden
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079844793/original/xI04MiRhhoWeUcvQy2xkeTTh3eFFgaENtw.png?1788288129)
+
+---
+
+## So konfigurierst du Zahlungsanbieter nach Kanal
+
+Eine korrekte Einrichtung stellt sicher, dass Zahlungen richtig weitergeleitet werden, und verhindert fehlgeschlagene Transaktionen. Befolge diese Schritte, um Anbieter zu konfigurieren.
+
+1. Navigiere zu **Zahlungen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079844843/original/mfppAR77xAu4CdJBss2TvCNfbMj5QLKdlQ.png?1788288214)
+2. Klicke auf **Integrationen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079844874/original/cSGyW13JpcSVRbI_MfjlevTFD9mfMG5q-A.png?1788288308)
+3. Klicke auf **Anbieter konfigurieren**.
+
+   **![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079844958/original/dfYCeyks067bdXhtalYEGJr6q-ZNAIcd9A.png?1788288432)**
+4. Wechsle nach Bedarf zwischen dem **Live**- oder **Test**-Modus.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079845053/original/2dE5gJKqk7-r4hx26l3ci5-FAxKBZbl0-g.png?1788288647)
+5. Wähle deine bevorzugten Zahlungsanbieter für jeden Kanal aus:
+
+   - **Anbieter hinzufügen:** Klicke neben einem Kanal auf das '**+**' und wähle aus den verbundenen Anbietern im Dropdown-Menü (Stripe, PayPal, Square usw.). Du kannst PayPal und einen zusätzlichen Anbieter (z. B. Stripe oder NMI) hinzufügen. Das Dropdown-Menü zeigt nur Anbieter an, die bereits in deinem Konto verbunden sind.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067632534/original/8vaQLn5Y8LhYyGJfGqQiVuntG4SHFd87sA.png?1774367777)
+   - **Anbieter entfernen:** Klicke neben dem Anbieter auf das '**X**'. Bestätige das Entfernen bei Aufforderung.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079845135/original/dVSoWjtYTUrghR5BRdfhHlP9w1X-WOHyZg.png?1788288734)
+   - **Anbieter zurücksetzen:** Durch das Zurücksetzen wird die benutzerdefinierte Konfiguration entfernt. Der Kanal wechselt wieder zum globalen Standardanbieter.
+
+     ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067632883/original/YGjbOlnveYthZ6ecEG9S1qLypgDJy5DPIw.png?1774367942)
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Was passiert, wenn ein bevorzugter Anbieter getrennt wird?**
+
+Wenn ein auf Kanalebene verwendeter Anbieter auf der Integrationsseite getrennt wird, greift das System automatisch auf den Standardanbieter zurück. Wenn du ihn später wieder verbindest, musst du ihn erneut als bevorzugten Anbieter für den Kanal auswählen.
+
+**F: Kann ich Anbieter auf einer detaillierteren Ebene konfigurieren (z. B. pro Shop oder Funnel)?**
+Noch nicht. Aktuell erfolgt die Konfiguration auf Kanalebene. Eine feingranularere Steuerung (pro Shop, Funnel oder Asset) ist für zukünftige Updates geplant.
+
+**F: Kann ich alle Anbieter aus einem Kanal entfernen, um Zahlungen zu deaktivieren?**
+Nein. Wenn alle Anbieter entfernt werden, setzt das System den Kanal auf den globalen Standardanbieter zurück, um einen versehentlichen Verlust der Zahlungsfunktion zu verhindern. Dies soll verhindern, dass Zahlungsoptionen für aktive Dienste versehentlich entfernt werden. Zahlungen werden nur ausgeblendet, wenn überhaupt keine Anbieter verbunden sind.
+
+**F: Wie viele Zahlungsanbieter kann ich bei einem Checkout nutzen?**
+Du kannst PayPal plus einen zusätzlichen Anbieter (z. B. Stripe oder NMI) nutzen. Die gleichzeitige Nutzung mehrerer Nicht-PayPal-Anbieter wird nicht unterstützt.
+
+**F: Wie wirkt sich der Standardanbieter auf die Kanalkonfiguration aus?**
+Der Standardanbieter dient als Ausweichoption. Wenn du einen Anbieter auf Kanalebene festlegst, überschreibt dieser den Standardanbieter. Wenn kein Anbieter auf Kanalebene festgelegt ist, wird der Standardanbieter verwendet.
+
+**F: Welche Zahlungsoptionen sehen Kunden beim Checkout?**
+Wenn sowohl ein Standardanbieter als auch PayPal konfiguriert sind, sehen Kunden beide Optionen. Wenn PayPal nicht konfiguriert ist, wird nur der Standardanbieter angezeigt.

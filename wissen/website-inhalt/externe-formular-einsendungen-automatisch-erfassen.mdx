@@ -1,0 +1,223 @@
+---
+title: "Externe Formular-Einsendungen automatisch erfassen"
+description: "Erfasse Formular-Einsendungen von externen Websites direkt in deinem CRM – ohne manuelle Einrichtung. Das erweiterte externe Tracking erkennt unterstützte…"
+---
+
+Erfasse Formular-Einsendungen von externen Websites direkt in deinem CRM – ohne manuelle Einrichtung. Das erweiterte externe Tracking erkennt unterstützte Formulare wie Gravity Forms, WPForms und benutzerdefinierte HTML-Formulare automatisch und überträgt Einsendungen in Echtzeit in dein System. Dadurch entfallen Drittanbieter-Tools, Webhooks oder individuelle Integrationen, während sich die Genauigkeit bei Attribution und Lead-Tracking verbessert.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist externes Tracking?](#was-ist-externes-tracking)
+- [Wichtigste Vorteile des externen Trackings](#wichtigste-vorteile-des-externen-trackings)
+- [Automatische Formularerkennung](#automatische-formularerkennung)
+- [Intelligenteres Feld-Mapping](#intelligenteres-feld-mapping)
+- [So richtest du externes Tracking ein](#so-richtest-du-externes-tracking-ein)
+- [Anforderungen an unterstützte Formulare](#anforderungen-an-unterstuetzte-formulare)
+- [Workflow-Trigger](#workflow-trigger)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist externes Tracking?
+
+Externes Tracking ist ein schlankes Skript, das die Aktivität auf deiner externen Website mit deinem CRM verbindet. Damit kannst du Seitenaufrufe nachverfolgen und Formular-Einsendungen von Drittanbieter-Websites automatisch erfassen.
+
+Mit der neuesten Erweiterung erkennt das externe Tracking DOM-basierte Formulare automatisch und erfasst Einsendungen ohne manuelle Konfiguration. Das erleichtert die Erfassung von Leads über Plattformen wie WordPress, Shopify, Wix und individuell erstellte Websites erheblich.
+
+---
+
+## Wichtigste Vorteile des externen Trackings
+
+Externes Tracking vereinfacht die Lead-Erfassung und verbessert den Einblick in die Performance externer Websites, sodass du fundiertere Entscheidungen für Marketing und Automatisierung treffen kannst.
+
+- Automatische Formularerkennung: Erkennt unterstützte Formulare wie Gravity Forms, WPForms und benutzerdefiniertes HTML automatisch
+- Echtzeit-Erfassung von Einsendungen: Erfasst Einsendungen sofort ohne Verzögerungen oder Integrationen
+- Automatische Kontakterstellung: Erstellt oder aktualisiert Kontakte unmittelbar nach dem Absenden
+- Intelligenteres Feld-Mapping: Ordnet Felder bestehenden Kontakteigenschaften und benutzerdefinierten Feldern intelligent zu
+- Attributions-Tracking: Erfasst UTM-Parameter, Seiten-URLs und Sitzungsdaten
+- Unterstützung mehrerer Formulare: Verfolgt mehrere Formulare auf derselben Seite unabhängig voneinander
+- Keine Konfiguration erforderlich: Keine Drittanbieter-Tools, Webhooks oder manuelles Mapping nötig
+
+---
+
+## Automatische Formularerkennung
+
+Das externe Tracking scannt deine Website nach unterstützten Formularen, die direkt im DOM gerendert werden. Dadurch funktionieren die meisten modernen Formular-Builder direkt nach der Installation. Eine manuelle Validierung entfällt, was für einen reibungslosen Ablauf bei der Lead-Erfassung auf externen Websites sorgt.
+
+Zu den unterstützten Formularen gehören:
+
+- WordPress-Formulare (Gravity Forms, WPForms, Contact Form 7)
+- Benutzerdefinierte HTML-Formulare
+- No-Code-Website-Builder
+
+Formulare, die über iFrames oder Drittanbieter-Widgets eingebunden sind, werden nicht unterstützt.
+
+---
+
+## Intelligenteres Feld-Mapping
+
+Das Feld-Mapping erfolgt automatisch über einen intelligenten Abgleich. So wird sichergestellt, dass die erfassten Daten zu deinen Kontaktdatensätzen passen, ohne dass eine manuelle Einrichtung erforderlich ist. Dies verbessert die Datenqualität und reduziert den Nachbearbeitungsaufwand nach dem Absenden.
+
+- Gleicht Felder anhand von Name, Label und bestehenden benutzerdefinierten Feldern ab
+- Speichert nicht zugeordnete Felder sicher für die spätere Verwendung
+- Unterstützt mehrere Feldtypen (Text, Dropdowns, Checkboxen, Daten usw.)
+- Zeigt nur relevante Felder in der Benutzeroberfläche an
+
+---
+
+## So richtest du externes Tracking ein
+
+Eine korrekte Installation stellt sicher, dass alle externen Formular-Einsendungen und Seitenaktivitäten zuverlässig erfasst werden, was eine genaue Berichterstattung und Automatisierung ermöglicht.
+
+### Schritt 1: Tracking-Skript abrufen
+
+Gehe zu **Einstellungen → Externes Tracking**
+
+Klicke auf **Skript kopieren**
+
+**Einstellungsseite für externes Tracking mit dem Skript und der Schaltfläche „Skript kopieren“**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855978/original/bqRMYaieJe_FMT88_sLo0E0CRmPGo5G4DQ.png?1788308294)
+
+Dieses Skript ist eindeutig für deinen Account und stellt die Verbindung zwischen deiner Website und deinem CRM her. Ändere die Tracking-ID nicht.
+
+**Skript-Ausschnitt mit sichtbarer Tracking-ID**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754152/original/OS6Ug4GGlzk0qjzZkkO4ctHE-D97Ev_-gg.png?1776923307)
+
+### Schritt 2: Skript auf deiner Website installieren
+
+Füge das Skript vor dem schließenden </body>-Tag deiner Website ein, damit es auf jeder Seite geladen wird und Formulare automatisch erkennen kann.
+
+```
+<script src="https://link.yourdomain.com/js/external-tracking.js" data-tracking-id="tk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"></script>
+```
+
+**Beispiel für das WordPress-Dashboard, in dem das Skript hinzugefügt wird**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855985/original/AQ-1ODLedUUp0zZdMSJLnFZgUy7OhQPWIA.png?1788308316)
+
+Dies kann auf verschiedenen Plattformen implementiert werden, darunter WordPress, Shopify, Wix, Webflow oder jede benutzerdefinierte HTML-Website.
+
+### Schritt 3: Skript zu deinem Formular oder deiner Seite hinzufügen (optionales Beispiel)
+
+Obwohl eine globale Installation empfohlen wird, kannst du das Skript auch direkt über einen HTML-Block in ein Formular einfügen. Dies wird häufig in Page-Buildern oder Formular-Editoren für eine schnelle Implementierung genutzt.
+
+**WordPress-Formularliste bei der Auswahl eines Formulars zur Bearbeitung**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754178/original/dMDWn9NbFVXYsw7fA1T5JF_9vNLpSz2LCg.png?1776923400)
+
+Sobald du dich im Formular-Builder befindest, kannst du das Skript in einen HTML-Block einfügen, um sicherzustellen, dass es mit dem Formular geladen wird.
+
+**HTML-Block innerhalb eines Formulars mit hinzugefügtem Tracking-Skript**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754185/original/hkkbUbKLFebCaXrRUUf3CPFFK_mzr6SM9w.png?1776923420)**
+
+### Schritt 4: Formular absenden
+
+Sende das Formular nach der Installation einfach wie ein regulärer Nutzer ab. Das System erkennt das Formular automatisch und erfasst alle unterstützten Felddaten ohne zusätzliche Konfiguration.
+
+**Ausgefülltes externes Beispiel-Formular (Gravity Form) auf einer Webseite**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754193/original/WP24p9QdXOKZXT5bvQPUZa3dd44xqgLVug.png?1776923443)
+
+Nach dem Absenden verhält sich das Formular aus Nutzersicht wie gewohnt, während die Daten im Hintergrund an dein CRM gesendet werden.
+
+**Dem Nutzer angezeigte Bestätigungsmeldung nach dem Absenden des Formulars**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754206/original/nUqXT6nP3g-lsgANmR-Zvgrdi04U_VAkiQ.png?1776923463)**
+
+### Schritt 5: Einsendungen ansehen
+
+Erfasste Einsendungen stehen sofort in deinem System zur Verfügung, sodass du eingehende Leads prüfen und verwalten kannst.
+
+Navigiere zu **Seiten → Formulare → Einsendungen**
+
+Wähle **Externe Formulare**, um die Ergebnisse zu filtern
+
+**Einsendungs-Übersicht mit erfassten externen Formular-Einträgen**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754429/original/2j6AoUbZsQ1skLOjJkBIAP63jEwZ-49hUA.png?1776923825)**
+
+### Schritt 6: Kontakt- und Aktivitätsdetails ansehen
+
+Jede Einsendung wird außerdem einem Kontaktdatensatz zugeordnet. Das bietet vollständige Transparenz über die erfassten Daten und die Nutzeraktivität. Diese Informationen kannst du für Segmentierung, Automatisierung und Follow-ups nutzen.
+
+**Aktivitätsdetail-Bereich mit erfassten Feldern und nicht zugeordneten Daten**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069754235/original/j8RfMoulH6-lCJdJgejz2Deud4XGINBUEQ.png?1776923506)**
+
+---
+
+## Anforderungen an unterstützte Formulare
+
+Externes Tracking funktioniert automatisch, wenn Formulare grundlegende strukturelle Anforderungen erfüllen. Dies gewährleistet eine zuverlässige Erkennung und Datenerfassung.
+
+Muss ein gültiges <form>-HTML-Element verwenden
+
+Felder müssen name-Attribute enthalten
+
+Ein E-Mail-Feld sollte vorhanden sein
+
+Felder müssen im DOM sichtbar sein
+
+Nicht unterstützt:
+
+- iFrame-basierte Formulare
+- Popup-Widgets ohne echte Formularelemente
+- Drittanbieter-Skripte, die keine Eingabefelder bereitstellen
+
+---
+
+## Workflow-Trigger
+
+Externes Tracking ermöglicht Automatisierungen basierend auf dem Nutzerverhalten, sodass du sofort und effizient auf Leads reagieren kannst.
+
+- Trigger für Seitenaufrufe: Löst aus, wenn ein Besucher eine Seite mit dem Tracking-Skript aufruft (auch anonym)
+- Trigger für Formular-Einsendungen: Löst aus, wenn ein erkanntes Formular abgesendet wird
+
+Verfügbare Filter:
+
+- Domain
+- Seitenpfad
+- Name des externen Formulars
+- UTM-Parameter
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Muss ich nach der Installation des Skripts noch etwas konfigurieren?**
+
+Nein. Die Formularerkennung und die Erfassung von Einsendungen erfolgen automatisch.
+
+**F: Funktioniert das mit Gravity Forms und WPForms?**
+
+Ja. Die meisten DOM-basierten WordPress-Formulare werden direkt unterstützt.
+
+**F: Können mehrere Formulare auf derselben Seite erfasst werden?**
+
+Ja. Jedes Formular wird unabhängig erkannt und erfasst.
+
+**F: Werden iFrame-basierte Formulare unterstützt?**
+
+Nein. Es werden nur Formulare unterstützt, die direkt im DOM gerendert werden.
+
+**F: Wo kann ich die Einsendungen einsehen?**
+
+Unter Formulare → Einsendungen sowie in den Kontaktdatensätzen und Aktivitätsprotokollen.
+
+**F: Was passiert mit nicht zugeordneten Feldern?**
+
+Sie werden sicher gespeichert und können später für das Mapping oder in Workflows verwendet werden.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn du Hilfe bei der Einrichtung des externen Trackings oder bei der Fehlerbehebung von Formular-Einsendungen benötigst, wende dich an den UmsatzAgent Support.
+
+##

@@ -1,0 +1,98 @@
+---
+title: "Workflow-Aktionen vorübergehend deaktivieren"
+description: "Deaktiviere beliebige Aktionen in einem Workflow vorübergehend, ohne sie zu löschen oder Verbindungen zu trennen. Das macht Testen, Debugging und…"
+---
+
+Deaktiviere beliebige Aktionen in einem Workflow vorübergehend, ohne sie zu löschen oder Verbindungen zu trennen. Das macht Testen, Debugging und Iterationen sicherer und schneller. Aktiviere den Schritt wieder, sobald du bereit bist.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind pausierte Workflow-Aktionen?](#was-sind-pausierte-workflow-aktionen)
+- [Wichtigste Vorteile von pausierten Workflow-Aktionen](#wichtigste-vorteile-von-pausierten-workflow-aktionen)
+- [Aktivieren/Deaktivieren-Schalter](#aktivieren-deaktivieren-schalter)
+- [Visuelle Indikatoren & Ausführungsverhalten](#visuelle-indikatoren-ausfuehrungsverhalten)
+- [Wie funktionieren pausierte Workflow-Aktionen?](#wie-funktionieren-pausierte-workflow-aktionen)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was sind pausierte Workflow-Aktionen?
+
+Mit pausierten Workflow-Aktionen kannst du Workflow-Knoten im Advanced Builder und Standard Builder vorübergehend aktivieren oder deaktivieren. Deaktivierte Knoten werden bei der Ausführung übersprungen, sodass du Fehler beheben, A/B-Tests durchführen oder Anpassungen vornehmen kannst, ohne deine ursprüngliche Konfiguration zu verlieren.
+
+- **Pausieren ohne Unterbrechung:** Schalte einzelne Knoten aus, um Varianten zu testen oder Probleme zu isolieren.
+- **Verbindungen bleiben erhalten:** Deine Verknüpfungen bleiben intakt – kein Entfernen oder erneutes Erstellen von Verbindungen nötig.
+- **Klare visuelle Darstellung:** Deaktivierte Schritte werden auf der Arbeitsfläche ausgegraut und zur Laufzeit übersprungen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058115752/original/l7hK1mWhqghCmoxUdCk2pvosCcf4X6vJkg.gif?1762876501)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155064679624/original/1RFUIO-MyJ4nTc78-iBTyTWVTzricR4Jdw.gif?1770811800)
+
+---
+
+## Wichtigste Vorteile von pausierten Workflow-Aktionen
+
+Pausierte Workflow-Aktionen bieten folgende Vorteile:
+
+- **Funktioniert in beiden Buildern:** Die Funktion ist sowohl im Advanced Builder als auch im Standard Builder verfügbar, sodass du dieselben Test- und Fehlerbehebungsabläufe nutzen kannst, unabhängig vom bevorzugten Builder.
+- **Schnelleres Testen:** Deaktiviere einen Schritt, führe den Workflow aus und aktiviere ihn sofort wieder.
+- **Kein erneutes Erstellen:** Deine Konfigurationen bleiben intakt; Pfade müssen nicht neu verknüpft werden.
+- **Saubere Ausführung:** Das System überspringt deaktivierte Knoten automatisch, sodass Kontakte nie hängen bleiben.
+- **Sichere Anpassung:** Führe Debugging oder A/B-Tests durch, ohne die Produktivlogik zu beeinträchtigen.
+
+---
+
+## Aktivieren/Deaktivieren-Schalter
+
+Bewege den Mauszeiger über einen Knoten im Advanced oder Standard Builder, um den Schalter zum Aktivieren/Deaktivieren anzuzeigen. Durch das Deaktivieren wird der Knoten ausgegraut und mit dem Label „Deaktiviert“ versehen; erneutes Aktivieren stellt die normale Farbe und Ausführung wieder her. Deaktivierte Knoten werden bei Live-Durchläufen vollständig ignoriert.
+
+---
+
+## Visuelle Indikatoren & Ausführungsverhalten
+
+- Wird ausgegraut mit einem „Deaktiviert“-Tag dargestellt.
+- **Deaktivierte Knoten**: Werden automatisch übersprungen, selbst wenn sie der einzige weiterführende Pfad sind – nachfolgende Aktionen werden dennoch ausgeführt.
+- **Aktivierte Knoten**: Werden nach der Reaktivierung exakt wie konfiguriert ausgeführt.
+
+---
+
+## Wie funktionieren pausierte Workflow-Aktionen?
+
+- **Aktivieren/Deaktivieren-Schalter:** Bewege den Mauszeiger über einen Knoten und klicke auf das Pause-Symbol.
+- **Hinweise auf der Arbeitsfläche:** Deaktivierte Knoten werden ausgegraut dargestellt, um zu signalisieren, dass sie nicht ausgeführt werden.
+- **Ausführung:** Deaktivierte Knoten werden während der Workflow-Ausführung übersprungen.
+- **Nachfolgende Logik:** Wenn ein deaktivierter Knoten Teil des einzigen Pfads zu späteren Aktionen ist, überspringt der Workflow die deaktivierten Knoten und führt alle aktiven nachfolgenden Knoten aus, die über den aktuellen Pfad erreichbar sind.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Bleiben Kontakte an einem deaktivierten Knoten hängen?**
+
+Nein. Das System überspringt deaktivierte Knoten automatisch und setzt den Vorgang über jeden aktiven Pfad fort.
+
+**F: Kann ich einen gesamten Zweig deaktivieren?**
+
+Ja, deaktiviere jeden Knoten in diesem Zweig. Alle deaktivierten Knoten werden übersprungen, bis sie wieder aktiviert werden.
+
+**F: Ist dies dasselbe wie die Funktion „Workflows an bestimmten Daten pausieren“?**
+
+Nein. Das Deaktivieren von Workflow-Aktionen pausiert einzelne Schritte innerhalb eines einzelnen Workflows, während das Pausieren an bestimmten Daten ganze veröffentlichte Workflows für bestimmte Zeiträume pausiert.
+
+**F: Was passiert, wenn ich zum Standard Builder wechsle, während noch deaktivierte Knoten vorhanden sind?**
+
+Du wirst aufgefordert, diese Knoten zu löschen oder wieder zu aktivieren, bevor der Builder geladen werden kann.
+
+**F: Zählen deaktivierte Knoten zu den Ausführungslimits?**
+
+Nein. Da sie übersprungen werden, verbrauchen sie keine Ausführungen.
+
+**F: Kann ich Knoten als Massenaktion aktivieren oder deaktivieren?**
+
+Aktuell erfolgt das Umschalten einzeln pro Knoten. Massenaktionen werden derzeit nicht unterstützt.
+
+**F: Werden übersprungene Knoten in den Protokollen angezeigt?**
+
+Ja. Ausführungsprotokolle markieren deaktivierte Knoten als „Übersprungen“, was eine klare Nachvollziehbarkeit beim Testen ermöglicht.

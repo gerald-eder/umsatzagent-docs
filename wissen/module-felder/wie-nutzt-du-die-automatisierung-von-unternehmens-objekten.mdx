@@ -1,0 +1,140 @@
+---
+title: "Wie nutzt du die Automatisierung von Unternehmens-Objekten?"
+description: "Die Einstellungen zur Automatisierung von Unternehmens-Objekten ermöglichen es, Detailfelder von Unternehmen wiederzuverwenden. Die Migration hilft dabei,…"
+---
+
+Die Einstellungen zur Automatisierung von Unternehmens-Objekten ermöglichen es, Detailfelder von Unternehmen wiederzuverwenden. Die Migration hilft dabei, Felddaten zu übertragen, neue Unternehmen zu erstellen und die jeweiligen Kontakte nahtlos zuzuordnen.
+
+#### Inhalt dieses Artikels:
+
+#### Wie nutzt du die Automatisierung von Unternehmens-Objekten?
+
+#### Verschiedene Szenarien
+
+#### Einschränkungen und erwartetes Verhalten
+
+---
+
+## Wie nutzt du die Automatisierung von Unternehmens-Objekten?
+
+Navigiere zu **Einstellungen > Objekte > Unternehmen**, um auf die Automatisierung zuzugreifen.
+Wenn du die Option **Unternehmen automatisch anhand von Kontakt-Unternehmensnamen erstellen und zuordnen** aktivierst, wirst du aufgefordert, den Vorgang zu starten. Dabei werden alle Kontakte mit einem Eintrag im Feld "Unternehmensname" den Unternehmen mit demselben Namen zugeordnet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155041310334/original/K00PUG-GW-Frw68xjVG1-lFuRAoFZftDxA.png?1739191538)
+
+**Bitte beachten**
+
+```
+Groß- und Kleinschreibung wird ignoriert. Hat ein Kontakt beispielsweise den Unternehmensnamen „Burger King“ und ein anderer „burger king“, wird ein einziges Unternehmen für Burger King erstellt statt zwei. Leerzeichen im Unternehmensnamen werden nicht ignoriert. Hat ein Kontakt den Unternehmensnamen „BurgerKing“ und ein anderer „burger king“, werden zwei separate Unternehmen erstellt.
+Das System kann unterschiedlich geschriebene Unternehmensnamen nicht als dasselbe Unternehmen erkennen. Ein Kontakt mit dem Namen „Ice Cream Sunday“ wird nicht demselben Unternehmen zugeordnet wie ein Kontakt mit dem Namen „Ice Cream Sundae“.
+Selbst ein einziger abweichender Buchstabe führt dazu, dass ein separates Unternehmen für den Kontakt erstellt wird.
+```
+
+Sobald du das Kontrollkästchen **Unternehmen erstellen und Kontakten zuordnen** aktivierst, kannst du die Änderung speichern. Die Schaltfläche zum Speichern wird daraufhin freigeschaltet.
+
+Nach dem Speichern werden alle Kontakte, bei denen das Feld **Unternehmensname** im Bereich **Allgemeine Informationen** ihrer Kontaktseite ausgefüllt ist, einem Unternehmen mit demselben Namen hinzugefügt.
+
+Existiert noch kein Unternehmen mit diesem Namen, wird eines neu erstellt.
+
+Sobald der Vorgang erfolgreich gestartet wurde, erscheint eine Bestätigungsmeldung:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155041314909/original/NW5Fy5Dq5vVegQH6pqYPYpNOgQHWHB3JTw.png?1739194340)
+
+Das Feld "Unternehmensname" dient hierbei als eindeutige Kennung. Groß- und Kleinschreibung spielen keine Rolle, Leerzeichen und Schreibweise hingegen schon.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48271707249/original/KG8veGT7R7SMcMz1Efp7fWbQyN1xiVn3wQ.png?1672131506)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48271707245/original/aaxyEsY-Sr9jtrfOjneAVqTqvl3M2DrQ0A.png?1672131504)
+
+Folgende Felder werden, sofern sie beim Kontakt unter **Allgemeine Informationen** ausgefüllt sind, automatisch in das neu erstellte Unternehmen übernommen:
+
+|  |
+| --- |
+| Straße und Hausnummer |
+| Stadt |
+| Land |
+| Bundesland/Kanton |
+| Postleitzahl |
+| Website |
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48271707252/original/xbfZrt9uUGchHGz84HOdFtpqfSk3ANfZgA.png?1672131506)Straße und Hausnummer sowie Website wurden in diesem Beispiel absichtlich freigelassen:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48271707250/original/IZXpZ7QzPQQBvjC2K6q2-aaqS4wosi-_-g.png?1672131506)
+
+---
+
+## Verschiedene Szenarien:
+
+**Wenn der Unternehmensname eindeutig ist und nur bei einem einzigen Kontakt vorkommt.**
+
+Ein neues Unternehmen wird mit dem Wert aus dem Kontaktfeld erstellt und der Kontakt wird diesem Unternehmen zugeordnet.
+
+**Wenn der Unternehmensname und die Details bei mehreren Kontakten identisch sind.**
+
+Ein neues Unternehmen wird mit dem Unternehmensnamen erstellt. Alle betreffenden Kontakte werden dem neu erstellten Unternehmen zugeordnet.
+
+**Wenn der Unternehmensname bei mehreren Kontakten identisch ist, sich die weiteren Details jedoch unterscheiden.**
+
+Ein neues Unternehmen wird mit dem Unternehmensnamen erstellt. Alle Kontakte werden dem neu erstellten Unternehmen zugeordnet. Für die folgenden Details werden die Werte des zuletzt erstellten Kontakts übernommen:
+
+|  |
+| --- |
+| Straße und Hausnummer |
+| Stadt |
+| Land |
+| Bundesland/Kanton |
+| Postleitzahl |
+| Website |
+
+---
+
+## Einschränkungen und erwartetes Verhalten:
+
+Diese Einstellungsfunktion ist nur für Administratoren verfügbar. Teammitglieder mit der Benutzerrolle können den Migrationsprozess nicht starten.
+
+**Bitte beachten:**
+
+```
+Benutzer mit der normalen Benutzerrolle sehen die Einstellung zwar, können jedoch keine Aktionen daran ausführen.
+```
+
+Sobald die Automatisierungseinstellungen aktiviert sind, werden alle bestehenden Kontakte mit einem eingetragenen Unternehmensnamen migriert. Nach Abschluss der Migration werden neue Kontakte automatisch anhand des Werts im Feld für den Unternehmensnamen synchronisiert.
+
+Ist einem Kontakt bereits ein Unternehmen zugeordnet, wird er nicht zu einem anderen Unternehmen migriert – selbst wenn der Unternehmensname zum Startzeitpunkt des Vorgangs abweicht. Die Migration bestehender Kontakte erfolgt nur dann, wenn der Kontakt noch keinem Unternehmen zugeordnet ist.
+
+**Bitte beachten:**
+
+```
+Das Ändern des Unternehmensnamens bei Kontakten, die bereits einem Unternehmen zugeordnet sind, hat keine Auswirkungen auf die Automatisierung.
+```
+
+Werden die Automatisierungseinstellungen deaktiviert, stoppt die automatische Synchronisierung bzw. die Migration. Beim erneuten Aktivieren wird der Vorgang fortgesetzt.
+
+Folgende Aktivitäten werden im Audit-Protokoll festgehalten:
+
+- Welcher Benutzer hat die Einstellung initiiert?
+- Welcher Kontakt wurde mit einer Unternehmensverknüpfung aktualisiert?
+- Unternehmens-Erstellung.
+- Unternehmens-Aktualisierung.
+
+Werden die Einstellungen während der Migration bestehender Kontakte deaktiviert und später wieder aktiviert, wird der Vorgang an der unterbrochenen Stelle fortgesetzt und für die verbleibenden Kontakte abgeschlossen.
+
+Die Funktion gilt auch für Kontakte, die über CSV-Import, öffentliche API, Formulare usw. hinzugefügt werden. Es findet eine Live-Synchronisierung zwischen Unternehmensname und Unternehmen statt.
+
+**Bitte beachten:**
+
+```
+Die importierte CSV-Datei muss eine Spalte mit der Überschrift „Business Name“ enthalten, und die jeweiligen Unternehmensnamen müssen ausgefüllt sein, damit Kontakte beim Import im CRM einem Unternehmen zugeordnet werden (vorausgesetzt, die Automatisierung von Unternehmens-Objekten ist aktiv).
+
+Treten beim Import Fehler auf und wird Kontakten durch falsche Schreibweisen oder Leerzeichen im Namen das falsche Unternehmen zugeordnet, musst du die betroffenen Kontakte löschen und die CSV-Datei mit den korrekten Namen erneut importieren. (Gelöschte Daten können nicht wiederhergestellt werden, da der Kontakt nicht wiederhergestellt, sondern als neue Version erstellt wird.)
+```
+
+Dieser Prozess ist nicht rückwärtskompatibel. Sobald ein Unternehmen anhand des Namens erstellt wurde, werden nachträgliche Änderungen am Unternehmensnamen oder dessen Details nicht in das Feld **Unternehmensname** oder andere synchronisierte Felder unter **Allgemeine Informationen** des Kontakts zurückübertragen.
+
+Das nachträgliche Aktualisieren von Unternehmensnamen wird nicht unterstützt. Wird ein Unternehmensname geändert, wirkt sich dies nicht auf die Attribute des Unternehmens oder die Verknüpfung mit dem Kontakt aus.
+
+**Bitte beachten:**
+
+```
+Die Automatisierung von Unternehmens-Objekten dient ausschließlich dazu, bestehende oder neue Kontakte, DIE NOCH KEINEM UNTERNEHMEN ZUGEORDNET SIND, mit Unternehmen desselben Namens zu verknüpfen. Existiert noch kein passendes Unternehmen, wird ein neues mit diesem Namen angelegt.
+```

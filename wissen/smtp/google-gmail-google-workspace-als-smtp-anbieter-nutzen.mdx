@@ -1,0 +1,99 @@
+---
+title: "Google / Gmail / Google Workspace als SMTP-Anbieter nutzen"
+description: "Diese Anleitung führt dich durch die Erstellung von App-Passwörtern mit der Bestätigung in zwei Schritten für die Gmail-SMTP-Integration."
+---
+
+Diese Anleitung führt dich durch die Erstellung von App-Passwörtern mit der Bestätigung in zwei Schritten für die Gmail-SMTP-Integration.
+
+**INHALTSVERZEICHNIS**
+
+- [Gmail-App-Passwörter erstellen](#gmail-app-passwoerter-erstellen)
+- [Gmail-SMTP-Einstellungen einrichten](#gmail-smtp-einstellungen-einrichten)
+- [FAQs](#faqs)
+
+---
+
+## Gmail-App-Passwörter erstellen
+
+Du kannst das App-Passwort in den Sicherheitseinstellungen deines Gmail-Kontos erstellen.
+
+- Öffne die Seite [**Sicherheit**](https://myaccount.google.com/security?hl=en).
+- Scrolle nach unten zum Bereich **So meldest du dich bei Google an**.
+
+Hinweis: Stelle sicher, dass die Bestätigung in zwei Schritten aktiviert ist. Ist sie deaktiviert, steht die Option für App-Passwörter nicht zur Verfügung.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855576/original/-6G31h3qyAtbd9pcTr7I3msVE6eJTocDvw.png?1788306724)
+
+- Klicke auf die Option **Bestätigung in zwei Schritten**.
+- Scrolle auf der nächsten Seite ganz nach unten und klicke auf **App-Passwörter**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023979619/original/yK9n-NDIs_5dB7hwaEmrwpv8RKH90UN2ig.png?1712235696)
+
+Gib in das Feld **App-Name** einen beliebigen Namen ein und klicke auf **Erstellen**.
+
+Kopiere das generierte App-Passwort. Du benötigst es im nächsten Schritt für deine E-Mail-Einstellungen.
+
+## Gmail-SMTP-Einstellungen einrichten
+
+- Gehe zu Einstellungen -> E-Mail-Dienste -> SMTP-Dienst.
+- Klicke auf „Dienst hinzufügen“ und wähle Gmail aus.
+
+  ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855577/original/3yeVcn79AoQwSNikcCQcyKaXaRSP-St_fg.png?1788306742)
+- Gib deine **Gmail-E-Mail-Adresse und das App-Passwort** ein. Speichere die Einstellungen.
+  ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023980612/original/DaZLsp5p0IYipl8QHqRwt6aaowtRzq54Cg.png?1712236400)
+
+---
+
+## FAQs
+
+### F: Welchen Vorteil hat die Verwendung eines App-Passworts für die Gmail-SMTP-Integration?
+
+A: Ein App-Passwort bietet zusätzliche Sicherheit und ermöglicht der Anwendung den Zugriff auf dein Gmail-Konto, ohne dass du jedes Mal dein Hauptpasswort eingeben musst.
+
+### F: Welche Bedeutung hat die Bestätigung in zwei Schritten für die Gmail-SMTP-Integration?
+
+A: Die Bestätigung in zwei Schritten schützt dein Konto zusätzlich. Google verlangt eine aktivierte Bestätigung in zwei Schritten, bevor App-Passwörter eingerichtet werden können.
+
+### F: Warum wird die Verwendung eines VPN empfohlen, wenn eine Verbindung zu Gmail-SMTP für Nutzer auf den Philippinen hergestellt wird?
+
+A: Ein VPN kann helfen, regionale Einschränkungen zu umgehen, und bietet zusätzliche Sicherheit beim Verbindungsaufbau zu Gmail-SMTP.
+
+### F: Kann ich dasselbe App-Passwort für mehrere Anwendungen nutzen?
+
+A: Nein. Google empfiehlt, für jede Anwendung ein eigenes App-Passwort zu erstellen, um die Sicherheit deines Kontos zu erhöhen.
+
+### F: Was kann ich tun, wenn die Option für die Bestätigung in zwei Schritten in meinem Google-Konto nicht angezeigt wird?
+
+A: Wenn die Option nicht angezeigt wird, ist die Funktion möglicherweise in den Google-Admin-Einstellungen deaktiviert. Wende dich an deinen Google-Workspace-Administrator, um sie aktivieren zu lassen.
+
+### F: Ich habe die Bestätigung in zwei Schritten aktiviert und ein App-Passwort erstellt, aber die Integration funktioniert trotzdem nicht. Was kann ich tun?
+
+A: Stelle sicher, dass du das App-Passwort bei der Einrichtung korrekt eingegeben hast. Wenn weiterhin Probleme auftreten, wende dich an den UmsatzAgent Support.
+
+### F: Kann ich mein normales Gmail-Passwort weiterhin verwenden, nachdem ich ein App-Passwort eingerichtet habe?
+
+A: Ja. Ein App-Passwort ersetzt dein normales Passwort nicht, sondern dient ausschließlich bestimmten Anwendungen für den Zugriff auf dein Gmail-Konto.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Gmail-SMTP keine Verbindung herstellt oder die Option **App-Passwörter** fehlt, überprüfe zuerst die Sicherheitseinstellungen deines Google-Kontos und die in der SMTP-Konfiguration eingegebenen Zugangsdaten.
+
+Prüfe Folgendes:
+
+- Die **Bestätigung in zwei Schritten** ist für das Google-Konto aktiviert.
+- Du bist im richtigen Gmail- oder Google-Workspace-Konto angemeldet.
+- Die Option **App-Passwörter** ist in den Sicherheitseinstellungen des Google-Kontos verfügbar.
+- Dein Google-Workspace-Administrator hat App-Passwörter nicht deaktiviert oder eingeschränkt.
+- Du hast ein neues App-Passwort für die SMTP-Verbindung generiert.
+- Du hast das **App-Passwort** eingegeben und nicht dein reguläres Gmail-Passwort.
+- Die im SMTP-Dienst eingegebene Gmail-Adresse stimmt mit dem Konto überein, für das das App-Passwort generiert wurde.
+- Das App-Passwort wurde ohne zusätzliche Leerzeichen kopiert.
+- Der SMTP-Dienst wurde nach der Eingabe der Zugangsdaten gespeichert.
+- Das App-Passwort wurde nicht widerrufen oder gelöscht.
+- Dein Netzwerk oder deine Organisation blockiert die Verbindung nicht.
+
+Wenn **App-Passwörter** nach Aktivierung der Bestätigung in zwei Schritten weiterhin nicht angezeigt wird, verhindern möglicherweise der Kontotyp oder Sicherheitsrichtlinien von Google Workspace die Nutzung. Kläre dies mit deinem Google-Workspace-Administrator, bevor du die Einrichtung erneut versuchst.
+
+Bleibt das Problem bestehen, notiere dir die zu verbindende Gmail-Adresse, den Kontotyp (privates Gmail- oder Google-Workspace-Konto), die Bestätigung über die aktivierte Bestätigung in zwei Schritten, die genaue Fehlermeldung sowie Screenshots der SMTP-Einstellungen (mit ausgeblendetem App-Passwort). Wende dich an den UmsatzAgent Support.

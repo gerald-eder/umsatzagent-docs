@@ -1,0 +1,269 @@
+---
+title: "Ruf - Bewertungsanfrage-Nachrichten anpassen (SMS/E-Mail)"
+description: "Mache es Kunden einfach, Bewertungen mit angepassten SMS- und E-Mail-Anfragen abzugeben. Dieser Artikel zeigt, wie du Bewertungsanfragen aktivierst,…"
+---
+
+Mache es Kunden einfach, Bewertungen mit angepassten SMS- und E-Mail-Anfragen abzugeben. Dieser Artikel zeigt, wie du Bewertungsanfragen aktivierst, Nachrichtenvorlagen bearbeitest, Zeitabstände und Wiederholungsversuche steuerst und deinen Bewertungslink festlegst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Bewertungsanfrage-Nachrichten?](#was-sind-bewertungsanfrage-nachrichten)
+- [Wichtigste Vorteile von Bewertungsanfrage-Nachrichten](#wichtigste-vorteile-von-bewertungsanfrage-nachrichten)
+- [Wo du Bewertungsanfragen senden kannst](#wo-du-bewertungsanfragen-senden-kannst)
+- [Bewertungslink (Balancing vs. benutzerdefinierter Link)](#bewertungslink-balancing-vs-benutzerdefinierter-link))
+- [Aktivierungs- und Intervall-Steuerung](#aktivierungs-und-intervall-steuerung)
+- [SMS-Anfragen](#sms-anfragen)
+  - [Aktivierungs- und Intervall-Steuerung](#aktivierungs-und-intervall-steuerung)
+  - [Eine SMS-Vorlage erstellen oder bearbeiten](#eine-sms-vorlage-erstellen-oder-bearbeiten)
+  - [Die Standard-Absendernummer auswählen](#die-standard-absendernummer-auswaehlen)
+- [E-Mail-Anfragen](#e-mail-anfragen)
+  - [Aktivierungs- und Intervall-Steuerung](#aktivierungs-und-intervall-steuerung)
+  - [Eine E-Mail-Vorlage erstellen oder importieren](#eine-e-mail-vorlage-erstellen-oder-importieren)
+  - [Die Standard-Absender-E-Mail auswählen](#die-standard-absender-e-mail-auswaehlen)
+- [Live- und Wiederholungsvorlagen auswählen (Sequenz)](#live-und-wiederholungsvorlagen-auswaehlen-sequenz))
+- [So richtest du Bewertungsanfrage-Nachrichten ein (Schritt für Schritt)](#so-richtest-du-bewertungsanfrage-nachrichten-ein-schritt-fuer-schritt))
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Verwandte Artikel](#verwandte-artikel)
+
+---
+
+## Was sind Bewertungsanfrage-Nachrichten?
+
+Bewertungsanfrage-Nachrichten automatisieren, wie du Kunden um öffentliche Bewertungen bittest. Das System kann nach dem Check-in personalisierte **SMS**- und **E-Mail**-Nachrichten senden, diese nach einem Zeitplan wiederholen, bis der Kunde auf den Bewertungslink klickt, und den Traffic über deinen **Bewertungslink** zum richtigen Bewertungsziel leiten.
+
+---
+
+## Wichtigste Vorteile von Bewertungsanfrage-Nachrichten
+
+Das Verständnis der Vorteile hilft dir, Anfragen so zu konfigurieren, dass sie zu deinen Unternehmenszielen passen.
+
+- **Markenkonsistenz:** Erstelle Vorlagen, die deinem Tonfall und deinem Branding über SMS und E-Mail hinweg entsprechen.
+- **Automatisierung:** Plane, wann die erste Anfrage gesendet wird und wie oft wiederholt werden soll, bis der Kunde klickt.
+- **Personalisierung:** Verwende Platzhalter wie Kontakt- und Standortvariablen für maßgeschneiderte Nachrichten.
+- **Flexibilität:** Leite Kunden zum Google Unternehmensprofil oder zu einem benutzerdefinierten Ziel; füge mehrere Links in E-Mails ein.
+- **Kontrolle:** Wähle, welche Vorlagen „Live“ sind und welche die einzelnen Wiederholungsversuche in deiner Sequenz steuern.
+
+---
+
+## Wo du Bewertungsanfragen senden kannst
+
+Sobald deine Vorlagen und Intervalle konfiguriert sind, kannst du Bewertungsanfragen an verschiedenen Stellen versenden. Nutze die Methode, die am besten zum Workflow deines Teams passt.
+
+- **Ruf → Anfragen:** Sende und verfolge Anfragen als Massenaktion oder einzeln.
+
+- **Kontaktdatensatz:** Öffne einen Kontakt und wähle **Bewertungsanfrage senden**.
+
+- **Workflows:** Verwende die Aktion **Bewertungsanfrage**, um den Versand basierend auf Triggern zu automatisieren (z. B. nach einer Änderung des Terminstatus).
+
+- **Kanäle:** SMS und E-Mail werden hier behandelt; **WhatsApp-Anfragen** sind unter **Ruf → Einstellungen → WhatsApp-Anfragen** verfügbar (bei Bedarf separat konfigurieren).
+
+---
+
+## Bewertungslink (Balancing vs. benutzerdefinierter Link)
+
+Der Bewertungslink ist die URL, die in deine Anfragen eingefügt wird. Du kannst dem System erlauben, Bewertungen über unterstützte Plattformen hinweg auszubalancieren (z. B. Google), oder dies mit einer einzelnen Zielseite über eine benutzerdefinierte URL überschreiben.
+
+**Hier zu finden:** **Ruf → Einstellungen → Bewertungslink**
+
+#### Aktivierungs- und Intervall-Steuerung
+
+- **Bewertungs-Balancing:** Aktiviere den Schalter, um den Bewertungs-Traffic automatisch auf konfigurierte Plattformen zu verteilen.
+
+- **Bewertungen auf Google erhalten:** Verbinde dein Google Unternehmensprofil (GBP), um Traffic auf deinen Google-Eintrag zu leiten.
+
+- **Benutzerdefinierter Link:** Wähle diese Option und füge eine bestimmte URL ein, wenn du alle Kunden auf eine einzelne Seite leiten möchtest.
+
+```
+Tipp: Wenn du einen benutzerdefinierten Link verwendest, stelle sicher, dass er sich direkt zu deinem Bewertungsformular öffnet. Wenn du Balancing verwendest, vergewissere dich, dass deine Integrationen verbunden sind.
+```
+
+---
+
+## SMS-Anfragen
+
+SMS-Anfragen sind schnell und persönlich. Nutze den Aktivierungsschalter, um mit dem Senden zu beginnen, lege fest, wann die erste SMS versendet wird, stelle das Wiederholungsintervall ein und erstelle Vorlagen, die deinen Bewertungslink und optional ein Bild enthalten.
+
+**Navigation:** **Ruf → Einstellungen → SMS-Anfragen**
+
+#### Aktivierungs- und Intervall-Steuerung
+
+- **SMS-Bewertungsanfragen aktivieren:** Schalte den Schalter oben rechts ein.
+- **Wann soll die SMS nach dem Check-in gesendet werden?:** Wähle, wann die erste SMS gesendet wird (z. B. Sofort).
+- **Bis zum Klick wiederholen alle:** Wähle ein Intervall (unterstützt **Benutzerdefiniert** mit Zahl + **Tage**).
+- **Maximale Wiederholungen:** Lege fest, wie viele Nachfassnachrichten gesendet werden können, wenn der Bewertungslink nicht geklickt wird.
+
+### Eine SMS-Vorlage erstellen oder bearbeiten
+
+1. Klicke auf **Neu erstellen** (oder auf **Bearbeiten** bei einer bestehenden Vorlage).
+2. Wähle **Von Grund auf neu erstellen** oder **Aus vorgefertigten Vorlagen auswählen**.
+
+   Füge im Builder einen **Vorlagennamen** hinzu. Aktiviere optional **Anfrage mit Bild** (oder füge eine Bild-URL hinzu).
+3. Verfasse deine Nachricht und füge den Bewertungslink-Platzhalter ein: {{reputation.review\_link}}.
+4. Klicke auf **Speichern**.
+
+```
+Kostenhinweis: Wenn du die Anfrage mit Bild aktivierst, wird die Nachricht möglicherweise als MMS gesendet und es können andere Mobilfunkgebühren anfallen. Erkundige dich bei deinem Anbieter.
+```
+
+### Die Standard-Absendernummer auswählen
+
+Verwende die Einstellung für den Standard-Absender, um die Telefonnummer für SMS-Bewertungsanfragen auszuwählen.
+
+1. Gehe zu **Ruf → Einstellungen → SMS-Anfragen**.
+2. Wähle die Telefonnummer aus, die du als Standard-Absender verwenden möchtest.
+3. Konfiguriere die restlichen Zeit-, Wiederholungs- und Vorlageneinstellungen.
+
+Die ausgewählte Nummer wird als Standard-Absender für SMS-Bewertungsanfragen verwendet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079287866/original/jnwY9adqBqlsJREieaBWWhidNXaKXNxxnw.png?1787693912)
+
+---
+
+## E-Mail-Anfragen
+
+E-Mail-Anfragen ermöglichen ein reichhaltigeres Branding, Bilder und mehrere Bewertungsziele. Aktiviere die Funktion, lege Timing und Wiederholungen fest und erstelle oder importiere Vorlagen im Drag-and-Drop-Editor.
+
+**Navigation:** **Ruf → Einstellungen → E-Mail-Anfragen**
+
+#### Aktivierungs- und Intervall-Steuerung
+
+- **E-Mail-Bewertungsanfragen aktivieren:** Schalte den Schalter oben rechts ein.
+- **Wann soll die E-Mail nach dem Check-in gesendet werden?:** Wähle die anfängliche Verzögerung (z. B. 1 Stunde).
+- **Bis zum Klick wiederholen alle:** Lege das Wiederholungsintervall fest (unterstützt **Benutzerdefiniert** mit Zahl + **Tage**).
+- **Maximale Wiederholungen:** Wähle, wie viele Nachfassnachrichten gesendet werden sollen.
+
+```
+Hinweis: „Nach dem Check-in“ bezieht sich darauf, wann die Aktion „Bewertungsanfrage senden“ ausgelöst wird – entweder manuell (aus einem Kontaktdatensatz oder unter Ruf → Anfragen) oder automatisch über einen Workflow mit der Aktion „Bewertungsanfrage“.
+Das hier ausgewählte Timing bestimmt, wie lange nach diesem Trigger die SMS gesendet wird.
+```
+
+### Eine E-Mail-Vorlage erstellen oder importieren
+
+1. Klicke auf **Neu erstellen** → **Neue Vorlage erstellen** oder **Aus Vorlagenbibliothek importieren**.
+2. Füge im E-Mail-Builder dein Branding und deine Inhalte hinzu.
+3. Ziehe das Element **Bewertungslink** in die E-Mail (oder konfiguriere den primären CTA-Button so, dass er den Bewertungslink verwendet).
+4. Speichere die Vorlage.
+
+### Die Standard-Absender-E-Mail auswählen
+
+Verwende die Standard-Absender-E-Mail, um die E-Mail-Adresse für E-Mail-Bewertungsanfragen auszuwählen.
+
+1. Gehe zu **Ruf → Einstellungen → E-Mail-Anfragen**.
+
+2. Wähle eine Adresse unter **Standard-Absender-E-Mail** aus.
+
+3. Konfiguriere die restlichen Zeit-, Wiederholungs- und Vorlageneinstellungen.
+
+Die ausgewählte Adresse wird als Standard-Absender für E-Mail-Bewertungsanfragen verwendet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079287916/original/JivKtPT0IEp_32i53Ewr_SdtlfI6yaia6Q.png?1787694055)
+
+---
+
+## Live- und Wiederholungsvorlagen auswählen (Sequenz)
+
+Das Aktivieren von SMS-/E-Mail-Anfragen reicht nicht aus; du musst dem System auch mitteilen, welche Vorlage für den ersten Versand und für jeden Wiederholungsversuch verwendet werden soll. Diese Auswahl bestimmt genau, was Kunden bei jedem Schritt erhalten.
+
+- **Für E-Mail:** Klicke auf **E-Mail-Vorlagen festlegen**, wähle die **Live**-Vorlage aus, weise jedem **Wiederholungs**-Slot eine Vorlage zu und klicke auf **Speichern**.
+
+- **Für SMS:** Klicke auf **SMS-Vorlagen festlegen**, wähle deine Live-/Wiederholungsvorlagen aus und speichere.
+
+---
+
+## So richtest du Bewertungsanfrage-Nachrichten ein (Schritt für Schritt)
+
+#### Schritt 1: Bewertungslink festlegen
+
+Klicke in der linken Seitenleiste auf **Ruf** und öffne dann oben den Reiter **Einstellungen**. Aktiviere unter **Bewertungslink** entweder den Schalter **Bewertungs-Balancing** oder wähle das Optionsfeld **Benutzerdefinierter Link** und füge deine URL unter **Richte deinen benutzerdefinierten Link ein** ein.
+
+#### Schritt 2: SMS-Anfragen aktivieren
+
+Öffne **Ruf → Einstellungen → SMS-Anfragen** und lege den Schalter oben rechts um, um automatisierte Bewertungs-SMS zu aktivieren.
+
+Lege fest, **Wann nach dem Check-in gesendet werden soll**, wähle das **Wiederholungsintervall** und die **Maximalen Wiederholungen** und nutze dann **Neu erstellen** oder **SMS-Vorlagen festlegen**, um die unten gezeigten Nachrichten zu verwalten.
+
+#### Schritt 3: SMS-Vorlage hinzufügen
+
+Klicke auf **Neu erstellen**, um eine neue SMS-Bewertungsanfrage zu erstellen, oder nutze das **Stift-Symbol (Bearbeiten)**, um die ausgewählte Vorlage zu ändern. Vorlagen, die du hier erstellst oder bearbeitest, erscheinen in der Liste und können später der Live- oder Wiederholungssequenz zugewiesen werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058937902/original/JkADEj50izgPa70Pve3V3O8pGUFYEZ-B_Q.png?1763725571)
+
+#### Schritt 4: Vorlagentyp wählen
+
+Nachdem du auf **Neu erstellen** geklickt hast, wähle aus, wie du beginnen möchtest: **Von Grund auf neu erstellen** oder **Aus vorgefertigten Vorlagen auswählen**. Klicke unter deiner bevorzugten Option auf **Auswählen** – starte mit einer leeren Vorlage für volle Kontrolle oder nutze eine bewährte Vorlage, um schneller voranzukommen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938037/original/6ufdGZ9VGsp7Sd_gom24_CQn2vBlfoyEPg.png?1763725586)
+
+#### Schritt 5: Vorgefertigte Vorlage auswählen
+
+Wähle aus der **SMS-Vorlagenbibliothek** eine vorgefertigte Option wie **Bewertung anfragen** (beachte die sichtbare Zeichenanzahl als Referenz). Klicke auf **Vorlage bearbeiten**, um sie zur Anpassung zu öffnen. Dort kannst du den Text anpassen und den Platzhalter {{reputation.review\_link}} beibehalten.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938158/original/2p9Gcm_rwylwfHoQt5GN06fRSC6AMuOFQg.png?1763725602)
+
+#### Schritt 6: SMS-Vorlage anpassen
+
+Gib einen **Vorlagennamen** ein, aktiviere optional **Anfrage mit Bild**, um ein Bild hochzuladen oder zu verlinken, und schreibe deine Nachricht unter Verwendung von {{reputation.review\_link}}. Überprüfe die Live-Smartphone-Vorschau auf der rechten Seite und klicke dann auf **Speichern**, um die Vorlage zu sichern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938272/original/0QeAG2m0_i5c6CJNuN-LoK2y27GC4heRVA.png?1763725619)
+
+#### Schritt 7: E-Mail-Anfragen aktivieren
+
+Öffne **Ruf → Einstellungen → E-Mail-Anfragen** und schalte den Schalter oben rechts ein, um automatisierte Bewertungs-E-Mails zu aktivieren. Verwende die Einstellungen, um festzulegen, wann nach dem Check-in gesendet werden soll, das Wiederholungsintervall bis zum Klick und die maximalen Wiederholungen. Verwalte Vorlagen anschließend über **E-Mail-Vorlagen festlegen** oder **Neu erstellen**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938389/original/wwV6X0pG3zkFFBmww9-QoknrHLcSDpY3xQ.png?1763725650)
+
+#### Schritt 8: E-Mail-Sequenz zuweisen
+
+Klicke auf **E-Mail-Vorlagen festlegen**, um über die Dropdown-Menüs auf der linken Seite auszuwählen, welche Vorlage zuerst gesendet wird (**Live**) und welche die einzelnen **Wiederholungs**-Slots füllen. Überprüfe oder bearbeite bei Bedarf die Betreffzeilen auf der rechten Seite und klicke dann auf **Speichern**, um die Sequenz anzuwenden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938399/original/4BPED3NN1OybzIvDJvd-5dbY709-4ozMsA.png?1763725667)
+
+#### Schritt 8: E-Mail erstellen/importieren
+
+Nutze **Neu erstellen** (Dropdown) für **Neue Vorlage erstellen** oder **Aus Vorlagenbibliothek importieren** für deine E-Mail-Anfrage. Um ein bestehendes Design zu bearbeiten, klicke auf das **⋯**-Menü auf einer Vorlagenkarte und wähle **Vorlagen bearbeiten**; du wirst diese später über **E-Mail-Vorlagen festlegen** zuweisen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938411/original/Pn961HFj6HEg6tsZzG_RCNNeaB1IOamUmw.png?1763725685)
+
+#### Schritt 9: E-Mail-Inhalt gestalten
+
+Verwende den Drag-and-Drop-E-Mail-Builder, um Text, Bilder und Buttons aus dem Panel **Elemente** auf der linken Seite hinzuzufügen. Ziehe das Element **Bewertungslink** (unten links) in dein Layout, damit der CTA deine konfigurierte Bewertungs-URL öffnet, und klicke dann oben rechts auf **Speichern**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058938476/original/vyrtAQYYaTlWHTHlJSSZdcqI83g8lMQCYg.png?1763725704)
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Was passiert, nachdem ein Kunde auf den Bewertungslink geklickt hat?**
+
+Der Wiederholungszeitplan stoppt für diesen Kanal, sobald der Klick erkannt wird, wodurch weitere Wiederholungsversuche für diesen Kontakt verhindert werden.
+
+**F: Was ist der Unterschied zwischen Bewertungs-Balancing und einem benutzerdefinierten Link?**
+
+**Balancing** verteilt den Traffic auf verknüpfte Bewertungsportale (z. B. Google). Ein **benutzerdefinierter Link** leitet alle Personen zu einem einzelnen Ziel weiter, das du auswählst.
+
+**F: Welchen Platzhalter sollte ich in SMS für die Bewertungs-URL verwenden?**
+
+Verwende {{reputation.review\_link}}. Dieser nutzt automatisch den Bewertungslink, den du unter **Ruf → Einstellungen → Bewertungslink** konfiguriert hast.
+
+**F: Können E-Mails mehr als ein Bewertungsziel enthalten?**
+
+Ja. Im E-Mail-Builder kannst du das Element **Bewertungslink** verwenden und in einigen Vorlagen mehrere Bewertungs-Buttons einrichten, sofern dies von deinem Design unterstützt wird.
+
+**F: Wie viele Wiederholungsversuche sollte ich einstellen?**
+
+Die meisten Teams beginnen mit 2–3 Wiederholungen. Die richtige Anzahl hängt von der Interaktion, Branchenstandards und Compliance-Vorgaben ab.
+
+**F: Ändert das Hinzufügen eines Bildes zu einer SMS die Kosten?**
+
+Die Nachricht wird möglicherweise als MMS gesendet, wofür andere Gebühren des Anbieters anfallen können. Prüfe die Tarife deines Nachrichtenanbieters.
+
+**F: Muss mein Google Unternehmensprofil verbunden sein?**
+
+Nur, wenn du Bewertungen über Balancing an Google weiterleiten möchtest. Wenn du eine andere Plattform oder deine eigene Seite bevorzugst, richte stattdessen einen **benutzerdefinierten Link** ein.
+
+**F: Kann ich Anfragen ohne manuellen Versand automatisieren?**
+
+Ja. Füge die Aktion **Bewertungsanfrage** in einen Workflow ein, um den Versand automatisch auszulösen (z. B. nach dem „Check-in“).

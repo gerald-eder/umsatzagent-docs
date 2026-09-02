@@ -1,0 +1,141 @@
+---
+title: "Apple Pay und Google Pay verwenden"
+description: "Die Akzeptanz von Apple Pay und Google Pay in deinem Bestellformular ist eine hervorragende Möglichkeit, das Kauferlebnis für deine Kunden zu verbessern.…"
+---
+
+Die Akzeptanz von Apple Pay und Google Pay in deinem Bestellformular ist eine hervorragende Möglichkeit, das Kauferlebnis für deine Kunden zu verbessern. Diese Zahlungsmethoden bieten Komfort, Sicherheit und Geschwindigkeit, mit denen herkömmliche Zahlungsmethoden nicht mithalten können.
+
+**In diesem Artikel:**
+
+[**Wie verwende ich Apple Pay und Google Pay im CRM?**](#wie-verwende-ich-apple-pay-und-google-pay-im-crm)
+
+[**Wie aktiviere ich Apple Pay und Google Pay?**](#wie-aktiviere-ich-apple-pay-und-google-pay)
+
+[**Fehlerbehebung für Apple Pay**](#fehlerbehebung-fuer-apple-pay)
+
+**[Fehlerbehebung für Google Pay](#fehlerbehebung-fuer-google-pay)**
+
+[**FAQ**](#faq)
+
+[Was ändert sich bei der Berichterstattung über Transaktionen und Bestellungen?](#was-aendert-sich-bei-der-berichterstattung-ueber-transaktionen-und-bestellungen)
+
+[Gibt es einen Unterschied bei den Stripe-Preisen für Transaktionen per Kreditkarte und Apple/Google Pay?](#gibt-es-einen-unterschied-bei-den-stripe-preisen-fuer-transaktionen-per-kreditka)
+
+[Ich nutze PayPal als Zahlungsanbieter anstelle von Stripe. Kann ich meinen Kunden Apple Pay und Google Pay anbieten?](#ich-nutze-paypal-als-zahlungsanbieter-anstelle-von-stripe-kann-ich-meinen-kunden)
+
+[Kann ich auch andere Zahlungsmethoden wie Bank-Weiterleitungen und ACH aktivieren?](#kann-ich-auch-andere-zahlungsmethoden-wie-bank-weiterleitungen-und-ach-aktiviere)
+
+[Wie deaktiviere ich die Option für andere Zahlungsmethoden, nachdem ich sie einmal aktiviert habe?](#wie-deaktiviere-ich-die-option-fuer-andere-zahlungsmethoden-nachdem-ich-sie-einm)
+
+---
+
+## Wie verwende ich Apple Pay und Google Pay im CRM?
+
+Mit Stripe kannst du Apple Pay und Google Pay als Zahlungsoptionen unter dem Reiter „**Andere**“ in einstufigen und zweistufigen Bestellformularen hinzufügen. Upsells funktionieren ebenfalls mit Apple Pay/Google Pay.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48277366188/original/OO5YrPXeUOQwj7A3NQQzIDP5lYywxqV_5A.png?1674561290)
+
+Die Aktivierung dieser Option ermöglicht es, Apple Pay/Google Pay als Zahlungsmethode zusammen mit der Standardmethode Kreditkarte und PayPal bereitzustellen (**PayPal wird nur angezeigt, wenn PayPal unter Zahlungen ➝ Integrationen aktiviert ist**).
+
+Deine Kunden sehen Apple Pay **und** Google Pay basierend auf ihrem geografischen Standort und dem verwendeten Webbrowser. Sie können die Methoden nutzen, wenn in ihrem Google- oder Apple-Konto eine Zahlungsmethode hinterlegt ist. Nur wenn beide Bedingungen erfüllt sind, wird Google Pay/Apple Pay neben der Standard-Kreditkartenoption sichtbar.
+
+**[Länder und Regionen, die Apple Pay unterstützen](https://support.apple.com/en-in/HT207957)**
+**[Länder, die Google Pay unterstützen](https://support.google.com/googlepay/answer/12429287)**
+
+**Derzeit unterstützte Browser sind Chrome Desktop, Chrome Android, macOS Safari, iOS Safari und Microsoft Edge für Windows.**
+
+**Bitte beachten:**
+
+```
+Diese Funktion funktioniert nur mit Version 2 Funnels.
+```
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48277329145/original/UPM5velcmHCidwIdB9Ez9cn5I1kD5Pxgug.png?1674554607)
+
+**Ansicht des Apple Pay-Symbols in einem Bestellformular nach der Aktivierung.**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48277326720/original/uFIwdnFaRw8MmRa0kpubzevUpdERrMA9Lg.png?1674554181)
+
+**Ansicht beim Klick auf Apple Pay in einem Bestellformular.**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48277329435/original/o1LUc47E74s0iOn45RxEdH_0cmu7RMQEBA.png?1674554675)
+
+**Ansicht des Google Pay-Symbols in einem Bestellformular nach der Aktivierung.**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48277326885/original/9cLUklr_P0FYfdrCSGKRvVTWFhXnxALRWQ.png?1674554213)**
+
+**Ansicht beim Klick auf Google Pay in einem Bestellformular.**
+
+**Bitte beachten:**
+
+```
+Es kann vorkommen, dass der Browser nicht aktuell ist, Apple Pay und Google Pay im Land des Kunden nicht unterstützt werden oder keine passende Kreditkarte im Apple-/Google-Konto hinterlegt ist. In diesem Fall erscheint unter dem Reiter „Andere Zahlungsmethoden“ keine Option für Apple Pay oder Google Pay. Der Kunde sieht jedoch weiterhin die Kreditkartenoption zur Zahlung, ohne den Reiter erneut wechseln zu müssen.
+```
+
+---
+
+## Wie aktiviere ich Apple Pay und Google Pay?
+
+Die Hauptvoraussetzung ist die Nutzung von Stripe Connect unter **Zahlungen ➝ Integrationen**. Wenn du Stripe über APIs angebunden hast, nutze bitte **Stripe Connect**, um diese Funktion zu verwenden. Sobald dein Stripe-Konto unter **Zahlungen > Integrationen** verbunden ist, steht ein Schalter bereit, um Apple Pay und Google Pay auf den Bestellformularen zu aktivieren.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48274089434/original/x3IlIe6V135JyQ3Ds6pdtTys2QK9Wj2vag.png?1673272755)**
+
+---
+
+## Fehlerbehebung für Apple Pay
+
+1. Der Schalter zur Aktivierung von Apple Pay und Google Pay muss eingeschaltet sein, während Stripe verbunden ist.
+
+2. [Stelle sicher, dass Apple Pay in deinem Land verfügbar ist](https://stripe.com/docs/connect/payment-method-available-countries#apple-pay)
+
+3. Stelle sicher, dass die Domain, auf der der Funnel gehostet wird, bei Stripe registriert ist. Dies ist eine zusätzliche Anforderung für Apple Pay und sollte idealerweise automatisch geschehen, sobald der Schalter aktiviert wird.
+
+ a. Öffne dein Stripe-Dashboard [unter dieser URL](https://dashboard.stripe.com/settings/payments/apple_pay) und prüfe, ob die Domain im Bereich „Web-Domains“ aufgeführt ist.
+
+ b. Wenn die Domain dort nicht aufgeführt ist, kannst du sie manuell hinzufügen, indem du auf „Neue Domain hinzufügen“ klickst. Dies dient nur als schnelle Übergangslösung. Wende dich an den UmsatzAgent Support, falls die Registrierung nach Aktivieren des Schalters nicht automatisch erfolgt.
+
+4. Wenn die Domain als registriert angezeigt wird, stelle sicher, dass die Domain-Verknüpfungsdatei für diese Domain gehostet wird. Das bedeutet, dass beim Aufruf von [https://example.com/.well-known/apple-developer-merchantid-domain-association if](https://example.com/.well-known/apple-developer-merchantid-domain-associationif) eine Datei heruntergeladen werden sollte, wenn du dich unter https://example.com registrierst.
+[Klicke hier für weitere Informationen dazu.](https://stripe.com/docs/stripe-js/elements/payment-request-button?client=html#verifying-your-domain-with-apple-pay)
+
+5. Der Browser oder das Gerät erfüllt folgende Anforderungen:
+
+Der Endkunde nutzt Safari im Web, ab iOS 10 oder macOS Sierra.
+
+[Liste kompatibler Geräte mit Apple Pay](https://support.apple.com/en-us/HT208531)
+[Liste teilnehmender Banken bei Apple Pay](https://support.apple.com/en-us/HT204916)
+
+---
+
+## Fehlerbehebung für Google Pay
+
+1. Der Schalter zur Aktivierung von Apple Pay und Google Pay muss eingeschaltet sein, während Stripe verbunden ist.
+
+2. Stelle sicher, dass Google Pay [in deinem Land verfügbar ist](https://stripe.com/docs/connect/payment-method-available-countries#google-pay).
+
+3. Der Kunde nutzt Google Chrome oder Safari.
+
+4. Der Kunde hat eine gültige Karte bei Google Pay hinterlegt.
+
+---
+
+## FAQ
+
+### Was ändert sich bei der Berichterstattung über Transaktionen und Bestellungen?
+
+Es gibt keine Änderung bei der Berichterstattung oder Nachverfolgung von Transaktionen und Bestellungen. Stripe behandelt Zahlungen über Apple Pay und Google Pay wie Kartenzahlungen. Alle über Apple Pay oder Google Pay getätigten Bestellungen werden auf der Seite für Bestellungen/Transaktionen/Abos aufgeführt.
+
+### Gibt es einen Unterschied bei den Stripe-Preisen für Transaktionen per Kreditkarte und Apple/Google Pay?
+
+Es gibt keinen Preisunterschied zwischen Kreditkartentransaktionen und Apple Pay/Google Pay-Transaktionen. Sie werden wie reguläre Kreditkartentransaktionen abgerechnet. [Erfahre hier mehr über Apple Pay.](https://stripe.com/docs/apple-pay)
+
+### Ich nutze PayPal als Zahlungsanbieter anstelle von Stripe. Kann ich meinen Kunden Apple Pay und Google Pay anbieten?
+
+Nein, Apple Pay und Google Pay können ausschließlich über Stripe Connect in Version 2 Funnels als Zahlungsmethoden bereitgestellt werden.
+
+### Kann ich auch andere Zahlungsmethoden wie Bank-Weiterleitungen und ACH aktivieren?
+
+Derzeit können über Stripe nur Apple Pay und Google Pay aktiviert werden. Die Unterstützung weiterer Zahlungsmethoden folgt in Q2/Q3 2023.
+
+### Wie deaktiviere ich die Option für andere Zahlungsmethoden, nachdem ich sie einmal aktiviert habe?
+
+Deaktiviere den Schalter für Apple Pay und Google Pay auf der Stripe-Verbindungskarte unter „Integrationen“, um den Reiter „Andere Zahlungsmethoden“ im Bestellformular auszublenden.

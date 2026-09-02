@@ -1,0 +1,202 @@
+---
+title: "Workflow-Einstellungen – Übersicht"
+description: "Dieser Artikel bietet eine vollständige Übersicht über alle Optionen im Reiter „Einstellungen“ des Workflow-Builders. Erfahre, wie du den Umgang mit…"
+---
+
+Dieser Artikel bietet eine vollständige Übersicht über alle Optionen im Reiter „Einstellungen“ des Workflow-Builders. Erfahre, wie du den Umgang mit Kontakten, Versandzeiten, Absenderangaben und mehr konfigurierst, damit deine Workflows genau wie gewünscht ablaufen.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Workflow-Einstellungen?](#was-sind-workflow-einstellungen)
+- [Wichtigste Vorteile der Workflow-Einstellungen](#wichtigste-vorteile-der-workflow-einstellungen)
+- [So greifst du auf die Workflow-Einstellungen zu](#so-greifst-du-auf-die-workflow-einstellungen-zu)
+- [Kontakteinstellungen](#kontakteinstellungen)
+  - [Wiedereintritt erlauben](#wiedereintritt-erlauben)
+  - [Mehrere Chancen erlauben](#mehrere-chancen-erlauben)
+  - [Bei Antwort stoppen](#bei-antwort-stoppen)
+- [Kommunikationseinstellungen](#kommunikationseinstellungen)
+  - [Zeitzone](#zeitzone)
+  - [Zeitfenster](#zeitfenster)
+  - [Absenderangaben](#absenderangaben)
+  - [Konversationen – Als gelesen markieren](#konversationen-als-gelesen-markieren)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was sind Workflow-Einstellungen?
+
+Workflow-Einstellungen sind die zentralen Steuerungen für einen einzelnen Workflow. Anstatt Regeln für jede einzelne Aktion festzulegen, gelten diese Einstellungen für den gesamten Workflow und bestimmen dessen grundlegendes Verhalten von Anfang bis Ende. Sie steuern, wie Kontakte eintreten und wieder eintreten, wann Nachrichten gesendet werden dürfen und was passiert, wenn ein Kontakt antwortet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056948938/original/f2KNE021rYlrwwCzgKlBeOIjq9SpVfM2xA.png?1761595889)
+
+---
+
+## Wichtigste Vorteile der Workflow-Einstellungen
+
+Die richtige Konfiguration der Workflow-Einstellungen ist entscheidend für effektive Automatisierungen. Mit diesen Optionen passt du das Verhalten des Workflows an deine Geschäftslogik an und verbesserst die Erfahrung deiner Kontakte.
+
+- **Kontaktablauf steuern**: Lege fest, ob Kontakte mehrfach in einen Workflow eintreten dürfen, um doppelte Nachrichtenabfolgen zu vermeiden.
+- **Zeitplanung personalisieren**: Sende Nachrichten zum passenden Zeitpunkt für jeden Kontakt, indem du dessen lokale Zeitzone anstelle einer festen Zeitzone nutzt.
+- **Geschäftszeiten festlegen**: Stelle sicher, dass Mitteilungen nur an bestimmten Tagen und zu bestimmten Uhrzeiten gesendet werden, um Kontaktzeiten zu respektieren und Interaktionsraten zu erhöhen.
+- **Konversationsverwaltung automatisieren**: Stoppe Nurturing-Sequenzen automatisch, sobald ein Kontakt antwortet, damit Teammitglieder nahtlos das Gespräch übernehmen können.
+- **Einheitliches Auftreten sichern**: Lege Standard-Absendernamen, E-Mail-Adressen und Telefonnummern für alle Mitteilungen im Workflow fest, um einen konsistenten Markenauftritt zu gewährleisten.
+
+---
+
+## So greifst du auf die Workflow-Einstellungen zu
+
+Alle zentralen Einstellungen des Workflows sind in einem Reiter im Workflow-Builder gebündelt.
+
+1. Navigiere in deinem Dashboard zum Bereich **Automatisierung**.
+
+2. Öffne einen bestehenden Workflow oder erstelle einen neuen.
+
+3. Klicke im Workflow-Builder oben auf den Reiter **Einstellungen**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079835822/original/Wf5las-2O5Uhk467HSW3zqMq0o8XQR9c-Q.png?1788279779)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056948915/original/BRx-lbYY-XDDuCVm4MB1b6NPnZVFcyxPwQ.png?1761595778)
+
+---
+
+## Kontakteinstellungen
+
+Diese Einstellungen steuern, wie Kontakte und zugehörige Daten wie Chancen im Workflow verarbeitet werden. Sie legen fest, wer eintreten darf, wie oft ein Eintritt möglich ist und welche Aktionen zum Entfernen aus dem Workflow führen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056949138/original/nxX3bXnH3EzfS8666CQ9IAZG5fD5oUsx2g.png?1761596041)
+
+---
+
+### Wiedereintritt erlauben
+
+Dieser Schalter bestimmt, ob ein Kontakt mehr als einmal in diesen Workflow eintreten kann.
+
+- **Aktiviert** (blau): Ein Kontakt kann erneut in den Workflow eintreten, nachdem er ihn vollständig durchlaufen hat oder manuell entfernt wurde. Dies ist nützlich für wiederkehrende Prozesse wie Terminerinnerungen oder Follow-ups nach einem Kauf. Ein Kontakt kann nicht erneut eintreten, solange er im Workflow noch aktiv ist.
+- **Deaktiviert** (grau): Ein Kontakt kann diesen Workflow nur ein einziges Mal betreten und durchlaufen.
+
+**Wichtige Ausnahme**: Workflows mit einem triggerbasierten **Termin** oder einer **Rechnung** erlauben Kontakten immer den mehrfachen Eintritt (pro Termin oder Rechnung), unabhängig davon, ob diese Einstellung aktiviert oder deaktiviert ist. So wird sichergestellt, dass jeder neue Termin oder jede neue Rechnung die Automatisierung zuverlässig auslöst.
+
+---
+
+### Mehrere Chancen erlauben
+
+Dieser Schalter ist wichtig für Workflows, die durch chancenbasierte Aktionen ausgelöst werden (z. B. „Pipeline-Phase geändert“).
+
+- **Aktiviert** (blau): Wenn ein Kontakt mehrere Chancen hat, kann er für jede Chance als separate Instanz in den Workflow eintreten. So kannst du für jede Chance eines Kontakts einen eigenen Automatisierungsablauf ausführen.
+- **Deaktiviert** (grau): Der Kontakt tritt nur für die erste Chance in den Workflow ein, die die Trigger-Kriterien erfüllt.
+
+**Standardverhalten**: Bei neuen Workflows ist diese Einstellung standardmäßig aktiviert. Bei Workflows, die vor der Veröffentlichung dieser Funktion erstellt wurden, ist sie standardmäßig deaktiviert.
+
+**Verhalten bei Aktualisierungen**: Werden die Details einer Chance aktualisiert, während sie im Workflow aktiv ist, startet der Workflow nicht neu. Er läuft ab dem aktuellen Schritt mit den aktualisierten Informationen weiter.
+
+---
+
+### Bei Antwort stoppen
+
+Mit dieser Option entfernst du Kontakte automatisch aus einem Workflow, sobald sie auf eine Nachricht reagieren. Dies verhindert, dass automatisierte Nachrichten versendet werden, nachdem ein Kontakt bereits geantwortet hat und eine persönliche Rückmeldung erwartet.
+
+- **Aktiviert** (blau): Der Workflow wird für einen Kontakt beendet, sobald dieser auf eine aus diesem spezifischen Workflow gesendete Nachricht antwortet. Dies gilt für alle über den Workflow verwalteten Kommunikationskanäle.
+- **Deaktiviert** (grau): Der Kontakt verbleibt im Workflow, bis dieser regulär endet.
+
+**Mailbox-Erkennung**: Standardmäßig nutzt das System eine Erkennung, um festzustellen, ob ein ausgehender Anruf von einer Person oder einer Mailbox entgegengenommen wurde. Dadurch wird verhindert, dass eine Mailbox fälschlicherweise „Bei Antwort stoppen“ auslöst. Diese Erkennung verzögert den Verbindungsaufbau minimal. In der Workflow-Aktion **„Anruf“** findest du die erweiterte Einstellung **„Mailbox-Erkennung deaktivieren“**, die diese Verzögerung entfernt; eine Mailbox wird dann jedoch als Antwort gewertet und beendet den Workflow. In diesem Fall kannst du das Anruf-Timeout auf unter 20 Sekunden setzen, damit der Anruf nicht auf der Mailbox landet.
+
+Hier findest du eine Anleitung, wie du „Bei Antwort stoppen“ und „Mailbox-Erkennung deaktivieren“ kombinierst.
+
+---
+
+## Kommunikationseinstellungen
+
+Diese Einstellungen steuern den Versandzeitpunkt, die Absenderidentität und die Konversationseigenschaften von Nachrichten, die aus dem Workflow gesendet werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056949928/original/qJnosolbsLkoAxcV0kaefuMW-DyZ3HPmRw.png?1761597900)
+
+---
+
+### Zeitzone
+
+Dieses Dropdown-Menü bestimmt die Zeitzone für alle zeitabhängigen Schritte im Workflow, wie z. B. „Warten“-Aktionen oder ein „Zeitfenster“.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056950286/original/gaPNyTMXgGf0sJ6nmdgCRaOXtYRKp0q4Dg.png?1761598845)
+
+- **Konto-Zeitzone**: Alle zeitbasierten Aktionen werden basierend auf der in den Einstellungen hinterlegten Zeitzone ausgeführt.
+- **Kontakt-Zeitzone**: Aktionen werden basierend auf der individuellen Zeitzone des jeweiligen Kontakts ausgeführt. Dies eignet sich für überregionale Kampagnen, da Nachrichten zur passenden lokalen Uhrzeit ankommen (z. B. um 09:00 Uhr am Wohnort des Kontakts). Ist im Profil eines Kontakts keine Zeitzone hinterlegt, wird als Ausweichlösung die Konto-Zeitzone verwendet.
+
+**Verlauf**: Im Workflow-Verlauf siehst du für jede Aktion den Vermerk, ob sie in der Konto-Zeitzone oder der Kontakt-Zeitzone ausgeführt wurde.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155056950281/original/DTQSI9e4i7HRlh1M0RJN_4_RN_VmgbOzHA.png?1761598819)
+
+---
+
+### Zeitfenster
+
+Diese Funktion schränkt ein, wann Kommunikationsaktionen (wie das Senden von SMS oder E-Mails) ausgeführt werden dürfen. Fällt eine geplante Aktion außerhalb des definierten Fensters, wird sie pausiert und zum nächsten verfügbaren Zeitpunkt fortgesetzt.
+
+Aktiviere den Schalter **Bestimmte Uhrzeit**, um das Fenster einzurichten.
+
+- Startzeit: Lege den Beginn des Ausführungsfensters fest (z. B. 09:00 Uhr).
+- Endzeit: Lege das Ende des Ausführungsfensters fest (z. B. 17:00 Uhr).
+- Tage einbeziehen: Wähle die Wochentage aus, an denen das Zeitfenster aktiv sein soll.
+
+---
+
+### Absenderangaben
+
+In diesem Bereich legst du die Standard-Absenderdaten für alle aus diesem Workflow versendeten Nachrichten fest. Dadurch musst du diese Angaben nicht in jeder einzelnen E-Mail- oder SMS-Aktion erneut eintragen.
+
+- **Absendername**: Der standardmäßige Name, der bei E-Mails als Absender angezeigt wird.
+- **Absender-E-Mail**: Die standardmäßige E-Mail-Adresse, die als Absender verwendet wird.
+- **Absender-Telefonnummer**: Ein Dropdown-Menü zur Auswahl der Standard-Telefonnummer für den SMS-Versand.
+
+---
+
+### Konversationen – Als gelesen markieren
+
+Dieser Bereich enthält Einstellungen dazu, wie Interaktionen aus diesem Workflow im Hauptmenü unter „Konversationen“ dargestellt werden.
+
+Wenn ein Workflow eine Nachricht sendet, wird die entsprechende Konversation standardmäßig als „ungelesen“ markiert, um Aufmerksamkeit darauf zu lenken. Wenn du diesen Schalter aktivierst, wird jede Konversation, die dieser Workflow berührt, automatisch als „gelesen“ markiert. Dies ist hilfreich bei rein administrativen Workflows oder reinen Informationsnachrichten, die keine manuelle Prüfung erfordern.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ein Kontakt mit einem neuen Termin trotzdem in einen Terminerinnerungs-Workflow eintreten, wenn „Wiedereintritt erlauben“ deaktiviert ist?**
+
+A: Ja. Workflows mit einem terminbasierten Trigger bilden eine Ausnahme und erlauben einem Kontakt immer den Wiedereintritt für jeden neuen Termin, unabhängig von der Einstellung „Wiedereintritt erlauben“. Das Gleiche gilt für rechnungsbasierte Trigger.
+
+**F: Was passiert, wenn ich „Kontakt-Zeitzone“ wähle, im Profil des Kontakts aber keine Zeitzone hinterlegt ist?**
+
+A: Das System nutzt in diesem Fall standardmäßig die Konto-Zeitzone. Der Workflow bricht nicht ab, sondern greift auf diese Ausweichzeitzone zurück.
+
+**F: Betrifft das „Zeitfenster“ alle Workflow-Aktionen?**
+
+A: Das Zeitfenster betrifft in erster Linie Kommunikationsaktionen wie den Versand von E-Mails, SMS und Anrufe. Interne Aktionen wie das Hinzufügen eines Tags, das Aktualisieren eines Feldes oder das Erstellen einer Chance werden davon nicht beeinflusst.
+
+**F: Erhält ein Kontakt zwei separate E-Mail-Reihen, wenn er zwei Chancen hat und „Mehrere Chancen erlauben“ aktiv ist?**
+
+A: Ja. Wenn „Mehrere Chancen erlauben“ aktiviert ist, startet jede Chance, die die Trigger-Kriterien erfüllt, einen neuen, unabhängigen Durchlauf im Workflow. Dadurch kann der Kontakt Mitteilungen zu jeder seiner Chancen separat erhalten.
+
+**F: Kann ich unterschiedliche Zeitfenster für verschiedene Wochentage festlegen?**
+
+A: Zurzeit gilt das Zeitfenster einheitlich für alle ausgewählten Wochentage. Unterschiedliche Zeitfenster für verschiedene Tage innerhalb desselben Workflows sind nicht möglich.
+
+**F: Was passiert, wenn ich die Konto-Zeitzone ändere, während ein Workflow aktiv läuft?**
+
+A: Änderungen an der Konto-Zeitzone haben keine Auswirkungen auf Kontakte, die sich bereits in einem aktiven Workflow-Durchlauf befinden. Die Änderung gilt nur für neue Eintritte in diese Workflows.
+
+**F: Kann ich für verschiedene Schritte innerhalb eines Workflows unterschiedliche Zeitzonen festlegen?**
+
+A: Nein, die Zeitzoneneinstellung gilt für den gesamten Workflow und nicht für einzelne Schritte darin.
+
+**F: Kann ich für verschiedene Aktionen innerhalb desselben Workflows unterschiedliche Absender-E-Mail-Adressen verwenden?**
+
+A: Ja, du kannst die Standard-Absenderadresse überschreiben, indem du in den einzelnen E-Mail-Aktionen im Workflow einen anderen Absendernamen und eine andere Absender-E-Mail-Adresse angibst.
+
+**F: Beendet „Bei Antwort stoppen“ den Workflow für alle Kontakte, sobald ein Kontakt antwortet?**
+
+A: Nein, „Bei Antwort stoppen“ beendet den Workflow nur für den spezifischen Kontakt, der geantwortet hat. Andere Kontakte im Workflow sind davon nicht betroffen.
+
+**F: Kann ich auswählen, welche Nachrichtenarten mit der Einstellung „Als gelesen markieren“ als gelesen gekennzeichnet werden?**
+
+A: Nein, „Als gelesen markieren“ gilt für alle Arten ausgehender automatisierter Mitteilungen des Workflows, einschließlich E-Mails, SMS, Anrufen und Mailbox-Nachrichten.

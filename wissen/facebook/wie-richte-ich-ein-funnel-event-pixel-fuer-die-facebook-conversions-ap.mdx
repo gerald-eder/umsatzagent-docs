@@ -1,0 +1,167 @@
+---
+title: "Wie richte ich ein Funnel-Event-Pixel für die Facebook Conversions-API ein?"
+description: "Die Facebook Conversions-API (oder CAPI) unterstützt Unternehmen dabei, personalisierte Werbeerlebnisse für Zielgruppen bereitzustellen und gleichzeitig…"
+---
+
+Die Facebook Conversions-API (oder CAPI) unterstützt Unternehmen dabei, personalisierte Werbeerlebnisse für Zielgruppen bereitzustellen und gleichzeitig den Datenschutz zu wahren. Dieses Tool überträgt Web-Events direkt von den jeweiligen Servern an Facebook. Wenn du ein Facebook-Pixel nutzt, um Events für deine Werbeanzeigen zu erfassen, füge den Pixel-Code zu deinem Funnel und den Funnel-Schritten hinzu.
+
+#### In diesem Artikel:
+
+#### [Wie richte ich ein FB CAPI (Conversions-API) Funnel-Event ein?](#wie-richte-ich-ein-fb-capi-conversions-api-funnel-event-ein)-Funnel-Event?)
+
+#### [Schritt 1: Ein FB-Pixel erstellen](#schritt-1-ein-fb-pixel-erstellen)
+
+#### [Schritt 2: Pixel-Code in deinen Funnel / deine Website einfügen](#schritt-2-pixel-code-in-deinen-funnel-deine-website-einfuegen)
+
+#### [Schritt 3: Einen Facebook Conversions-API-Workflow erstellen](#schritt-3-einen-facebook-conversions-api-workflow-erstellen)
+
+---
+
+## Wie richte ich ein FB CAPI (Conversions-API) Funnel-Event ein?
+
+### Schritt 1: Ein FB-Pixel erstellen
+
+1. Öffne den [Facebook Business Manager (auch Meta Business Suite)](http://business.facebook.com) > Navigiere links zum Reiter **[Events Manager](https://www.facebook.com/events_manager2/)**.
+2. Stelle sicher, dass du mit dem richtigen Werbekonto verbunden bist und alle erforderlichen Zugriffsrechte für die FB-Seite besitzt.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284070737/original/AFb9bOXlqhbRRlui5ZOjvh_Ry7MYiUeFaQ.png?1677521079)
+3. Klicke in der linken Seitenleiste auf **Datenquellen verbinden![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284518426/original/vpJQuXlQ-fkLtQlkuMXpv-MYw6ymdVS3Ug.png?1677678141)**.
+4. Wähle **Web** in den angezeigten Optionen und klicke auf **Verbinden**.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289557644/original/GTaZyRFdyaCPDbCENvgkjsLNIbPtuwv6jQ.png?1679940769)
+5. Wenn bereits Pixel vorhanden sind, wähle ein vorhandenes Pixel aus oder erstelle ein neues. Klicke auf **Neues Pixel erstellen** oder wähle ein bestehendes Pixel aus der Liste aus. Klicke auf **Weiter**, sobald die Pixel-Details hinzugefügt wurden.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284072690/original/qgMYOqAYudCL0t2rtYthWAkL4dYkgKtGTw.png?1677521908)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289558054/original/bJeFGIeh-ZoGTd2Tb-3fON8lBJOKZVrzmw.png?1679940937)
+6. Gib die URL der Website / des Funnels ein, auf der du den Pixel-Code einfügen möchtest.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289558739/original/PAF__5OhEXarHQx5f1VRZQ0TZlm-vIbsgw.png?1679941181)
+
+Gib die Domain des Funnels / der Website ein, auf der du später den Pixel-Code einfügst, und klicke auf **Prüfen**.
+
+Wenn deine Domain für diesen Vorgang geeignet ist, erscheint ein grünes Häkchen im Domain-Feld.
+
+Sobald das grüne Häkchen angezeigt wird, klicke auf **Weiter** (dieser Button ersetzt den Button **Prüfen**).
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289812085/original/1OsNUUNWTNoFjdevx11Mf7oDoz2ox2GMkA.png?1680030198)
+
+        7. Im Pop-up wirst du aufgefordert: **Wähle, wie du deine Website verbinden möchtest.**
+
+Wähle die erste Option: **Conversions-API und Meta-Pixel**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289559747/original/6mnITv2Y1gAEl16BTbAvzJC_bg-RNhP2Kw.png?1679941596)
+8. Wähle bei der Frage zur Einrichtung der Conversions-API die Option **Manuell einrichten**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289560757/original/J9yG5J56U7xVPuNoTACRDlxOWCnLYzOgdg.png?1679941990)
+9. Du gelangst zum Reiter **Übersicht** für die manuelle Implementierung. Lies die Anweisungen durch und klicke auf **Weiter**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289561059/original/vwU_j-bFr506Ty7spDAS3Ri5k9mpIuVwvw.png?1679942107)**
+
+10. Du gelangst zum Reiter **Events auswählen**. Wähle im Dropdown-Menü die passende Branche aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289561652/original/YrzW4_QmhbNTe6BAGbJW-Heg1DQTy1IztQ.png?1679942343)
+Wähle alle Events aus, die du an Facebook senden möchtest, und klicke auf **Weiter**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289562013/original/6ID5tq4lZiMfYoVObP_1T5r7jdNZ1j4jEw.png?1679942506)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289562298/original/AhW4mJSwW61aUiEiX1tojQrWdOoawChg7A.png?1679942600)
+
+11. Im Reiter **Parameter auswählen** sind bereits einige **Event-Detailparameter** vorab ausgewählt. Aktiviere das Kontrollkästchen **Event-ID**, wie in den Best Practices rechts empfohlen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289563694/original/gYor1B88KWEK2N6OXl5r8te5YZXFNuRzJA.png?1679943161)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289563994/original/Xs4YCd541AsuyT5VWPpzh4R-YDCQlb6pJQ.png?1679943287)
+
+12. Unter **Kundeninformationsparameter** ist **Client-User-Agent** bereits markiert. Aktiviere zusätzlich **IP-Adresse des Clients, Vorname, Client-ID, E-Mail, Unternehmens-ID und Nachname**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289565394/original/W38f_IZGBu8E7B4yoOrESs3UyMy1ueMbFQ.png?1679943902)
+
+**Hinweis:**
+
+```
+Wähle diese Optionen für jedes einzelne Event aus, das du zu diesem Pixel hinzugefügt hast.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289565549/original/OO2BucB00euiijotEiNyXDFei0w7AswpwQ.png?1679943996)
+```
+
+13. Überprüfe die Einrichtung und kontrolliere alle ausgewählten Parameter für jedes Event noch einmal. Klicke anschließend auf **Weiter**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289565822/original/ldzrxwho1aJQfbX49uqcqbQQkyX6N5HbQA.png?1679944116)**
+14. Klicke im nächsten Schritt auf **Pixel-Einrichtung fortsetzen**.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289566092/original/cueYbcPRa5eCXTyVRThR_YohSFiotB3Rig.png?1679944253)**
+
+15. Wähle im Pop-up zur Verbindung der Website-Aktivität die Option **Code manuell installieren**.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289566456/original/Cad-ElQHFg-5k9NH7iuaehA6Sjt52lb5lQ.png?1679944400)
+
+16. Klicke auf **Code kopieren**, um den Pixel-Code zu kopieren.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289568071/original/IBt_B9L9qEi7EGsxwxXwT1xGKKtniy_XMg.png?1679945070)
+
+### Schritt 2: Pixel-Code in deinen Funnel / deine Website einfügen
+
+17. Lass diesen Browser-Tab geöffnet und wechsle zu UmsatzAgent. ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289570698/original/Axo_7JB7aYqMu05xVCmbyL3huyMqf8KK3g.png?1679946215)
+
+18. Navigiere in der linken Seitenleiste zu **Seiten** und dann zu **Funnels** oder **Websites** (je nachdem, wo die Seite erstellt wurde, die mit der Domain aus deiner Pixel-Einrichtung verknüpft ist).
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289571188/original/N9MFo0vI6O68mcQgkUIlKOsCk9ONZh8hUg.png?1679946454)
+
+19. Klicke bei der gewünschten Seite auf **Seite bearbeiten** (vorzugsweise **In neuem Tab bearbeiten**), um den Funnel-Builder zu öffnen.**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289576432/original/hiSciufhwIJ7PCKZ-sS2vB5l1R1rtakQ-Q.png?1679948282)**
+20. Gehe im Builder auf **Einstellungen > Tracking-Code**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289576389/original/m9CQWd5rnOZKzlO66XBHbbeU8lXQxwjCeA.png?1679948253)
+
+21. Füge den Code aus Schritt 16 in das Feld **Header-Code** ein und klicke auf **Ja, speichern**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289576950/original/XwZ8gxwLDHkQmjV4i9XdU5Xht3frw5kvqQ.png?1679948418)**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289577098/original/Z98Zvxl_5PH_pqzvwm2NVUXw4qVqdzTf0A.png?1679948497)
+22. Speichere den Funnel ab.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289577442/original/YI__7PAwCBY81DjMbv1zmh9IYq-5NuLLCA.png?1679948655)**
+
+### Schritt 3: Einen Facebook Conversions-API-Workflow erstellen
+
+23. Schließe den Funnel-Builder.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289695452/original/XOr7LdP7cl--hxOUM7joPfJL5oOUcbWwaQ.png?1680001352)
+24. Navigiere zu **Automatisierung > Workflows > Workflow erstellen**.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289696108/original/gOPAJEuBrOyw763_BKspl9mwls66TyWgkg.png?1680001464)**
+
+25. Klicke auf **Von Grund auf neu** und dann auf **Neu erstellen**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289704585/original/ZCSNobw18WNpGfxIWg-4oTkrNq6Q6-ETIA.png?1680003324)
+
+26. Klicke auf **Neuen Workflow-Trigger hinzufügen![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289709868/original/fs68pGT6FcNZWDVh9bP4aO4klx31e5qGIg.png?1680004514)**
+
+**Hinweis:**
+
+```
+Verwende den Trigger-Schritt "Facebook Lead Form Submitted", um diesen Workflow auszulösen.
+
+Voraussetzungen für Facebook CAPI – Funnel-Events:
+
+1. Gehe in UmsatzAgent auf Einstellungen > Integrationen und prüfe, ob das Facebook-Konto mit Administratorrechten verbunden ist. Stelle sicher, dass deine FB-Unternehmensseite integriert ist und das richtige FB-Lead-Formular in deinem Konto zugeordnet ist.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543223/original/n0p0uk19dTqvfrWV5W8Mdih89QFX0KJQjw.png?1678462195) 
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543401/original/iXrLt7Xp2xR1eJl1IT7d6vHsI8ZnYeRBgw.png?1678462227)2. Unter "Facebook Form Field Mapping" muss das Formular korrekt zugeordnet und der Status aktiviert sein. Die Zuordnung der Facebook-Formulare befindet sich unter Einstellungen > Integrationen > Facebook Form Field Mapping. Hier werden alle unterstützten benutzerdefinierten Felder (einschließlich Einzelauswahl- und Mehrfachauswahlfeldern) aufgeführt.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48291755087/original/XNqj9GjeUVUjXdi92XWTuqanUx9VMsPoAw.gif?1681045875)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543798/original/TN-M497JjRU1QI1H-NwXVq1r1vWxdBHPWw.png?1678462304)
+```
+
+Sobald du den Workflow-Trigger ausgewählt hast:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289721353/original/zKEiDic2LbITy4OTkp4EPLNqftPC3E3wTg.png?1680007109)
+Wenn der Workflow nur durch ein bestimmtes Facebook-Formular ausgelöst werden soll, wähle **Filter hinzufügen > Im Formular > Facebook-Lead-Formular auswählen**. Du musst keine Filter hinzufügen, außer der Trigger soll nur bei bestimmten Übermittlungen auslösen.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289720956/original/UzW2lQxRnD89kC50mNmvcm9dPEdFVg8oFQ.png?1680007015)**
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289721039/original/80BvC38WqaO_PBTT3uTrESPHZJxKFFg-Dw.png?1680007039)**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289721255/original/RvXSQg-836i6SRM2N8JNGoQ_c0CLSPNU4A.png?1680007077)
+Klicke unten auf **Trigger speichern**.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289721481/original/BSdWqGzCUtGVpypAWQHpx_tYoy8r52Ys1Q.png?1680007145)
+
+27. Klicke auf **Erste Aktion hinzufügen**. Suche nach der Aktion **Facebook Conversion API** und wähle sie aus:
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289711718/original/BlBprv4vsy-ln4pK4HQT4k0J1Egn-Ah2LA.png?1680004959)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289711847/original/fWCnbLpgrJ5UiMkE_Yt1QlvofWNsDO5zsw.png?1680004986)
+
+28. Konfiguriere die Aktion **Facebook Conversion API**. Bei Bedarf kannst du unter **Name der Aktion** einen Namen vergeben. Wähle im Dropdown-Menü **Event-Typ** die Option **Funnel-Event**.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289712358/original/QZE0sWnE-pbrOLgAMkyomQTWuz1BiIsGkQ.png?1680005113)**
+
+29. Wechsle zum Tab mit dem **[Events Manager](https://www.facebook.com/events_manager2/)**, in dem du das Pixel erstellt hast. Suche nach dem Namen des Pixels. ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289714422/original/2b7gcqusnexxCMS4WB7cI6k4wM4Ihy_RHg.png?1680005546)
+30. Klicke auf **Einrichtung abschließen**.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289714754/original/cve6wtT3L80nD_bgdm-BNtTWwsvBwh8sPQ.png?1680005606)31. Klicke im Reiter **Conversions-API verwenden** auf **Erste Schritte**.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289722071/original/ZUjryQ9uZpPbZykijHiBMPthfg369JXcpw.png?1680007278)**
+32. Klicke auf **Zugriffstoken generieren** und kopiere das generierte Zugriffstoken.**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289722332/original/iNgpHSOF_fNtQpVBadEh5XJXnB3wYOeVng.png?1680007361)**
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289722674/original/rEIgSM6qrptfSee-X6aq9No2EspxhQdJ-A.png?1680007454)**
+
+33. Füge das Zugriffstoken in das Feld **Access Token** der Facebook Conversion API-Aktion ein.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289723076/original/tfa8RTENoclPwsMDruB1EYnISHaeFoC9dA.png?1680007580)
+
+34. Gehe zurück zum Events Manager, scrolle nach unten und klicke unter **Implementierung abschließen** auf **Fertigstellen**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289724559/original/QES1YU8T20V7OJcENNJviPFgu-2J1e6bZQ.png?1680007855)
+
+35. Gehe zu **Einstellungen**, kopiere die **Pixel-ID** und wechsle zurück zu deinem Workflow.  
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289725706/original/iAepBwSr9GL5uStEWT2DKZyEZVWAVClyCA.png?1680008064)**
+
+36. Füge die Pixel-ID in das Feld **Pixel ID** der Facebook Conversion API-Aktion ein.**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289726791/original/jJEtjQkW_8i4KUi2XjoHcefesHLy-_buBQ.png?1680008289)
+
+Hinweis:
+
+```
+Gib beim Lead-Wert einen geschätzten Wert wie 1000 oder 2000 an, um den Wert jedes Leads in deiner Pipeline zu bestimmen.
+```**
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289806309/original/hxd2uFEgwAUCvwnUuG3T-EQydiOboNJUGA.png?1680027972)**
+
+Klicke abschließend auf **Aktion speichern** und danach auf **Speichern** und **Veröffentlichen**, um den Workflow zu aktivieren.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289806384/original/97Ca2J6ee77OfgVtCKIGJmsZfKPzg5Ga8Q.png?1680027999)

@@ -1,0 +1,205 @@
+---
+title: "Kontakt-Attributions-Tracking & Einblicke in Lead-Quellen"
+description: "Zu verstehen, woher deine Leads stammen, ist entscheidend, um die Marketingleistung zu verbessern und fundierte Entscheidungen zu treffen. Die Attribution…"
+---
+
+Zu verstehen, woher deine Leads stammen, ist entscheidend, um die Marketingleistung zu verbessern und fundierte Entscheidungen zu treffen. Die Attribution hilft dir zu erkennen, welche Kanäle Ergebnisse liefern, damit du dich auf das konzentrieren kannst, was funktioniert, und optimieren kannst, was nicht funktioniert.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist Attribution?](#was-ist-attribution)
+- [Erste vs. letzte Attribution](#erste-vs-letzte-attribution)
+- [Wo Attributionsdaten zu finden sind](#wo-attributionsdaten-zu-finden-sind)
+- [Arten von Attributionsquellen](#arten-von-attributionsquellen)
+- [Welche Aktionen Attribution erfassen](#welche-aktionen-attribution-erfassen)
+- [Wie Attribution ermittelt wird](#wie-attribution-ermittelt-wird)
+- [Einrichtung des Anzeigen-Trackings (Übersicht)](#einrichtung-des-anzeigen-trackings-uebersicht))
+- [Fehlerbehebung bei Attributionsproblemen](#fehlerbehebung-bei-attributionsproblemen)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du weitere Hilfe?](#brauchst-du-weitere-hilfe)
+
+---
+
+## Was ist Attribution?
+
+Die Attribution erfasst die Quelle jedes Kontakts basierend darauf, wie er zum ersten und zum letzten Mal mit deinem Unternehmen interagiert hat. Dadurch kannst du:
+
+- Die leistungsstärksten Marketingkanäle identifizieren
+- Die Effektivität von Kampagnen messen
+- Wachstumschancen entdecken
+- Conversion-Strategien verbessern
+
+---
+
+## Erste vs. letzte Attribution
+
+Jeder Kontakt speichert zwei Arten von Attributionsdaten, um dir einen vollständigen Überblick über seine Customer Journey zu geben.
+
+- **Erste Attribution:** Die erste Interaktion eines Kontakts mit deinem Unternehmen (z. B. das Absenden eines Formulars)
+- **Letzte Attribution:** Die jüngste Interaktion vor der Conversion (z. B. ein Kauf)
+
+### Hauptunterschied
+
+- Die erste Attribution bleibt unverändert
+- Die letzte Attribution aktualisiert sich mit jeder neuen Interaktion
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155068955754/original/R9fPnBkAvXPO39Matcupvvi28Dq-fj-Khg.png?1775956198)
+
+Dieses Beispiel zeigt, wie Attributionsdetails beim Bewegen des Mauszeigers über eine Quelle angezeigt werden, einschließlich Tracking-Daten auf Sitzungsebene wie IDs und Kanalklassifizierung.
+
+---
+
+## Wo Attributionsdaten zu finden sind
+
+Attributionsdaten werden direkt im jeweiligen Kontaktdatensatz gespeichert, was die Überprüfung und Analyse von Lead-Quellen erleichtert.
+
+So findest du sie:
+
+- Öffne einen Kontaktdatensatz
+- Navigiere zum Aktivitätsbereich
+- Sieh dir die Attributionsdetails im Bereich unten rechts an
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155068955757/original/1W8q4g8zrIQdLQhfQmhGfg9LfyJYrAc16w.png?1775956223)
+
+Diese Ansicht zeigt, wo sowohl die erste als auch die letzte Attribution im Kontaktprofil erscheinen, einschließlich der Aktivitäts-Timeline und der Details zur Sitzungsquelle.
+
+Diese Ansicht zeigt sowohl die erste als auch die letzte Attributionsquelle im Kontaktprofil an.
+
+Bewege den Mauszeiger über die Attributionsquelle, um zusätzliche Tracking-Details wie Sitzungsdaten anzuzeigen.
+
+---
+
+## Arten von Attributionsquellen
+
+Kontakte werden basierend auf der Art und Weise, wie sie in dein System gelangt sind, bestimmten Quellen zugeordnet.
+
+### Kostenpflichtige Kanäle
+
+- Bezahlte Suche (Paid Search): Traffic über Suchanzeigen
+- Bezahlte soziale Netzwerke (Paid Social): Traffic über bezahlte Social-Media-Kampagnen
+
+### Organische Kanäle
+
+- Organische Suche: Traffic über Suchmaschinen (nicht bezahlt)
+- Soziale Medien: Traffic über Social-Media-Plattformen
+
+### Andere Traffic-Quellen
+
+- Direkter Traffic: Keine identifizierbare Quelle (z. B. direkt eingegebene URL)
+- Verweise (Referrals): Traffic von externen Websites
+- Sonstige: Anrufe, SMS, E-Mails, Messaging-Plattformen
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155068955759/original/kDOTGTwKTLfp_MkkXg58alLy0NjgGhezmw.png?1775956273)
+
+Dieses Beispiel zeigt, wie ein Kontakt dargestellt wird, der direktem Traffic zugeordnet ist, was bedeutet, dass weder eine verweisende Quelle noch Tracking-Parameter erkannt wurden.
+
+### Systembasierte Quellen
+
+- CRM-Benutzeroberfläche: Manuell erstellte Kontakte
+- Drittanbieter: Kontakte aus Integrationen oder externen Tools
+
+---
+
+## Welche Aktionen Attribution erfassen
+
+Attribution wird erfasst, wenn ein Kontakt während einer Sitzung bestimmte Aktionen durchführt:
+
+- Absenden eines Formulars oder einer Umfrage
+- Buchung über einen Kalender
+- Chat-Interaktion (nach Übermittlung von Kontaktdaten)
+- Absenden eines Bestellformulars
+
+### Wichtig
+
+Attribution wird nur erfasst, wenn diese Aktionen auf getrackten Seiten oder Formularen stattfinden.
+
+---
+
+## Wie Attribution ermittelt wird
+
+Die Attribution wird anhand eines strukturierten Regelsystems vergeben, basierend auf:
+
+- URL-Parametern (UTMs)
+- Klick-IDs
+- Verweisenden Domains
+
+### Vereinfachte Attributionslogik
+
+- Kennungen bezahlter Suche → Bezahlte Suche (Paid Search)
+- Kennungen bezahlter sozialer Netzwerke → Bezahlte soziale Netzwerke (Paid Social)
+- Verweis von Social-Media-Plattform → Soziale Medien
+- Verweis von Suchmaschine → Organische Suche
+- Externe Website → Verweis (Referral)
+- Keine Quelldaten → Direkter Traffic
+- Messaging oder Kommunikation → Sonstige
+- Manuelle Erstellung → CRM-Benutzeroberfläche
+- Integrations-Tools → Drittanbieter
+
+---
+
+## Einrichtung des Anzeigen-Trackings (Übersicht)
+
+Um bezahlte Kampagnen präzise zu tracken, ist ein korrektes URL-Tagging erforderlich.
+
+### Wichtige Anforderungen
+
+- Verwende einheitliche Tracking-Parameter
+- Stelle sicher, dass die Werte exakt übereinstimmen (Groß-/Kleinschreibung beachten)
+- Wende das Tracking auf die URLs der Landingpages an
+
+Dies stellt sicher, dass Attributionsdaten korrekt erfasst und der richtigen Quelle zugeordnet werden.
+
+---
+
+## Fehlerbehebung bei Attributionsproblemen
+
+Wenn Attributionsdaten fehlen oder fehlerhaft sind, überprüfe Folgendes:
+
+### 1. URL-Formatierung prüfen
+
+- Entferne überflüssige Leerzeichen oder Tippfehler
+- Stelle sicher, dass Parameter korrekt formatiert sind
+
+### 2. Nutzer auf derselben Seite halten
+
+- Die Attribution wird nur erfasst, wenn das Absenden auf derselben Seite erfolgt
+- Vermeide es, Nutzer vor dem Absenden des Formulars weiterzuleiten
+
+### 3. Eigene Änderungen vermeiden
+
+- Verändere Standard-Tracking-Formate nicht
+- Änderungen können das Attributionstracking unterbrechen
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum fehlt die Attribution bei einigen Kontakten?**
+
+Die Attribution wird möglicherweise nicht erfasst, wenn die erforderliche Aktion nicht auf einer getrackten Seite durchgeführt wurde.
+
+**F: Kann sich die Attribution im Laufe der Zeit ändern?**
+
+Nur die letzte Attribution wird aktualisiert. Die erste Attribution bleibt unverändert.
+
+**F: Was bedeutet „Direkter Traffic“?**
+
+Das bedeutet, dass für diesen Besuch keine identifizierbare Quelle erkannt wurde.
+
+**F: Warum wird die Attribution als „Sonstige“ angezeigt?**
+
+Dies umfasst in der Regel Kommunikationskanäle wie Anrufe, SMS oder Nachrichten.
+
+**F: Kann ich Attributionen aus externen Tools erfassen?**
+
+Ja, aber diese Kontakte werden unter Drittanbieter-Quellen kategorisiert.
+
+---
+
+## Brauchst du weitere Hilfe?
+
+Wenn du Hilfe beim Verständnis der Attribution oder bei der Verbesserung der Tracking-Genauigkeit benötigst, öffne das Hilfe-Center in deinem Dashboard oder wende dich an den UmsatzAgent Support.
+
+##

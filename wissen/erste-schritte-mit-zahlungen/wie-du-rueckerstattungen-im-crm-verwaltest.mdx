@@ -1,0 +1,158 @@
+---
+title: "Wie du Rückerstattungen im CRM verwaltest"
+description: "Mit der Rückerstattungsfunktion kannst du vollständige oder teilweise Rückerstattungen für Transaktionen durchführen, die über verschiedene…"
+---
+
+Mit der Rückerstattungsfunktion kannst du vollständige oder teilweise Rückerstattungen für Transaktionen durchführen, die über verschiedene Zahlungsanbieter wie Stripe, Authorize.net, NMI und PayPal abgewickelt wurden. Sie unterstützt Rückerstattungen für Google Pay, Apple Pay und Kartenzahlungen und bietet eine bequeme Möglichkeit, Rückerstattungen über eine einzige Plattform zu verwalten.
+
+#### In diesem Artikel:
+
+#### [Was ist die Rückerstattungsfunktion?](#was-ist-die-rueckerstattungsfunktion)
+
+#### [Welche nützlichen Anwendungsfälle gibt es?](#welche-nuetzlichen-anwendungsfaelle-gibt-es)
+
+#### [Wie nutze ich die Rückerstattungsfunktion?](#wie-nutze-ich-die-rueckerstattungsfunktion)
+
+#### [Unterstützte Zahlungsanbieter](#unterstuetzte-zahlungsanbieter)
+
+#### [Schritte zum Durchführen einer Rückerstattung:](#schritte-zum-durchfuehren-einer-rueckerstattung)
+
+#### [Vollständige Rückerstattung](#vollstaendige-rueckerstattung)
+
+#### [Teilweise Rückerstattung](#teilweise-rueckerstattung)
+
+#### [Anwendungsfälle für Teilrückerstattungen:](#anwendungsfaelle-fuer-teilrueckerstattungen)
+
+#### [FAQs](#faqs)
+
+#### [Wo werden die rückerstatteten Transaktionen erfasst?](#wo-werden-die-rueckerstatteten-transaktionen-erfasst)
+
+#### [Ich kann mit Authorize.net keine Rückerstattungen durchführen; es erscheint der Fehler „The referenced transaction does not meet the criteria for issuing a credit“](#ich-kann-mit-authorize-net-keine-rueckerstattungen-durchfuehren-es-erscheint-der)
+
+#### [Kann ich mehrere Teilrückerstattungen für eine einzelne Transaktion durchführen?](#kann-ich-mehrere-teilrueckerstattungen-fuer-eine-einzelne-transaktion-durchfuehr)
+
+#### [Werden Google-Pay- und Apple-Pay-Transaktionen für Rückerstattungen unterstützt?](#werden-google-pay-und-apple-pay-transaktionen-fuer-rueckerstattungen-unterstuetz)
+
+#### [Wie lange dauert es, bis eine Rückerstattung auf dem Konto des Kunden sichtbar ist?](#wie-lange-dauert-es-bis-eine-rueckerstattung-auf-dem-konto-des-kunden-sichtbar-i)
+
+#### [Gibt es ein Limit für die Anzahl der Rückerstattungen, die ich täglich durchführen kann?](#gibt-es-ein-limit-fuer-die-anzahl-der-rueckerstattungen-die-ich-taeglich-durchfu)
+
+#### [Gibt es spezielle Benutzerberechtigungen für Rückerstattungen? Ich möchte einigen meiner Nutzer nicht erlauben, Rückerstattungen durchzuführen.](#gibt-es-spezielle-benutzerberechtigungen-fuer-rueckerstattungen-ich-moechte-eini)
+
+---
+
+## Was ist die Rückerstattungsfunktion?
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.loom.com/embed/dd77d2ae6fda45aa8c8308fc1d986098"
+  title="Video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+Die Rückerstattungsfunktion ist ein praktisches Werkzeug in UmsatzAgent, mit dem du Rückerstattungen für Transaktionen über verschiedene Zahlungsanbieter wie Stripe, Authorize.net, NMI und PayPal verwalten kannst. Sie unterstützt verschiedene Zahlungsmethoden, darunter Google Pay, Apple Pay und Kartenzahlungen. Mit dieser Funktion kannst du:
+
+- Vollständige oder teilweise Rückerstattungen für Transaktionen durchführen und so flexibel mit Kundenrückerstattungen umgehen.
+- Erfolgreiche und fehlgeschlagene Rückerstattungsversuche auf der Seite mit den Transaktionsdetails nachverfolgen, um den Rückerstattungsverlauf und die Beträge für bestimmte Transaktionen im Blick zu behalten.
+- Rückerstattungen für verschiedene Zahlungsanbieter und -methoden zentral über eine Plattform verwalten und so den manuellen Aufwand reduzieren.
+
+**Bitte beachten:**
+
+```
+Die Funktion unterstützt derzeit noch keine benutzerspezifischen Berechtigungen für das Durchführen von Rückerstattungen. Dies ist für die Zukunft geplant.
+```
+
+##
+
+### Welche nützlichen Anwendungsfälle gibt es?
+
+Die Rückerstattungsfunktion kann in verschiedenen Situationen hilfreich sein:
+
+- **Lösen von Kundenbeschwerden:** Wenn Kunden mit einem Produkt oder einer Dienstleistung unzufrieden sind, kannst du Rückerstattungen schnell und effizient durchführen.
+- **Korrektur von Abrechnungsfehlern:** Wenn einem Kunden fälschlicherweise oder mehrfach ein Betrag berechnet wurde, kannst du umgehend eine Rückerstattung veranlassen.
+- **Bearbeiten von Bestellstornierungen:** Storniert ein Kunde eine Bestellung oder Dienstleistung, führst du die erforderlichen Rückerstattungen zügig durch.
+- **Verwalten von Rückgaben und Umtauschen:** Wenn Kunden Produkte zurückgeben oder umtauschen möchten, kannst du den ursprünglichen Kaufbetrag erstatten und eine neue Transaktion für den Ersatzartikel anlegen.
+- **Gewähren von Rabatten und Aktionen:** Du kannst Teilrückerstattungen veranlassen, falls beim Kauf ein Rabatt oder Aktionsangebot nicht korrekt berücksichtigt wurde.
+
+---
+
+## Wie nutze ich die Rückerstattungsfunktion?
+
+### Unterstützte Zahlungsanbieter
+
+Die Rückerstattungsaktion ist für alle Zahlungsanbieter (Stripe, Authorize.net, NMI und PayPal) verfügbar.
+
+Derzeit gibt es keine Möglichkeit, nachfolgende wiederkehrende Transaktionen aus Abos direkt auf diese Weise zu erstatten.
+
+### Schritte zum Durchführen einer Rückerstattung:
+
+Gehe zu **Zahlungen > Transaktionen >** klicke auf die drei Punkte neben der Zahlung, die du erstatten möchtest > klicke dann auf **Rückerstattung.**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294481697/original/41j5gL2qSwbPRpOAAdMAFPbQ8larK1Hu_w.png?1682491291)**
+
+### Vollständige Rückerstattung
+
+Wenn du eine vollständige Rückerstattung vornehmen möchtest, wird der Gesamtbetrag der Transaktion in diesem Fenster automatisch ausgefüllt:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294483195/original/K-oPdFTLYfYW0VKJQhm41H8D2ZfNVbIhsg.png?1682491847)
+
+### Teilweise Rückerstattung
+
+Du kannst den vorausgefüllten Betrag auf einen beliebigen Betrag unterhalb des Gesamtbetrags anpassen, wenn du eine Teilrückerstattung veranlassen möchtest.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294484510/original/M6D5m-WO0tc8HiOhBKdP13XbJGWbWe-qPA.png?1682492260)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294484543/original/Q_ZAOTpcgNHUrNjxMpt9dndeiwebjW0H2w.png?1682492274)
+
+**Bitte beachten:**
+
+```
+Alle Angaben im Notizfeld dienen deinen eigenen Unterlagen und werden in den Rückerstattungsdetails der jeweiligen Transaktion in der Spalte „Notizen“ angezeigt. ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294484586/original/Ilq1RRzeRcvcjypgQmp8aCW0r9c7TgwF4Q.png?1682492295)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294484252/original/4ptlNfcFsbJmTkA96EalyAH-b4fuOSL6VQ.png?1682492170)
+```
+
+#### Anwendungsfälle für Teilrückerstattungen:
+
+Die Teilrückerstattungsfunktion kann in verschiedenen Szenarien nützlich sein:
+
+- **Preiskorrekturen:** Wurde einem Kunden ein falscher Preis berechnet, kannst du die Differenz zwischen dem falschen und dem korrekten Betrag erstatten.
+- **Nachträgliche Rabatte:** Wenn einem Kunden nach Abschluss der Transaktion ein bestimmter Rabatt oder eine Aktion gewährt werden soll, kann eine Teilrückerstattung veranlasst werden.
+- **Kompromisslösungen bei Beschwerden:** Ist ein Kunde nicht vollständig zufrieden und ihr einigt euch auf einen Kompromiss, kann eine Teilrückerstattung die vereinbarte Einigung abbilden.
+- **Teilrücksendungen:** Sendet ein Kunde nur einen Teil einer Bestellung zurück, erstattest du den Wert der zurückgesendeten Artikel, ohne den Rest der Bestellung zu beeinflussen.
+- **Entschädigung für beschädigte oder fehlende Artikel:** Erhält ein Kunde eine Lieferung mit beschädigten oder fehlenden Artikeln, kannst du eine Teilrückerstattung als Entschädigung leisten.
+- **Erstattung von Versandkosten:** Bei Versandproblemen oder Verzögerungen kannst du die Versandkosten aus Kulanz erstatten.
+
+---
+
+## FAQs
+
+### Wo werden die rückerstatteten Transaktionen erfasst?
+
+Alle erfolgreichen und fehlgeschlagenen Rückerstattungsversuche werden auf der Seite mit den Transaktionsdetails aufgeführt. So behältst du den Überblick über die erstatteten Beträge innerhalb einer bestimmten Transaktion.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294485832/original/Eshvntif-pCDHApfWzfMx2ZmnriKZ2I4Qw.png?1682492675)
+
+### Ich kann mit Authorize.net keine Rückerstattungen durchführen; es erscheint der Fehler „The referenced transaction does not meet the criteria for issuing a credit“
+
+Dies liegt in der Regel daran, dass die Rückerstattung die Kriterien des Zahlungsanbieters nicht erfüllt. Authorize.net erlaubt Rückerstattungen erst 24 Stunden nach dem Transaktionszeitpunkt. Die Möglichkeit, ältere Transaktionen zu erstatten, hängt von den Richtlinien und Zeitlimits des jeweiligen Zahlungsanbieters ab. Prüfe die Richtlinien deines Zahlungsanbieters oder wende dich an dessen Support, um Details zu klären.
+
+### Kann ich mehrere Teilrückerstattungen für eine einzelne Transaktion durchführen?
+
+Ja, du kannst mehrere Teilrückerstattungen für eine einzelne Transaktion durchführen, solange der Gesamtbetrag aller Rückerstattungen den ursprünglichen Transaktionsbetrag nicht übersteigt.
+
+### Werden Google-Pay- und Apple-Pay-Transaktionen für Rückerstattungen unterstützt?
+
+Ja, Google-Pay- und Apple-Pay-Transaktionen sowie Kartenzahlungen können über die Plattform erstattet werden. Der Betrag wird auf das mit der Karte oder dem Google-/Apple-Konto verknüpfte Bankkonto zurückerstattet.
+
+### Wie lange dauert es, bis eine Rückerstattung auf dem Konto des Kunden sichtbar ist?
+
+Die Dauer hängt vom Zahlungsanbieter und der Bank des Kunden ab. In der Regel dauert es 4 bis 6 Werktage, bis die Rückerstattung auf dem Konto des Kunden verbucht ist.
+
+### Gibt es ein Limit für die Anzahl der Rückerstattungen, die ich täglich durchführen kann?
+
+In der Regel gibt es kein festes Limit für die tägliche Anzahl an Rückerstattungen. Prüfe jedoch bei deinem Zahlungsanbieter, ob dort spezifische Einschränkungen oder Vorgaben gelten.
+
+### Gibt es spezielle Benutzerberechtigungen für Rückerstattungen? Ich möchte einigen meiner Nutzer nicht erlauben, Rückerstattungen durchzuführen.
+
+Derzeit sind noch keine Benutzerberechtigungen für das Durchführen von Rückerstattungen verfügbar. Die beste Möglichkeit, getätigte Rückerstattungen nachzuvollziehen, ist ein Blick in die Transaktionsdetails. Benutzerspezifische Berechtigungen sind in Planung. Du kannst erstattete Transaktionen mithilfe des Filters direkt in der Transaktionstabelle filtern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294485695/original/Ch8oCbOWw2_aPmeVJUKjpAle339VPnN9IA.png?1682492626)

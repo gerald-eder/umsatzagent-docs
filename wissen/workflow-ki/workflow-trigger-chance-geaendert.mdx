@@ -1,0 +1,274 @@
+---
+title: "Workflow-Trigger – Chance geändert"
+description: "Das effiziente Verwalten von Chancen ist wichtig, um eine organisierte und effektive Vertriebs-Pipeline zu pflegen. Der Workflow-Trigger Chance geändert…"
+---
+
+Das effiziente Verwalten von Chancen ist wichtig, um eine organisierte und effektive Vertriebs-Pipeline zu pflegen. Der Workflow-Trigger **Chance geändert** ermöglicht es dir, Aktionen automatisch auszuführen, sobald ein Chancen-Datensatz aktualisiert wird. So kannst du in Echtzeit auf Änderungen innerhalb deiner Pipeline reagieren.
+
+Im Gegensatz zum Trigger „Chancenstatus geändert“, der nur Statusaktualisierungen erfasst, erkennt „Chance geändert“ umfassendere Änderungen wie Anpassungen des Chancenwerts, Pipeline-Wechsel, Neuzuweisungen, Tag-Aktualisierungen und Änderungen an benutzerdefinierten Feldern. Diese Anleitung erklärt, wie der Trigger funktioniert, wie du Filter konfigurierst und wie du ihn für optimierte Automatisierungen einsetzt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist der Workflow-Trigger „Chance geändert“?](#was-ist-der-workflow-trigger-chance-geaendert)
+- [Wichtigste Vorteile](#wichtigste-vorteile)
+- [So konfigurierst du den Trigger „Chance geändert“](#so-konfigurierst-du-den-trigger-chance-geaendert)
+- [Verfügbare Filtertypen](#verfuegbare-filtertypen)
+- [Workflow-Aktionen einrichten](#workflow-aktionen-einrichten)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist der Workflow-Trigger „Chance geändert“?
+
+Der Workflow-Trigger **Chance geändert** wird ausgelöst, sobald eine Aktualisierung in einem Chancen-Datensatz vorgenommen wird.
+
+Dazu gehören:
+
+- Zuweisungsänderungen
+- Pipeline-Verschiebungen
+- Aktualisierungen des Chancenwerts
+- Aktualisierungen des Verlustgrunds
+- Statusänderungen
+- Tag-Aktualisierungen
+- Änderungen an benutzerdefinierten Feldern
+
+Da er alle Feldänderungen einer Chance erfasst (nicht nur den Status), bietet er mehr Flexibilität für die Automatisierung als reine Status-Trigger.
+
+---
+
+## Wichtigste Vorteile
+
+### Umfassende Erfassung
+
+Löse Automatisierungen basierend auf jeder Chancen-Aktualisierung aus – nicht nur bei Statusänderungen.
+
+### Echtzeit-Benachrichtigungen
+
+Benachrichtige Teammitglieder sofort, wenn wichtige Änderungen an einer Chance vorgenommen werden.
+
+### Bessere Pipeline-Übersicht
+
+Halte Vertriebs- und operative Teams auf demselben Stand, sobald Datensätze aktualisiert werden.
+
+### Anpassbare Automatisierung
+
+Nutze Filter, um genau zu steuern, wann Workflows ausgeführt werden.
+
+### Flexible Operatoren
+
+Verwende Operatoren wie **Equals**, **Has Changed** und **Has Changed To** für eine präzise Steuerung.
+
+---
+
+## So konfigurierst du den Trigger „Chance geändert“
+
+### Schritt 1: Workflows aufrufen
+
+1. Navigiere zu **Automatisierung**.
+2. Klicke auf **Workflows**.
+3. Wähle einen bestehenden Workflow aus oder klicke auf **Workflow erstellen**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905213/original/CAXGYLZZt5Siht4yFP_mOVfol1Tpmv-oXQ.png?1772238777)
+
+### Schritt 2: Trigger „Chance geändert“ hinzufügen
+
+1. Klicke auf **Neuen Trigger hinzufügen**.
+2. Suche nach **Chance geändert**.
+3. Wähle den Trigger aus der Liste aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905240/original/9HmnKh7_yDQ4dStHNEm_wkjxR_7-3rnkjA.jpeg?1772238831)
+
+### Schritt 3: Trigger benennen
+
+Gib einen aussagekräftigen Namen in das Feld **Workflow-Trigger-Name** ein.
+
+Eine eindeutige Benennung hilft bei der Verwaltung mehrerer Workflows.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905243/original/XFJIoj_74YB6k7LxYBJZhwi6RiUGC6e_JA.png?1772238850)
+
+### Schritt 4: Filter anwenden
+
+Filter legen fest, wann der Workflow ausgeführt werden soll.
+
+Klicke auf **Filter hinzufügen**, um das Verhalten des Triggers einzugrenzen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905140/original/R2WADRFFAuVPMJkG4nbC_2WMvvJYHh-Cog.png?1772238344)
+
+---
+
+## Verfügbare Filtertypen
+
+Nachfolgend findest du die am häufigsten verwendeten Filter und ihre Funktionsweise.
+
+### Filter „Zugewiesen an“
+
+Wird ausgelöst, wenn sich die Zuständigkeit für eine Chance ändert.
+
+Verfügbare Operatoren:
+
+- **Has Changed** — wird ausgelöst, wenn der zugewiesene Benutzer zu einer beliebigen Person wechselt
+- **Has Changed To** — wird nur ausgelöst, wenn die Chance einem bestimmten Benutzer zugewiesen wird
+- **Equals** — wird ausgelöst, wenn Änderungen an Chancen auftreten, die einem ausgewählten Benutzer zugewiesen sind
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905207/original/qj8ebjQ8RCSIMWTOEHgdau4qNhQ7sAEOfg.png?1772238740)
+
+### Filter „Tag“
+
+Wird ausgelöst, wenn Tags der Chance aktualisiert werden.
+
+Nutze diesen Filter, um Aktionen basierend auf zugewiesenen Tags zu automatisieren, wie:
+
+- Wichtige Chance
+- Follow-up erforderlich
+- VIP
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065905309/original/s05qzhO_zUz44Zvs3cVFcj94o-FtJstyWQ.png?1772239212)
+
+### Filter „In Pipeline“
+
+Steuert die Ausführung basierend auf Pipeline-Änderungen.
+
+Operatoren:
+
+- **Has Changed**
+- **Has Changed To**
+- **Equals**
+
+Hilfreich bei der Verwaltung mehrerer Pipelines (Vertrieb, Support, Kundenbindung).
+
+### Filter „Chancenwert“
+
+Wird ausgelöst, wenn sich der monetäre Wert der Chance ändert.
+
+Nutze diesen Filter, um:
+
+- Vertriebsleiter zu benachrichtigen, wenn der Wert steigt
+- Prüfungs-Workflows auszulösen, wenn der Wert sinkt
+- Hochwertige Chancen anders weiterzuleiten
+
+Zu den Operatoren gehören:
+
+- Equals
+- Greater than
+- Less than
+- Has Changed
+
+### Filter „Verlustgrund“
+
+Wird ausgelöst, wenn ein Verlustgrund hinzugefügt oder aktualisiert wird.
+
+Operatoren:
+
+- **Has Changed**
+- **Has Changed To**
+- **Equals**
+
+Beispiel: Sende automatisch ein Rabatt-Follow-up, wenn der Verlustgrund „Preis zu hoch“ ist.
+
+### Filter „Status“
+
+Wird ausgelöst, wenn sich der Chancenstatus ändert.
+
+Operatoren:
+
+- **Is**
+- **Is Not**
+- **Has Changed**
+- **Has Changed To**
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155065904976/original/ooV2Z3PseJIBUOpwGxSNwilIe33X6wi9Vg.png?1772237430)
+
+### Filter für benutzerdefinierte Felder
+
+Benutzerdefinierte Chancen-Felder können ebenfalls als Filter verwendet werden.
+
+Unterstützte Feldtypen:
+
+#### Kontrollkästchen-Felder
+
+- Added
+- Removed
+- Equals
+
+#### Optionsfeld-Auswahlfelder (Radio)
+
+- Has Changed
+- Has Changed To
+- Equals
+
+#### Dropdown-Felder (Einzel- und Mehrfachauswahl)
+
+- Has Changed
+- Has Changed To
+- Equals
+
+#### Datumsfelder
+
+- Has Changed
+- Has Changed To
+- Equals
+
+Diese ermöglichen eine präzise Automatisierung basierend auf strukturierten Datenänderungen.
+
+---
+
+## Workflow-Aktionen einrichten
+
+Nachdem du Trigger und Filter konfiguriert hast:
+
+1. Klicke auf **Trigger speichern**.
+2. Füge die gewünschten Workflow-Aktionen hinzu.
+
+Häufige Aktionen sind:
+
+- E-Mail oder SMS senden
+- Aufgabe erstellen oder aktualisieren
+- Kontakt-Datensatz aktualisieren
+- Chance verschieben
+- Weiteren Workflow auslösen
+
+3. Klicke auf **Speichern**.
+4. Nutze **Workflow testen**.
+5. Schalte auf **Veröffentlichen**, um die Automatisierung zu aktivieren.
+
+---
+
+## Häufig gestellte Fragen
+
+#### F: Worin liegt der Unterschied zu „Chancenstatus geändert“?
+
+„Chance geändert“ erfasst jede Änderung innerhalb eines Chancen-Datensatzes. „Chancenstatus geändert“ erfasst ausschließlich Statusänderungen.
+
+#### F: Kann ich mehrere Filter verwenden?
+
+Ja. Du kannst mehrere Filter kombinieren, um die Ausführungsbedingungen präzise festzulegen.
+
+#### F: Wie teste ich den Trigger?
+
+Aktualisiere eine Chance manuell und prüfe den Reiter **Ausführungsprotokolle**.
+
+#### F: Funktioniert das mit benutzerdefinierten Feldern?
+
+Ja. Alle benutzerdefinierten Chancen-Felder können als Filter genutzt werden.
+
+#### F: Was ist der Unterschied zwischen Has Changed und Has Changed To?
+
+Has Changed wird ausgelöst, wenn sich das Feld auf einen beliebigen Wert ändert. Has Changed To wird nur ausgelöst, wenn es sich auf einen bestimmten ausgewählten Wert ändert.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn sich der Trigger „Chance geändert“ nicht wie erwartet verhält:
+
+- Prüfe, ob die richtigen Filter konfiguriert sind
+- Stelle sicher, dass der Workflow veröffentlicht ist
+- Überprüfe die Ausführungsprotokolle
+- Vergewissere dich, dass die Feldwerte korrekt aktualisiert werden
+
+Falls das Problem weiterhin besteht, halte deine Workflow-Konfigurationsdetails sowie ein Beispiel für eine Chancen-Aktualisierung bereit und wende dich an den UmsatzAgent Support.
+
+#

@@ -1,0 +1,122 @@
+---
+title: "So reduzierst du eingehende Spam-Anrufe"
+description: "Spam-Anrufe überlasten dein Team, erhöhen das Anrufvolumen unnötig und kosten Zeit. Diese Anleitung zeigt dir praktische Schritte, wie du eingehende…"
+---
+
+Spam-Anrufe überlasten dein Team, erhöhen das Anrufvolumen unnötig und kosten Zeit. Diese Anleitung zeigt dir praktische Schritte, wie du eingehende Spam-Anrufe mit integrierten Werkzeugen und Strategien zur Anrufweiterleitung reduzierst.
+
+### Bevor du beginnst
+
+- Dein Konto blockiert bereits Anrufe mit unterdrückter oder privater Anrufer-ID.
+- Spam-Anrufer fälschen oft lokale Nummern (Spoofing). Das reine Blockieren einzelner Nummern reicht daher nicht aus.
+- Der effektivste Ansatz kombiniert Erkennung mit Hürden für verdächtige Anrufer.
+
+---
+
+## Schritt 1: Aktiviere Number Intelligence
+
+Number Intelligence hilft dabei, wahrscheinliche Spam- und Belästigungsanrufe anhand von Reputationsdaten der Telefonnummer zu erkennen.
+
+**Funktionsumfang**
+
+- Erkennt verdächtige Nummern, bevor du abhebst
+- Hilft deinem Team, Spam-Muster schnell zu erkennen
+- Reduziert den Zeitaufwand durch wiederkehrende Spam-Anrufer
+
+**So richtest du es ein**
+
+Aktiviere die Option unter Einstellungen > Telefonsystem > Zusätzliche Einstellungen > Number Intelligence.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754861/original/bbRgSRPEgyK77PdLxG-H5t99JYmUDiJ-aQ.png?1788238931)
+
+Folge den Einrichtungsschritten hier
+
+---
+
+## Schritt 2: Isoliere wiederkehrende Spam-Nummern mit dem Anruf-Ergebnis „Spam call“ und eingehendem DND
+
+Wenn Number Intelligence hilft, aber weiterhin Spam durchkommt, automatisiere den Umgang mit Spam-Anrufen.
+
+Das Prinzip:
+
+1. Dein Mitarbeiter markiert den Anruf über ein benutzerdefiniertes Anruf-Ergebnis als Spam.
+2. Ein Workflow aktiviert automatisch eingehendes DND für diesen Kontakt, sodass zukünftige Anrufe dieser Nummer dein Team nicht mehr erreichen.
+
+### 2A: Erstelle ein benutzerdefiniertes Anruf-Ergebnis namens „Spam call“
+
+Klicke unter Einstellungen > Telefonsystem > Voice > Benutzerdefinierte Anruf-Ergebnisse auf „Ergebnis hinzufügen“. Verwende einen eindeutigen Namen wie:
+
+- Spam call
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754874/original/986uqGxi0vWH5vuVAvG05jDVZ4n_ZU6R0A.png?1788238971)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155064779952/original/fRfqW9vqGzLJOLHO_rgZPLLWD2p3DHnz-w.png?1770900503)
+
+### 2B: Löse einen Workflow aus, wenn „Spam call“ ausgewählt wird
+
+Erstelle unter Automatisierung einen neuen Workflow von Grund auf. Konfiguriere deinen Workflow wie folgt:
+
+- Trigger: Anrufdetails
+- Filter: Anruf-Ergebnis ist „Spam call“
+  ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155064779994/original/4faTK0aDFFvNrG6Z14UjQwysOmjmH2yUfg.png?1770900535)
+- Aktion: DND aktivieren/deaktivieren. Wähle als DND-Richtung „Eingehend“ und aktiviere „DND für alle Kanäle aktivieren“.
+  ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155064780200/original/9mwws4-jZoy_5sP-NofYRRhzUq9ZQs9yGw.png?1770900618)
+
+---
+
+## Schritt 3: Nutze eine IVR-Vorschaltung gegen Robocalls und manuellen Spam
+
+Ein IVR-Menü ist einer der effektivsten Spam-Filter, da viele Robocalls Menüs nicht bedienen können. Auch menschliche Spam-Anrufer brechen oft ab, wenn sie Tasten drücken und warten müssen.
+
+**Empfohlene IVR-Konfiguration**
+
+- Halte es einfach: „Drücke die 1, um verbunden zu werden“ reicht meist aus.
+- Vermeide lange Menüs. Lange Menüs stören echte Kunden mehr als Spammer.
+- Biete für Bestandskunden eine zweite Option an, wie etwa „Drücke die 2, wenn du bereits Kunde bist“.
+
+**Einsatzbereiche für IVR**
+
+- Ideal für öffentlich sichtbare Nummern in Anzeigen, Verzeichnissen und auf Landingpages
+- Sinnvoll bei hohem Spam-Aufkommen und täglichem Zeitverlust im Team
+- Nicht geeignet für Unternehmen mit hoher Dringlichkeit, bei denen jede Sekunde zählt
+
+---
+
+## Empfohlene Reihenfolge bei der Einrichtung
+
+1. Aktiviere Number Intelligence.
+2. Wenn Spam weiterhin Zeit kostet, ergänze das Anruf-Ergebnis „Spam call“ samt workflow-basiertem eingehenden DND.
+3. Wenn der Spam auf öffentlichen Telefonnummern hoch bleibt, schalte ein IVR-Menü vor.
+
+---
+
+## Was du erwarten kannst
+
+- Spoofing-Spam lässt sich nicht vollständig verhindern.
+- Du reduzierst jedoch deutlich, wie oft Spam dein Team erreicht und wie viel Zeit verloren geht.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Spam-Anrufe dein Team trotz der eingerichteten Maßnahmen erreichen, prüfe zuerst Number Intelligence, die Anruf-Ergebnisse, die Automatisierung und deine IVR-Konfiguration.
+
+Prüfe folgende Punkte:
+
+- **Number Intelligence** ist für das Konto aktiviert.
+- Verdächtige Anrufe werden vor oder nach dem Abheben zuverlässig erkannt.
+- Ein eigenes Anruf-Ergebnis namens **Spam call** existiert und steht den Nutzern zur Verfügung.
+- Teammitglieder wählen bei Bedarf das Anruf-Ergebnis **Spam call** aus.
+- Der Workflow nutzt den Trigger **Anrufdetails** mit dem korrekten Filter für das Anruf-Ergebnis.
+- Der Workflow ist veröffentlicht und verwendet die exakte Bezeichnung des Ergebnisses.
+- Der Workflow aktiviert **eingehendes DND** für Kontakte, die als wiederholte Spam-Anrufer eingestuft wurden.
+- Der betroffene Kontakt hat nach Ablauf des Workflows den Status für eingehendes DND erhalten.
+- Berechtigte Kontakte werden nicht fälschlicherweise auf eingehendes DND gesetzt.
+- Das IVR-Menü ist korrekt eingerichtet, falls du eine Vorschaltung vor der Weiterleitung an dein Team nutzt.
+- Die IVR-Ansage ist kurz und für echte Anrufer leicht zu bedienen.
+- Öffentlich sichtbare Telefonnummern nutzen zusätzliche Filter, wenn das Spam-Aufkommen besonders hoch ist.
+- Du verlässt dich nicht ausschließlich auf das manuelle Blockieren einzelner Telefonnummern, da Spam-Anrufer Nummern wechseln oder fälschen.
+
+Wenn bekannte Spam-Nummern trotz Markierung weiterhin durchkommen, prüfe den Ausführungsverlauf des Workflows und stelle sicher, dass die DND-Aktion erfolgreich abgeschlossen wurde.
+
+Besteht das Problem weiterhin, notiere die betroffene Anrufernummer, das Ergebnis von Number Intelligence, das gewählte Anruf-Ergebnis, die Details zur Workflow-Ausführung, den DND-Status, die IVR-Konfiguration sowie Screenshots des Fehlverhaltens. Wende dich an den UmsatzAgent Support.

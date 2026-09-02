@@ -1,0 +1,69 @@
+---
+title: "Fehlerbehebungs-Tool für Kalender"
+description: "Das Fehlerbehebungs-Tool hilft dir zu erkennen, warum bestimmte Kalender-Zeitfenster im Buchungs-Widget nicht verfügbar sind. Durch detaillierte Einblicke…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [So verwendest du das Fehlerbehebungs-Tool](#so-verwendest-du-das-fehlerbehebungs-tool)
+- [Liste der Codes und Beschreibungen](#liste-der-codes-und-beschreibungen)
+- [Wichtige Hinweise](#wichtige-hinweise)
+
+---
+
+### Übersicht
+
+Das Fehlerbehebungs-Tool hilft dir zu erkennen, warum bestimmte Kalender-Zeitfenster im Buchungs-Widget nicht verfügbar sind. Durch detaillierte Einblicke in die Verfügbarkeit der Zeitfenster verstehst du die Gründe für nicht verfügbare Zeitfenster und kannst bei Bedarf Korrekturen vornehmen.
+
+Ob es an der Benutzerverfügbarkeit, Systemeinstellungen oder einem Terminkonflikt liegt: Das Tool bietet eine transparente Übersicht, damit du deine Kalendereinstellungen für eine reibungslose Buchung optimieren kannst.
+
+---
+
+### So verwendest du das Fehlerbehebungs-Tool
+
+### 1. Öffne das Tool:
+
+- Navigiere zu den **Kalender-Einstellungen**.
+- Wähle den Kalender aus, den du überprüfen möchtest.
+- Klicke auf das Drei-Punkte-Menü (**⋮**) und wähle **Kalender-Fehlerbehebung**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032459196/original/0b8JJyw74j9WtcudfChMClZQC3miW43cBw.png?1725789360)
+
+**2. Zeitfenster anzeigen:**
+
+- Die Fehlerbehebungsansicht zeigt alle potenziellen Zeitfenster an.
+- Für jedes nicht verfügbare Zeitfenster gibt ein Code samt Beschreibung den Grund für die Nichtverfügbarkeit an.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032459206/original/j7uoLkDougKA8GAJvpy7fciH6GHEGjQ8Ow.png?1725789396)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032459213/original/xHldAGh33cE0JyNGSBxqGew0nTTySNWTmQ.png?1725789438)
+
+---
+
+### Liste der Codes und Beschreibungen
+
+Nachfolgend findest du die möglichen Codes, die erklären, warum ein Zeitfenster nicht für Buchungen verfügbar ist:
+
+- **USER:** Kein Benutzer ist verfügbar, da die Benutzer entweder durch einen anderen Termin blockiert sind oder außerhalb ihrer festgelegten Arbeitszeiten liegen.
+- **COLLECTIVE:** Mindestens ein Benutzer ist für den Sammeltermin nicht verfügbar.
+- **CONFLICT:** Ein externer Termin blockiert dieses Zeitfenster.
+- **BOOKED:** Zu dieser Zeit ist bereits ein Systemtermin gebucht.
+- **BLOCKED:** Für diesen Zeitraum wurde eine Blockierung hinterlegt.
+- **NOTICE:** Das Zeitfenster kann aufgrund der Mindestvorlaufzeit für Buchungen nicht angezeigt werden.
+- **TOOFAR:** Das Zeitfenster liegt außerhalb des zulässigen Buchungszeitraums.
+- **DAYLIMIT:** Die maximale Anzahl an Terminen für diesen Tag wurde erreicht.
+- **SLOTMAX:** Die maximale Anzahl an Terminen für dieses Zeitfenster wurde erreicht.
+- **BUFFER:** Eine Vor- oder Nachbereitungszeit blockiert dieses Zeitfenster.
+- **DURATION:** Die Termindauer ist länger als das verfügbare Zeitfenster.
+- **PAST:** Dieses Zeitfenster liegt in der Vergangenheit.
+- **LOOKBUSY:** Dieses Zeitfenster wird aufgrund der Funktion „Ausgelastet wirken“ ausgeblendet.
+- **NO SEATS:** Die maximale Teilnehmerzahl für diesen Termin wurde erreicht.
+- **RESOURCE:** Eine erforderliche Ressource (z. B. Raum oder Ausstattung) ist nicht verfügbar.
+
+---
+
+### Wichtige Hinweise:
+
+- Das Tool prüft zuerst die Verfügbarkeit und die Terminintervalle deines Kalenders, um alle theoretisch möglichen Zeitfenster zu ermitteln. Danach wird angezeigt, welche dieser Zeitfenster buchbar sind und welche nicht.
+- Beispiel: Wenn deine Kalenderverfügbarkeit auf 10:00 bis 12:00 Uhr sowie 18:00 bis 20:00 Uhr mit 60-Minuten-Intervallen eingestellt ist, werden nur die Zeitfenster um 10:00, 11:00, 18:00 und 19:00 Uhr geprüft und mit ihrem jeweiligen Status dargestellt. Ist der Kalender für Samstage deaktiviert, erscheinen für diesen Wochentag keine Zeitfenster.

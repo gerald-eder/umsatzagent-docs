@@ -1,0 +1,210 @@
+---
+title: "Domain verbinden – Eine Anleitung"
+description: "Das Verbinden deiner Domain stellt einen einheitlichen Markenauftritt über Websites, Funnels, E-Mails und kundenorientierte Tools hinweg sicher. Diese…"
+---
+
+Das Verbinden deiner Domain stellt einen einheitlichen Markenauftritt über Websites, Funnels, E-Mails und kundenorientierte Tools hinweg sicher. Diese Anleitung erklärt den Ablauf und zeigt, wie die einzelnen Produkte mit einer verbundenen Domain verknüpft werden.
+
+**INHALTSVERZEICHNIS**
+
+- [Schritt-für-Schritt-Anleitung zur Domain-Verbindung](#schritt-fuer-schritt-anleitung-zur-domain-verbindung)
+  - [1. Automatische Methode (für unterstützte Anbieter)](#1-automatische-methode-fuer-unterstuetzte-anbieter))
+  - [2. Domain manuell hinzufügen](#2-domain-manuell-hinzufuegen)
+- [Manuelle DNS-Einrichtung nach Anbieter](#manuelle-dns-einrichtung-nach-anbieter)
+  - [Cloudflare](#cloudflare)
+  - [GoDaddy](#godaddy)
+  - [Namecheap](#namecheap)
+  - [Squarespace](#squarespace)
+- [Fehlerbehebung – Domain verbinden](#fehlerbehebung-domain-verbinden)
+  - [Eintragskonflikte: Mehrere A-Records](#eintragskonflikte-mehrere-a-records)
+  - [AAAA-Record-Konflikt](#aaaa-record-konflikt)
+  - [CAA-Record-Konflikt](#caa-record-konflikt)
+  - [DNS-Einträge stimmen nicht überein](#dns-eintraege-stimmen-nicht-ueberein)
+  - [Domain ist anderweitig verbunden](#domain-ist-anderweitig-verbunden)
+- [Produkte, die du mit einer Domain verbinden kannst](#produkte-die-du-mit-einer-domain-verbinden-kannst)
+  - [Funnel / Website / Store / Webinar / Blog](#funnel-website-store-webinar-blog)
+  - [WordPress](#wordpress)
+  - [E-Mail](#e-mail)
+  - [Branded Domain (für White-Labeling)](#branded-domain-fuer-white-labeling))
+  - [Kundenportal](#kundenportal)
+- [Tipps aus der Praxis](#tipps-aus-der-praxis)
+- [Hilfreiche Links](#hilfreiche-links)
+
+---
+
+## Schritt-für-Schritt-Anleitung zur Domain-Verbindung
+
+Es gibt zwei Möglichkeiten, eine Domain zu verbinden:
+
+### 1. Automatische Methode (für unterstützte Anbieter)
+
+Wenn deine Domain bei einem **unterstützten Anbieter** (wie GoDaddy, Google Domains oder Cloudflare) registriert ist, kannst du sie automatisch über eine API-basierte Authentifizierung verbinden.
+
+**Schritte:**
+
+1. Gehe in deinem Konto zu Seiten > **Einstellungen > Domains**.
+2. Wähle **„Domain verbinden“**.
+3. Wähle das Produkt, das du verbinden möchtest (z. B. Funnel, Website, E-Mail).![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155046655018/original/Z3qXa2R-Nk3ULwcMHRurCOPIoxel1AUtng.jpeg?1747285710)
+4. Gib deine Hauptdomain oder Subdomain in das vorgesehene Feld ein. Wenn du auch die „www“-Subdomain hinzufügst, erscheint eine Option zum Hinzufügen der Hauptdomain.
+5. Befindet sich deine Domain bei Google Domains, GoDaddy oder Cloudflare, siehst du eine Schaltfläche „Autorisieren“. Klicke darauf, um Domain Connect den Zugriff auf deine DNS-Einstellungen zu erlauben.
+6. Folge den Anweisungen auf dem Bildschirm, um die Autorisierung bei deinem Domain-Anbieter abzuschließen. Dadurch werden die erforderlichen DNS-Einträge automatisch hinzugefügt oder verknüpft.
+7. Schließe nach der Autorisierung diesen Tab und kehre zur Benutzeroberfläche von Domain Connect zurück.
+
+> Empfohlen, wenn deine Domain von einem der integrierten Anbieter verwaltet wird.
+
+---
+
+### 2. Domain manuell hinzufügen
+
+Wenn deine Domain bei **Namecheap, Bluehost oder einem nicht aufgeführten Anbieter** liegt, musst du die DNS-Einträge manuell hinzufügen.
+
+**Schritte:**
+
+1. Navigiere zu **Seiten** > **Einstellungen > Domains**.
+2. Wähle **„Domain verbinden“**.
+3. Wähle das Produkt, das du verbinden möchtest (z. B. Funnel, Website, E-Mail).![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155046655020/original/QTIlR-F5qNFttAnb1dVYSTHN32AK-iKEFw.jpeg?1747285710)
+4. Wenn du die Domain mit einem Funnel, einer Website, einem Blog oder einem Webinar verbinden möchtest, gib den Domainnamen wie aufgefordert ein.
+5. Klicke auf die Option zum manuellen Hinzufügen von Einträgen.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155046655019/original/Z7h44VmS7sQ1tb6p5RmqJNNpEs-kU3GKUg.png?1747285710)
+6. Du erhältst spezifische DNS-Einträge (A-Records, CNAME, TXT), die du bei deinem Domain-Registrar hinterlegen musst.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155046655022/original/bXlA6Canqq8-HPQpq5XnhFoWyD5El-Q2aw.png?1747285711)
+7. Melde dich bei deinem Domain-Anbieter an (z. B. Namecheap) und öffne die DNS-Einstellungen.
+8. Füge die Einträge exakt wie angegeben ein.
+9. Speichere die Änderungen und warte auf die DNS-Propagierung (kann bis zu 24 Stunden dauern).
+
+> Nutze diese Option, wenn dein Anbieter nicht direkt unterstützt wird.
+
+####
+
+## Manuelle DNS-Einrichtung nach Anbieter
+
+### Cloudflare
+
+1. Melde dich im Cloudflare-Dashboard an.
+2. Wähle deine Domain aus und klicke auf den Reiter **DNS**.
+3. Klicke auf **Eintrag hinzufügen**.
+4. Für jeden erforderlichen Eintrag:
+
+   - Typ wählen: A, CNAME oder TXT.
+   - **A-Record** für `@` (Hauptdomain) → Auf die IP-Adresse verweisen.
+   - **CNAME** für `www` oder Subdomains (falls zutreffend).
+   - **TXT** für E-Mail-Verifizierung (z. B. SPF/DKIM).
+5. **Wichtig**: Setze den **Proxy-Status auf „Nur DNS“** (graue Wolke) für A- und CNAME-Records.
+6. Klicke jeweils auf **Speichern**.
+7. Warte auf die Propagierung (wenige Minuten bis zu 24 Stunden).
+
+---
+
+### GoDaddy
+
+1. Melde dich in deinem [GoDaddy-Konto](https://www.godaddy.com/) an.
+2. Gehe zu **Meine Produkte > Domains** und klicke neben deiner Domain auf **DNS verwalten**.
+3. Klicke im Bereich **Einträge** auf **Hinzufügen**:
+
+   - Typ auswählen: A, CNAME oder TXT.
+   - Nutze `@` für die Hauptdomain und `www` für die Subdomain.
+4. Gib die **Werte exakt** wie angegeben ein.
+5. Klicke nach jedem Eintrag auf **Speichern**.
+6. Warte, bis die Änderungen wirksam werden.
+
+---
+
+### Namecheap
+
+1. Melde dich in deinem [Namecheap-Dashboard](https://www.namecheap.com/) an.
+2. Navigiere zu **Domain List > Manage** neben deiner Domain.
+3. Gehe zum Reiter **Advanced DNS**.
+4. Klicke unter **Host Records** auf **Add New Record**:
+
+   - **A-Record** für `@`
+   - **CNAME-Record** für `www`
+   - **TXT-Record** für Verifizierung oder E-Mail (z. B. SPF/DKIM)
+5. Füge die exakten Werte aus deiner Anleitung ein.
+6. Klicke auf **Save All Changes**.
+7. Warte bis zu 24 Stunden auf die DNS-Propagierung.
+
+---
+
+### Squarespace
+
+1. Melde dich in deinem [Squarespace-Konto](https://login.squarespace.com/api/1/login/oauth/provider/authorize?client_id=wAHMs0yNCd2CyyoI0Eclva4GmZ1qqRPx&redirect_uri=https%3A%2F%2Fwww.squarespace.com%2Foauth-connect&state=v1.local.JLM4WccEMBU-f2nvZIq9ns5jeSsgpejZ9z-DaQPhTeCbCE8l-DPJR2P_wWBVXXiNNp8mcI4VBtbQToTirX7qs2UwaSXGdAhOzDFT6L3lFfr63ttBwjcpe_F0RIz8gk3gVfiDLJ_f9_buFyAtm2NfyTj9FardYX-jgQck8PDxPQ8aMNMEy6p9q2wLc5Ce6Z_Oqin9qgUEv8rGqIQlvSL5lU0-G8BFrhc8if5LqKK7QMqqtKHJQyylR71zPoL3VO57Z9_DYjoXVhp6fW5mcsn1GYMmjiP855DP1MDbDM-nYDvbewXtI4x49YbVpTRlgdTe1RSntYD4foT20CVVa6Zy_Muc3glEC04bZTK5OWaEKwjeUDxgrA-LJyZLG9dSIq7xPHjbiw&referrer=https%3A%2F%2Fwww.squarespace.com%2F&overrideLocale=en-US&options=%7B%22isCloseVisible%22%3Atrue%2C%22isCreateAccountViewActive%22%3Afalse%7D#/) an.
+2. Gehe zu **Einstellungen > Domains** und wähle deine Domain aus.
+3. Klicke auf **DNS-Einstellungen** (Erweitert).
+4. Füge Folgendes hinzu:
+
+   - **A-Record** für `@` (angegebene IP nutzen)
+   - **CNAME** für `www` (falls erforderlich)
+   - **TXT** für E-Mail-Verifizierung
+5. Klicke nach jedem Eintrag auf **Speichern**.
+6. Kehre zur App zurück und verbinde die Domain erneut, sobald die Änderungen gespeichert sind.
+
+---
+
+## Fehlerbehebung – Domain verbinden
+
+Beim manuellen oder automatischen Verbinden deiner Domain können typische Probleme auftreten:
+
+- ### **Eintragskonflikte: Mehrere A-Records**
+
+**[Link zur Fehlerbehebung](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)**
+
+- ### **AAAA-Record-Konflikt**
+
+**[Link zur Fehlerbehebung](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)**
+
+- ### **CAA-Record-Konflikt**
+
+[**Link zur Fehlerbehebung**](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)
+
+- ### **DNS-Einträge stimmen nicht überein**
+
+**[Link zur Fehlerbehebung](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)**
+
+- ### **Domain ist anderweitig verbunden**
+
+**[Link zur Fehlerbehebung](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)**
+
+- ### **Produktkonflikt: Domain bereits mit einem anderen Produkt verbunden**
+
+  [**Link zur Fehlerbehebung**](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)
+
+---
+
+## Produkte, die du mit einer Domain verbinden kannst
+
+### Funnel / Website / Store / Webinar / Blog
+
+- Nutze deine Domain, um **Seiten für Kunden zu hosten**, wie Funnels, Online-Shops, Webinare oder Blogs.
+
+### WordPress
+
+- Wenn du **WordPress-Hosting** nutzt, leite deine Domain über die bereitgestellten DNS-Einträge auf deine WordPress-Website weiter.
+- Das System erkennt und validiert die Verbindung automatisch, sobald die DNS-Einrichtung abgeschlossen ist.
+
+### E-Mail
+
+- Eine Domain ist erforderlich, um deinen **E-Mail-Versand zu authentifizieren** (z. B. über SPF, DKIM, DMARC).
+- Das Verbinden verbessert die Zustellbarkeit und verhindert, dass deine Nachrichten als Spam markiert werden.
+
+### Branded Domain (für White-Labeling)
+
+- Verbinde eine Domain, um dein eigenes Branding für die Plattform oder Software-Funktionen zu nutzen.
+- Dadurch werden die Standard-URLs durch dein eigenes Branding ersetzt.
+
+### Kundenportal
+
+- Nutze deine eigene Domain, um ein **Dashboard für Kunden** zu hosten.
+- Bietet deinen Kunden ein einheitliches Markenerlebnis beim Zugriff auf Inhalte, Kampagnen oder Berichte.
+
+---
+
+## Tipps aus der Praxis
+
+- **DNS-Propagierung**: Änderungen können wenige Minuten bis zu 24 Stunden dauern.
+- **SSL** wird automatisch bereitgestellt, sobald die Domain verbunden ist und die Einträge korrekt sind.
+- Du kannst alle verbundenen Domains unter **Einstellungen > Domains** verwalten.
+- Steht der Status deiner Domain länger als 24 Stunden auf **„Ausstehend“**, prüfe die DNS-Werte oder wende dich an den UmsatzAgent Support.
+
+---
+
+## Hilfreiche Links
+
+- [Anleitung zur Fehlerbehebung – Domain verbinden](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden)

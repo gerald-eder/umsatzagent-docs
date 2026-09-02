@@ -1,0 +1,103 @@
+---
+title: "Assistenten-Aktion „Kontaktinformationen hinzufügen“ im AI-Assistenten"
+description: "Die Funktion Kontaktinformationen hinzufügen ermöglicht es dir, Kontaktinformationen direkt aus der AI-Konversation hinzuzufügen. Indem du Informationen…"
+---
+
+Die Funktion **Kontaktinformationen hinzufügen** ermöglicht es dir, Kontaktinformationen direkt aus der AI-Konversation hinzuzufügen. Indem du Informationen wie Unternehmensdaten, Adressen und Daten direkt aus den Antworten des Kontakts erfasst, reduzierst du die manuelle Dateneingabe und hältst Kontaktdatensätze aktuell.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Assistenten-Aktion „Kontaktinformationen hinzufügen“?](#was-ist-die-assistenten-aktion-kontaktinformationen-hinzufuegen)
+  - [Wichtigste Vorteile der Aktion „Kontaktinformationen hinzufügen“](#wichtigste-vorteile-der-aktion-kontaktinformationen-hinzufuegen)
+  - [So richtest du die Aktion „Kontaktinformationen hinzufügen“ ein](#so-richtest-du-die-aktion-kontaktinformationen-hinzufuegen-ein)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist die Assistenten-Aktion „Kontaktinformationen hinzufügen“?
+
+Die Assistenten-Aktion **Kontaktinformationen hinzufügen** hilft dir dabei, während eines AI-Assistent-Chats wichtige Details zu erfassen und automatisch im Kontaktdatensatz zu speichern. So pflegst du präzise und aktuelle Informationen über deine Kunden und Kontakte effizienter.
+
+```
+Wichtig: Diese Funktion aktualisiert nur leere Felder in den Kontaktinformationen. E-Mail und Telefonnummer des Kontakts werden automatisch aktualisiert, daher ist diese Aktion für das Hinzufügen oder Aktualisieren von E-Mail oder Telefonnummer nicht erforderlich.
+```
+
+```
+Tipp: Fordere den Kunden nach dem Speichern der Kontaktinformationen im Prompt des Assistenten explizit dazu auf, seine Kontaktdaten anzugeben. Wenn diese Anweisung nicht im Prompt enthalten ist, fragt der Assistent die erforderlichen Informationen nicht ab und das Kontaktfeld wird nicht aktualisiert.
+```
+
+---
+
+## Wichtigste Vorteile der Aktion „Kontaktinformationen hinzufügen“
+
+- **Schnellere Datenerfassung:** Erfasse Details wie Adresse, Unternehmensdaten oder Geburtsdatum im Rahmen einer natürlichen Konversation.
+- **Sauberere CRM-Datensätze:** Speichere Informationen direkt im Kontaktprofil, damit dein Team sie nicht manuell erneut eingeben muss.
+- **Bessere Personalisierung:** Nutze erfasste Details, um Antworten, Follow-ups und Terminabläufe individuell anzupassen.
+- **Flexible Felder:** Aktualisiere sowohl Standardfelder als auch unterstützte benutzerdefinierte Feldtypen für deinen spezifischen Anwendungsfall.
+
+---
+
+## So richtest du die Aktion „Kontaktinformationen hinzufügen“ ein
+
+#### Schritt 1: Öffne den Assistenten
+
+Navigiere zu **AI-Assistenten** > **AI-Assistent** > **Agents List**. Öffne den Assistenten, den du bearbeiten möchtest.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066407932/original/ojSd8r5o4JxOENVzmItAhk_RkG64KQyjEw.jpeg?1772837272)**
+
+#### Schritt 2: Öffne die Assistenten-Ziele
+
+Wähle nach dem Öffnen des Assistenten den Reiter **Bot Goals** aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066407931/original/5NWCzSSc75qFVxXlqLXyRBDZRtV_TAa8YQ.jpeg?1772837272)
+
+#### Schritt 3: Wähle „Contact Info“
+
+Scrolle nach unten zum Bereich **Setup your Actions**. Wähle **Contact Info**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066407929/original/ptHXKYRUasYt979HgD4oQk7_UVD5Do0CSQ.jpeg?1772837272)
+
+#### Schritt 4: Konfiguriere die Aktion
+
+Befolge diese Schritte, um die Aktion zur Aktualisierung der Kontaktdaten zu konfigurieren:
+
+- **Action Name:** Vergib einen Aktionsnamen deiner Wahl. So erkennst du die Aktion später wieder. Zum Beispiel: „Update Contact's Date of Birth“.
+- **Which contact field to be updated:** Wähle das Feld, das du aktualisieren möchtest, aus dem Dropdown-Menü aus (z. B. Name, Telefonnummer, E-Mail, Unternehmensname usw.).
+- **What to update in the field:** Schreibe in das dritte Feld eine kurze Beschreibung dessen, was du aktualisierst. Diese Information hilft der KI, präzisere und personalisiertere Antworten zu generieren. Wenn du beispielsweise „Date of Birth“ wählst, könntest du schreiben: „This is the birth date of the contact“. Wenn du „Business Name“ auswählst, könntest du schreiben: „This is the business name of the contact“.
+- **Output Example (nur bei benutzerdefinierten Feldern):** Gib gegebenenfalls mindestens 2 Beispiele für die aktualisierte Information an. Wenn du beispielsweise „What is your favorite food?“ aktualisierst, könntest du „Tacos“ und „Hamburgers“ eingeben.
+
+Klicke anschließend auf **Save**, um die Einstellungen für die neuen Kontaktinformationen zu speichern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066407930/original/eXSRglPQiTNopadNh2F3UCCIzcRauC5zJQ.jpeg?1772837272)
+
+#### Schritt 5: Aktualisiere den Prompt
+
+Aktualisiere den Prompt deines Assistenten unter **Additional Information**, um den Kunden explizit nach den Kontaktdaten zu fragen, die du aktualisieren möchtest. Wenn diese Anweisung nicht im Prompt enthalten ist, fragt der Assistent die erforderlichen Informationen nicht ab und das Kontaktfeld wird nicht aktualisiert.
+
+**Beispiel:** Angenommen, du möchtest vor der Terminbuchung Name, E-Mail, Telefonnummer, Unternehmensname und Geburtsdatum erfassen. Füge Folgendes in den Bereich „Additional Information“ des Prompts ein, damit der Assistent diese Fragen stellt:
+
+###mandatory instruction : before booking an appointment always start the conversation by asking these question one after another
+1. Ask the customer his name
+2. Ask the customer his email
+3. Ask the customer his phone
+4. Ask the customer his date of birthdate
+5. Ask the customer his business name
+
+```
+Wichtig: Wenn diese Anweisung nicht im Prompt enthalten ist, fragt der Assistent die erforderlichen Informationen nicht ab und das Kontaktfeld wird nicht aktualisiert.
+```
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155066407933/original/f0pDckruFkQBsnTstnrE4y-PebQmN6AZSQ.jpeg?1772837272)
+
+---
+
+## Häufig gestellte Fragen
+
+**Frage: Gibt es ein Limit für die Anzahl der Kontaktfelder, die ich mit der Aktion „Kontaktinformationen hinzufügen“ hinzufügen kann?**
+Mit der Aktion „Kontaktinformationen hinzufügen“ kannst du jeweils eine begrenzte Anzahl von Feldern zuordnen. Wenn du zusätzliche Informationen erfassen musst, kannst du über den AI-Assistenten einen Workflow auslösen und darin Aktionen zur Aktualisierung von Kontaktfeldern verwenden, um beliebig viele Kontaktfelder anhand der Konversation auszufüllen.
+
+**Frage: Kann die Aktion „Kontaktinformationen hinzufügen“ einen vorhandenen Wert überschreiben?**
+
+Nein. Diese Aktion aktualisiert nur leere Felder.

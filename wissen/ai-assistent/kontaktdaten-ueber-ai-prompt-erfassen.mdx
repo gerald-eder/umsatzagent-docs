@@ -1,0 +1,112 @@
+---
+title: "Kontaktdaten über AI-Prompt erfassen"
+description: "Das Erfassen von Kundendaten wie Name, E-Mail-Adresse und Telefonnummer ist entscheidend für Buchungen, Follow-ups und Abschlüsse. Indem du klare…"
+---
+
+Das Erfassen von Kundendaten wie Name, E-Mail-Adresse und Telefonnummer ist entscheidend für Buchungen, Follow-ups und Abschlüsse. Indem du klare Anweisungen in deinen AI-Prompt einfügst, stellst du sicher, dass der Assistent diese Informationen strukturiert und nutzerfreundlich abfragt, ohne den Kunden zu überfordern.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist strukturierte Datenerfassung über Prompts?](#was-ist-strukturierte-datenerfassung-ueber-prompts)
+- [Wichtigste Vorteile von Prompt-Anweisungen](#wichtigste-vorteile-von-prompt-anweisungen)
+- [So richtest du Anweisungen zur Kontakterfassung ein](#so-richtest-du-anweisungen-zur-kontakterfassung-ein)
+- [Best Practices](#best-practices)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist strukturierte Datenerfassung über Prompts?
+
+Mithilfe strukturierter Prompt-Anweisungen steuerst du, wie der Assistent nach Kundeninformationen fragt. Anstatt alle Angaben auf einmal anzufordern, folgt der Assistent einer geführten Reihenfolge, was die Antwortqualität und die Abschlussrate verbessert.
+
+---
+
+## Wichtigste Vorteile von Prompt-Anweisungen
+
+Klare Prompt-Anweisungen verbessern sowohl das Nutzererlebnis als auch die Datenqualität.
+
+- **Bessere Konversationen:** Fragen wirken natürlich und überfordern nicht
+- **Höhere Antwortraten:** Kunden antworten eher Schritt für Schritt
+- **Einheitliche Datenerfassung:** Stellt sicher, dass alle erforderlichen Felder erfasst werden
+- **Verbesserte Automatisierung:** Ermöglicht bessere Follow-ups und Workflows
+
+---
+
+## So richtest du Anweisungen zur Kontakterfassung ein
+
+Eine korrekte Einrichtung stellt sicher, dass der Assistent Informationen in der richtigen Reihenfolge und im richtigen Format erfasst.
+
+### Schritt 1: Anweisungen zum Prompt hinzufügen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069413097/original/BWOEluaJFei-aefYOrVS_UtRTDpXS8eP5A.png?1776462127)**
+
+- Suche das Feld für den Prompt oder „Zusätzliche Informationen“
+- Klicke in das Textfeld
+- Füge strukturierte Anweisungen hinzu, um das Verhalten des Assistenten zu steuern
+- Stelle sicher, dass die Anweisungen die Reihenfolge und das Format der Fragen klar definieren
+
+### Schritt 2: Dieses Prompt-Format verwenden
+
+Kopiere das folgende Beispiel und füge es in deinen Prompt ein:
+
+```
+### Mandatory Instruction: Before proceeding further, collect customer details one after another.
+1. Ask for the customer’s name  2. Ask for the customer’s email address  3. Ask for the customer’s phone number (with country code)   Important: - Ask each question in a separate message  - Do not ask all questions at once
+```
+
+### Schritt 3: Änderungen speichern
+
+- Klicke nach dem Hinzufügen der Anweisungen auf Speichern
+- Der Assistent folgt diesem strukturierten Ablauf nun in Konversationen
+
+---
+
+## Best Practices
+
+Das Befolgen von Best Practices sorgt für reibungslosere Interaktionen und bessere Ergebnisse.
+
+- Halte Anweisungen einfach und direkt
+- Stelle immer nur eine Frage auf einmal
+- Vermeide lange oder komplexe Nachrichten
+- Verwende klare Formulierungen, die Kunden leicht verstehen können
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum sollte der Assistent nur eine Frage auf einmal stellen?**
+
+Wird jeweils nur eine Frage gestellt, ist die Konversation leichter zu verfolgen und die Wahrscheinlichkeit vollständiger Antworten steigt.
+
+**F: Kann ich die Reihenfolge der Fragen ändern?**
+
+Ja, du kannst die Reihenfolge an deinen Bedarf anpassen.
+
+**F: Was passiert, wenn ich diese Anweisungen nicht hinzufüge?**
+
+Der Assistent fragt möglicherweise alle Informationen auf einmal ab oder überspringt wichtige Details.
+
+**F: Kann ich mehr als drei Felder erfassen?**
+
+Ja, du kannst im selben Format weitere Schritte hinzufügen.
+
+**F: Funktioniert das in allen Konversationen?**
+
+Ja, solange der Assistent die Prompt-Anweisungen während der Interaktionen befolgt.
+
+---
+
+## Brauchst du Hilfe?
+
+Falls dein Assistent die Kundendaten nicht wie erwartet erfasst, prüfe folgende Punkte:
+
+- Stelle sicher, dass die Anweisungen im Prompt-Feld oder im Feld für zusätzliche Informationen eingetragen sind
+- Überprüfe, ob das Format dem Assistenten klar vorgibt, nur eine Frage auf einmal zu stellen
+- Kontrolliere, ob die Anweisungen am Anfang des Prompts platziert sind
+- Vermeide ungenaue Formulierungen und formuliere konkret, was der Assistent abfragen soll
+- Teste den Assistenten nach dem Speichern, um den korrekten Ablauf zu überprüfen
+
+Besteht das Problem weiterhin, prüfe die Struktur deines Prompts und vereinfache die Anweisungen, damit der Assistent ihnen leichter folgen kann.

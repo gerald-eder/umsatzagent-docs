@@ -1,0 +1,214 @@
+---
+title: "Meta Conversions API Access Token konfigurieren"
+description: "Verbessere die Genauigkeit des Event-Trackings, indem du Events über die Conversions API direkt von deinem Server an Meta sendest. Dies hilft,…"
+---
+
+Verbessere die Genauigkeit des Event-Trackings, indem du Events über die Conversions API direkt von deinem Server an Meta sendest. Dies hilft, Datenverluste durch Browser-Einschränkungen, Cookie-Beschränkungen und Ad-Blocker zu reduzieren, und verbessert die Attribution sowie die Kampagnen-Berichterstattung.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Meta Conversions API?](#was-ist-die-meta-conversions-api)
+- [Warum die Conversions API nutzen?](#warum-die-conversions-api-nutzen)
+- [Aktualisierte Navigation im Meta Events Manager](#aktualisierte-navigation-im-meta-events-manager)
+- [So erstellst du ein Conversions API Access Token](#so-erstellst-du-ein-conversions-api-access-token)
+- [Die neue Meta-Oberfläche verstehen](#die-neue-meta-oberflaeche-verstehen)
+- [Fehlerbehebung bei Problemen mit dem Conversions API Access Token](#fehlerbehebung-bei-problemen-mit-dem-conversions-api-access-token)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist die Meta Conversions API?
+
+Mit der Meta Conversions API können Events direkt von deinem Server an Meta gesendet werden, anstatt sich nur auf browserbasiertes Tracking zu verlassen.
+
+Im Gegensatz zum reinen Browser-Tracking verbessert die Conversions API die Zuverlässigkeit von Events, indem sie die Auswirkungen folgender Faktoren verringert:
+
+- Datenschutzbeschränkungen von Browsern
+- Cookie-Einschränkungen
+- Ad-Blocker
+- Netzwerkunterbrechungen
+- Tracking-Präventionstechnologien
+
+In Kombination mit dem Browser-Tracking bietet die Conversions API ein vollständigeres Bild der Kundenaktivität und der Conversion-Leistung.
+
+---
+
+## Warum die Conversions API nutzen?
+
+Die gleichzeitige Nutzung von Browser-Events und serverseitigen Events sorgt für ein stabileres und zuverlässigeres Tracking-Setup.
+
+### Wichtigste Vorteile
+
+- **Verbesserte Event-Genauigkeit:** Erfasse Events, die andernfalls durch Browser-Einschränkungen blockiert werden könnten.
+- **Bessere Attribution:** Stelle Meta vollständigere Conversion-Daten für die Berichterstattung und Optimierung zur Verfügung.
+- **Reduzierter Datenverlust:** Verfolge wichtige Events auch dann weiter, wenn das Browser-Tracking eingeschränkt ist.
+- **Verbesserte Kampagnenoptimierung:** Liefere Meta zuverlässigere Signale, um die Auslieferung und Leistung von Werbeanzeigen zu verbessern.
+- **Zukunftssicheres Tracking:** Erhalte das Event-Tracking aufrecht, während sich Datenschutzanforderungen und Browser-Einschränkungen weiterentwickeln.
+
+---
+
+## Aktualisierte Navigation im Meta Events Manager
+
+Meta hat die Benutzeroberfläche des Events Managers und die Position der Pixel-Einstellungen aktualisiert.
+
+### Aktueller Navigationspfad
+
+Navigiere zu:
+
+**Events Manager → Datenquellen → Pixel auswählen → Einstellungen → Conversions API**
+
+Wenn du mehrere Pixel verwaltest, wähle zuerst den richtigen Pixel im Bereich „Datenquellen“ aus, bevor du die Einstellungen öffnest.
+
+### Vorherige vs. aktuelle Navigation
+
+| **Vorherige Benutzeroberfläche** | **Aktuelle Benutzeroberfläche** |
+| --- | --- |
+| Events Manager | Events Manager |
+| Pixel auswählen | Datenquellen → Pixel auswählen |
+| Einstellungen | Einstellungen |
+| Serverseitige API für das Web | Conversions API |
+
+---
+
+## So erstellst du ein Conversions API Access Token
+
+Durch das Erstellen eines Access Tokens kann deine Plattform serverseitige Events sicher an Meta senden.
+
+### Events Manager öffnen
+
+Melde dich in deinem Meta-Konto an und öffne den Events Manager.
+
+Navigiere zum Bereich „Datenquellen“ und wähle den Pixel aus, den du konfigurieren möchtest.
+
+### Pixel-Einstellungen öffnen
+
+Nachdem du den Pixel ausgewählt hast:
+
+- Öffne den Reiter „Einstellungen“.
+- Scrolle nach unten zum Bereich „Conversions API“.
+
+**Hinweis:** In älteren Versionen von Meta wird dieser Bereich möglicherweise noch als „Serverseitige API für das Web“ bezeichnet.
+
+### Access Token erstellen
+
+Im Bereich „Conversions API“:
+
+- Klicke auf **Access Token generieren** oder **Access Token erstellen**.
+- Führe alle Autorisierungsabfragen durch.
+- Wähle die entsprechende Anwendung aus, falls du dazu aufgefordert wirst.
+- Generiere das Token.
+- Kopiere das Token für die Verwendung in deiner Integration.
+
+### Token sicher aufbewahren
+
+Speichere das Token sicher und verwende es bei der Konfiguration von Conversions-API-Verbindungen.
+
+Das Token fungiert als Authentifizierungsschlüssel, mit dem Events an Meta gesendet werden können.
+
+---
+
+## Die neue Meta-Oberfläche verstehen
+
+Abhängig von deinem Meta-Konto-Setup werden dir während der Einrichtung möglicherweise unterschiedliche Bildschirme angezeigt.
+
+Möglicherweise wirst du aufgefordert:
+
+- Einen Pixel auszuwählen
+- Eine Anwendung auszuwählen
+- Eine Anwendung zu erstellen
+- Berechtigungen zuzuweisen
+- Den Unternehmenszugriff zu bestätigen
+
+Diese Abweichungen sind normal und hängen von deinen Kontoberechtigungen und deiner Unternehmenseinrichtung ab.
+
+Nach Abschluss funktioniert das generierte Access Token unabhängig davon, welche Schnittstellenvariante dir angezeigt wurde.
+
+---
+
+## Fehlerbehebung bei Problemen mit dem Conversions API Access Token
+
+Wenn du den Bereich „Conversions API“ nicht finden oder kein Access Token generieren kannst, prüfe die folgenden Punkte.
+
+### Pixel-Zugriff prüfen
+
+Stelle sicher, dass:
+
+- Du im richtigen Meta-Konto angemeldet bist.
+- Der Pixel zu dem Business-Manager-Konto gehört, das du verwaltest.
+- Du über Administratorberechtigungen für den Pixel verfügst.
+
+### Events Manager aktualisieren
+
+Wenn kürzlich Änderungen an den Berechtigungen vorgenommen wurden:
+
+- Aktualisiere die Seite.
+- Melde dich ab und wieder an.
+- Öffne den Events Manager erneut.
+
+### Auswahl der Datenquelle prüfen
+
+Viele Benutzer wählen bei der Verwaltung mehrerer Pixel versehentlich die falsche Datenquelle aus.
+
+Stelle sicher, dass der richtige Pixel ausgewählt ist, bevor du die Einstellungen öffnest.
+
+### Unternehmensberechtigungen prüfen
+
+Wenn der Bereich „Conversions API“ fehlt:
+
+- Prüfe den Administratorzugriff.
+- Verifiziere, dass gegebenenfalls die Anforderungen für die Unternehmensüberprüfung erfüllt sind.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Warum sehen meine Bildschirme anders aus als in den Screenshots?**
+
+Meta aktualisiert die Benutzeroberfläche des Events Managers regelmäßig. Die Position der Einstellungen kann sich ändern, der Bereich „Conversions API“ bleibt jedoch über die Pixel-Einstellungen verfügbar.
+
+**F: Ist die serverseitige API für das Web dasselbe wie die Conversions API?**
+
+Ja. Meta hat Teile der Benutzeroberfläche umbenannt, die Funktion dient jedoch demselben Zweck: dem Senden serverseitiger Events.
+
+**F: Warum kann ich kein Access Token erstellen?**
+
+Die meisten Probleme mit dem Access Token entstehen durch unzureichende Berechtigungen für den Pixel oder das Business-Manager-Konto.
+
+**F: Benötige ich sowohl Browser-Tracking als auch die Conversions API?**
+
+Die gemeinsame Nutzung beider Methoden bietet das vollständigste Event-Tracking und die beste Attribution.
+
+**F: Kann ich ein Access Token später neu generieren?**
+
+Ja. Bei Bedarf können jederzeit neue Token im Bereich „Conversions API“ generiert werden.
+
+**F: Was passiert, wenn mein Token kompromittiert wird?**
+
+Erstelle sofort ein neues Token und aktualisiere deine Integrationskonfiguration.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn du Probleme hast, deine Pixel-Einstellungen zu finden, ein Access Token zu generieren oder das Conversions-API-Tracking zu konfigurieren, prüfe zuerst, ob du die richtigen Berechtigungen für den Pixel und das Business-Manager-Konto hast. Meta aktualisiert seine Benutzeroberfläche regelmäßig, sodass einige Einstellungen an anderen Stellen als in älteren Dokumentationen oder Screenshots erscheinen können.
+
+Stelle vor der weiteren Fehlerbehebung Folgendes sicher:
+
+- Du bist im richtigen Meta-Konto angemeldet.
+- Du hast Administratorzugriff auf den Pixel.
+- Die richtige Datenquelle (Pixel) ist ausgewählt.
+- Dein Access Token wurde erfolgreich generiert.
+- Kürzliche Berechtigungs- oder Konfigurationsänderungen hatten genügend Zeit zur Aktualisierung.
+
+Wenn nach der Einrichtung keine Events empfangen werden, überprüfe deine Integrationseinstellungen, vergewissere dich, dass das Access Token korrekt kopiert wurde, und stelle sicher, dass das serverseitige Event-Tracking in deiner Konfiguration aktiviert ist.
+
+Wenn du weiterhin Probleme hast, wende dich an den UmsatzAgent Support und gib Folgendes an:
+
+- Screenshots deiner Pixel-Einstellungsseite.
+- Screenshots etwaiger Fehlermeldungen.
+- Die Schritte, die du bereits durchgeführt hast.
+- Details darüber, ob Events nicht gesendet werden, nicht in der Berichterstattung erscheinen oder nicht von deiner Integration empfangen werden.
+
+Das Bereitstellen dieser Informationen beschleunigt die Fehlerbehebung und Lösungsfindung.

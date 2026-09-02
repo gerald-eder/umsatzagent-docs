@@ -1,0 +1,141 @@
+---
+title: "Benutzerdefinierte Objekte erstellen und bearbeiten"
+description: "Erstelle und verwalte benutzerdefinierte Objekte, um Daten jenseits von Kontakten und Chancen abzubilden – wie Immobilien, Haustiere, Fälle oder…"
+---
+
+Erstelle und verwalte benutzerdefinierte Objekte, um Daten jenseits von Kontakten und Chancen abzubilden – wie Immobilien, Haustiere, Fälle oder Fahrzeuge. Diese Anleitung zeigt, wo benutzerdefinierte Objekte in der App unterstützt werden, wie du sie Schritt für Schritt einrichtest, sowie FAQs und Links zu verwandten Funktionen wie Smart Lists, Workflows und Dashboards.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist ein benutzerdefiniertes Objekt?](#was-ist-ein-benutzerdefiniertes-objekt)
+  - [Hauptvorteile von benutzerdefinierten Objekten](#hauptvorteile-von-benutzerdefinierten-objekten)
+  - [Feldtypen und eindeutige Felder](#feldtypen-und-eindeutige-felder)
+  - [Verknüpfungen und Labels](#verknuepfungen-und-labels)
+  - [Wo du benutzerdefinierte Objekte nutzen kannst](#wo-du-benutzerdefinierte-objekte-nutzen-kannst)
+  - [So richtest du benutzerdefinierte Objekte ein](#so-richtest-du-benutzerdefinierte-objekte-ein)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist ein benutzerdefiniertes Objekt?
+
+Mit benutzerdefinierten Objekten kannst du völlig neue Datensatztypen definieren – jeweils mit eigenen Feldern, Verknüpfungen und Automatisierungen –, damit dein CRM deine realen Prozesse abbildet. Sie eignen sich ideal, wenn Standardobjekte nicht ausreichen (z. B. zur Erfassung einer „Immobilie“ mit MLS, Schlafzimmern, Status oder eines „Haustiers“ mit Rasse, Impfungen). Nach der Erstellung kannst du ein Objekt in Ansichten, Filtern und Automatisierungen verwenden.
+
+---
+
+## Hauptvorteile von benutzerdefinierten Objekten
+
+Das Verständnis der praktischen Vorteile hilft dir dabei, Datenmodelle zu entwerfen, die flexibel und zukunftssicher bleiben.
+
+- **Flexibilität**: Definiere beliebige Einheiten mit benutzerdefinierten Feldern, Labels und Verknüpfungen.
+- **Automatisierung**: Löse Workflows bei Erstellung/Aktualisierung aus und führe objektspezifische Aktionen aus.
+- **Erkenntnisse**: Analysiere Objektdaten über Smart Lists und die Listenansicht und filtere sie präzise mit erweiterten Filtern.
+- **Verwaltung**: Wahre die Datenintegrität mit klarer Zuständigkeit – Admins verwalten die Objektdefinitionen.
+- **Planzugriff und Limits**: Verfügbar in allen Tarifen; bis zu 10 benutzerdefinierte Objekte.
+
+---
+
+## Feldtypen und eindeutige Felder
+
+Die Wahl der richtigen Feldtypen und Eindeutigkeitsregeln sorgt für saubere und leicht zusammenführbare Daten.
+
+- Unterstützte **eindeutige Feldtypen**: Einzeiliger Text, Mehrzeiliger Text, Zahl, Telefon.
+- **Limit:** Bis zu **10 eindeutige Felder pro Objekt**.
+- **Geltungsbereich:** Die Eindeutigkeit wird im gesamten Account und über alle Einstiegspunkte hinweg durchgesetzt (Benutzeroberfläche, Workflows, Formulare, API).
+- **Nicht umkehrbare Änderung:** Wenn du ein eindeutiges Feld auf nicht eindeutig **herabstufst**, kannst du es **nicht** wieder eindeutig machen.
+
+---
+
+## Verknüpfungen und Labels
+
+Verknüpfungen verbinden Datensätze (z. B. Chance ↔ Immobilie), um reale Beziehungen abzubilden und objektübergreifende Ansichten zu ermöglichen.
+
+- Definiere Many-to-Many- oder One-to-Many-Verknüpfungen zwischen Objekten.
+- Nutze Verknüpfungen in Smart Lists, Filtern und Automatisierungen.
+- **Label-Limits:** Bis zu **10 eindeutige Labels** zwischen zwei beliebigen Objekten (für Bezeichnungen wie „Käufer von“, „Gelistet auf“).
+- Chancen unterstützen flexible Verknüpfungen mit benutzerdefinierten Objekten für einen einheitlichen Pipeline-Kontext.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058408189/original/pnh73-mjY_rKd5y0fDNJ9M4E0Wevq4cRQg.gif?1763127609)
+
+---
+
+## Wo du benutzerdefinierte Objekte nutzen kannst
+
+Die Wahl der richtigen Bereiche für benutzerdefinierte Objekte stellt sicher, dass dein Setup leistungsstark und kompatibel ist. Nutze diese Übersicht, um die aktuelle Verfügbarkeit zu prüfen und Implementierungen zuverlässig zu planen.
+
+| Verfügbarkeit | Funktionen |
+| --- | --- |
+| **Unterstützt** | Kontakte & Chancen (Verknüpfungen), Workflows (Trigger & Aktionen), Formulare, Umfragen & Quizze, Smart Lists, Listenansicht, Erweiterte Filter, Berichterstattung/Dashboards, APIs, Webhooks, Aufgaben |
+| **Nicht unterstützt** | E-Mail-Kampagnen, Massen-E-Mails, Massen-SMS, Konversationen-Oberfläche, Funnels & Websites (dynamische Objektdaten), Kalender & Terminbuchung, Ruf/Bewertungen, Zahlungen & Rechnungsstellung, Unternehmens-Objektdetails |
+| **Demnächst verfügbar** | Notizen, Funnels & Websites (dynamische Bindung), KI-Wissensdatenbank, E-Mails via Workflow an verknüpfte Kontakte |
+
+---
+
+## So richtest du benutzerdefinierte Objekte ein
+
+Ein sauberes anfängliches Setup gewährleistet stabile Automatisierungen und Berichte, wenn dein Datenmodell wächst. Die folgenden Schritte stammen aus **Benutzerdefinierte Objekte erstellen und bearbeiten** und wurden zur besseren Lesbarkeit präzisiert.
+
+### Schritt 1 — Objekt erstellen
+
+1. Öffne **Einstellungen → Objekte**.
+2. Klicke auf **Benutzerdefiniertes Objekt hinzufügen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079588596/original/Dux_rVtkiXC83Us6g6QHkfBSbOlQq2mqXw.png?1787950249)
+
+### Schritt 2 — Details zum Objekt hinzufügen
+
+###
+
+1. Gib den **Singular-Namen** ein (z. B. Haustier).
+2. Gib den **Plural-Namen** ein (z. B. Haustiere).
+3. Überprüfe den **Internen Namen** und das **Primärfeld** (standardmäßig erstellt). Du kannst den internen Namen **während der Erstellung** anpassen, indem du auf **</>** klickst.
+4. Gib eine Bezeichnung für das **Primäre Anzeigefeld** an (z. B. Haustiername, Haustier-ID).
+5. Wähle ein **Icon** und füge eine **Beschreibung** hinzu, um deinem Team den Zweck des Objekts zu verdeutlichen.
+6. Klicke auf **Benutzerdefiniertes Objekt erstellen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058406204/original/fgF0GrDpzjlp6BKbCr0R0F-t6lSOdYrBxA.png?1763126831)
+
+### Schritt 3 — Objektdetails bearbeiten
+
+1. Nach der Erstellung erscheint das Objekt auf der Seite „Objekte“.
+2. Klicke auf das Objekt, um es zu öffnen und seine Details anzupassen.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058406333/original/_BTexHTI5lwA1w4QfD8N8itV1YC4bALzAw.jpeg?1763126905)
+
+### Optional — Benutzerdefiniertes Objekt löschen (nicht umkehrbar)
+
+1. Klicke auf die **⋯ (drei Punkte)** neben dem Namen des Objekts.
+2. Wähle **Löschen**.
+3. Tippe **DELETE** ein, um zu bestätigen.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155058406564/original/DIem8kq3voYpJAFkfcf-oqn43QIQXi24Cg.gif?1763127036)
+
+```
+Wichtig: Durch das Löschen werden das Objekt und alle damit verknüpften Datensätze, Verknüpfungen, Workflows und benutzerdefinierten Felder unwiderruflich entfernt.
+```
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Wer kann benutzerdefinierte Objekte erstellen oder bearbeiten?**
+Nur **Admins**. Reguläre Nutzer haben ausschließlich Lesezugriff.
+
+**F: Wie viele benutzerdefinierte Objekte kann ich erstellen?**
+Bis zu **10** in allen Tarifen.
+
+**F: Kann ich den internen Namen oder das primäre Anzeigefeld später ändern?**
+Nein – sobald das Objekt erstellt wurde, sind diese Felder **nicht mehr bearbeitbar**.
+
+**F: Wo werden benutzerdefinierte Objekte derzeit unterstützt?**
+Sieh dir die obige **Übersichtstabelle** für die aktuelle Verfügbarkeit und geplante Bereiche an.
+
+**F: Was passiert, wenn ich ein benutzerdefiniertes Objekt lösche?**
+Das Löschen ist **dauerhaft** und entfernt das Objekt sowie **alle** zugehörigen Datensätze, Verknüpfungen, Workflows und benutzerdefinierten Felder.
+
+**F: Wie automatisiere ich Aktionen, wenn ein benutzerdefiniertes Objekt erstellt oder aktualisiert wird?**
+Nutze **Trigger und Aktionen für benutzerdefinierte Objekte** in Workflows (z. B. Erstellen/Aktualisieren/Leeren, Datensatz suchen, Webhooks).
+
+##

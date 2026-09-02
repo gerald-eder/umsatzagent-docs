@@ -1,0 +1,85 @@
+---
+title: "Einstellungen für Telefonnummern erklärt"
+description: "Hier findest du eine Übersicht der verschiedenen Einstellungen für Telefonnummern in deinem CRM."
+---
+
+Hier findest du eine Übersicht der verschiedenen Einstellungen für Telefonnummern in deinem CRM.
+
+---
+
+**In diesem Artikel:**
+
+#### [Name der Nummer](#name-der-nummer)
+
+#### [Weiterleitungsnummer](#weiterleitungsnummer)
+
+#### [Angerufene Nummer als Anrufer-ID übergeben](#angerufene-nummer-als-anrufer-id-uebergeben)
+
+#### [Anrufverbindung aktivieren](#anrufverbindung-aktivieren)
+
+#### [Flüsteransage](#fluesteransage)
+
+#### [Anrufaufzeichnung](#anrufaufzeichnung)
+
+#### [Anruf-Timeouts](#anruf-timeouts)
+
+#### [FAQ](#faq)
+
+- #### [Was passiert standardmäßig, wenn das Timeout für ein- oder ausgehende Anrufe leer bleibt?](#was-passiert-standardmaessig-wenn-das-timeout-fuer-ein-oder-ausgehende-anrufe-le)
+
+---
+
+## So greifst du auf die Einstellungen für Telefonnummern zu:
+
+Gehe auf **Einstellungen** **>** **Telefonnummern** **>** Klicke auf das **Stift-Symbol**.
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48296865950/original/o1IZHAtHhKdQ4aUPaXD7e0393SJEniH8pg.gif?1683737358)**
+
+### Name der Nummer
+
+Der interne Name der Telefonnummer (z. B. „Haupt-Marketingnummer“ oder der Name eines Mitarbeiters, dem diese Nummer zugewiesen wird).
+
+### Weiterleitungsnummer
+
+Die Telefonnummer, an die eingehende Anrufe auf dieser Nummer weitergeleitet werden sollen.
+
+### Angerufene Nummer als Anrufer-ID übergeben
+
+Ist dieses Kontrollkästchen nicht aktiviert, wird standardmäßig die Telefonnummer des Anrufers als Anrufer-ID angezeigt. Aktivierst du das Kontrollkästchen, übergibt das System stattdessen die gekaufte Nummer als Anrufer-ID. So erkennst du direkt, dass ein Anruf über dein UmsatzAgent-Konto eingeht.
+
+### Anrufverbindung aktivieren
+
+Ist dieses Kontrollkästchen nicht aktiviert, werden eingehende Anrufe sofort beim Abheben durchgestellt. Aktivierst du das Kontrollkästchen, hörst du eine Flüsteransage mit der Aufforderung, eine Taste auf deinem Telefon zu drücken, um das Gespräch anzunehmen.
+
+**Warum diese Funktion sinnvoll ist:**
+
+Im CRM kannst du Prozesse basierend auf dem Anrufstatus automatisieren (z. B. verbunden oder nicht verbunden). Dadurch kannst du bei unbeantworteten Anrufen automatisch eine SMS versenden (Rückruf-SMS bei verpasstem Anruf).
+
+Für solche Automatisierungen muss das System erkennen, ob ein Gespräch tatsächlich zustande kam. Eine Mailbox-Ansage wird sonst unter Umständen fälschlicherweise als menschlicher Gesprächspartner gewertet und der Anruf als verbunden markiert.
+
+Durch Aktivieren dieser Option muss der Empfänger des Anrufs eine Taste drücken, um die Verbindung herzustellen. So erkennt das System zuverlässig, ob eine echte Person abgenommen hat.
+
+### Flüsteransage
+
+Die Flüsteransage legt fest, welche Nachricht dem Angerufenen vorgespielt wird, wenn die Anrufverbindung aktiviert ist. Trage hier beispielsweise „Anruf über UmsatzAgent, bitte drücke eine Taste“ ein, damit du weißt, dass der Anruf über das System eingeht und eine Taste gedrückt werden muss.
+
+### Anrufaufzeichnung
+
+Wenn du die Anrufaufzeichnung aktivierst, wird das Gespräch aufgezeichnet und direkt im Konversationsverlauf des jeweiligen Kontakts hinterlegt – zusammen mit E-Mails, SMS, Social-Media-Nachrichten und weiteren Einträgen. Beachte die gesetzlichen Bestimmungen zur Anrufaufzeichnung und weise den Anrufer gegebenenfalls per Flüsteransage darauf hin (z. B. „Dieser Anruf wird zu Qualitätszwecken aufgezeichnet“).
+
+### Anruf-Timeouts
+
+#### Timeout für eingehende Anrufe: Die Zeitdauer (in Sekunden), die das System einen eingehenden Anruf klingeln lässt, bevor er beendet oder an eine Mailbox weitergeleitet wird (persönliche Mailbox oder im CRM hinterlegte Mailbox).
+
+**Szenario 1:** Wenn der Anrufer deine Mobilfunk-Mailbox erreichen soll, lasse dieses Feld leer oder trage 60 Sekunden ein.
+
+**Szenario 2:** Wenn das Telefon klingeln und der Anrufer die im CRM hinterlegte Mailbox erreichen soll, setze das Timeout auf ca. 20 Sekunden. Ein kürzeres Timeout stellt sicher, dass das Telefon nicht lange genug klingelt, um deine persönliche Handy-Mailbox zu erreichen.
+
+**Szenario 3:** Wenn eingehende Anrufe direkt auf die im CRM hinterlegte Mailbox geleitet werden sollen, stelle das Timeout auf 1–4 Sekunden ein. Stelle sicher, dass unter „Unternehmensprofil“ oder in den Profileinstellungen der zugewiesenen Benutzer eine Mailbox-Ansage (MP3- oder WAV-Datei) hochgeladen ist.
+
+#### Timeout für ausgehende Anrufe: Die Zeitdauer (in Sekunden), die das System bei einem ausgehenden Anruf klingeln lässt, bevor der Anruf abgebrochen wird. Ein kürzeres Timeout von ca. 30 Sekunden verringert die Wahrscheinlichkeit, dass du auf der Mailbox des Kontakts landest. Das ist nützlich, wenn du Mailbox-Kampagnen durchführst oder Kontakte direkt persönlich erreichen möchtest.
+
+## FAQ
+
+### Was passiert standardmäßig, wenn das Timeout für ein- oder ausgehende Anrufe leer bleibt?
+
+Der Standardwert des Systems liegt für beide Fälle bei 60 Sekunden.

@@ -1,0 +1,136 @@
+---
+title: "Eingehendes Anrufrouting nach Arbeitszeiten konfigurieren"
+description: "Das eingehende Anrufrouting nach Arbeitszeiten verhindert, dass geschäftliche Anrufe außerhalb der festgelegten Verfügbarkeit eines Benutzers eingehen.…"
+---
+
+Das eingehende Anrufrouting nach Arbeitszeiten verhindert, dass geschäftliche Anrufe außerhalb der festgelegten Verfügbarkeit eines Benutzers eingehen. Dieser Artikel erklärt, wie die Funktion funktioniert, wie du sie für dich selbst oder ein Teammitglied einrichtest und wie eingehende Anrufe nach Dienstschluss verarbeitet werden.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist das eingehende Anrufrouting nach Arbeitszeiten?](#was-ist-das-eingehende-anrufrouting-nach-arbeitszeiten)
+- [Wer kann das eingehende Anrufrouting konfigurieren?](#wer-kann-das-eingehende-anrufrouting-konfigurieren)
+- [Wie Anrufe außerhalb der Arbeitszeiten weitergeleitet werden](#wie-anrufe-ausserhalb-der-arbeitszeiten-weitergeleitet-werden)
+- [So richtest du das eingehende Anrufrouting nach Arbeitszeiten ein](#so-richtest-du-das-eingehende-anrufrouting-nach-arbeitszeiten-ein)
+- [Wie Weiterleitungsnummern gehandhabt werden](#wie-weiterleitungsnummern-gehandhabt-werden)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist das eingehende Anrufrouting nach Arbeitszeiten?
+
+```
+Hinweis: Die Einstellung ist standardmäßig deaktiviert. Es ändert sich nichts, bis du sie einschaltest.
+```
+
+Das eingehende Anrufrouting nach Arbeitszeiten nutzt einen ausgewählten Verfügbarkeitszeitplan, um zu bestimmen, ob ein eingehender Anruf bei einem Benutzer klingeln soll. Dadurch wird verhindert, dass geschäftliche Anrufe Benutzer nach Feierabend, an Wochenenden, an Feiertagen oder während ihrer Abwesenheit erreichen, ohne dass Geräteeinstellungen geändert oder mobile Apps deinstalliert werden müssen.
+
+Wenn **Nur während der Arbeitszeiten klingeln** aktiviert ist, überspringt jeder eingehende Anruf außerhalb des gewählten Zeitplans den jeweiligen Benutzer und folgt der bestehenden Backup-Logik der Telefonnummer. Während der Arbeitszeiten klingeln Anrufe wie gewohnt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076623304/original/Yz5966lv4y3BjyAo02Yuv8mHXFUGo4KIsQ.png?1784737623)
+
+---
+
+## Wer kann das eingehende Anrufrouting nach Arbeitszeiten konfigurieren?
+
+Der Zugriff hängt davon ab, ob Benutzer ihre eigene Verfügbarkeit verwalten oder ob ein Administrator die Verfügbarkeit für ein anderes Teammitglied einstellt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076623305/original/4QB5uxkNOkWA8eMBc_CyIIEoPvMKnq3_Cg.png?1784737623)
+
+---
+
+## Wie Anrufe außerhalb der Arbeitszeiten weitergeleitet werden
+
+UmsatzAgent prüft den ausgewählten Zeitplan, bevor der Anruf beim Benutzer signalisiert wird. Das Ergebnis hängt von der gewählten Routing-Methode ab.
+
+| Routingszenario | Während der Arbeitszeiten | Außerhalb der Arbeitszeiten |
+| --- | --- | --- |
+| **Zugewiesener Benutzer oder Kontakt** | Das Telefon des Benutzers klingelt regulär | Der Benutzer wird übersprungen und der Anruf folgt dem bestehenden Backup der Telefonnummer (Mailbox oder Voice AI) |
+| **Bei allen klingeln (Ring All)** | Alle berechtigten Benutzer werden regulär angerufen | Benutzer außerhalb der Arbeitszeiten werden übersprungen; bei verfügbaren Benutzern klingelt es weiter |
+| **Anrufmenü oder IVR** | Konfigurierte Empfänger werden regulär angerufen | Der nicht verfügbare Benutzer wird übersprungen; bei anderen Empfängern klingelt es weiter |
+| **Einziger Empfänger in einem IVR-Verbindungsschritt** | Das Telefon des Benutzers klingelt regulär | Es wird kein Empfänger verbunden und der Anrufablauf wird fortgesetzt |
+| **Weitergeleiteter Anruf** | Das bestehende Weiterleitungsverhalten greift | Die Filterung nach Arbeitszeiten wird hierfür derzeit nicht unterstützt |
+
+---
+
+## So richtest du das eingehende Anrufrouting nach Arbeitszeiten ein
+
+Die Auswahl des richtigen Zeitplans stellt sicher, dass Anrufe zum richtigen Zeitpunkt durchgestellt werden. Prüfe die Wochenarbeitszeiten, datumsspezifische Einträge und die Zeitzone des Zeitplans, bevor du ihn für das Routing nach Feierabend nutzt.
+
+### Einstellung für dein eigenes Profil konfigurieren
+
+1. Klicke auf **Einstellungen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756469/original/TO0brVhVuWmHcGDgR2WHoIqebiOEH8lGSA.png?1788241070)
+2. Klicke auf **Mein Profil**.
+3. Scrolle zur Karte **Eingehendes Anrufrouting**.
+4. Aktiviere **Nur während der Arbeitszeiten klingeln**.
+5. Öffne das Dropdown-Menü **Zeitplan für Anrufrouting**.
+6. **Wähle** den **Zeitplan** aus, der deine Arbeitszeiten festlegt. Diesen Zeitplan prüft UmsatzAgent vor dem Durchstellen. Deine Auswahl wird automatisch gespeichert.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756482/original/m1pZB4csNaYCDg8ZmoNNmbVZfgu50xWjqg.png?1788241093)
+
+### Einstellung für ein Teammitglied konfigurieren
+
+```
+Hinweis: Der Administrator oder Manager, der diese Schritte ausführt, benötigt die Berechtigung zur Kalenderverwaltung.
+```
+
+1. Klicke auf **Einstellungen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076625600/original/q0jSXU7fo_KNd7By2XQw3HYdPDl1pFk5FA.png?1784738724)
+2. Gehe zu **Mitarbeiter**.
+3. Klicke auf das **Bearbeiten-Symbol** des gewünschten Teammitglieds.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076625682/original/ZYrorlmEtB-TGiICteh41GC2vQnptuq0LQ.png?1784738811)
+4. Wähle **Benutzerverfügbarkeit**.
+5. Suche die Karte **Eingehendes Anrufrouting**.
+6. Aktiviere **Nur während der Arbeitszeiten klingeln**.
+7. **Wähle** den **Zeitplan** aus, der die Arbeitszeiten des Teammitglieds definiert.
+8. **Speichere** die Einstellungen des Teammitglieds.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756487/original/ahDJN5Dp1IFMOtE6Lm6AxpyDfLh2cKSWQg.png?1788241109)
+
+---
+
+## Wie Weiterleitungsnummern gehandhabt werden
+
+UmsatzAgent verhindert, dass ein Benutzer außerhalb der Arbeitszeiten indirekt über eine übereinstimmende Weiterleitungsnummer erreicht wird. So bleibt der ausgewählte Zeitplan über den gesamten Routing-Ablauf hinweg aktiv.
+
+Wenn deine persönliche Telefonnummer gleichzeitig als Weiterleitungsnummer für eine dir zugewiesene Rufnummer oder als geschäftliche Hauptnummer hinterlegt ist, ist keine zusätzliche Konfiguration nötig. Außerhalb deiner Arbeitszeiten wird diese Weiterleitungsnummer automatisch zusammen mit dir übersprungen und der Anruf wird an das Backup der Telefonnummer weitergeleitet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076624902/original/1kPeA3rEzGvsaBCe6elN7SBD07EFL69XMQ.png?1784738306)
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Ändert sich etwas, wenn ich die Einstellung deaktiviert lasse?**
+Nein. Die Einstellung ist standardmäßig deaktiviert. Eingehende Anrufe folgen weiterhin deiner bisherigen Routing-Konfiguration, bis du die Option aktivierst.
+
+**F: Welcher Zeitplan wird zur Ermittlung meiner Arbeitszeiten verwendet?**
+Es wird der Zeitplan verwendet, der im Dropdown-Menü **Zeitplan für Anrufrouting** ausgewählt ist. Du kannst diesen Zeitplan jederzeit anpassen oder austauschen.
+
+**F: Wie verhindere ich Anrufe an Feiertagen oder geplanten freien Tagen?**
+Füge deinem ausgewählten Zeitplan einen datumsspezifischen Eintrag ohne verfügbare Stunden hinzu. Datumsspezifische Einträge überschreiben den regulären Wochenplan für den jeweiligen Tag.
+
+**F: Gilt das arbeitszeitbasierte Routing auch für weitergeleitete Anrufe?**
+Nein. Das arbeitszeitbasierte Routing gilt derzeit nur für die unterstützten Szenarien des eingehenden Routings. Anrufe, die während eines aktiven Gesprächs weitergeleitet werden, werden nicht nach Arbeitszeiten gefiltert.
+
+**F: Was passiert, wenn mehrere Benutzer in einer „Ring All“-Konfiguration hinterlegt sind?**
+Nur Benutzer, die sich aktuell innerhalb ihrer konfigurierten Arbeitszeiten befinden, erhalten den eingehenden Anruf. Benutzer außerhalb ihrer Arbeitszeiten werden automatisch übersprungen.
+
+**F: Warum erreichen mich außerhalb meiner Arbeitszeiten weiterhin Anrufe?**
+Prüfe, ob **Nur während der Arbeitszeiten klingeln** aktiviert ist, der richtige Zeitplan ausgewählt wurde und Zeitzone, Wochenstunden sowie datumsspezifische Ausnahmen korrekt eingerichtet sind. Stelle zudem sicher, dass du das richtige Benutzerprofil testest und der Anruf eine unterstützte Routing-Methode nutzt.
+
+---
+
+## Brauchst du Hilfe?
+
+Falls eingehende Anrufe weiterhin außerhalb deiner festgelegten Arbeitszeiten klingeln, prüfe zuerst, ob **Nur während der Arbeitszeiten klingeln** aktiv ist, der korrekte Zeitplan zugewiesen wurde und Zeitzone sowie Wochenzeiten stimmen.
+
+Sollten dich Anrufe weiterhin unerwartet erreichen, kontrolliere das Anrufrouting deiner Telefonnummer, die Backup-Behandlung, die Weiterleitungseinstellungen und die Benutzerzuweisungen.
+
+Solltest du weitere Unterstützung benötigen, erstelle Screenshots deines Arbeitszeitplans, deiner Routing-Konfiguration sowie der Benutzereinstellungen. Wende dich an den UmsatzAgent Support.

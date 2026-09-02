@@ -1,0 +1,94 @@
+---
+title: "Aktion – Kontaktfeld aktualisieren"
+description: "Dieser Artikel erklärt die Aktionen „Kontaktfeld aktualisieren“ und „Felddaten löschen“ in Workflows. Erstere ermöglicht es, ein Kontaktfeld mit einem…"
+---
+
+Dieser Artikel erklärt die Aktionen „Kontaktfeld aktualisieren“ und „Felddaten löschen“ in Workflows. Erstere ermöglicht es, ein Kontaktfeld mit einem neuen statischen oder dynamischen Wert zu aktualisieren, während Letztere den vorhandenen Wert eines benutzerdefinierten Kontaktfelds leert. Beide Aktionen werden derzeit nur für benutzerdefinierte Kontaktfelder unterstützt.
+
+#### In diesem Artikel enthalten
+
+#### [Was ist die Aktion „Kontaktfeld aktualisieren“ in Workflows?](#was-ist-die-aktion-kontaktfeld-aktualisieren-in-workflows)
+
+#### [Welche Anwendungsfälle gibt es dafür?](#welche-anwendungsfaelle-gibt-es-dafuer)
+
+#### [Wie wird diese Aktion verwendet?](#wie-wird-diese-aktion-verwendet)
+
+#### [Felddaten aktualisieren/löschen auswählen](#felddaten-aktualisieren-loeschen-auswaehlen)
+
+#### [Felddaten aktualisieren](#felddaten-aktualisieren)
+
+#### [Felddaten löschen](#felddaten-loeschen)
+
+---
+
+## Was ist die Aktion „Kontaktfeld aktualisieren“ in Workflows?
+
+Mit der Aktion „Kontaktfeld aktualisieren“ in Workflows kannst du den Wert eines bestimmten Felds für einen Kontakt anpassen. Mit dieser Aktion gibst du einen neuen Wert für das Feld an, wodurch der vorhandene Feldwert des Kontakts ersetzt wird. Zusätzlich kannst du das Feld auch leeren, also das Eingabefeld leeren oder auf den Standardwert zurücksetzen.
+
+**Bitte beachten:**
+
+```
+Die Funktion zum Löschen von Felddaten unterstützt derzeit nur benutzerdefinierte Kontaktfelder.
+```
+
+Du kannst diese Aktion an jeder Stelle im Workflow verwenden, um mehrere Felder mit statischen Werten oder benutzerdefinierten Werten zu aktualisieren oder zu leeren. Die Felder können in Workflows überall dort dynamisch aktualisiert werden, wo sie verwendet werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294379946/original/7uOQh_K68fa9-BSrLtJLo_Xiz2Pyqqu9Rg.png?1682435188)
+
+##
+
+##
+
+### Welche Anwendungsfälle gibt es dafür?
+
+Hier sind einige Anwendungsfälle für die Aktionen „Kontaktfeld aktualisieren“ und „Felddaten löschen“ in Workflows:
+
+**Lead-Verwaltung:** Verwende die Aktion „Kontaktfeld aktualisieren“, um das Feld für die Lead-Quelle eines Kontakts basierend auf der Herkunft zu aktualisieren. So erkennst du, woher deine Leads kommen, und optimierst deine Marketing-Maßnahmen entsprechend. Mit der Aktion „Felddaten löschen“ entfernst du veraltete Informationen aus deinen Lead-Datensätzen.
+
+**Personalisierung:** Verwende die Aktion „Kontaktfeld aktualisieren“, um deine E-Mail-Marketingkampagnen zu personalisieren, indem du Kontaktfelder wie Vor- oder Nachname aktualisierst. Dies steigert das Engagement und die Conversion-Raten. Nutze die Aktion „Felddaten löschen“, um fehlerhafte oder veraltete Informationen aus Kontaktfeldern zu entfernen.
+
+**Sales-Pipeline-Verwaltung:** Verwende die Aktion „Kontaktfeld aktualisieren“, um die Phase eines Kontakts in deiner Sales-Pipeline basierend auf seinem Fortschritt zu aktualisieren. So behältst und steuerst du deine Sales-Pipeline effektiver. Mit der Aktion „Felddaten löschen“ entfernst du Kontakte aus deiner Pipeline, wenn sie nicht mehr passen.
+
+**Benutzerdefinierte Integrationen:** Verwende die Aktion „Kontaktfeld aktualisieren“, um benutzerdefinierte Kontaktfelder mit Daten aus anderen Integrationen zu füllen. Aktualisiere beispielsweise über Zapier ein benutzerdefiniertes Feld mit Daten aus einem Google Sheet oder einer Formular-Einsendung auf deiner Website. Nutze die Aktion „Felddaten löschen“, um benutzerdefinierte Felder basierend auf bestimmten Triggern oder Bedingungen zurückzusetzen.
+
+---
+
+## Wie wird diese Aktion verwendet?
+
+### Felddaten aktualisieren/löschen auswählen
+
+##
+
+##
+
+### Felddaten aktualisieren
+
+Aktualisiert das ausgewählte Feld mit dem angegebenen Wert.
+
+Die Aktion „Kontaktfeld aktualisieren“ in Workflows ermöglicht es dir, den Wert eines bestimmten Felds für einen Kontakt anzupassen. Dies ist nützlich, wenn ein Kontaktfeld mit einem neuen Wert versehen werden soll, z. B. Telefonnummer, E-Mail-Adresse oder ein benutzerdefiniertes Feld.
+
+Um die Aktion „Kontaktfeld aktualisieren“ zu nutzen, füge sie deinem Workflow hinzu, wähle das zu aktualisierende Kontaktfeld aus und gib den neuen Wert für das Feld an. Du kannst das Feld mit einem statischen Wert (einem festen, im Workflow definierten Wert) oder einem benutzerdefinierten Wert aktualisieren, der dynamisch basierend auf anderen Daten im Workflow generiert wird.
+
+Hast du beispielsweise ein benutzerdefiniertes Feld namens „Lead-Quelle“, kannst du die Aktion „Kontaktfeld aktualisieren“ verwenden, um diesen Wert für einen bestimmten Kontakt zu setzen. Du kannst einen statischen Wert wie „Website“ hinterlegen oder einen dynamisch generierten Wert basierend auf der Herkunft des Leads eintragen lassen.
+
+Sobald die Aktion „Kontaktfeld aktualisieren“ im Workflow ausgeführt wird, wird der bisherige Feldwert des Kontakts durch den neuen Wert ersetzt. Du kannst diese Aktion nutzen, um an beliebiger Stelle im Workflow mehrere Felder mit statischen Werten oder benutzerdefinierten Werten zu aktualisieren.
+
+##
+
+### Felddaten löschen
+
+Setzt das ausgewählte Feld auf den Standardwert zurück (löscht die Daten).
+
+Das Leeren von Kontaktfeldern entfernt den vorhandenen Wert eines Kontaktfelds und setzt es auf einen leeren Wert zurück. Dies ist nützlich, um zuvor eingegebene Daten wieder zu entfernen. Wenn du die Felddaten löschst, wird der Feldwert auf NULL bzw. leer gesetzt.
+
+**Bitte beachten:**
+
+```
+Die Funktion zum Löschen von Felddaten unterstützt derzeit nur benutzerdefinierte Kontaktfelder. Das bedeutet, dass du nur selbst erstellte benutzerdefinierte Felder leeren kannst, keine Standardfelder wie Vorname, Nachname oder E-Mail.
+```
+
+Um ein Kontaktfeld in einem Workflow zu leeren, füge die Aktion „Kontaktfeld aktualisieren“ hinzu, wähle das gewünschte Kontaktfeld aus und bestimme, welches Feld geleert werden soll. Sobald der Workflow ausgeführt wird, wird der vorherige Wert des Kontaktfelds entfernt und geleert.
+
+Nutze diese Funktion mit Bedacht, da das Leeren eines Kontaktfelds zum Verlust wichtiger Daten führen kann. Verwende sie nur bei Bedarf und stelle sicher, dass ein Daten-Backup vorhanden ist, bevor du Kontaktfelder leerst.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294379952/original/R_l1ysiuuZWmlIXCv-K1g1Qsx1bQjS88Zg.png?1682435189)

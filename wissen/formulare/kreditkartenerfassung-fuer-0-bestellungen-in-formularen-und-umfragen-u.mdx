@@ -1,0 +1,185 @@
+---
+title: "Kreditkartenerfassung für 0-$-Bestellungen in Formularen und Umfragen überspringen"
+description: "Überspringe die Kreditkartenerfassung bei kostenlosen Bestellungen über die Einstellung Require card for $0 orders in Formularen und Umfragen."
+---
+
+Überspringe die Kreditkartenerfassung bei kostenlosen Bestellungen über die Einstellung **Require card for $0 orders** in Formularen und Umfragen.
+
+---
+
+## Was du lernen wirst
+
+Die Einstellung **Require card for $0 orders** im Element „Produkte verkaufen“ ermöglicht es, Zahlungsfelder auszublenden, wenn eine Bestellung eine Gesamtsumme von 0 $ aufweist und keine wiederkehrenden Zahlungen enthält.
+
+Dieser Artikel erklärt, wie du die Einstellung konfigurierst, wann Zahlungsfelder ausgeblendet werden und wie die Funktion Gutscheine, Abos und in Funnels eingebettete Formulare handhabt.
+
+Du erfährst außerdem wichtige Verhaltensweisen und Sonderfälle für Null-Dollar-Checkouts in Formularen und Umfragen.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [What You'll Learn](#what-you-ll-learn)
+- [What Is Zero-Dollar Checkout?](#what-is-zero-dollar-checkout)
+- [Key Benefits](#key-benefits)
+- [How Payment Fields Are Hidden](#how-payment-fields-are-hidden)
+- [How to Enable Zero-Dollar Checkout](#how-to-enable-zero-dollar-checkout)
+- [Special Cases and Behaviors](#special-cases-and-behaviors)
+- [Frequently Asked Questions](#frequently-asked-questions)
+
+---
+
+## Was ist ein Null-Dollar-Checkout?
+
+Der Null-Dollar-Checkout ermöglicht es Kunden, kostenlose Bestellungen in Formularen und Umfragen abzuschließen, ohne Kreditkartendaten einzugeben.
+
+Wenn eine Produktbestellung insgesamt 0 $ beträgt und keine wiederkehrenden Gebühren geplant sind, werden die Zahlungsfelder automatisch ausgeblendet. Dies sorgt für einen einfacheren Checkout-Ablauf bei kostenlosen Angeboten.
+
+Die Funktion wird über den Schalter **Require card for $0 orders** im Element „Produkte verkaufen“ gesteuert.
+
+Wenn die Einstellung deaktiviert ist, prüft das System den Gesamtbetrag der Bestellung und den Zeitplan für wiederkehrende Zahlungen. Beträgt die Summe 0 $ und ist keine künftige Zahlung geplant, wird die Zahlungserfassung übersprungen.
+
+Kostenlose Bestellungen werden weiterhin im Einreichungs- und Bestellverlauf erfasst, sodass die Bestellverfolgung vollständig bleibt.
+
+Diese Funktion funktioniert in Formularen und Umfragen auf Desktop- und Mobilgeräten. Sie unterstützt auch Gutscheine, Order Bumps sowie in Funnels eingebettete Formulare und Umfragen.
+
+---
+
+## Hauptvorteile
+
+**Verbesserte Conversion-Raten** — Das Entfernen der Kreditkartenpflicht bei kostenlosen Bestellungen kann Hürden beim Checkout für Lead-Magnete, berechtigte kostenlose Angebote und Aktionsprodukte reduzieren.
+
+**Flexibilität durch Gutscheine** — Wenn ein 100-%-Rabattgutschein den Gesamtbetrag auf 0 $ reduziert, können Zahlungsfelder automatisch ausgeblendet werden.
+
+**Vollständige Bestellverfolgung** — Kostenlose Bestellungen werden erstellt und im Einreichungs- und Bestellverlauf aufgezeichnet.
+
+**Abwärtskompatibilität** — Die Einstellung ist standardmäßig AKTIVIERT, wodurch eine Karte erforderlich ist. Bestehende Formulare und Umfragen verhalten sich weiterhin wie bisher, sofern du die Einstellung nicht deaktivierst.
+
+**Plattformübergreifende Unterstützung** — Die Funktion funktioniert auf Desktop- und Mobilgeräten.
+
+**Sichere Standardeinstellungen** — Wenn das System einen Gesamtbetrag von 0 $ nicht bestätigen kann, bleiben die Zahlungsfelder sichtbar, um Fehler bei der Zahlungsabwicklung zu vermeiden.
+
+---
+
+## Wie Zahlungsfelder ausgeblendet werden
+
+Zahlungsfelder werden automatisch ausgeblendet, wenn der Schalter **Require card for $0 orders** deaktiviert ist und alle erforderlichen Bedingungen erfüllt sind.
+
+Das System prüft die Bestellung in Echtzeit, um festzustellen, ob der Zahlungsbereich ein- oder ausgeblendet werden soll.
+
+### Bedingung 1: Der Gesamtbetrag der Bestellung beträgt 0 $
+
+Der Gesamtpreis aller ausgewählten Produkte, Varianten und Order Bumps muss 0 $ betragen.
+
+Die Berechnung umfasst Basispreise, Mengenanpassungen und angewendete Gutscheine.
+
+### Bedingung 2: Es sind keine wiederkehrenden Zahlungen geplant
+
+Die Bestellung darf keine Abos, wiederkehrenden Zahlungen oder kostenlosen Testphasen enthalten, die dem Kunden später in Rechnung gestellt werden.
+
+Selbst wenn der heute fällige Betrag 0 $ beträgt, ist eine Karte erforderlich, wenn eine künftige Zahlung geplant ist.
+
+### Bedingung 3: Der Gesamtbetrag ist bestätigt und stabil
+
+Die Preisübersicht muss erfolgreich geladen sein und stabil bleiben.
+
+Wenn der Kunde das Formular abschickt, während der Gesamtbetrag noch aktualisiert wird, bleiben die Zahlungsfelder sichtbar.
+
+Der Gesamtbetrag kann sich nach Änderungen an Produkten, Varianten, Gutscheinen oder Order Bumps aktualisieren.
+
+```
+Hinweis: Wenn eine Bedingung nicht erfüllt ist oder nicht bestätigt werden kann, zeigt das System die Zahlungsfelder an und erfasst die Kartendaten. Diese Sicherheitsfunktion verhindert, dass kostenpflichtige Bestellungen fälschlicherweise als kostenlos verarbeitet werden.
+```
+
+Wenn alle Bedingungen erfüllt sind, wird das Zahlungselement aus dem Formular entfernt. Kunden können direkt zur Einreichung übergehen, ohne Kartendaten einzugeben.
+
+---
+
+## So aktivierst du den Null-Dollar-Checkout
+
+Um den Null-Dollar-Checkout zu aktivieren, deaktiviere den Schalter **Require card for $0 orders** im Element „Produkte verkaufen“ in deinem Formular oder deiner Umfrage.
+
+### Schritt 1: Öffne den Formular- oder Umfrage-Builder
+
+Öffne oder erstelle das Formular oder die Umfrage, in dem bzw. der du den Null-Dollar-Checkout aktivieren möchtest.
+
+Öffne den Builder, um auf die Elementeinstellungen zuzugreifen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079850373/original/rh6gvPttDGJWUJ4sJGj8OGZWG59lB_J_Qg.png?1788295899)
+
+### Schritt 2: Wähle das Element „Produkte verkaufen“ aus
+
+Wähle das Element **Produkte verkaufen** in deinem Formular oder deiner Umfrage aus.
+
+Wenn du noch keines hinzugefügt hast, füge ein Element „Produkte verkaufen“ aus der Elementleiste hinzu.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079392921/original/1IAx-cw6R0hCKCHgVwfiuR6qaHq5qpdqMw.png?1787787140)
+
+### Schritt 3: Deaktiviere „Require card for $0 orders“
+
+Suche im Bereich für Elementeinstellungen nach **Require card for $0 orders**.
+
+Schalte den Schalter auf AUS, um den Null-Dollar-Checkout zu aktivieren.
+
+Wenn die Einstellung deaktiviert ist, werden bei berechtigten Bestellungen über 0 $ ohne wiederkehrende Gebühren die Zahlungsfelder automatisch ausgeblendet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079392931/original/xic9pYw6fVT1sxRx4iE6CsTSexNhLwVC1A.png?1787787158)
+
+### Schritt 4: Speichern und veröffentlichen
+
+Speichere deine Änderungen und veröffentliche das Formular oder die Umfrage.
+
+Das neue Verhalten gilt für Bestellungen, die alle Bedingungen für den Null-Dollar-Checkout erfüllen.
+
+```
+Tipp: Die Einstellung ist standardmäßig AKTIVIERT, wodurch eine Karte erforderlich ist. Deaktiviere sie für jedes Element „Produkte verkaufen“ separat, bei dem du den Null-Dollar-Checkout erlauben möchtest.
+```
+
+---
+
+## Sonderfälle und Verhaltensweisen
+
+| Szenario | Verhalten |
+| --- | --- |
+| **In Funnels eingebettete Formulare und Umfragen** | Wenn ein Formular oder eine Umfrage in einen Funnel eingebettet ist, hat die Funnel-Einstellung **Require Credit Card** Vorrang vor der Einstellung auf Elementebene. Konfiguriere die Funnel-Zahlungseinstellungen, um das Verhalten des Null-Dollar-Checkouts für eingebettete Formulare und Umfragen zu steuern. |
+| **Abos und kostenlose Testphasen** | Abos und kostenlose Testphasen erfordern immer eine Kreditkarte, wenn eine künftige Belastung geplant ist, selbst wenn der heute fällige Betrag 0 $ beträgt. Die Karte ist erforderlich, um künftige wiederkehrende Zahlungen abzuwickeln. |
+| **100-%-Rabattgutscheine** | Wenn ein Kunde einen 100-%-Rabattgutschein anwendet, der den Gesamtbetrag der Bestellung auf 0 $ reduziert, werden die Zahlungsfelder ausgeblendet, sobald der aktualisierte Gesamtbetrag bestätigt ist. Der Zahlungsbereich passt sich dynamisch an, während der Kunde mit dem Formular oder der Umfrage interagiert. |
+| **Instabile oder unbestätigte Gesamtbeträge** | Wenn die Preisübersicht nicht geladen werden kann, zeigt das System die Zahlungsfelder an und erfasst die Kartendaten. Dasselbe gilt, wenn ein Kunde das Formular abschickt, während der Gesamtbetrag nach einer Änderung an Produkten, Varianten, Gutscheinen oder Order Bumps noch aktualisiert wird. Diese Sicherheitsfunktion verhindert Fehler bei der Zahlungsabwicklung. |
+| **Zahlungsarten für Spenden und benutzerdefinierte Beträge** | Zahlungsarten für Spenden und benutzerdefinierte Beträge sind nicht Teil des Null-Dollar-Checkouts. Ihr Verhalten bleibt unverändert und Zahlungsfelder werden unabhängig von der Einstellung **Require card for $0 orders** weiterhin angezeigt. |
+| **Beibehaltung von Kartendaten bei kostenpflichtigen Bestellungen** | Eingegebene Kartendaten bei kostenpflichtigen Bestellungen bleiben erhalten, wenn Kunden Mengen ändern oder Gutscheine anwenden. Kunden müssen ihre Zahlungsinformationen nach einer Änderung der Bestellung nicht erneut eingeben. Das Zahlungselement blendet sich bei berechtigten 0-$-Bestellungen zudem nicht kurz ein und wieder aus. In Funnels eingebettete Umfragen erhalten den erforderlichen Funnel-Kontext, um ein konsistentes Verhalten des Null-Dollar-Checkouts zu gewährleisten. |
+
+---
+
+## Häufig gestellte Fragen
+
+Q: Wirkt sich die Einstellung „Require card for $0 orders“ auf bestehende Formulare und Umfragen aus?
+
+Nein. Die Einstellung ist standardmäßig AKTIVIERT, sodass bestehende Formulare und Umfragen wie bisher eine Karte verlangen. Deaktiviere den Schalter manuell, um den Null-Dollar-Checkout für ein berechtigtes Element „Produkte verkaufen“ zu aktivieren.
+
+Q: Werden kostenlose Bestellungen weiterhin im Einreichungs- und Bestellverlauf erfasst?
+
+Ja. Kostenlose Bestellungen werden erstellt und erfasst, sodass der Einreichungs- und Bestellverlauf vollständig bleibt. Sowohl kostenlose als auch kostenpflichtige Bestellungen bleiben in der Bestellverfolgung verfügbar.
+
+Q: Was passiert, wenn ein Formular oder eine Umfrage in einen Funnel eingebettet ist?
+
+Die Funnel-Einstellung „Require Credit Card“ hat Vorrang vor der Einstellung auf Elementebene. Konfiguriere die Funnel-Zahlungseinstellungen, um zu steuern, ob die Kartenerfassung für 0-$-Bestellungen in eingebetteten Formularen und Umfragen erforderlich ist.
+
+Q: Erfordern Abos und kostenlose Testphasen eine Kreditkarte, wenn der Gesamtbetrag 0 $ beträgt?
+
+Ja, wenn eine künftige wiederkehrende Zahlung geplant ist. Eine Karte ist erforderlich, um die künftige Zahlung abzuwickeln, auch wenn heute nichts fällig ist.
+
+Q: Kann ich den Null-Dollar-Checkout mit Gutscheincodes nutzen?
+
+Ja. Wenn ein 100-%-Rabattgutschein den Gesamtbetrag der Bestellung auf 0 $ reduziert, werden die Zahlungsfelder ausgeblendet, nachdem der aktualisierte Gesamtbetrag bestätigt wurde.
+
+Q: Was passiert, wenn die Preisübersicht nicht geladen werden kann?
+
+Wenn die Preisübersicht nicht geladen werden kann oder der Gesamtbetrag nicht als 0 $ bestätigt werden kann, zeigt das System die Zahlungsfelder an und erfasst die Kartendaten. Dies verhindert, dass kostenpflichtige Bestellungen fälschlicherweise als kostenlos verarbeitet werden.
+
+Q: Funktioniert der Null-Dollar-Checkout auf Mobilgeräten?
+
+Ja. Der Null-Dollar-Checkout wird auf Desktop- und Mobilgeräten unterstützt.
+
+Q: Kann ich diese Funktion mit Zahlungsarten für Spenden oder benutzerdefinierte Beträge nutzen?
+
+Nein. Zahlungsarten für Spenden und benutzerdefinierte Beträge werden von dieser Funktion nicht abgedeckt. Zahlungsfelder werden für diese Zahlungsarten weiterhin angezeigt.

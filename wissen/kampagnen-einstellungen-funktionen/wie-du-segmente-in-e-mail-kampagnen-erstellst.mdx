@@ -1,0 +1,100 @@
+---
+title: "Wie du Segmente in E-Mail-Kampagnen erstellst"
+description: "Mit der Funktion Segmente erstellen im Empfängerbereich steuerst du präzise, wer deine E-Mail-Kampagne erhält, indem du Logiken mit Kontakten, Tags, Smart…"
+---
+
+Mit der Funktion **Segmente erstellen** im Empfängerbereich steuerst du präzise, *wer deine E-Mail-Kampagne erhält*, indem du Logiken mit **Kontakten**, **Tags**, **Smart Lists** und **vordefinierten Segmenten** kombinierst.
+
+**INHALTSVERZEICHNIS**
+
+- [Segment-Komponenten](#segment-komponenten)
+- [Logik-Operatoren: UND & ODER](#logik-operatoren-und-oder)
+- [Funktionsweise: Sequenzielle Logikauswertung](#funktionsweise-sequenzielle-logikauswertung)
+- [Best Practices](#best-practices)
+- [Beispiele zum besseren Verständnis](#beispiele-zum-besseren-verstaendnis)
+
+  - [Beispiel 1: An Kontakte mit Tag A oder Tag B senden, aber Tag C ausschließen](#beispiel-1-an-kontakte-mit-tag-a-oder-tag-b-senden-aber-tag-c-ausschliessen)
+  - [Beispiel 2: An Kontakte in Smart List A UND Smart List D senden, aber Kontakt C ausschließen](#beispiel-2-an-kontakte-in-smart-list-a-und-smart-list-d-senden-aber-kontakt-c-au)
+
+## Segment-Komponenten
+
+Du kannst Kontakte basierend auf folgenden Kriterien ein- oder ausschließen:
+
+- **Tags**
+  `Tag is` oder `Tag is not` (z. B. „Tag is A“)
+- **Smart Lists**
+  `Smart List is` (z. B. „Smart List is A“)
+- **Kontakte**
+  `Contact is` oder `Contact is not` (z. B. „Contact is A, B, C“)
+
+  > Wenn du mehrere Kontakte auswählst, verhält es sich wie eine ODER-Verknüpfung (z. B. A **oder** B **oder** C).
+- **Vordefinierte Segmente**
+  `Segment is` oder `Segment is not`
+  (z. B. „Engaged in last 30 days“ oder „Not engaged in 30 days“)
+
+## Logik-Operatoren: UND & ODER
+
+Du kannst komplexe Zielgruppenregeln erstellen, indem du Bedingungen kombinierst:
+
+- **UND**: Alle Bedingungen müssen zutreffen
+- **ODER**: Mindestens eine Bedingung muss zutreffen
+
+Die Logik wird **sequenziell von oben nach unten** ausgewertet. Das Ergebnis der ersten Bedingung (oder gruppierten Bedingung) dient als Grundlage für die nächste.
+
+##
+
+## Funktionsweise: Sequenzielle Logikauswertung
+
+Die Segmentierungslogik läuft **von oben nach unten** ab und wendet jede Bedingung nacheinander an. Das bedeutet:
+
+- **Bedingungen werden nicht alle gleichzeitig ausgewertet.**
+- Die **erste Bedingung** erstellt eine Anfangsgruppe.
+- Jede **folgende Bedingung** verändert diese Gruppe – entweder durch Erweitern (mit ODER) oder Eingrenzen (mit UND).
+- **„Is not“-Bedingungen** entfernen übereinstimmende Kontakte aus der Gruppe, **nachdem die vorherigen Bedingungen ausgewertet wurden**.
+
+Stell es dir wie einen Filterstapel vor: Du erstellst die endgültige Liste, indem du Kontakte Schicht für Schicht durch die Filter laufen lässt.
+
+## Best Practices
+
+- **Verwende ODER, wenn du Zielgruppen zusammenführen möchtest** (z. B. alle mit Tag A *oder* Tag B).
+- **Verwende UND, wenn du Zielgruppen eingrenzen möchtest** (z. B. in Smart List A *und* Smart List D).
+- **Platziere Ausschlussbedingungen (z. B. „is not“) weit unten** in deinem Logikstapel, um eine korrekte Filterung sicherzustellen.
+
+Wenn du dir unsicher bist, wie sich die Logik verhält, unterteile sie in kleinere Schritte oder ordne die Bedingungen zur besseren Übersicht neu an.
+
+## Beispiele zum besseren Verständnis
+
+#### Beispiel 1: An Kontakte mit Tag A oder Tag B senden, aber Tag C ausschließen
+
+```
+Tag is A
+OR
+Tag is B
+AND
+Tag is not C
+```
+
+**So funktioniert es**:
+Es wird zuerst eine Gruppe aus Tag A oder Tag B gebildet. Danach werden alle Personen aus dieser Gruppe entfernt, die auch Tag C haben.
+
+#### Beispiel 2: An Kontakte in Smart List A UND Smart List D senden, aber Kontakt C ausschließen
+
+```
+Smart List is A
+AND
+Smart List is D
+AND
+Contact is not C
+```
+
+**So funktioniert es**:
+Es werden nur Kontakte ausgewählt, die sich sowohl in Smart List A als auch in Smart List D befinden. Kontakt C wird aus dieser Liste ausgeschlossen.
+
+**FAQ**
+**1. Ist es möglich, eine Bedingung zum Ausschließen einer Smart List hinzuzufügen?**
+
+Nein, die Bedingung Smart List „is not“ zum Ausschließen einer Smart List steht nicht zur Verfügung.
+
+**2. Kann die Kontaktliste zum Zeitpunkt der Erstellung eingefroren werden?**
+ Die endgültige Liste wird zum Zeitpunkt der Ausführung erstellt. Du kannst die Liste während der Segmenterstellung nicht einfrieren.
+Wenn eine andere Option als die Segmenterstellung verwendet wird, steht die Funktion zum Einfrieren der Liste zur Verfügung.

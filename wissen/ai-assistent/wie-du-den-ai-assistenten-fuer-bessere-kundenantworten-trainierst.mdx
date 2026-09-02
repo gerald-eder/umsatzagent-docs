@@ -1,0 +1,272 @@
+---
+title: "Wie du den AI-Assistenten für bessere Kundenantworten trainierst"
+description: "Der AI-Assistent beantwortet Kundenfragen zuverlässiger, wenn er auf klare, aktuelle Unternehmensdaten zugreifen kann. Die Plattform-Bibliothek kann…"
+---
+
+Der AI-Assistent beantwortet Kundenfragen zuverlässiger, wenn er auf klare, aktuelle Unternehmensdaten zugreifen kann. Die Plattform-Bibliothek kann Webseiten, FAQs, Dokumente, Tabellen, Rich Text und andere unterstützte Quellen kombinieren. Diese Anleitung erklärt, wie du Trainingsinhalte hinzufügst und pflegst, sie mit einem Assistenten verknüpfst und Antworten vor dem Start testest.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist das Training des AI-Assistenten?](#was-ist-das-training-des-ai-assistenten)
+- [Hauptvorteile des Assistenten-Trainings](#hauptvorteile-des-assistenten-trainings)
+- [Wähle die passende Wissensquelle](#waehle-die-passende-wissensquelle)
+- [So trainierst du einen AI-Assistenten](#so-trainierst-du-einen-ai-assistenten)
+- [Best Practices für bessere Antworten des Assistenten](#best-practices-fuer-bessere-antworten-des-assistenten)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist das Training des AI-Assistenten?
+
+Das Training des AI-Assistenten gibt einem Assistenten Zugriff auf freigegebene Unternehmensinformationen, die er beim Beantworten von Kundenfragen abrufen kann. Anstatt sich nur auf allgemeines KI-Wissen zu verlassen, durchsucht der Assistent seine verknüpfte Knowledge Base nach relevanten Inhalten und nutzt diese Informationen zur Erstellung einer Antwort.
+
+Trainingsinhalte können umfassen:
+
+- Webseiten und Helpdesk-Seiten
+- Häufig gestellte Fragen (FAQs)
+- Richtlinien und schriftliche Anweisungen
+- Produkt-, Dienstleistungs- oder Preistabellen
+- Hochgeladene Dokumente
+- Google Drive-Dateien
+- Freigegebene webbasierte Quellen
+
+**Hinweis zur Benutzeroberfläche:** In einigen Konten werden Web-Crawler und benutzerdefinierte Assistenten-Antworten direkt im Reiter **Assistenten-Training** des Assistenten angezeigt. In der aktualisierten Ansicht werden Quellen unter **AI-Assistenten → Knowledge Base** verwaltet und die Knowledge Base wird anschließend im Assistenten ausgewählt.
+
+---
+
+## Hauptvorteile des Assistenten-Trainings
+
+Klare, gut strukturierte Quellinhalte helfen dem Assistenten, nützliche Antworten zu liefern, und erleichtern Aktualisierungen sowie die Fehlerbehebung.
+
+- **Präzisere Antworten:** Stütze Antworten auf freigegebene Unternehmensinformationen.
+- **Breite Quellenunterstützung:** Kombiniere Websites, FAQs, Dateien, Tabellen und geschriebene Inhalte.
+- **Einheitliche Informationen:** Gib Kunden immer die gleichen Richtlinien, Preise und Servicedetails.
+- **Einfachere Pflege:** Aktualisiere, ersetze oder entferne Quellen, ohne den Assistenten neu aufzusetzen.
+- **Besseres Testen:** Überprüfe vor dem Start, ob die richtigen Informationen abgerufen werden.
+
+---
+
+## Wähle die passende Wissensquelle
+
+Die Wahl des Quelltyps, der zur Struktur deiner Inhalte passt, erleichtert dem AI-Assistenten den Datenabruf.
+
+| Quelle | Am besten geeignet für |
+| --- | --- |
+| **Web-Crawler** | Öffentliche Leistungsseiten, Hilfe-Artikel, Preisseiten, Richtlinien und andere Website-Inhalte |
+| **FAQ** | Direkte, freigegebene Antworten auf häufige Kundenfragen |
+| **Rich Text** | Direkt verfasste Richtlinien, Anweisungen, Unternehmensdetails und Notizen |
+| **Datei-Upload** | Unterstützte Dokumente mit durchsuchbarem Text |
+| **Tabellen** | Strukturierte Informationen wie Preistabellen, Produktkataloge oder Dienstleistungslisten |
+| **Websuche** | Unterstützte externe Webinformationen, die nicht in deinen hochgeladenen Unternehmensinhalten gespeichert sind |
+| **Google Drive** | Importieren von unterstützten Google Docs-, PDF-, DOC- und DOCX-Dateien |
+
+Eine Knowledge Base kann mehrere Quelltypen kombinieren. Nutze die kleinstmögliche Menge an klaren, relevanten Quellen, die alle Fragen abdeckt, die der Assistent beantworten soll.
+
+---
+
+## So trainierst du einen AI-Assistenten
+
+Ein zuverlässiges Setup fügt freigegebene Quellinhalte hinzu, bestätigt die vollständige Verarbeitung und testet sowohl den Abruf als auch die vollständige Antwort des Assistenten.
+
+### Schritt 1: Öffne das Assistenten-Training
+
+Der Bereich für das Assistenten-Training verbindet den AI-Assistenten mit den Informationen, die er bei Kundenantworten nutzen soll.
+
+1. Gehe zu **AI-Assistenten → AI-Assistent**.
+2. Öffne die **Assistenten-Liste**.
+3. Wähle einen bestehenden Assistenten aus oder erstelle einen neuen.
+4. Öffne den Reiter **Assistenten-Training**.
+5. Wähle eine bestehende Knowledge Base aus, sobald die Knowledge-Base-Auswahl verfügbar ist.
+
+Um eine zentrale Knowledge Base zu erstellen oder zu verwalten, gehe zu **AI-Assistenten → Knowledge Base**.
+
+![Reiter „Assistenten-Training“ des AI-Assistenten mit Web-Crawler, hochgeladenen Links, benutzerdefinierten Assistenten-Antworten und Assistent-Testen.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078842259/original/kyVwRttwyGazZk5vjB0NESiYc2Za-QWe2Q.png?1787163226)
+
+### Schritt 2: Bestehende Website-Quellen überprüfen
+
+Die Überprüfung bereits trainierter URLs vor dem Hinzufügen weiterer Inhalte verhindert Duplikate, veraltete Informationen und widersprüchliche Antworten.
+
+Klappe **Hochgeladene Links** auf und prüfe Folgendes:
+
+- Die korrekten Seiten wurden trainiert.
+- Jede Quelle weist einen erfolgreichen Status auf.
+- Der Aktualisierungs-Zeitstempel ist aktuell.
+- Der Inhalt ist weiterhin relevant.
+
+![Tabelle der hochgeladenen Links mit einer trainierten Website-URL und deren Aktualisierungs-Zeitstempel.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078842248/original/ItqgWTiRIVtT6629HmXZg73CZRN8AtfNaA.png?1787163205)
+
+### Schritt 3: Website-Inhalte hinzufügen
+
+Nutze den Web-Crawler, wenn freigegebene, kundenrelevante Informationen bereits auf einer öffentlichen Website vorhanden sind.
+
+1. Wähle einen Crawling-Modus:
+
+   - **Exakte URL:** Crawlt eine bestimmte Seite.
+   - **Alle URLs mit diesem Pfad:** Findet Seiten mit demselben URL-Pfad.
+   - **Alle URLs dieser Domain:** Findet Seiten auf der gesamten Domain.
+2. Gib die vollständige URL einschließlich `https://` ein.
+3. Klicke auf **Daten abrufen**.
+4. Überprüfe die Seiten.
+5. Wähle nur die für Kundenfragen relevanten Seiten aus.
+6. Klicke auf **Assistent trainieren**.
+7. Warte, bis jede ausgewählte URL den Status **Trainiert** anzeigt.
+
+![Menü des Web-Crawlers mit Optionen für exakte URL, Domain- und Pfad-Crawling.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078842240/original/1bBdgUsxBl3ba39E59s2cZCAUurdQPO9_w.png?1787163183)
+
+![Web-Crawler beim Abrufen von Webseiten nach Auswahl von „Daten abrufen“.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078842273/original/bvG4tFHu9uxSITHYDh-WIS4ymC2S0gUgPg.png?1787163248)
+
+**Best Practice:** Trainiere nicht automatisch jede Seite einer Website. Schließe veraltete, doppelte, reine Navigationsseiten, rechtliche Standardtexte und irrelevante Seiten aus, die die Abrufqualität beeinträchtigen könnten.
+
+### Schritt 4: Dokumente, Tabellen, Rich Text oder Google Drive-Dateien hinzufügen
+
+Nutze Nicht-Website-Quellen, wenn wichtige Informationen in Dokumenten, Tabellenkalkulationen, internen Anweisungen oder strukturierten Listen gespeichert sind.
+
+1. Gehe zu **AI-Assistenten → Knowledge Base**.
+2. Erstelle oder öffne eine Knowledge Base.
+3. Klicke auf **Quelle hinzufügen**.
+4. Wähle den gewünschten Quelltyp aus.
+5. Füge den Inhalt hinzu und warte, bis die Verarbeitung abgeschlossen ist.
+6. Kehre zum AI-Assistenten zurück und wähle die aktualisierte Knowledge Base aus.
+
+Verwende:
+
+- **Datei-Upload** für unterstützte Dokumente mit durchsuchbarem Text.
+- **Tabellen** für strukturierte Preis-, Produkt-, Inventar- oder Servicedaten.
+- **Rich Text** für direkt gepflegte Informationen.
+- **Google Drive**, um unterstützte Dateien zu importieren und sie nach Änderungen manuell neu zu synchronisieren.
+
+Wenn du ein Google Doc über die direkte Web-Crawler-Oberfläche nutzt, setze die Freigabeberechtigung auf **Jeder mit dem Link**, wähle **Exakte URL**, füge die Dokument-URL ein und klicke auf **Daten abrufen**.
+
+![Öffentliches Google Doc, das über den Web-Crawler mit dem Status „Trainiert“ hinzugefügt wurde.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039829486/original/mPxitCqoF1RBZmz6yQ9zryF7z30NqFEd2Q.png?1736879009=)
+
+### Schritt 5: Benutzerdefinierte Assistenten-Antworten oder FAQs hinzufügen
+
+FAQs bieten prägnante, freigegebene Antworten auf häufige Fragen, die durch andere Quellen möglicherweise nicht eindeutig abgedeckt werden.
+
+1. Klicke auf **+ F&A hinzufügen**.
+2. Gib eine klare Frage im Kundenstil ein.
+3. Gib eine prägnante, vollständige Antwort ein.
+4. Speichere das Fragen-und-Antwort-Paar.
+5. Teste mehrere natürliche Formulierungen der Frage.
+
+Öffne in der zentralen Knowledge Base den Reiter **FAQ**, um Fragen und Antworten hinzuzufügen oder zu verwalten.
+
+FAQs eignen sich besonders für:
+
+- Öffnungszeiten
+- Preisregeln
+- Rückerstattungs- oder Stornierungsrichtlinien
+- Einzugsgebiete
+- Kontaktdaten
+- Häufige Einrichtungsanweisungen
+
+![Hinzufügen einer Frage und Antwort für eine benutzerdefinierte Assistenten-Antwort unter Assistenten-Training.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039825319/original/K4p1iXpTC3XsyyNy9KtH8K_oIdO187zgBQ.gif?1736873143=)
+
+### Schritt 6: Quellen aktuell halten
+
+Die Pflege der Quellinhalte verhindert, dass veraltete Preise, Richtlinien, Services und Anweisungen in Kundengesprächen auftauchen.
+
+Nutze die verfügbaren Quellfunktionen, um:
+
+- Trainierte URLs nach Titel oder Adresse zu durchsuchen.
+- Geänderte Webseiten zu aktualisieren.
+- Veraltete oder irrelevante Quellen zu entfernen.
+- URLs gesammelt zu aktualisieren oder zu löschen, sofern verfügbar.
+- Importierte Google Drive-Dateien nach Änderungen neu zu synchronisieren.
+- Überarbeitete hochgeladene Dokumente zu ersetzen.
+- Doppelte oder widersprüchliche Informationen zu entfernen.
+
+Für Web-URL-Quellen kann die automatische Aktualisierung Inhalte nach einem täglichen, wöchentlichen oder monatlichen Zeitplan neu crawlen. Wähle ein Intervall, das zur Änderungshäufigkeit der Seite passt.
+
+### Schritt 7: Abruf und Assistenten-Antworten testen
+
+Tests stellen sicher, dass die Plattform die richtige Quelle findet und der Assistent daraus eine präzise, nützliche Antwort generiert.
+
+**Teste zuerst die Knowledge Base:**
+
+1. Gehe zu **AI-Assistenten → Knowledge Base**.
+2. Öffne die mit dem Assistenten verknüpfte Knowledge Base.
+3. Warte, bis neue oder aktualisierte Quellen vollständig verarbeitet sind.
+4. Öffne den **Knowledge Base Retrieval Tester**.
+5. Gib eine realistische Kundenfrage ein.
+6. Überprüfe die Antwort und die abgerufenen Quellen.
+7. Aktualisiere unklare, fehlende oder veraltete Inhalte.
+8. Teste dieselbe Frage erneut.
+
+**Teste anschließend den gesamten Assistenten:**
+
+1. Kehre zum AI-Assistenten zurück.
+2. Öffne **Assistenten-Training**.
+3. Gib eine Frage unter **Assistent testen** ein.
+4. Teste eine häufige Frage, eine umformulierte Version, eine FAQ und eine Frage außerhalb des Themenbereichs.
+5. Klicke vor einem neuen Testszenario auf das Zurücksetzen-Symbol.
+6. Bestätige, dass die Antwort mit den freigegebenen Quellinhalten übereinstimmt.
+
+![Kundenfragen und AI-Assistent-Antworten im Bereich „Assistent testen“.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078842313/original/K0yZmBJ4yBcTFXG5IePUtvQpPHUK7OuYuQ.png?1787163281)
+
+Sobald der Assistent live ist, nutze **Antwort-Info** neben unterstützten KI-Nachrichten in **Konversationen**, um nachzuvollziehen, welche Knowledge-Base-Quellen zur Antwort beigetragen haben.
+
+---
+
+## Best Practices für bessere Antworten des Assistenten
+
+Fokussierte, klar geschriebene Inhalte sind nützlicher als eine große Sammlung lose zusammenhängender Informationen.
+
+- **Priorisiere kundenrelevante Inhalte:** Trainiere Informationen, nach denen Kunden voraussichtlich fragen.
+- **Verwende klare Überschriften:** Strukturiere Dokumente und Rich Text nach konkreten Themen.
+- **Formuliere direkte Antworten:** Beschreibe Richtlinien, Preise, Beschränkungen und Anweisungen unmissverständlich.
+- **Vermeide Duplikate:** Widersprüchliche Versionen derselben Information können die Antwortqualität senken.
+- **Passe die Quelle an die Daten an:** Verwende Tabellen für strukturierte Daten und FAQs für direkte Antworten.
+- **Teste nach größeren Änderungen:** Bestätige den Datenabruf, bevor du dich in Live-Konversationen auf eine Quelle verlässt.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Welchen Quelltyp sollte ich verwenden?**
+Nutze den Web-Crawler für öffentliche Website-Inhalte, FAQs für direkte Antworten, Rich Text für manuell gepflegte Informationen, den Datei-Upload für Dokumente und Tabellen für strukturierte Daten.
+
+**F: Kann eine Knowledge Base mehrere Quelltypen enthalten?**
+Ja. Eine Knowledge Base kann Websites, FAQs, Rich Text, Dateien, Tabellen und andere unterstützte Quellen kombinieren.
+
+**F: Sollte ich den Assistenten auf meiner gesamten Website trainieren?**
+Nur, wenn die meisten Seiten für Kundengespräche relevant sind. Ausgewählte Seiten liefern in der Regel präzisere Ergebnisse als irrelevante Bereiche einer großen Website.
+
+**F: Kann ich Google Docs verwenden?**
+Ja. Importiere unterstützte Dateien über die Google Drive-Integration oder nutze eine öffentlich einsehbare Google Doc-URL direkt in der Web-Crawler-Oberfläche.
+
+**F: Warum verwendet der Assistent eine neu hinzugefügte Quelle nicht?**
+Stelle sicher, dass die Verarbeitung abgeschlossen ist, die Quelle einen erfolgreichen Status hat und die richtige Knowledge Base mit dem Assistenten verknüpft ist. Nutze den Retrieval Tester, um zu prüfen, ob die Information gefunden werden kann.
+
+**F: Wie oft sollte ich Trainingsquellen aktualisieren?**
+Aktualisiere sie immer dann, wenn sich Unternehmensdaten ändern. Nutze die geplante automatische Aktualisierung für regelmäßig wechselnde Webseiten und synchronisiere Google Drive-Dateien bei Bedarf manuell neu.
+
+**F: Warum liefert der Assistent widersprüchliche oder veraltete Antworten?**
+Suche nach doppelten, überlappenden oder veralteten Quellen. Entferne oder aktualisiere die fehlerhafte Version und teste die Knowledge Base sowie den Assistenten erneut.
+
+**F: Entspricht das Testen der Knowledge Base dem Testen des Assistenten?**
+Nein. Der Retrieval Tester prüft, ob Quellinhalte gefunden werden können. Das Testen des Assistenten prüft das gesamte Konversationserlebnis einschließlich Anweisungen, Zielen, Aktionen und Antwortverhalten.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn der AI-Assistent deine Trainingsinhalte nicht verwendet oder unvollständige beziehungsweise veraltete Antworten liefert, prüfe zuerst, ob die richtige Knowledge Base verknüpft ist und die Verarbeitung aller Quellen abgeschlossen wurde.
+
+Prüfe Folgendes:
+
+- Die korrekte **Knowledge Base** ist mit dem Assistenten verbunden.
+- Website-URLs und andere Quellen weisen einen erfolgreichen oder trainierten Status auf.
+- Die Quelle enthält klare und aktuelle Informationen zur gestellten Frage.
+- Doppelte, veraltete oder widersprüchliche Quellen wurden entfernt.
+- Google Drive-Dateien wurden nach kürzlichen Änderungen neu synchronisiert.
+- Aktualisierte Website-Inhalte wurden neu geladen oder erneut gecrawlt.
+- Der **Knowledge Base Retrieval Tester** findet die erwarteten Informationen.
+- Der vollständige Assistenten-Test liefert eine Antwort, die mit der freigegebenen Quelle übereinstimmt.
+
+Wenn der Abruf funktioniert, der Assistent aber dennoch fehlerhaft antwortet, überprüfe die Anweisungen, Ziele und weiteren konfigurierten Verhaltensweisen des Assistenten auf widersprüchliche Vorgaben.
+
+Bleibt das Problem bestehen, halte die Kundenfrage, die Antwort des Assistenten, die verknüpfte Knowledge Base, die relevante Quelle und die Ergebnisse des Retrieval Testers fest und wende dich an den UmsatzAgent Support. Diese Angaben helfen festzustellen, ob die Ursache im Quellinhalt, beim Abruf oder in der Konfiguration des Assistenten liegt.

@@ -81,6 +81,12 @@ def main():
             for fid in k["ordner"]:
                 kat_von_ordner[ordner_name.get(fid, "")] = html.unescape(k["name"] or "")
 
+    # Die Brotkrume kennt die Zuordnung vollständig, der Ordner-Crawl nicht.
+    zpfad = os.path.join(CACHE, "zuordnung.json")
+    if os.path.exists(zpfad):
+        for v in json.load(open(zpfad)).values():
+            kat_von_ordner[v["ordner"]] = v["kategorie"]
+
     # Gebaute Artikel einsammeln: Ordnername -> [(titel, pfad)]
     nach_ordner = {}
     for f in sorted(os.listdir(os.path.join(CACHE, "de"))):

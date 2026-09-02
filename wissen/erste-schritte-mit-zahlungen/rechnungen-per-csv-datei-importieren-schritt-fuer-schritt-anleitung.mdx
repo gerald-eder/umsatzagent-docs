@@ -1,0 +1,122 @@
+---
+title: "Rechnungen per CSV-Datei importieren (Schritt-für-Schritt-Anleitung)"
+description: "Der Import von Rechnungen über eine CSV-Datei ermöglicht es dir, mehrere Rechnungen auf einmal hinzuzufügen, anstatt sie manuell zu erstellen. Diese…"
+---
+
+Der Import von Rechnungen über eine CSV-Datei ermöglicht es dir, mehrere Rechnungen auf einmal hinzuzufügen, anstatt sie manuell zu erstellen. Diese Methode sorgt für Genauigkeit, spart Zeit und hält deine Abrechnungsdaten übersichtlich. Mit dem richtigen Format lädst du Rechnungen fehlerfrei hoch.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Voraussetzungen vor dem Upload](#voraussetzungen-vor-dem-upload)
+- [Beispiel für das CSV-Format](#beispiel-fuer-das-csv-format)
+- [So importierst du Rechnungen](#so-importierst-du-rechnungen)
+- [Häufige Fehler vermeiden](#haeufige-fehler-vermeiden)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Voraussetzungen vor dem Upload
+
+Stelle vor dem Hochladen deiner Datei sicher, dass deine CSV-Datei richtig formatiert ist. Das System setzt exakte Spaltennamen und gültige Daten voraus. Selbst kleine Fehler wie falsche Spaltenüberschriften oder fehlende Werte können dazu führen, dass der Import fehlschlägt.
+
+### Pflichtfelder (müssen exakt übereinstimmen)
+
+Bestimmte Felder sind obligatorisch und müssen genau wie angegeben enthalten sein. Jede Zeile muss gültige Daten für diese Felder enthalten.
+
+Erforderliche Felder:
+
+- Rechnungsnummer
+- Rechnungsname
+- Kundenname
+- Kunden-E-Mail
+- Ausstellungsdatum
+- Fälligkeitsdatum
+- Währung
+- Artikelname
+- Einzelpreis
+
+Diese Felder definieren die Grundstruktur deiner Rechnung und dürfen nicht ausgelassen werden.
+
+### Optionale Felder (optional, aber hilfreich)
+
+Du kannst zusätzliche Felder hinzufügen, um deine Rechnungen zu ergänzen. Dazu gehören:
+
+- Zahlungsbedingungen
+- Artikelbeschreibung
+- Menge
+- Steuerangaben
+- Rabatte
+- Zahlungsstatus
+
+Diese Felder sind optional, aber nützlich für eine bessere Nachverfolgung und Berichterstattung.
+
+---
+
+## Beispiel für das CSV-Format
+
+Hier ist ein einfaches Beispiel für eine korrekt formatierte CSV-Datei:
+
+```
+*InvoiceNo,*InvoiceName,*CustomerName,*CustomerEmail,*IssueDate,*DueDate,*Currency,*ItemName,*ItemRate INV001,Web Design,John Doe,john@email.com,03/01/2025,03/31/2025,USD,Homepage Design,300
+```
+
+---
+
+## So importierst du Rechnungen
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069414285/original/EyHlEOfww5HOt4S4uDlLkqYVabUpX826yQ.png?1776465298)**
+
+Dieses Bild zeigt, wo der Importprozess für Rechnungen gestartet wird.
+
+Gehe zum Bereich **Rechnungen**, klicke auf **Neu** und wähle **Rechnungen aus CSV importieren**.
+
+**Datei hochladen**
+
+Lade deine CSV-Datei hoch, indem du darauf klickst, um sie auszuwählen, oder ziehe sie per Drag-and-Drop in den Upload-Bereich.
+
+**Felder prüfen und zuordnen**
+
+Überprüfe, wie die Spalten deiner CSV-Datei den Systemfeldern zugeordnet sind. Bestätige, dass alles korrekt zugeordnet ist.
+
+**Fehler beheben (falls vorhanden)**
+
+Falls Fehler auftreten, passe deine CSV-Datei an und lade sie erneut hoch, bis alle Probleme behoben sind.
+
+**Import abschließen**
+
+Sobald alles korrekt ist, schließe den Import ab. Deine Rechnungen werden erstellt und stehen zur Verfügung.
+
+---
+
+## Häufige Fehler vermeiden
+
+Die meisten Fehler entstehen durch einfache Probleme wie falsche Spaltennamen, fehlende Pflichtfelder, ungültige Datumsformate oder doppelte Rechnungsnummern. Überprüfe deine Datei vor dem Hochladen, um diese Probleme zu vermeiden.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich einer Rechnung mehrere Artikel hinzufügen?**
+
+Ja, verwende dieselbe Rechnungsnummer in mehreren Zeilen, um mehrere Artikel hinzuzufügen.
+
+**F: Was passiert, wenn erforderliche Daten fehlen?**
+
+Der Import schlägt fehl und du musst die Datei korrigieren, bevor du es erneut versuchst.
+
+**F: Kann ich bestehende Rechnungen über eine CSV-Datei aktualisieren?**
+
+Nein, dieser Vorgang erstellt ausschließlich neue Rechnungen.
+
+**F: Muss ich optionale Felder ausfüllen?**
+
+Nein, optionale Felder können leer gelassen werden.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn dein Import nicht funktioniert, überprüfe deine Spaltennamen, Pflichtfelder und Datumsformate. Wenn du weiterhin Hilfe benötigst, wende dich an den UmsatzAgent Support.

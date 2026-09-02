@@ -1,0 +1,187 @@
+---
+title: "Anrufschleifen beim Weiterleiten von Anrufen an interne Telefonnummern vermeiden"
+description: "Interne Telefonnummern können in deinem gesamten Konto für Unternehmensprofile, Mitarbeiterprofile, Nummern-Pools, Weiterleitungseinstellungen und…"
+---
+
+Interne Telefonnummern können in deinem gesamten Konto für Unternehmensprofile, Mitarbeiterprofile, Nummern-Pools, Weiterleitungseinstellungen und erweitertes Anruf-Routing verwendet werden. Obwohl diese Konfigurationen Flexibilität bieten, kann das Zurückleiten eines Anrufs an dieselbe interne Telefonnummer eine **Anrufschleife** erzeugen. Dies führt dazu, dass Anrufe fehlschlagen, unerwartet abbrechen oder den gewünschten Empfänger nie erreichen. Dieser Artikel erklärt, was eine Anrufschleife ist, warum Warnungen vor Anrufschleifen angezeigt werden, wo sie auftreten können und wie du dein Anruf-Routing sicher konfigurierst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](#uebersicht)
+- [Was ist eine Anrufschleife?](#was-ist-eine-anrufschleife)
+- [Warum deine geschäftliche Telefonnummer eine Warnung auslösen kann](#warum-deine-geschaeftliche-telefonnummer-eine-warnung-ausloesen-kann)
+- [Warnung vor Anrufschleifen bei geschäftlichen Telefonnummern](#warnung-vor-anrufschleifen-bei-geschaeftlichen-telefonnummern)
+- [Wo die Warnung auftreten kann](#wo-die-warnung-auftreten-kann)
+- [Telefonnummern-Routing](#telefonnummern-routing)
+- [Anrufschleifen verhindern](#anrufschleifen-verhindern)
+- [Best Practices](#best-practices)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Übersicht
+
+Das Anruf-Routing kann mehrere Ziele umfassen, darunter Benutzer, Weiterleitungsnummern, Rufgruppen und erweiterte Routing-Regeln. Obwohl interne Telefonnummern an vielen dieser Stellen verwendet werden können, erzeugt das Zurückleiten eines Anrufs an seine ursprüngliche eingehende Nummer einen Kreislauf, der verhindert, dass der Anruf erfolgreich zugestellt wird.
+
+Zu verstehen, wie Anrufschleifen entstehen, stellt sicher, dass Anrufer immer das gewünschte Ziel erreichen und fehlgeschlagene oder abgebrochene Anrufe vermieden werden.
+
+---
+
+## Was ist eine Anrufschleife?
+
+Eine **Anrufschleife** entsteht, wenn ein eingehender Anruf an dieselbe Telefonnummer oder denselben Routing-Pfad zurückgeleitet wird, der ihn ursprünglich empfangen hat. Anstatt zu einem endgültigen Ziel weitergeleitet zu werden, wiederholt der Anruf kontinuierlich dieselben Routing-Anweisungen.
+
+**Beispiel für einen unsicheren Routing-Pfad**
+
+Kunde → Geschäftliche Telefonnummer → Interne Telefonnummer → Geschäftliche Telefonnummer
+
+Da der Anruf zu seinem Ausgangspunkt zurückkehrt, wiederholt sich der Routing-Prozess, anstatt abgeschlossen zu werden.
+
+Eine Anrufschleife kann folgende Folgen haben:
+
+- Fehlgeschlagene eingehende Anrufe
+- Unerwartete Anrufunterbrechungen
+- Anrufe, die den gewünschten Empfänger nie erreichen
+- Wiederholte Routing-Versuche
+- Ungenaue Anruf-Berichterstattung
+
+---
+
+## Warum deine geschäftliche Telefonnummer eine Warnung auslösen kann
+
+Die Verwendung einer internen Telefonnummer als **Geschäftliche Telefonnummer** wird vollständig unterstützt. Das bloße Hinzufügen der Nummer zu deinem Unternehmensprofil **erzeugt keine Anrufschleife**.
+
+Die Warnung erscheint, weil dieselbe Telefonnummer möglicherweise auch Teil deines eingehenden Anruf-Routings ist.
+
+Zum Beispiel:
+
+- Ein Kunde ruft deine geschäftliche Telefonnummer an.
+- Der Anruf folgt dem von dir konfigurierten Routing.
+- Ein Routing-Ziel leitet den Anruf an eine andere interne Telefonnummer weiter.
+- Diese Telefonnummer leitet den Anruf schließlich an die ursprüngliche geschäftliche Telefonnummer zurück.
+- Das System empfängt den Anruf als neuen eingehenden Anruf und startet den Routing-Prozess von vorn.
+
+**Wichtig:** Die geschäftliche Telefonnummer selbst ist nicht das Problem. Der gesamte Routing-Pfad bestimmt, ob eine Anrufschleife vorliegt.
+
+---
+
+## Warnung vor Anrufschleifen bei geschäftlichen Telefonnummern
+
+Diese Warnung erscheint, wenn eine als geschäftliche Telefonnummer eingegebene interne Telefonnummer Teil einer Routing-Konfiguration sein könnte, die eine Anrufschleife erzeugt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077271663/original/k7m3BLJ2mYfnOaMYhamLARVz2iw_3Simgg.png?1785428637)**
+
+---
+
+## Wo die Warnung auftreten kann
+
+Warnungen vor Anrufschleifen können überall dort auftreten, wo eine interne Telefonnummer als Routing-Ziel verwendet wird. Die Überprüfung des gesamten Routing-Pfads vor dem Speichern hilft, ungewolltes Routing-Verhalten zu verhindern.
+
+### Weiterleitung über Nummern-Pools
+
+Ein Nummern-Pool kann eingehende Anrufe an ein anderes Ziel weiterleiten. Wenn dieses Ziel Anrufe schließlich wieder in den Nummern-Pool oder an eine seiner Quellnummern zurückleitet, kann eine Anrufschleife entstehen.
+
+###
+
+Diese Warnung weist darauf hin, dass die Weiterleitung von Anrufen an eine andere interne Telefonnummer dazu führen könnte, dass Anrufe erneut in denselben Routing-Ablauf gelangen.
+
+### Telefonnummer im Mitarbeiterprofil
+
+Die Telefonnummer eines Mitarbeiters sollte in der Regel eine externe Mobilfunknummer, Festnetznummer oder externe VoIP-Nummer sein.
+
+Die Verwendung einer eingehenden Telefonnummer in einem Mitarbeiterprofil kann unmittelbar eine Routing-Schleife erzeugen, weshalb diese Konfiguration möglicherweise blockiert wird.
+
+### Validierung der Telefonnummer im Mitarbeiterprofil
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077271490/original/h4KdITB2MBnsok-KS67aXeS8UFMju1Nbgg.png?1785428502)**
+
+Diese Meldung erscheint, wenn eine eingehende Telefonnummer nicht verwendet werden kann, da sie sofort eine Routing-Schleife erzeugen würde.
+
+---
+
+## Telefonnummern-Routing
+
+Bei der Konfiguration von Routing-Prioritäten prüft das System, ob das ausgewählte Ziel den Anruf letztendlich an die ursprüngliche eingehende Nummer zurücksenden könnte.
+
+###
+
+Diese Warnung erinnert dich daran, den gesamten Routing-Pfad zu überprüfen, bevor du deine Konfiguration speicherst.
+
+---
+
+## Anrufschleifen verhindern
+
+Die sicherste Routing-Konfiguration bietet jedem Anruf einen klaren Pfad zu einem endgültigen Ziel, ohne zu einem früheren Routing-Schritt zurückzukehren.
+
+Vor dem Speichern deiner Konfiguration:
+
+- Bestimme, welche Telefonnummer den eingehenden Anruf zuerst empfängt.
+- Überprüfe jedes Routing-Ziel, einschließlich Benutzer, Weiterleitungsnummern, IVRs, Workflows, AI-Assistenten, Rufgruppen und Backup-Routings.
+- Bestätige, dass kein Routing-Schritt den Anruf an die ursprüngliche eingehende Nummer zurückleitet.
+- Verwende nach Möglichkeit externe Mobilfunknummern, Festnetznummern oder externe VoIP-Nummern.
+- Führe nach Änderungen einen Testanruf von einem externen Telefon durch, um sicherzustellen, dass sich das Routing wie erwartet verhält.
+
+Ein erfolgreicher Anruffluss endet immer am vorgesehenen Ziel und kehrt niemals zum Ausgangspunkt zurück.
+
+---
+
+## Best Practices
+
+Die Befolgung dieser Empfehlungen hilft, Routing-Probleme zu vermeiden und die Zuverlässigkeit von Anrufen zu verbessern.
+
+- Verwende nach Möglichkeit externe Telefonnummern.
+- Leite eine Telefonnummer niemals an sich selbst weiter.
+- Überprüfe die Telefonnummern im Unternehmens- und Mitarbeiterprofil nach Änderungen am Routing.
+- Überprüfe IVRs, Weiterleitungsregeln, Workflows und Backup-Ziele.
+- Teste jede Routing-Änderung, bevor du sie im Live-Betrieb einsetzt.
+- Überprüfe nach Konfigurationsänderungen die Anrufprotokolle, um unerwartetes Routing-Verhalten zu erkennen.
+- Dokumentiere komplexe Routing-Pfade für eine einfachere Fehlerbehebung.
+
+---
+
+## Häufig gestellte Fragen
+
+### F: Kann ich eine interne Telefonnummer als Routing-Ziel verwenden?
+
+Ja. Interne Telefonnummern können in unterstützten Routing-Szenarien verwendet werden, solange sie Anrufe nicht an die ursprüngliche eingehende Nummer zurückleiten.
+
+### F: Warum kann ich keine eingehende Telefonnummer in einem Mitarbeiterprofil speichern?
+
+Das Telefonnummernfeld im Mitarbeiterprofil dient dazu, festzulegen, wo dieser Benutzer Anrufe empfängt. Die Verwendung einer eingehenden Telefonnummer könnte sofort eine Anrufschleife erzeugen, weshalb die Konfiguration möglicherweise blockiert wird.
+
+### F: Ist die Verwendung einer internen Telefonnummer als geschäftliche Telefonnummer ein Problem?
+
+Nein. Die reine Verwendung einer internen Telefonnummer als geschäftliche Telefonnummer erzeugt keine Anrufschleife. Eine Schleife entsteht nur, wenn die Routing-Konfiguration Anrufe letztendlich an dieselbe Nummer zurücksendet.
+
+### F: Was ist das sicherste Weiterleitungsziel?
+
+Eine externe Mobilfunknummer, Festnetznummer oder externe VoIP-Nummer ist im Allgemeinen die sicherste Option, da sie den Anruf aus dem ursprünglichen Routing-Pfad herausführt.
+
+### F: Kann eine Anrufschleife indirekt entstehen?
+
+Ja. Ein Anruf kann mehrere Routing-Schritte durchlaufen, bevor er schließlich zur ursprünglichen eingehenden Nummer zurückkehrt. Überprüfe immer den gesamten Routing-Pfad – nicht nur das nächste Ziel.
+
+### F: Wie kann ich sicherstellen, dass mein Routing keine Anrufschleife enthält?
+
+Überprüfe den gesamten Routing-Pfad, führe Testanrufe von einem externen Telefon durch und überwache die Anrufprotokolle auf fehlgeschlagene Anrufe, wiederholte Routing-Versuche oder unerwartete Abbrüche.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Anrufe fehlschlagen, unerwartet abbrechen oder ihr gewünschtes Ziel nie erreichen, überprüfe den gesamten Routing-Pfad, bevor du weitere Änderungen vornimmst.
+
+Stelle sicher, dass:
+
+- Kein Routing-Schritt den Anruf an die ursprüngliche eingehende Nummer zurückleitet.
+- Die Telefonnummern im Unternehmens- und Mitarbeiterprofil korrekt konfiguriert sind.
+- IVRs, Weiterleitungsregeln, Workflows, AI-Assistenten und Backup-Routings keine kreisförmigen Anrufpfade erzeugen.
+- Externe Weiterleitungsnummern aktiv und erreichbar sind.
+- Testanrufe von einem externen Telefon erfolgreich abgeschlossen werden.
+
+Besteht das Problem weiterhin, sammle Screenshots deiner Routing-Konfiguration, Weiterleitungseinstellungen, des Unternehmensprofils, Mitarbeiterprofils sowie relevanter Anrufprotokolle. Wende dich an den UmsatzAgent Support.
+
+##

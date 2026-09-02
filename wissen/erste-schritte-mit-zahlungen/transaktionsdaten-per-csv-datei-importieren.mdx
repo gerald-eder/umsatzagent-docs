@@ -1,0 +1,111 @@
+---
+title: "Transaktionsdaten per CSV-Datei importieren"
+description: "Das Hochladen von Transaktionsdaten per CSV ermöglicht es dir, große Mengen an Zahlungsdatensätzen schnell in dein System zu importieren. Die Verwendung…"
+---
+
+Das Hochladen von Transaktionsdaten per CSV ermöglicht es dir, große Mengen an Zahlungsdatensätzen schnell in dein System zu importieren. Die Verwendung des richtigen Formats stellt sicher, dass deine Daten korrekt verarbeitet werden, und verhindert häufige Importfehler.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [CSV-Formatanforderungen](#csv-formatanforderungen)
+- [Erforderliche Transaktionsfelder erklärt](#erforderliche-transaktionsfelder-erklaert)
+- [Bildplatzierung](#bildplatzierung)
+- [Häufige Upload-Fehler vermeiden](#haeufige-upload-fehler-vermeiden)
+- [Tipps für erfolgreiche Importe](#tipps-fuer-erfolgreiche-importe)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## CSV-Formatanforderungen
+
+Die richtige Dateistruktur ist entscheidend für einen erfolgreichen Upload. Jede Spalte muss dem erwarteten Format entsprechen, damit das System deine Daten korrekt zuordnen und verarbeiten kann.
+
+- Die Datei muss im **.csv-Format** gespeichert sein
+- Spaltenüberschriften müssen **exakt mit den erforderlichen Feldnamen übereinstimmen**
+- Jede Zeile sollte **eine Transaktion** darstellen
+- Alle Pflichtfelder müssen gültige Daten enthalten
+- Vermeide zusätzliche Leerzeichen, Symbole oder nicht unterstützte Formatierungen
+
+---
+
+## Erforderliche Transaktionsfelder erklärt
+
+Jede Spalte in deiner CSV stellt einen bestimmten Teil einer Transaktion dar. Die Bereitstellung genauer Daten gewährleistet eine ordnungsgemäße Datensatzerstellung und Berichterstattung.
+
+- **Vorname / Nachname des Kunden:** Identifiziert den mit der Transaktion verknüpften Kunden
+- **E-Mail-Adresse des Kunden:** Dient der Kontaktidentifikation und Kommunikation
+- **Telefonnummer des Kunden:** Gib für Genauigkeit den Ländercode an
+- **Währung:** Muss standardmäßige 3-stellige Codes verwenden (z. B. USD, EUR)
+- **Gezahlter Betrag:** Endbetrag, der vom Kunden eingezogen wurde
+- **Transaktionsdatum & -uhrzeit:** Gibt an, wann die Zahlung erfolgt ist
+- **Zahlungsmethode:** Gibt an, wie die Zahlung getätigt wurde (z. B. Karte, Barzahlung)
+- **Zahlungsanbieter:** Identifiziert den verwendeten Zahlungsabwickler
+- **Adressfelder:** Erfassen Rechnungs- oder Standortdetails des Kunden
+
+Optionale Felder wie Steuern, Rabatte, Trinkgelder und Artikeldetails können hinzugefügt werden, um detailliertere Einblicke in Transaktionen zu erhalten.
+
+---
+
+## Bildplatzierung
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155069414454/original/BbLuIGPNrX3fEipFWWBr8MZKJHwiCDl0xg.png?1776466112)**
+
+Zeigt eine Beispieltabelle aller unterstützten CSV-Spalten einschließlich Kundendetails, Zahlungsdaten und Adressfeldern. Nutze dies als Referenz, um deine Datei vor dem Hochladen richtig zu strukturieren.
+
+---
+
+## Häufige Upload-Fehler vermeiden
+
+Fehlerhafte Formatierung ist der häufigste Grund für fehlgeschlagene Importe. Das Überprüfen deiner Datei vor dem Hochladen spart Zeit und verhindert Datenprobleme.
+
+- Fehlende Pflichtfelder wie **Gezahlter Betrag, Transaktionsdatum oder E-Mail-Adresse des Kunden**
+- Falsche Datums- oder Uhrzeitformate
+- Verwendung von Symbolen anstelle von ISO-Währungscodes (z. B. $ statt USD)
+- Ungültige E-Mail- oder Telefonnummernformate
+- Nicht übereinstimmende oder falsch geschriebene Spaltenüberschriften
+
+---
+
+## Tipps für erfolgreiche Importe
+
+Einige einfache Überprüfungen stellen sicher, dass deine CSV fehlerfrei hochgeladen wird und deine Daten korrekt bleiben.
+
+- Überprüfe die Spaltenüberschriften vor dem Hochladen
+- Halte die Formatierung über alle Zeilen hinweg einheitlich
+- Nutze ein Tabellenkalkulationsprogramm, um Daten vor dem Export zu validieren
+- Teste mit einer kleinen Datei, bevor du große Datensätze importierst
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich mehrere Transaktionen gleichzeitig hochladen?**
+
+Ja, jede Zeile stellt eine Transaktion dar, sodass du mehrere Datensätze in einer einzigen Datei hochladen kannst.
+
+**F: Was passiert, wenn Pflichtfelder fehlen?**
+
+Der Upload der Datei kann fehlschlagen oder ungültige Zeilen werden je nach Problem übersprungen.
+
+**F: Kann ich zusätzliche, nicht aufgeführte Felder einbinden?**
+
+Nur unterstützte Felder werden verarbeitet. Zusätzliche Spalten werden möglicherweise ignoriert.
+
+**F: Welches Format sollten Datumsangaben haben?**
+
+Verwende ein einheitliches Format wie TT/MM/JJJJ oder MM/TT/JJJJ basierend auf deinen Systemeinstellungen.
+
+**F: Kann ich bestehende Transaktionen per CSV aktualisieren?**
+
+Das hängt vom Systemverhalten ab. In der Regel erstellt der CSV-Import neue Datensätze, sofern nicht anders angegeben.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn deine CSV-Datei nicht hochgeladen wird oder du dir bei der Formatierung unsicher bist, wende dich an den UmsatzAgent Support oder vergleiche deine Datei mit der Beispielstruktur, um Fehler zu identifizieren.
+
+###

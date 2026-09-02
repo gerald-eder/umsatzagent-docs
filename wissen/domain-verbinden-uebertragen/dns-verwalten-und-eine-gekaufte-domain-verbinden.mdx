@@ -1,0 +1,216 @@
+---
+title: "DNS verwalten und eine gekaufte Domain verbinden"
+description: "Verwalte DNS-Einträge und verbinde eine über dein Konto gekaufte Domain, ohne einen separaten Domain-Anbieter zu nutzen. Du kannst den Status der Domain…"
+---
+
+Verwalte DNS-Einträge und verbinde eine über dein Konto gekaufte Domain, ohne einen separaten Domain-Anbieter zu nutzen. Du kannst den Status der Domain prüfen, unterstützte DNS-Einträge hinzufügen und sie an einem zentralen Ort mit einem Funnel, einer Website, einem Shop oder einem Blog verbinden.
+
+**Wichtig:** Diese Anleitung gilt für Domains, die direkt über dein Konto gekauft wurden. Für Domains von externen Anbietern gilt ein anderer Verbindungsprozess.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Verwaltung gekaufter Domains?](#was-ist-die-verwaltung-gekaufter-domains)
+- [Unterstützte DNS-Einträge](#unterstuetzte-dns-eintraege)
+- [So verwaltest du eine gekaufte Domain](#so-verwaltest-du-eine-gekaufte-domain)
+- [So fügst du einen DNS-Eintrag hinzu](#so-fuegst-du-einen-dns-eintrag-hinzu)
+- [So verbindest du eine gekaufte Domain](#so-verbindest-du-eine-gekaufte-domain)
+- [Nutzung einer Root-Domain für mehrere Seiten](#nutzung-einer-root-domain-fuer-mehrere-seiten)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist die Verwaltung gekaufter Domains?
+
+Die Verwaltung gekaufter Domains bietet dir direkten Zugriff auf die Einstellungen von Domains, die du über dein Konto erworben hast.
+
+Du kannst:
+
+- Den Domain-Status und Informationen zur Verlängerung einsehen.
+- Unterstützte DNS-Einträge hinzufügen, bearbeiten oder entfernen.
+- Die Domain mit einem Funnel, einer Website, einem Shop oder einem Blog verbinden.
+- Gängige Domain-Einstellungen verwalten, ohne dich bei einem separaten Registrar anzumelden.
+
+---
+
+## Unterstützte DNS-Einträge
+
+DNS-Einträge steuern, wohin deine Domain Website-, E-Mail- und sonstigen Internet-Traffic leitet. Das Verständnis der Eintragstypen vor Änderungen hilft, Unterbrechungen verbundener Dienste zu vermeiden.
+
+- **A:** Leitet einen Hostnamen auf eine IPv4-Adresse weiter.
+- **CNAME:** Leitet einen Hostnamen auf einen anderen Hostnamen weiter.
+- **AAAA:** Leitet einen Hostnamen auf eine IPv6-Adresse weiter.
+- **MX:** Bestimmt die Server, die für den Empfang von E-Mails zuständig sind.
+- **TXT:** Speichert Textinformationen, die häufig zur Verifizierung und E-Mail-Authentifizierung genutzt werden.
+
+**Wichtig:** Ändere bestehende DNS-Einträge nur, wenn du genau weißt, was sie steuern. Fehlerhafte DNS-Änderungen können Websites, E-Mails oder andere Dienste unterbrechen.
+
+---
+
+## So verwaltest du eine gekaufte Domain
+
+Öffne die gekaufte Domain in den Einstellungen, bevor du DNS-Einträge hinzufügst oder sie mit einer Seite verbindest.
+
+### Einstellungen öffnen
+
+Wähle in deinem Konto **Einstellungen**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641413/original/ZAJf7gV9_gI4YlDOnq2NPKoFR_QkqMUikA.png?1787002634)**
+
+*Wähle Einstellungen in der Hauptnavigation, um auf deine Domain-Konfigurationsoptionen zuzugreifen.*
+
+### Gekaufte Domain aufrufen
+
+Öffne **Domains** und suche die Domain unter **Gekaufte Domains**.
+
+Bei einer neu gekauften Domain wird möglicherweise vorübergehend **Domain wird eingerichtet** angezeigt, während die Konfiguration abgeschlossen wird.
+
+Die Schaltfläche **Konfigurieren** ist während dieses Vorgangs möglicherweise noch nicht verfügbar.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641420/original/n1vbZh7KlQSzosnAZuUYCSZJumJmFcRiXQ.png?1787002667)**
+
+*Suche deine Domain unter Gekaufte Domains. Wenn die Domain noch eingerichtet wird, warte den Abschluss der Einrichtung ab, bevor du fortfährst.*
+
+### Aktive Domain öffnen
+
+Sobald die Domain als **Aktiv** angezeigt wird, klicke auf **Konfigurieren**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641298/original/nUGEjmL4GyFeydX0hrK1mdU4EhV7Y8da3Q.png?1787002322)**
+
+*Vergewissere dich, dass der Domain-Status Aktiv ist, und klicke dann auf Konfigurieren, um die DNS- und Verbindungseinstellungen zu öffnen.*
+
+---
+
+## So fügst du einen DNS-Eintrag hinzu
+
+Füge DNS-Einträge hinzu, wenn eine andere Website, ein E-Mail-Dienst, ein Verifizierungsdienst oder ein verbundener Dienst bestimmte DNS-Werte vorgibt, die deiner Domain hinzugefügt werden müssen.
+
+### DNS-Verwaltung öffnen
+
+Die Domain-Konfigurationsseite zeigt deine bestehenden DNS-Einträge und verfügbaren Domain-Aktionen an.
+
+Klicke auf **Eintrag hinzufügen**, um einen DNS-Eintrag zu erstellen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641289/original/eKxAq9bmaU5JqHWnv-_M6bFZhGRXyqHMYg.png?1787002312)**
+
+*Öffne die gekaufte Domain und klicke auf Eintrag hinzufügen, um manuell einen neuen DNS-Eintrag zu erstellen.*
+
+### DNS-Eintrag eingeben
+
+Wähle den erforderlichen **Typ** aus und gib **Name**, Ziel- oder Inhaltswert sowie die **TTL** ein, die der zu verbindende Dienst bereitstellt.
+
+Klicke abschließend auf **Speichern**.
+
+Die angezeigten Felder können je nach ausgewähltem DNS-Eintragstyp variieren.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641283/original/pc1__FzV4xVWhonqQA8ytoHE-P-9UInu-Q.png?1787002302)**
+
+*Gib die DNS-Werte genau so ein, wie sie vom zu verbindenden Dienst vorgegeben werden, und klicke auf Speichern.*
+
+### A-Einträge für die Root-Domain
+
+Vermeide das Erstellen mehrerer A-Einträge für denselben Root-Hostnamen, es sei denn, deine Konfiguration erfordert dies ausdrücklich. Widersprüchliche Root-Einträge können verhindern, dass der Traffic das gewünschte Ziel erreicht.
+
+---
+
+## So verbindest du eine gekaufte Domain
+
+Die geführte Domain-Verbindung ermöglicht es dir, deine gekaufte Domain mit unterstützten Seiteninhalten zu verknüpfen, ohne jeden erforderlichen Verbindungseintrag manuell anlegen zu müssen.
+
+### Domain-Verbindung starten
+
+Klicke auf der Domain-Konfigurationsseite auf **Diese Domain verbinden**.
+
+Bestätige die Domain oder Subdomain, die du verwenden möchtest. Wähle, falls verfügbar, ob du auch die **www**-Version einbinden möchtest.
+
+Klicke auf **Weiter**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641282/original/p_vZTl2aXjUQ6FvBbeBN_W0rX-jasJHJeQ.png?1787002290)**
+
+*Bestätige die gewünschte Domain, wähle bei Bedarf die www-Version aus und klicke auf Weiter.*
+
+### Seite auswählen
+
+Wähle aus, womit die Domain verbunden werden soll:
+
+- Funnel
+- Website
+- Shop
+- Blog
+
+Wähle das gewünschte Element aus dem Dropdown-Menü, prüfe eventuelle Zusatzoptionen und klicke auf **Fertigstellen**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641279/original/KmeLCD8a63h0ASEMwkoGr5ng6hRB5s87uA.png?1787002280)**
+
+*Wähle den Seitentyp aus, den du verbinden möchtest, wähle das entsprechende Element und klicke auf Fertigstellen.*
+
+### DNS-Einträge überprüfen
+
+Kehre nach Abschluss der Einrichtung zur Domain-Konfigurationsseite zurück und prüfe die für die Verbindung erstellten DNS-Einträge.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078641266/original/2i0eU2fS1KHTCczd3e5HUrUqNmbwzksHzQ.png?1787002262)**
+
+*Prüfe die DNS-Einträge nach Abschluss der Verbindung und vergewissere dich, dass die erwarteten Einträge angezeigt werden.*
+
+**Hinweis:** Die Weitergabe von DNS-Änderungen kann einige Zeit dauern. Eine neu konfigurierte Domain funktioniert möglicherweise nicht sofort.
+
+---
+
+## Nutzung einer Root-Domain für mehrere Seiten
+
+Eine Root-Domain sollte normalerweise auf ein primäres Ziel verweisen. Wenn du verschiedene Bereiche unter derselben Domain benötigst, verwende Subdomains, um die Ziele voneinander zu trennen.
+
+Zum Beispiel:
+
+- **www.example.com** → Website
+- **store.example.com** → Shop
+- **blog.example.com** → Blog
+
+Dies verhindert, dass unterschiedliche Seitenkonfigurationen um dieselben DNS-Einträge der Root-Domain konkurrieren.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich diese Anleitung für eine Domain verwenden, die woanders gekauft wurde?**
+
+Nein. Diese Anleitung gilt speziell für Domains, die direkt über dein Konto erworben wurden. Eine extern gekaufte Domain muss über den Verbindungsprozess für externe Domains konfiguriert werden.
+
+**F: Welche DNS-Einträge kann ich verwalten?**
+
+Zu den unterstützten Eintragstypen gehören A, CNAME, AAAA, MX und TXT.
+
+**F: Warum kann ich nach dem Kauf meiner Domain nicht auf Konfigurieren klicken?**
+
+Die Ersteinrichtung der Domain ist möglicherweise noch nicht abgeschlossen. Warte, bis der Status auf **Aktiv** wechselt, und klicke dann auf **Konfigurieren**.
+
+**F: Kann ich dieselbe Root-Domain sowohl mit einem Funnel als auch mit einer Website verbinden?**
+
+Eine Root-Domain sollte normalerweise auf ein primäres Ziel verweisen. Verwende separate Subdomains, wenn verschiedene Seiten eigene Adressen benötigen.
+
+**F: Warum funktioniert meine Domain nicht sofort nach der Einrichtung?**
+
+Die globale Verteilung von DNS-Änderungen kann einige Zeit in Anspruch nehmen. Warte etwas ab, bevor du mit der Fehlersuche beginnst.
+
+**F: Können sich Änderungen an DNS-Einträgen auf meine E-Mails auswirken?**
+
+Ja. DNS-Einträge können neben Websites auch E-Mail- und andere Dienste steuern. Ändere bestehende MX-, TXT-, CNAME- oder sonstige Einträge nur, wenn du deren Zweck kennst.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn sich deine gekaufte Domain nicht wie erwartet verbindet, prüfe zuerst ihren **Status, die DNS-Einträge, das ausgewählte Ziel und kürzlich vorgenommene DNS-Änderungen**.
+
+Stelle Folgendes sicher:
+
+- Der Domain-Status ist **Aktiv**.
+- Die erforderlichen DNS-Einträge sind vorhanden.
+- Die DNS-Werte wurden korrekt eingegeben.
+- Die Domain ist mit dem vorgesehenen Funnel, der Website, dem Shop oder dem Blog verbunden.
+- Derselbe Root-Hostname verweist nicht auf widersprüchliche Ziele.
+- Es ist genügend Zeit vergangen, damit sich kürzlich vorgenommene DNS-Änderungen verteilen konnten.
+
+Besteht das Problem weiterhin, sichere den Domain-Status sowie die aktuellen DNS-Einträge. Wende dich an den UmsatzAgent Support. Vermeide es, während der Fehlersuche Einträge zu löschen oder zu ersetzen, es sei denn, du weißt genau, welchen Dienst sie steuern.

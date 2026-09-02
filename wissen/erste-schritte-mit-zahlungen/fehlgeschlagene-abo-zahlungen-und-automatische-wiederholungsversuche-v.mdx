@@ -1,0 +1,233 @@
+---
+title: "Fehlgeschlagene Abo-Zahlungen und automatische Wiederholungsversuche verwalten"
+description: "Wenn eine wiederkehrende Abo-Zahlung fehlschlägt, wird automatisch eine Rechnung erstellt, damit der Kunde eine alternative Möglichkeit zur Zahlung hat.…"
+---
+
+#
+
+Wenn eine wiederkehrende Abo-Zahlung fehlschlägt, wird automatisch eine Rechnung erstellt, damit der Kunde eine alternative Möglichkeit zur Zahlung hat. Automatische Wiederholungsversuche können ebenfalls versuchen, die Zahlung anhand deines festgelegten Zeitplans einzuziehen. Du kannst die Anzahl und die zeitlichen Abstände der Wiederholungsversuche steuern und festlegen, ob ein Abo unbezahlt bleibt oder gekündigt wird, wenn die Einziehung erfolglos bleibt.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Wiederholungsversuche bei fehlgeschlagenen Abo-Zahlungen?](#was-sind-wiederholungsversuche-bei-fehlgeschlagenen-abo-zahlungen)
+- [Hauptvorteile von Wiederholungsversuchen bei fehlgeschlagenen Zahlungen](#hauptvorteile-von-wiederholungsversuchen-bei-fehlgeschlagenen-zahlungen)
+- [Wie fehlgeschlagene Abo-Zahlungen verarbeitet werden](#wie-fehlgeschlagene-abo-zahlungen-verarbeitet-werden)
+- [So funktioniert die Zeitplanung für Wiederholungsversuche](#so-funktioniert-die-zeitplanung-fuer-wiederholungsversuche)
+- [So konfigurierst du Wiederholungsversuche bei fehlgeschlagenen Zahlungen](#so-konfigurierst-du-wiederholungsversuche-bei-fehlgeschlagenen-zahlungen)
+- [Was passiert, wenn die Zahlung erfolgreich eingezogen wurde?](#was-passiert-wenn-die-zahlung-erfolgreich-eingezogen-wurde)
+- [Was passiert, wenn alle Wiederholungsversuche fehlschlagen?](#was-passiert-wenn-alle-wiederholungsversuche-fehlschlagen)
+- [Best Practices für fehlgeschlagene Abo-Zahlungen](#best-practices-fuer-fehlgeschlagene-abo-zahlungen)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was sind Wiederholungsversuche bei fehlgeschlagenen Abo-Zahlungen?
+
+Wiederholungsversuche geben wiederkehrenden Abos zusätzliche Gelegenheiten, Zahlungen nach einer fehlgeschlagenen Erstabbuchung einzuziehen. Zudem wird eine Rechnung für die fehlgeschlagene Zahlung erstellt, sodass der Kunde die Zahlung begleichen kann, ohne auf den nächsten automatischen Wiederholungsversuch zu warten.
+
+Die beiden Einziehungsmethoden greifen ineinander:
+
+- **Automatischer Wiederholungsversuch:** Die hinterlegte Zahlungsmethode wird gemäß dem konfigurierten Zeitplan erneut belastet.
+- **Rechnungszahlung:** Der Kunde kann die erstellte Rechnung begleichen, bevor der nächste geplante Wiederholungsversuch stattfindet.
+
+Wird die Rechnung vor dem nächsten Versuch bezahlt, stoppen die verbleibenden Wiederholungsversuche.
+
+---
+
+## Hauptvorteile von Wiederholungsversuchen bei fehlgeschlagenen Zahlungen
+
+Wiederholungsversuche bieten einen strukturierten Weg zur Rettung wiederkehrender Umsätze und geben Kunden gleichzeitig Zeit, Zahlungsprobleme zu lösen.
+
+- **Automatische Einziehung:** Wiederhole fehlgeschlagene Abo-Zahlungen, ohne jede Abbuchung manuell ausführen zu müssen.
+- **Flexible Zeitplanung:** Konfiguriere bis zu drei Wiederholungsversuche und wähle die Wartezeit vor jedem Versuch.
+- **Mehrere Zahlungsoptionen:** Kunden können die erstellte Rechnung begleichen, während automatische Wiederholungsversuche ausstehen.
+- **Abo-Kontinuität:** Eine erfolgreiche Zahlung kann ein berechtigtes Abo wieder in den Status **Aktiv** versetzen.
+- **Kontrolle über den Endstatus:** Entscheide, ob ein Abo nach allen fehlgeschlagenen Versuchen auf **Unbezahlt** bleibt oder automatisch gekündigt wird.
+- **Einheitliche Verwaltung:** Aktualisierte Einstellungen können sich auch auf Abos auswirken, die sich bereits im Wiederholungsprozess befinden.
+
+---
+
+## Wie fehlgeschlagene Abo-Zahlungen verarbeitet werden
+
+Das Verständnis des Prozesses hilft dir nachzuvollziehen, was Kunden nach einer fehlgeschlagenen wiederkehrenden Zahlung erleben.
+
+1. Für die fehlgeschlagene Zahlung wird automatisch eine Rechnung erstellt.
+2. Der Kunde kann die erstellte Rechnung zur Zahlung nutzen.
+3. Automatische Wiederholungsversuche starten gemäß dem festgelegten Zeitplan.
+4. Der Kunde kann die Rechnung bezahlen, während automatische Wiederholungen ausstehen.
+5. Ist die Zahlung vor dem nächsten Versuch erfolgreich, stoppen weitere Wiederholungen.
+6. Wurde die Zahlung beglichen und liegt keine weitere offene Rechnung für das Abo vor, wechselt das Abo wieder in den Status **Aktiv**.
+7. Schlagen alle konfigurierten Versuche fehl, bleibt das Abo auf **Unbezahlt**, sofern die automatische Kündigung nicht aktiviert wurde.
+
+Verwendet ein Kunde beim Bezahlen der erstellten Rechnung eine neue gültige Zahlungsmethode, kann diese auch für künftige Abo-Zahlungen verwendet werden.
+
+---
+
+## So funktioniert die Zeitplanung für Wiederholungsversuche
+
+Die Zeitplanung steuert, wie viele zusätzliche Abbuchungsversuche unternommen werden und wie lange das System dazwischen wartet. Dies gibt Kunden Zeit, temporäre Zahlungsprobleme zu beheben, und hält unbezahlte Abos übersichtlich.
+
+Du kannst Folgendes konfigurieren:
+
+- Bis zu **drei Wiederholungsversuche**.
+- Eine Verzögerung von **1, 3, 5 oder 7 Tagen** für jeden konfigurierten Versuch.
+
+Die Standardkonfiguration nutzt drei Wiederholungsversuche mit einem Tag Abstand zwischen den Versuchen.
+
+**Wichtig:** Änderungen an den Einstellungen können sich auf zutreffende Abos auswirken, die bereits einen Wiederholungszyklus durchlaufen. Prüfe aktive unbezahlte Abos, bevor du größere Änderungen vornimmst.
+
+---
+
+## So konfigurierst du Wiederholungsversuche bei fehlgeschlagenen Zahlungen
+
+Die Konfiguration des Wiederholungsverhaltens bestimmt, wie lange Zahlungsversuche unternommen werden und was passiert, wenn jeder Einzugsversuch erfolglos bleibt.
+
+### Öffne die Abo-Wiederholungseinstellungen
+
+Gehe zu **Zahlungen → Einstellungen → Abos**.
+
+Suche den Bereich **Manage failed payments for subscriptions**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079283886/original/0omL-IrZdJbzhMqxAwWzDbqTuaxnWklF5A.png?1787686170)**
+
+Öffne die Abo-Einstellungen und suche die Steuerelemente für Wiederholungsversuche, bevor du den Zeitplan änderst.
+
+### Wähle den Zeitplan für Wiederholungsversuche
+
+Wähle die Verzögerung für jeden gewünschten Wiederholungsversuch aus.
+
+Verfügbare Intervalle:
+
+- Wiederholung 1 Tag nach dem vorherigen Versuch
+- Wiederholung 3 Tage nach dem vorherigen Versuch
+- Wiederholung 5 Tage nach dem vorherigen Versuch
+- Wiederholung 7 Tage nach dem vorherigen Versuch
+
+Nutze das Papierkorb-Symbol neben einem Versuch, um diesen zu entfernen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079283890/original/epdvHW4eTUN8TH-Ec8Fn7FTh-_ZmsT45pA.png?1787686184)**
+
+Öffne das Dropdown-Menü für Wiederholungen und wähle aus, wie viele Tage das System nach dem vorherigen Versuch warten soll, bevor die Zahlung erneut versucht wird.
+
+### Speichere die Konfiguration
+
+Überprüfe die gesamte Wiederholungsabfolge und klicke auf **Speichern**.
+
+**Hinweis:** Konfigurierbare Wiederholungseinstellungen sind nur für Abos mit unterstützten Zahlungsanbindungen verfügbar. Sind diese Optionen nicht verfügbar, unterstützt die genutzte Anbindung diese Konfiguration möglicherweise nicht.
+
+---
+
+## Was passiert, wenn die Zahlung erfolgreich eingezogen wurde?
+
+Ein erfolgreicher Einzug ermöglicht die Fortführung des Abos, ohne dass du es neu anlegen musst. Die Zahlung kann über einen automatischen Wiederholungsversuch oder durch die Begleichung der erstellten Rechnung durch den Kunden erfolgen.
+
+Wenn die Zahlung erfolgreich ist:
+
+- Die erfolgreiche Transaktion wird erfasst.
+- Die zugehörige Zahlungsverpflichtung ist beglichen.
+- Verbleibende Wiederholungsversuche für diese fehlgeschlagene Zahlung stoppen.
+- Das Abo kann auf **Aktiv** zurückgesetzt werden, wenn keine weiteren offenen Rechnungen vorliegen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079283804/original/Ov3neVxn9xPoDndB-4kGw6Jd783kyB2Pgg.png?1787686009)**
+Öffne das Abo nach erfolgreicher Zahlung und überprüfe, ob der Status **Aktiv** ist und die erfolgreiche Transaktion im Zahlungsverlauf erscheint.
+
+---
+
+## Was passiert, wenn alle Wiederholungsversuche fehlschlagen?
+
+Ein Abo, dessen Zahlung nicht eingezogen werden kann, benötigt einen eindeutigen Endstatus, damit unbezahlte Abos identifiziert und passend verwaltet werden können.
+
+Wenn alle konfigurierten Wiederholungsversuche fehlschlagen, bleibt das Abo auf **Unbezahlt**, sofern die automatische Kündigung nicht aktiviert wurde.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079283819/original/AFk2JJ97czlMY9qwdsI63nTinxNToAIdzw.png?1787686051)**
+Öffne das Abo nach dem letzten erfolglosen Versuch und überprüfe den Status **Unbezahlt** sowie den Verlauf der fehlgeschlagenen Transaktionen.
+
+### Automatische Kündigung nach allen fehlgeschlagenen Versuchen
+
+Du kannst festlegen, dass das Abo automatisch gekündigt wird, wenn alle konfigurierten Wiederholungsversuche fehlschlagen.
+
+Gehe zu **Zahlungen → Einstellungen → Abos** und suche **Subscription status**.
+
+Aktiviere:
+
+**If all retries for a payment fail, cancel the subscription**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079283720/original/Cbo9TZ1_t37k6SiCS_EYiE-WrdGv0jju1A.jpeg?1787685866)**
+
+Aktiviere die Kündigungsoption, wenn Abos nach allen fehlgeschlagenen Einzugsversuchen automatisch gekündigt werden sollen, und klicke auf **Speichern**.
+
+---
+
+## Best Practices für fehlgeschlagene Abo-Zahlungen
+
+Eine klare Strategie kann fehlgeschlagene Verlängerungen reduzieren und sorgt für eine einfachere Verwaltung von Abodaten und offenen Beträgen.
+
+- Wähle einen Zeitplan für Wiederholungsversuche, der Kunden ausreichend Zeit zur Lösung temporärer Zahlungsprobleme gibt.
+- Überprüfe aktive Wiederholungszyklen, bevor du Einstellungen änderst.
+- Überwache **Unbezahlt**-Abos regelmäßig, wenn die automatische Kündigung deaktiviert ist.
+- Prüfe erstellte Rechnungen, bevor du zusätzliche manuelle Einzüge versuchst.
+- Vergewissere dich, dass das Abo nach erfolgreicher Zahlung wieder auf **Aktiv** wechselt.
+- Prüfe auf weitere unbezahlte Rechnungen, falls ein erfolgreich bezahltes Abo nicht aktiv wird.
+- Nutze die automatische Kündigung nur, wenn sie deinen Abo- und Kundenservice-Richtlinien entspricht.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Wie oft kann eine fehlgeschlagene Abo-Zahlung wiederholt werden?**
+
+Du kannst bis zu drei zusätzliche Wiederholungsversuche konfigurieren.
+
+**F: Wie viel Zeit kann zwischen den Wiederholungsversuchen liegen?**
+
+Jeder Versuch kann auf 1, 3, 5 oder 7 Tage nach dem vorherigen Versuch eingestellt werden.
+
+**F: Was passiert, wenn der Kunde die erstellte Rechnung vor dem nächsten Wiederholungsversuch bezahlt?**
+
+Die Zahlung wird erfasst und die verbleibenden Wiederholungsversuche für diese Zahlung stoppen.
+
+**F: Kann der Kunde eine andere Zahlungsmethode für die erstellte Rechnung nutzen?**
+
+Der Kunde kann eine verfügbare und zulässige Zahlungsmethode auf der Rechnung nutzen. Diese Zahlungsmethode kann auch für künftige Abo-Zahlungen hinterlegt werden.
+
+**F: Was passiert, wenn jeder automatische Wiederholungsversuch fehlschlägt?**
+
+Das Abo bleibt auf **Unbezahlt**, sofern die Option zur automatischen Kündigung nach allen fehlgeschlagenen Versuchen nicht aktiviert ist.
+
+**F: Wirken sich Änderungen an den Einstellungen auf Abos aus, die sich bereits im Wiederholungsprozess befinden?**
+
+Ja. Aktualisierte Einstellungen können sich auf zutreffende Abos auswirken, die den Prozess bereits durchlaufen.
+
+**F: Warum ist ein Abo nach erfolgreicher Zahlung immer noch unbezahlt?**
+
+Prüfe, ob noch eine weitere offene Rechnung für das Abo vorliegt. Das Abo kann erst wieder auf **Aktiv** wechseln, wenn alle fälligen Zahlungsverpflichtungen beglichen sind.
+
+**F: Warum sehe ich die Einstellungen für Wiederholungsversuche nicht?**
+
+Das Abo nutzt möglicherweise eine Zahlungsanbindung, die keine konfigurierbaren Wiederholungen unterstützt. Prüfe, ob die für wiederkehrende Zahlungen genutzte Anbindung diese Funktion unterstützt.
+
+**F: Muss ich manuell eine Rechnung erstellen, wenn eine Abo-Zahlung fehlschlägt?**
+
+Nein. Für die fehlgeschlagene Abo-Zahlung wird automatisch eine Rechnung erstellt.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn ein Wiederholungsversuch für eine fehlgeschlagene Abo-Zahlung ausbleibt oder sich der Abo-Status nicht wie erwartet aktualisiert, prüfe zuerst den Zahlungsverlauf und die aktuelle Konfiguration.
+
+**Prüfe Folgendes:**
+
+- Das Abo nutzt eine Zahlungsanbindung, die konfigurierbare Wiederholungen unterstützt.
+- Mindestens ein Wiederholungsversuch ist konfiguriert.
+- Das erwartete Datum für den Wiederholungsversuch ist erreicht.
+- Kürzliche Änderungen am Zeitplan wurden gespeichert.
+- Der Kunde hat die erstellte Rechnung nicht bereits bezahlt.
+- Der Transaktionsverlauf zeigt, ob die jeweiligen Versuche erfolgreich waren oder fehlschlugen.
+- Keine andere unbezahlte Rechnung verhindert, dass das Abo wieder auf **Aktiv** wechselt.
+- Die Einstellung zur automatischen Kündigung entspricht dem Status, den du nach allen fehlgeschlagenen Versuchen erwartest.
+
+Besteht das Problem weiterhin, halte den Abo-Status, die Wiederholungskonfiguration, den Rechnungsstatus, den Transaktionsverlauf und das erwartete Wiederholungsdatum fest. Wende dich an den UmsatzAgent Support.

@@ -1,0 +1,124 @@
+---
+title: "Compliance erreichen: Anforderungen von Google und Yahoo an E-Mail-Absender ab 2024"
+description: "Ab Februar 2024 verlangen Google und Yahoo von E-Mail-Absendern eine verpflichtende E-Mail-Authentifizierung. Zudem gibt es wichtige Richtlinienänderungen…"
+---
+
+Ab Februar 2024 verlangen [Google](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/) und [Yahoo](https://blog.postmaster.yahooinc.com/post/730172167494483968/more-secure-less-spam) von E-Mail-Absendern eine verpflichtende E-Mail-Authentifizierung. Zudem gibt es wichtige Richtlinienänderungen bezüglich Einwilligung und Empfängerinteraktion. Werden diese Vorgaben nicht eingehalten, können E-Mails verzögert zugestellt, blockiert oder als Spam eingestuft werden. Diese Anforderungen gelten in der Praxis schon lange als bewährter Standard für eine zuverlässige E-Mail-Zustellung.
+
+**INHALTSVERZEICHNIS**
+
+[1. Eigene Absender-Domain einrichten](#1-eigene-absender-domain-einrichten)
+
+[2. DMARC-Authentifizierung für deine Absender-Domain einrichten](#2-dmarc-authentifizierung-fuer-deine-absender-domain-einrichten)
+
+[3. Markenkonsistenz sicherstellen](#3-markenkonsistenz-sicherstellen)
+
+[4. Keine Gmail-Adressen im Absender verwenden](#4-keine-gmail-adressen-im-absender-verwenden)
+
+[5. Abmeldung einfach gestalten](#5-abmeldung-einfach-gestalten)
+
+[6. E-Mail-Zustellung optimieren: Spam-Rate unter 0,30 % halten](#6-e-mail-zustellung-optimieren-spam-rate-unter-0-30-halten)
+
+---
+
+## Konto vorbereiten:
+
+Nutze diese Checkliste, um die neuen Absenderanforderungen von Google und Yahoo zu erfüllen.
+
+### 1. Eigene Absender-Domain einrichten
+
+Verbessere deine Absender-Reputation und stärke deinen Markenauftritt im Posteingang durch eine eigene Absender-Domain. Entferne damit Hinweise auf Standard-Versanddomains und sorge für eine bessere Zustellbarkeit. Ab Februar ist dies für Massenabsender an Google- und Yahoo-Empfänger verpflichtend.
+
+Beachte, dass nach der Aktivierung deiner eigenen Absender-Domain ein schrittweises Aufwärmen (Warm-up) der Versand-Infrastruktur über 2 bis 4 Wochen erforderlich sein kann.
+
+Hier findest du eine Anleitung zur [Einrichtung einer eigenen Absender-Domain](/wissen/e-mail/so-richtest-du-eine-dedizierte-e-mail-absendedomain-ein).
+
+## *Beispiel für eine eigene Absender-Domain in Gmail*
+
+*![Beispiel für eine eigene Absender-Domain in Gmail](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155016626477/original/R5EN7-Lale0BG4SHQGgYFNqlRN_M2x-1Ag.png?1704274749)*
+
+---
+
+### 2. DMARC-Authentifizierung für deine Absender-Domain einrichten
+
+Was ist DMARC? DMARC (Domain-based Message Authentication, Reporting & Conformance) ist ein Standard, der auf SPF und DKIM aufbaut. Er teilt Postfachanbietern mit, wie sie mit E-Mails umgehen sollen, die SPF, DKIM oder beides nicht bestehen, aber vorgeben, von deiner Domain zu stammen.
+
+Was ist zu tun? Wenn du noch keinen DMARC-Eintrag hast, hinterlege einen in deinen DNS-Einstellungen. Du kannst dies kostenlos mit [Dmarcian](https://dmarcian.com/dmarc-inspector/) prüfen.
+
+**Schritte zur Einrichtung:**
+
+1. Öffne die DNS-Verwaltung deines Domain-Anbieters und erstelle einen neuen TXT-Eintrag.
+
+2. Wähle **TXT als Eintragstyp**.
+
+3. Trage als Host **\_dmarc** ein (je nach Anbieter z. B. `_dmarc.deinedomain.de`).
+
+4. Erstelle deinen DMARC-Eintrag und trage ihn als Wert ein. Ein grundlegender DMARC-Eintrag lautet: **`v=DMARC1; p=none;`**.
+
+5. Speichere den Eintrag und überprüfe, ob er korrekt im DNS hinterlegt ist.
+
+Jeder DMARC-Eintrag definiert eine Richtlinie: `none`, `quarantine` oder `reject`. Die Mindestanforderung von Gmail ist `p=none`. Für höhere Sicherheit sorgen `p=quarantine` oder `p=reject`. Dabei muss jedoch sichergestellt sein, dass alle Drittanbieter-Dienste, die in deinem Namen E-Mails versenden, korrekt konfiguriert sind. Fehlerhafte Einträge können die Zustellung beeinträchtigen.
+
+*Erfolgreiche DMARC-Authentifizierung in Gmail:* [*Original-E-Mail anzeigen und Bericht prüfen*](https://support.google.com/mail/answer/29436?hl=en)
+
+![DMARC-Authentifizierung in Gmail](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155016626909/original/Qa7FYFNn6b7Ke9P57ma6ox86PI5yAnPZHw.png?1704274931)
+
+---
+
+### 3. Markenkonsistenz sicherstellen
+
+**Passe deine Absenderadresse an deine Domain an, um ein einheitliches Erscheinungsbild zu gewährleisten.**
+
+Gemäß den DMARC-Standards muss die Domain deiner Absenderadresse mit der Hauptdomain deiner konfigurierten Absender-Domain übereinstimmen. Lautet deine Absender-Domain beispielsweise `mail.deinedomain.de`, ist die Hauptdomain `deinedomain.de`. Eine Absenderadresse wie `hallo@deinedomain.de` entspricht somit den Anforderungen.
+
+```
+Überprüfe alle Absenderadressen in deinen Workflows und Kampagnen auf Übereinstimmung.
+```
+
+```
+Als Massenabsender musst du bis Februar 2024 auf eine eigene Absender-Domain umstellen.
+```
+
+---
+
+### 4. Keine Gmail-Adressen im Absender verwenden
+
+**Warum ist das wichtig?**
+
+Gmail und Yahoo verschärfen ihre DMARC-Richtlinien auf `quarantine`. Wenn E-Mails über externe Systeme mit einer Gmail- oder Yahoo-Absenderadresse verschickt werden, führt dies zu Zustellproblemen.
+
+**Was ist die Lösung?**
+
+Verwende in der Absenderadresse keine Domains wie `@gmail.com` oder `@yahoo.com`. Nutze stattdessen immer eine Adresse deiner eigenen Domain.
+
+---
+
+### 5. Abmeldung einfach gestalten
+
+Empfänger müssen die Möglichkeit haben, sich unkompliziert von E-Mails abzumelden. Der Abmeldelink muss leicht auffindbar sein.
+
+Weitere Informationen findest du in dieser [Anleitung zum E-Mail-Dienst](/wissen/e-mail/so-richtest-du-abmelde-links-ein). Die Aktivierung dieser Option fügt automatisch einen Abmeldelink in die Fußzeile deiner E-Mails ein.
+
+###
+
+**One-Click-Abmeldung**
+
+UmsatzAgent fügt automatisch einen standardkonformen One-Click-Abmeldelink in den E-Mail-Header aller ausgehenden Marketing-E-Mails ein (ausgenommen 1:1-Nachrichten).
+
+Der Header enthält technische Informationen zur Authentifizierung und zum Versand. Das Erscheinungsbild der One-Click-Abmeldung hängt vom jeweiligen E-Mail-Programm ab.
+
+*Beispiel für die One-Click-Abmeldung in Gmail*
+
+![One-Click-Abmeldung in Gmail](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155016625364/original/5whuXhtOgp0f2_weWfNf4IWzZ3AwU-AkkQ.png?1704274253)
+
+Prüfe vorab alle Kampagnenvorlagen und Workflow-E-Mails. Stelle sicher, dass im Textkörper jeder E-Mail – typischerweise in der Fußzeile – ein klar erkennbarer Abmeldelink vorhanden ist.
+
+---
+
+### 6. E-Mail-Zustellung optimieren: Spam-Rate unter 0,30 % halten
+
+Versende E-Mails nur an Empfänger, die dem Empfang ausdrücklich zugestimmt haben.
+
+Liegt die Spam-Beschwerderate zu hoch (ab 3 Beschwerden pro 1.000 E-Mails), führt dies zu Verzögerungen, Spam-Einstufungen oder Blockierungen. Halte die Spam-Rate idealerweise unter 0,10 % (weniger als 1 Beschwerde pro 1.000 E-Mails).
+
+Spam-Beschwerden bei Yahoo werden in den Spam-Berichten ausgewiesen. Gmail stellt diese Daten aus Datenschutzgründen nicht direkt bereit. Um Beschwerden bei Gmail zu überwachen, nutze die [Google Postmaster Tools](https://www.gmail.com/postmaster/).

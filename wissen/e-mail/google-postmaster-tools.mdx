@@ -1,0 +1,288 @@
+---
+title: "Google Postmaster Tools"
+description: "E-Mail-Zustellbarkeit"
+---
+
+E-Mail-Zustellbarkeit
+
+Google Postmaster Tools: Einrichtung & Einblicke
+
+Verfolge deine Domain- und IP-Reputation bei Gmail, überwache Spam-Raten und überprüfe SPF, DKIM und DMARC — direkt in UmsatzAgent.
+
+Was du lernen wirst
+
+**Google Postmaster Tools** ist eine kostenlose Plattform, die E-Mail-Absendern tiefe Einblicke in die Zustellbarkeit bei Gmail bietet — Domain-Reputation, IP-Reputation, Spam-Rate, Authentifizierung und Zustellfehler.
+
+Diese Anleitung erklärt, warum das wichtig ist, wie du es einrichtest und wie du es mit UmsatzAgent verbindest, damit alle deine Daten an einem Ort liegen.
+
+Inhaltsverzeichnis
+
+1
+
+[Was ist Google Postmaster Tools?](#was-ist-google-postmaster-tools)
+
+2
+
+[Warum solltest du Google Postmaster Tools nutzen?](#warum-solltest-du-google-postmaster-tools-nutzen)
+
+3
+
+[Wie kann Google Postmaster Tools E-Mail-Absendern helfen?](#wie-kann-google-postmaster-tools-e-mail-absendern-helfen)
+
+4
+
+[Wie richte ich Google Postmaster Tools ein?](#wie-richte-ich-google-postmaster-tools-ein)
+
+5
+
+[Wie richte ich Google Postmaster mit UmsatzAgent ein?](#wie-richte-ich-google-postmaster-mit-umsatzagent-ein)
+
+6
+
+[Welche Datenpunkte liefert Google Postmaster Tools?](#welche-datenpunkte-liefert-google-postmaster-tools)
+
+7
+
+[Neu-Authentifizierung & Migration zur Postmaster Tools API v2](#neu-authentifizierung-migration-zur-postmaster-tools-api-v2)
+
+8
+
+[Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+1
+
+## Was ist Google Postmaster Tools?
+
+**Google Postmaster Tools** ist eine kostenlose Plattform, die E-Mail-Absendern Daten und Einblicke in ihre E-Mail-Zustellbarkeit bietet, insbesondere beim Versand an Gmail-Nutzer. Sie hilft beim Nachverfolgen von Metriken wie Domain- und IP-Reputation, Spam-Raten und dem Erfolg von E-Mail-Authentifizierungsprotokollen (SPF, DKIM, DMARC).
+
+Durch die Nutzung dieses Tools können E-Mail-Absender besser verstehen, wie Google ihre E-Mails bewertet, und Maßnahmen ergreifen, um ihre Absender-Reputation zu verbessern. Es ist vor allem für E-Mail-Marketer und Massenabsender nützlich, die ihre Posteingangsplatzierung verbessern, Spam-Raten senken und eine starke Domain-Reputation bei Gmail-Nutzern aufrechterhalten möchten.
+
+2
+
+## Warum solltest du Google Postmaster Tools nutzen?
+
+Deine Absender-Reputation ist entscheidend dafür, dass deine E-Mails im Posteingang landen und nicht als Spam markiert werden. Google Postmaster Tools bietet Transparenz darüber, wie Gmail deine E-Mails anhand verschiedener Faktoren bewertet:
+
+Faktor 1
+
+Spam-Raten
+
+Wenn zu viele Nutzer deine E-Mails als Spam markieren, beeinträchtigt dies deine Absender-Reputation.
+
+Faktor 2
+
+IP- & Domain-Reputation
+
+Diese Metriken zeigen dir, ob deine Versand-Infrastruktur von Gmail als vertrauenswürdig eingestuft wird.
+
+Faktor 3
+
+Authentifizierungserfolg
+
+Protokolle wie SPF, DKIM und DMARC sind unerlässlich, um zu beweisen, dass deine E-Mails legitim sind. Postmaster Tools hilft dir zu überwachen, ob deine Authentifizierung erfolgreich ist.
+
+Das Ergebnis
+
+Indem du diese Metriken überwachst, kannst du Probleme proaktiv beheben, bevor sie deine Zustellbarkeit beeinträchtigen — und so dafür sorgen, dass deine Kampagnen nicht im Spam-Ordner landen.
+
+3
+
+## Wie kann Google Postmaster Tools E-Mail-Absendern helfen?
+
+Google Postmaster Tools bietet Daten, die E-Mail-Absendern auf vier wichtige Arten helfen:
+
+**Domain- & IP-Reputations-Tracking** — Erfahre, wie sehr Google deiner Domain und IP vertraut, was für den E-Mail-Erfolg entscheidend ist.
+
+**Spam-Bericht-Überwachung** — Sieh, wie viele deiner E-Mails als Spam markiert werden, damit du deine Strategie anpassen kannst, falls die Raten zu hoch werden.
+
+**E-Mail-Authentifizierungs-Überwachung** — Verfolge, ob deine E-Mails erfolgreich über SPF-, DKIM- und DMARC-Protokolle authentifiziert werden.
+
+**Zustellfehler** — Erkenne und behebe Fehler, die verhindern, dass deine E-Mails zugestellt werden.
+
+Einrichtungsanleitung
+
+Google Postmaster Tools in Betrieb nehmen
+
+Richte dein Konto bei Google ein und verbinde es dann mit wenigen Klicks mit UmsatzAgent.
+
+4
+
+## Wie richte ich Google Postmaster Tools ein?
+
+Schritt 1
+
+Bei Google Postmaster Tools anmelden
+
+Gehe auf [postmaster.google.com](https://postmaster.google.com) und melde dich mit deinem Google-Konto an.
+
+Schritt 2
+
+Deine dedizierte Domain hinzufügen
+
+Füge nach der Anmeldung deine E-Mail-Versanddomain hinzu. Diese Domain muss unter deiner Kontrolle stehen, und es ist wichtig, dass sie korrekt mit SPF-, DKIM- und DMARC-Authentifizierungseinträgen eingerichtet ist.
+
+Schritt 3
+
+Domain-Inhaberschaft bestätigen
+
+Um zu bestätigen, dass du die Domain besitzt, füge einen TXT-Eintrag in den DNS-Einstellungen deiner Domain hinzu. Google stellt diesen Eintrag bereit, wenn du deine Domain bei Postmaster Tools registrierst.
+
+Schritt 4
+
+Auf deine Daten zugreifen
+
+Nach der Einrichtung kann es einige Tage dauern, bis Daten wie Domain-Reputation, IP-Reputation, Spam-Rate und mehr angezeigt werden.
+
+Hinweis
+
+Postmaster Tools erfordert ein nennenswertes Versandvolumen, bevor verlässliche Daten angezeigt werden. Bei Domains mit geringem Volumen können Dashboards teilweise oder vollständig leer bleiben, bis genügend Traffic aufgebaut ist.
+
+5
+
+## Wie richte ich Google Postmaster mit UmsatzAgent ein?
+
+Um die Gmail-Zustellreputation deiner Domain und andere wichtige Metriken in UmsatzAgent einzusehen, befolge diese Schritte zur Verknüpfung deines Google Postmaster-Kontos.
+
+Schritt 1
+
+Zu E-Mail-Diensten navigieren
+
+Navigiere zu **Einstellungen → E-Mail-Dienste → Postmaster Tools → Google Postmaster Tool**.
+
+Schritt 2
+
+Auf „Connect to Google Postmaster“ klicken
+
+Klicke im Tab „Postmaster Tools“ auf die Schaltfläche **Connect to Google Postmaster**.
+
+![Schaltfläche „Connect to Google Postmaster“ auf der Seite „E-Mail-Dienste“](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155034624563/original/kl09eEJQ_Z4cUg5JHMnV488deGEoatFTtw.png?1728893562)
+
+Schritt 3
+
+Mit einem Google-Konto anmelden
+
+Wähle das Google-Konto aus, das Zugriff auf die in **Google Postmaster Tools** registrierten Domains hat.
+
+![Mit dem Google-Konto anmelden, das deine Postmaster-Domains besitzt](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155044692452/original/p5_IYbjq7VAa4XNbGtdfNTEy-zg2BU571g.png?1744090279)
+
+Schritt 4
+
+Erforderliche Berechtigungen erteilen
+
+**Aktiviere das Kontrollkästchen** auf dem Berechtigungsbildschirm neben:
+
+**✓**  *„E-Mail-Verkehrsmetriken für die Domains ansehen, die du in Gmail Postmaster Tools registriert hast.“*
+
+Klicke dann auf **Weiter**, um die Verbindung abzuschließen.
+
+![Berechtigung zum Lesen von E-Mail-Traffic-Metriken aus Postmaster Tools erteilen](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155044692488/original/5CkrtRDNX9tc-QZTgCUmotFbGEdkhvf5MQ.png?1744090381)
+
+Verbunden
+
+Sobald die Verbindung hergestellt ist, zeigen deine verifizierten dedizierten Versanddomains die von Google Postmaster abgerufenen Metriken an.
+
+![Verbundenes Dashboard mit Postmaster-Metriken für deine dedizierten Absender-Domains](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155034624675/original/xLL4ReVsFA_D4SNCyWXvZ6kJfoh-DvsAWg.png?1728893641)
+
+Deine Daten überwachen
+
+Alle verfügbaren Postmaster Tools-Daten — Spam-Raten, IP-Reputation und Domain-Reputation — werden direkt in UmsatzAgent übertragen, sodass du alles zentral an einem Ort verwalten kannst.
+
+6
+
+## Welche Datenpunkte liefert Google Postmaster Tools?
+
+Google Postmaster Tools liefert mehrere wichtige Datenpunkte zur Überwachung der E-Mail-Zustellbarkeit:
+
+![Übersicht der Google Postmaster Tools Dashboards](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155034624774/original/k-pD8VkPYukmslNpt8ntG52vj_oG0UlcCA.png?1728893691)
+
+| Dashboard | Was es zeigt |
+| --- | --- |
+| Spam-Rate | Der Prozentsatz deiner E-Mails, den Gmail-Nutzer als Spam markiert haben. |
+| Domain-Reputation | Die Reputation deiner Domain basierend darauf, wie Google deine Versandpraktiken bewertet. |
+| IP-Reputation | Einblick in die Reputation der IP-Adressen, die du für den E-Mail-Versand nutzt. Eine höhere IP-Reputation bedeutet bessere Zustellbarkeit. |
+| Nachrichten-Authentifizierung | Verfolgt die Erfolgsquote deiner E-Mails bei den Authentifizierungsprotokollen SPF, DKIM und DMARC. |
+| Verschlüsselung | Der Prozentsatz der E-Mails, die über verschlüsselte Verbindungen zugestellt werden. |
+| Zustellfehler | Details zu allen Problemen oder Fehlern, die verhindern, dass deine E-Mails zugestellt werden. |
+| Feedback-Schleife (FBL) | Von Nutzern gemeldete Spam-Beschwerden, mit denen du die Spam-Rate senken und eine gute Reputation aufrechterhalten kannst. |
+
+7
+
+## Neu-Authentifizierung & Migration zur Postmaster Tools API v2
+
+Google hat eine neue Version der Postmaster Tools API veröffentlicht. Um deine Verbindung umzustellen, authentifizierst du dich im Tab „Postmaster Tools“ neu — ein vollständiges Trennen und Neueinrichten ist nicht erforderlich.
+
+Schritt 1
+
+Auf die Schaltfläche „Re-Authenticate“ achten
+
+Auf dem Tab „Google Postmaster“ siehst du ein Banner mit dem Hinweis, dass Google neue Postmaster-Daten veröffentlicht hat, zusammen mit der Schaltfläche **Re-Authenticate** neben **Revoke**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076653375/original/aqXoawyAJkhc9wqJiuGSGfsuBMTMV2Q96w.png?1784790598)
+
+Die Aktionen „Re-Authenticate“ und „Revoke“ erscheinen, sobald Google neue Postmaster-Daten für dein Konto bereitstellt.
+
+Schritt 2
+
+Mit Google neu authentifizieren
+
+Klicke auf **Re-Authenticate**. Du wirst zu deinem Google-Konto weitergeleitet, um den Zugriff zu bestätigen — genau wie bei der ursprünglichen Verbindung.
+
+Schritt 3
+
+Auf v2 umgestellt
+
+Sobald die Neu-Authentifizierung abgeschlossen ist, wird deine Verbindung automatisch auf die **Postmaster Tools API v2** umgestellt. Das Banner und die Schaltfläche „Re-Authenticate“ verschwinden von der Verbindungskarte.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076653403/original/IRcqgtDmkR6jZyc5AJmfW8IL4XolZuGHpA.png?1784790625)
+
+Nach der Migration zeigt jede verbundene Domain ihren Compliance-Status, die Zustellfehlerrate und das Spam-Verhältnis direkt auf der Karte an.
+
+Version 2 der Postmaster Tools API fasst bestehende Funktionen zusammen und fügt neue Möglichkeiten zum Abrufen von E-Mail-Statistiken hinzu. Mit v2 kannst du jetzt:
+
+**Einen neuen Tab „Compliance Status“ sehen** — direkt in UmsatzAgent, der anzeigt, ob jede Anforderung für eine Domain erfüllt oder nicht erfüllt ist. Alle anderen Tabs (User Reported Spam, Spam Feedback, Authenticated Traffic, Encrypted Traffic, Delivery Errors) bleiben unverändert.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155076653418/original/up0jGxwp_N-Jthih8_Y_xTnROjvtEts9cA.png?1784790644)
+
+Der Tab „Compliance Status“ schlüsselt jede Gmail-Absenderanforderung auf — SPF & DKIM, From:-Header-Alignment, DMARC, Verschlüsselung, Spam-Rate, DNS-Einträge und One-Click-/Abmelde-Einhaltung — sowohl für die Subdomain als auch für die Hauptdomain.
+
+Hinweis
+
+Die Tabs für IP-Reputation und Domain-Reputation werden in Kürze von Google eingestellt. Google hat keinen genauen Zeitplan dafür genannt.
+
+Mehr erfahren: [Googles Hinweis zur Einstellung des Postmaster Tools Reputations-Dashboards](https://support.google.com/mail/answer/16594218?hl=en#zippy=%2Cwhat-is-deprecated%2Cwhy-is-the-reputation-dashboard-being-deprecated%2Cwhat-about-the-dashboards-in-the-old-postmaster-tools).
+
+8
+
+## Häufig gestellte Fragen
+
+Q: Ist Google Postmaster Tools kostenlos?
+
+Ja. Google Postmaster Tools ist für jeden Absender völlig kostenlos, der Googles Volumenschwellenwerte erfüllt und eine verifizierbare Absender-Domain besitzt.
+
+Q: Warum sehe ich nach der Einrichtung von Postmaster Tools keine Daten?
+
+Postmaster Tools erfordert ein gewisses Versandvolumen an Gmail-Adressen, bevor Daten angezeigt werden. Wenn du nur wenige hundert E-Mails versendest, bleiben Dashboards teilweise oder vollständig leer, bis dein Volumen ansteigt.
+
+Q: Muss ich eine dedizierte Absender-Domain verwenden?
+
+Ja. Die Daten von Postmaster Tools sind dann am aussagekräftigsten, wenn du die Absender-Domain besitzt und die volle Kontrolle über deren SPF-, DKIM- und DMARC-Einträge hast. Geteilte Versanddomains liefern keine nützlichen individuellen Einblicke.
+
+Q: Welche Spam-Rate sollte man anstreben?
+
+Google stuft Spam-Raten über 0,1 % als kritisches Signal ein. Versuche, deutlich darunter zu bleiben — unter 0,05 % ist ein guter Richtwert für Marketer.
+
+Q: Wie oft werden die Postmaster-Daten aktualisiert?
+
+Google aktualisiert die meisten Dashboards einmal täglich. Reputationswerte hinken den tatsächlichen Versandaktivitäten typischerweise 1–2 Tage hinterher.
+
+Q: Erhält Google durch die Verbindung mit Postmaster Zugriff auf meine Kontaktdaten?
+
+Nein. Die Integration fordert lediglich Lesezugriff auf die E-Mail-Traffic-Metriken für die Domains an, die du in Postmaster Tools registriert hast. Es werden keine Kontaktlisten, Empfängeradressen oder Kampagneninhalte weitergegeben.
+
+Q: Kann ich Postmaster Tools später wieder trennen?
+
+Ja. Du kannst den Zugriff jederzeit in den Berechtigungen deines Google-Kontos widerrufen und die Integration unter Einstellungen → E-Mail-Dienste → Postmaster Tools in UmsatzAgent trennen.
+
+Q: Muss ich mich neu authentifizieren, um Postmaster Tools weiterhin zu nutzen?
+
+Durch die Neu-Authentifizierung migrierst du auf die API v2 und gewährst Zugriff auf die neu verfügbaren Compliance-Metriken. Wenn du dich nicht neu authentifizierst, funktioniert deine bestehende Verbindung weiter, aber du siehst den neuen Tab „Compliance Status“ und die Datumsbereichsberichte erst nach der Neu-Authentifizierung.

@@ -1,0 +1,195 @@
+---
+title: "So verwendest du Platzhalter und E-Mail-Fallback-Werte in UmsatzAgent"
+description: "Platzhalter fügen gespeicherte Daten in E-Mails, Nachrichten, Dokumente, Workflows, Kalender und unterstützte AI-Prompts ein. Wenn der Inhalt generiert…"
+---
+
+Platzhalter fügen gespeicherte Daten in E-Mails, Nachrichten, Dokumente, Workflows, Kalender und unterstützte AI-Prompts ein. Wenn der Inhalt generiert wird, wird ein Token wie `{{contact.first_name}}` durch Informationen aus dem entsprechenden Datensatz ersetzt. Nutze diese Anleitung, um Platzhalter einzufügen, Fallback-Texte für E-Mails hinzuzufügen und fehlende Werte zu beheben.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind Platzhalter?](#was-sind-platzhalter)
+- [Wichtigste Vorteile von Platzhaltern](#wichtigste-vorteile-von-platzhaltern)
+- [Platzhalter, benutzerdefinierte Felder und benutzerdefinierte Werte](#platzhalter-benutzerdefinierte-felder-und-benutzerdefinierte-werte)
+- [Wie Platzhalter die richtigen Daten finden](#wie-platzhalter-die-richtigen-daten-finden)
+- [Häufige Platzhalter](#haeufige-platzhalter)
+- [So verwendest du Platzhalter](#so-verwendest-du-platzhalter)
+- [So fügst du Fallback-Werte in E-Mails hinzu](#so-fuegst-du-fallback-werte-in-e-mails-hinzu)
+- [Fehlerbehebung bei Platzhaltern](#fehlerbehebung-bei-platzhaltern)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was sind Platzhalter?
+
+Ein Platzhalter ruft Informationen aus einem Datensatz der Plattform ab, wenn Inhalte generiert werden. Der Kontakt, Termin, die Rechnung, das Unternehmen, die Buchung oder ein anderer für die Aktion verfügbarer Datensatz bestimmt, welcher Wert angezeigt wird.
+
+**Vorlage:**
+
+`Hallo {{contact.first_name}}, dein Termin beginnt um {{appointment.only_start_time}}.`
+
+**Generierte Nachricht:**
+
+`Hallo Sarah, dein Termin beginnt um 15:30 Uhr.`
+
+**Empfehlung:** Füge Felder über die Auswahl für Platzhalter oder benutzerdefinierte Werte ein. Die Auswahl zeigt die im aktuellen Bearbeitungsbereich unterstützten Felder an und verhindert Fehler durch manuell eingegebene Tokens.
+
+---
+
+## Wichtigste Vorteile von Platzhaltern
+
+Platzhalter machen wiederverwendbare Inhalte persönlicher, ohne dass manuelle Anpassungen für jeden Empfänger erforderlich sind.
+
+- **Personalisierung:** Füge Namen, Daten, Buchungsdetails, Rechnungsbeträge und andere gespeicherte Informationen automatisch ein.
+- **Konsistenz:** Rufe Informationen direkt aus dem Plattform-Datensatz ab, anstatt sie erneut einzutippen.
+- **Wiederverwendbare Vorlagen:** Verwende eine einzige Nachricht oder ein Dokument für mehrere Empfänger.
+- **Schnellere Automatisierung:** Füge dynamische Daten in Workflows, Kampagnen, Erinnerungen und unterstützte AI-Prompts ein.
+
+---
+
+## Platzhalter, benutzerdefinierte Felder und benutzerdefinierte Werte
+
+Diese Funktionen arbeiten zusammen, erfüllen jedoch jeweils einen anderen Zweck.
+
+| Typ | Zweck | Beispiel |
+| --- | --- | --- |
+| **Benutzerdefiniertes Feld** | Speichert Informationen, die sich je nach Kontakt, Chance, Unternehmen oder anderem unterstützten Datensatz unterscheiden können. | Bevorzugte Dienstleistung |
+| **Benutzerdefinierter Wert** | Speichert wiederverwendbare Informationen, die über Vorlagen hinweg einheitlich bleiben. | E-Mail-Adresse des Supports |
+| **Platzhalter** | Ruft ein Standardfeld, ein benutzerdefiniertes Feld oder einen benutzerdefinierten Wert in unterstützten Inhalten ab. | `{{contact.first_name}}` |
+
+---
+
+## Wie Platzhalter die richtigen Daten finden
+
+Platzhalter erfordern den passenden Datensatz-Kontext. Ein gültiges Feld kann leer bleiben, wenn der erforderliche Datensatz oder der gespeicherte Wert nicht verfügbar ist.
+
+- **Kontaktfelder** erfordern einen Kontakt.
+- **Terminfelder** erfordern einen Termin.
+- **Rechnungsfelder** erfordern eine Rechnung.
+- **Unternehmensfelder** nutzen das mit dem Kontakt verknüpfte Unternehmen.
+- **Dienstleistungsbuchungs-Felder** erfordern eine Dienstleistungsbuchung.
+- **AI-Felder** hängen von den Datensätzen ab, die während der Konversation oder des Anrufs verfügbar sind.
+
+Beispielsweise kann ein reiner Kontakt-Workflow `{{contact.first_name}}` befüllen, lässt aber `{{appointment.start_time}}` leer, da diesem Workflow kein Termin zur Verfügung steht.
+
+**Unformatiertes Telefonnummernformat:** Felder, die auf `_raw` enden, entfernen Leerzeichen, Klammern und Bindestriche. Verwende unformatierte Telefonnummernwerte in Links, Tracking-Parametern und anderen Bereichen, die eine unformatierte Nummer erfordern.
+
+---
+
+## Häufige Platzhalter
+
+Die folgenden Beispiele zeigen häufig verwendete Felder. Nutze das Auswahlmenü für die vollständige Liste der Felder, die vom Editor und Datensatz-Kontext unterstützt werden.
+
+| Kategorie | Häufige Platzhalter |
+| --- | --- |
+| **Kontakt** | `{{contact.first_name}}`, `{{contact.name}}`, `{{contact.email}}`, `{{contact.phone_raw}}` |
+| **Benutzer** | `{{user.name}}`, `{{user.email}}`, `{{user.calendar_link}}` |
+| **Termin** | `{{appointment.start_time}}`, `{{appointment.reschedule_link}}`, `{{appointment.cancellation_link}}` |
+| **Kalender** | `{{calendar.name}}` |
+| **Konto** | `{{location.name}}`, `{{location.email}}`, `{{location.phone}}` |
+| **Aktuelles Datum** | `{{right_now.middle_endian_date}}`, `{{right_now.year}}` |
+| **Nachricht** | `{{message.subject}}`, `{{message.body}}` |
+| **Rechnung** | `{{invoice.number}}`, `{{invoice.total_amount}}`, `{{invoice.url}}` |
+| **Dienstleistungsbuchung** | `{{servicebooking.title}}`, `{{servicebooking.start_time}}`, `{{servicebooking.total_price}}` |
+
+---
+
+## So verwendest du Platzhalter
+
+Die Verwendung der Auswahl fügt exakt das vom aktuellen Editor unterstützte Token ein und verhindert Formatierungsfehler.
+
+1. Öffne die unterstützte E-Mail, Nachricht, Workflow-Aktion, das Dokument, die Kalendereinstellung oder den AI-Prompt.
+2. Platziere den Cursor an der Stelle, an der die personalisierte Information erscheinen soll.
+3. Klicke auf das Symbol für **Platzhalter**, **Benutzerdefinierter Wert** oder **{ }**.
+4. Suche nach dem Feld oder öffne die entsprechende Kategorie.
+5. Wähle das Feld aus, um dessen Token einzufügen.
+6. Überprüfe den vollständigen Satz um das Token herum.
+7. Speichere deine Änderungen.
+8. Teste den Ablauf mit einem Datensatz, der die erforderlichen Daten enthält.
+9. Bestätige, dass der richtige Wert angezeigt wird, bevor du die Automatisierung veröffentlichst oder aktivierst.
+
+**Empfehlung:** Nutze die Auswahl, anstatt Tokens manuell einzutippen oder zu kopieren. Die verfügbaren Felder können je nach Bereich, Kontokonfiguration und Datensatz-Kontext variieren.
+
+---
+
+## So fügst du Fallback-Werte in E-Mails hinzu
+
+E-Mail-Fallback-Werte verhindern unschöne Lücken, wenn ein Feld keinen gespeicherten Wert enthält. Sie werden in E-Mail-Vorlagen, Workflow-E-Mails, Kampagnen-E-Mails und Massen-E-Mails unterstützt – einschließlich Betreffzeilen, Vorschautexten und dem Hauptinhalt der E-Mail.
+
+1. Erstelle oder bearbeite die E-Mail.
+2. Füge das Platzhalter-Tag ein oder wähle es aus.
+3. Klicke auf das Tag, um den Editor für den **Standardtext** zu öffnen.
+4. Gib den Text ein, der angezeigt werden soll, wenn der ursprüngliche Wert leer ist.
+5. Klicke auf **Speichern**.
+6. Sende eine Test-E-Mail mit einem Kontakt, dessen Feld leer ist.
+
+![Editor für Standardtext mit einem Fallback-Wert für einen E-Mail-Platzhalter.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079788325/original/ZwqbZCfohuF14VOFVitOafJ4ffJJPiMY8Q.png?1788259727)
+
+**Beispiel:**
+
+`Hallo {{contact.first_name}}, dein Termin ist bestätigt.`
+
+Fallback-Text: `Kunde`
+
+Wenn der Vorname fehlt, zeigt die E-Mail Folgendes an:
+
+`Hallo Kunde, dein Termin ist bestätigt.`
+
+**Wichtig:** Ein Fallback gilt nur für diese spezifische Verwendung des Platzhalters. Er aktualisiert den Kontaktdatensatz nicht, und dasselbe Feld kann an anderer Stelle in der E-Mail einen anderen Fallback-Text verwenden.
+
+---
+
+## Fehlerbehebung bei Platzhaltern
+
+Die meisten Probleme mit Platzhaltern entstehen durch fehlende Quelldaten, fehlenden Datensatz-Kontext oder eine nicht unterstützte Platzierung des Felds.
+
+| Problem | Was zu prüfen ist |
+| --- | --- |
+| Der Wert ist leer | Stelle sicher, dass der Quelldatensatz Daten enthält und die Aktion den erforderlichen Datensatz-Kontext hat. |
+| Das unformatierte Token bleibt sichtbar | Lösche es und füge es erneut über die Auswahl ein. Prüfe, ob der Editor das Feld unterstützt. |
+| Der falsche Benutzer wird angezeigt | Überprüfe den zugewiesenen Benutzer, den Termininhaber oder den für die Aktion verfügbaren Absender. |
+| Ein Unternehmensfeld ist leer | Stelle sicher, dass der Kontakt mit dem richtigen Unternehmen verknüpft ist und das ausgewählte Feld Daten enthält. |
+| Ein E-Mail-Fallback wird nicht angezeigt | Prüfe, ob der Fallback für dieses spezifische Tag in einem unterstützten E-Mail-Bereich gespeichert wurde. |
+| Ein AI-Assistent nutzt den Wert unpassend | Füge Anweisungen für fehlende Werte hinzu und teste den Prompt erneut. |
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Sind Platzhalter in jedem Editor verfügbar?**
+Nein. Die verfügbaren Felder hängen vom Bereich, Editor, den aktivierten Funktionen, Berechtigungen und dem Datensatz-Kontext ab.
+
+**F: Kann ich einen Platzhalter manuell eintippen?**
+Ja, aber die Verwendung der Auswahl ist zuverlässiger, da sie exakt das unterstützte Token einfügt.
+
+**F: Aktualisieren E-Mail-Fallback-Werte die CRM-Daten?**
+Nein. Ein Fallback ändert nur die generierte E-Mail, wenn der ursprüngliche Wert leer ist.
+
+**F: Kann derselbe Platzhalter unterschiedliche Fallback-Werte haben?**
+Ja. Jedes Vorkommen in einer unterstützten E-Mail kann einen eigenen Fallback-Text haben.
+
+**F: Was ist der Unterschied zwischen Unternehmens- und Kontofeldern?**
+Unternehmensfelder rufen Informationen aus dem mit dem Kontakt verknüpften Unternehmen ab. Kontofelder wie `{{location.name}}` rufen Informationen aus dem Konto ab.
+
+**F: Können Voice-AI und AI-Assistenten Platzhalter verwenden?**
+Ja, in unterstützten Prompt- und Nachrichtenfeldern. Nutze die Auswahl für benutzerdefinierte Werte und teste die Konversation vor dem Start.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn ein Platzhalter leer ist, das unformatierte Token anzeigt oder unerwartete Informationen ausgibt, stelle zuerst sicher, dass der erforderliche Quelldatensatz und Wert beim Generieren des Inhalts verfügbar sind.
+
+Prüfe vor der weiteren Fehlerbehebung Folgendes:
+
+- Das Quellfeld enthält einen gespeicherten Wert.
+- Die Aktion hat Zugriff auf den erforderlichen Datensatz, z. B. einen Kontakt, Termin, ein Unternehmen, eine Rechnung oder eine Buchung.
+- Der Platzhalter wurde über die Auswahl für **Platzhalter**, **Benutzerdefinierter Wert** oder **{ }** eingefügt.
+- Der ausgewählte Editor unterstützt den verwendeten Platzhalter.
+- Der richtige Kontakt, zugewiesene Benutzer, das richtige Unternehmen, der richtige Termin oder ein anderer zugehöriger Datensatz ist mit der Aktion verknüpft.
+- Der E-Mail-Fallback-Text wurde für das spezifische Platzhalter-Vorkommen gespeichert.
+- Dein Testdatensatz enthält die erforderlichen Informationen, um das Feld zu befüllen.
+
+Besteht das Problem weiterhin, notiere dir das Platzhalter-Token, den Einsatzort, den Quelldatensatz und das generierte Ergebnis. Wende dich an den UmsatzAgent Support. Diese Informationen helfen festzustellen, ob das Problem auf fehlende Daten, den Datensatz-Kontext oder mangelnde Feldunterstützung zurückzuführen ist.

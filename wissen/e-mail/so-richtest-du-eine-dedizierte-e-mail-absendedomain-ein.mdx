@@ -1,0 +1,361 @@
+---
+title: "So richtest du eine dedizierte E-Mail-Absendedomain ein"
+description: "Eine dedizierte Absendedomain sorgt dafür, dass deine E-Mail-Aktivitäten über eine Domain laufen, die du kontrollierst, anstatt dich vollständig auf eine…"
+---
+
+Eine dedizierte Absendedomain sorgt dafür, dass deine E-Mail-Aktivitäten über eine Domain laufen, die du kontrollierst, anstatt dich vollständig auf eine geteilte Sendeinfrastruktur zu verlassen. Die korrekte Einrichtung verbessert die Authentifizierung, schützt die Absender-Reputation und schafft eine einheitliche Absender-Identität. Diese Anleitung erklärt, wie du eine dedizierte Absendedomain hinzufügst, deren DNS-Einträge verifizierst, sie unterstützten E-Mail-Typen zuweist und häufige Probleme behebst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist eine dedizierte Absendedomain?](#was-ist-eine-dedizierte-absendedomain)
+- [Wichtigste Vorteile einer dedizierten Absendedomain](#wichtigste-vorteile-einer-dedizierten-absendedomain)
+- [Was Empfänger ohne dedizierte Absendedomain sehen können](#was-empfaenger-ohne-dedizierte-absendedomain-sehen-koennen)
+- [Dedizierte Absendedomain vs. Absender- und Antwortadresse](#dedizierte-absendedomain-vs-absender-und-antwortadresse)
+- [Bevor du beginnst](#bevor-du-beginnst)
+- [So verifizierst du DNS-Einträge](#so-verifizierst-du-dns-eintraege)
+- [So fügst du DNS-Einträge manuell hinzu](#so-fuegst-du-dns-eintraege-manuell-hinzu)
+- [Best Practices für die E-Mail-Zustellbarkeit](#best-practices-fuer-die-e-mail-zustellbarkeit)
+- [Fehlerbehebung bei dedizierten Absendedomains](#fehlerbehebung-bei-dedizierten-absendedomains)
+- [Domain wird nicht verifiziert](#domain-wird-nicht-verifiziert)
+- [Ein bestehender DNS-Eintrag verursacht einen Konflikt](#ein-bestehender-dns-eintrag-verursacht-einen-konflikt)
+- [Ein Wildcard-DNS-Eintrag verursacht einen Konflikt](#ein-wildcard-dns-eintrag-verursacht-einen-konflikt)
+- [Die Domain ist verifiziert, aber SSL steht noch aus](#die-domain-ist-verifiziert-aber-ssl-steht-noch-aus)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist eine dedizierte Absendedomain?
+
+Eine dedizierte Absendedomain ist eine Domain oder Subdomain, die speziell für den E-Mail-Versand authentifiziert ist. Sie stellt eine stärkere Verknüpfung zwischen deiner Unternehmensidentität und der für den Versand genutzten Infrastruktur her.
+
+Wenn deine Hauptdomain beispielsweise wie folgt lautet:
+
+`example.com`
+
+Kannst du eine dedizierte Absende-Subdomain verwenden, wie zum Beispiel:
+
+`mail.example.com`
+
+oder:
+
+`email.example.com`
+
+Eine Subdomain wird generell empfohlen, da sie dabei hilft, die Absender-Reputation von der Hauptdomain zu trennen, die für deine Website und reguläre geschäftliche Postfächer genutzt wird.
+
+**Hinweis:** Eine dedizierte Absendedomain garantiert keine Posteingangszustellung. Die Zustellung hängt weiterhin von Faktoren wie Absender-Reputation, Authentifizierung, Nachrichtenqualität, Interaktion, Sendevolumen und Empfängerverhalten ab.
+
+---
+
+## Wichtigste Vorteile einer dedizierten Absendedomain
+
+Eine ordnungsgemäß authentifizierte Absendedomain gibt dir mehr Kontrolle über deine E-Mail-Identität und erleichtert die Verwaltung der Absender-Reputation.
+
+- **Stärkere Domain-Übereinstimmung:** Authentifiziere E-Mails über eine Domain, die du kontrollierst.
+- **Einheitlichere Absender-Identität:** Verringere die Abhängigkeit von geteilten technischen Absendedomains.
+- **Bessere Verwaltung der Absender-Reputation:** Trenne automatisierte E-Mails oder Marketing-E-Mails von deiner primären Unternehmensdomain.
+- **Flexibles E-Mail-Routing:** Weise verifizierte Domains unterstützten E-Mail-Aktivitäten zu.
+- **Verbesserte Authentifizierung:** DNS-Einträge helfen empfangenden Mailservern zu bestätigen, dass E-Mails autorisiert sind.
+- **Skalierbare Konfiguration:** Nutze mehrere verifizierte Domains, sofern unterstützt, um verschiedene Arten von Versandaktivitäten zu trennen.
+
+##
+
+## Was Empfänger ohne dedizierte Absendedomain sehen können
+
+E-Mails, die über eine geteilte Sendeinfrastruktur versendet werden, können in den Nachrichtendetails eine technische Absendedomain anzeigen. Je nach E-Mail-Programm des Empfängers erscheinen diese Informationen neben Hinweisen wie **über**, **gesendet von** oder **signiert von**.
+
+Das deutet nicht zwingend auf ein Problem mit der E-Mail hin. Es zeigt lediglich, dass eine geteilte Sendeinfrastruktur anstelle einer dedizierten, speziell für dein Konto authentifizierten Domain verwendet wurde.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079481630/original/KVdO2Fvxj7WqCbMylPviR6jbA6ByqjbhLQ.png?1787847551)**
+
+Öffne die Nachrichtendetails im Posteingang des Empfängers und prüfe die Angaben zu **über**, **gesendet von** oder **signiert von**, um die technische Absendedomain zu identifizieren.
+
+---
+
+## Dedizierte Absendedomain vs. Absender- und Antwortadresse
+
+Die Absendedomain, die Absenderadresse und die Antwortadresse erfüllen unterschiedliche Zwecke. Das Verständnis dieser Unterschiede stellt sicher, dass E-Mail-Identität und Antworten korrekt konfiguriert sind.
+
+- **Dedizierte Absendedomain:** Authentifiziert die für den Versand der Nachricht genutzte Infrastruktur.
+- **Absenderadresse (From):** Die E-Mail-Adresse, die dem Empfänger als Absender angezeigt wird.
+- **Antwortadresse (Reply-To):** Die Zieladresse, an die Antworten von Kunden zugestellt werden.
+
+Die Antwortadresse kann unabhängig von der technischen Absendedomain konfiguriert werden.
+
+Eine dedizierte Absendedomain unterscheidet sich zudem von einer dedizierten IP-Adresse. Eine dedizierte IP ist eine separate Option für die Sendeinfrastruktur und ist für die bloße Konfiguration einer dedizierten Absendedomain nicht erforderlich.
+
+---
+
+## Bevor du beginnst
+
+Die Vorbereitung deiner Domain und des DNS-Zugriffs vorab beschleunigt die Verifizierung und verringert das Risiko von Konflikten bei den Einträgen.
+
+Stelle sicher, dass du über Folgendes verfügst:
+
+- Eine Domain, die du kontrollierst.
+- Zugriff auf die DNS-Einstellungen der Domain.
+- Die Berechtigung, DNS-Einträge zu erstellen oder zu bearbeiten.
+- Eine dedizierte Subdomain für den Versand (empfohlen).
+- Zugriff auf **Einstellungen → E-Mail-Dienste**.
+- Eine Überprüfung bestehender DNS-Einträge vor dem Vornehmen von Änderungen.
+
+**Wichtig:** Lösche keine bestehenden MX-, SPF-, TXT- oder anderen DNS-Einträge, es sei denn, du weißt genau, wofür sie genutzt werden. Das Entfernen aktiver DNS-Einträge kann bestehende E-Mail- oder Domain-Dienste unterbrechen.
+
+---
+
+## So richtest du eine dedizierte Absendedomain ein
+
+Das Hinzufügen einer dedizierten Absendedomain erstellt die Authentifizierungseinträge, die zur Autorisierung des E-Mail-Versands erforderlich sind. Verwende exakt die Domain und DNS-Werte, die bei der Einrichtung generiert werden.
+
+### E-Mail-Dienste öffnen
+
+Gehe zu **Einstellungen → E-Mail-Dienste** und öffne den Reiter **SMTP Service**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079485245/original/Ag11AkBbqFOjeBlQvg3dV4vD7Ri6YKfrQA.png?1787850321)**
+
+Navigiere zu **Einstellungen → E-Mail-Dienste** und wähle **SMTP Service**, um auf die Einstellungen der Absendedomain zuzugreifen.
+
+###
+
+### Einstellungen für dedizierte Domains öffnen
+
+Wähle **Dedicated Domain And IP**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079485301/original/VWHva3pz66PYzan9YJ0qVerZf_2PvjzmFA.png?1787850386)**
+
+Klicke auf **Dedicated Domain And IP**, um bestehende Domains anzuzeigen und auf die Konfiguration der dedizierten Absendedomain zuzugreifen.
+
+### Dedizierte Domain hinzufügen
+
+Öffne den Reiter **Dedicated domain** und klicke auf **Domain hinzufügen**. Bestehende Domains und deren Verifizierungsstatus können auf dieser Seite ebenfalls eingesehen werden.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079484371/original/NDl-ELl1TUQou2II9zHtGgDZLiNgRx743A.gif?1787849542)**
+
+Klicke auf **Domain hinzufügen**, um mit der Konfiguration einer dedizierten Domain oder Subdomain für den E-Mail-Versand zu beginnen.
+
+### Domain oder Subdomain eingeben
+
+Gib die Domain ein, die du für den Versand authentifizieren möchtest.
+
+Eine dedizierte Subdomain wird nach Möglichkeit empfohlen, zum Beispiel:
+
+`mail.example.com`
+
+Verwende Kleinbuchstaben und wähle keine Subdomain, die bereits für einen anderen Dienst genutzt wird. Fahre fort, um die für die Authentifizierung erforderlichen DNS-Einträge zu generieren.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079484428/original/E_AsTPju-RrnKDcKmVwhSREmZ8BIRChz9Q.gif?1787849580)**
+
+Gib die Domain oder Subdomain ein, die du authentifizieren möchtest, und fahre fort, um die erforderlichen DNS-Einträge zu generieren.
+
+---
+
+## So verifizierst du DNS-Einträge
+
+Die DNS-Verifizierung bestätigt, dass du die Domain kontrollierst, und autorisiert sie für den E-Mail-Versand. Jeder erforderliche Eintrag muss exakt mit den bei der Einrichtung generierten Werten übereinstimmen.
+
+Der Verifizierungsbildschirm kann folgende Einträge enthalten:
+
+- **TXT:** Häufig für Authentifizierung und Domain-Richtlinien verwendet.
+- **CNAME:** Verknüpft bestimmte Subdomains oder unterstützte E-Mail-Funktionen.
+- **MX:** Für unterstützte E-Mail-Routing-Funktionen.
+- **DKIM:** Hilft zu bestätigen, dass Nachrichten von der Absendedomain autorisiert wurden.
+- **SPF:** Identifiziert Server, die zum Versand im Namen der Domain berechtigt sind.
+- **DMARC:** Legt fest, wie empfangende Server mit bestimmten Authentifizierungsfehlern umgehen sollen.
+
+Kopiere **Typ**, **Priorität**, **Hostname** und **Wert** exakt so, wie sie für jeden erforderlichen Eintrag angezeigt werden.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079485643/original/NLnD7EhYEcGBwW6CzwG21fZ5JK26IGCwuQ.png?1787850660)**
+
+Prüfe jeden generierten DNS-Eintrag und kopiere die genauen Werte in die DNS-Verwaltung deiner Domain. Kehre zur Verifizierungsseite zurück, nachdem alle erforderlichen Einträge hinzugefügt wurden.
+
+Klicke nach dem Aktualisieren der DNS-Einträge auf **Domain verifizieren**.
+
+**DNS-Propagierung:** Einige DNS-Änderungen werden innerhalb von Minuten verifiziert, während andere je nach DNS-Konfiguration und Caching bis zu 24–48 Stunden dauern können.
+
+Sobald die Verifizierung erfolgreich ist, steht die Domain für unterstützte E-Mail-Zuweisungen zur Verfügung.
+
+---
+
+## So weist du eine Domain E-Mail-Typen zu
+
+Domain-Zuweisungen legen fest, welche verifizierte Absendedomain für verschiedene E-Mail-Typen verwendet wird. Dies hilft dabei, transaktionale E-Mails, Konversationen und Marketing-Aktivitäten voneinander zu trennen.
+
+### Zurück zu E-Mail-Dienste
+
+Gehe zurück zu **Einstellungen → E-Mail-Dienste → SMTP Service**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079485630/original/8FIEELREpzWJlV52wnG3wfJXPlf9cHn78w.png?1787850585)**
+
+Öffne **E-Mail-Dienste** und kehre zu den Einstellungen der Absendedomain zurück, nachdem deine Domain erfolgreich verifiziert wurde.
+
+### Domain-Zuweisungen konfigurieren
+
+Öffne **Dedicated Domain And IP** und wähle **Domain Configuration**.
+
+Je nach den in deinem Konto verfügbaren Funktionen können verifizierte Domains folgenden E-Mail-Kategorien zugewiesen werden:
+
+- Kalender-E-Mails
+- Zahlungs-E-Mails
+- 1:1-Konversationen
+- Massen-E-Mails
+- Kampagnen-E-Mails
+- Workflow-E-Mails
+- Standard-Versandaktivitäten
+
+Wähle die verifizierte Domain aus, die du für die jeweilige unterstützte Kategorie nutzen möchtest.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079485638/original/uJlu6xivszhFMHpJ1UMQiCME7gNvNfFfDQ.png?1787850617)**
+
+Wähle die verifizierte Domain aus, die die jeweilige E-Mail-Kategorie verarbeiten soll. Wenn eine prozentuale Verteilung verfügbar ist, stelle sicher, dass die Gesamtsumme **100 %** beträgt.
+
+Wenn mehrere Domains für dieselbe Kategorie unterstützt werden, kann das Sendevolumen über entsprechende Einstellungen aufgeteilt werden.
+
+Änderungen an Domain-Zuweisungen wirken sich auf zukünftige Versandaktivitäten aus und ändern keine bereits versendeten E-Mails.
+
+---
+
+## So fügst du DNS-Einträge manuell hinzu
+
+Die manuelle DNS-Konfiguration ist nützlich, wenn die automatische Domain-Konfiguration nicht verfügbar ist oder du Authentifizierungseinträge direkt in deinen DNS-Einstellungen verwalten möchtest.
+
+Wähle während der Domain-Einrichtung **Eintrag manuell hinzufügen** (Add record manually), sofern die Option verfügbar ist.
+
+Die erforderlichen Einträge werden mit Eintragstyp, Host und Wert angezeigt, die in deine DNS-Verwaltung eingetragen werden müssen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079484942/original/zDyNuLR1sj-bmwsN8iXOraZ-75eHEN_eLQ.png?1787849934)**
+
+Kopiere jeden **Eintrag**, **Host** und **erforderlichen Wert** in die entsprechenden Felder deiner DNS-Verwaltung. Kehre nach dem Speichern aller erforderlichen Einträge zum Einrichtungsbildschirm zurück und klicke auf **Einträge verifizieren**.
+
+Verändere die generierten Werte nicht, es sei denn, dein DNS-Anbieter erfordert ein bestimmtes Format für den Hostnamen. Wenn du unsicher bist, wie Root- oder Subdomain-Hostwerte eingetragen werden müssen, kläre das korrekte Format vor dem Speichern mit deinem Domain-Administrator ab.
+
+---
+
+## Best Practices für die E-Mail-Zustellbarkeit
+
+Eine dedizierte Absendedomain bildet die technische Grundlage für authentifizierte E-Mails, aber die langfristige Zustellbarkeit hängt auch von der Nutzung der Domain ab.
+
+- Verwende nach Möglichkeit eine dedizierte Subdomain für den Versand.
+- Sende primär an Empfänger, die deine E-Mails angefordert oder erwartet haben.
+- Vermeide es, unmittelbar sehr große Mengen von einer neu eingerichteten Domain zu versenden.
+- Steigere das Sendevolumen schrittweise, wenn du eine neue Absender-Historie aufbaust.
+- Halte Empfängerlisten aktuell und entferne ungültige Adressen.
+- Überwache Bounce-Raten, Spam-Beschwerden und das Empfänger-Engagement.
+- Halte Authentifizierungseinträge aktiv und fehlerfrei.
+- Vermeide häufige Wechsel der Absendedomains ohne triftigen Grund.
+- Verwende Absendernamen und Absenderadressen, die für Empfänger leicht wiedererkennbar sind.
+
+---
+
+## Fehlerbehebung bei dedizierten Absendedomains
+
+Die meisten Einrichtungsprobleme entstehen durch fehlende DNS-Einträge, Konflikte zwischen Einträgen, unvollständige Propagierung oder falsche Host-Formatierungen. Die Prüfung dieser Punkte löst Verifizierungsprobleme oft, ohne dass die Domain selbst geändert werden muss.
+
+### Domain wird nicht verifiziert
+
+Stelle Folgendes sicher:
+
+- Jeder erforderliche DNS-Eintrag wurde hinzugefügt.
+- Die Eintragstypen stimmen mit den generierten Anweisungen überein.
+- Hostnamen wurden korrekt eingegeben.
+- Eintragswerte wurden vollständig kopiert.
+- MX-Prioritäten stimmen mit den Vorgaben überein, falls zutreffend.
+- Die DNS-Änderungen hatten ausreichend Zeit zur Propagierung.
+- Die DNS-Verwaltung hat den Hostnamen nicht automatisch verändert.
+
+Warte bei Bedarf bis zu **24–48 Stunden** auf die DNS-Propagierung.
+
+### Ein bestehender DNS-Eintrag verursacht einen Konflikt
+
+Lösche bestehende Einträge nicht sofort. Prüfe zuerst, ob ein anderer aktiver E-Mail- oder Domain-Dienst davon abhängt.
+
+- Finde heraus, wofür der Eintrag aktuell verwendet wird.
+- Prüfe, ob ein anderer E-Mail-Dienst davon abhängt.
+- Ziehe die Verwendung einer anderen Absende-Subdomain in Betracht.
+- Stimme Änderungen bei Bedarf mit deinem Domain-Administrator ab.
+
+Die Verwendung einer separaten Absende-Subdomain ist oft sicherer, als Einträge zu ändern, die für deine primäre geschäftliche E-Mail-Adresse genutzt werden.
+
+### Ein Wildcard-DNS-Eintrag verursacht einen Konflikt
+
+Wildcard-Einträge können automatisch für Subdomains gelten, die nicht explizit konfiguriert wurden.
+
+- Prüfe, ob ein Wildcard-DNS-Eintrag existiert.
+- Erstelle explizite Einträge für die dedizierte Absende-Subdomain, sofern unterstützt.
+- Halte Rücksprache mit deinem Domain-Administrator, bevor du das Verhalten von Wildcards änderst.
+
+### Die Domain ist verifiziert, aber SSL steht noch aus
+
+SSL wird normalerweise nach erfolgreicher Domain-Verifizierung automatisch ausgestellt.
+
+1. Stelle sicher, dass die Domain weiterhin als verifiziert angezeigt wird.
+2. Führe die Domain-Verifizierung erneut durch.
+3. Warte etwas, bis das Zertifikat ausgestellt wurde.
+4. Überprüfe die DNS-Einträge erneut, wenn sich der Status nicht ändert.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Sollte ich meine Hauptdomain (Root-Domain) oder eine Subdomain für den E-Mail-Versand verwenden?**
+
+Eine dedizierte Subdomain wird generell empfohlen. Sie hilft dabei, die Absender-Reputation von der Domain zu trennen, die für deine Website und reguläre geschäftliche E-Mails genutzt wird.
+
+**F: Garantiert eine dedizierte Absendedomain, dass meine E-Mails im Posteingang landen?**
+
+Nein. Sie verbessert die Authentifizierung und die Domain-Übereinstimmung des Absenders, aber die Zustellung in den Posteingang hängt weiterhin von Reputation, Interaktion, Nachrichteninhalt, Beschwerderaten und anderen Versandpraktiken ab.
+
+**F: Wie lange dauert die Domain-Verifizierung?**
+
+Einige Domains werden innerhalb weniger Minuten verifiziert, während die DNS-Propagierung je nach DNS-Konfiguration bis zu 24–48 Stunden dauern kann.
+
+**F: Benötige ich eine dedizierte IP, um eine dedizierte Absendedomain zu nutzen?**
+
+Nein. Eine dedizierte IP ist eine separate, optionale Konfiguration der Sendeinfrastruktur und wird für die reine Authentifizierung einer dedizierten Absendedomain nicht benötigt.
+
+**F: Kann ich mehr als eine dedizierte Absendedomain verwenden?**
+
+Ja. Es können mehrere verifizierte Domains eingerichtet werden, sofern dies unterstützt wird. Die verfügbaren Zuweisungen und Verteilungsoptionen hängen von der E-Mail-Kategorie und Kontokonfiguration ab.
+
+**F: Warum werden einige DNS-Einträge immer noch als nicht verifiziert angezeigt?**
+
+Prüfe, ob Eintragstyp, Host, Wert und Priorität exakt mit den generierten Anweisungen übereinstimmen. Möglicherweise ist auch die DNS-Propagierung noch nicht abgeschlossen.
+
+**F: Kann ich einen bestehenden MX- oder SPF-Eintrag löschen, wenn er im Konflikt mit der neuen Domain steht?**
+
+Lösche bestehende DNS-Einträge nicht, außer du weißt genau, welcher Dienst davon abhängt. Ziehe stattdessen eine separate Absende-Subdomain in Betracht oder halte zuerst Rücksprache mit deinem Domain-Administrator.
+
+**F: Was passiert, wenn meine Domain einen Wildcard-DNS-Eintrag hat?**
+
+Ein Wildcard-Eintrag kann dazu führen, dass eine Subdomain als bereits konfiguriert erscheint. Explizite DNS-Einträge für die dedizierte Absende-Subdomain können erforderlich sein, um das Wildcard-Verhalten zu überschreiben.
+
+**F: Was ist der Unterschied zwischen der Absenderadresse (From) und der Antwortadresse (Reply-To)?**
+
+Die **Absenderadresse** identifiziert den Absender, der dem Empfänger angezeigt wird. Die **Antwortadresse** bestimmt, wohin Antworten gesendet werden, und kann separat eingerichtet werden.
+
+**F: Warum sieht ein Empfänger in den Nachrichtendetails möglicherweise eine andere technische Domain?**
+
+Das kann passieren, wenn E-Mails über eine geteilte Sendeinfrastruktur versendet werden. Das Konfigurieren und Zuweisen einer verifizierten dedizierten Absendedomain sorgt für eine einheitliche Domain-Übereinstimmung bei unterstützten E-Mails.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn deine dedizierte Absendedomain nicht verifiziert wird oder E-Mails nicht über die erwartete Domain versendet werden, prüfe zunächst die DNS-Konfiguration und die Domain-Zuweisung.
+
+Stelle Folgendes sicher:
+
+- Die korrekte Domain oder Subdomain wurde hinzugefügt.
+- Jeder erforderliche DNS-Eintrag wurde erstellt.
+- Die Werte der DNS-Einträge stimmen exakt mit den generierten Vorgaben überein.
+- Die DNS-Propagierung ist abgeschlossen.
+- Die Domain zeigt einen verifizierten Status an.
+- Das SSL-Zertifikat wurde nach der Verifizierung ausgestellt.
+- Die verifizierte Domain ist der vorgesehenen E-Mail-Kategorie zugewiesen.
+- Prozentuale Domain-Zuweisungen ergeben in der Summe 100 %, falls zutreffend.
+- Bestehende DNS-Einträge stehen nicht im Konflikt mit der dedizierten Absendedomain.
+- Ein Wildcard-Eintrag beeinträchtigt die Subdomain nicht.
+- Die E-Mail wurde versendet, nachdem die Domain-Zuweisung aktualisiert wurde.
+
+Besteht das Problem weiterhin, sammle den Domainnamen, den Verifizierungsstatus, die Status der DNS-Einträge, die Einstellungen der Domain-Zuweisung sowie Screenshots eventuell angezeigter Fehlermeldungen und wende dich an den UmsatzAgent Support.

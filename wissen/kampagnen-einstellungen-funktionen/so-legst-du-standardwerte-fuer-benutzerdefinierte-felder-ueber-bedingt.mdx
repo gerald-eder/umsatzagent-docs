@@ -1,0 +1,82 @@
+---
+title: "So legst du Standardwerte für benutzerdefinierte Felder über bedingten Versand fest"
+description: "Personalisiere deine E-Mails mit Kontaktdaten wie Name, Unternehmen oder Standort, um die Interaktion zu steigern. Wenn ein benutzerdefiniertes Feld (wie…"
+---
+
+Personalisiere deine E-Mails mit Kontaktdaten wie Name, Unternehmen oder Standort, um die Interaktion zu steigern. Wenn ein benutzerdefiniertes Feld (wie der Vorname) leer ist, kannst du mit bedingtem Versand einen Standardwert anzeigen lassen, damit deine E-Mails stets professionell wirken.
+
+**INHALTSVERZEICHNIS**
+
+- Was ist bedingter Versand?
+- Vorteile
+- Schritt-für-Schritt-Anleitung
+- Einschränkungen
+- Tipps
+- FAQ
+
+### Was ist bedingter Versand?
+
+**Mit dem bedingten Versand kannst du Inhaltsblöcke basierend auf den Daten benutzerdefinierter Felder deiner Kontakte ein- oder ausblenden. So passt du E-Mail-Inhalte individuell an jeden Empfänger an und zeigst einen Standardwert an, falls ein Feld (wie der Vorname) nicht ausgefüllt ist.**
+
+### Vorteile
+
+- **Professionalität:** Vermeidet Lücken oder fehlende Informationen in Anreden und Nachrichten.
+- **Personalisierung:** Stellt sicher, dass jeder Empfänger eine relevante, passende Anrede sieht – selbst wenn Daten fehlen.
+- **Konsistenz:** Sorgt für ein einheitliches Erscheinungsbild in allen E-Mails, unabhängig von der Datenqualität.
+- **Höhere Interaktion:** Personalisierte E-Mails werden mit höherer Wahrscheinlichkeit geöffnet und gelesen.
+
+## Schritt-für-Schritt-Anleitung
+
+**Beispielziel:**
+Zeige „Hallo {{contact.first_name}},“ an, wenn der Vorname vorhanden ist, oder „Hallo Kunde,“, wenn nicht.
+
+1. **Bedingten Versand aktivieren**
+   Aktiviere den Schalter für bedingten Versand in der Seitenleiste deines Inhaltsblocks.
+2. **Personalisierte Anrede einrichten**
+   - Füge einen Textblock hinzu:
+     `Hallo {{contact.first_name}},`
+   - Unter „Bedingungen festlegen“:
+
+     - Wähle ein benutzerdefiniertes Feld: „Vorname“
+     - Bedingung: „Ist nicht“
+     - Wert: (leer lassen)
+   - Dieser Block wird nur angezeigt, wenn das Feld „Vorname“ nicht leer ist.
+3. **Standard-Anrede einrichten**
+   - Füge einen weiteren Textblock hinzu:
+     `Hallo Kunde,`
+   - Unter „Bedingungen festlegen“:
+
+     - Wähle ein benutzerdefiniertes Feld: „Vorname“
+     - Bedingung: „Ist“
+     - Wert: (leer lassen)
+   - Dieser Block wird nur angezeigt, wenn das Feld „Vorname“ leer ist.
+4. **Vorschau und Test**
+   Nutze die Vorschaufunktion, um zu prüfen, wie deine E-Mail für Kontakte mit und ohne Vorname dargestellt wird.
+
+##
+
+###
+
+### Einschränkungen
+
+- Pro Inhaltsblock kann beim bedingten Versand nur ein benutzerdefinierter Wert verwendet werden.
+- Du kannst nicht mehrere Bedingungseinstellungen für dasselbe Feld innerhalb eines einzelnen Blocks oder Abschnitts anwenden.
+
+### Tipps
+
+- Prüfe die Vorschau immer mit Testkontakten, um sicherzustellen, dass deine Bedingungen funktionieren.
+- Verwende eindeutige, ansprechende Standardwerte für einen professionellen Ton.
+
+### FAQ
+
+**F1: Kann ich den bedingten Versand auch für andere Felder als den Vornamen nutzen?**
+**A:** Ja, diese Methode funktioniert für jedes benutzerdefinierte Feld, das du hinzufügst.
+
+**F2:** **Kann ich mehrere benutzerdefinierte Felder in einem Block verwenden?**
+**A:** Nein, es ist nur ein benutzerdefinierter Wert pro Inhaltsblock möglich.
+
+**F3:** **Was passiert, wenn ich das Feld „Wert eingeben“ leer lasse?**
+**A:** Die Bedingung prüft auf leere oder nicht leere Felder, sodass du Inhalte entsprechend ein- oder ausblenden kannst.
+
+**F4:** **Kann ich jeden beliebigen Standardwert festlegen?**
+**A:** Ja, passe die Standardnachricht passend zu deiner Marke an.

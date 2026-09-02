@@ -1,0 +1,73 @@
+---
+title: "Wie mache ich meine Formulareinsendungen sicher vor Spammern?"
+description: "Unsere Formularfunktion enthält integrierte Schutzmaßnahmen gegen gefälschte Einsendungen, die auf mehreren Sicherheitssignalen wie IP-Adressen,…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Wie du deine Formulare schützt](#wie-du-deine-formulare-schuetzt)
+  - [1. CAPTCHA verwenden, um Spam zu verhindern](#1-captcha-verwenden-um-spam-zu-verhindern)
+  - [2. E-Mail-Adressen und Telefonnummern validieren](#2-e-mail-adressen-und-telefonnummern-validieren)
+  - [3. SMS-Berechtigungen nach Region einschränken](#3-sms-berechtigungen-nach-region-einschraenken)
+- [Wichtigste Erkenntnisse](#wichtigste-erkenntnisse)
+
+## Wie du deine Formulare schützt
+
+Unsere Formularfunktion enthält integrierte Schutzmaßnahmen gegen gefälschte Einsendungen, die auf mehreren Sicherheitssignalen wie IP-Adressen, geografischen Daten und weiteren Parametern basieren. Zusätzlich schützt ein DDoS-Schutz deine Formulare und Einsendungen.
+
+Für mehr Sicherheit empfiehlt es sich, beim Erstellen deiner Formulare folgende Best Practices umzusetzen.
+
+## 1. CAPTCHA verwenden, um Spam zu verhindern
+
+Das Hinzufügen eines CAPTCHAs ist eine der effektivsten Methoden, um Scammer und Spammer daran zu hindern, große Mengen gefälschter Einträge abzusenden. Dies verhindert:
+
+- Das Erstellen gefälschter Kontakte, die dein CRM überladen.
+- Übermäßige automatisierte Formulareinsendungen, die deine Infrastruktur überlasten.
+- Erhöhte Kosten durch automatisierte SMS-, E-Mail- oder andere Kommunikationsnachrichten, die durch gefälschte Einträge ausgelöst werden.
+
+Navigiere zu Formulare > Benutzerdefinierte Felder > CAPTCHA, um ein CAPTCHA zu deinem Formular hinzuzufügen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155041769873/original/OnIaOzeQ89UkB-13cZHpPSg97FvNXi_7sA.png?1739861456)
+
+```
+Dies ist besonders nützlich, wenn du Workflows eingerichtet hast, die SMS, E-Mails oder andere Kommunikationsupdates senden. Andernfalls können erhöhte Kosten entstehen, wenn böswillige Akteure gefälschte Kontakte in deinem CRM anlegen.
+```
+
+## 2. E-Mail-Adressen und Telefonnummern validieren
+
+Stelle sicher, dass nur echte Nutzer Formulare absenden, indem du die **Validierung von E-Mail-Adressen und Telefonnummern** aktivierst. Dies hilft dabei:
+
+- Temporäre, ungültige oder gefälschte Kontaktdaten zu blockieren.
+- Zu verhindern, dass betrügerische Einträge deine Marketing- und Vertriebsdaten verfälschen.
+- Unnötige Kontaktaufnahmekosten zu senken.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155041769874/original/kvfcznmDJx78bA7krpFxxpcOz8HX_LVVoQ.png?1739861456)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155041769875/original/yHdxRt5oosWrSyOYkARjdFUFiW4DLP_7hQ.png?1739861456)
+
+## 3. SMS-Berechtigungen nach Region einschränken
+
+Wenn dein Formular SMS-Nachrichten auslöst, konfiguriere **SMS-Geo-Berechtigungen**, um den Versand von Nachrichten in Hochrisikoregionen zu verhindern.
+
+**Verwaltung von Geo-Berechtigungen in Telefondiensten –** Das Telefonsystem verwaltet SMS-Berechtigungen in den Einstellungen. Standardmäßig sind die meisten Länder mit Ausnahme von Hochrisikoregionen aktiviert. Wenn du die Geo-Berechtigungen anpassen musst, wende dich an den UmsatzAgent Support mit deiner **Standort-ID** und der Liste der Länder, für die SMS und Anrufe aktiviert oder deaktiviert werden sollen.
+
+Folgende Hochrisikoländer sind standardmäßig deaktiviert:
+
+1. Somalia (+252)
+2. Nordkorea (+850)
+3. Kuba (+53)
+4. Syrien (+963)
+5. Iran (+98)
+6. Sudan (+249)
+7. Liberia (+231)
+8. Simbabwe (+263)
+9. Afghanistan (+93)
+10. Jemen (+967)
+
+```
+Best Practice – Für optimale Sicherheit empfiehlt es sich, SMS-Berechtigungen NUR für Regionen zu aktivieren, in denen sich deine tatsächlichen Kunden befinden. Sei vorsichtig bei der Aktivierung von SMS in Hochrisikogebieten, um betrügerische Aktivitäten zu verhindern.
+```
+
+## Wichtigste Erkenntnisse
+
+Eine verbesserte Formularsicherheit schützt dein Unternehmen vor Spam, Fake-Kontakten und unnötigen Kosten. Neben den integrierten Schutzmaßnahmen stärken **CAPTCHA, E-Mail-/Telefon-Validierung und geografisch eingeschränkte SMS-Berechtigungen** die Sicherheit zusätzlich. Setze diese Best Practices um, damit nur echte Einsendungen dein System erreichen.

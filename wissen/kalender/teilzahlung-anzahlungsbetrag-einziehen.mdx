@@ -1,0 +1,103 @@
+---
+title: "Teilzahlung: Anzahlungsbetrag einziehen"
+description: "Eine Teilzahlung ermöglicht es Buchenden, Buchungen durch eine vorab geleistete Anzahlung abzusichern, während der Restbetrag zu einem späteren Zeitpunkt…"
+---
+
+**In diesem Artikel**
+
+- [Was ist eine Teilzahlung?](#was-ist-eine-teilzahlung)
+- [Auswirkungen von Teilzahlungen auf Transaktionen & Rechnungen](#auswirkungen-von-teilzahlungen-auf-transaktionen-rechnungen)
+- [Wie wird die Teilzahlung verwendet?](#wie-wird-die-teilzahlung-verwendet)
+- [Wie wird der Restbetrag eingezogen?](#wie-wird-der-restbetrag-eingezogen)
+- [Wichtigste Vorteile](#wichtigste-vorteile)
+- [FAQs](#faqs)
+
+---
+
+#### Was ist eine Teilzahlung?
+
+Eine Teilzahlung ermöglicht es Buchenden, Buchungen durch eine vorab geleistete Anzahlung abzusichern, während der Restbetrag zu einem späteren Zeitpunkt beglichen wird. Neben der vollständigen Bezahlung können Unternehmen nun auch Anzahlungsbeträge von Buchenden einziehen. Diese Funktion ist für alle Kalendertypen verfügbar und erleichtert die Reservierung von Plätzen.
+
+Du kannst flexibel festlegen, ob bei der Buchung ein Festbetrag oder ein prozentualer Anteil des Gesamtbetrags berechnet werden soll.
+
+---
+
+#### Auswirkungen von Teilzahlungen auf Transaktionen & Rechnungen
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879287/original/A64E--uX67bHO0N7zMq9mzsE21ItCuVQkQ.jpeg?1712128053)
+
+Wenn Teilzahlungen aktiviert sind, erscheinen zwei Einträge unter Zahlungen:
+
+- **Transaktion:** Der bei der Buchung berechnete Betrag (Anzahlungsbetrag).
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879285/original/_5ebBs64X2CyV6z-YoPva235esLm2PsIfQ.jpeg?1712128053)
+
+- **Rechnungen**: Der vom Buchenden noch ausstehende Betrag (Gesamtbetrag - Anzahlungsbetrag). Der Rechnungsstatus bleibt auf „Entwurf“ (Draft), und der ausstehende Betrag muss manuell eingezogen werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879282/original/Mx9_v-bKRaIfhKxGkmEoFas8cnXouVQ7ow.jpeg?1712128053)
+
+---
+
+#### Wie wird die Teilzahlung verwendet?
+
+**1. Zahlungsgateway integrieren:** Stelle sicher, dass ein Zahlungsgateway wie Stripe oder Authorize.net integriert ist (Zahlungen > Integrationen).
+
+**2. Zahlung aktivieren:** Aktiviere den Schalter „Zahlungen akzeptieren“ in den Kalendereinstellungen unter „Formulare & Zahlungen“.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879286/original/odJx2RFUjwFBcXU1mn5CaXWTKtRRcf5UKQ.jpeg?1712128053)
+
+**3. Gesamtbetrag und Währung eingeben:** Gib den Gesamtbetrag für deine Dienstleistung oder deinen Termin an und wähle die gewünschte Währung aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879283/original/9dLxwjV0PBc6xRGCOeT6pNaPJY2tLY99Gg.png?1712128053)
+
+4. **Teilzahlungsoption aktivieren:** Aktiviere das Kontrollkästchen „Teilzahlung akzeptieren“.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879284/original/ETS9KUx15cz8zEaZIEVKqCmiafB0BA-Jdg.png?1712128053)
+
+5. **Betragstyp auswählen:** Wähle zwischen einem **Festbetrag oder einem Prozentsatz**. Der Prozentsatz wird anhand des Gesamtbetrags berechnet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879290/original/ZYkOJLcBX0-IZGuzmhWRyTPiNtsHNhdCSw.jpeg?1712128053)
+
+6. **Anzahlungsbetrag / Prozentsatz eingeben:** Gib den Anzahlungsbetrag oder den Prozentsatz für deine Dienstleistung bzw. deinen Termin an. Der Prozentsatz wird basierend auf dem eingegebenen Gesamtbetrag berechnet.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879289/original/bktVx4tLkYDDMXO2oO9vRgNVMlQVeK8gJw.png?1712128053)
+
+7. **Beschreibung hinzufügen:** Gib bei Bedarf eine Beschreibung ein, um zusätzlichen Kontext bereitzustellen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155023879291/original/h1VMkf_uJCOr1GB30tYPFA9ZUXaPhbYlNA.jpeg?1712128054)
+
+8. **Einstellungen speichern:** Klicke auf Speichern, um die Änderungen zu übernehmen.
+
+---
+
+#### Wie wird der Restbetrag eingezogen?
+
+Um die Restzahlung einzuziehen, sende manuell den Rechnungsentwurf, der bei der Erfassung der Teilzahlung während der Buchung erstellt wurde. Navigiere dazu zu Zahlungen > Rechnungen.
+
+Hinweis: Zukünftige Erweiterungen dieser Funktion werden diesen Vorgang automatisieren.
+
+---
+
+#### Wichtigste Vorteile
+
+Diese Funktion erleichtert den Einzug von Anzahlungen und trägt dazu bei, Terminausfälle zu reduzieren. Durch die Anzeige der Gesamtkosten des Termins oder der Dienstleistung bei gleichzeitiger Möglichkeit, nur eine Anzahlung zu leisten, wird das Kundenerlebnis verbessert, ohne eine vollständige Vorauszahlung zu verlangen.
+
+---
+
+#### FAQs
+
+F: Welche Kalendertypen unterstützen Teilzahlungen?
+
+A: Teilzahlungen können für alle Kalendertypen aktiviert werden: Event-, Round-Robin-, Kollektiv-, Klassen-, Service-Kalender und Service-Menü.
+
+F: Wie verwalte ich ausstehende Zahlungen?
+
+A: Ausstehende Zahlungen können manuell über den Reiter Zahlungen > Rechnungen verwaltet werden. Dort ist der ausstehende Betrag ersichtlich und kann vom Buchenden eingezogen werden.
+
+F: Erhalten Buchende eine Benachrichtigung über ausstehende Zahlungen?
+
+A: Nein, Buchende erhalten keine automatische Benachrichtigung über ausstehende Zahlungen. Teammitglieder können den ausstehenden Betrag jedoch unter Zahlungen > Rechnungen einsehen.
+
+F: Welche Zahlungsgateways werden für Kalenderzahlungen unterstützt?
+
+A: Derzeit werden Stripe und Authorize.net für Kalenderzahlungen unterstützt.

@@ -1,0 +1,86 @@
+---
+title: "Testbestellung in Shops aufgeben"
+description: "Eine Testbestellung ist wichtig, um zu überprüfen, ob dein Checkout-Prozess, die Zahlungsintegration, die Versandberechnungen und die Workflows zur…"
+---
+
+Eine Testbestellung ist wichtig, um zu überprüfen, ob dein Checkout-Prozess, die Zahlungsintegration, die Versandberechnungen und die Workflows zur Bestellbestätigung wie erwartet funktionieren – **ohne eine echte Zahlungsmethode zu belasten**.
+
+Diese Anleitung führt dich durch die Schritte, um einen vollständigen Bestellablauf zu simulieren.
+
+---
+
+## Wann solltest du eine Testbestellung durchführen?
+
+- Vor der Veröffentlichung deines Shops.
+- Nach Änderungen an den Zahlungs- oder Versandeinstellungen.
+- Um die Benutzererfahrung von der Produktauswahl bis zur Bestellbestätigung zu testen.
+- Um E-Mail- und SMS-Benachrichtigungen für Kunden und Administratoren zu überprüfen.
+
+---
+
+## Schritt für Schritt: Testbestellung durchführen
+
+### 1. „Testmodus“ aktivieren
+
+> *![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155048466594/original/tiiprYrFxqv_jiqY5lHhgUmlxmL9SurGhA.png?1750245589)*
+
+**Test-Gateway verwenden**
+
+- Gehe zu **Seiten > Shops > Shop auswählen >****Shop-Einstellungen > Zahlungsmodus**.
+- Aktiviere den **Testmodus**.
+- Speichere die Änderungen.
+
+### 2. Artikel in den Warenkorb legen
+
+- Öffne das Frontend deines **Live-Shops**. Sieh dir die Vorschau deines finalen Shops an.
+- Lege ein oder mehrere Produkte in den Warenkorb.
+
+### 3. Zur Kasse gehen
+
+- Gib Versand- und Kundendaten wie ein echter Kunde ein.
+- Stelle sicher, dass Adressfelder, Steuern und Versandoptionen korrekt angezeigt werden.
+
+### 4. Test-Zahlungsdaten verwenden
+
+Wenn du den Testmodus aktiviert hast, verwende eine der folgenden **Test-Kartennummern** (sofern von deiner Plattform unterstützt):
+
+| Kartentyp | Nummer | Ablaufdatum | CVV |
+| --- | --- | --- | --- |
+| Visa | `4242 4242 4242 4242` | Beliebiges Datum in der Zukunft | Beliebige 3 Ziffern |
+| Mastercard | `5555 5555 5555 4444` | Beliebiges Datum in der Zukunft | Beliebige 3 Ziffern |
+
+> *Diese Nummern lösen keine echte Zahlung aus, starten jedoch den vollständigen Checkout-Prozess.*
+
+### 5. Bestellung bestätigen
+
+- Schließe die Bestellung ab und prüfe Folgendes:
+
+  - Die Bestellung wird unter **Zahlungen >****Bestellungen** angezeigt.
+  - Du erhältst die entsprechenden Bestätigungs-E-Mails/-SMS. Stelle sicher, dass du Benachrichtigungen unter **Zahlungen > Einstellungen > Benachrichtigungen** aktiviert hast.
+  - Der Bestellstatus (z. B. ausstehend, ausgeführt) verhält sich wie erwartet.
+
+---
+
+## Mit verschiedenen Szenarien wiederholen (optional)
+
+Um alle Fälle abzudecken, teste Bestellungen mit:
+
+- Verschiedenen Versandarten oder Standorten.
+- Rabattcodes.
+- Verschiedenen Produkttypen (digital, physisch, gebündelt).
+
+---
+
+## Aufräumen (optional)
+
+Nach dem Testen:
+
+- Deaktiviere den **Testmodus**.
+- Setze Produktpreise zurück, falls du sie geändert hast.
+
+---
+
+## Tipps zur Fehlerbehebung
+
+- **Keine E-Mails erhalten?** Überprüfe die Benachrichtigungseinstellungen unter **Zahlungen > Einstellungen > Benachrichtigungen**.
+- **Kassenseite lädt nicht?** Stelle sicher, dass dein Zahlungsgateway korrekt eingerichtet ist.

@@ -1,0 +1,128 @@
+---
+title: "So nutzt du Farbcodierungen in Chancen-Pipelines (Smart Tags)"
+description: "Smart Tags helfen dir, Chancen in deinen Pipelines mithilfe von farbcodierten Badges visuell zu priorisieren. Anstatt manuelle Filter oder…"
+---
+
+Smart Tags helfen dir, Chancen in deinen Pipelines mithilfe von farbcodierten Badges visuell zu priorisieren. Anstatt manuelle Filter oder Textbeschriftungen zu nutzen, hebst du Deals automatisch anhand selbst definierter Regeln hervor – etwa inaktive Deals, besonders wertvolle Chancen oder neue Leads. Dieser Artikel zeigt dir, wie du Smart Tags erstellst, bearbeitest und verwaltest.
+
+```
+Hinweis: Diese Funktion befindet sich derzeit in den Labs und muss in den Einstellungen aktiviert werden.
+```
+
+**INHALTSVERZEICHNIS**
+
+- Was sind Smart Tags?
+- Wichtigste Vorteile von Smart Tags
+- Berechtigungen und Zugriff
+- Limits und Validierung
+- Smart Tags einrichten und verwenden
+- Tags in der Vorschau anzeigen, bearbeiten oder löschen
+- Empfohlene vorgefertigte Tags
+- Best Practices
+- Fehlerbehebung
+- Häufig gestellte Fragen
+
+## Was sind Smart Tags?
+
+Smart Tags sind dynamische, regelbasierte Farbkennzeichnungen, die direkt auf den Chancen-Karten in einer Pipeline angezeigt werden. Basierend auf einem intuitiven Regel-Baukasten bewerten diese Tags jede Chance in Echtzeit und vergeben automatisch ein farbiges Label, sobald der Datensatz deine Kriterien erfüllt (z. B. Deal-Wert > 10.000 € oder „Zuletzt kontaktiert“ > 14 Tage). So erhältst du einen sofortigen visuellen Überblick, ohne manuell filtern oder suchen zu müssen.
+
+## Wichtigste Vorteile von Smart Tags
+
+- **Sofortige Priorisierung:** Wichtige Deals stechen sofort ins Auge.
+- **Weniger Kontextwechsel:** Du musst nicht jede Karte öffnen oder mehrere Filter anwenden.
+- **Schnellere Follow-ups:** Tags wie „Inaktiv“ oder „Kein Zuständiger“ machen Lücken sofort sichtbar.
+- **Einheitlicher Team-Fokus:** Alle sehen dieselben visuellen Signale für abgestimmtes Handeln.
+- **Individuell für jeden Ablauf:** Kombiniere beliebige UND/ODER-Bedingungen aus Standard- oder benutzerdefinierten Feldern von Chancen.
+
+## Berechtigungen und Zugriff
+
+- **Wer Smart Tags erstellen oder bearbeiten kann:**
+  - Administratoren
+  - Benutzer mit Berechtigung zum Bearbeiten von Pipelines
+- **Wer Smart Tags sehen kann:**
+  - Alle Benutzer (mit Berechtigung zum Anzeigen von Pipelines – auch ohne Bearbeitungsrechte)
+
+## Limits und Validierung
+
+- Jede Pipeline unterstützt **bis zu 10** aktive Smart Tags.
+- Doppelte Tags in derselben Pipeline (gleiche Farbe + Regel) werden automatisch blockiert.
+- Tags aktualisieren sich automatisch bei Änderungen an den Deal-Daten – keine manuelle Aktualisierung erforderlich.
+
+##
+
+## Smart Tags einrichten und verwenden
+
+### Schritt 1: Smart Tags aufrufen
+
+1. Öffne **Chancen**.
+2. Klicke auf den Reiter **Pipelines**.
+3. Klicke bei der gewünschten Pipeline auf **Bearbeiten**.
+4. Öffne den Reiter **Smart Tags**.
+
+### Schritt 2: Smart Tag erstellen
+
+1. Klicke auf **Smart Tag hinzufügen**.
+2. Wähle zwischen:
+
+   - **Neuen Tag erstellen:** Lege eigene Farben, Namen und Regelbedingungen fest.
+   - **Vorgefertigter Tag:** Nutze eine der Standardvorlagen (z. B. *Neuer Lead*, *Hoher Wert*, *Gefährdet*).
+3. Gib einen **Label-Namen** ein (z. B. „Inaktiver Deal“).
+4. Füge optional eine **Beschreibung** hinzu.
+5. Wähle eine **Farbe** für den Tag aus.
+6. Aktiviere **Auf alle Pipelines anwenden**, wenn du diese Regel global nutzen möchtest.
+7. Klicke auf **Weiter: Regel hinzufügen**.
+
+### Schritt 3: Regeln festlegen
+
+1. Nutze den Regel-Baukasten, um festzulegen, **wann der Tag angezeigt wird**.
+2. Jeder Tag ist regelbasiert – zum Beispiel:
+
+   - **Erstellungsdatum ≤ vor 3 Tagen →** „Neuer Lead“
+   - **Deal-Wert > 10.000 € →** „Hoher Wert“
+3. Du kannst:
+
+   1. Mehrere Bedingungen mit **UND- / ODER-Logik** kombinieren
+   2. Verschachtelte Filter für komplexe Logiken hinzufügen
+   3. Über **Tag-Vorschau** prüfen, wie der Tag auf einer Beispielkarte aussieht
+   4. Klicke abschließend auf **Speichern**.
+
+## Tags in der Vorschau anzeigen, bearbeiten oder löschen
+
+- Nach der Erstellung kannst du Tags direkt auf der Smart-Tags-Seite **in der Vorschau anzeigen, bearbeiten oder löschen**.
+
+## Best Practices
+
+✅ Nutze eindeutige Farben für deine wichtigsten Prioritäten (z. B. Rot für Dringendes, Grün für hohe Werte).
+
+✅ Halte Tag-Namen kurz – unter 20 Zeichen.
+
+✅ Überprüfe Regeln regelmäßig auf ihre Relevanz.
+
+## Fehlerbehebung
+
+- **Smart Tags sind auf den Karten nicht sichtbar?**
+  - Stelle sicher, dass Smart Tags in deinem Karten-Layout aktiviert sind (über „Karte anpassen“).
+  - Prüfe, ob die Regelbedingungen korrekt sind und auf die angezeigten Karten zutreffen.
+  - Lade die Seite neu, um die Änderungen in der Pipeline zu synchronisieren.
+
+- **Der Reiter „Smart Tags“ fehlt?**
+  - Nur Administratoren oder berechtigte Benutzer können Tags erstellen und bearbeiten.
+
+## Häufig gestellte Fragen
+
+**F: Funktionieren Smart Tags über alle Pipelines hinweg?**
+Ja – wenn du „Auf alle Pipelines anwenden“ auswählst, erscheint der Tag überall dort, wo seine Regelbedingungen erfüllt sind.
+
+**F: Kann ich Smart Tags zwischen Pipelines duplizieren?**
+Noch nicht, aber du kannst dieselbe Regel manuell in einer anderen Pipeline anlegen.
+
+**F: Sind Smart Tags in Berichten enthalten?**
+Derzeit werden Smart Tags nur visuell in der Pipeline-Ansicht dargestellt.
+
+**F: Wer kann Smart Tags erstellen oder bearbeiten?**
+
+Jeder Benutzer mit Berechtigung zum Bearbeiten der Pipeline-Einstellungen kann Smart Tags verwalten.
+
+**F: Werden Smart Tags in Echtzeit ausgewertet?**
+
+Das System überprüft alle Tag-Regeln neu, sobald eine Chance erstellt oder aktualisiert wird oder sich ihre Phase bzw. ihr Status ändert.

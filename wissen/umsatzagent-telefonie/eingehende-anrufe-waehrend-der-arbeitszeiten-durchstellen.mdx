@@ -1,0 +1,126 @@
+---
+title: "Eingehende Anrufe während der Arbeitszeiten durchstellen"
+description: "ÜBERSICHT"
+---
+
+ÜBERSICHT
+
+Diese Einstellung ermöglicht es dir, eingehende Anrufe nur während deiner Arbeitszeiten zu erhalten. Wenn sie aktiviert ist, werden alle eingehenden Anrufe außerhalb deines festgelegten Zeitplans an dir vorbeigeleitet und an das Ausweichziel der Telefonnummer übergeben (z. B. Mailbox oder Voice AI). Dies ist nützlich, wenn du nach Feierabend, am Wochenende oder im Urlaub nicht angerufen werden möchtest. Diese Einstellung ist standardmäßig deaktiviert. Dein Anruf-Routing ändert sich erst, wenn du sie aktivierst.
+
+WER KANN ES NUTZEN
+
+- Du kannst dies für dich selbst unter Einstellungen > Mein Profil verwalten.
+
+- Administratoren und Manager können dies für Teammitglieder unter Einstellungen > Mein Team > Bearbeiten > Benutzerverfügbarkeit verwalten.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756095/original/iOoiUqUoe3nXWY6qQYgO-2ojxrZV7DDv9A.png?1788240644)
+
+- Für die Verwaltung dieser Einstellung ist die Berechtigung "Kalender verwalten" erforderlich. Wenn du die Option nicht siehst, hat dein Administrator deiner Rolle diese Berechtigung möglicherweise nicht erteilt.
+
+SO AKTIVIERST DU ES
+
+1. Gehe zu Einstellungen > Mein Profil (oder Mein Team und öffne das Teammitglied).
+2. Suche den Bereich "Routing eingehender Anrufe".
+3. Aktiviere "Nur während der Arbeitszeiten klingeln".
+4. Wähle im Dropdown-Menü den Zeitplan aus, der deine Arbeitszeiten festlegt. Dies ist der Zeitplan, den das System vor dem Durchstellen prüft.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756149/original/HGq8fG0a4tYAfrpVb_BU7he-GjbnFGPa-w.png?1788240666)
+
+Deine Auswahl wird automatisch gespeichert.
+
+WAS PASSIERT MIT ANRUFEN AUSSERHALB DEINER ARBEITSZEITEN
+
+- Du bist der Nummer oder dem Kontakt zugewiesen: Der Anruf überspringt dich und geht an das bestehende Ausweichziel der Telefonnummer (Mailbox oder Voice AI).
+
+- Sammelruf (Ring All) wird verwendet: Nur Teammitglieder außerhalb ihrer Arbeitszeiten werden übersprungen. Bei allen, die sich innerhalb ihrer Arbeitszeiten befinden, klingelt es wie gewohnt. Wenn alle außerhalb der Arbeitszeiten sind, geht der Anruf an das Ausweichziel der Telefonnummer.
+
+- Sprachmenü (IVR): Wenn ein Verbindungsschritt so eingerichtet ist, dass er dich anruft, und du dich außerhalb deiner Arbeitszeiten befindest, wirst du übersprungen, während andere Personen und Nummern in diesem Schritt weiterhin angerufen werden. Warst du die einzige Person für diesen Anruf, wird niemand verbunden und der Anrufablauf wird fortgesetzt.
+
+Während deiner Arbeitszeiten ändert sich nichts. Anrufe erreichen dich genau wie bisher.
+
+DATUMSSPEZIFISCHE ZEITEN FÜR FEIERTAGE UND URLAUB NUTZEN
+
+Der Zeitplan für diese Funktion unterstützt datumsspezifische Zeiten. Ein datumsspezifischer Eintrag überschreibt deine normalen Wochenzeiten für ein bestimmtes Datum, sodass du dich für einen Feiertag oder einen freien Tag von eingehenden Anrufen abmelden kannst, ohne deinen regulären Wochenplan zu ändern.
+
+So markierst du einen Tag als frei:
+
+1. Öffne den Zeitplan, den du im Bereich "Routing eingehender Anrufe" ausgewählt hast.
+
+2. Füge einen datumsspezifischen Eintrag für das Datum hinzu, an dem du nicht verfügbar bist.
+
+3. Lege fest, dass an diesem Datum keine verfügbaren Stunden hinterlegt sind.
+
+4. Speichere die Änderung.
+
+An diesem Datum giltst du den gesamten Tag über als außerhalb der Arbeitszeiten, sodass eingehende Anrufe dich überspringen und an das Ausweichziel der Telefonnummer gehen. Deine regulären Wochenzeiten bleiben unverändert und gelten am nächsten Tag automatisch wieder.
+
+Gut zu wissen:
+
+- Ein datumsspezifischer Eintrag hat für das jeweilige Datum immer Vorrang vor deinen normalen Wochenzeiten, auch wenn der Feiertag auf einen regulären Arbeitstag fällt.
+
+- Es funktioniert identisch, egal ob du es für dich selbst in Mein Profil einstellst oder ein Administrator es für ein Teammitglied in Mein Team festlegt.
+
+- Um ein ganzes Team für einen Feiertag von Anrufen abzumelden, füge den datumsspezifischen freien Tag zum Zeitplan jedes Mitglieds hinzu und stelle sicher, dass die Option aktiviert ist.
+
+FÜR ADMINISTRATOREN: STEUERN, WER DIES ÄNDERN KANN
+
+Diese Einstellung ist an die Berechtigung "Kalender verwalten" gekoppelt. Wenn du nicht möchtest, dass ein Teammitglied seine eigene Anrufverfügbarkeit ändert, entferne die Berechtigung "Kalender verwalten" aus der entsprechenden Rolle unter Einstellungen > Mein Team > Rollen und Berechtigungen. Ist diese Berechtigung deaktiviert, wird der Bereich "Routing eingehender Anrufe" für diesen Benutzer ausgeblendet und jeder Versuch, die Einstellung zu ändern, blockiert. So behalten Administratoren die Kontrolle über das Anruf-Routing nach Feierabend im gesamten Team.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756160/original/RAKqwQWXBj-m9piad_huXyJHXiBrRixMFQ.png?1788240684)
+
+WAS IST MIT MEINER WEITERLEITUNGSNUMMER?
+
+Wenn dein eigenes Telefon auch als Weiterleitungsnummer für eine dir zugewiesene Telefonnummer (oder als Geschäftsnummer) eingerichtet ist, musst du nichts weiter tun. Befindest du dich außerhalb deiner Arbeitszeiten, wird diese Weiterleitungsnummer automatisch zusammen mit dir übersprungen, sodass der Anruf an das Ausweichziel der Telefonnummer geht, anstatt bei dir zu klingeln. Dein Zeitplan wird in jedem Fall berücksichtigt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079756172/original/r4lD5vlkCyPa_XJ71l7jw5-8HHEr-8v_mA.png?1788240708)
+
+HÄUFIG GESTELLTE FRAGEN
+
+Ändert sich etwas, wenn ich die Funktion deaktiviert lasse?
+
+Nein. Die Einstellung ist standardmäßig deaktiviert und dein Anruf-Routing bleibt exakt so, wie es ist, bis du sie aktivierst.
+
+Welcher Zeitplan wird verwendet?
+
+Der Zeitplan, den du im Dropdown-Menü auswählst. Du kannst ihn jederzeit ändern.
+
+Wie blockiere ich Anrufe an einem Feiertag?
+
+Füge deinem ausgewählten Zeitplan einen datumsspezifischen Eintrag ohne Arbeitszeiten für dieses Datum hinzu. Siehe oben unter "Datumsspezifische Zeiten für Feiertage und Urlaub nutzen".
+
+Funktioniert dies auch bei weitergeleiteten Anrufen?
+
+Noch nicht. Diese Version umfasst eingehende Anrufe an zugewiesene Benutzer, Sammelrufe und Schritte im Sprachmenü (IVR). Weitergeleitete Anrufe sind für ein zukünftiges Update geplant.
+
+Kann ich Anrufe außerhalb der Geschäftszeiten an ein bestimmtes Teammitglied oder meine eigene Mailbox senden?
+
+In dieser Version nicht. Anrufe außerhalb deiner Arbeitszeiten folgen dem bestehenden Ausweichziel der Telefonnummer.
+
+Ich habe die Funktion aktiviert, aber Anrufe erreichen mich trotzdem nach Feierabend. Warum?
+
+Prüfe, ob dein ausgewählter Zeitplan korrekt ist und die aktuelle Uhrzeit tatsächlich außerhalb dieses Zeitplans liegt (beachte, dass der Zeitplan eine eigene Zeitzone verwendet). Vergewissere dich außerdem, dass der Schalter für das richtige Profil aktiviert ist. Wenn du einen datumsspezifischen Feiertag testest, stelle sicher, dass für dieses Datum keine Arbeitszeiten eingetragen sind.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn eingehende Anrufe außerhalb der Arbeitszeiten eines Benutzers weiterhin klingeln oder Anrufe nicht an das erwartete Ausweichziel weitergeleitet werden, prüfe zuerst den ausgewählten Zeitplan, den Verfügbarkeitsschalter und das Routing der Telefonnummer.
+
+Überprüfe Folgendes:
+
+- **Nur während der Arbeitszeiten klingeln** ist für den richtigen Benutzer aktiviert.
+- Der korrekte Arbeitszeiten-Zeitplan ist ausgewählt.
+- Der Zeitplan verwendet die erwartete Zeitzone.
+- Die aktuelle Uhrzeit liegt tatsächlich außerhalb der konfigurierten Arbeitszeiten des Benutzers.
+- Jeder datumsspezifische Feiertags- oder Urlaubseintrag enthält keine verfügbaren Zeiten für dieses Datum.
+- Der datumsspezifische Eintrag ist gespeichert und gilt für den richtigen Zeitplan.
+- Der Benutzer verfügt über die erforderliche Berechtigung, um die Einstellungen für das Routing eingehender Anrufe anzuzeigen oder zu ändern.
+- Für die Telefonnummer ist ein gültiges Ausweichziel konfiguriert.
+- Mailbox oder Voice AI ist korrekt eingerichtet, falls Anrufe nach Feierabend darüber abgewickelt werden sollen.
+- Bei Sammelrufen haben alle Benutzer ihre eigenen Zeitpläne korrekt konfiguriert.
+- IVR-Schritte verfügen weiterhin über ein anderes gültiges Ziel, wenn ein Benutzer übersprungen wird.
+- Die Weiterleitungsnummer des Benutzers soll nicht klingeln, wenn sich dieser Benutzer außerhalb der Arbeitszeiten befindet.
+- Du testest keinen weitervermittelten Anruf, da weitervermittelte Anrufe von dieser Arbeitszeiteneinstellung nicht unterstützt werden.
+
+Erreichen Anrufe den Benutzer weiterhin nach Feierabend, bestätige, dass der Schalter im richtigen Profil aktiviert ist, und überprüfe die Zeitzone des Zeitplans sowie alle datumsspezifischen Überschreibungen.
+
+Besteht das Problem weiterhin, sammle die Angaben zum betroffenen Benutzer, den ausgewählten Zeitplan, die Zeitzone, Testdatum und -uhrzeit, die Telefonnummer, das Ausweichziel sowie Screenshots der Einstellungen zum Anruf-Routing und Zeitplan. Wende dich an den UmsatzAgent Support.
+
+---

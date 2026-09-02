@@ -1,0 +1,164 @@
+---
+title: "WhatsApp: Nicht unterstützter Nachrichtentyp"
+description: "WhatsApp bietet in der Endnutzer-App viele Nachrichtentypen an – Sticker, Umfragen, Sprachnachrichten, GIFs, Kontaktkarten und mehr. Die WhatsApp Business…"
+---
+
+|  |
+| --- |
+| Leitfaden zur Fehlerbehebung  WhatsApp: Nicht unterstützter Nachrichtentyp  Verstehe, warum manche Nachrichten in UmsatzAgent als nicht unterstützt angezeigt werden, welche Nachrichtentypen unterstützt werden und wie du den Fehlercode 131051 behebst. |
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist ein nicht unterstützter Nachrichtentyp?](#was-ist-ein-nicht-unterstuetzter-nachrichtentyp)
+- [Fehlercode 131051 erklärt](#fehlercode-131051-erklaert)
+- [Unterstützte Nachrichtentypen in UmsatzAgent](#unterstuetzte-nachrichtentypen-in-umsatzagent)
+- [Nicht unterstützte Nachrichtentypen](#nicht-unterstuetzte-nachrichtentypen)
+- [Wie nicht unterstützte Nachrichten in UmsatzAgent angezeigt werden](#wie-nicht-unterstuetzte-nachrichten-in-umsatzagent-angezeigt-werden)
+- [So behebst du das Problem](#so-behebst-du-das-problem)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+|  |
+| --- |
+| Was ist ein nicht unterstützter Nachrichtentyp?  Warum manche Nachrichten über die WhatsApp Business API nicht angezeigt oder gesendet werden können |
+
+WhatsApp bietet in der Endnutzer-App viele Nachrichtentypen an – Sticker, Umfragen, Sprachnachrichten, GIFs, Kontaktkarten und mehr. Die **WhatsApp Business Platform (Cloud API)**, die UmsatzAgent nutzt, unterstützt jedoch nur eine bestimmte Auswahl an Nachrichtentypen.
+
+Wenn ein Kontakt einen Nachrichtentyp sendet, den die Business API nicht unterstützt – wie eine Umfrage oder eine gelöschte Nachricht –, kann UmsatzAgent **diesen nicht anzeigen oder verarbeiten**. Stattdessen siehst du einen Hinweis, dass die Nachricht nicht unterstützt wird.
+
+Dies ist **kein Fehler in UmsatzAgent** – es ist eine Einschränkung der WhatsApp Business Platform API von Meta. Dieselbe Einschränkung gilt für alle Plattformen, die auf dieser API basieren.
+
+```
+Nicht unterstützte Nachrichtentypen sind eine Einschränkung der Meta-API, kein Problem von UmsatzAgent. Diese Nachrichtentypen können auf keiner Plattform angezeigt oder beantwortet werden, die auf der Business API basiert.
+```
+
+---
+
+|  |
+| --- |
+| Fehlercode 131051 – Nicht unterstützter Nachrichtentyp  Was dieser Fehler bedeutet und wann er auftritt |
+
+Meta vergibt den Fehlercode **131051**, wenn ein Nachrichtentyp von der WhatsApp Business API nicht unterstützt wird. Dieser Fehler tritt in zwei Situationen auf:
+
+|  |  |
+| --- | --- |
+| |  | | --- | | Eingehend (Kontakt sendet an Unternehmen)  Ein Kontakt sendet einen Nachrichtentyp, den die API nicht verarbeiten kann – wie eine Umfrage, ein GIF oder eine gelöschte Nachricht. UmsatzAgent erhält anstelle des Nachrichteninhalts eine Webhook-Benachrichtigung mit `type: "unsupported"` und dem Fehlercode `131051`. | |
+| |  | | --- | | Ausgehend (Unternehmen sendet an Kontakt)  Eine Nachricht kann nicht gesendet werden, da der verwendete Nachrichtentyp oder das Format von der API nicht unterstützt wird. Die Nachricht wird nicht zugestellt und der Fehler wird zurückgegeben. | |
+
+```
+Error Code: 131051
+Title: Unsupported message type
+Details: Message type is not currently supported
+Type returned: unknown or unsupported
+```
+
+---
+
+|  |
+| --- |
+| Unterstützte Nachrichtentypen in UmsatzAgent  Diese Nachrichtentypen werden von der WhatsApp Business Platform API vollständig unterstützt |
+
+Folgende Nachrichtentypen können über die WhatsApp-Integration von UmsatzAgent **gesendet und empfangen** werden:
+
+| Nachrichtentyp | Richtung | Details |
+| --- | --- | --- |
+| Text | Beide | Reine Textnachrichten, einschließlich Emojis und Links |
+| Bild | Beide | JPEG, PNG. Max. 5 MB |
+| Video | Beide | MP4, 3GPP. Max. 16 MB |
+| Audio | Beide | AAC, MP4, MPEG, AMR, OGG (Audio). Max. 16 MB |
+| Dokument | Beide | PDF, Word, Excel, PowerPoint und mehr. Max. 100 MB |
+| Sticker | Beide | Statisches WebP (ausgehend). Animiertes WebP (nur eingehend) |
+| Standort | Beide | Teilen oder Empfangen eines Karten-Pins mit Koordinaten |
+| Vorlagennachrichten | Ausgehend | Vorab genehmigte Vorlagen für Marketing, Nutzen und Authentifizierung |
+| Interaktiv | Ausgehend | Listennachrichten, Antwort-Buttons, CTA-URL-Buttons |
+| Kontakte | Beide | Strukturierte Kontaktkarten ausschließlich über die API |
+| Reaktion | Beide | Emoji-Reaktionen auf Nachrichten (API v2.45+) |
+
+---
+
+|  |
+| --- |
+| Nicht unterstützte Nachrichtentypen  Diese Typen können über die WhatsApp Business API nicht angezeigt oder verarbeitet werden |
+
+Folgende Nachrichtentypen werden von der WhatsApp Business Platform API **nicht unterstützt**. Sendet ein Kontakt einen dieser Typen, wird er in UmsatzAgent als nicht unterstützte Nachricht angezeigt und der Inhalt ist nicht sichtbar:
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| |  | | --- | | Umfragen  Von Kontakten gesendete WhatsApp-Umfragen können über die API weder empfangen noch angezeigt werden. | | |  | | --- | | Selbstlöschende Nachrichten  Nachrichten, die so eingestellt sind, dass sie nach einer bestimmten Zeit verschwinden, werden von der Business API nicht unterstützt. | |
+| |  | | --- | | Gelöschte Nachrichten  Wenn ein Kontakt eine Nachricht löscht, erhält die API eine Benachrichtigung über einen nicht unterstützten Vorgang und kann den Inhalt nicht wiederherstellen. | | |  | | --- | | GIFs  Aus der Endnutzer-App gesendete animierte GIFs werden von der Business API als nicht unterstützter Typ behandelt. | |
+| |  | | --- | | Sprachanrufe  Reguläre WhatsApp-Sprach- und Videoanrufe aus der Endnutzer-App werden nicht unterstützt. WhatsApp Calling über die Business API ist eine separate Funktion. | | |  | | --- | | Gruppennachrichten  Aus WhatsApp-Gruppen gesendete Nachrichten werden von der Business Platform API nicht unterstützt. | |
+| |  | | --- | | Kontaktkarten (aus der Endnutzer-App)  Kontaktkarten, die nativ aus dem Telefonbuch eines Endnutzers über WhatsApp geteilt werden, werden eingehend nicht unterstützt. Strukturierte Kontaktnachrichten, die über die API gesendet werden, werden unterstützt. | | |  | | --- | | Business-to-Business (API zu API)  WhatsApp-API-Konten sind nicht dafür ausgelegt, Nachrichten an andere WhatsApp-API-Konten zu senden. Dies ist eine Einschränkung von Meta und löst den Fehler 131051 aus. | |
+
+---
+
+|  |
+| --- |
+| Wie nicht unterstützte Nachrichten in UmsatzAgent angezeigt werden  Was du in deiner Konversationsansicht siehst, wenn eine nicht unterstützte Nachricht empfangen wird |
+
+Wenn ein Kontakt einen nicht unterstützten Nachrichtentyp sendet, zeigt UmsatzAgent einen Platzhalter im Konversationsverlauf an. Je nach Nachrichtentyp siehst du:
+
+|  |  |
+| --- | --- |
+| |  | | --- | | Eine Nachrichtenblase mit dem Text **"Nicht unterstützte Nachricht"** oder **"Dieser Nachrichtentyp wird nicht unterstützt"** | |
+| |  | | --- | | Bei nicht unterstützten **Dateitypen**, die Limits überschreiten, wird die Datei möglicherweise in einen URL-Link umgewandelt | |
+| |  | | --- | | Bei **benutzerdefinierten Payloads** wird möglicherweise die Option "Mehr anzeigen" angezeigt, um die rohen JSON-Daten einzusehen | |
+
+Die Nachricht wird in UmsatzAgent weiterhin als **empfangen** angezeigt – du weißt also, dass der Kontakt etwas gesendet hat, aber der Inhalt kann nicht gelesen werden. Du kannst dem Kontakt weiterhin normal antworten.
+
+```
+Empfehlung: Wenn ein Kontakt anscheinend nicht unterstützte Inhalte sendet, antworte ihm mit der Bitte, die Nachricht als Text, Bild, Audio oder Dokument erneut zu senden, damit sie korrekt verarbeitet werden kann.
+```
+
+---
+
+|  |
+| --- |
+| So behebst du das Problem  Schritte bei Fehlern durch nicht unterstützte Nachrichtentypen |
+
+|  |  |
+| --- | --- |
+| |  | | --- | | Schritt 1**Identifiziere den Nachrichtentyp** – prüfe die Konversation, um zu verstehen, was der Kontakt senden wollte | |
+| |  | | --- | | Schritt 2**Antworte dem Kontakt** und bitte ihn, die Nachricht in einem unterstützten Format wie Text, Bild, Audio oder Dokument erneut zu senden | |
+| |  | | --- | | Schritt 3Wenn du eine Nachricht **sendest** und diesen Fehler erhältst – prüfe, ob dein Nachrichtentyp und dein Format mit den oben aufgeführten unterstützten Typen übereinstimmen | |
+| |  | | --- | | Schritt 4Bleibt der Fehler bei **ausgehenden Nachrichten** bestehen, prüfe, ob deine API-Parameter korrekt sind und keine nicht unterstützten Felder in der Payload enthalten sind | |
+
+```
+Dieser Fehler lässt sich bei eingehenden nicht unterstützten Nachrichten nicht beheben – es gibt keine Möglichkeit, den Inhalt einer Umfrage, einer gelöschten Nachricht oder eines GIFs über die Business API auszulesen. Dies ist eine Plattformbeschränkung von Meta.
+```
+
+---
+
+|  |
+| --- |
+| Häufig gestellte Fragen  Häufige Fragen zu nicht unterstützten Nachrichtentypen |
+
+|  |
+| --- |
+| Ein Kontakt hat mir eine Umfrage geschickt – warum kann ich sie in UmsatzAgent nicht sehen?  Umfragen werden von der WhatsApp Business Platform API nicht unterstützt. Wenn ein Kontakt eine Umfrage sendet, empfängt UmsatzAgent einen Webhook mit dem Fehlercode 131051 und die Nachricht wird als nicht unterstützt angezeigt. Es gibt keine Möglichkeit, den Umfrageinhalt anzuzeigen – bitte den Kontakt, seine Antwort stattdessen als Textnachricht zu senden. |
+
+|  |
+| --- |
+| Ist das ein Fehler in UmsatzAgent?  Nein. Dies ist eine Einschränkung der WhatsApp Business Platform API von Meta. Jede Plattform und jedes Messaging-Tool, das auf der WhatsApp Business API basiert, unterliegt derselben Einschränkung. Sie lässt sich nicht umgehen. |
+
+|  |
+| --- |
+| Kann ich einem Kontakt trotzdem antworten, der eine nicht unterstützte Nachricht gesendet hat?  Ja. Auch wenn du den Inhalt der nicht unterstützten Nachricht nicht sehen kannst, bleibt die Konversation geöffnet. Du kannst normal mit jedem unterstützten Nachrichtentyp wie Text, Bild oder Audio antworten. |
+
+|  |
+| --- |
+| Ein Kontakt hat eine Nachricht gelöscht – kann ich wiederherstellen, was gesendet wurde?  Nein. Gelöschte Nachrichten können über die API nicht wiederhergestellt werden. Sobald eine Nachricht vom Kontakt gelöscht wird, existiert weder in UmsatzAgent noch auf den Servern von Meta eine Aufzeichnung ihres Inhalts. |
+
+|  |
+| --- |
+| Wird Meta in Zukunft Unterstützung für Umfragen und GIFs hinzufügen?  Meta erweitert die Funktionen der Business API regelmäßig. Reaktionen wurden beispielsweise in einer späteren API-Version hinzugefügt. Verfolge das [WhatsApp Business Platform Changelog](https://developers.facebook.com/documentation/business-messaging/whatsapp/overview/) von Meta für Aktualisierungen. UmsatzAgent übernimmt neue unterstützte Typen, sobald Meta sie bereitstellt. |
+
+|  |
+| --- |
+| Ich erhalte beim Senden einer Nachricht den Fehler 131051 – was sollte ich prüfen?  Prüfe, ob der Nachrichtentyp, den du sendest, in der obigen Liste der unterstützten Typen enthalten ist. Häufige Ursachen sind das Senden eines animierten GIFs, die Verwendung eines falschen API-Parameters oder der Versuch, eine Nachricht an ein anderes WhatsApp Business API-Konto zu senden (Business-to-Business-Messaging wird von Meta nicht unterstützt). |
+
+|  |
+| --- |
+| Tipp  Um Missverständnisse mit Kontakten zu vermeiden, erstelle eine **automatisierte Antwort** in UmsatzAgent, die ausgelöst wird, wenn eine nicht unterstützte Nachricht empfangen wird – so erfährt der Kontakt direkt, dass seine Nachricht nicht gelesen werden konnte, und wird gebeten, sie als Text, Bild, Audio oder Dokument erneut zu senden. |

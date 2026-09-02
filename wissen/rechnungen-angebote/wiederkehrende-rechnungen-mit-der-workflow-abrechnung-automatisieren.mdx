@@ -1,0 +1,156 @@
+---
+title: "Wiederkehrende Rechnungen mit der Workflow-Abrechnung automatisieren"
+description: "Die Automatisierung wiederkehrender Rechnungen optimiert die Abrechnung, reduziert manuellen Aufwand und sichert regelmäßige Zahlungseingänge deiner…"
+---
+
+Die Automatisierung wiederkehrender Rechnungen optimiert die Abrechnung, reduziert manuellen Aufwand und sichert regelmäßige Zahlungseingänge deiner Kunden. Mit Workflows kannst du Rechnungen nach einem festgelegten Zeitplan automatisch versenden, Abrechnungsintervalle steuern und automatische Zahlungen für reibungslose Abläufe aktivieren.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was sind wiederkehrende Rechnungen in Workflows?](#was-sind-wiederkehrende-rechnungen-in-workflows)
+- [Wichtigste Vorteile](#wichtigste-vorteile)
+- [Voraussetzungen](#voraussetzungen)
+- [So richtest du wiederkehrende Rechnungen in Workflows ein](#so-richtest-du-wiederkehrende-rechnungen-in-workflows-ein)
+- [Konfigurationseinstellungen erklärt](#konfigurationseinstellungen-erklaert)
+- [Best Practices](#best-practices)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was sind wiederkehrende Rechnungen in Workflows?
+
+Wiederkehrende Rechnungen ermöglichen es dir, Rechnungen in vordefinierten Intervallen automatisch an Kunden zu senden. Nach der Konfiguration werden Rechnungen ohne manuellen Aufwand erstellt und zugestellt. Das sorgt für einen stabilen Cashflow und verringert Zahlungsausfälle.
+
+Diese Funktion eignet sich für Abos, Retainer-Verträge, Mitgliedschaften und Ratenzahlungen.
+
+---
+
+## Wichtigste Vorteile
+
+- **Zeitersparnis:** Manuelle Rechnungserstellung und Mahnvorgänge entfallen
+- **Flexible Abrechnung:** Unterstützt tägliche, wöchentliche, monatliche und jährliche Intervalle
+- **Automatische Zahlungen:** Kunden werden nach der ersten Zahlung automatisch belastet
+- **Zuverlässigkeit:** Verhindert vergessene oder doppelte Rechnungen
+- **Skalierbarkeit:** Einfache Abrechnung für eine wachsende Kundenzahl
+
+---
+
+## Voraussetzungen
+
+Stelle vor dem Einrichten wiederkehrender Rechnungen Folgendes sicher:
+
+- Mindestens eine Rechnungsvorlage ist erstellt
+- Eine Zahlungsmethode ist konfiguriert und aktiv
+- Die Kontaktdaten enthalten gültige Rechnungsangaben
+
+---
+
+## So richtest du wiederkehrende Rechnungen in Workflows ein
+
+###
+
+Dieser Bildschirm zeigt die Workflow-Liste.
+
+Klicke auf **Workflow erstellen**, um eine neue Automatisierung anzulegen.
+
+---
+
+###
+
+Dieser Bildschirm zeigt die Trigger-Auswahl.
+
+Klicke auf **Neuen Trigger hinzufügen** und wähle die Bedingung aus, die deinen Workflow startet (zum Beispiel, wenn ein Kontakt erstellt oder aktualisiert wird).
+
+###
+
+Dieser Bildschirm zeigt das Menü zur Aktionsauswahl.
+
+Suche nach **Wiederkehrende Rechnung senden** und wähle die Aktion aus, um sie deinem Workflow hinzuzufügen.
+
+###
+
+Dieser Bildschirm zeigt die vollständige Konfigurationsansicht.
+
+Richte folgende Optionen ein:
+
+- Wähle den **Absender** der Rechnung
+- Wähle eine **Rechnungsvorlage**
+- Wähle den **Test- oder Live-Modus**
+- Lege das **Startdatum** fest (triggerbasiert oder festes Datum)
+- Lege fest, wann die Abrechnung **enden** soll
+- Wähle die **Häufigkeit** der Abrechnung (täglich, wöchentlich, monatlich, jährlich)
+- Lege Intervallregeln fest (z. B. alle X Tage)
+- Aktiviere bei Bedarf die **automatische Zahlung**
+
+Klicke auf **Aktion speichern**, sobald du fertig bist.
+
+---
+
+## Konfigurationseinstellungen erklärt
+
+### Startdatum
+
+Bestimmt, wann die Abrechnung beginnt. Du kannst sofort starten, sobald der Workflow ausgelöst wird, oder ein festes Datum wählen.
+
+### Endregeln
+
+Steuern, wann die Abrechnung stoppt. Du kannst den Ablauf unbegrenzt laufen lassen oder nach einer festgelegten Anzahl von Abrechnungszyklen beenden.
+
+### Abrechnungshäufigkeit
+
+Wähle aus, wie oft Rechnungen gesendet werden:
+
+- Täglich
+- Wöchentlich
+- Monatlich
+- Jährlich
+
+Jede Option bietet zusätzliche Anpassungsmöglichkeiten passend zu deinen Abrechnungsanforderungen.
+
+### Automatische Zahlung
+
+Wenn diese Option aktiviert ist, werden Zahlungen nach der ersten erfolgreichen Transaktion automatisch eingezogen. Das reduziert manuelles Nachfassen und verbessert die Zahlungsmoral.
+
+---
+
+## Best Practices
+
+- Teste Workflows vor der Aktivierung
+- Verwende eindeutige Namen für Aktionen und Vorlagen
+- Überprüfe die Zahlungseinstellungen, bevor du die automatische Zahlung aktivierst
+- Überwache den ersten Abrechnungszyklus, um sicherzustellen, dass alles wie gewünscht funktioniert
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Können Rechnungen auch ohne automatische Zahlung automatisiert werden?**
+
+Ja. Rechnungen können automatisch gesendet werden, während die Kunden manuell bezahlen.
+
+**F: Was passiert, wenn eine automatische Zahlung fehlschlägt?**
+
+Die Rechnung bleibt unbezahlt. Du kannst Folgeaktionen im Workflow anlegen, um den Kunden automatisch zu benachrichtigen.
+
+**F: Kann ich die Abrechnungshäufigkeit später ändern?**
+
+Ja. Du kannst den Workflow jederzeit bearbeiten und die Intervalleinstellungen anpassen.
+
+**F: Stoppt der Rechnungsversand automatisch?**
+
+Nur wenn du eine Endbedingung festgelegt hast. Andernfalls läuft die Abrechnung weiter, bis sie manuell beendet wird.
+
+**F: Können unterschiedliche Kunden verschiedene Rechnungsvorlagen erhalten?**
+
+Ja. Mithilfe von Verzweigungen und Bedingungen im Workflow kannst du basierend auf den Kundendaten unterschiedliche Vorlagen versenden.
+
+---
+
+## Brauchst du Hilfe?
+
+Wende dich an den UmsatzAgent Support.
+
+##

@@ -1,0 +1,214 @@
+---
+title: "Workflow-Trigger – Zahlung erhalten"
+description: "Der Trigger „Zahlung erhalten“ dient als zentraler Mechanismus zur Erfassung aller eingehenden Zahlungen im CRM – einschließlich Einmalkäufen,…"
+---
+
+Der Trigger „Zahlung erhalten“ dient als zentraler Mechanismus zur Erfassung aller eingehenden Zahlungen im CRM – einschließlich Einmalkäufen, Abo-Abbuchungen, Rechnungen und mehr. Er lässt sich mit Filtern wie Quellentyp und Transaktionsstatus anpassen, um gezielte Anwendungsfälle abzudecken. Mit diesem Trigger lassen sich Aufgaben automatisieren, Prozesse optimieren und in Echtzeit auf Kundentransaktionen reagieren.
+
+#### In diesem Artikel behandelt:
+
+#### [Was ist der Workflow-Trigger „Zahlung erhalten“ und was bewirkt er?](#was-ist-der-workflow-trigger-zahlung-erhalten-und-was-bewirkt-er)
+
+#### [Welche Anwendungsfälle gibt es und welche Vorteile bieten sie?](#welche-anwendungsfaelle-gibt-es-und-welche-vorteile-bieten-sie)
+
+#### [Wie wird der Trigger „Zahlung erhalten“ verwendet?](#wie-wird-der-trigger-zahlung-erhalten-verwendet)
+
+#### [Workflow-Trigger-Filter](#workflow-trigger-filter)[für den Workflow-Trigger „Zahlung erhalten“](#fuer-den-workflow-trigger-zahlung-erhalten)
+
+#### [Wenn/Sonst-Bedingungen für den Workflow-Trigger „Zahlung erhalten“](#wenn-sonst-bedingungen-fuer-den-workflow-trigger-zahlung-erhalten)
+
+#### [Benutzerdefinierte Werte für den Workflow-Trigger „Zahlung erhalten“](#benutzerdefinierte-werte-fuer-den-workflow-trigger-zahlung-erhalten)
+
+#### [Häufig gestellte Fragen (FAQs)](#haeufig-gestellte-fragen-faqs)
+
+#### [Erfasst dieser Trigger auch nachfolgende Abo-Zahlungen?](#erfasst-dieser-trigger-auch-nachfolgende-abo-zahlungen)
+
+#### [Wie richte ich den Trigger für erfolgreiche Folge-Abo-Transaktionen ein?](#wie-richte-ich-den-trigger-fuer-erfolgreiche-folge-abo-transaktionen-ein)
+
+#### [Was bedeuten „Kunde anwesend / Ersttransaktion“ und „Kunde nicht anwesend / Abo-Transaktion“?](#was-bedeuten-kunde-anwesend-ersttransaktion-und-kunde-nicht-anwesend-abo-transak)
+
+#### [Werden auch fehlgeschlagene Zahlungen in diesem Trigger erfasst?](#werden-auch-fehlgeschlagene-zahlungen-in-diesem-trigger-erfasst)
+
+#### [Ich habe den Trigger konfiguriert und ein bestimmtes Produkt in den Filtern ausgewählt. Löst der Trigger aus, wenn dieses Produkt irgendwo verkauft wird?](#ich-habe-den-trigger-konfiguriert-und-ein-bestimmtes-produkt-in-den-filtern-ausg)
+
+#### [Was ist der Unterquellen-Filter?](#was-ist-der-unterquellen-filter)
+
+---
+
+## Was ist der Workflow-Trigger „Zahlung erhalten“ und was bewirkt er?
+
+Der Trigger „Zahlung erhalten“ automatisiert Prozesse und Aktionen auf Basis eingehender Zahlungen innerhalb eines Workflows. Er kann so konfiguriert werden, dass er auf bestimmte Zahlungsereignisse reagiert, wie etwa erfolgreiche oder fehlgeschlagene Transaktionen oder bestimmte Produkte und Zahlungsquellen. Die wichtigsten Funktionen im Überblick:
+
+**Workflow-Automatisierung:** Der Trigger startet den Workflow, sobald eine Zahlung eingeht. Dadurch können automatisierte Aktionen wie der Versand von Bestätigungs-E-Mails, die Erstellung von Rechnungen oder die Aktualisierung von Kundendaten im CRM ausgelöst werden.
+
+**Anpassung durch Filter:** Du kannst verschiedene Filter auf den Trigger anwenden, z. B. Transaktionstyp, Zahlungsquelle oder Produkt. Dies ermöglicht gezielte Workflows für spezifische Szenarien wie Abo-Verlängerungen oder fehlgeschlagene Zahlungen.
+
+**Echtzeit-Reaktion:** Der Trigger arbeitet in Echtzeit, sodass du unmittelbar auf Kundentransaktionen reagieren kannst. Das verbessert das Kundenerlebnis durch sofortiges Feedback oder die zügige Behebung von Problemen.
+
+**Bedingte Aktionen:** Mithilfe von Wenn/Sonst-Bedingungen im Workflow lassen sich je nach Zahlungsmerkmalen (z. B. Betrag, Quelle oder Transaktionsstatus) unterschiedliche Aktionen ausführen.
+
+**Berichterstattung und Analysen:** Der Trigger erfasst Zahlungsdaten für Auswertungs- und Berichtszwecke. Durch die Überwachung eingehender Zahlungen und ihrer Eigenschaften erhältst du Einblicke in Verkaufsleistung, Kundenverhalten und Optimierungspotenziale.
+
+### Welche Anwendungsfälle gibt es und welche Vorteile bieten sie?
+
+Der Trigger „Zahlung erhalten“ bietet zahlreiche Anwendungsfälle und Vorteile zur Automatisierung von Prozessen und zur Verbesserung der Kundenbetreuung:
+
+- **Automatisierte Zahlungsbestätigung:**
+  Anwendungsfall: Sende Kunden automatische Bestätigungs-E-Mails oder -Nachrichten, sobald die Zahlung verarbeitet wurde.
+  Vorteile: Verbessert das Kundenerlebnis durch sofortige Zahlungsbestätigung, reduziert manuelle Aufgaben und sorgt für eine klare Kundenkommunikation.
+- **Abo-Verwaltung:**
+  Anwendungsfall: Aktualisiere den Abo-Status im System automatisch, wenn eine Abo-Zahlung erfolgreich war oder fehlschlägt.
+  Vorteile: Gewährleistet korrekte und aktuelle Abo-Daten, optimiert die Abo-Verwaltung und reduziert manuelle Eingriffe.
+- **Mahnwesen (Dunning Management):**
+  Anwendungsfall: Löse automatisch Mahn-E-Mail-Sequenzen für Kunden mit fehlgeschlagenen Abo-Zahlungen aus.
+  Vorteile: Verbessert die Rückholung offener Beträge durch schnelles Reagieren auf Zahlungsfehler, reduziert die Abwanderung und stärkt die Kundenbindung.
+- **Kundensegmentierung:**
+  Anwendungsfall: Nutze Zahlungsdaten zur Segmentierung von Kunden basierend auf ihrem Kaufverhalten, z. B. für besonders umsatzstarke Kunden oder wiederkehrende Käufer.
+  Vorteile: Ermöglicht zielgerichtete Marketingkampagnen, hilft bei der Identifizierung von Upsell- oder Cross-Sell-Möglichkeiten und unterstützt personalisierte Kundenerlebnisse.
+- **Behebung von Zahlungsfehlern:**
+  Anwendungsfall: Benachrichtige automatisch das Support- oder Vertriebsteam, um den Kunden bei einer fehlgeschlagenen Zahlung direkt zu unterstützen.
+  Vorteile: Verbessert den Kundensupport, steigert die Kundenzufriedenheit und hilft, Zahlungsprobleme schnell zu lösen.
+- **Verfolgung der Vertriebsleistung:**
+  Anwendungsfall: Werte Zahlungsdaten aus, um Verkaufstrends wie Bestseller-Produkte, saisonale Schwankungen oder Kundenpräferenzen zu erkennen.
+  Vorteile: Liefert wertvolle Erkenntnisse für strategische Entscheidungen, optimiert Vertriebsstrategien und fördert das Umsatzwachstum.
+- **Integration mit Buchhaltungssystemen:**
+  Anwendungsfall: Aktualisiere Buchhaltungsdaten automatisch über ausgehende Webhooks mit Zahlungsinformationen, z. B. für die Rechnungsstellung, Umsatzrealisierung oder Steuerberechnung.
+  Vorteile: Gewährleistet eine genaue Finanzberichterstattung, optimiert Buchhaltungsprozesse und reduziert die manuelle Dateneingabe.
+- **Umgang mit Testphasen-Transaktionen:**
+  Der Trigger „Zahlung erhalten“ verarbeitet auch Transaktionen mit Testphasen bei Abo-Produkten (z. B. einer 14-tägigen Testphase). Wenn sich ein Kunde für die Testphase anmeldet und zunächst 0 € zahlt, stuft der Trigger dies als „Kunde anwesend“-Transaktion ein, da der Kunde aktiv auf der Seite ist und seine Zahlungsdaten eingibt. Nach Ablauf der 14 Tage werden dem Kunden automatisch 100 € berechnet, ohne dass er die Zahlungsdaten erneut eingeben muss. Diese Folgetransaktion gilt als „Kunde nicht anwesend“-Transaktion, da sie im Hintergrund abläuft. Der Trigger ermöglicht es, Workflows rund um Testphasen präzise nachzuverfolgen und zu automatisieren.
+  Vorteile: Die effiziente Abwicklung von Testphasen verbessert das Kundenerlebnis, erleichtert die Abo-Verwaltung und minimiert den manuellen Aufwand.
+- **Integration von Text2Pay-Links:**
+  Der Trigger „Zahlung erhalten“ unterstützt Text2Pay-Links als Zahlungsquelle. Dadurch lassen sich Workflows für Zahlungen automatisieren, die über SMS-basierte Methoden eingehen.
+  Vorteile: Die Nutzung von Text2Pay-Links mit dem Trigger ermöglicht eine schnellere Zahlungsabwicklung und vereinfacht die Kommunikation mit dem Kunden.
+
+---
+
+## Wie wird der Trigger „Zahlung erhalten“ verwendet?
+
+Füge innerhalb eines Workflows einen neuen Workflow-Trigger namens **Zahlung erhalten** (Payment Received) hinzu.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294607648/original/2Sb4j52MAkt7w5MZn42AefFhgMV4We7cFw.png?1682522542)
+
+**Bitte beachten:**
+
+```
+Durch die Auswahl eines Filters kannst du beim nächsten Hinzufügen eines Filters zu demselben Workflow-Trigger die entsprechenden Unterfilter auswählen.
+```
+
+### Workflow-Trigger-Filter
+
+### für den Workflow-Trigger „Zahlung erhalten“
+
+Du kannst den Workflow-Trigger mithilfe von Filtern präzisieren. Die folgende Tabelle zeigt alle verfügbaren Filter und Unterfilter:
+
+| Trigger | Filter | Optionen auf Filterebene | Unterfilter-Ebene 1 | Optionen auf Unterfilter-Ebene 1 | Operatoren |
+| --- | --- | --- | --- | --- | --- |
+| Zahlung erhalten | Zahlungsquelle | Rechnung | Unterquelle | Text2Pay-Link | ist, ist nicht |
+| Einmalrechnung |
+| Wiederkehrende Vorlage |
+| Funnel / Website | Unterquelle | Ein-Schritt-Bestellformular |
+| Zwei-Schritt-Bestellformular |
+| Upsell |
+| Transaktionstyp | Kunde anwesend / Ersttransaktion |
+| Kunde nicht anwesend / Abo-Transaktion |
+| Kalender | Kalender | Kalendernamen |
+| Globales Produkt | Globale Produktnamen | Preis | Preisbezeichnungen gemäß ausgewähltem globalen Produkt |
+| Zahlungsstatus | Erfolgreich | --- | |
+| Fehlgeschlagen |
+
+### Wenn/Sonst-Bedingungen für den Workflow-Trigger „Zahlung erhalten“
+
+Nachdem du die gewünschten Filter und Unterfilter zum Workflow-Trigger hinzugefügt hast, kannst du eine Wenn/Sonst-Bedingung für Zahlungen einfügen, um den Workflow basierend auf bestimmten Kriterien zu verzweigen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294564216/original/hNwO41Tn3IeXUmSs71Njeq6SC7sDOY_c4Q.png?1682512878)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294564258/original/DiT1Jjdv1ms9kwjWptvwfvl4-VzkeOcR6w.png?1682512889)
+
+Diese Tabelle beschreibt die möglichen Wenn/Sonst-Bedingungen und deren Verzweigungen:
+
+| Wenn/Sonst-Option | Aktion | Operator | Optionen |
+| --- | --- | --- | --- |
+| Zahlung | Produkt | ist, ist nicht | Globale Produktnamen |
+| Funnel / Website | Funnel- / Website-Namen |
+| Kalender | Kalendernamen |
+| Quelle | Rechnung, Funnel, Website, Kalender |
+| Zahlungsstatus | erfolgreich / fehlgeschlagen |
+| Betrag | Gleich, Ist ungleich, Größer als, Größer als oder gleich, Kleiner als, Kleiner als oder gleich, Ist nicht leer, Ist leer | Bezahlter Betrag |
+
+### Benutzerdefinierte Werte für den Workflow-Trigger „Zahlung erhalten“
+
+Wenn du den Trigger „Zahlung erhalten“ nutzt, hast du Zugriff auf benutzerdefinierte Werte, die du in SMS, E-Mails, internen Benachrichtigungen usw. verwenden kannst:
+
+| Kategorie der benutzerdefinierten Werte | Name der benutzerdefinierten Werte (Gruppenname) | Benutzerdefinierte Werte innerhalb der Gruppe | Wert |
+| --- | --- | --- | --- |
+| **Zahlung** | Quelle |  | {{payment.source}} |
+| Währungssymbol | {{payment.currency\_symbol}} |
+| Währungscode | {{payment.currency\_code}} |
+| **Kunde** (Gruppe) | ID | {{payment.customer.id}} |
+| Vorname | {{payment.customer.first\_name}} |
+| Nachname | {{payment.customer.last\_name}} |
+| Name | {{payment.customer.name}} |
+| E-Mail | {{payment.customer.email}} |
+| Telefon | {{payment.customer.phone}} |
+| Vollständige Adresse | {{payment.customer.address}} |
+| Stadt | {{payment.customer.city}} |
+| Bundesland/Kanton | {{payment.customer.state}} |
+| Land | {{payment.customer.country}} |
+| Postleitzahl | {{payment.customer.postal\_code}} |
+| **Rechnung** (Gruppe) | Name | {{payment.invoice.name}} |
+| Nummer | {{payment.invoice.number}} |
+| Ausstellungsdatum | {{payment.invoice.issue\_date}} |
+| Fälligkeitsdatum | {{payment.invoice.due\_date}} |
+| URL | {{payment.invoice.url}} |
+| Erfasst von | {{payment.invoice.recorded\_by}} |
+| Zwischensumme |  | {{payment.sub\_total\_amount}} |
+| Rabattbetrag | {{payment.discount\_amount}} |
+| Gutscheincode | {{payment.coupon\_code}} |
+| Steuerbetrag | {{payment.tax\_amount}} |
+| Erstellt am | {{payment.created\_on}} |
+| Gesamtbetrag | {{payment.total\_amount}} |
+| Transaktions-ID | {{payment.transaction\_id}} |
+| Status | {{payment.payment\_status}} |
+| Gateway | {{payment.gateway}} |
+| Letzte 4 Ziffern der Karte | {{payment.card.last4}} |
+| Kartenmarke | {{payment.card.brand}} |
+| Methode | {{payment.method}} |
+
+---
+
+## Häufig gestellte Fragen (FAQs)
+
+### Erfasst dieser Trigger auch nachfolgende Abo-Zahlungen?
+
+Ja. Der Trigger löst sowohl aus, wenn eine Zahlung direkt über ein Bestellformular eingeht, als auch dann, wenn ein Abo im Hintergrund abgebucht wird.
+
+### Wie richte ich den Trigger für erfolgreiche Folge-Abo-Transaktionen ein?
+
+Da Abos über einen Funnel oder eine Website erstellt werden können, erstelle einen Trigger für „Zahlung erhalten“ und wende folgende Filter an:
+- Quellentyp: Funnel / Website
+- Transaktionstyp: „Kunde nicht anwesend / Abo-Transaktion“
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294599591/original/OrCqP9hHx0Hn9hTZVHZu36bkcArxNdWgPg.png?1682520656)
+
+Über den Filter für den Zahlungsstatus kannst du nach erfolgreichen oder fehlgeschlagenen Zahlungen filtern.
+
+### Was bedeuten „Kunde anwesend / Ersttransaktion“ und „Kunde nicht anwesend / Abo-Transaktion“?
+
+Transaktionstypen werden in zwei Kategorien unterteilt:
+
+- **Kunde anwesend / Ersttransaktion:** Umfasst Transaktionen, bei denen der Endkunde aktiv auf der Seite ist und die Zahlung vornimmt. Dazu gehören alle Einmalkäufe sowie die erste Bestellung eines Abo-Produkts.
+- **Kunde nicht anwesend / Abo-Transaktion:** Umfasst Transaktionstypen, die im Hintergrund ablaufen, nachdem ein Abo bereits eingerichtet wurde. Beispiel: Ein Kunde kauft ein wiederkehrendes Produkt mit 14-tägiger Testphase. Die Transaktion beim Kauf (0 €) fällt unter „Kunde anwesend / Ersttransaktion“. Werden nach 14 Tagen die regulären 100 € für das Abo abgebucht, fällt diese Transaktion unter „Kunde nicht anwesend / Abo-Transaktion“.
+
+### Werden auch fehlgeschlagene Zahlungen in diesem Trigger erfasst?
+
+Ja. Standardmäßig und ohne Filter löst der Trigger sowohl bei erfolgreichen als auch bei fehlgeschlagenen Zahlungsversuchen aus. Um gezielt nur auf erfolgreiche oder fehlgeschlagene Zahlungen zu reagieren, füge den Filter „Transaktionsstatus“ hinzu und setze ihn auf „Erfolgreich“ bzw. „Fehlgeschlagen“.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48294601007/original/F5rh94OpAzMdtC93c23wQ4pYrasZGL7irw.png?1682520974)
+
+### Ich habe den Trigger konfiguriert und ein bestimmtes Produkt in den Filtern ausgewählt. Löst der Trigger aus, wenn dieses Produkt irgendwo verkauft wird?
+
+Wenn du den Filter auf ein bestimmtes Produkt gesetzt hast, löst der Trigger nur aus, wenn dieses Produkt über Funnels, Websites oder Rechnungen verkauft wird. Über den Transaktionsstatus-Filter kannst du zusätzlich festlegen, ob der Trigger bei erfolgreichem oder fehlgeschlagenem Kauf aktiv werden soll.
+
+### Was ist der Unterquellen-Filter?
+
+Wenn du eine Quelle wie Funnels, Websites oder Rechnungen auswählst, können diese Unterquellen haben. Eine Zahlung aus einem Funnel kann beispielsweise über ein Ein-Schritt-Bestellformular, ein Zwei-Schritt-Bestellformular oder einen Upsell erfolgen. Mit Unterquellen-Filtern kannst du die genaue Herkunft der Zahlung bestimmen.

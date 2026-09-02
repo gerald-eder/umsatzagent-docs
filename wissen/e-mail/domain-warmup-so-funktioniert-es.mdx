@@ -1,0 +1,124 @@
+---
+title: "Domain-Warmup: So funktioniert es"
+description: "Das Domain-Warmup ist der Prozess, bei dem du dein tägliches E-Mail-Volumen schrittweise erhöhst, um eine vertrauenswürdige Absender-Reputation bei…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist ein Domain-Warmup?](#was-ist-ein-domain-warmup)
+- [Welches Warmup-Modell wird verwendet?](#welches-warmup-modell-wird-verwendet)
+- [Übersicht der Warmup-Stufen](#uebersicht-der-warmup-stufen)
+- [Wann beginnt das Warmup?](#wann-beginnt-das-warmup)
+  - [Für neu erstellte Domains:](#fuer-neu-erstellte-domains)
+  - [Für bestehende Domains:](#fuer-bestehende-domains)
+- [So startest du das Warmup für eine bestehende Domain:](#so-startest-du-das-warmup-fuer-eine-bestehende-domain)
+- [Wer kann das E-Mail-Warmup nutzen und wie wird es aktiviert?](#wer-kann-das-e-mail-warmup-nutzen-und-wie-wird-es-aktiviert)
+  - [Google Postmaster Integration (Empfohlen)](#google-postmaster-integration-empfohlen))
+- [Best Practices für ein erfolgreiches Warmup](#best-practices-fuer-ein-erfolgreiches-warmup)
+- [Wann ist das Warmup abgeschlossen?](#wann-ist-das-warmup-abgeschlossen)
+
+## Was ist ein Domain-Warmup?
+
+Das Domain-Warmup ist der Prozess, bei dem du dein tägliches E-Mail-Volumen schrittweise erhöhst, um eine vertrauenswürdige Absender-Reputation bei Postfachanbietern wie Gmail, Outlook und Yahoo aufzubauen.
+
+Ohne ordnungsgemäßes Warmup besteht bei neuen Domains ein höheres Risiko für:
+
+- Einstufung als Spam
+- Hohe Bounce- oder Beschwerderaten
+- Blockierungen oder Verzögerungen bei der E-Mail-Zustellung
+
+UmsatzAgent automatisiert diesen Prozess, um Vertrauen aufzubauen und deine E-Mail-Zustellbarkeit zu maximieren.
+
+## Welches Warmup-Modell wird verwendet?
+
+Dieses System nutzt ein stufenbasiertes, schrittweises Warmup-Modell:
+
+- Jede Stufe hat ein vordefiniertes tägliches Sendelimit
+- Der Übergang zur nächsten Stufe erfolgt erst, wenn das volle Tageslimit der aktuellen Stufe erreicht wurde
+- Wird das Tageslimit nicht erreicht, verbleibt die Domain in derselben Stufe
+- Es gibt keine stündlichen Sendelimits
+- Du musst E-Mails über die aufzuwärmende Domain senden, damit der Fortschritt erfasst wird
+
+```
+Wichtig: Das Senden über das tägliche Limit hinaus ist erlaubt und E-Mails werden nicht blockiert.
+```
+
+## Übersicht der Warmup-Stufen
+
+| Stufe | Tägliches Limit |
+| --- | --- |
+| 1 | 1.000 |
+| 2 | 2.500 |
+| 3 | 5.000 |
+| 4 | 6.500 |
+| 5 | 8.000 |
+| 6 | 10.000 |
+| 7 | 14.000 |
+| 8 | 20.000 |
+| 9 | 25.000 |
+| 10 | 35.000 |
+| 11 | 50.000 |
+| 12 | 80.000 |
+| 13 | 125.000 |
+| 14 | 175.000 |
+| 15 | 250.000 |
+
+Sobald das tägliche Limit erreicht ist, pausiert das System das weitere Senden über diese Domain bis 00:00 Uhr UTC am nächsten Tag. Die nächste Stufe beginnt automatisch, wenn das volle Tageslimit erreicht wurde.
+
+## Wann beginnt das Warmup?
+
+### Für neu erstellte Domains:
+
+Das Warmup wird automatisch aktiviert, sobald die Domain erstellt und verifiziert wurde. Es ist keine manuelle Aktion erforderlich.
+
+### Für bestehende Domains:
+
+Das Warmup muss manuell aktiviert werden. Wenn du das Warmup für eine bestehende Domain aktivierst, analysiert das System automatisch:
+
+- Vergangene E-Mail-Aktivität
+- Reputationsdaten von Google Postmaster (falls verknüpft)
+
+Basierend darauf empfiehlt es die am besten geeignete Startstufe, um einen reibungslosen Warmup-Fortschritt zu gewährleisten.
+
+## So startest du das Warmup für eine bestehende Domain:
+
+1. Navigiere in der E-Mail-Einrichtung zu deiner Domain
+2. Klicke auf Warmup starten
+3. Beginne mit dem Senden von E-Mails über diese Domain
+
+Sendeaktivität ist erforderlich, damit das System den Warmup-Fortschritt erfassen kann.
+
+## Wer kann das E-Mail-Warmup nutzen und wie wird es aktiviert?
+
+Das E-Mail-Warmup ist für dedizierte Domains verfügbar.
+
+So aktivierst du das Warmup für deine Domain:
+
+1. Öffne die Einstellungen
+2. Klicke auf E-Mail-Dienste
+3. Wähle SMTP-Dienst
+4. Gehe zum Tab Dedizierte Domain und IP
+5. Wähle deine Domain und klicke auf Warmup starten
+
+### Google Postmaster Integration (Empfohlen)
+
+Die Verknüpfung deiner Domain mit Google Postmaster Tools gibt dir Zugriff auf wichtige Zustellbarkeitsdaten, darunter:
+
+- Domain-Reputation (Hoch, Mittel, Niedrig, Schlecht)
+- Spam-Beschwerderaten
+- Authentifizierungsstatus
+- Zustell- und Fehlermetriken
+
+Falls Google Postmaster noch nicht verknüpft ist oder keine Daten verfügbar sind, weist dich das Domain-Dashboard darauf hin und führt dich durch die Einrichtung.
+
+## Best Practices für ein erfolgreiches Warmup
+
+- Sende täglich und gleichmäßig E-Mails
+- Verwende verifizierte Opt-in-Kontaktlisten
+- Vermeide plötzliche Volumensprünge
+- Vermeide es, Absender-Domains während einer Kampagne zu wechseln
+- Halte die täglichen Warmup-Limits ein, um künftige Blockierungen zu vermeiden
+
+## Wann ist das Warmup abgeschlossen?
+
+Deine Domain schließt das Warmup ab, sobald sie Stufe 15 (250.000 E-Mails/Tag) erreicht. Zu diesem Zeitpunkt wird im Domain-Dashboard der Status „Warmup abgeschlossen“ angezeigt und das Senden im vollen Umfang ist möglich.

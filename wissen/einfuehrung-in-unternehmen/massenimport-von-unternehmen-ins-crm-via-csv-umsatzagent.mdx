@@ -1,0 +1,287 @@
+---
+title: "Massenimport von Unternehmen ins CRM via CSV | UmsatzAgent"
+description: "CRM-Verwaltung"
+---
+
+CRM-Verwaltung
+
+## Massenimport von Unternehmen via CSV
+
+Importiere und aktualisiere Unternehmensdatensätze in großem Umfang mithilfe von CSV-Dateien mit geführter Feldzuordnung, Duplikaterkennung und detaillierter Nachverfolgung.
+
+Was du lernen wirst
+
+Dieser Artikel führt dich durch den Massenimport von Unternehmen im CRM von UmsatzAgent, einschließlich der Vorbereitung deiner CSV-Datei, der korrekten Feldzuordnung, dem Umgang mit Duplikaten und der Nachverfolgung von Importergebnissen.
+
+Du erfährst außerdem, wie du die Funktion in Labs aktivierst, Verifizierungsschritte verstehst und Best Practices anwendest, um Datenfehler bei der Migration zu vermeiden.
+
+Labs-Funktion
+
+Der Import von Unternehmen und benutzerdefinierten Objekten ist derzeit in Labs verfügbar. Du musst ihn aktivieren, bevor du auf die Massenimport-Funktion zugreifen kannst. Navigiere zu **Einstellungen → Labs → Company and Custom Object Import**, um die Funktion zu aktivieren.
+
+Inhaltsverzeichnis
+
+1
+
+[Was ist der Massenimport für Unternehmen?](#was-ist-der-massenimport-fuer-unternehmen)
+
+2
+
+[Wichtigste Vorteile](#wichtigste-vorteile)
+
+3
+
+[Aktivieren des Unternehmensimports in Labs](#aktivieren-des-unternehmensimports-in-labs)
+
+4
+
+[So richtest du den Massenimport für Unternehmen ein](#so-richtest-du-den-massenimport-fuer-unternehmen-ein)
+
+5
+
+[Fortschritt des Imports verfolgen und überwachen](#fortschritt-des-imports-verfolgen-und-ueberwachen)
+
+6
+
+[Best Practices und Einrichtungstipps](#best-practices-und-einrichtungstipps)
+
+7
+
+[Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+1
+
+## Was ist der Massenimport für Unternehmen?
+
+Der Massenimport für Unternehmen ist ein CSV-basiertes Importwerkzeug, mit dem du mehrere Unternehmensdatensätze gleichzeitig im CRM von UmsatzAgent erstellen und aktualisieren kannst. Anstatt jedes Unternehmen manuell einzugeben, kannst du eine strukturierte Datei mit Unternehmensinformationen hochladen und diese den entsprechenden CRM-Feldern zuordnen.
+
+Der Importprozess nutzt einen vierstufigen Assistenten, der dich durch das Hochladen deiner Datei, die Auswahl des Importverhaltens (Erstellen, Aktualisieren oder beides), die Zuordnung von CSV-Spalten zu CRM-Feldern und die Überprüfung der Daten vor dem endgültigen Absenden führt. Das System erkennt Duplikate anhand der Unternehmens-ID und liefert detaillierte Statistiken zu erfolgreichen Importen, Fehlern und Warnungen.
+
+Nach Abschluss eines Imports kannst du den Fortschritt verfolgen und einen detaillierten Bericht aus dem Dashboard „Massenaktionen – Unternehmen“ für Prüfungen und Fehlerbehebungen herunterladen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077955721/original/F0QPhnZgh4nuVuDJBvDL17C-bRNA1NhALg.png?1786247543)
+
+2
+
+## Wichtigste Vorteile
+
+Die Massenimport-Funktion optimiert die CRM-Datenverwaltung, indem sie wiederkehrende manuelle Eingaben überflüssig macht und den Zeitaufwand für die Migration oder Aktualisierung großer Unternehmensdatensätze reduziert.
+
+**Schnellere CRM-Migration** — Übertrage bestehende Unternehmensdaten aus externen Systemen oder Tabellenkalkulationen in UmsatzAgent, ohne Datensätze manuell neu anlegen zu müssen.
+
+**Duplikatkontrolle** — Erkenne und verhindere doppelte Unternehmensdatensätze beim Import automatisch anhand eindeutiger Unternehmens-IDs.
+
+**Schutz auf Feldebene** — Nutze die Option „Nicht auf leeren Wert aktualisieren“, um versehentliches Überschreiben bei leeren CSV-Zellen zu verhindern.
+
+**Detaillierte Prüfberichte** — Lade nach dem Import Berichte mit Aufschlüsselungen nach Erfolg, Fehlern und Warnungen herunter, um Transparenz und Fehlerbehebung zu gewährleisten.
+
+**Intelligente Feldzuordnung** — Sieh dir eine Vorschau deiner CSV-Daten an und ordne Spalten vor dem Anwenden der Änderungen interaktiv CRM-Feldern zu.
+
+**Geringerer betrieblicher Aufwand** — Vermeide stundenlange Dateneingabe und minimiere menschliche Fehler bei Massenaktualisierungen.
+
+3
+
+## Aktivieren des Unternehmensimports in Labs
+
+Bevor du auf den Massenimport von Unternehmen zugreifen kannst, musst du die Funktion in den Labs-Einstellungen von UmsatzAgent aktivieren. Labs-Funktionen sind experimentelle Funktionen oder Vorabversionen, die manuell aktiviert werden müssen.
+
+Schritt 1
+
+Navigiere zu den Einstellungen
+
+Klicke in deinem UmsatzAgent-Konto auf das Zahnrad-Symbol oder navigiere im Hauptmenü zu **Einstellungen**.
+
+Schritt 2
+
+Öffne Labs
+
+Suche in den Einstellungen nach **Labs** und klicke darauf, um alle verfügbaren experimentellen Funktionen anzuzeigen.
+
+Schritt 3
+
+Aktiviere den Import von Unternehmen und benutzerdefinierten Objekten
+
+Scrolle nach unten zu **Company and Custom Object Import** und stelle den Schalter auf **Ein**. Die Funktion ist sofort aktiv.
+
+Hinweis
+
+Nach der Aktivierung erscheint die Importoption im Bereich Unternehmen. Wenn du die Funktion nach dem Umschalten nicht siehst, aktualisiere deinen Browser.
+
+4
+
+## So richtest du den Massenimport für Unternehmen ein
+
+Der Massenimport-Assistent führt dich durch vier Schritte: Starten des Imports, Hochladen deiner CSV-Datei, Zuordnen von Feldern und Überprüfen der Daten vor dem Absenden. Befolge diese Schritte für einen erfolgreichen Import.
+
+Schritt 1
+
+Starte den Import
+
+Navigiere im Hauptmenü zu **Unternehmen** und klicke auf die Schaltfläche **Importieren**. Wähle im Objektauswahl-Bildschirm **Unternehmen** aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077955723/original/6yAzEVvtYdQJ5FqZgQsqVivocYPYhAAVPg.png?1786247583)
+
+Schritt 2
+
+Lade deine CSV-Datei hoch
+
+Klicke auf **Datei auswählen** oder ziehe deine CSV-Datei per Drag-and-Drop in den Upload-Bereich. Deine Datei sollte Spaltenüberschriften enthalten, die mit den Unternehmensfeldern von UmsatzAgent übereinstimmen oder diesen zugeordnet werden können.
+
+Wähle nach dem Hochladen dein Importverhalten aus:
+
+- **Unternehmen erstellen** — Erstellt nur neue Datensätze; vorhandene werden übersprungen.
+- **Unternehmen aktualisieren** — Aktualisiert nur vorhandene Datensätze; neue werden übersprungen.
+- **Unternehmen erstellen & aktualisieren** — Erstellt neue Datensätze und aktualisiert vorhandene.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077955726/original/r_-4Mc8sjA-LhbUIowFrOFHElTXJLsZVmg.png?1786247607)
+
+Schritt 3
+
+Wähle Kriterien für die Duplikaterkennung
+
+Wähle das Feld aus, das zur Identifizierung doppelter Datensätze verwendet wird. Das System verwendet standardmäßig **Unternehmens-ID**. Wenn eine übereinstimmende ID gefunden wird, aktualisiert der Import diesen Datensatz, anstatt ein Duplikat zu erstellen.
+
+Schritt 4
+
+Ordne CSV-Spalten CRM-Feldern zu
+
+Der Assistent zeigt eine Vorschau deiner CSV-Daten neben den verfügbaren CRM-Feldern an. Ordne jede CSV-Spalte dem entsprechenden Unternehmensfeld in UmsatzAgent zu. Ordne beispielsweise eine Spalte namens „Firmenname“ dem CRM-Feld „Name“ zu.
+
+Wenn du verhindern möchtest, dass leere CSV-Zellen bestehende Daten überschreiben, aktiviere für bestimmte Felder **Nicht auf leeren Wert aktualisieren**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079797553/original/e6XnY04I6effbWzkR8KIEPAV0ZKXH0XoZw.png?1788263691)
+
+Schritt 5
+
+Überprüfen und bestätigen
+
+Der Überprüfungsbildschirm zeigt eine Zusammenfassung deiner Importkonfiguration an, einschließlich der Anzahl der zu importierenden Zeilen, der Feldzuordnungen und der Regeln zur Duplikatbehandlung. Prüfe alle Einstellungen sorgfältig, bevor du fortfährst.
+
+Schritt 6
+
+Starte den Import
+
+Klicke auf **Massenimport starten**, um die Verarbeitung zu beginnen. Das System verarbeitet deine Datei im Hintergrund und liefert Fortschrittsaktualisierungen im Dashboard „Massenaktionen – Unternehmen“.
+
+Profi-Tipp
+
+Teste immer zuerst mit einer kleinen Stichprobe
+
+Führe vor dem Import von Tausenden Datensätzen einen Testimport mit 5–10 Zeilen durch, um Feldzuordnungen und das Verhalten bei Duplikaten zu überprüfen. Dies verhindert großflächige Fehler und das Überschreiben von Daten.
+
+5
+
+## Fortschritt des Imports verfolgen und überwachen
+
+Nachdem du einen Massenimport gestartet hast, verarbeitet UmsatzAgent deine Datei im Hintergrund und zeigt Statusaktualisierungen in Echtzeit im Dashboard „Massenaktionen – Unternehmen“ an. Dieser Bereich zeigt alle aktiven und abgeschlossenen Importe mit detaillierten Statistiken.
+
+Zugriff auf Massenaktionen
+
+Navigiere zum Tracking-Dashboard
+
+Gehe zu **Unternehmen** und klicke im oberen Menü oder in der Aktionsleiste auf **Massenaktionen – Unternehmen**. Diese Seite listet alle Importaufträge mit Zeitstempeln und Statusanzeigen auf.
+
+Importstatistiken
+
+Die Aufschlüsselung verstehen
+
+Jeder Import zeigt drei wichtige Kennzahlen an:
+
+- **Erfolg** — Anzahl der Datensätze, die erfolgreich und fehlerfrei erstellt oder aktualisiert wurden.
+- **Fehler** — Anzahl der Datensätze, die aufgrund von Validierungsproblemen oder Systemfehlern nicht importiert werden konnten.
+- **Warnung** — Anzahl der Datensätze, die mit geringfügigen Problemen importiert wurden, wie etwa fehlenden optionalen Feldern oder Formatierungsproblemen.
+
+Importbericht herunterladen
+
+Ergebnisse für Prüfungen exportieren
+
+Klicke nach Abschluss eines Imports auf die Schaltfläche **Bericht herunterladen**, um eine detaillierte CSV-Datei mit den zeilenweisen Ergebnissen zu erhalten. Dieser Bericht enthält Fehlerbeschreibungen, betroffene Datensätze und Lösungsvorschläge für fehlgeschlagene Einträge.
+
+Tipp
+
+Wenn du eine hohe Fehleranzahl siehst, lade den Bericht sofort herunter, um die Ursache zu ermitteln. Häufige Probleme sind falsche Feldzuordnungen, ungültige Datenformate oder fehlende Pflichtfelder.
+
+6
+
+## Best Practices und Einrichtungstipps
+
+Die Befolgung dieser Best Practices gewährleistet genaue Importe, minimiert Fehler und schützt deine bestehenden CRM-Daten vor versehentlichem Überschreiben oder Löschen.
+
+Tipp 1
+
+Bereinige und validiere deine CSV vor dem Upload
+
+Entferne doppelte Zeilen, behebe Formatierungsfehler und stelle sicher, dass alle erforderlichen Felder (wie die Unternehmens-ID) ausgefüllt sind. Verwende Tabellenkalkulationsprogramme, um vor dem Import nach leeren Zellen oder uneinheitlichen Datentypen zu suchen.
+
+Tipp 2
+
+Prüfe Feldzuordnungen sorgfältig
+
+Überstürze den Zuordnungsschritt nicht. Überprüfe, ob jede CSV-Spalte dem richtigen CRM-Feld zugeordnet ist. Falsche Zuordnungen können dazu führen, dass Daten in falsche Felder geschrieben oder vollständig abgelehnt werden.
+
+Tipp 3
+
+Aktiviere „Nicht auf leeren Wert aktualisieren“ für wichtige Felder
+
+Wenn deine CSV-Datei leere Zellen für bestimmte Spalten enthält, verhindert die Aktivierung dieser Option, dass diese leeren Werte vorhandene Daten in UmsatzAgent überschreiben. Dies ist besonders nützlich für teilweise Aktualisierungen oder unvollständige Datensätze.
+
+Tipp 4
+
+Teste zuerst mit einem kleinen Stapel
+
+Führe vor dem Import von Tausenden Datensätzen einen Testimport mit 5–10 Beispielzeilen durch. Überprüfe die Ergebnisse in deinem CRM, kontrolliere den Importbericht und stelle sicher, dass Zuordnungen und Duplikatbehandlung wie erwartet funktionieren.
+
+Tipp 5
+
+Lade den Importbericht herunter und archiviere ihn
+
+Lade nach jedem Import den detaillierten Bericht herunter und speichere ihn für deine Unterlagen. Dieser Bericht ist von unschätzbarem Wert für die Fehlerbehebung, Überprüfung und das Erkennen von Mustern bei fehlerhaften oder mit Warnungen versehenen Datensätzen.
+
+Warnung
+
+Massenimporte können nicht rückgängig gemacht werden. Sichere immer deine bestehenden Unternehmensdaten, bevor du großflächige Aktualisierungen oder Ersetzungen durchführst. Wenn du versehentlich wichtige Felder überschreibst, musst du die Daten manuell wiederherstellen oder aus einem Backup neu importieren.
+
+7
+
+## Häufig gestellte Fragen
+
+F: Gibt es eine Begrenzung für die Anzahl der Unternehmen, die ich auf einmal importieren kann?
+
+Obwohl UmsatzAgent große CSV-Importe unterstützt, kann die Leistung je nach Dateigröße und Systemauslastung variieren. Um beste Ergebnisse zu erzielen, begrenze einzelne Importe auf maximal 10.000 Zeilen. Wenn du mehr importieren musst, teile deine CSV-Datei in mehrere Teile auf.
+
+F: Kann ich einen Import rückgängig machen, wenn mir ein Fehler unterläuft?
+
+Nein, Massenimporte sind endgültig und können nicht automatisch rückgängig gemacht werden. Um Änderungen rückgängig zu machen, musst du die betroffenen Datensätze manuell löschen oder aktualisieren oder aus einer Backup-CSV-Datei neu importieren. Teste Importe immer mit einer kleinen Stichprobe, bevor du große Datensätze verarbeitest.
+
+F: Was passiert, wenn meine CSV-Datei doppelte Unternehmens-IDs enthält?
+
+Das System verarbeitet jede Zeile nacheinander. Wenn mehrere Zeilen in deiner CSV-Datei dieselbe Unternehmens-ID aufweisen, wird nur das letzte Vorkommen in der Datei angewendet. Um dies zu vermeiden, entferne doppelte IDs vor dem Upload aus deiner CSV-Datei.
+
+F: Kann ich benutzerdefinierte Felder für Unternehmen importieren?
+
+Ja, benutzerdefinierte Felder werden im Import-Assistenten unterstützt. Während des Feldzuordnungsschritts erscheinen deine benutzerdefinierten Unternehmensfelder neben den Standardfeldern. Ordne CSV-Spalten diesen benutzerdefinierten Feldern wie jedem anderen CRM-Feld zu.
+
+F: Welches Dateiformat ist für den Massenimport erforderlich?
+
+UmsatzAgent akzeptiert ausschließlich CSV-Dateien (kommagetrennte Werte). Stelle sicher, dass deine Datei die UTF-8-Codierung verwendet und eine Kopfzeile mit Spaltennamen enthält. Excel-Dateien (.xlsx) werden nicht unterstützt; exportiere sie vor dem Upload als CSV.
+
+F: Überschreiben leere Zellen in meiner CSV-Datei vorhandene Daten?
+
+Standardmäßig ja. Wenn eine CSV-Zelle leer ist und du „Nicht auf leeren Wert aktualisieren“ für dieses Feld nicht aktiviert hast, überschreibt der Import die vorhandenen CRM-Daten mit einem leeren Wert. Um dies zu verhindern, aktiviere die Option während der Feldzuordnung.
+
+F: Wo finde ich die Unternehmens-ID für bestehende Datensätze?
+
+Du kannst deine aktuelle Unternehmensliste aus UmsatzAgent exportieren, um Unternehmens-IDs zu erhalten. Gehe zu **Unternehmen**, wähle **Exportieren** und lade eine CSV-Datei herunter, die alle Unternehmensdatensätze mit ihren IDs enthält. Verwende diese als Referenz bei der Vorbereitung deiner Importdatei.
+
+F: Kann ich Massenimporte so planen, dass sie automatisch ausgeführt werden?
+
+Nein, Massenimporte erfolgen derzeit manuell. Du musst jeden Import über die Benutzeroberfläche von UmsatzAgent hochladen und konfigurieren. Geplante oder automatisierte Importe über die API stehen möglicherweise in zukünftigen Versionen zur Verfügung.
+
+Brauchst du Hilfe?
+
+Wenn du beim Massenimport auf Probleme stößt oder zusätzliche Unterstützung benötigst, befolge diese Schritte:
+
+- Lade den Importbericht unter „Massenaktionen – Unternehmen“ herunter, um spezifische Fehlerzeilen zu identifizieren.
+- Sieh im **Hilfecenter** nach Artikeln zur CSV-Formatierung und zu Feldanforderungen.
+- Wende dich an den UmsatzAgent Support.
+- Prüfe den Bestätigungsbildschirm vor dem Absenden großer Importe sorgfältig, um weitreichende Fehler zu vermeiden.

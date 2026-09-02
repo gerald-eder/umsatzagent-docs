@@ -1,0 +1,310 @@
+---
+title: "Calendly – Workflow-Aktionen & Trigger"
+description: "Calendly ist eine Terminbuchungsplattform für Buchungen zwischen Gastgebern und Eingeladenen – Erstgespräche, Demos, Support-Nachfassaktionen,…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Overview)
+- [Über die Integration](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#About-the-Integration)
+- [So richtest du Calendly ein](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#How-to-Set-Up-Calendly)
+  - [Über den Workflow-Builder verbinden (empfohlen)](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Connect-via-the-Workflow-Builder-(recommended))
+  - [Über die Einstellungen verbinden (alternativer Weg)](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Connect-via-Settings-(alternative-path))
+- [Liste der Trigger](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#List-of-Triggers)
+- [Liste der Aktionen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#List-of-Actions)
+- [Beispiel: Einen Trigger einrichten (Invitee created)](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Example%3A-Setting-Up-a-Trigger-(Invitee-created))
+  - [Schritt 1: Trigger hinzufügen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-1%3A-Add-the-trigger)
+  - [Schritt 2: Trigger konfigurieren](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-2%3A-Configure-the-trigger)
+  - [Schritt 3: Trigger testen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-3%3A-Test-the-trigger)
+- [Beispiel: Eine Aktion einrichten (Create one-off meeting)](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Example%3A-Setting-Up-an-Action-(Create-one-off-meeting))
+  - [Schritt 1: Aktion hinzufügen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-1%3A-Add-the-action)
+  - [Schritt 2: Aktion konfigurieren](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-2%3A-Configure-the-action)
+  - [Schritt 3: Aktion testen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Step-3%3A-Test-the-action)
+- [So testest du Trigger und Aktionen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#How-to-Test-Triggers-and-Actions)
+  - [Einen Sofort-Trigger testen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Test-an-instant-trigger)
+  - [Event cancelled testen (der Polling-Trigger)](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Test-Event-cancelled-(the-polling-trigger))
+  - [Eine Aktion testen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Test-an-action)
+- [Typische Anwendungsfälle](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Common-Use-Cases)
+  - [Anwendungsfall 1: Neue Buchung → CRM-Synchronisierung + Vorbereitung vor dem Termin](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Use-Case-1%3A-New-booking-%E2%86%92-CRM-sync-+-pre-call-prep)
+  - [Anwendungsfall 2: Stornierung → Rückgewinnung durch Neuansetzung](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Use-Case-2%3A-Cancellation-%E2%86%92-reschedule-recovery)
+  - [Anwendungsfall 3: Nicht-Erscheinen (No-Show) → Rückhol-Sequenz](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Use-Case-3%3A-No-show-%E2%86%92-recovery-sequence)
+  - [Anwendungsfall 4: Workflow-gesteuertes Einzelmeeting bei Meilenstein](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Use-Case-4%3A-Workflow-driven-one-off-meeting-on-milestone)
+- [Häufig gestellte Fragen](https://UmsatzAgentassist.freshdesk.com/a/solutions/articles/155000008110?portalId=48000045315#Frequently-Asked-Questions)
+
+##
+
+## Übersicht
+
+Calendly ist eine Terminbuchungsplattform für Buchungen zwischen Gastgebern und Eingeladenen – Erstgespräche, Demos, Support-Nachfassaktionen, Bewerbungsgespräche und alle anderen externen Terminbuchungen außerhalb der eigenen Kalender-Oberfläche. Calendly stellt Buchungsaktivitäten über einen Webhook-Stream (invitee.created, invitee.canceled, invitee_no_show.created, routing_form_submission.created) sowie eine umfassende API für die Termin- und Kontaktverwaltung bereit. Die Calendly-Integration bringt beides in den Workflow-Builder, sodass Terminereignisse kundenorientierte Automatisierungen im Moment ihres Auftretens auslösen und jeder Workflow umgekehrt Calendly ansteuern kann.
+
+Über die Integration
+
+Die Integration besteht aus zwei Teilen:
+
+- Trigger (Calendly → Workflows): Fünf Trigger für Buchungen, Stornierungen (durch den Eingeladenen oder den Gastgeber), Nicht-Erscheinen (No-Shows) und Weiterleitungsformular-Einsendungen. Vier davon arbeiten sofort per Webhook; einer (vom Gastgeber initiierte Terminstornierung) ruft alle 5 Minuten Daten ab, da Calendly dafür keinen nativen Webhook bereitstellt.
+- Aktionen (Workflows → Calendly): Neun Aktionen für die Erstellung von Einzelmeetings, Buchungen im Namen des Eingeladenen, den Termin-Lebenszyklus (Suchen, Stornieren), das Markieren von Nicht-Erscheinen, den Kontakt-Lebenszyklus (Erstellen, Suchen, Aktualisieren) sowie die Benutzersuche.
+
+Alle Trigger und Aktionen sind als Premium-Workflow-Komponenten gekennzeichnet – es gelten die Standardguthaben für Premium-Aktionen. Die Nutzung deines Calendly-Tarifs (aktive Benutzer, kostenpflichtige Ereignistypen, Integrationen) wird von Calendly direkt über dein Calendly-Konto abgerechnet.
+
+##
+
+## So richtest du Calendly ein
+
+Bevor ein Calendly-Trigger oder eine Calendly-Aktion ausgeführt werden kann, muss die Integration über OAuth verbunden werden.
+
+### Über den Workflow-Builder verbinden (empfohlen)
+
+- Öffne Automatisierung → Workflows und wähle einen Workflow aus (oder erstelle einen neuen).
+- Füge einen Calendly-Trigger oder eine Aktion hinzu – suche im Tab Apps nach Calendly.
+- Wähle einen beliebigen Calendly-Trigger oder eine Aktion aus.
+- Klicke im Bereich auf Connect your account.
+- Das Fenster External Authentication Configuration öffnet sich. Gib Folgendes ein:
+- Name – eine aussagekräftige Bezeichnung für diese Verbindung (z. B. „Vertriebsteam Calendly“, „CS Calendly“, „Assistenz Calendly“).
+- Email – die mit diesem verbundenen Konto verknüpfte E-Mail-Adresse; erscheint neben dem Namen im Dropdown-Menü Connected Account bei jedem Trigger und jeder Aktion.
+- Klicke auf Continue.
+- Du wirst zum OAuth-Autorisierungsbildschirm von Calendly weitergeleitet. Überprüfe die angeforderten Berechtigungen und klicke auf Allow.
+- Du wirst zum Workflow-Builder zurückgeleitet; der Bereich wechselt auf den Status Connected.
+
+### Über die Einstellungen verbinden (alternativer Weg)
+
+- Gehe zu Einstellungen → Integrationen.
+- Suche Calendly und klicke auf Connect.
+- Schließe den Schritt External Authentication Configuration (Name + E-Mail) und den Calendly-OAuth-Vorgang ab.
+
+##
+
+##
+
+##
+
+## Liste der Trigger
+
+| Trigger | Typ |
+| --- | --- |
+| Invitee created | Sofort |
+| Invitee canceled | Sofort |
+| Invitee no show created | Sofort |
+| New routing form submission | Sofort |
+| Event cancelled | Polling alle 5 Min. |
+
+##
+
+##
+
+##
+
+## Liste der Aktionen
+
+Die Aktionen sind nach ihrem Verwendungszweck gruppiert.
+
+Termin-Lebenszyklus
+
+| Aktion | Zweck |
+| --- | --- |
+| Create one-off meeting | Erstellt einen einmaligen Calendly-Ereignistyp mit einem bestimmten Gastgeber, einer Dauer (max. 720 Minuten), einem Verfügbarkeitsfenster (Start Date / End Date im Format YYYY-MM-DD) und einer optionalen Zeitzone. Gibt die einmalige Buchungs-URL zurück. |
+| Book meeting for invitee | Bucht einen Calendly-Termin im Namen eines Eingeladenen anhand seiner Kontaktdaten und eines ausgewählten Ereignistyps – umgeht die öffentliche Buchungsseite. |
+| Find event | Sucht nach einem Calendly-Termin anhand der ID oder URI. Gibt die Termindaten zurück (Ereignistyp, Gastgeber, geplantes Zeitfenster, Eingeladene). |
+| Cancel an event | Storniert einen geplanten Calendly-Termin. Akzeptiert einen optionalen Stornierungsgrund, der dem Eingeladenen angezeigt wird. Löst nachgelagert Calendlys nativen Webhook invitee.canceled aus. |
+
+Teilnehmer-Lebenszyklus
+
+| Aktion | Zweck |
+| --- | --- |
+| Mark invitee as no show | Markiert einen Eingeladenen bei einem geplanten oder abgeschlossenen Termin als nicht erschienen. Löst nachgelagert den Trigger Invitee no show created aus. |
+
+Kontakte
+
+| Aktion | Zweck |
+| --- | --- |
+| Create contact | Erstellt einen neuen Kontaktdatensatz in Calendly. Gibt die neue Kontakt-ID zurück. |
+| Find contact | Sucht einen Calendly-Kontakt nach E-Mail oder Telefonnummer – gibt bei Erfolg die Kontaktdaten zurück. |
+| Update contact | Aktualisiert einen bestehenden Calendly-Kontakt anhand von ID oder E-Mail. |
+
+Benutzer
+
+| Aktion | Zweck |
+| --- | --- |
+| Find user | Sucht einen Calendly-Benutzer nach E-Mail oder Benutzer-URI. Gibt Name, E-Mail, Zeitzone, Buchungs-URL und Organisationsrolle zurück. |
+
+##
+
+##
+
+##
+
+## Beispiel: Einen Trigger einrichten (Invitee created)
+
+Diese Anleitung zeigt die Einrichtung eines Workflows, der jedes Mal ausgelöst wird, wenn ein Eingeladener einen Termin über einen Calendly-Link im verbundenen Konto bucht. Die gleiche Konfigurationsstruktur gilt für Invitee canceled, Invitee no show created und New routing form submission – alle nutzen den Filter Webhook Subscription Scope und denselben grundlegenden Ablauf.
+
+### Schritt 1: Trigger hinzufügen
+
+- Öffne den Workflow und klicke auf Trigger hinzufügen.
+- Wechsle zum Tab Apps und suche nach Calendly.
+- Wähle Invitee created aus der Trigger-Liste.
+
+### Schritt 2: Trigger konfigurieren
+
+- Connected Account – wähle das Calendly-Konto aus, das dieser Trigger überwachen soll (gekennzeichnet durch Name + E-Mail aus der Einrichtung).
+- Name des Workflow-Triggers – ein aussagekräftiger Name, z. B. „Neues Verkaufs-Erstgespräch“.
+- Filters → Webhook Subscription Scope – wähle User, um nur Termine des verbundenen Benutzers zu überwachen, oder Organization, um alle Benutzer in der Calendly-Organisation zu überwachen. (Der Hilfetext lautet: „Choose whether to receive new invitee events for your connected user account or your entire organization.“)
+- Filter hinzufügen (optional) – ergänze Bedingungen wie Ereignistyp, E-Mail-Domain des Eingeladenen oder Antworten auf benutzerdefinierte Fragen, falls der Workflow nur unter bestimmten Umständen auslösen soll.
+
+### Schritt 3: Trigger testen
+
+- Klicke im Bereich Test Your Trigger auf Find new records.
+- Falls keine passenden Datensätze erscheinen, führe eine Testbuchung über einen Calendly-Link im verbundenen Konto durch und rufe die Daten erneut ab.
+- Wähle den zurückgegebenen Datensatz als Zuordnungsreferenz aus, um das Schema für Teilnehmer und Termin für nachfolgende Schritte festzulegen.
+- Klicke auf Trigger speichern.
+
+##
+
+##
+
+##
+
+## Beispiel: Eine Aktion einrichten (Create one-off meeting)
+
+Diese Anleitung verwendet Create one-off meeting, um einen einmaligen Calendly-Link zu erstellen, den der Workflow an einen bestimmten Eingeladenen senden kann.
+
+### Schritt 1: Aktion hinzufügen
+
+- Klicke im Workflow auf das Plus-Symbol, um einen neuen Schritt einzufügen.
+- Öffne den Tab Apps und wähle Calendly.
+- Wähle Create one-off meeting aus der Aktionsliste.
+
+### Schritt 2: Aktion konfigurieren
+
+- Connected Account – wähle das Calendly-Konto, das den Termin hosten wird.
+- Action Name – eine aussagekräftige Bezeichnung, z. B. „Link für Folgegespräch erstellen“.
+- Event Name (erforderlich) – der dem Eingeladenen angezeigte Name, z. B. „Folgegespräch mit Max“.
+- Host User (erforderlich) – wähle den Gastgeber für dieses Ereignis aus. Nutze Find user im vorherigen Schritt, falls die E-Mail des Gastgebers dynamisch ist.
+- Duration (minutes) (erforderlich) – Dauer des Termins in Minuten. Maximal 720 (12 Stunden).
+- Timezone (optional) – IANA-Zeitzonenname (America/New_York, Europe/Berlin). Bleibt das Feld leer, wird standardmäßig die Zeitzone des Gastgebers verwendet.
+- Start Date (erforderlich) – Beginn des Verfügbarkeitszeitraums im Format YYYY-MM-DD.
+- End Date (erforderlich) – Ende des Verfügbarkeitszeitraums im Format YYYY-MM-DD.
+
+### Schritt 3: Aktion testen
+
+- Klicke auf Test action.
+- Bestätige den Aufruf – dies erstellt einen echten einmaligen Ereignistyp in Calendly. Die zurückgegebene Buchungs-URL erscheint in den Antwortdaten.
+- Speichere die Aktion und führe einen vollständigen Workflow-Test durch, bevor du ihn veröffentlichst.
+
+##
+
+##
+
+##
+
+## So testest du Trigger und Aktionen
+
+Teste immer vor der Veröffentlichung. Das Testen fixiert die Datenstruktur und gibt nachfolgenden Schritten einen echten Datensatz für die Zuordnung.
+
+### Einen Sofort-Trigger testen
+
+- Klicke im Trigger-Bereich auf Find new records.
+- Falls keine passenden Datensätze erscheinen, führe die Aktion in Calendly manuell durch – buche einen Testtermin, storniere einen oder sende ein Weiterleitungsformular ab – und rufe die Daten erneut ab.
+- Wähle den zurückgegebenen Datensatz als Zuordnungsreferenz aus.
+
+### Event cancelled testen (der Polling-Trigger)
+
+- Find new records liefert die neuesten vom Gastgeber stornierten Termine im verbundenen Konto.
+- Erscheint kein Datensatz, storniere einen Termin in Calendly als Gastgeber (nicht als Eingeladener), warte bis zu 5 Minuten auf den nächsten Abrufzyklus und rufe die Daten erneut ab.
+
+### Eine Aktion testen
+
+- Klicke im Aktionsbereich auf Test action.
+- Die Aktion wird mit den konfigurierten Eingabewerten im aktiven Calendly-Konto ausgeführt.
+- Prüfe das Ergebnis in Calendly – ein neues Einzelmeeting unter Ereignistypen, eine neue Buchung im Kalender des Gastgebers, ein aktualisierter Kontakt usw.
+
+##
+
+## Typische Anwendungsfälle
+
+### Anwendungsfall 1: Neue Buchung → CRM-Synchronisierung + Vorbereitung vor dem Termin
+
+Ziel: Jede Calendly-Buchung im CRM spiegeln und den Eingeladenen vor dem Gespräch einstimmen.
+
+Workflow-Aufbau:
+
+- Trigger: Invitee created (Webhook Subscription Scope: User oder Organization je nach Abdeckung)
+- Aktion: Find Contact (nach E-Mail)
+- Verzweigung: Falls nicht gefunden → Create Contact mit Name, E-Mail und Buchungs-Metadaten des Eingeladenen; falls gefunden → Update Contact mit Buchungs-Metadaten
+- Aktion: Vorbereitungs-SMS oder -E-Mail mit Vorbereitungshinweisen, Biografie des Gastgebers und Agenda senden
+
+Beispiel: Ein Interessent bucht ein 30-minütiges Erstgespräch über den Calendly-Link eines Vertriebsmitarbeiters. Innerhalb von Sekunden aktualisiert der Workflow den passenden CRM-Kontakt, setzt das Tag „Quelle = Calendly“, speichert das gebuchte Zeitfenster in einem benutzerdefinierten Feld und sendet eine SMS mit dem LinkedIn-Profil des Gastgebers und einem Produkt-One-Pager.
+
+### Anwendungsfall 2: Stornierung → Rückgewinnung durch Neuansetzung
+
+Ziel: Stornierungen sofort erfassen und einen unkomplizierten Weg zur Neuansetzung anbieten.
+
+Workflow-Aufbau:
+
+- Trigger: Invitee canceled
+- Warten (z. B. 30 Minuten) – gibt einer direkten Umbuchung Zeit, zuerst Invitee created auszulösen
+- Verzweigung: Wurde während der Wartezeit Invitee created für diesen Kontakt ausgelöst? Falls ja, Workflow beenden. Falls nein, handelt es sich um eine echte Stornierung.
+- Aktion: Create one-off meeting (Gastgeber = ursprünglicher Gastgeber, 7 Tage Verfügbarkeitsfenster)
+- Aktion: Nachricht zur Neuansetzung mit dem Einmallink senden
+
+Beispiel: Ein Eingeladener storniert seine Demo zwei Stunden vor dem Termin. Nach 30 Minuten Wartezeit (keine Neubuchung erkannt) erstellt der Workflow einen einmaligen Calendly-Link mit demselben Gastgeber und einem Verfügbarkeitsfenster von 7 Tagen und sendet anschließend eine freundliche SMS zur Neuansetzung inklusive Link.
+
+### Anwendungsfall 3: Nicht-Erscheinen (No-Show) → Rückhol-Sequenz
+
+Ziel: Nicht erschienene Teilnehmer über einen automatisierten Ablauf erneut ansprechen.
+
+Workflow-Aufbau:
+
+- Trigger: Invitee no show created
+- Aktion: CRM-Kontakt mit dem Tag „No-Show-Rückholung“ versehen
+- Aktion: Rückholnachricht mit einem neuen Buchungslink senden
+- N Tage warten; erfolgt keine Neubuchung, Aufgabe an einen Mitarbeiter zur manuellen Kontaktaufnahme übergeben
+
+Beispiel: Ein Interessent erscheint nicht zum Erstgespräch; der Vertriebsmitarbeiter markiert ihn in Calendly als nicht erschienen. Der Workflow versieht den Kontakt mit einem Tag, sendet eine freundliche Nachricht mit einem neuen Buchungslink und legt den Kontakt – falls innerhalb von 4 Tagen keine Neubuchung erfolgt – in die manuelle Wiedervorlage des Mitarbeiters.
+
+### Anwendungsfall 4: Workflow-gesteuertes Einzelmeeting bei Meilenstein
+
+Ziel: Einen maßgeschneiderten Calendly-Link bei einem Meilenstein oder einer Übergabe aus einem anderen System auslösen.
+
+Workflow-Aufbau:
+
+- Trigger: Externer Meilenstein (Phasenwechsel bei Chance, Eskalation eines Support-Tickets, Kundenjubiläum)
+- Aktion: Find user (zuständige Gastgeber-E-Mail → URI ermitteln)
+- Aktion: Create one-off meeting mit diesem Gastgeber, einer passenden Dauer und einem begrenzten Verfügbarkeitsfenster
+- Aktion: Buchungs-URL per SMS oder E-Mail an den Eingeladenen senden
+
+Beispiel: Eine Chance erreicht die Phase „Angebot gesendet“ im CRM. Der Workflow sucht den Calendly-Benutzer des zugewiesenen Vertriebsmitarbeiters, erstellt ein 45-minütiges Einzelmeeting mit einem Verfügbarkeitsfenster von 5 Tagen und sendet dem Interessenten per SMS einen Direktbuchungslink.
+
+##
+
+## Häufig gestellte Fragen
+
+Frage: Was ist Calendly?
+
+Calendly ist eine Terminbuchungsplattform, die Buchungen zwischen Gastgebern (Vertriebsmitarbeiter, Support-Mitarbeiter, Recruiter, Assistenten) und Eingeladenen (Interessenten, Kunden, Bewerber) abwickelt. Gastgeber teilen ihre Verfügbarkeit über einen Link oder ein Weiterleitungsformular; Eingeladene wählen einen Termin aus. Calendly verfolgt die Buchung über ihren gesamten Lebenszyklus hinweg – erstellt, verschoben, storniert, abgeschlossen, nicht erschienen.
+
+Frage: Sind Calendly-Trigger und -Aktionen Premium-Workflow-Komponenten?
+
+Ja. Alle fünf Trigger und neun Aktionen sind als Premium gekennzeichnet und verbrauchen Premium-Aktions-Credits zum regulären Automatisierungstarif. Die Nutzung deines Calendly-Tarifs (aktive Benutzer, kostenpflichtige Ereignistypen, Integrationen) wird von Calendly direkt über dein Calendly-Konto abgerechnet.
+
+Frage: Welche Trigger arbeiten sofort und welche über regelmäßige Abfragen (Polling)?
+
+Vier Trigger arbeiten sofort – Invitee created, Invitee canceled, Invitee no show created und New routing form submission –, basierend auf Calendlys nativen Webhooks (invitee.created, invitee.canceled, invitee_no_show.created, routing_form_submission.created). Ein Trigger nutzt Polling – Event cancelled –, da Calendly keinen nativen Webhook für vom Gastgeber initiierte Stornierungen anbietet; dieser prüft alle 5 Minuten.
+
+Frage: Warum benötigen verbundene Konten bei der Einrichtung einen Namen und eine E-Mail-Adresse?
+
+Name und E-Mail-Adresse dienen als Kennzeichnung des verbundenen Kontos im Dropdown-Menü Connected Account im Workflow-Builder. Sind mehrere Calendly-Konten angebunden – für verschiedene Teams, Marken oder Regionen –, verhindern eindeutige Bezeichnungen die Auswahl des falschen Kontos in einem Workflow-Schritt.
+
+Frage: Wie geht die Integration mit Terminverschiebungen um?
+
+Calendly sendet keinen eigenen Webhook für Terminverschiebungen. Wenn ein Eingeladener einen Termin verschiebt, sendet Calendly invitee.canceled für den alten Termin, gefolgt von invitee.created für den neuen Termin – eine Terminverschiebung löst in dieser Integration also zwei Trigger aus. Siehe den Abschnitt zu typischen Anwendungsfällen oben für das Muster mit Wartezeit und Prüfung, um zu verhindern, dass der Stornierungsablauf bei jeder Terminverschiebung ausgeführt wird.
+
+Frage: Was gibt die Aktion Create one-off meeting zurück?
+
+Sie gibt die einmalige Buchungs-URL sowie die Metadaten des Termins zurück (Gastgeber, Dauer, Verfügbarkeitsfenster). Leite die URL an einen einzelnen Eingeladenen weiter – dieser bucht innerhalb des konfigurierten Zeitfensters, ohne die allgemeine Verfügbarkeit des Gastgebers einzusehen.
+
+Frage: Was ist der Unterschied zwischen Cancel an event und einer Stornierung direkt durch den Eingeladenen in Calendly?
+
+Cancel an event ist die über den Workflow gesteuerte Entsprechung einer Stornierung durch den Gastgeber in Calendly – die Aktion löst Calendlys nativen Webhook invitee.canceled für jeden Eingeladenen des Termins aus, sodass nachgelagerte Automatisierungen konsistent bleiben. Storniert ein Eingeladener direkt über Calendly, wird derselbe Webhook invitee.canceled ausgelöst, sodass der Trigger Invitee canceled in beiden Fällen reagiert.
+
+Frage: Was passiert, wenn Calendly-Webhooks verzögert ankommen?
+
+Calendlys native Webhooks werden in der Regel innerhalb von Sekunden zugestellt, vorübergehende Verzögerungen können jedoch vorkommen. Die Sofort-Trigger lösen aus, sobald der Webhook eintrifft. Falls ein Webhook von Calendlys Infrastruktur vollständig verworfen wird, löst der Trigger nicht aus – berücksichtige dieses Restrisiko bei zeitkritischen Abläufen (z. B. durch einen nächtlichen Datenabgleich).

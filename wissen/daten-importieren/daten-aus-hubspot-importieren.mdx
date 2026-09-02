@@ -1,0 +1,277 @@
+---
+title: "Daten aus HubSpot importieren"
+description: "Der HubSpot-Importer hilft dir, wichtige HubSpot-CRM-Daten schneller in dein CRM zu übertragen. Dieser Artikel führt dich durch den Import deiner…"
+---
+
+Der HubSpot-Importer hilft dir, wichtige HubSpot-CRM-Daten schneller in dein CRM zu übertragen. Dieser Artikel führt dich durch den Import deiner HubSpot-Daten (Kontakte, Deals, benutzerdefinierte Felder und Pipelines) und die Prüfung der Import-Ergebnisse, damit du Fehler erkennen und beheben kannst.
+
+```
+Der HubSpot-Importer befindet sich derzeit in der Beta-Phase und ist nur für ausgewählte Nutzer verfügbar. Wenn du die Option für den HubSpot-Import nicht siehst, ist die Funktion für dein Konto möglicherweise noch nicht aktiviert.
+```
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist der HubSpot-Importer?](#was-ist-der-hubspot-importer)
+  - [Wichtigste Vorteile des HubSpot-Importers](#wichtigste-vorteile-des-hubspot-importers)
+  - [Vor dem Start](#vor-dem-start)
+  - [Einschränkungen und Hinweise](#einschraenkungen-und-hinweise)
+  - [Welche Daten du aus HubSpot importieren kannst](#welche-daten-du-aus-hubspot-importieren-kannst)
+  - [So verwendest du den HubSpot-Importer](#so-verwendest-du-den-hubspot-importer)
+  - [Fehlerbehebung](#fehlerbehebung)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist der HubSpot-Importer?
+
+Der HubSpot-Importer erleichtert den Wechsel von HubSpot zu deinem CRM. Statt dein CRM-Setup manuell neu aufzubauen, verbindest du HubSpot, wählst die gewünschten Daten aus und startest den Import direkt aus dem CRM heraus.
+
+Das beschleunigt das Onboarding durch die Übernahme wichtiger Daten und Strukturen wie Kontakte, Chancen, benutzerdefinierte Felder, Pipelines, Phasen und benutzerdefinierte Ordner. Nach Abschluss des Imports zeigt das System einen Bericht an, damit du siehst, was erfolgreich importiert wurde, was fehlgeschlagen ist und was geprüft werden sollte.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079846978/original/W1Onn7-pDuf-004SMaeBpXmNO2F26jACSw.png?1788290891)
+
+---
+
+## Wichtigste Vorteile des HubSpot-Importers
+
+- **Schnellere Migration:** Importiere unterstützte HubSpot-CRM-Daten direkt in das CRM, ohne dich ausschließlich auf manuelle CSV-Exporte zu verlassen.
+- **Erhaltene Struktur:** Übertrage HubSpot-Deals als Chancen in das CRM und behalte unterstützte Pipelines und Phasen übersichtlich bei.
+- **Kontinuität benutzerdefinierter Daten:** Importiere unterstützte HubSpot-Kontakt- und Deal-Eigenschaften als benutzerdefinierte Felder.
+- **Transparente Berichte:** Prüfe nach Abschluss des Imports Gesamtzahlen, erfolgreiche Datensätze, Fehler, Warnungen sowie Ergebnisse auf Objekt- und Datensatzebene.
+
+---
+
+## Vor dem Start
+
+- Nutze nach Möglichkeit ein leeres Konto. Der Import in ein Konto ohne vorhandene manuelle Daten erleichtert die Überprüfung von Fehlern und Duplikaten.
+- Aktiviere vorab **Duplikate erlauben** für Kontakte und Chancen. Du kannst die Duplikatsperre nach Abschluss des Imports wieder aktivieren. Eine aktive Duplikatsperre führt bei einem HubSpot-Import zu vielen vermeidbaren Fehlern.
+- Der Import läuft im Hintergrund. Du kannst das Fenster schließen und später zurückkehren, um den Fortschritt zu prüfen.
+- Es wird empfohlen, Englisch als Kontosprache zu verwenden.
+- Es wird empfohlen, Importe zunächst in einer Testumgebung zu testen, bevor du Daten in ein aktiv genutztes Konto importierst.
+
+---
+
+## Einschränkungen und Hinweise
+
+- **Pipelines & Chancen:** Pipelines und Pipeline-Phasen werden importiert. Eine Chance kann mit bis zu 10 zusätzlichen Kontakten verknüpft werden.
+- **Benutzerdefinierte Felder:** Die Zuordnung benutzerdefinierter Felder basiert auf Feldschlüsseln. Wenn im CRM bereits ein kollidierender Feldschlüssel existiert, kann der Import fehlschlagen. Berechnete HubSpot-Felder werden als einzeilige Textfelder importiert.
+- **Dateien & Anhänge:** Dateianhänge werden für Kontakte und Chancen unterstützt.
+- **Kontakte:** Wenn ein importierter Kontakt im CRM gelöscht und der Importer erneut ausgeführt wird, wird der Kontakt erneut importiert. Wird der gelöschte Kontakt später wiederhergestellt, können Duplikate entstehen.
+- **Notizen:** Eine Notiz kann nur mit jeweils einem Datensatz jedes Objekttyps verknüpft werden (z. B. ein Kontakt, eine Chance und ein Unternehmen).
+- **Aufgaben:** Wiederkehrende Aufgaben werden nicht unterstützt. Eine Aufgabe kann mit bis zu 10 Datensätzen jedes Objekttyps verknüpft werden (z. B. 10 Kontakte, 10 Chancen und 10 Unternehmen).
+- **Verknüpfungen:** Einige Verknüpfungen werden aufgrund von Plattformgrenzen möglicherweise nicht importiert. Prüfe kritische Verknüpfungen nach der Migration.
+
+---
+
+## Welche Daten du aus HubSpot importieren kannst
+
+Der HubSpot-Importer unterstützt derzeit Kontakte, Chancen (Deals), benutzerdefinierte Felder (Eigenschaften), benutzerdefinierte Ordner, Pipelines, Phasen, Notizen und Aufgaben.
+
+Wenn Deals als Chancen importiert werden, bleibt ihre Pipeline- und Phasenstruktur erhalten, sofern dies vom Importer unterstützt wird. So bleibt dein Vertriebsprozess nach dem Wechsel von HubSpot in dein CRM vertraut.
+
+| Migrationsart | Funktion |
+| --- | --- |
+| Kontakt-Migration | Überträgt HubSpot-Kontaktdatensätze. |
+| Chancen-Migration | Importiert HubSpot-Deals als Chancen. |
+| Migration benutzerdefinierter Felder | Ordnet HubSpot-Kontakt- und Deal-Eigenschaften benutzerdefinierten Feldern zu. |
+| Migration von Pipelines & Phasen | Behält die vollständige Pipeline-Struktur einschließlich Phasen bei. |
+| Migration benutzerdefinierter Ordner | Übernimmt die Ordnerstruktur für unterstützte importierte Daten. |
+| Aufgaben-Migration | Überträgt Erinnerungen und To-dos. |
+
+Andere HubSpot-Objekte (Unternehmen, Tickets, Interaktionen, Workflows usw.) sind noch nicht enthalten und folgen in Kürze.
+
+---
+
+## So verwendest du den HubSpot-Importer
+
+#### Schritt 1: Datenimport öffnen
+
+Öffne unter Kontakte (oder Chancen) das Import-Menü oben rechts und wähle „Daten importieren“.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079846942/original/n3es6a50mhwi1jtAqMCQMGqSXfZDovvpiQ.png?1788290829)
+
+#### Schritt 2: HubSpot-Import auswählen
+
+Klicke in der rechten Karte auf **HubSpot verbinden**, um einen HubSpot-Import zu starten.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079847003/original/caMbLfJbMTputrJ3LlgbPcx9UpicI-ggLg.png?1788290926)
+
+#### Schritt 3: HubSpot-Konto authentifizieren
+
+Melde dich in deinem HubSpot-Konto an und autorisiere den Zugriff.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079847059/original/GpZ-ctQV2xGNyTOzMf_oScmBBPGQJzjIsA.png?1788290963)
+
+#### Schritt 4: Tipps prüfen
+
+Nachdem dein Schlüssel verifiziert wurde, öffnet sich der Import-Assistent bei **Erste Schritte**. Dieser Schritt zeigt ein kurzes Video und einige Tipps:
+
+- Bereinige Duplikate in HubSpot vor dem Import.
+- Erstelle vor dem Import ein Backup deiner aktuellen Daten.
+- Prüfe die Feldzuordnungen vor dem Start des Imports.
+
+Klicke auf **Weiter**, wenn du bereit bist.
+
+![Der Schritt „Erste Schritte“ des Import-Assistenten mit einem Video, Link zur Anleitung und Tipps für einen erfolgreichen Import.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155072126040/original/TaaChJhKSfmnvJLK7fFCFCxQvmd3gp697w.png?1779707517)
+
+#### Schritt 5: Zu importierende Daten auswählen
+
+Wähle aus, welche HubSpot-Objekte übertragen werden sollen:
+
+- **Kontakte**: Personen, die du erfasst (Leads, Kunden, Interessenten).
+- **Aufgaben**: To-dos, Nachfassaktionen und Erinnerungen, die mit deinen Datensätzen verknüpft sind.
+- **Deals**: Pipeline-Wert und Status. Deals werden als **Chancen** importiert.
+
+  Für den Import von Deals sind Kontakte erforderlich. Kontakte werden automatisch ausgewählt, wenn du Deals auswählst.
+
+Aktiviere die gewünschten Kontrollkästchen und klicke auf **Weiter**.
+
+![Der Schritt „Objekte auswählen“ mit zwei Karten: Kontakte und Deals, mit Kontrollkästchen zur Auswahl.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155072126039/original/WknkLNjZFkN1Xq8naigkYfgb3OydLqpC8w.png?1779707517)
+
+#### Schritt 6: Enthaltene Daten prüfen
+
+Der Assistent bezieht automatisch die zugehörigen Daten ein, um deine Datensätze vollständig und verknüpft zu halten:
+
+- **Kontakte:** alle Eigenschaften (Standard- und benutzerdefinierte Felder).
+- **Aufgaben:** Verknüpfungen.
+- **Deals:** alle Eigenschaften + **Pipelines**.
+
+  Pipeline-Phasen werden zusammen mit den Pipelines importiert. Du musst sie nicht neu anlegen.
+
+**Zwei wichtige Punkte bei benutzerdefinierten Feldern:**
+
+- **Benutzerdefinierte Felder werden nach Schlüssel zugeordnet.** Wenn in deinem Konto bereits ein benutzerdefiniertes Feld mit demselben Schlüssel existiert, erzeugt der Import für dieses Feld einen Fehler. Benenne das bestehende Feld vor dem Import um oder entferne es.
+- **Abweichender Name und Bezeichner.** Wenn der interne Name und das Anzeigename-Label eines benutzerdefinierten Felds in HubSpot voneinander abweichen, kann es beim Import zu Problemen kommen. Gleiche Name und Label in HubSpot vorab an.
+
+Klicke auf **Weiter**.
+
+![Der Schritt „Enthaltene Daten prüfen“ zeigt Kontakte (Eigenschaften) und Deals (Eigenschaften und Pipelines) als standardmäßig enthalten an.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155072126047/original/H6sj08ArUeXGVW3NA-Y1v24Pd8Iz-B59Nw.png?1779707518)
+
+#### Schritt 7: Datensatzanzahl bestätigen
+
+Vor dem Start zeigt der Assistent an, was übertragen wird und wie viele Datensätze betroffen sind. Jede Zeile zeigt:
+
+- **HubSpot-Daten**: Was in HubSpot vorhanden ist (z. B. Kontakte – Datensätze, Deals – Pipelines).
+- **Importiert als**: Was daraus in deinem Konto wird (z. B. Kontakte – benutzerdefinierte Felder, Chancen – Pipelines).
+- **Gefundene Datensätze**: Wie viele Datensätze importiert werden.
+
+```
+Hinweis: Die Anzahl gefundener Datensätze für benutzerdefinierte Felder kann von der Anzeige in der HubSpot-Oberfläche abweichen. Der Assistent zählt nur Felder, die er zuordnen und importieren kann.
+```
+
+Klicke optional auf das **Bearbeiten-Symbol** (Stift) neben den Kontakt- oder Deal-Eigenschaften, um bestimmte Eigenschaften auszuwählen.
+
+Klicke auf **Bestätigen und Import starten**. Bestätige dies nochmals im folgenden Dialogfenster.
+
+![Der Schritt „Vorschau und Import“ mit einer Tabelle zur Bestätigung der Importdetails mit HubSpot-Daten, Importiert als und Anzahl gefundener Datensätze.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155072126050/original/vRme00VQrzpf7Im_ajSZEYI-aIYdKEFW5Q.png?1779707519)
+
+#### Schritt 8: Import wird ausgeführt
+
+Oben auf der Seite erscheint eine Bestätigung: **Dein HubSpot-Import wurde gestartet und läuft im Hintergrund.** Die Tabelle **Import-Verlauf** darunter zeigt den laufenden Vorgang mit dem aktuellen Status **Verarbeitung in %**.
+
+Du kannst das Fenster schließen oder die Seite verlassen. Der Import läuft weiter. Kehre jederzeit auf diese Seite zurück, um den Fortschritt zu prüfen.
+
+![Ein Erfolgs-Hinweis oben mit dem Text, dass der Import gestartet wurde, darunter die Tabelle „Import-Verlauf“.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155072126049/original/Ms-uQ0gg9bDmJ42JhdWufXNkfQUwl23rAQ.png?1779707519)
+
+#### Schritt 9: Import-Details öffnen (Objektansicht)
+
+Um die Ergebnisse zu prüfen, klicke in der Spalte **Aktionen** einer Importzeile auf das **Augen-Symbol**. Das Fenster **Importdetails** öffnet sich.
+
+Die vier Karten oben zeigen die wichtigsten Kennzahlen:
+
+- **Gesamte Datensätze:** Alle vom Import erfassten Datensätze.
+- **Erfolgreich:** Fehlerfrei importierte Datensätze (mit Erfolgsquote).
+- **Fehler:** Datensätze, die nicht importiert wurden.
+- **Mit Warnungen importiert:** Importierte Datensätze, die geprüft werden sollten.
+
+Die **Objektansicht** (Standard-Tab) fasst jedes Objekt zusammen: Anzahl erfolgreicher Datensätze, Fehler und Gesamtstatus.
+
+![Das Fenster „Importdetails“ in der Objektansicht mit Gesamtdatensätzen, Erfolgen, Fehlern und Warnungen sowie einer Übersichtstabelle pro Objekt.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079846977/original/wI51DUZ4V8rq4hlJAxy2sA8mEeQDuDZbXQ.png?1788290880)
+
+#### Schritt 10: Einzelne Datensätze prüfen
+
+Wechsle zum Tab **Datensatzansicht**, um jeden Datensatz zeilenweise anzuzeigen.
+
+Nutze die Filter oben:
+
+- **Objekte:** Filtere nach Kontakten, Kontakte – Benutzerdefiniertes Feld, Chancen usw.
+- **Status:** Filtere nach **Erfolg**, **Fehler** oder **Mit Warnungen importiert**.
+
+![Das Fenster „Importdetails“ in der Datensatzansicht, gefiltert nach Status = Erfolg, mit erfolgreich importierten Datensätzen.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079846967/original/MOqe4UICaiKWK1qAZczTBiFdPu4i8W96Bg.png?1788290864)
+
+#### Schritt 11: Fehler prüfen und beheben
+
+Setze den Filter **Status** auf **Fehler**, um alle fehlgeschlagenen Datensätze zu sehen. Jede Zeile zeigt das betroffene Objekt und den Grund sowie die HubSpot-Datensatz-ID zur einfachen Zuordnung in HubSpot.
+
+Klicke unten links auf **Herunterladen**, um die vollständige Fehlerliste als CSV zu exportieren. So kannst du die Daten in HubSpot korrigieren und den Import erneut durchführen.
+
+Typische Fehlerursachen findest du in den Abschnitten „Fehlerbehebung“ und „Häufig gestellte Fragen“.
+
+![Das Fenster „Importdetails“ gefiltert nach Status = Fehler mit Zeilen fehlgeschlagener Datensätze und Fehlermeldungen inklusive HubSpot-Datensatz-IDs.](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079846961/original/Qpbsz5PeUpGwtq1XvbCdMPbEe4qP4Nauiw.png?1788290847)
+
+---
+
+## Fehlerbehebung
+
+#### Die Schaltfläche „Prüfen & Verbinden“ gibt einen Fehler aus.
+
+Prüfe, ob dein Schlüssel mit `pat-` beginnt und alle vier Lese-Berechtigungen (Scopes) hinterlegt sind:
+`crm.objects.contacts.read`, `crm.objects.deals.read`, `crm.schemas.contacts.read`, `crm.schemas.deals.read`. Erstelle andernfalls einen neuen Schlüssel in HubSpot und versuche es erneut.
+
+#### Die Anzahl „Gefundene Datensätze“ ist niedriger als in HubSpot.
+
+Der Assistent zählt nur Felder, die tatsächlich zugeordnet und übertragen werden können. Einige HubSpot-Felder werden ausgeschlossen (z. B. nicht unterstützte Feldtypen). Datensätze, die in der Zählung fehlen, werden beim Import ohnehin übersprungen.
+
+#### Fehlermeldung „Kontakt mit HubSpot-Datensatz-ID … konnte nicht importiert werden“
+
+Diese Meldung zeigt an, welcher HubSpot-Kontakt fehlgeschlagen ist. Häufige Gründe:
+
+- **Der Kontakt hat eine Datei an einem Feld angehängt.** Datei-Imports werden noch nicht unterstützt – Kontakte (oder Deals) mit Dateianhängen führen zu einem Fehler. Lösung: Lade die Datei aus HubSpot herunter, entferne den Anhang aus dem Feld und führe den Import erneut aus. Die Datei kann nach dem Import manuell angehängt werden.
+- **Kollision von Feldschlüsseln.** Benutzerdefinierte Felder werden über ihren internen Schlüssel zugeordnet. Existiert im Ziel bereits ein Feld mit demselben Schlüssel, schlägt der Import für dieses Feld fehl. Benenne das bestehende Feld vor dem Import um oder lösche es.
+- **Name und Bezeichner des benutzerdefinierten Felds stimmen nicht überein.** Wenn interner Name und Label in HubSpot voneinander abweichen, kann das System das Feld nicht eindeutig zuordnen. Gleiche beides vor dem Import in HubSpot an.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Kann ich den Import wiederholen oder dort fortsetzen, wo ich aufgehört habe?**
+
+Ja. Starte einen neuen Import über die Seite „Daten importieren“. Jeder Durchlauf wird separat im Import-Verlauf protokolliert. So kannst du Durchläufe vergleichen und die Fehler-CSV prüfen, bevor du den Import erneut startest.
+
+**F: Überschreibt der Import bestehende Datensätze?**
+
+Standardmäßig nein. Importierte Datensätze werden zu den bestehenden Datensätzen in deinem Konto hinzugefügt. Daher wird empfohlen, in ein leeres Konto zu importieren und „Duplikate erlauben“ während des Imports zu aktivieren (siehe Abschnitt „Vor dem Start“).
+
+**F: Wo finde ich die vollständige Fehlerliste?**
+
+Öffne die Importdetails einer beliebigen Importzeile, wechsle zur Datensatzansicht, setze den Status auf „Fehler“ und klicke auf „Herunterladen“, um die vollständige Liste als CSV zu exportieren.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn dein HubSpot-Import fehlschlägt, unvollständig ist oder unerwartete Datensatzanzahlen anzeigt, prüfe zunächst die Verbindung, die ausgewählten Objekte, die Feldzuordnungen und die Import-Ergebnisse.
+
+Stelle Folgendes sicher:
+
+- Die Option **Aus HubSpot importieren** ist für dein Konto verfügbar.
+- Du arbeitest vor dem Start des Imports im richtigen Konto.
+- Deine HubSpot-Verbindung ist erfolgreich authentifiziert.
+- Die erforderlichen Leseberechtigungen oder Scopes sind in der HubSpot-Verbindung enthalten.
+- Kontakte sind ausgewählt, wenn Deals als Chancen importiert werden.
+- Die gewünschten Objekte sind vor dem Start der Migration ausgewählt.
+- Die Duplikateinstellungen sind vor dem Import wie empfohlen konfiguriert.
+- Vorhandene benutzerdefinierte Felder nutzen nicht dieselben internen Schlüssel wie die zu importierenden Felder.
+- Namen und Bezeichner von HubSpot-Feldern stimmen nach Möglichkeit überein.
+- Nicht unterstützte Feldtypen werden nicht in der Import-Zählung erwartet.
+- Wichtige Pipelines, Phasen, Aufgaben, Notizen und Verknüpfungen werden nach dem Import geprüft.
+- Der Import ist vollständig abgeschlossen, bevor du die Endergebnisse bewertest.
+- **Importdetails → Datensatzansicht** wurde auf Datensätze mit dem Status **Fehler** oder **Mit Warnungen importiert** geprüft.
+- Die Fehler-CSV wurde heruntergeladen und vor einem erneuten Import geprüft.
+- In den Fehlermeldungen genannte Quelldatenprobleme wurden vor dem erneuten Import behoben.
+
+Wenn die importierte Datensatzanzahl niedriger ist als in HubSpot angezeigt, prüfe, ob nicht unterstützte Felder oder Datensätze in der Import-Vorschau ausgeschlossen wurden. Eine Differenz bedeutet nicht zwingend einen fehlgeschlagenen Import.
+
+Besteht das Problem weiterhin, notiere Datum und Uhrzeit des Imports, ausgewählte Objekte, etwaige Verbindungsfehler, den Importstatus, betroffene HubSpot-Datensatz-IDs, halte die Fehler-CSV sowie Screenshots der **Importdetails** bereit und wende dich an den UmsatzAgent Support.

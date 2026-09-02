@@ -1,0 +1,175 @@
+---
+title: "Marketing-Tools in Funnel/Website nutzen – Cookie-Banner"
+description: "Wenn du eines der folgenden Analyse-Tools verwenden möchtest, nutze die in diesem Dokument bereitgestellten Codes für die korrekte Einrichtung."
+---
+
+Wenn du eines der folgenden Analyse-Tools verwenden möchtest, nutze die in diesem Dokument bereitgestellten Codes für die korrekte Einrichtung.
+
+**INHALTSVERZEICHNIS**
+
+- [Wichtiger Hinweis](#wichtiger-hinweis)
+- [Facebook-Pixel](#facebook-pixel)
+- [Google Analytics](#google-analytics)
+- [Google Tag Manager](#google-tag-manager)
+
+---
+
+### Wichtiger Hinweis
+
+Die `<noscript>`-Tags **müssen entfernt werden**, da das UmsatzAgent-Cookie-Banner eine JavaScript-basierte Lösung ist. `<noscript>` ist für Browser gedacht, die kein JavaScript unterstützen. Wird es beibehalten, können Cookies unbeabsichtigt ohne Zustimmung des Nutzers gesetzt werden.
+
+### Marketing-Tools mit Cookie-Einwilligung integrieren
+
+Bei der Integration von Marketing-Tools mit dem Cookie-Einwilligungsbanner kannst du prüfen, welchen Cookie-Kategorien die Nutzer zugestimmt haben. Folge der Implementierungsanleitung für gängige Marketing-Tools.
+
+#### Implementierungshinweis:
+
+Der unten stehende Code sollte deine bestehenden Tracking-Codes für **Meta-Pixel, Google Tag Manager (GTM) oder Google Analytics (GA)** ersetzen. Füge ihn in den Einstellungen für Funnels, Websites oder Webinare in den **Header-Code** oder den **Head-Tracking-Code** ein. Diese Vorlage stellt die ordnungsgemäße Integration mit dem Cookie-Einwilligungsbanner sicher.
+
+##
+
+## Facebook-Pixel
+
+```
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent', 'revoke');
+    fbq('init', '{your-pixel-id-goes-here}');
+    fbq('track', 'PageView');
+    window.addEventListener('LCCookieConsentDoneFB',function(cookieConsent){
+    fbq('consent', cookieConsent.detail.fb)},!1)
+</script>
+```
+
+## Google Analytics
+
+```
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+  });
+  window.addEventListener(
+    "LCCookieConsentDoneGTag",
+    function (cookieConsent) {
+      if (cookieConsent.detail.gtag === 'grant'){
+        gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        });
+      }
+    },
+    !1
+  );
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "TAG_ID");
+</script>
+```
+
+##
+
+## Google Tag Manager
+
+```
+<!-- Google Tag Manager -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+  });
+  window.addEventListener(
+    "LCCookieConsentDoneGTM",
+    function (cookieConsent) {
+      if (cookieConsent.detail.gtm === 'grant'){
+        gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        });
+      }
+    },
+    !1
+  );
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXX');</script>
+<!-- End Google Tag Manager -->
+```
+
+###
+
+### Cookie-Kategorien auslesen Der folgende Code ist optional, wenn du die Einwilligung oder die vom Nutzer akzeptierten Kategorien für eigenen Code oder Drittanbieter-JavaScript auslesen möchtest
+
+```
+// Helper function to get consented categories
+function getConsentedCategories() {
+  const categoriesCookie = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('cookie-categories='));
+
+  if (categoriesCookie) {
+    // Convert cookie value to array
+    return categoriesCookie.split('=')[1].split(',');
+  }
+  return [];
+}
+
+// Helper function to check if category is allowed
+function isCategoryAllowed(category) {
+  const categories = getConsentedCategories();
+  return categories.includes(category);
+}
+
+// Helper function to get cookie config
+function getCookieConfig() {
+  const cookieConfig = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('cookie-config='));
+
+  if (cookieConfig) {
+    return cookieConfig.split('=')[1]; // Returns: all, essential, or custom
+  }
+  return undefined; // Return undefined if user hasn't made a choice yet
+}
+```
+
+###
+
+### Wichtige Hinweise:
+
+1. Die Cookie-Kategorien werden im Cookie `cookie-categories` gespeichert.
+2. Kategorien sind durch Kommas getrennt (z. B. "essential,advertising,analytics").
+3. Prüfe beim Laden deiner Marketing-Tools immer die anfängliche Einwilligung.
+4. Höre auf Events zur Einwilligungsänderung, um die Tool-Einstellungen zu aktualisieren.
+5. Entferne alle `<noscript>`-Tags, da diese die Einwilligungsprüfungen umgehen können.

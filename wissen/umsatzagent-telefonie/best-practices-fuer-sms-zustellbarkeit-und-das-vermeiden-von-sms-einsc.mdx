@@ -1,0 +1,106 @@
+---
+title: "Best Practices für SMS-Zustellbarkeit und das Vermeiden von SMS-Einschränkungen"
+description: ""
+---
+
+## Überwachung von Fehler- und Opt-out-Raten
+
+- Wir stellen sicher, dass Mobilfunkanbieter dein Konto nicht aufgrund von fehlerhaftem Versandverhalten blockieren oder dauerhaft sperren.
+- Die Zustellrate des gesamten Kontos wird überwacht, und es werden proaktive Maßnahmen ergriffen, um die Zustellrate stabil zu halten:
+  - **Verstoß-E-Mail**: Eine E-Mail-Benachrichtigung wird versendet, sobald das Konto eine Fehlerrate von 8 % und eine Opt-out-Rate von 2 % erreicht.
+  - **Vorübergehende Kontoeinschränkung**: Eine Sperr-E-Mail wird versendet, sobald das Konto eine Fehlerrate von 12,5 % und eine Opt-out-Rate von 3 % erreicht.
+
+**Bitte beachten:**
+
+```
+Sobald das Konto vorübergehend gesperrt ist, schlagen alle ausgehenden SMS bis 00:00 Uhr UTC fehl.
+```
+
+### Was tun bei Erhalt einer Verstoß-E-Mail?
+
+1. ### Stoppe alle Workflows, Kampagnen, Trigger und Massenaktionen an Kontakte, die nicht ausdrücklich eingewilligt haben, Nachrichten zu erhalten.
+2. Aktiviere und passe den Opt-out-Hinweis und die Absenderkennung für deinen Anwendungsfall an, damit künftige Nachrichten nicht markiert werden.
+3. Stelle sicher, dass vorerst keine Massennachrichten oder Kaltakquise-Kampagnen versendet werden.
+
+### Was sind Fehler- und Opt-out-Raten und welche Richtwerte gelten?
+
+- Eine **hohe Opt-out-Rate** weist darauf hin, dass Kontakte dem Erhalt widersprochen, Beschwerden eingereicht oder deine SMS als Spam markiert haben. **Eine gute Opt-out-Rate liegt üblicherweise im Bereich von 0–1 %. Erreicht die Opt-out-Rate 2 %, wird das Konto für 24 Stunden für den SMS-Versand gesperrt.**
+- Eine **hohe Zustellfehlerrate** weist darauf hin, dass SMS an Nummern gesendet werden, die ungültig oder unerreichbar sind oder keine SMS empfangen können (z. B. Festnetzanschlüsse). Dies kann auch bedeuten, dass externe Mobilfunkanbieter deine SMS aufgrund früheren fehlerhaften Versandverhaltens blockieren. **Eine gute Fehlerrate liegt üblicherweise im Bereich von 0–6 %. Erreicht die Fehlerrate 12 %, wird das Konto für 24 Stunden für den SMS-Versand gesperrt.**
+
+### Wie kann die Kontosperrung vorzeitig aufgehoben werden?
+
+- Die Sperrung wird nach 24 Stunden aufgehoben. Ist das Konto dauerhaft gesperrt, wende dich an den UmsatzAgent Support.
+
+**So vermeidest du künftige SMS-Sperren**
+
+Das Konto kann ab 00:01 Uhr UTC am Folgetag nach Erhalt der Benachrichtigung wieder SMS versenden. Nutze die folgenden Best Practices, um die Fehlerrate zu senken:  
+
+1. [***Füge Opt-out-Hinweise ein (Antworte STOP zum Abmelden)***](https://UmsatzAgent.canny.io/changelog/UmsatzAgent Telefon-release-features-enhancement-and-optimisations-1) – in jeder ersten SMS an einen neuen Kontakt.
+
+[![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079742276/original/wUOwF-wMbhSfMV3Su9UvKWkqyL1RRc2VGA.png?1788206425)](https://help.umsatzagent.com/support/solutions/articles/48001213941-isv-messaging-policy#3.-Opt-Out-Language-addition)
+
+2. [***Füge Absenderinformationen ein (Vorstellung von dir/deinem Unternehmen)***](https://UmsatzAgent.canny.io/changelog/UmsatzAgent Telefon-release-features-enhancement-and-optimisations-1) – in jeder ersten SMS an einen neuen Kontakt. 
+
+ 
+
+ 
+
+3. Sende keine Nachrichten an nicht SMS-fähige Anschlüsse wie Festnetznummern. ***Aktiviere dazu die Nummernvalidierung***. Diese Funktion prüft die Nummer vor dem Senden und setzt bei Bedarf vorübergehend den DND-Status (Bitte nicht stören) für den Kontakt. 
+
+ 
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155039922166/original/5oP1oLsl249tRXp2FSF86tBhdLxn4BgwSg.png?1737013058)
+
+4. ***Vermeide öffentliche URL-Shortener*** wie bit.ly oder rb.gy. Sende stattdessen den vollständigen Original-Link.  
+
+ 
+
+5. ***Stelle sicher, dass das Unternehmensprofil, die A2P-Marke und die Kampagne registriert sind***, da ohne diese Registrierungen keine Nachrichten an US-Empfänger zugestellt werden. Der Tab für das Trust Center wird sichtbar, sobald als Land die USA eingestellt ist.
+
+Ist das Land nicht auf die USA eingestellt, kannst du das System unter Einhaltung der Best Practices nutzen, um eine hohe Zustellrate zu gewährleisten und Markierungen zu vermeiden. Eine A2P-Kampagne bietet zusätzliche Sicherheit bei der Zustellung, ist für andere Regionen jedoch nicht zwingend erforderlich. 
+
+ 
+
+**Hinweis**: Die Kampagnen-Verifizierung kann bis zu 6–7 Wochen dauern. Wurde sie nach der 7. Woche noch nicht freigegeben, wende dich an den UmsatzAgent Support. 
+
+ 
+
+6. ***Füge bei Webformularen ein Kontrollkästchen ein, um die Einwilligung des Kontakts beim Absenden einzuholen***, falls Kontakte darüber generiert werden. 
+
+Beispieltext für die Einwilligung:  
+
+*Mit der Angabe deines Namens und deiner Kontaktdaten willigst du ausdrücklich ein, Mitteilungen von FIRMENNAME zu erhalten. Dies kann Anrufe, SMS und E-Mails zu Marketingzwecken umfassen. Die Einwilligung ist keine Bedingung für den Kauf von Produkten oder Dienstleistungen. Es können Verbindungs- und Datengebühren des Mobilfunkanbieters anfallen. Du kannst diese Einwilligung jederzeit widerrufen, indem du uns unter 0800-000-000 anrufst oder eine E-Mail an E-MAIL-ADRESSE sendest.* 
+
+ 
+
+7. Empfehlung: Die erste Nachricht sollte die Quelle enthalten, über die sich der Kontakt angemeldet hat. 
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079742241/original/EC3coMPzcsOmuvRqqlk_oxztMbibnoGAgg.png?1788206388)
+
+ 
+
+8. Empfehlung: Füge einen Opt-in-Hinweis ein, damit Kontakte per SMS und Formular-Kontrollkästchen ein Double-Opt-in durchführen (z. B. „Antworte mit 1 zum Anmelden“).  
+
+---
+
+## Brauchst du Hilfe?
+
+Hat dein Konto eine SMS-Verwarnung oder eine vorübergehende Einschränkung erhalten, überprüfe zunächst dein Versandverhalten, die Qualität der Kontakte sowie die aktuellen Fehler- und Opt-out-Raten.
+
+Prüfe Folgendes:
+
+- Nachrichten werden nur an Kontakte gesendet, die eine gültige SMS-Einwilligung erteilt haben.
+- Kaltakquise, gekaufte Listen und Massenversand an Kontakte ohne Einwilligung wurden gestoppt.
+- Erstnachrichten weisen den Absender klar aus.
+- Erforderliche Opt-out-Hinweise wie **Antworte STOP zum Abmelden** sind enthalten.
+- Ungültige, nicht erreichbare oder nicht SMS-fähige Nummern (z. B. Festnetz) werden entfernt oder gefiltert.
+- Es werden keine öffentlichen URL-Shortener im Nachrichteninhalt verwendet.
+- Unternehmens- und Messaging-Registrierungen sind vollständig hinterlegt, sofern erforderlich.
+- Webformulare holen die SMS-Einwilligung separat und transparent ein.
+- Opt-out-Anfragen werden sofort berücksichtigt.
+- Fehler- und Opt-out-Raten wurden überprüft und gesenkt, bevor der Versand fortgesetzt wird.
+- Workflows, Kampagnen, Trigger und Massenaktionen wurden auf Kontakte überprüft, die keine Nachrichten mehr erhalten dürfen.
+
+Ist das Konto vorübergehend eingeschränkt, warte das Ende der Sperrfrist ab, bevor du wieder SMS versendest. Korrigiere vor dem erneuten Senden das Versandverhalten, das zum Verstoß geführt hat, um erneute Sperren zu vermeiden.
+
+Besteht das Problem weiterhin, sammle die Benachrichtigung zum Verstoß, die aktuellen Fehler- und Opt-out-Raten, betroffene Workflows oder Kampagnen, Beispielnachrichten, die Opt-in-Methode sowie aktuelle Zustellfehler und wende dich an den UmsatzAgent Support.

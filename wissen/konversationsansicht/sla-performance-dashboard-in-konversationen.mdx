@@ -1,0 +1,134 @@
+---
+title: "SLA-Performance-Dashboard in Konversationen"
+description: "Das SLA-Performance-Reporting hilft dir zu überwachen, wie zuverlässig dein Team innerhalb definierter Service-Level-Ziele antwortet. Das Dashboard…"
+---
+
+Das SLA-Performance-Reporting hilft dir zu überwachen, wie zuverlässig dein Team innerhalb definierter Service-Level-Ziele antwortet. Das Dashboard liefert Gesamtergebnisse zu SLAs, Leistung auf Benutzerebene, Leistung auf Kanalebene, Antwortzeittrends und Filterwerkzeuge, damit du Verzögerungen erkennen und die Antworteckdaten verbessern kannst.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist das SLA-Performance-Reporting?](#was-ist-das-sla-performance-reporting)
+- [Wo du SLA-Berichte findest](#wo-du-sla-berichte-findest)
+- [Übersicht der SLA-Berichte](#uebersicht-der-sla-berichte)
+- [SLA-Metriken erklärt](#sla-metriken-erklaert)
+- [Filter und Sortierung](#filter-und-sortierung)
+- [Hinweis](#hinweis)
+
+Mit dem SLA-Performance-Reporting überwachst du zentral in einem Dashboard, wie effizient dein Team auf Kundennachrichten reagiert, wie SLAs eingehalten werden und wo Optimierungsbedarf besteht.
+
+Hinweis: Du kannst diese Funktion unter Labs aktivieren – **Conversations SLA Performance Dashboard**. Diese Funktion ist nur in der neuen Konversationen-Oberfläche verfügbar. Um die neue Oberfläche zu aktivieren, schalte **CRM Redesign: Conversations and Contacts Page(Beta)** unter Labs ein. Daten für das SLA-Performance-Dashboard sind ab dem 23. März 2026 verfügbar.
+
+## Was ist das SLA-Performance-Dashboard?
+
+Das SLA-Performance-Dashboard gibt Einblick darin, wie gut dein Team Antwortzeit-Zusagen (SLAs) einhält. Es beantwortet Kernfragen wie:
+
+- Werden SLAs durchgehend eingehalten?
+- Welche Kanäle erfordern Aufmerksamkeit?
+- Wie entwickeln sich die einzelnen Kennzahlen im Zeitverlauf?
+
+## Wo du das SLA-Dashboard findest
+
+Öffne den Bereich Konversationen. Gehe zu: **Analytics → SLA-Performance**
+
+Auf einer Seite findest du drei Berichte:
+
+- SLA-Übersichtsbericht
+- Benutzer-Performance-Bericht
+- Kanalbericht
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857438/original/Nb3Lz3WNfbMxqWJCV3cGzWmSKfbpqYwWGw.png?1788312741)
+
+## Übersicht der SLA-Berichte
+
+### 1. SLA-Übersicht:
+
+Bietet eine Zusammenfassung der SLA-Performance, einschließlich:
+
+- Prozentualer Anteil eingehaltene SLAs (SLA Met %) und verletzte SLAs (SLA Breached %)
+- Durchschnittliche Antwortzeit
+- Trend-Diagramm für den Leistungsverlauf über die Zeit
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857503/original/j9KqkeBFEZ8qqpiYV8vsqi-Bfqn_swTtIQ.png?1788312794)
+
+### 2. Benutzer-Performance-Bericht
+
+Zeigt die SLA-Performance für jeden Benutzer an.
+
+**Zuordnungslogik:**
+
+- Die SLA-Performance wird dem **zum Zeitpunkt der SLA-Auswertung zugewiesenen Benutzer** zugeordnet
+- Selbst wenn später ein anderer Benutzer antwortet, bleibt das SLA-Ergebnis mit dem ursprünglichen Zuständigen verknüpft
+
+### 3. Kanalbericht
+
+Schlüsselt die SLA-Performance nach Kommunikationskanal auf (z. B. SMS, E-Mail, WhatsApp)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857527/original/P4PBdbGIXzI1ZGXBBNd06xyKpor8KlgmEw.png?1788312828)
+
+## SLA-Metriken erklärt
+
+- **SLA Met %** – Der Prozentsatz der Nachrichten, auf die innerhalb der definierten SLA-Zeit geantwortet wurde.
+  Beispiel: Wenn auf 100 Nachrichten ein SLA angewendet wird und 60 eine Antwort vor Ablauf des SLAs erhalten, liegt der Wert bei 60 %. Nachrichten mit noch aktivem SLA (weder eingehalten noch verletzt) sind von dieser Berechnung **ausgeschlossen**.
+- **SLA Breached %** – Der Prozentsatz der Nachrichten, auf die nicht innerhalb der SLA-Zeit geantwortet wurde.
+  Nur Nachrichten mit abgeschlossenem SLA-Ergebnis (eingehalten oder verletzt) werden berücksichtigt.
+- **Durchschnittliche Antwortzeit:** Die durchschnittliche Zeit bis zur Antwort bei Nachrichten, auf die geantwortet wurde.
+  Es werden nur Nachrichten mit abgeschlossener SLA-Auswertung berücksichtigt.
+- **SLA Met Messages** – Die Gesamtzahl der Nachrichten, die eine Antwort innerhalb der SLA-Zeit erhalten haben.
+- **SLA Breached Messages** – Die Gesamtzahl der Nachrichten, die keine Antwort vor Ablauf der SLA-Zeit erhalten haben.
+- **SLA Tracked Messages:** Die Gesamtzahl der Nachrichten, auf die ein SLA angewendet und deren Ergebnis ermittelt wurde. Dies umfasst nur Nachrichten, bei denen das SLA entweder eingehalten oder verletzt wurde. Nachrichten mit noch aktivem SLA sind nicht enthalten.
+
+---
+
+## Filter und Sortierung
+
+- Verwende den **Datumsfilter** (Heute, Letzte 7 Tage, Letzte 30 Tage, Benutzerdefiniert)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857563/original/I5o_jsBCA3mcHCvYq94cL6laCCHaBWGmrA.png?1788312957)
+
+- Verwende das **Dropdown-Menü des Trend-Diagramms**, um zwischen Metriken zu wechseln
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857534/original/iS1tI4q7HZA5zmLEb3yowRDup9g3GuRBcA.png?1788312862)
+
+- **Sortierung** – Tabellen zur Benutzer- und Kanal-Performance sind standardmäßig nach SLA Met % (vom höchsten zum niedrigsten Wert) sortiert. Klicke auf die Spaltenüberschriften, um nach anderen Metriken zu sortieren.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857471/original/VsVlLM-SGsQIhAd3r1bmty8BWY1rccsPdQ.png?1788312774)
+
+##
+
+Hinweis
+
+- Nur Nachrichten mit abgeschlossener SLA-Auswertung (eingehalten oder verletzt) sind in den Berichten enthalten
+- Als gelesen markierte Konversationen ohne Antwort sind ausgeschlossen
+- Die SLA-Performance wird dem zum Zeitpunkt der Auswertung zugewiesenen Benutzer zugeordnet
+- Nur Admins haben Zugriff auf SLA-Performance-Berichte. Daten für das SLA-Performance-Dashboard sind ab dem 23. Mai 2026 verfügbar.
+
+Du kannst diese Funktion unter Labs aktivieren – Conversations SLA Performance Dashboard. Diese Funktion ist nur in der neuen Konversationen-Oberfläche verfügbar. Schalte dazu CRM Redesign: Conversations and Contacts Page(Beta) unter Labs ein.
+
+---
+
+## Brauchst du Hilfe?
+
+Falls das SLA-Performance-Reporting fehlt oder unerwartete Ergebnisse anzeigt, prüfe zunächst die Zugriffsrechte, Oberflächeneinstellungen, SLA-Konfiguration und den ausgewählten Berichtszeitraum.
+
+Stelle sicher, dass:
+
+- Du die unterstützte **neue Konversationen-Oberfläche** nutzt.
+- **Conversations SLA Performance Dashboard** unter Labs aktiviert ist, falls für dein Konto erforderlich.
+- Das erforderliche Redesign bzw. die aktualisierte Oberfläche für Konversationen aktiviert ist.
+- Du über **Admin-Rechte** verfügst, um SLA-Performance-Berichte einzusehen.
+- Du dich unter **Konversationen → Analytics → SLA-Performance** befindest.
+- Der ausgewählte Datumsbereich Nachrichten mit abgeschlossener SLA-Auswertung enthält.
+- Für die erwarteten Nachrichten tatsächlich ein SLA eingerichtet war.
+- Die SLA-Auswertung als **Eingehalten** oder **Verletzt** abgeschlossen wurde.
+- Nachrichten mit aktivem, noch nicht abgeschlossenem SLA nicht in den Kennzahlen für abgeschlossene SLAs erwartet werden.
+- Als gelesen markierte Konversationen ohne Antwort nicht im Bericht auftauchen.
+- Die Benutzer-Performance dem Benutzer zugerechnet wird, der zum Zeitpunkt der SLA-Auswertung zugewiesen war.
+- Die richtigen Kanal- oder Benutzerfilter aktiv sind.
+- Die Sortierung die Reihenfolge der Ergebnisse nicht unbeabsichtigt verändert hat.
+- Du keine Berichtsdaten aus einem Zeitraum vor Beginn des SLA-Dashboard-Trackings erwartest.
+
+Falls Gesamtzahlen niedriger als erwartet ausfallen, prüfe, ob die fehlenden Konversationen ihre SLA-Auswertung im ausgewählten Zeitraum abgeschlossen haben. Aktive SLA-Timer und reine Lese-Konversationen ohne Antwort sind von den abgeschlossenen SLA-Berichten ausgenommen.
+
+Besteht das Problem weiterhin, notiere den ausgewählten Datumsbereich, die betroffenen Benutzer oder Kanäle, das erwartete SLA-Ergebnis, die tatsächlichen Berichtswerte, Beispielkonversationen sowie Screenshots des SLA-Performance-Dashboards. Wende dich an den UmsatzAgent Support.

@@ -1,0 +1,168 @@
+---
+title: "Konversations-SLAs einrichten und nachverfolgen"
+description: "Konversations-SLAs (Service Level Agreements) helfen Teams dabei, einheitliche Antwortzeiten einzuhalten und sicherzustellen, dass keine Kundennachricht…"
+---
+
+Konversations-SLAs (Service Level Agreements) helfen Teams dabei, einheitliche Antwortzeiten einzuhalten und sicherzustellen, dass keine Kundennachricht übersehen wird. Dieser Artikel zeigt, wie du SLAs für Konversationen einrichtest und nachverfolgst.
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist ein Konversations-SLA?](#was-ist-ein-konversations-sla)
+- [Wichtigste Vorteile von Konversations-SLAs](#wichtigste-vorteile-von-konversations-slas)
+- [So richtest du Konversations-SLAs ein](#so-richtest-du-konversations-slas-ein)
+- [SLA-Timer in Konversationen verstehen](#sla-timer-in-konversationen-verstehen)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+---
+
+## Was ist ein Konversations-SLA?
+
+Ein Konversations-SLA (Service-Level Agreement) ist ein Antwortzeitziel, das für jeden eingehenden Thread im Konversations-Posteingang herunterzählt. Die Timer starten, sobald eine neue Kundennachricht eintrifft, und färben sich grau (im Zeitplan), orange (bald fällig) oder rot (überfällig), wenn sich die Frist nähert. So erhalten Mitarbeiter einen visuellen Echtzeit-Hinweis, um vor Ablauf des SLAs zu antworten.
+
+---
+
+## Wichtigste Vorteile von Konversations-SLAs
+
+- **Schnellere Antworten:** Teams wissen immer, wie viel Zeit zum Antworten verbleibt.
+- **Bessere Priorisierung:** Farbcodierte Timer heben die dringendsten Threads hervor.
+- **Kanal-Flexibilität:** Erstelle ein universelles SLA oder individuelle Ziele für E-Mail, SMS, Facebook, WhatsApp, TikTok und mehr.
+- **Verbindlichkeit und Berichte:** Manager können nach „Längste SLA-Überfälligkeit“ und „Nächstes SLA-Ziel“ filtern, sortieren und Berichte erstellen, um Optimierungspotenziale zu erkennen.
+
+---
+
+## So richtest du Konversations-SLAs ein
+
+### Schritt 1: Zu den SLA-Einstellungen navigieren
+
+1. Klicke auf das Modul **Konversationen**.
+2. Klicke im oberen Bereich auf den Tab **Einstellungen**.
+3. Klicke auf den Schalter **SLA-Einstellungen**, um ihn zu aktivieren.
+4. Dadurch kannst du festlegen, wie Antwortzeitziele über Kanäle hinweg gelten sollen und wie Timer im Posteingang angezeigt werden.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857814/original/hIzFkZ99fzTLhCIUvhumzeWIKqd0fr0drw.png?1788314005)
+
+### Schritt 2: Festlegen, wie SLAs für Kanäle gelten
+
+1. Wähle unter **„Wie sollen SLAs über Kanäle hinweg gelten?“** eine der folgenden Optionen:
+
+   - **Gemeinsames SLA:** Wende dieselbe SLA-Regel auf alle Kanäle an.
+     *Beispiel:* Alle Konversationen müssen – unabhängig davon, ob sie per E-Mail, SMS, Facebook oder TikTok eingehen – innerhalb von 1 Stunde beantwortet werden.
+   - **Kanalspezifisches SLA:** Lege unterschiedliche Antwortzeitziele für jeden Kanal fest.
+     *Beispiel:* SMS-Antworten müssen innerhalb von 15 Minuten erfolgen, während E-Mail-Antworten bis zu 2 Stunden dauern dürfen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857849/original/bYY4-o-j0RcEZ7-l-b6IuXsfpkLRGf8g9A.png?1788314078)
+
+### Schritt 3: SLA-Zeiten festlegen
+
+1. Lege deine bevorzugten Zeitlimits fest, um Antwortzeiten zu steuern:
+
+   - **Bald fällig:** Die Warnzeit vor einer SLA-Verletzung. Wenn eine Konversation dieses Zeitfenster erreicht, wird der Timer **orange**.
+   - **Überfällig:** Die maximal zulässige Zeit für eine Antwort, bevor das SLA als verfehlt gilt. Nach Überschreitung wird der Timer **rot**.
+
+### Schritt 4: Festlegen, wie sich Workflow- und AI-Nachrichten auf SLAs auswirken
+
+1. In diesem Abschnitt kannst du festlegen, ob automatisch über **Workflows** gesendete Nachrichten als gültige Antworten für deine SLA-Timer zählen sollen. So entscheidest du flexibel, ob automatisierte Antworten den Countdown stoppen oder ob nur menschliche Antworten berücksichtigt werden.
+2. Wähle aus, wie sich Workflow- oder Automatisierungsnachrichten auf SLAs auswirken sollen:
+
+   - **Alle Automatisierungsnachrichten als gültige Antworten werten** – Der SLA-Timer stoppt, sobald ein Workflow eine Nachricht sendet.
+   - **Automatisierungsnachrichten nicht als gültige Antworten werten** – Der Timer läuft weiter, bis ein Teammitglied antwortet.
+   - **Nachrichten nur aus bestimmten Workflows werten** – Wähle bestimmte Workflows aus, die den Timer stoppen dürfen, während andere dies nicht tun.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857925/original/7qGiVgZZPCMsvxISikFyYNQwWSNHbVDFnA.png?1788314250)
+
+### Schritt 5: Festlegen, wie sich Nachrichten von AI-Assistenten auf SLAs auswirken
+
+1. Entscheide, wie sich Antworten deines AI-Assistenten auf SLAs auswirken sollen:
+
+   - **AI-Antworten als gültige Antworten werten** – Der SLA-Timer stoppt, wenn der AI-Assistent antwortet. *(Standard)*
+   - **AI-Antworten nicht als gültige Antworten werten** – Der Timer läuft weiter, bis ein menschlicher Mitarbeiter antwortet.
+
+### Schritt 6: Einstellungen speichern und anwenden
+
+1. Sobald du deine Einstellungen vorgenommen hast, klicke auf **Speichern**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857895/original/Ksz4XqcGfi7h6TQrLxSPSkxC7VQ-TWuf9w.png?1788314210)
+2. Ab diesem Zeitpunkt wird für alle neu eingehenden Kundennachrichten automatisch ein SLA-Timer basierend auf deinen Einstellungen angewendet. Bestehende Konversationen folgen weiterhin den SLA-Regeln, die vor der Änderung aktiv waren.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079857941/original/7lJIerluBeIqYeEAvpf8C8tbHjIyvEA1BA.png?1788314303)
+
+---
+
+## SLA-Timer in Konversationen verstehen
+
+Wenn eine neue Kundennachricht eingeht, erscheint ein SLA-Timer in der **Konversationsliste** (linke Seite des Posteingangs). Diese Timer zeigen visuell an, wie viel Zeit zum Antworten verbleibt, und ändern ihre Farbe je nach aktuellem Status. Der Timer verschwindet, sobald ein Mitarbeiter antwortet oder die Konversation manuell als gelesen markiert.
+
+| **Status** | **Farbe** | **Beschreibung** |
+| --- | --- | --- |
+| **Aktiv** | Grau | SLA ist im Zeitplan und innerhalb der zulässigen Zeit. |
+| **Bald fällig** | Orange | Das SLA nähert sich der Antwortfrist. |
+| **Überfällig** | Rot | Die SLA-Zeit wurde überschritten. |
+
+---
+
+### Nach SLA filtern und sortieren
+
+Um Mitarbeitern die Arbeitsorganisation zu erleichtern, bietet der Bereich Konversationen SLA-basierte Filter- und Sortieroptionen.
+
+- **Nach SLA-Status filtern:** Zeige nur aktive, bald fällige oder überfällige Konversationen an.
+- **Nach SLA sortieren:** Ordne Konversationen nach längster Überfälligkeit oder nächstem SLA-Ziel.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Gelten SLAs für bestehende Konversationen, nachdem ich sie aktiviert habe?**
+Nein. SLAs gelten nur für neue eingehende Nachrichten, die nach der Aktivierung der Funktion eintreffen. Bestehende Konversationen laufen ohne SLA-Tracking weiter.
+
+**F: Was passiert, wenn ich SLAs deaktiviere?**
+Wenn SLAs deaktiviert werden, laufen die aktuellen SLA-Timer für bestehende Konversationen weiter, für neue Nachrichten werden jedoch keine SLAs mehr angewendet. Du kannst SLAs jederzeit im Tab SLA-Einstellungen wieder aktivieren.
+
+**F: Stoppen automatisierte oder AI-Antworten den SLA-Timer?**
+Nur wenn dies so konfiguriert ist. Standardmäßig stoppen Workflow-Nachrichten den Timer nicht und AI-Nachrichten stoppen den Timer. Du kannst diese Einstellungen unter „Festlegen, wie sich Workflow- und AI-Nachrichten auf SLAs auswirken“ anpassen.
+
+**F: Berücksichtigt das SLA-Tracking Geschäftszeiten?**
+Derzeit basieren SLAs auf Kalenderstunden. Die Konfiguration von Geschäftszeiten wird in einem zukünftigen Update eingeführt.
+
+**F: Kann ich für jeden Kanal unterschiedliche SLAs festlegen?**
+Ja. Du kannst ein **Gemeinsames SLA** für alle Kanäle festlegen oder **Kanalspezifische SLAs** definieren, um unterschiedliche Antwortzeitziele für jeden Kommunikationskanal zu bestimmen.
+
+**F: Woran erkennen Mitarbeiter, ob eine Konversation überfällig ist?**
+SLA-Timer in Konversationen ändern ihre Farbe zur Anzeige des Status: **Grau (Aktiv)**, **Orange (Bald fällig)** und **Rot (Überfällig)**.
+
+**F: Gelten SLAs für interne Chats oder Kommentare?**
+Nein. SLAs gelten nur für Kundenkonversationen, nicht für interne Teamnachrichten oder Kommentare.
+
+**F: Kann ich Berichte oder Workflow-Trigger mit SLAs erstellen?**
+Noch nicht. SLA-basierte Workflow-Trigger und Performance-Berichte werden in kommenden Versionen verfügbar sein.
+
+**F: Wenn ich meine SLA-Einstellungen ändere, gelten sie dann für alle Konversationen?**
+Nein. Geänderte SLAs gelten nur für neu eingehende Nachrichten. Laufende Konversationen nutzen weiterhin die SLA-Regeln, die bei ihrem Start aktiv waren.
+
+**F: Wenn ein Kontakt mehrere Nachrichten sendet, wie wird der SLA-Timer berechnet?**
+Der SLA-Timer basiert auf der ältesten unbeantworteten Kundennachricht in der Konversation. Dadurch spiegelt die Antwortzeit wider, wie lange der Kontakt bereits wartet, selbst wenn mehrere Folgenachrichten gesendet wurden.
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn Konversations-SLAs fehlen, nicht starten oder einen unerwarteten Status anzeigen, überprüfe zuerst die SLA-Einstellungen, den Zeitpunkt der Nachrichten und das Antwortverhalten.
+
+Prüfe Folgendes:
+
+- **SLA-Einstellungen** sind in den Konversationen aktiviert.
+- Die korrekte Konfiguration für **Gemeinsames SLA** oder **Kanalspezifisches SLA** ist ausgewählt.
+- Die gewünschten Zeitlimits für **Bald fällig** und **Überfällig** sind gespeichert.
+- Die eingehende Nachricht traf ein, **nachdem** die SLA-Einstellungen aktiviert oder aktualisiert wurden.
+- Konversationen, die bereits älteren SLA-Regeln unterliegen, werden nicht fälschlicherweise für neue Regeln erwartet.
+- Es handelt sich um eine Kundenkonversation und nicht um einen internen Chat oder Kommentar.
+- Workflow-Nachrichten sind wie gewünscht konfiguriert, um als gültige Antworten zu zählen oder nicht.
+- AI-Antworten sind wie gewünscht konfiguriert, um den SLA-Timer zu stoppen oder weiterlaufen zu lassen.
+- Der Timer wird ab der ältesten unbeantworteten Kundennachricht berechnet.
+- SLA-Filter blenden keine Konversationen aus, die du sehen möchtest.
+- Die Sortierung nach **Längste Überfälligkeit** oder **Nächstes SLA-Ziel** verhält sich wie vorgesehen.
+- Es werden Kalenderstunden verwendet, da geschäftszeitbasierte SLA-Zeiten noch nicht verfügbar sind.
+- Die Konversation wurde noch nicht beantwortet oder manuell als gelesen markiert, was den aktiven Timer entfernen würde.
+
+Wenn ein SLA früher als erwartet stoppt, prüfe, ob eine Automatisierungs- oder AI-Antwort als gültige Antwort konfiguriert ist. Wenn der Timer nach einer Antwort weiterläuft, stelle sicher, dass der Antworttyp in deinen SLA-Einstellungen berücksichtigt wird.
+
+Bleibt das Problem bestehen, notiere dir die betroffene Konversation, den Kommunikationskanal, die SLA-Konfiguration, den Zeitstempel der eingehenden Nachricht, den Zeitstempel der Antwort, den erwarteten und tatsächlichen SLA-Status sowie Screenshots der SLA-Einstellungen und des Konversations-Timers. Wende dich an den UmsatzAgent Support.

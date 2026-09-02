@@ -1,0 +1,194 @@
+---
+title: "Durch Ratenbegrenzung gebremste E-Mails – Drosselung und Sendelimits beheben"
+description: "Deine E-Mails werden vorübergehend verzögert oder abgewiesen, weil die Empfängerserver die Rate begrenzen, mit der sie Nachrichten von deiner…"
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was passiert hier?](#was-passiert-hier)
+- [Schnelldiagnose: Ratenbegrenzungsprobleme erkennen](#schnelldiagnose-ratenbegrenzungsprobleme-erkennen)
+- [Ratenbegrenzung und Drosselung verstehen](#ratenbegrenzung-und-drosselung-verstehen)
+- [Schritt-für-Schritt-Lösung bei Ratenbegrenzung](#schritt-fuer-schritt-loesung-bei-ratenbegrenzung)
+- [Zeitplan und Erwartungen zur Wiederherstellung](#zeitplan-und-erwartungen-zur-wiederherstellung)
+- [Best Practices zur Vermeidung](#best-practices-zur-vermeidung)
+- [Weiterhin Probleme?](#weiterhin-probleme)
+
+## Ratenbegrenzte/gedrosselte E-Mail-Zustellung: Vollständige Anleitung zur Behebung
+
+## Was passiert hier?
+
+Deine E-Mails werden vorübergehend verzögert oder abgewiesen, weil die Empfängerserver die Rate begrenzen, mit der sie Nachrichten von deiner Absender-Domain oder IP-Adresse annehmen. Dies ist eine Schutzmaßnahme von E-Mail-Anbietern, um Spam zu verhindern und die Serverlast zu steuern. Sie kann jedoch auch legitime Absender treffen, wenn das Sendevolumen sprunghaft ansteigt oder die Absender-Reputation sinkt.
+
+## Schnelldiagnose: Ratenbegrenzungsprobleme erkennen
+
+### Häufige Bounce-Meldungen bei Ratenbegrenzung
+
+- "The recipient's server is temporarily limiting or delaying incoming messages due to high volume or policy"
+- "The sending server is temporarily restricted due to high volume or low reputation"
+- "The recipient is receiving too many emails too quickly, so further messages are temporarily blocked"
+- "Yahoo is temporarily deferring messages due to high volume or user complaints"
+- "The recipient's mailbox has reached its hourly message receiving limit"
+- "The receiving server delayed or rejected the message due to too many delivery attempts"
+- "The recipient server is temporarily limiting or rejecting messages due to high sending volume"
+- "The sending server is temporarily deferring messages due to high volume or user complaints"
+
+---
+
+## Ratenbegrenzung und Drosselung verstehen
+
+### Wichtige Konzepte
+
+**Grundlagen der Ratenbegrenzung:**
+
+- **Vorübergehender Schutz:** Ratenbegrenzungen sind in der Regel vorübergehende Einschränkungen und keine dauerhaften Sperren.
+- **Volumenbasiert:** Werden ausgelöst, wenn du zu viele E-Mails in zu kurzer Zeit an denselben Anbieter sendest.
+- **Von der Absender-Reputation beeinflusst:** Eine niedrigere Absender-Reputation führt zu strengeren Ratenbegrenzungen.
+- **Anbieterspezifisch:** Jeder E-Mail-Anbieter (Gmail, Yahoo, Outlook) hat unterschiedliche Schwellenwerte.
+- **Wiederherstellbar:** Die meisten Ratenbegrenzungen lösen sich bei entsprechenden Anpassungen innerhalb von Stunden bis Tagen auf.
+- **Automatisch behandelte Bounces:** UmsatzAgent markiert ungültige Adressen automatisch, was zur Pflege der Listenqualität beiträgt.
+
+### Kategorien der Ratenbegrenzung
+
+Volumenbasierte Drosselung:
+
+- Zu viele versendete E-Mails in einem kurzen Zeitraum
+- Überschreiten stündlicher oder täglicher Sendelimits
+- Plötzliche Spitzen beim Sendevolumen
+
+Reputationsbasierte Einschränkungen:
+
+- Niedriger Sender-Score löst vorsichtige Limits aus
+- Kürzliche Anstiege bei Beschwerde- oder Bounce-Raten
+- Neue Absender-Domain mit wenig Historie
+
+Limits auf Empfängerebene:
+
+- Empfangslimits einzelner Postfächer überschritten
+- Domainweite Einschränkungen für eingehende Nachrichten
+
+---
+
+## Schritt-für-Schritt-Lösung bei Ratenbegrenzung
+
+### Schritt 1: Strategie für den gestaffelten Versand implementieren
+
+**Nutze die Funktion für gestaffelten Versand, um das E-Mail-Volumen zu steuern:**
+
+1. **Kampagnenerstellung öffnen:**
+   - Gehe zu **Marketing** → **Kampagnen** → **Kampagne erstellen**
+   - Wähle den Typ **E-Mail-Kampagne**
+   - Wähle deine E-Mail-Vorlage und Zielgruppe aus
+2. **Gestaffelten Versand konfigurieren:**
+   - Suche in der Kampagneneinrichtung nach **Planungsoptionen**
+   - Wähle **Gestaffelter Versand** oder **In Batches planen**
+   - Lege vorsichtige Batch-Größen fest: Starte mit 50–100 E-Mails pro Batch
+   - Halte zunächst einen Abstand von 2–4 Stunden zwischen den Batches ein
+3. **Bestehende Kampagnen mit hohem Volumen pausieren:**
+   - Navigiere zu den aktiven Kampagnen und pausiere alle, die große Mengen versenden
+   - Stelle sie auf gestaffelten Versand um
+   - Priorisiere ausschließlich wichtige Mitteilungen
+
+#### Erfolgsindikatoren für den gestaffelten Versand
+
+- Weniger Bounce-Meldungen mit Hinweisen auf hohes Volumen oder zu schnelles Senden
+- Verbesserte Zustellraten innerhalb jedes Batches
+- E-Mails werden reibungslos ohne sofortige Abweisungen verarbeitet
+- Referenz: Anleitung zum gestaffelten E-Mail-Versand
+
+### Schritt 2: Externe Reputations-Metriken überwachen
+
+**Da UmsatzAgent kein integriertes Reputations-Monitoring bietet, nutze diese externen Tools:**
+
+1. **Sender-Score prüfen:**
+   - Besuche **senderscore.org**
+   - Gib deine Absender-Domain oder IP-Adresse ein
+   - Ein Wert unter 70 weist auf Reputationsprobleme hin, die zur Ratenbegrenzung beitragen
+2. **IP-Reputation überprüfen:**
+   - Nutze **mxtoolbox.com/blacklists.aspx**
+   - Prüfe, ob deine Absender-IP auf Blacklists gelistet ist
+   - Achte auf Einträge mit Bezug zu Richtlinien oder Reputation
+3. **Anbieterspezifische Tools:**
+   - **Gmail:** Prüfe die Google Postmaster Tools auf Reputationsdaten
+   - **Microsoft:** Nutze die Smart Network Data Services (SNDS)
+   - **Yahoo:** Beobachte das Feedback im Yahoo Sender Hub
+
+### Schritt 3: Automatische Bounce-Behandlung nutzen
+
+**UmsatzAgent verwaltet unzustellbare Adressen automatisch, um deine Absender-Reputation zu verbessern:**
+
+1. **Bounce-Berichte prüfen:**
+   - Gehe zu **Marketing** → **E-Mail** → **Berichterstattung**
+   - Prüfe Bounce-Raten und -Typen in deinen letzten Kampagnen
+   - Hard Bounces werden automatisch als ungültig markiert
+2. **Verwaltung ungültiger Kontakte überprüfen:**
+   - Navigiere zu **Kontakte** → **Alle Kontakte**
+   - Filtere nach dem Status **Ungültig** oder **Bounced**
+   - Vergewissere dich, dass diese Kontakte von zukünftigen Kampagnen ausgeschlossen sind
+3. **Auf engagierte Segmente fokussieren:**
+   - Gehe zu **Kontakte** → **Smart Lists**
+   - Erstelle Segmente basierend auf kürzlicher E-Mail-Interaktion
+   - Priorisiere den gestaffelten Versand zuerst an deine aktivsten Kontakte
+
+### Schritt 4: Authentifizierung der Absender-Domain überprüfen
+
+**Stelle die korrekte Domain-Authentifizierung sicher, um deine Absender-Reputation zu verbessern:**
+
+1. **Domain-Einstellungen prüfen:**
+   - Gehe zu **Einstellungen** → **E-Mail-Dienste** → **Absender-Domain**
+   - Bestätige, dass die SPF-, DKIM- und DMARC-Einträge als verifiziert angezeigt werden
+   - Achte auf grüne Häkchen oder den Status „Verifiziert“
+2. **DNS-Einträge bei Bedarf aktualisieren:**
+   - Kopiere alle nicht verifizierten DNS-Einträge
+   - Trage sie in den DNS-Einstellungen deiner Domain ein
+   - Warte 24–48 Stunden auf die Verbreitung und erneute Überprüfung
+
+---
+
+## Zeitplan und Erwartungen zur Wiederherstellung
+
+### Phase 1: Sofortige Entlastung (2–6 Stunden)
+
+- **Aktion:** Zu gestaffeltem Versand mit vorsichtigen Volumina wechseln
+- **Erwartetes Ergebnis:** Reduzierte Bounce-Raten, weniger Meldungen über zu schnelles Senden
+- **Erfolgsmetrik:** 50 % weniger Bounces durch Ratenbegrenzung
+
+### Phase 2: Kurzfristige Stabilisierung (1–3 Tage)
+
+- **Aktion:** Batch-Größen bei aktiven Kontakten schrittweise erhöhen
+- **Erwartetes Ergebnis:** Gleichbleibende Zustellung innerhalb jedes Batches
+- **Erfolgsmetrik:** Mehr als 80 % Zustellrate bei Segmenten mit hoher Interaktion
+
+### Phase 3: Vollständige Wiederherstellung (1–2 Wochen)
+
+- **Aktion:** Rückkehr zu größeren Batch-Größen unter Beobachtung der Absender-Reputation
+- **Erwartetes Ergebnis:** Normale Zustellraten über alle Segmente hinweg
+- **Erfolgsmetrik:** Weniger als 2 % Bounces durch Ratenbegrenzung
+
+---
+
+## Best Practices zur Vermeidung
+
+### Cleveres Batch-Management
+
+- **Vorsichtiger Start:** Beginne mit kleinen Batches (50–100 E-Mails) und steigere die Menge schrittweise
+- **Gleichmäßiges Timing:** Verteile die Batches gleichmäßig über die Geschäftszeiten
+- **Anbieter-Besonderheiten beachten:** Ziehe kleinere Batches für strenge Anbieter wie Yahoo in Betracht
+- **Interaktion priorisieren:** Sende in jedem Batch zuerst an Kontakte mit der höchsten Interaktion
+
+### Fortlaufende Pflege der Absender-Reputation
+
+- **Wöchentliche Überwachung:** Prüfe den Sender-Score und den Blacklist-Status wöchentlich
+- **Bounce-Raten nachverfolgen:** Beobachte die Bounce-Raten in den Kampagnenberichten
+- **Auf das System vertrauen:** Lass die automatische Bounce-Behandlung die Listenqualität sichern
+- **Inhaltsqualität:** Vermeide Spam-Signalwörter und achte auf eine professionelle Formatierung
+
+---
+
+## Weiterhin Probleme?
+
+Wenn du nach der Umstellung auf gestaffelten Versand weiterhin Probleme mit Ratenbegrenzungen hast:
+
+1. **Batch-Größen weiter reduzieren:** Versuche es mit 25–50 E-Mails pro Batch bei längeren Intervallen
+2. **Nach Anbietern segmentieren:** Erstelle separate Batches für Empfänger bei Gmail, Yahoo und Outlook
+3. **Inhalte überprüfen:** Analysiere E-Mail-Inhalte auf Elemente, die aggressive Filter auslösen könnten
+4. **Sendezeitpunkt anpassen:** Vermeide Stoßzeiten, zu denen Anbieter die strengsten Beschränkungen anwenden

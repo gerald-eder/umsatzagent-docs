@@ -1,0 +1,80 @@
+---
+title: "Video-Element im E-Mail-Builder"
+description: "Das Einbetten von Videos in E-Mails kann aufgrund von Einschränkungen bei E-Mail-Programmen schwierig sein. Das Video-Element löst dies, indem du…"
+---
+
+Das Einbetten von Videos in E-Mails kann aufgrund von Einschränkungen bei E-Mail-Programmen schwierig sein. Das **Video-Element** löst dies, indem du anklickbare Video-Vorschaubilder einfügen kannst, die zu deinen Videoinhalten verlinken. Dieser Artikel erklärt, wie du das Video-Element im E-Mail-Builder nutzt, einschließlich der Auswahl von Videotypen, dem Anpassen von Vorschaubildern und dem Festlegen von Layouteinstellungen für die beste Darstellung.
+
+**INHALTSVERZEICHNIS**
+
+- Was ist das Video-Element im E-Mail-Builder?
+- So findest du das Video-Element
+- Konfigurationen im Video-Editor
+- Verwandte Artikel
+
+## Was ist das Video-Element im E-Mail-Builder?
+
+Das **Video-Element** im E-Mail-Builder ermöglicht es dir, eine Videovorschau in deine E-Mails einzufügen. Da eine direkte Videowiedergabe in E-Mail-Programmen nicht unterstützt wird, erstellt dieses Element ein anklickbares Vorschaubild mit einem Play-Button, das direkt zu deinem Video verlinkt.
+
+```
+Hinweis: Aufgrund technischer Einschränkungen aller gängigen E-Mail-Programme können Videos nicht direkt in E-Mails eingebettet werden. Der Video-Block erstellt stattdessen ein Vorschaubild (aus dem Thumbnail des Videos), fügt einen Play-Button hinzu und verlinkt das Bild mit deiner Video-URL. Klickt jemand auf das Bild, wird das Video geöffnet.
+```
+
+## So findest du das Video-Element
+
+```
+Hinweis: Das Video-Element ist nur im Design-Editor und in E-Mail-Vorlagen innerhalb des E-Mail-Builders verfügbar.
+```
+
+So findest und nutzt du das Video-Element:
+
+1. Melde dich bei **UmsatzAgent** an.
+2. Navigiere zu **Marketing > E-Mails**.
+3. Klicke auf **+ Kampagne erstellen**, wähle **Leer** und dann **Design-Editor**.
+4. Oder öffne eine bestehende **E-Mail-Vorlage**.
+5. Suche auf der linken Seite das **Video-Element** im Bereich „Elemente“.
+6. Ziehe das Video-Element per **Drag-and-Drop** in dein E-Mail-Layout.
+
+## Konfigurationen im Video-Editor
+
+Der Video-Editor bietet folgende Konfigurationsmöglichkeiten:
+
+**Videotyp:** Es stehen 4 Optionen zur Auswahl: YouTube, Vimeo, Wistia und HTML5. Basierend auf dem ausgewählten Videotyp versucht das System, das Vorschaubild automatisch aus der Video-URL abzurufen, und passt das Design des Play-Buttons an den jeweiligen Anbieter an (z. B. bei YouTube mit rotem Hintergrund und weißem Play-Symbol).
+
+Der Link zum Vorschaubild wird automatisch im Feld „Vorschaubild-URL“ angezeigt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345327/original/mApm1B6ZS-tjUuBrjosfDjuk5KgDEUu2AA.jpeg?1761937216)
+
+**Video-URL:** Trage hier die URL deines Videos ein.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345330/original/IYAbSFqBfQpBUShzdjH8UW7EjuhPK0vxZQ.jpeg?1761937216)
+
+Kann die Vorschau das Thumbnail nicht aus dem Video abrufen, wird eine Warnung angezeigt (z. B. wenn du den Videotyp auf Vimeo änderst, aber eine YouTube-URL verwendest – der Editor versucht dann das Bild über die Vimeo-Logik abzurufen, was fehlschlägt).
+
+```
+HINWEIS: Der Editor löscht das zuvor abgerufene Bild nicht, falls der Abruf fehlschlägt. Wenn du also ein Video ohne eigenes Vorschaubild einfügen möchtest, kannst du zuerst ein Video mit einem passenden Vorschaubild hinterlegen und danach die Video-URL austauschen – das Bild des ersten Videos bleibt erhalten.
+```
+
+**Vorschaubild-URL:** Wie oben beschrieben, ruft der Editor das Standard-Vorschaubild anhand der Video-URL ab und befüllt dieses Feld automatisch. Du kannst jedoch auch ein eigenes Vorschaubild festlegen, indem du dessen URL einträgst.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345328/original/aQZLX_222BpbCCDWi5Lps1PZQbsFhr0QGw.jpeg?1761937217)
+
+Nutze den Button **Replace**, um ein benutzerdefiniertes Video-Vorschaubild hochzuladen.
+
+Nutze den Button **Remove**, um das Standard-Vorschaubild zu entfernen.
+
+**Breite & Höhe:** Über diese Eingabefelder steuerst du die Abmessungen deines Videos. Werden keine Werte eingetragen, nutzt das Video die volle Breite und eine automatische Höhe basierend auf der Bildauflösung.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345323/original/iYD4eFJcvlue11b5mcDMPcYN3v4KezQtSg.jpeg?1761937215)
+
+```
+HINWEIS: Standardmäßig wird das Video-Element immer linksbündig ausgerichtet, wenn du benutzerdefinierte Werte für Höhe und Breite angibst. Anders als bei Bildern gibt es kein Ausrichtungsattribut, du kannst das Video jedoch über Innenabstände (Padding) oder durch Platzieren in einem 2- oder 3-Spalten-Layout ausrichten.
+```
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345325/original/zxsdcxc7et0AcQcp9vn3t3GaXJOUp6rsLA.jpeg?1761937216)
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345324/original/JCUUFNSOKZJTS3g8Z4w3Kw9cfsdzkagpUw.jpeg?1761937215)
+
+**Padding:** Über dieses Feld kannst du den Innenabstand für das Video-Element definieren. Siehe das folgende Bild zur Veranschaulichung:
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155057345326/original/Arh7_ozopSa8a9CWc-7Oko66dNiwgkhNXA.jpeg?1761937216)

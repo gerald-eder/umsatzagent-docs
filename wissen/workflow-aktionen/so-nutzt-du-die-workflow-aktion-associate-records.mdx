@@ -1,0 +1,273 @@
+---
+title: "So nutzt du die Workflow-Aktion „Associate Records“"
+description: "Erstelle automatisch Beziehungen zwischen Datensätzen mithilfe von Workflow-Automatisierungen. Die Workflow-Aktion „Associate Records“ findet passende…"
+---
+
+Erstelle automatisch Beziehungen zwischen Datensätzen mithilfe von Workflow-Automatisierungen. Die Workflow-Aktion „Associate Records“ findet passende Datensätze anhand von dir definierter Regeln und verknüpft diese ohne manuellen Aufwand. Diese Funktion ist derzeit über Labs verfügbar und muss vor der Nutzung aktiviert werden.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Workflow-Aktion „Associate Records“?](#was-ist-die-workflow-aktion-associate-records)
+- [Wichtigste Vorteile](#wichtigste-vorteile)
+- [Typische Anwendungsfälle](#typische-anwendungsfaelle)
+- [So richtest du die Aktion „Associate Records“ ein](#so-richtest-du-die-aktion-associate-records-ein)
+- [Wichtige Hinweise](#wichtige-hinweise)
+- [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+- [Brauchst du Hilfe?](#brauchst-du-hilfe)
+
+---
+
+## Was ist die Workflow-Aktion „Associate Records“?
+
+Viele Geschäftsprozesse beinhalten Datensätze, die miteinander in Beziehung stehen, wie Kontakte, Unternehmen, Chancen oder benutzerdefinierte Objekte. Das manuelle Pflegen dieser Beziehungen kann bei wachsendem Datenbestand sehr zeitaufwendig werden.
+
+Die Workflow-Aktion **Associate Records** sucht anhand von dir definierter Filter automatisch nach passenden Datensätzen und verknüpft sie während der Workflow-Ausführung miteinander.
+
+Egal, ob du Käufer mit Immobilien, Unternehmen mit Chancen oder Kontakte mit benutzerdefinierten Objekten verbindest: Diese Aktion hält dein CRM organisiert und Beziehungen aktuell – ganz ohne manuelles Eingreifen.
+
+---
+
+## Wichtigste Vorteile
+
+Die Aktion „Associate Records“ automatisiert die Datensatzverwaltung und verbessert die Datengenauigkeit in deinem CRM.
+
+- **Erstelle automatisch Datensatzverknüpfungen** während der Workflow-Ausführung.
+- **Reduziere manuelle Datenpflege**, indem Datensätze anhand passender Kriterien verknüpft werden.
+- **Unterstützung für Kontakte, Unternehmen, Chancen und benutzerdefinierte Objekte.**
+- **Gleiche Datensätze dynamisch ab**, unter Verwendung fester Werte oder Platzhalter.
+- **Verwende Verknüpfungs-Labels**, um Beziehungen zu kategorisieren.
+- **Erstelle skalierbare Automatisierungen** ohne externe Tools oder benutzerdefinierten Code.
+
+---
+
+## Typische Anwendungsfälle
+
+Die Aktion „Associate Records“ unterstützt verschiedene Geschäftsprozesse, bei denen Datensätze automatisch verknüpft werden müssen.
+
+Typische Beispiele:
+
+- Käufer mit passenden Immobilien verknüpfen.
+- Unternehmen mit Chancen verbinden.
+- Kontakte mit Projekten oder Service-Datensätzen verknüpfen.
+- Kunden mit Mitgliedschaften oder Abos verknüpfen.
+- Beziehungen zwischen Kontakten und benutzerdefinierten Objekten herstellen.
+- CRM-Datensätze anhand von Geschäftsregeln automatisch organisieren.
+
+---
+
+## So richtest du die Aktion „Associate Records“ ein
+
+Die Aktion „Associate Records“ wird direkt im Workflow konfiguriert. Während der Einrichtung wählst du das zu verknüpfende Objekt aus, definierst Abgleichregeln, wählst eine Abgleichstrategie und vergibst ein Verknüpfungs-Label.
+
+### Funktion aktivieren
+
+Aktiviere vor der Nutzung der Aktion „Associate Records“ die Funktion in Labs.
+
+Navigiere zu:
+
+**Einstellungen → Labs**
+
+Aktiviere **Associate Records – Workflow Action**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079850680/original/oyem61IKWYhXik-DD5mlrkvNcLrKHWHlFg.png?1788296384)**
+
+*Aktiviere die Workflow-Aktion „Associate Records“ auf der Labs-Seite, bevor du deinen Workflow konfigurierst.*
+
+### Workflow öffnen
+
+Erstelle einen neuen Workflow oder öffne einen bestehenden Workflow für Kontakte, Unternehmen, Chancen oder benutzerdefinierte Objekte.
+
+### Aktion „Associate Records“ hinzufügen
+
+Klicke auf das **+**-Symbol, um eine Workflow-Aktion hinzuzufügen.
+
+Suche nach **Associate Records** und wähle die Aktion aus der Kategorie **Associations** aus.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077515833/original/U1Nqtkg72d95zrWkL7xgNaA8PoMZ925Hrw.png?1785778428)**
+
+*Füge die Workflow-Aktion „Associate Records“ aus der Kategorie „Associations“ hinzu.*
+
+### Aktion benennen
+
+Benenne die Aktion optional um, um ihren Zweck im Workflow genauer zu beschreiben.
+
+Beispiele:
+
+- Passende Immobilien verknüpfen
+- Käufer mit Immobilie verknüpfen
+- Service-Datensatz zuordnen
+
+Aussagekräftige Namen erleichtern die Verwaltung umfangreicher Workflows.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077515893/original/GJrieZsZj-jJ7UOWqAAKOd13vbDHAVfw7Q.png?1785778504)**
+
+*Passe den Aktionsnamen optional an, um seinen Zweck zu verdeutlichen.*
+
+### Zu verknüpfendes Objekt auswählen
+
+Wähle den Datensatztyp aus, den der Workflow durchsuchen soll.
+
+Die verfügbaren Objekte hängen von den für dein Konto konfigurierten Verknüpfungen ab.
+
+Beispiele:
+
+- Unternehmen
+- Chancen
+- Benutzerdefinierte Objekte
+- Projekte
+- Immobilien
+- Mitgliedschaften
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077515948/original/JPNyc4jATdEGeU5lbt_A92TfoZOiOUxZKQ.png?1785778554)**
+
+*Wähle das Objekt aus, das die zu verknüpfenden Datensätze enthält.*
+
+### Abgleichregeln konfigurieren
+
+Abgleichregeln bestimmen, welche Datensätze für die Verknüpfung infrage kommen.
+
+Wähle:
+
+- Das auszuwertende Feld.
+- Den Vergleichsoperator.
+- Den Vergleichswert.
+
+Du kannst folgendes verwenden:
+
+- Feste Werte
+- Platzhalter aus dem aufgenommenen Datensatz
+
+Klicke für einen genaueren Abgleich auf **Add Field**, um zusätzliche Bedingungen hinzuzufügen.
+
+Alle Bedingungen nutzen **UND**-Logik. Das bedeutet, dass jede Bedingung erfüllt sein muss, bevor eine Verknüpfung erstellt wird.
+
+Mindestens eine Abgleichregel ist erforderlich.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077516009/original/FIx7jNzdlm6flLuRmkCLwNbBk3VjBDjUUA.png?1785778620)**
+
+*Definiere die Kriterien zum Auffinden passender Datensätze.*
+
+### Umgang mit mehreren Treffern festlegen
+
+Wenn mehr als ein Datensatz deinen Kriterien entspricht, lege fest, wie der Workflow verfahren soll.
+
+Verfügbare Optionen:
+
+- Mit **allen passenden Datensätzen** verknüpfen (Associate with All Matching Records)
+- Mit dem **zuerst erstellten Datensatz** verknüpfen (Associate with the Earliest Created Record)
+- Mit dem **zuletzt erstellten Datensatz** verknüpfen (Associate with the Latest Created Record)
+
+Wähle die Option, die am besten zu deinem Geschäftsprozess passt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077516038/original/tB60bNAJVYRl1T46hiSc3lGSEauDd82Ttw.png?1785778672)**
+
+*Wähle aus, wie der Workflow mit mehreren passenden Datensätzen umgehen soll.*
+
+### Verknüpfungs-Label vergeben
+
+Wähle das Beziehungs-Label aus, das bei der Erstellung der Verknüpfung zugewiesen werden soll.
+
+Verknüpfungs-Labels helfen dabei, zusammengehörige Datensätze zu organisieren und Beziehungen im gesamten CRM verständlich darzustellen.
+
+Beispiele:
+
+- Käufer
+- Verkäufer
+- Kunde
+- Dienstleister
+- Immobilieneigentümer
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077516072/original/t1lBWpx5X4xXQS4BImISXvM4imUgy9cJQw.png?1785778726)
+
+*Wähle das Beziehungs-Label aus, das der Verknüpfung zugewiesen wird.*
+
+### Aktion speichern
+
+Klicke nach Überprüfung deiner Konfiguration auf **Save Action**.
+
+Veröffentliche den Workflow, um Verknüpfungen automatisch zu erstellen, sobald Datensätze die konfigurierten Bedingungen erfüllen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155077515530/original/N4T3KxH0HhLGtmvpkTSGvZF-Mgn0D3onEQ.png?1785778210)**
+
+*Speichere die Aktion und veröffentliche den Workflow, um die Automatisierung zu aktivieren.*
+
+### Verknüpfung überprüfen
+
+Öffne nach der Workflow-Ausführung den Datensatz, der den Workflow ausgelöst hat, und prüfe den Bereich **Verknüpfungen** (Associations).
+
+Der neu verknüpfte Datensatz wird unter dem entsprechenden Objekttyp angezeigt.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079850706/original/MBgOZ0rC9JfBXRqLYnF7jKvbH9_GGmzuKg.png?1788296455)
+
+*Überprüfe, ob der Workflow die Datensatzverknüpfung erfolgreich erstellt hat.*
+
+---
+
+## Wichtige Hinweise
+
+Das Verständnis der Funktionsweise der Aktion „Associate Records“ stellt sicher, dass Verknüpfungen wie gewünscht erstellt werden.
+
+- Die Funktion muss vorab über **Labs** aktiviert werden.
+- Mindestens eine Filterbedingung ist erforderlich.
+- Mehrere Filterbedingungen nutzen ausschließlich **UND**-Logik.
+- Platzhalter können für den dynamischen Abgleich von Datensätzen verwendet werden.
+- Verfügbare Objekte hängen von den in deinem Konto konfigurierten Verknüpfungen ab.
+- Verknüpfungs-Labels sind erforderlich.
+- Bei mehreren Treffern bestimmt die gewählte Abgleichstrategie, welche Datensätze verknüpft werden.
+- Entspricht kein Datensatz den konfigurierten Filtern, wird keine Verknüpfung erstellt und der Workflow läuft regulär weiter.
+
+---
+
+## Häufig gestellte Fragen
+
+### F: Welche Datensatztypen können verknüpft werden?
+
+Die Aktion unterstützt Kontakte, Unternehmen, Chancen und benutzerdefinierte Objekte. Die verfügbaren Optionen hängen von den in deinem Konto konfigurierten Verknüpfungen ab.
+
+### F: Kann ich beim Datensatzabgleich Platzhalter verwenden?
+
+Ja. Platzhalter ermöglichen es dem Workflow, Werte aus dem aufgenommenen Datensatz dynamisch mit anderen Datensätzen zu vergleichen.
+
+### F: Was passiert, wenn keine Datensätze den Filtern entsprechen?
+
+Es wird keine Verknüpfung erstellt und der Workflow fährt mit der nächsten Aktion fort, ohne einen Fehler zu erzeugen.
+
+### F: Kann ich mehrere passende Datensätze verknüpfen?
+
+Ja. Wähle bei der Konfiguration der Abgleichstrategie **Associate with All Matching Records**.
+
+### F: Kann ich mehrere Abgleichbedingungen verwenden?
+
+Ja. Füge über **Add Field** mehrere Filterbedingungen hinzu. Alle Bedingungen müssen erfüllt sein, damit ein Datensatz berücksichtigt wird.
+
+### F: Sind Verknüpfungs-Labels erforderlich?
+
+Ja. Jede durch diese Aktion erstellte Verknüpfung muss ein Verknüpfungs-Label enthalten.
+
+### F: Kann ich ODER-Logik in meinen Filtern verwenden?
+
+Nein. Die Aktion „Associate Records“ unterstützt derzeit nur **UND**-Logik.
+
+### F: Werden bestehende Verknüpfungen automatisch aktualisiert, wenn sich Daten später ändern?
+
+Nein. Verknüpfungen werden beim Durchlauf des Workflows erstellt. Wenn sich Daten später ändern, erstelle einen weiteren Workflow oder Trigger, um die Datensätze erneut auszuwerten.
+
+---
+
+## Brauchst du Hilfe?
+
+Werden keine Verknüpfungen erstellt, prüfe zuerst, ob die Labs-Funktion aktiviert ist, der Workflow veröffentlicht wurde und das ausgewählte Objekt Verknüpfungen unterstützt.
+
+Prüfe vor der weiteren Fehlerbehebung Folgendes:
+
+- Die Labs-Funktion für „Associate Records“ ist aktiviert.
+- Der Workflow ist aktiv und veröffentlicht.
+- Der ausgewählte Objekttyp unterstützt Verknüpfungen.
+- Deine Filterbedingungen identifizieren passende Datensätze korrekt.
+- Platzhalter enthalten gültige Werte.
+- Ein Verknüpfungs-Label wurde ausgewählt.
+- Die Abgleichstrategie passt zu deinem Workflow.
+
+Wenn weiterhin Probleme auftreten, erstelle Screenshots deiner Workflow-Konfiguration, der Abgleichregeln und der Verknüpfungseinstellungen. Wende dich an den UmsatzAgent Support.

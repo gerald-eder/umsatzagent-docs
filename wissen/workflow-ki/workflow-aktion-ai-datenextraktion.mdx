@@ -1,0 +1,217 @@
+---
+title: "Workflow-Aktion: AI-Datenextraktion"
+description: "Dieser Artikel erklärt, wie du die Aktion „AI-Datenextraktion“ in Workflows verwendest, um strukturierte Daten aus unstrukturiertem Text zu extrahieren.…"
+---
+
+Dieser Artikel erklärt, wie du die Aktion „AI-Datenextraktion“ in Workflows verwendest, um strukturierte Daten aus unstrukturiertem Text zu extrahieren. Du findest Schritt-für-Schritt-Anleitungen zur Konfiguration, Details zu verfügbaren Vorlagen und Datentypen, praktische Anwendungsfälle und Antworten auf häufig gestellte Fragen.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Was ist die Workflow-Aktion „AI-Datenextraktion“?](#was-ist-die-workflow-aktion-ai-datenextraktion)
+  - [Wichtigste Vorteile der Workflow-Aktion „AI-Datenextraktion“](#wichtigste-vorteile-der-workflow-aktion-ai-datenextraktion)
+  - [Aktionsdetails](#aktionsdetails)
+  - [Vorlagen](#vorlagen)
+  - [Extrahierte Daten in nachfolgenden Aktionen verwenden](#extrahierte-daten-in-nachfolgenden-aktionen-verwenden)
+  - [So konfigurierst du die Workflow-Aktion „AI-Datenextraktion“](#so-konfigurierst-du-die-workflow-aktion-ai-datenextraktion)
+  - [Häufige Anwendungsfälle](#haeufige-anwendungsfaelle)
+  - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
+
+---
+
+## Was ist die Workflow-Aktion „AI-Datenextraktion“?
+
+Die Workflow-Aktion „AI-Datenextraktion“ ist eine Workflow-AI-Aktion, die unstrukturierten Text in strukturierte Felder umwandelt, die du später im selben Workflow verwenden kannst. Sie ist für Situationen gedacht, in denen wichtige Details in einer SMS-Nachricht, einem E-Mail-Text, einem Webhook-Payload, einer AI-Ausgabe oder anderen textbasierten Daten verborgen sind.
+
+Du definierst die Felder, die du extrahieren möchtest, wie Name, E-Mail-Adresse, Telefonnummer oder Bestellnummer, und die AI analysiert die ausgewählte Eingabe und gibt diese Werte als strukturierte Workflow-Variablen zurück. Diese extrahierten Variablen stehen dann in nachfolgenden Aktionen über die Auswahl benutzerdefinierter Werte zur Verfügung, was die Automatisierung von Follow-ups, Weiterleitungen, Datensatzaktualisierungen und anderen Workflow-Entscheidungen erleichtert. Dadurch entfällt das manuelle Auslesen unstrukturierter Daten oder das Erstellen komplexer bedingter Logiken zum Extrahieren von Informationen aus Freitext.
+
+**Beispiel:** Eine E-Mail geht von einer Lead-Quelle ein, die Aktion extrahiert die Kontaktdaten und diese Werte können anschließend verwendet werden, um einen neuen Kontakt und eine neue Chance zu erstellen.
+
+```
+Wichtig: Dies ist eine Premium-Workflow-Aktion.
+```
+
+---
+
+## Wichtigste Vorteile der Workflow-Aktion „AI-Datenextraktion“
+
+- **Unstrukturierte Eingabe zu strukturierter Ausgabe:** Extrahiere saubere Felder aus E-Mails, SMS-Nachrichten, Webhook-Payloads, Formularantworttexten, AI/GPT-Ausgaben und vorherigen Workflow-Werten.
+- **Keine externen Parsing-Tools erforderlich:** Behalte die Extraktion innerhalb von Workflows, anstatt dich auf manuelle Überprüfungen, benutzerdefinierten Code oder Drittanbieter-Tools zu verlassen.
+- **Flexibles Datenschema:** Definiere genau die Felder, die du extrahieren musst, mit Unterstützung für mehrere Datentypen (Text, E-Mail, Telefon, Zahl, Datum).
+- **Optionaler Kontext für bessere Genauigkeit:** Füge Hintergrunddetails hinzu, damit die AI versteht, was die Eingabe darstellt und wie mehrdeutige Werte interpretiert werden sollen.
+- **Vorgefertigte Vorlagen:** Verwende Vorlagen für gängige Extraktionsmuster wie Kontaktinformationen, Chanceninformationen, Bestellinformationen und Termininformationen.
+- **Nachfolgende Workflow-Variablen:** Verwende extrahierte Felder in späteren Aktionen, einschließlich „Kontaktfeld aktualisieren“, „Wenn/Sonst“, Benachrichtigungen, Nachrichten, Chancen oder ausgehenden Webhooks.
+
+---
+
+## Aktionsdetails
+
+Das Verständnis der einzelnen Komponenten der Workflow-Aktion „AI-Datenextraktion“ hilft dir dabei, die Aktion genauer zu konfigurieren und die Qualität der extrahierten Daten zu verbessern.
+
+| Feld | Beschreibung |
+| --- | --- |
+| Aktionsname | Ein benutzerdefinierter Name für die Aktion. Standardmäßig „AI extract data“. |
+| Extrahieren aus \* | Die unstrukturierte Texteingabe, aus der Daten extrahiert werden sollen. Wähle einen benutzerdefinierten Wert (z. B. einen E-Mail-Text, einen Webhook-Payload, SMS-Inhalt oder die Ausgabe einer vorherigen Aktion). Dies ist ein Pflichtfeld. |
+| Zusätzlicher Kontext | Optionaler ergänzender Kontext, damit die AI Daten genauer extrahieren kann. Zum Beispiel: „Der Inhalt ist eine Benachrichtigungs-E-Mail über einen Zillow-Lead. Telefonnummern können in unterschiedlichen Formaten vorliegen.“ |
+| Vorlagen | Vorgefertigte Extraktionsvorlagen für gängige Anwendungsfälle: Kontaktinfo, Chancen-Info, Bestellinfo und Termininfo. Die Auswahl einer Vorlage befüllt die Datenfelder automatisch. Du kannst Felder nach dem Anwenden ändern, hinzufügen oder entfernen. |
+| Datenfelder | Die strukturierten Felder, die aus der Eingabe extrahiert werden sollen. Jedes Feld verfügt über einen Namen (Variablenschlüssel), einen Typ (Text, E-Mail, Telefon, Zahl oder Datum) und eine optionale Beschreibung zur Anleitung der AI. |
+
+---
+
+## Vorlagen
+
+Vorlagen helfen dir, schneller zu starten, indem sie gängige Extraktionsfelder für häufige Workflow-Anwendungsfälle vorladen. Sie reduzieren den Einrichtungsaufwand und bieten einen praktischen Ausgangspunkt, insbesondere wenn du standardmäßige Kontakt-, Vertriebs-, Bestell- oder Termindetails extrahieren möchtest.
+
+Du kannst eine Vorlage unverändert übernehmen, die Felder nach der Auswahl bearbeiten oder ein eigenes benutzerdefiniertes Feldset von Grund auf neu erstellen.
+
+Verfügbare Vorlagenbeispiele umfassen:
+
+- **Kontaktinfo:** Befüllt Felder für `full_name` (Text), `email` (E-Mail) und `phone` (Telefon) vor. Diese dienen dazu, standardmäßige Kontaktdaten wie den vollständigen Namen, die E-Mail-Adresse und die Telefonnummer der Person zu extrahieren.
+- **Chancen-Info:** Befüllt Felder für `company_name`, `job_title`, `budget` und `timeline` vor. Diese Felder dienen dazu, gängige Vertriebsdetails aus Lead- oder Chancen-bezogenen Nachrichten zu erfassen.
+- **Bestellinfo:** Befüllt Felder für `order_id` (Text), `items` (Text), `total_amount` (Zahl) und `order_date` (Datum) vor. Diese dienen dazu, Bestell- und Transaktionsdetails wie die Bestellnummer, bestellte Artikel oder Dienstleistungen, den Gesamtbetrag und das Bestelldatum zu extrahieren.
+- **Termininfo:** Befüllt terminbezogene Felder für gängige Planungsdetails wie Termindatum, Uhrzeit, Ort und Terminart vor.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075088724/original/oCguvLx66edBje48-VXLPnkBV8gPMIggBA.png?1783014199)
+
+---
+
+## Extrahierte Daten in nachfolgenden Aktionen verwenden
+
+Nachdem die Workflow-Aktion „AI-Datenextraktion“ ausgeführt wurde, stehen die extrahierten Felder als benutzerdefinierte Werte in nachfolgenden Workflow-Aktionen zur Verfügung. Dadurch können die extrahierten Daten direkt an Aktionen wie „Kontakt erstellen/aktualisieren“, Chancen-Aktionen, Wenn/Sonst-Verzweigungen, Benachrichtigungen oder andere nachfolgende Schritte übergeben werden.
+
+Wenn du beispielsweise ein Feld namens full\_name vom Typ Text definiert hast, kannst du es in einer nachfolgenden Aktion „Kontakt aktualisieren“ verwenden, um den Namen des Kontakts festzulegen, oder in einer Aktion „E-Mail senden“, um die Nachricht zu personalisieren.
+
+So greifst du in einer nachfolgenden Aktion auf die extrahierten Werte zu:
+
+1. Öffne die nachfolgende Aktion, in der du die extrahierten Daten verwenden möchtest, und klicke in das Feld, das du befüllen willst. Öffne die Auswahl benutzerdefinierter Werte und wähle **AI extract data**.
+
+   **![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075090678/original/KmxNeGzMBx1u1Xh0cIHTZz_yZLTGERwTPw.jpeg?1783016102)**
+2. Wähle die spezifische Aktion „AI-Datenextraktion“ aus, auf die du dich beziehen möchtest. Diese ist mit dem Namen beschriftet, den du dieser Aktion im Workflow gegeben hast. Wähle von dort aus das Feld, das du einfügen möchtest. Die verfügbaren Optionen basieren auf den in dieser Aktion definierten Feldern.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075090679/original/c_8oDtSRg-mZKiJeEu3rGJzJjlV3ZS9ooA.jpeg?1783016110)
+
+---
+
+## So konfigurierst du die Workflow-Aktion „AI-Datenextraktion“
+
+Befolge die nachstehenden Schritte, um die Aktion zu konfigurieren und die extrahierten Felder für nachfolgende Workflow-Aktionen verfügbar zu machen.
+
+#### Schritt 1: Aktion hinzufügen
+
+Klicke in deinem Workflow auf das **Plus-Symbol (+)**, um eine neue Aktion hinzuzufügen. Suche nach der Aktion **AI extract data** und wähle sie aus.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075088957/original/R8zq0ylIkwsXI_GIKTBUv6e3YSYVGPQUPA.png?1783014538)
+
+#### Schritt 2: Eingabequelle festlegen
+
+Verwende im Feld **Extrahieren aus** die Auswahl benutzerdefinierter Werte, um die Eingabe auszuwählen, die du analysieren möchtest.
+
+Dies kann ein beliebiger textbasierter Wert aus einer früheren Workflow-Aktion oder einem Trigger sein, beispielsweise ein E-Mail-Text, ein Feld eines Webhook-Payloads, eine SMS-Nachricht oder die Ausgabe einer vorherigen AI-Aktion.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075089145/original/b8XuQWZg28uSU50YUDtJt1IDfKA_6tib5Q.png?1783014678)
+
+#### Schritt 3: Kontext hinzufügen (optional)
+
+Gib im Feld **Zusätzlicher Kontext** alle ergänzenden Informationen an, die der AI helfen könnten, Daten genauer zu extrahieren. Dieses Feld unterstützt benutzerdefinierte Werte.
+
+Du kannst beispielsweise das Format der Quelle angeben (z. B. „Dies ist eine E-Mail-Benachrichtigung über einen neuen Lead. Telefonnummern können in unterschiedlichen Formaten vorliegen.“).
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075089316/original/pVJZJ0FRkDOEwJcW4vU5Ip-uQw0_mX_cDw.png?1783014860)**
+
+#### Schritt 4: Datenfelder definieren
+
+Definiere im Bereich **Daten** die Felder, die die AI extrahieren soll. Du hast zwei Möglichkeiten:
+
+**Option A – Vorlage verwenden**
+
+Klicke auf eine der vorgefertigten Vorlagen wie Kontaktinfo, Chancen-Info, Bestellinfo oder Termininfo, um eine Reihe häufig verwendeter Felder automatisch zu befüllen. Du kannst die Felder anschließend nach Bedarf anpassen, hinzufügen oder entfernen.
+
+**Option B – Benutzerdefinierte Felder definieren**
+
+Klicke auf **+ Daten hinzufügen**, um jedes Feld manuell zu erstellen. Gib für jedes Feld Folgendes an:
+
+- **Name:** Der Variablenschlüssel für dieses Feld, z. B. `full_name`, `order_id` oder `total_amount`. Dies wird der Variablenname in nachfolgenden Aktionen.
+- **Typ:** Der Datentyp, z. B. Text, E-Mail, Telefon, Zahl oder Datum. Dies hilft der AI, den extrahierten Wert korrekt zu identifizieren und zu formatieren.
+- **Beschreibung (optional):** Ein Hinweis, der der AI zeigt, wonach gesucht werden soll, z. B. „Telefonnummer mit Vorwahl, z. B. +49 151 23456789“. Das Hinzufügen einer Beschreibung kann die Extraktionsgenauigkeit verbessern.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075089527/original/eyaw9OaqB7gN1r3GFjFDvvifcTwYkA6ZKQ.png?1783015032)
+
+#### Schritt 5: Aktion speichern
+
+Klicke auf **Aktion speichern**, um die Konfiguration zu speichern. Die extrahierten Datenfelder stehen als Variablen in allen nachfolgenden Aktionen des Workflows zur Verfügung.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075089646/original/v8tkRn_dvFvcDoT-b0afpfqTUqPkApgYGg.png?1783015156)
+
+#### Schritt 6: Nachfolgende Aktionen hinzufügen
+
+Füge die nachfolgenden Aktionen hinzu, die die extrahierten Werte verwenden sollen. Du kannst beispielsweise einen Kontakt erstellen oder aktualisieren, eine Chance erstellen, den Workflow mit Wenn/Sonst weiterleiten, eine interne Benachrichtigung senden oder eine andere Aktion mit den extrahierten Variablen befüllen.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075089951/original/50kLHMgVp-fKr6-zPA4GINqR7RCWcl2XNA.png?1783015520)
+
+---
+
+## Häufige Anwendungsfälle
+
+Die AI-Datenextraktion ist nützlich, wenn wichtige Details in reinem Text vorliegen, aber strukturierte Felder werden müssen, bevor der Workflow darauf reagieren kann. Diese Beispiele zeigen einige Möglichkeiten, wie diese Aktion dein Team unterstützen kann.
+
+#### Lead-Benachrichtigungs-E-Mails verarbeiten
+
+**Szenario:** Du erhältst Lead-Benachrichtigungs-E-Mails von einer Drittanbieter-Plattform (z. B. Zillow, Immobilienportale) in deinem Posteingang. Jede E-Mail enthält den Namen, die Telefonnummer und das Immobilieninteresse des Leads, jedoch in unstrukturiertem Text. Du möchtest diese Informationen automatisch extrahieren und im Kontaktdatensatz speichern.
+
+**Einrichtung:**
+
+- Trigger: Eingehende E-Mail
+- Aktion 1: AI-Datenextraktion
+  - Extrahieren aus: E-Mail-Text
+  - Kontext: „Benachrichtigungs-E-Mail über einen Zillow-Lead. Telefonnummern können in unterschiedlichen Formaten vorliegen.“
+  - Vorlage: Kontaktinfo
+- Aktion 2: Kontakt aktualisieren
+  - Ordne extrahiertes full\_name, email und phone den Kontaktfeldern zu.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155075091659/original/Pu_Ykssik9gKpPRu8zz1YZqN7qLGfF-NBQ.png?1783017060)
+
+#### Bestelldaten aus Webhook-Payloads extrahieren
+
+**Szenario:** Ein externes System sendet Auftragsbestätigungsdaten per Webhook, aber der Payload ist ein einfacher Textblock und kein strukturiertes JSON. Du musst die Bestellnummer, Artikel und den Gesamtbetrag extrahieren, um eine Chance zu erstellen oder ein benutzerdefiniertes Feld zu aktualisieren.
+
+**Einrichtung:**
+
+- Trigger: Eingehender Webhook
+- Aktion 1: AI-Datenextraktion
+  - Extrahieren aus: Webhook-Body
+  - Vorlage: Bestellinfo
+- Aktion 2: Chance erstellen
+  - Verwende extrahiertes order\_id als Name, total\_amount als monetären Wert.
+
+---
+
+## Häufig gestellte Fragen
+
+**F: Aus welchen Eingabearten kann ich Daten extrahieren?**
+
+Aus jeder textbasierten Eingabe, die im Workflow verfügbar ist – E-Mail-Texte, Webhook-Payloads, SMS-Nachrichten, GPT/AI-Ausgaben, Formularantworttexte oder beliebige benutzerdefinierte Werte aus einer vorherigen Aktion.
+
+**F: Muss ich eine Vorlage verwenden oder kann ich eigene Felder definieren?**
+
+Vorlagen sind optional. Du kannst eine Vorlage als Ausgangspunkt verwenden und anpassen oder Vorlagen ganz überspringen und über die Schaltfläche „+ Daten hinzufügen“ eigene benutzerdefinierte Felder von Grund auf neu erstellen.
+
+**F: Welche Datentypen werden unterstützt?**
+
+Es werden fünf Datentypen unterstützt: Text (allgemeine Zeichenkette), E-Mail (E-Mail-Adresse), Telefon (Telefonnummer), Zahl (numerischer Wert) und Datum (Datumswert). Die Wahl des richtigen Typs hilft der AI, den extrahierten Wert präzise zu identifizieren und zu formatieren.
+
+**F: Wozu dient das Beschreibungsfeld?**
+
+Die Beschreibung ist ein optionaler Hinweis, der der AI Orientierung gibt, wonach gesucht werden soll. Wenn du beispielsweise „Telefonnummer mit Vorwahl, z. B. +49 151 23456789“ hinzufügst, hilft dies der AI, Telefonnummern korrekt zu erkennen und zu formatieren. Spezifischere Beschreibungen führen zu genaueren Extraktionen.
+
+**F: Wie verwende ich die extrahierten Daten im nächsten Schritt?**
+
+Jedes extrahierte Feld wird zu einer Variablen, die in der Auswahl benutzerdefinierter Werte aller nachfolgenden Aktionen verfügbar ist. Wenn du beispielsweise ein Feld namens „full\_name“ definiert hast, kannst du in „Kontakt aktualisieren“, „E-Mail senden“ oder jeder anderen nachfolgenden Aktion darauf verweisen.
+
+**F: Was passiert, wenn die AI ein Feld in der Eingabe nicht finden kann?**
+
+Wenn die AI keinen passenden Wert für ein definiertes Feld findet, bleibt die Variable dieses Felds leer. Dein Workflow sollte dies berücksichtigen, indem du Wenn/Sonst-Verzweigungen verwendest oder vor der Verwendung in kritischen Aktionen prüfst, ob Werte leer sind.
+
+**F: Verbessert das Feld „Zusätzlicher Kontext“ die Ergebnisse?**
+
+Ja. Das Bereitstellen von Kontext über das Eingabeformat (z. B. „Dies ist eine Benachrichtigungs-E-Mail über einen neuen Lead“ oder „Der Payload enthält Bestelldaten aus der Bestellung“) hilft der AI, die Struktur zu verstehen und Daten genauer zu extrahieren. Dies ist optional, wird jedoch für nicht standardmäßige oder komplexe Eingaben empfohlen.
