@@ -55,21 +55,51 @@ VERBOTEN = [
 ]
 
 # --- Terminologie ----------------------------------------------------------
-# Links steht der englische Begriff aus der Quelle, rechts die deutsche
-# Entsprechung, wie sie in der App tatsächlich heißt. Bleibt ein Begriff in der
-# deutschen Oberfläche englisch, steht rechts derselbe Begriff.
+# Links der englische Begriff aus der Quelle, rechts die deutsche Entsprechung
+# GENAU SO, WIE SIE IN DER APP STEHT. Abgelesen am Hauptmenü von
+# app.umsatzagent.com (Screenshot Gerald, 02.09.2026).
+#
+# Die Oberfläche ist in sich nicht konsequent — sie schreibt "KI fragen" und
+# "KI-Studio", aber "AI-Assistenten". Das wird hier nicht geglättet: die Doku
+# muss den Knopf so nennen, wie er dasteht, sonst findet ihn niemand.
 GLOSSAR = {
+    # Hauptmenü, abgelesen
+    "Conversations": "Konversationen",
+    "Conversation": "Konversation",
+    "Calendars": "Kalender",
+    "Calendar": "Kalender",
     "Contacts": "Kontakte",
     "Contact": "Kontakt",
-    "Conversations": "Unterhaltungen",
-    "Opportunities": "Opportunities",
+    "Opportunities": "Chancen",
+    "Opportunity": "Chance",
+    "Payments": "Zahlungen",
+    "Payment": "Zahlung",
+    "AI Agents": "AI-Assistenten",
+    "AI Agent": "AI-Assistent",
+    "Conversation AI": "AI-Assistent",
+    "Marketing": "Marketing",
+    "Automation": "Automatisierung",
+    "Automations": "Automatisierung",
+    "Workflow": "Automatisierung",
+    "Workflows": "Automatisierung",
+    "Sites": "Seiten",
+    "Memberships": "Mitgliedschaften",
+    "Membership": "Mitgliedschaft",
+    "Media Storage": "Medien-Drive",
+    "Reputation": "Ruf",
+    "Reputation Management": "Ruf",
+    "Reporting": "Berichterstattung",
+    "App Marketplace": "App-Marktplatz",
+    "Marketplace": "App-Marktplatz",
+    "Settings": "Einstellungen",
+    "Dashboard": "Dashboard",
+    "Launchpad": "Launchpad",
+
+    # Begriffe innerhalb der Bereiche
     "Pipeline": "Pipeline",
-    "Workflow": "Workflow",
-    "Workflows": "Workflows",
     "Trigger": "Trigger",
     "Action": "Aktion",
     "Campaign": "Kampagne",
-    "Calendar": "Kalender",
     "Appointment": "Termin",
     "Funnel": "Funnel",
     "Website": "Website",
@@ -80,32 +110,37 @@ GLOSSAR = {
     "Custom Field": "Benutzerdefiniertes Feld",
     "Custom Value": "Benutzerdefinierter Wert",
     "Merge Field": "Platzhalter",
-    "Snapshot": "Snapshot",
-    "Sub-Account": "Unterkonto",
-    "Location": "Unterkonto",
-    "Agency": "Agentur",
-    "Dashboard": "Dashboard",
-    "Settings": "Einstellungen",
-    "Inbox": "Posteingang",
-    "Reputation Management": "Bewertungs-Management",
+    "Smart List": "Smart List",
     "Review": "Bewertung",
-    "Membership": "Mitgliederbereich",
     "Community": "Community",
     "Social Planner": "Social Planner",
     "Email Builder": "E-Mail-Builder",
     "Invoice": "Rechnung",
     "Estimate": "Angebot",
-    "Payment": "Zahlung",
     "Subscription": "Abo",
     "Coupon": "Gutschein",
     "Gift Card": "Gutscheinkarte",
     "Phone Number": "Telefonnummer",
     "Voicemail": "Mailbox",
     "Missed Call Text Back": "Rückruf-SMS bei verpasstem Anruf",
-    "Conversation AI": "KI-Assistent",
     "Bot": "Assistent",
     "Prompt": "Prompt",
 }
+
+# Fälle, in denen eine feste Ersetzung nicht reicht, weil derselbe englische
+# Begriff je nach Zusammenhang anders heißt. Wird der Übersetzung wörtlich
+# mitgegeben.
+HINWEISE = [
+    'Was die Quelle "Opportunities" nennt, heißt in der App durchgängig '
+    '"Chancen" — der Menüpunkt ebenso wie der einzelne Datensatz ("Chance"). '
+    'Schreibe niemals "Opportunity" oder "Lead" dafür.',
+    'Der Menüpunkt für Automationen heißt "Automatisierung". Ein einzelner '
+    'Ablauf darin heißt weiterhin "Workflow".',
+    'Die Oberfläche schreibt "KI fragen" und "KI-Studio", aber "AI-Assistenten". '
+    'Übernimm diese Schreibweisen genau so, auch wenn sie uneinheitlich wirken.',
+    'Der Bereich für Websites, Funnels, Formulare und Umfragen heißt im Menü '
+    '"Seiten".',
+]
 
 # --- Navigation ------------------------------------------------------------
 # Deutsche Namen der LeadConnector-Kategorien. Kategorien ohne Eintrag werden
@@ -161,28 +196,29 @@ AUSGESCHLOSSEN = {
     "Prospecting Tool",
 }
 
-# 41 Quell-Kategorien sind zu viel für eine Seitenleiste. Sie werden zu diesen
-# Themen gebündelt — sortiert danach, wonach Kunden tatsächlich suchen.
+# Die Seitenleiste spiegelt das Hauptmenü der App, in dessen Reihenfolge. Wer
+# in der App auf "Support" klickt, findet die Doku so sortiert vor wie das
+# Menü, aus dem er gerade kommt. Links der Name aus der App, rechts die
+# Quell-Kategorien, die dort hineingehören.
 # Was hier nicht auftaucht, landet unter "Weitere Themen".
 THEMEN = [
     ("Erste Schritte", ["Getting Started Category"]),
-    ("Posteingang & Kontakte", ["Conversations Tab", "Contacts / SmartLists",
-                                "Pipelines & Opportunities", "Custom Objects"]),
-    ("KI-Assistent", ["Conversation AI Bot", "AI Agents"]),
-    ("Telefonie & SMS", ["Phone Category", "Phone/ SMS Category", "WhatsApp Integration"]),
-    ("E-Mail", ["LeadConnector Email", "SMTP"]),
-    ("Marketing & Workflows", ["Marketing Category", "Workflow",
-                               "Merge Fields & Custom Variables"]),
-    ("Websites & Funnels", ["Funnels & Websites Category", "Blogs", "SEO", "Domains",
-                            "External Tracking"]),
-    ("Formulare & Umfragen", ["Surveys, Forms, QR Codes and Quizzes"]),
-    ("Kalender & Termine", ["Scheduling & Calendars (Bookings)", "Events"]),
-    ("Zahlungen & Shop", ["Payments, Invoices & Estimates", "E-Commerce",
-                          "Subscription Products"]),
-    ("Bewertungen", ["Reputation & Review Management", "GMB"]),
-    ("Mitglieder & Community", ["Membership and Communities", "Client Portal Web and Mobile APP"]),
-    ("Integrationen & Apps", ["LeadConnector Integrations", "Marketplace Apps",
-                              "WordPress Integration", "Lead Connector Mobile & Desktop App"]),
-    ("Auswertung", ["Reporting & Attribution"]),
-    ("Konto & Einstellungen", ["Location Settings", "User Settings", "Company", "Billing"]),
+    ("Konversationen", ["Conversations Tab", "WhatsApp Integration",
+                        "Phone Category", "Phone/ SMS Category", "LeadConnector Email",
+                        "SMTP"]),
+    ("Kalender", ["Scheduling & Calendars (Bookings)", "Events"]),
+    ("Kontakte", ["Contacts / SmartLists", "Custom Objects"]),
+    ("Chancen", ["Pipelines & Opportunities"]),
+    ("Zahlungen", ["Payments, Invoices & Estimates", "E-Commerce", "Subscription Products"]),
+    ("AI-Assistenten", ["Conversation AI Bot", "AI Agents"]),
+    ("Marketing", ["Marketing Category"]),
+    ("Automatisierung", ["Workflow", "Merge Fields & Custom Variables"]),
+    ("Seiten", ["Funnels & Websites Category", "Surveys, Forms, QR Codes and Quizzes",
+                "Blogs", "SEO", "External Tracking"]),
+    ("Mitgliedschaften", ["Membership and Communities", "Client Portal Web and Mobile APP"]),
+    ("Ruf", ["Reputation & Review Management", "GMB"]),
+    ("Berichterstattung", ["Reporting & Attribution"]),
+    ("App-Marktplatz", ["LeadConnector Integrations", "Marketplace Apps"]),
+    ("Mobile App", ["Lead Connector Mobile & Desktop App"]),
+    ("Einstellungen", ["Location Settings", "User Settings", "Company", "Billing", "Domains"]),
 ]

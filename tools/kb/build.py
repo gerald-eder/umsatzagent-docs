@@ -60,15 +60,21 @@ Produktnamen:
 - Nennt die Quelle einen fremden Support-Kanal (Support-Ticket, Chat, E-Mail-Adresse, Telefonnummer), schreibe stattdessen: "Wende dich an den UmsatzAgent Support."
 - Ist ein Satz nur wegen der Fremdmarke da (Werbung für deren Marketplace, Partnerprogramm, Preisliste), lass ihn weg.
 
-Oberflächenbegriffe — verwende genau diese deutschen Entsprechungen:
+Oberflächenbegriffe — verwende genau diese deutschen Entsprechungen. Sie sind
+am Menü der echten App abgelesen; wer davon abweicht, schickt den Leser zu
+einem Knopf, den es nicht gibt:
 {glossar}
+
+Sonderfälle:
+{hinweise}
 
 Übersetze jetzt diesen Artikel. Der Titel steht in der ersten Zeile."""
 
 
 def uebersetze(titel, markdown, key, modell):
     glossar = "\n".join(f"- {en} → {de}" for en, de in config.GLOSSAR.items())
-    prompt = ANWEISUNG.format(glossar=glossar) + f"\n\n# {titel}\n\n{markdown}"
+    hinweise = "\n".join(f"- {h}" for h in config.HINWEISE)
+    prompt = ANWEISUNG.format(glossar=glossar, hinweise=hinweise) + f"\n\n# {titel}\n\n{markdown}"
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.2, "maxOutputTokens": 32768},
