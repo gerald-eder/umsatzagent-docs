@@ -25,7 +25,7 @@
         ]
       },
       {
-        "group": "Erste Schritte",
+        "group": "Dein Onboarding",
         "pages": [
           "erste-schritte/ueberblick",
           "erste-schritte/onboarding",
@@ -53,6 +53,26 @@
           "konto/abrechnung",
           "konto/vertrag",
           "konto/datenschutz"
+        ]
+      },
+      {
+        "group": "Erste Schritte",
+        "pages": [
+          {
+            "group": "Schnellstart-Anleitungen",
+            "pages": [
+              "wissen/quick-start-guides/automatische-wallet-aufladung",
+              "wissen/quick-start-guides/automatische-wallet-aufladung-und-frequenz",
+              "wissen/quick-start-guides/bewertungs-management-schnellstartanleitung",
+              "wissen/quick-start-guides/mediensteuerung-ueber-die-benachrichtigungsleiste-in-der-mobilen-app-n",
+              "wissen/quick-start-guides/mehrere-marken-in-einem-einzigen-saas-konto-verwalten",
+              "wissen/quick-start-guides/opportunity-werte-in-dokumentvorlagen",
+              "wissen/quick-start-guides/schnellstart-anleitung-fuer-den-marketing-bereich",
+              "wissen/quick-start-guides/schnellstartanleitung-fuer-die-umsatzagent-mobile-app",
+              "wissen/quick-start-guides/schnellstartanleitung-unterhaltungen-verwalten",
+              "wissen/quick-start-guides/schnellstartanleitung-zahlungen-verwalten"
+            ]
+          }
         ]
       }
     ]
