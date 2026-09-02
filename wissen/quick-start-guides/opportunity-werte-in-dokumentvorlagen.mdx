@@ -1,16 +1,16 @@
 ---
 title: "Opportunity-Werte in Dokumentvorlagen"
-description: "Mit benutzerdefinierten Werten für Opportunities personalisierst du Vorlagen für Dokumente & Verträge mit dealspezifischen Informationen wie…"
+description: "Mit benutzerdefinierten Opportunity-Werten kannst du Vorlagen für Dokumente & Verträge mit dealspezifischen Informationen personalisieren, wie z. B.…"
 ---
 
-Mit benutzerdefinierten Werten für Opportunities personalisierst du Vorlagen für Dokumente & Verträge mit dealspezifischen Informationen wie Projektbudget, Dienstleistungsart oder Abschlussdatum. Wenn ein Workflow das Dokument erstellt, ersetzt UmsatzAgent jeden Platzhalter durch Informationen aus der relevanten Opportunity. Das reduziert manuelle Bearbeitungen und sorgt für korrekte sowie einheitliche Dokumente.
+Mit benutzerdefinierten Opportunity-Werten kannst du Vorlagen für Dokumente & Verträge mit dealspezifischen Informationen personalisieren, wie z. B. Projektbudget, Dienstleistungsart oder Abschlussdatum. Wenn ein Workflow das Dokument erstellt, ersetzt die Plattform jeden Platzhalter durch die Informationen aus der entsprechenden Opportunity. Das reduziert die manuelle Bearbeitung und sorgt für korrekte sowie einheitliche Dokumente.
 
 ---
 
 **INHALTSVERZEICHNIS**
 
 - [Was sind benutzerdefinierte Opportunity-Werte in Vorlagen für Dokumente & Verträge?](#was-sind-benutzerdefinierte-opportunity-werte-in-vorlagen-fuer-dokumente-vertrae)
-- [Hauptvorteile von benutzerdefinierten Opportunity-Werten](#hauptvorteile-von-benutzerdefinierten-opportunity-werten)
+- [Wichtigste Vorteile benutzerdefinierter Opportunity-Werte](#wichtigste-vorteile-benutzerdefinierter-opportunity-werte)
 - [Bevor du beginnst](#bevor-du-beginnst)
 - [So richtest du benutzerdefinierte Opportunity-Werte in einer Vorlage ein](#so-richtest-du-benutzerdefinierte-opportunity-werte-in-einer-vorlage-ein)
 - [So verwendest du die Vorlage in einem Workflow](#so-verwendest-du-die-vorlage-in-einem-workflow)
@@ -20,26 +20,26 @@ Mit benutzerdefinierten Werten für Opportunities personalisierst du Vorlagen f�
 
 ## Was sind benutzerdefinierte Opportunity-Werte in Vorlagen für Dokumente & Verträge?
 
-Benutzerdefinierte Felder für Opportunities speichern Informationen zu einem bestimmten Deal. Ein Platzhalter dient in der Vorlage als Platzhalter und zeigt den gespeicherten Wert der Opportunity an, wenn der Workflow das Dokument erstellt. Im Gegensatz zu Kontaktfeldern können sich Opportunity-Werte für jeden Deal unterscheiden, der mit demselben Kontakt verknüpft ist.
+Benutzerdefinierte Opportunity-Felder speichern Informationen zu einem bestimmten Deal. Ein Platzhalter dient innerhalb der Vorlage als Platzhalter und zeigt den gespeicherten Wert der Opportunity an, sobald der Workflow das Dokument erstellt. Im Gegensatz zu Kontaktfeldern können sich Opportunity-Werte bei jedem Deal unterscheiden, der demselben Kontakt zugeordnet ist.
 
-**Wichtig:** Diese Anleitung gilt für wiederverwendbare Vorlagen, nicht für einzelne Dokumente. Gehe zu **Zahlungen → Dokumente & Verträge → Vorlagen** und stelle sicher, dass der Tab **Vorlagen** ausgewählt ist.
+**Wichtig:** Diese Anleitung gilt für wiederverwendbare Vorlagen, nicht für einzelne Dokumente. Gehe zu **Zahlungen → Dokumente & Verträge → Vorlagen** und stelle sicher, dass der Reiter **Vorlagen** ausgewählt ist.
 
-*![](/images/wissen/155000008461/6657eba0ee31.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079384195/original/gObEADKeP9BkO-lY35T-ccvqgeLCLtoTig.png?1787769006)*
 
 Beim Bearbeiten einer Vorlage enthält die Browseradresse ebenfalls `/templates/`.
 
-*![](/images/wissen/155000008461/395e97773c1c.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647671/original/qcZg8-1VjKXiTbazub2Q7eTA50BJ51VIvQ.png?1787024682)*
 
 ---
 
-## Hauptvorteile von benutzerdefinierten Opportunity-Werten
+## Wichtigste Vorteile benutzerdefinierter Opportunity-Werte
 
 Opportunity-Platzhalter ermöglichen es einer wiederverwendbaren Vorlage, sich automatisch an verschiedene Deals anzupassen.
 
-- **Schnellere Dokumentenerstellung:** Reduziere manuelle Bearbeitungen vor dem Versenden von Angeboten oder Verträgen.
+- **Schnellere Dokumenterstellung:** Reduziere die manuelle Bearbeitung vor dem Versenden von Angeboten oder Verträgen.
 - **Präzise Deal-Informationen:** Übernimm Werte direkt aus dem Opportunity-Datensatz.
-- **Wiederverwendbare Automationen:** Nutze dieselbe Vorlage für mehrere Opportunities und Pipelines.
-- **Einheitliche Dokumente:** Halte Formatierungen und Deal-Informationen im gesamten Team standardisiert.
+- **Wiederverwendbare Automation:** Nutze dieselbe Vorlage für mehrere Opportunities und Pipelines.
+- **Konsistente Dokumente:** Halte Formatierung und Deal-Informationen in deinem gesamten Team einheitlich.
 
 ---
 
@@ -47,75 +47,75 @@ Opportunity-Platzhalter ermöglichen es einer wiederverwendbaren Vorlage, sich a
 
 Opportunity-Werte können nur eingefügt werden, wenn das erforderliche Feld, der Wert, die Vorlage und der Workflow-Kontext vorhanden sind.
 
-Prüfe Folgendes:
+Stelle Folgendes sicher:
 
-- Das erforderliche Feld wurde als benutzerdefiniertes Feld für **Opportunities** erstellt.
+- Das erforderliche Feld wurde als benutzerdefiniertes **Opportunity**-Feld angelegt.
 - Die Opportunity enthält einen Wert für dieses Feld.
-- Die Opportunity ist mit dem richtigen Kontakt verknüpft.
+- Die Opportunity ist dem richtigen Kontakt zugeordnet.
 - Die Vorlage wurde gespeichert, bevor sie in einem Workflow ausgewählt wird.
-- Der Workflow verwendet einen Opportunity-bezogenen Trigger, wenn Deal-Informationen eingefügt werden müssen.
+- Der Workflow verwendet einen Opportunity-bezogenen Trigger, wenn Deal-Informationen ausgefüllt werden müssen.
 - Der Kontakt verfügt über eine gültige E-Mail-Adresse, wenn das Dokument versendet werden soll.
 
-**Vorlagen mit mehreren Rollen:** Weise mindestens ein ausfüllbares Element dem **Kontakt** zu, bevor du die Vorlage in einem Workflow verwendest. Rollendetails, die im Workflow eingegeben werden, überschreiben die entsprechenden Standardwerte der Vorlage.
+**Vorlagen mit mehreren Rollen:** Weise mindestens ein ausfüllbares Element dem **Kontakt** zu, bevor du die Vorlage in einem Workflow verwendest. Im Workflow eingegebene Rollendetails überschreiben die entsprechenden Standardwerte der Vorlage.
 
 ---
 
 ## So richtest du benutzerdefinierte Opportunity-Werte in einer Vorlage ein
 
-Über das Platzhalter-Menü wird der korrekte Feld-Token eingefügt, was Formatierungs- oder Syntaxfehler verhindert.
+Die Verwendung des Platzhalter-Menüs fügt den korrekten Feld-Token ein und verhindert Formatierungs- oder Syntaxfehler.
 
 1. Gehe zu **Zahlungen → Dokumente & Verträge → Vorlagen**.
 2. Klicke auf **+ Neu** oder öffne eine bestehende Vorlage.
 3. Klicke auf das **+**-Symbol und füge einen **Text**-Block oder eine **Tabelle** an der Stelle ein, an der die Opportunity-Informationen erscheinen sollen.
-4. Platziere den Cursor an der gewünschten Stelle und klicke auf das Symbol für **Platzhalter**.
+4. Platziere den Cursor an der gewünschten Stelle und klicke auf das **Platzhalter**-Symbol.
 
-*![](/images/wissen/155000008461/aaa954e03ef9.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079855400/original/2_gIW0vs2Me8Gh7SDNaDuR815N1-Q-VfBg.png?1788305788)*
 
-5. Wähle:
+5. Wähle aus:
 
    **Kontakt → Benutzerdefinierte Felder → Opportunity-Details → Feldname**
 
-*![](/images/wissen/155000008461/4a2cd9f514f8.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647578/original/BSMYpKnRcoGJX0FIUVkEGeM84F6jaCX6Fw.png?1787024398)*
 
 6. Prüfe, ob der Platzhalter-Token an der richtigen Stelle erscheint.
 7. Klicke auf **Speichern**.
 
-*![](/images/wissen/155000008461/a388570f946b.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647569/original/MqJGtC5dR-z4i7miIuErmapxWI_2hQ4OhA.png?1787024345)*
 
-**Tipp:** Wähle Felder aus dem Platzhalter-Menü aus, anstatt einen allgemeinen Token wie `{{`[`opportunity.xyz`](http://opportunity.xyz)`}}` manuell einzugeben. Das Menü fügt den exakten Token für das ausgewählte Feld ein.
+**Tipp:** Wähle Felder über das Platzhalter-Menü aus, anstatt einen generischen Token wie `{{`[`opportunity.xyz`](http://opportunity.xyz)`}}` manuell einzutippen. Das Menü fügt den exakten Token für das ausgewählte Feld ein.
 
 ---
 
 ## So verwendest du die Vorlage in einem Workflow
 
-Ein Opportunity-bezogener Workflow-Trigger liefert UmsatzAgent den Deal-Kontext, der zum Ausfüllen der Opportunity-Platzhalter in der Vorlage erforderlich ist.
+Ein Opportunity-bezogener Workflow-Trigger liefert der Plattform den nötigen Deal-Kontext, um die Opportunity-Platzhalter der Vorlage auszufüllen.
 
-1. Gehe zu **Automationen → Workflows**.
+1. Gehe zu **Automatisierung → Workflows**.
 2. Erstelle einen Workflow oder öffne einen bestehenden.
 3. Füge den Trigger hinzu, der zu deinem Prozess passt:
 
    - **Pipeline-Phase geändert:** Startet den Workflow, wenn eine Opportunity eine ausgewählte Phase erreicht.
-   - **Opportunity-Status geändert:** Startet den Workflow, wenn eine Opportunity in einen Status wie Gewonnen oder Verloren wechselt.
+   - **Opportunity-Status geändert:** Startet den Workflow, wenn eine Opportunity in einen Status wie „Gewonnen“ oder „Verloren“ wechselt.
 
-Du benötigst nur dann beide Trigger, wenn jedes der beiden Ereignisse den Workflow starten soll.
+Du benötigst nur dann beide Trigger, wenn jedes dieser Ereignisse den Workflow starten soll.
 
-*![](/images/wissen/155000008461/fc557d3f5206.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647697/original/nOEtTsfMyPCT_InLa9A8nT-WYw72lX0v5w.png?1787024775)*
 
-4. Konfiguriere die Trigger-Filter wie Pipeline, Phase oder Status.
+4. Konfiguriere die Trigger-Filter, wie z. B. Pipeline, Phase oder Status.
 
-*![](/images/wissen/155000008461/ab62e8914dc6.png)*
+*![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155078647558/original/HvrPOe_pxZztzWDhVUrYYuyRz2v4FXnCNg.png?1787024302)*
 
 5. Klicke auf **+ Aktion hinzufügen** und wähle **Dokumente & Verträge senden**.
 6. Konfiguriere die Aktion:
 
-   - Wähle den **Absender-Benutzer**.
+   - Wähle den **Von-Benutzer**.
    - Wähle die gespeicherte Vorlage aus.
    - Wähle **Als Entwurf erstellen** oder **Direkt senden**.
-   - Wähle den Zustellkanal.
-   - Vervollständige alle erforderlichen Empfänger- oder Unterzeichner-Informationen.
-7. Klicke auf **Aktion speichern** und veröffentliche den Workflow.
+   - Wähle den Versandkanal aus.
+   - Trage alle erforderlichen Empfänger- oder Unterzeichnerdaten ein.
+7. Klicke auf **Aktion speichern** und veröffentliche anschließend den Workflow.
 
-Nutze beim Testen die Option **Als Entwurf erstellen**. Öffne den generierten Entwurf und prüfe, ob jedes Opportunity-Feld den erwarteten Wert enthält, bevor du die Aktion auf **Direkt senden** umstellst.
+Verwende zum Testen die Option **Als Entwurf erstellen**. Öffne den erstellten Entwurf und prüfe, ob jedes Opportunity-Feld den erwarteten Wert enthält, bevor du die Aktion auf **Direkt senden** umstellst.
 
 ---
 
@@ -123,47 +123,47 @@ Nutze beim Testen die Option **Als Entwurf erstellen**. Öffne den generierten E
 
 **F: Warum ist ein Opportunity-Wert im erstellten Dokument leer?**
 
-Prüfe, ob das Feld in der Opportunity, die den Workflow ausgelöst hat, einen Wert enthält. Stelle außerdem sicher, dass du das Feld unter **Opportunity-Details** ausgewählt und die Vorlage gespeichert hast, bevor der Workflow ausgeführt wurde.
+Prüfe, ob das Feld in der Opportunity, die den Workflow ausgelöst hat, einen Wert enthält. Stelle außerdem sicher, dass du das Feld unter **Opportunity-Details** ausgewählt und die Vorlage vor der Workflow-Ausführung gespeichert hast.
 
 **F: Warum ist der Platzhalter-Token immer noch sichtbar?**
 
-Der Token bleibt beim Bearbeiten der Vorlage normalerweise sichtbar. Er wird ersetzt, sobald der Workflow das Dokument generiert. Bleibt er im generierten Dokument sichtbar, füge das Feld erneut über das Platzhalter-Menü ein und teste den Vorgang erneut.
+Der Token bleibt während der Bearbeitung der Vorlage normalerweise sichtbar. Er wird erst ersetzt, wenn der Workflow das Dokument erstellt. Bleibt er auch im fertigen Dokument sichtbar, füge das Feld erneut über das Platzhalter-Menü ein und teste den Ablauf noch einmal.
 
-**F: Kann ich einen Opportunity-Platzhalter manuell eingeben?**
+**F: Kann ich einen Opportunity-Platzhalter manuell eintippen?**
 
-Ja, aber der Token muss exakt mit dem Schlüssel des Feldes übereinstimmen. Die Verwendung des Platzhalter-Menüs wird empfohlen, um Tipp- und Formatierungsfehler zu vermeiden.
+Ja, aber der Token muss exakt mit dem Platzhalter-Schlüssel des Feldes übereinstimmen. Die Verwendung des Platzhalter-Menüs wird empfohlen, um Tipp- und Formatierungsfehler zu vermeiden.
 
 **F: Welchen Workflow-Trigger sollte ich verwenden?**
 
-Verwende **Pipeline-Phase geändert**, wenn das Dokument in einer bestimmten Pipeline-Phase erstellt werden soll. Verwende **Opportunity-Status geändert**, wenn es nach einer Statusänderung erstellt werden soll, beispielsweise wenn ein Deal als Gewonnen markiert wird.
+Verwende **Pipeline-Phase geändert**, wenn das Dokument in einer bestimmten Pipeline-Phase erstellt werden soll. Verwende **Opportunity-Status geändert**, wenn es nach einer Statusänderung erstellt werden soll, beispielsweise wenn ein Deal als „Gewonnen“ markiert wird.
 
-**F: Warum wird meine Vorlage in der Workflow-Aktion nicht angezeigt?**
+**F: Warum erscheint meine Vorlage nicht in der Workflow-Aktion?**
 
-Stelle sicher, dass du eine Vorlage und kein einzelnes Dokument erstellt und auf **Speichern** geklickt hast. Nur gespeicherte Vorlagen können in der Aktion „Dokumente & Verträge senden“ ausgewählt werden.
+Prüfe, ob du eine Vorlage statt eines einzelnen Dokuments erstellt und auf **Speichern** geklickt hast. Nur gespeicherte Vorlagen können in der Aktion „Dokumente & Verträge senden“ ausgewählt werden.
 
-**F: Warum verbleibt das Dokument in den Entwürfen, anstatt gesendet zu werden?**
+**F: Warum verblieb das Dokument im Entwurfsstatus, anstatt versendet zu werden?**
 
-Prüfe, ob die Aktion **Als Entwurf erstellen** verwendet. Stelle außerdem sicher, dass der Kontakt eine gültige E-Mail-Adresse hat, was auch bei Auswahl des SMS-Versands erforderlich ist.
+Überprüfe, ob in der Aktion **Als Entwurf erstellen** eingestellt ist. Stelle außerdem sicher, dass der Kontakt eine gültige E-Mail-Adresse hat – diese wird auch bei Auswahl des SMS-Versands benötigt.
 
 ---
 
 ## Brauchst du Hilfe?
 
-Wenn Opportunity-Werte in einem generierten Dokument nicht korrekt ausgefüllt werden, stelle zuerst sicher, dass der Workflow Zugriff auf die richtige Opportunity hat und die erforderlichen Daten vor der Dokumentenerstellung vorhanden sind.
+Wenn Opportunity-Werte in einem erstellten Dokument nicht korrekt ausgefüllt werden, prüfe zuerst, ob der Workflow Zugriff auf die richtige Opportunity hat und ob die erforderlichen Daten vor der Dokumenterstellung vorhanden sind.
 
 Prüfe Folgendes:
 
-- Das Feld wurde als **benutzerdefiniertes Feld für Opportunities** erstellt.
+- Das Feld wurde als **benutzerdefiniertes Opportunity-Feld** angelegt.
 - Die Opportunity enthält einen Wert für das Feld.
-- Die richtige Opportunity ist mit dem Kontakt verknüpft.
-- Der Platzhalter wurde über **Opportunity-Details** im Platzhalter-Menü eingefügt.
+- Die richtige Opportunity ist dem Kontakt zugeordnet.
+- Der Platzhalter wurde im Platzhalter-Menü unter **Opportunity-Details** ausgewählt.
 - Die Vorlage wurde vor der Ausführung des Workflows gespeichert.
 - Der Workflow verwendet einen Opportunity-bezogenen Trigger, wenn Opportunity-Daten benötigt werden.
 - Die Aktion **Dokumente & Verträge senden** verwendet die richtige Vorlage.
-- Der Kontakt verfügt über eine gültige E-Mail-Adresse, falls diese für den Versand erforderlich ist.
+- Der Kontakt hat eine gültige E-Mail-Adresse, falls diese für den Versand erforderlich ist.
 
-Nutze bei der Fehlersuche **Als Entwurf erstellen** und überprüfe das generierte Dokument, bevor du **Direkt senden** aktivierst.
+Verwende bei der Fehlersuche die Option **Als Entwurf erstellen** und prüfe das generierte Dokument, bevor du **Direkt senden** aktivierst.
 
-So lassen sich fehlende oder fehlerhafte Werte erkennen, ohne ein unvollständiges Dokument zu versenden.
+So lassen sich fehlende oder fehlerhafte Werte leicht erkennen, ohne ein unvollständiges Dokument zu versenden.
 
-Besteht das Problem weiterhin, halte den Opportunity-Datensatz, den Vorlagen-Platzhalter, den Workflow-Trigger sowie die Konfiguration der Aktion **Dokumente & Verträge senden** fest. Wende dich an den UmsatzAgent Support.
+Besteht das Problem weiterhin, sichere Screenshots oder Details des Opportunity-Datensatzes, des Vorlagen-Platzhalters, des Workflow-Triggers und der Konfiguration der Aktion **Dokumente & Verträge senden**, bevor du dich an den UmsatzAgent Support wendest.

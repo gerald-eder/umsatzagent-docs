@@ -13,6 +13,19 @@ SITEMAP = f"{QUELLE}/support/sitemap.xml"
 ZIEL = "wissen"
 BILDER = "images/wissen"
 
+# Bilder herunterladen und selbst ausliefern? Standardmäßig nein: die Auswahl
+# umfasst rund 350 Artikel mit zusammen etwa 300 MB Screenshots, das gehört
+# nicht ins Git-Repo. Die Quelle ist Greylabel, ihre Bilder dürfen sichtbar
+# bleiben, also wird direkt auf ihr CDN verlinkt. Wer die Bilder doch selbst
+# halten will, setzt das hier auf True — dann braucht es einen Objektspeicher.
+BILDER_LOKAL = False
+
+# Welche Relevanzklassen aus auswahl.py gebaut werden.
+#   kern = Onboarding, Einrichtung, tägliche Arbeit, typische Probleme
+#   rand = Spezialfälle, später
+#   raus = Agentur, Reseller, US-Themen, reine Fehlercode-Listen
+AUSWAHL_KLASSEN = {"kern"}
+
 MODELL = "gemini-3.7-flash"
 
 # --- White-Label -----------------------------------------------------------

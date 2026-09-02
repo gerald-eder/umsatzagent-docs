@@ -213,6 +213,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--force", action="store_true", help="Übersetzung erneuern")
     ap.add_argument("--trocken", action="store_true", help="nicht schreiben, nur berichten")
+    ap.add_argument("--alles", action="store_true", help="Relevanzauswahl ignorieren")
     ap.add_argument("--modell", default=config.MODELL)
     ap.add_argument("--parallel", type=int, default=4)
     a = ap.parse_args()
@@ -228,14 +229,29 @@ def main():
             for aid in k["artikel"]:
                 heimat[aid] = k["name"]
 
+    # Relevanzurteile aus auswahl.py. Fehlen sie, wird alles gebaut.
+    apfad = os.path.join(CACHE, "auswahl.json")
+    auswahl = json.load(open(apfad)) if os.path.exists(apfad) else {}
+    if not auswahl:
+        print("Hinweis: keine Auswahl gefunden — es wird alles gebaut.")
+        print("         Erst tools/kb/auswahl.py laufen lassen, sonst kommen")
+        print("         auch Agentur- und US-Artikel mit.")
+
     dateien = sorted(os.listdir(os.path.join(CACHE, "articles")))
-    posten = []
+    posten, verworfen = [], 0
     for f in dateien:
         rec = json.load(open(os.path.join(CACHE, "articles", f)))
         ordner = heimat.get(rec["id"], "Sonstiges")
         if a.ordner and a.ordner.lower() not in ordner.lower():
             continue
+        if auswahl and not a.alles:
+            urteil = auswahl.get(rec["id"])
+            if not urteil or urteil["klasse"] not in config.AUSWAHL_KLASSEN:
+                verworfen += 1
+                continue
         posten.append((rec, ordner))
+    if verworfen:
+        print(f"{verworfen} Artikel übersprungen (nicht in {sorted(config.AUSWAHL_KLASSEN)})")
     if a.limit:
         posten = posten[: a.limit]
 
@@ -323,11 +339,12 @@ def main():
         b["pfad"] = zielrel[:-4]  # ohne .mdx, für die Navigation
 
         md = aufraeumen(b["markdown"])
-        bildordner = os.path.join(ROOT, config.BILDER, b["id"])
-        for url in sorted(set(re.findall(r"!\[[^\]]*\]\((https?://[^)\s]+)", md))):
-            name = bild_holen(url, bildordner)
-            if name:
-                md = md.replace(url, f'/{config.BILDER}/{b["id"]}/{name}')
+        if config.BILDER_LOKAL:
+            bildordner = os.path.join(ROOT, config.BILDER, b["id"])
+            for url in sorted(set(re.findall(r"!\[[^\]]*\]\((https?://[^)\s]+)", md))):
+                name = bild_holen(url, bildordner)
+                if name:
+                    md = md.replace(url, f'/{config.BILDER}/{b["id"]}/{name}')
 
         md = videos_einsetzen(md, b.get("videos") or [])
         text = frontmatter(b["titel"], beschreibung_aus(md), b["quelle"]) + md + "\n"
