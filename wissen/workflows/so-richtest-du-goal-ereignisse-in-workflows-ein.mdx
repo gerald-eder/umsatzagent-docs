@@ -1,0 +1,285 @@
+---
+title: "So richtest du Goal-Ereignisse in Workflows ein"
+description: "Hast du dir schon einmal überlegt, wie praktisch es wäre, wenn Kontakte, die eine bestimmte Bedingung oder ein Goal-Ereignis innerhalb eines Workflows…"
+---
+
+Hast du dir schon einmal überlegt, wie praktisch es wäre, wenn Kontakte, die eine bestimmte Bedingung oder ein Goal-Ereignis innerhalb eines Workflows erfüllen, automatisch zu einem bestimmten Schritt im Workflow springen könnten, ohne die vorherigen Schritte zu durchlaufen?
+
+Mit der Workflow-Aktion für Goal-Ereignisse ist genau das möglich. Dieser Artikel erklärt Goal-Ereignisse und wie sowie wann du sie einsetzt.
+
+**Bitte beachten:**
+
+```
+In Version 1 sind die Filter für Goal-Ereignisse auf E-Mail-Ereignisse, das Hinzufügen oder Entfernen von Tags, Klicks auf Trigger-Links und den Terminstatus beschränkt. Zukünftig werden weitere Ereignisse ergänzt, wie zum Beispiel Formulareinsendungen.
+
+Derzeit ist die Nutzung auf EIN Goal-Ereignis pro Workflow beschränkt.
+```
+
+---
+
+#### In diesem Artikel:
+
+#### [So richtest du Goal-Ereignisse in Workflows ein](#so-richtest-du-goal-ereignisse-in-workflows-ein)
+
+#### [Was sind Goal-Ereignisse?](#was-sind-goal-ereignisse)
+
+#### [Wie funktionieren Goal-Ereignisse?](#wie-funktionieren-goal-ereignisse)
+
+#### [Was passiert, wenn der Kontakt ein Goal-Ereignis erreicht, ohne dessen Bedingungen zu erfüllen?](#was-passiert-wenn-der-kontakt-ein-goal-ereignis-erreicht-ohne-dessen-bedingungen)
+
+#### [Welche Goal-Ereignisse werden derzeit unterstützt?](#welche-goal-ereignisse-werden-derzeit-unterstuetzt)
+
+#### [1. E-Mail-Ereignis empfangen:](#1-e-mail-ereignis-empfangen)
+
+#### [Anwendungsfälle:](#anwendungsfaelle)
+
+#### [Häufig gestellte Fragen (FAQs):](#haeufig-gestellte-fragen-faqs)
+
+#### [2. Trigger-Link angeklickt:](#2-trigger-link-angeklickt)
+
+#### [Anwendungsfälle:](#anwendungsfaelle)
+
+#### [Häufig gestellte Fragen (FAQs):](#haeufig-gestellte-fragen-faqs)
+
+#### [3. Kontakt-Tags (Hinzufügen & Entfernen):](#3-kontakt-tags-hinzufuegen-entfernen)%3A)
+
+#### [Anwendungsfälle:](#anwendungsfaelle)
+
+#### [Häufig gestellte Fragen (FAQs):](#haeufig-gestellte-fragen-faqs)
+
+#### [4. Terminstatus:](#4-terminstatus)
+
+#### [Anwendungsfälle:](#anwendungsfaelle)
+
+#### [Häufig gestellte Fragen (FAQs)](#haeufig-gestellte-fragen-faqs)
+
+#### [Warum solltest du Goal-Ereignisse nutzen?](#warum-solltest-du-goal-ereignisse-nutzen)
+
+---
+
+## So richtest du Goal-Ereignisse in Workflows ein
+
+Wähle die Workflow-Aktion namens **Goal Event** > Wähle zwischen **„Received email event“**, **„Clicked a trigger link.“**, **„Added a Contact Tag“**, **„Removed a Contact Tag“** und **„Appointment Status“**.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000617849/original/Bk6vPFLzLVPdSIO57APfW-ekrtxgHpR-Pw.gif?1686138124)
+
+---
+
+## Was sind Goal-Ereignisse?
+
+Mit Goal-Ereignissen kannst du ein Kontaktziel für einen Workflow festlegen. Ab dem Moment, in dem ein Kontakt in den Workflow eintritt, registriert das System das Eintreffen des angegebenen Goal-Ereignisses – unabhängig davon, an welchem Schritt sich der Kontakt gerade befindet.
+
+---
+
+## Wie funktionieren Goal-Ereignisse?
+
+Sobald der Kontakt die in der Aktion definierten Zielbedingungen erfüllt, wird er direkt zum Zielschritt vorgezogen (unabhängig von seiner aktuellen Position im Workflow).
+
+E-Mail-Ereignisse, Tags und Klicks auf Trigger-Links werden derzeit in der Goal-Aktion von Workflows unterstützt. Weitere Aktionen folgen schrittweise.
+
+---
+
+## Was passiert, wenn der Kontakt ein Goal-Ereignis erreicht, ohne dessen Bedingungen zu erfüllen?
+
+Wurde das Goal-Ereignis bis zu dem Zeitpunkt, an dem der Kontakt die Goal-Aktion in deiner Automatisierung erreicht, noch nicht erfüllt, stehen 3 Optionen zur Auswahl:
+
+1. End this workflow (Diesen Workflow beenden)
+
+2. Continue Anyway (Trotzdem fortfahren)
+
+3. Wait until the Goal is met (Warten, bis das Ziel erreicht ist)
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000504595/original/VlDIO-g_X-ntiIZJKWkQCzGLBjIpN2YzfQ.png?1686039268)**
+
+---
+
+## Welche Goal-Ereignisse werden derzeit unterstützt?
+
+### 1. E-Mail-Ereignis empfangen:
+
+Wähle für den Filter **„Received email event“** die Ereignisse aus, die das System erkennen soll. Es stehen mehrere Optionen zur Verfügung:
+
+- Clicked (Geklickt)
+- Opened (Geöffnet)
+- Unsubscribed (Mailgun only) (Abgemeldet – nur Mailgun)
+- Complained (Beschwert)
+- Spam![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000617981/original/kpPIV3ryxf4-F3YBRJonnKJX9Oa0-55qqQ.gif?1686138197)
+
+#### Anwendungsfälle:
+
+- **Interaktionsbasiertes Marketing:** Verschiebe Kontakte automatisch zu einem Workflow-Schritt für aktive Nutzer, sobald sie eine E-Mail öffnen oder anklicken.
+- **Drip-E-Mail-Kampagnen:** Leite Kontakte erst dann zur nächsten E-Mail einer Drip-Serie weiter, wenn sie die vorherige geöffnet haben.
+- **Abmelde-Handling:** Löse einen Reaktivierungs-Workflow aus, wenn sich ein Kontakt von deinen E-Mails abmeldet.
+- **Verhaltensbasierte Personalisierung:** Wenn ein Kontakt häufiger auf eine bestimmte Inhaltskategorie in deinen E-Mails klickt (z. B. „Technik-Gadgets“), löse einen Workflow aus, der ihm personalisierte Inhalte basierend auf seinen Interessen sendet.
+- **Event-Anmeldung:** Wenn du ein Event per E-Mail bewirbst, setze ein Ziel für das Öffnen der Einladung und starte einen Follow-up-Workflow, der zur Registrierung anregt.
+- **Webinar-Follow-up:** Versende einen Link zur Webinar-Aufzeichnung per E-Mail und starte einen Follow-up-Workflow, sobald ein Kontakt die E-Mail mit der Aufzeichnung öffnet.
+- **Umfrageteilnahme:** Versende eine Umfrage per E-Mail und setze ein Ziel für das Öffnen der Umfrage-E-Mail, um einen Workflow mit einer Dankesnachricht oder einer Belohnung auszulösen.
+- **Abschluss eines E-Mail-Kurses:** Wenn du einen E-Mail-Kurs anbietest, starte einen Workflow, der ein Zertifikat oder Abzeichen versendet, sobald ein Kontakt die letzte Kurs-E-Mail öffnet.
+- **Rabattnutzung:** Wenn du eine E-Mail mit einem Rabattcode gesendet hast, setze ein Ziel für das Öffnen der E-Mail, um an die Einlösung vor Ablauf der Frist zu erinnern.
+- **Vertriebs-Follow-up:** Wenn im Vertrieb ein Angebot per E-Mail versendet wird, setze ein Ziel für das Öffnen der E-Mail, um einen Follow-up-Workflow zu starten und den Abschluss voranzutreiben.
+
+#### Häufig gestellte Fragen (FAQs):
+
+**Kann ein einzelnes E-Mail-Ereignis mehrere Goal-Ereignisse erfüllen?**
+
+Ja, ein einzelnes E-Mail-Ereignis wie das Öffnen einer E-Mail kann mehrere Goal-Ereignisse erfüllen, sofern die Ziele für dieses spezifische Ereignis eingerichtet sind.
+
+**Was passiert, wenn ein E-Mail-Ereignis außerhalb der Geschäftszeiten eintritt? Löst es das Goal-Ereignis trotzdem aus?**
+
+Ja, das System prüft das Eintreffen des angegebenen E-Mail-Ereignisses rund um die Uhr. Der Kontakt wird zum Zielschritt verschoben, sobald das Ereignis eintritt – auch außerhalb der Geschäftszeiten.
+
+**Wenn ein Kontakt eine E-Mail mehrfach öffnet, wird das Goal-Ereignis dann jedes Mal ausgelöst?**
+
+Nein. Sobald ein Kontakt ein bestimmtes E-Mail-Ziel erreicht hat, wird er in diesem Workflow nicht erneut für dasselbe Ereignis gewertet.
+
+**Was passiert, wenn ein E-Mail-Ziel für eine E-Mail festgelegt wird, die nicht Teil des Workflows ist?**
+
+Das Goal-Ereignis wird nur ausgelöst, wenn der Kontakt die mit dem Ziel verknüpfte E-Mail öffnet oder anklickt, während er sich im Workflow befindet. Ist die E-Mail nicht Teil des Workflows, kann das Ziel nicht erfüllt werden.
+
+**Kann ich ein Goal-Ereignis einrichten, wenn ein Kontakt eine E-Mail NICHT öffnet oder einen Link NICHT anklickt?**
+
+Goal-Ereignisse unterstützen derzeit nur positive Bedingungen (wenn ein Kontakt eine Aktion ausführt). Negative Bedingungen wie das Nicht-Öffnen einer E-Mail werden für Goal-Ereignisse aktuell nicht unterstützt.
+
+### 2. Trigger-Link angeklickt:
+
+Wähle für **„Clicked Trigger link“** die entsprechenden Trigger-Links aus dem Dropdown-Menü aus. Hast du noch keinen Trigger-Link erstellt, erstelle zuerst einen, bevor du fortfährst.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000618040/original/nM9BaE78J9oHahNEhB82wj3v10bKARZv2g.gif?1686138227)
+
+#### Anwendungsfälle:
+
+- **Website-Interaktion:** Verschiebe Kontakte zu einem Schritt für aktive Nutzer, sobald sie auf einen bestimmten Link auf deiner Website klicken.
+- **Umfrageantworten:** Nutze verschiedene Trigger-Links für unterschiedliche Umfrageantworten, um Kontakte passend zu ihrer Rückmeldung in entsprechende Workflow-Schritte zu leiten.
+- **Produktinteresse:** Leite Kontakte in einen Nurturing-Workflow für ein bestimmtes Produkt weiter, sobald sie auf einen produktbezogenen Link klicken.
+- **Content-Marketing:** Wenn du einen Blogbeitrag oder Leitfaden geteilt hast, setze ein Goal-Ereignis für den Klick auf den Inhaltslink, um Feedback einzuholen oder das Interesse zu vertiefen.
+- **Webinar-Anmeldungen:** Wenn du ein Webinar bewirbst, löse einen Follow-up-Workflow aus, sobald ein Kontakt auf den Registrierungslink klickt.
+- **E-Commerce-Kauf:** Starte im Online-Handel einen Workflow nach dem Kauf, sobald ein Kontakt auf einen „Jetzt kaufen“- oder „In den Warenkorb“-Link klickt.
+- **Mitgliedschafts- oder Abo-Anmeldungen:** Bewirbst du eine Mitgliedschaft oder ein Abo, starte einen Begrüßungs-Workflow nach dem Klick auf den Registrierungslink.
+- **Testphasen-Aktivierung:** Starte bei Software-Testphasen einen Onboarding-Workflow, sobald auf „Testphase aktivieren“ geklickt wird.
+- **Affiliate-Marketing:** Starte als Affiliate-Marketer einen Follow-up-Workflow nach dem Klick auf deinen Affiliate-Link.
+- **Download-Bestätigung:** Wenn du eine kostenlose Ressource anbietest, setze ein Goal-Ereignis für den Download-Link, um den Kontakt weiter zu betreuen.
+
+#### Häufig gestellte Fragen (FAQs):
+
+**Was passiert, wenn ein Kontakt den Trigger-Link anklickt, bevor er den Workflow betritt? Löst dies das Goal-Ereignis aus?**
+
+Nein. Der Kontakt muss sich im Workflow befinden und die Bedingungen während dieser Zeit erfüllen, damit das Ereignis aktiviert wird.
+
+**Wenn ein Kontakt mehrfach auf einen Trigger-Link klickt, wird das Goal-Ereignis jedes Mal ausgelöst?**
+
+Nein. Sobald ein Kontakt ein Goal-Ereignis für einen Trigger-Link-Klick erreicht hat, wird er im selben Workflow nicht erneut dafür ausgewertet.
+
+**Was passiert, wenn ein Kontakt einen Trigger-Link anklickt, aber andere Bedingungen des Goal-Ereignisses nicht erfüllt?**
+
+Der Kontakt wird erst dann zum Goal-Schritt verschoben, wenn alle für dieses Ziel definierten Bedingungen erfüllt sind.
+
+**Kann ein Trigger-Link von einer beliebigen Website für das Goal-Ereignis genutzt werden?**
+
+Der Link muss ein getrackter Trigger-Link aus deiner Marketing- und Automatisierungsplattform sein, damit das System den Klick erfassen und das Goal-Ereignis auslösen kann.
+
+**Kann ich denselben Trigger-Link für verschiedene Goal-Ereignisse im selben Workflow nutzen?**
+
+Ja, du kannst denselben Trigger-Link für verschiedene Goal-Ereignisse verwenden, sofern jedes Goal-Ereignis eindeutige Bedingungen hat.
+
+### 3. Kontakt-Tags (Hinzufügen & Entfernen):
+
+- **Contact Tag Added** — Der Kontakt wird zum Zielschritt gezogen, sobald ein festgelegter Tag hinzugefügt wird.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000618117/original/OsdRwJ0gLdMJWnBSOHg1i7UlsnmtTJEX1g.gif?1686138277)
+- **Contact Tag Removed** — Der Kontakt wird zum Zielschritt gezogen, sobald ein festgelegter Tag entfernt wird.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000618142/original/RiOgby_RfH9T4-uEqZiIPB7hgr_9PNU48A.gif?1686138299)
+
+**Beispiel für die Nutzung der Tag-Goal-Aktion in einem Workflow:**
+
+Angenommen, du verkaufst ein Produkt und möchtest dem Kontakt nach dem Kauf den Tag „**Produkt gekauft**“ zuweisen.
+
+Währenddessen befindet sich der Kontakt in einem Nurture-Workflow. Sobald der Tag „**Produkt gekauft**“ hinzugefügt wird, soll der Workflow gestoppt und der Kontakt entfernt werden.
+
+Bisher war dafür ein separater Trigger und Workflow nötig. Mit der Kombination aus **Goal Event Action** > **Tag-Funktion** entfällt dieser zusätzliche Workflow.
+
+Füge einfach am Ende des Workflows einen Goal-Schritt mit der Bedingung Kontakt-Tag hinzugefügt – „**Produkt gekauft**“ ein.
+
+Der Kontakt wird sofort zum Zielschritt vorgezogen, sobald der Tag vergeben wird. Da dies der letzte Schritt ist, wird der Kontakt anschließend aus dem Workflow entfernt.
+
+#### Anwendungsfälle:
+
+- **Sales-Funnel-Verwaltung:** Verschiebe Kontakte automatisch durch verschiedene Phasen im Vertriebs-Workflow, während sie sich von „Lead“ über „Interessent“ und „Verhandlung“ zu „Gewonnen“ entwickeln.
+- **Produktkauf:** Nutze ein Goal-Ereignis, um einen Folge- oder Upselling-Workflow zu starten, sobald der Tag „Produkt gekauft“ vergeben wird.
+- **Aktivitäts-Tracking:** Verschiebe Kontakte mithilfe von Tag-Goal-Ereignissen zwischen Workflows für unterschiedliche Interaktionslevel (z. B. mit Tags wie „Hohe Interaktion“ oder „Geringe Interaktion“).
+- **Abonnement-Status:** Löse basierend auf Änderungen des Abo-Status („Abonniert“ oder „Abgemeldet“) unterschiedliche Workflows zur Kundenbindung oder Reaktivierung aus.
+- **Verhaltensbasierte Segmentierung:** Segmentiere Kontakte nach Aktionen wie „E-Book heruntergeladen“ oder „Webinar besucht“ und starte passende Workflows.
+- **Kundenzufriedenheit:** Kennzeichne Zufriedenheitswerte aus Umfragen mit Tags und löse Workflows zur Kundenbindung oder Problembehebung aus.
+- **Event-Teilnahme:** Starte Follow-ups nach Veranstaltungen oder sende Sonderangebote an Kontakte, die den Tag „Event X besucht“ erhalten haben.
+- **Empfehlungsprogramm:** Vergib bei einem Empfehlungsprogramm den Tag „Empfehler“ an Kontakte und starte Workflows mit Danksagungen oder Prämien.
+- **Upsell / Cross-Sell:** Vergib nach dem Kauf eines Produkts einen Tag, der gezielt Workflows für ergänzende Angebote startet.
+- **Testnutzer:** Vergib bei Software oder Abos den Tag „Testnutzer“, um gezielte Workflows zur Umwandlung in kostenpflichtige Abos zu starten.
+
+#### Häufig gestellte Fragen (FAQs):
+
+**Wie kann ich erfassen, ob ein Tag außerhalb des Workflows hinzugefügt oder entfernt wurde?**
+
+Das System registriert Änderungen an den Tags eines Kontakts unabhängig davon, woher die Änderung stammt, und löst das Goal-Ereignis entsprechend aus.
+
+**Was passiert, wenn ich den Ziel-Tag ändere, nachdem bereits Kontakte im Workflow sind?**
+
+Das Ändern des Ziel-Tags hat keine Auswirkungen auf Kontakte, die sich bereits im Workflow befinden. Nur Kontakte, die nach der Änderung eintreten, werden anhand des neuen Tags geprüft.
+
+**Kann ich denselben Tag für verschiedene Goal-Ereignisse im selben Workflow verwenden?**
+
+Du kannst separate Goal-Ereignisse für das Hinzufügen und das Entfernen desselben Tags anlegen. Kontakte werden zum Zielschritt verschoben, sobald sie die jeweilige Bedingung erfüllen.
+
+**Kann ein Kontakt dasselbe Tag-Goal-Ereignis mehrfach im selben Workflow erreichen?**
+
+Nein. Wurde ein Kontakt durch ein Tag-Goal-Ereignis zum Zielschritt verschoben, wird er nicht erneut dafür gewertet – es sei denn, der Tag wird entfernt und erneut vergeben, während sich der Kontakt noch im Workflow befindet.
+
+**Wie nutze ich Tags, um Phasen im Kundenlebenszyklus abzubilden und Workflows zu steuern?**
+
+Weise Tags für verschiedene Lebenszyklus-Phasen zu (z. B. „Lead“, „Interessent“, „Kunde“) und richte Goal-Ereignisse dafür ein. Das System leitet Kontakte automatisch zum passenden Schritt weiter, sobald sich ihre Phase ändert.
+
+### 4. Terminstatus:
+
+Wähle für den Terminstatus einen Kalender aus dem Dropdown-Menü aus und bestimme einen oder mehrere der Statuswerte „New“, „Confirmed“ und „Showed“.
+
+- **New** — Der Kontakt wird zum Zielschritt gezogen, sobald der Terminstatus im gewählten Kalender auf „Neu“ wechselt.
+- **Confirmed** — Der Kontakt wird zum Zielschritt gezogen, sobald der Terminstatus im gewählten Kalender auf „Bestätigt“ wechselt.
+- **Showed** — Der Kontakt wird zum Zielschritt gezogen, sobald der Terminstatus im gewählten Kalender auf „Erschienen“ wechselt.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155000618187/original/CXoPkdl1U98_nq_t5p8rYrHulxIFln-Kvw.gif?1686138351)
+
+#### Anwendungsfälle:
+
+- **Kunden-Onboarding:** Wenn in einem Onboarding-Workflow ein Erstgespräch gebucht werden soll, dient der Status „Bestätigt“ als Goal-Ereignis. Sobald der Termin bestätigt ist, überspringt der Kontakt vorherige Erinnerungen und gelangt direkt in die nächste Onboarding-Phase.
+- **Sales-Funnel:** Nutze den Terminstatus „Neu“ als Goal-Ereignis im Vertriebsprozess. Bucht ein Interessent ein Erstgespräch, rückt er im Funnel sofort weiter vor und überspringt vorherige Outreach-Schritte.
+- **Kurs- oder Webinar-Anmeldungen:** Nutze bei Schulungen oder Webinaren den Status „Erschienen“ als Goal-Ereignis. Nimmt der Teilnehmer teil, wird er direkt zu einem Schritt für Nachbereitungsmaterialien oder Feedback weitergeleitet.
+- **Produktdemonstrationen:** Nutze bei Produktdemos den Status „Neu“ oder „Bestätigt“ als Goal-Ereignis. Nach der Buchung erhält der Kontakt direkt Vorbereitungsmaterialien für die Demo.
+- **Termine im Gesundheitswesen:** Nutze den Status „Erschienen“ nach einem Ersttermin als Goal-Ereignis, um Patienten automatisch eine Feedback-Umfrage oder eine Terminerinnerung für die Folgeuntersuchung zu senden.
+- **Fitness- und Personal-Training:** Nutze den Status „Erschienen“ nach einer Trainingseinheit, um dem Kunden eine Trainingszusammenfassung oder einen Rabatt für die nächste Buchung zu senden.
+- **Immobilienbesichtigungen:** Nutze den Status „Erschienen“ nach einer Besichtigung als Goal-Ereignis, um Interessenten weiterführende Unterlagen zur Immobilie oder Finanzierungsangebote zuzusenden.
+- **Kundenservice-Termine:** Nutze „Bestätigt“ oder „Erschienen“ bei Supportterminen, um nach Abschluss automatisch Zufriedenheitsumfragen oder Erinnerungen für Wartungstermine zu versenden.
+- **Beratung und Coaching:** Nutze den Status „Bestätigt“ für Beratungsgespräche als Goal-Ereignis, um Klienten Vorbereitungsunterlagen und Fragebögen vor dem Termin zukommen zu lassen.
+- **Bewerbungsprozesse:** Nutze im HR-Bereich den Status „Erschienen“ für Vorstellungsgespräche, um den Kandidaten nach dem Gespräch direkt zur nächsten Phase (z. B. Feedbackbogen oder Hintergrundprüfung) weiterzuleiten.
+
+#### Häufig gestellte Fragen (FAQs)
+
+**Wie verarbeitet das System mehrere Kontakte, die das Termin-Goal-Ereignis gleichzeitig erreichen?**
+
+Das System verarbeitet mehrere Kontakte gleichzeitig. Jeder Kontakt wird unabhängig von den anderen zum entsprechenden Zielschritt im Workflow verschoben.
+
+**Was passiert, wenn sich der Terminstatus eines Kontakts ändert, während er sich mitten in einem anderen Workflow-Schritt befindet?**
+
+Entspricht die Statusänderung den Bedingungen des Goal-Ereignisses, zieht das System den Kontakt sofort zum Zielschritt vor – unabhängig von seiner aktuellen Position.
+
+**Wie kann ich Termin-Goal-Ereignisse nutzen, um meinen Buchungsprozess zu optimieren?**
+
+Sie ermöglichen eine automatische Prozesssteuerung basierend auf Nutzeraktionen. Bestätigt ein Kontakt einen Termin, leitet das System ihn sofort zum Erhalt von Vorbereitungsmaterialien weiter.
+
+**Werden auch manuelle oder externe Änderungen am Terminstatus erkannt?**
+
+Ja. Das System erfasst Statusänderungen unabhängig von der Quelle. Ob die Änderung durch einen anderen Workflow, ein externes System oder manuell erfolgt: Sind die Bedingungen erfüllt, wird der Kontakt zum Zielschritt verschoben.
+
+**Was passiert, wenn ein Termin verschoben oder abgesagt wird, nachdem der Kontakt bereits zum Zielschritt verschoben wurde?**
+
+Die Verschiebung zum Zielschritt basiert auf dem Zustand zum Zeitpunkt der Erkennung. Eine nachträgliche Statusänderung macht diesen Schritt nicht rückgängig. Solche Fälle lassen sich über zusätzliche Workflows oder manuelle Anpassungen abbilden.
+
+**Kann ich Termin-Goal-Ereignisse mit anderen Goal-Ereignissen im selben Workflow kombinieren?**
+
+Ja, du kannst verschiedene Typen von Goal-Ereignissen in einem Workflow nutzen. Jedes Goal-Ereignis arbeitet unabhängig: Sobald ein Kontakt die Bedingungen eines Ereignisses erfüllt, wird er zum zugehörigen Schritt weitergeleitet.
+
+---
+
+## Warum solltest du Goal-Ereignisse nutzen?
+
+Goal-Ereignisse machen zusätzliche Workflows überflüssig, die zuvor nötig waren, um Kontakte aus Prozessen zu entfernen, weiterzuleiten oder Abläufe vorzeitig zu beenden.

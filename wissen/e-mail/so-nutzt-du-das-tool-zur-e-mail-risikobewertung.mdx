@@ -1,0 +1,242 @@
+---
+title: "So nutzt du das Tool zur E-Mail-Risikobewertung"
+description: "Die Funktion zur Risikobewertung optimiert deine E-Mail-Marketingkampagnen. Mithilfe der Massenvalidierung analysiert sie deine importierte Kontaktliste…"
+---
+
+Die Funktion zur Risikobewertung optimiert deine E-Mail-Marketingkampagnen. Mithilfe der Massenvalidierung analysiert sie deine importierte Kontaktliste und liefert detaillierte Einblicke in Zustellbarkeit und Risikostufen. Minimiere Bounce-Raten und verbessere die gesamte Zustellbarkeit.
+
+**Bitte beachten:**
+
+```
+Für Nutzer von LC Email:
+Die Massen-E-Mail-Validierung ist exklusiv für LC-Nutzer verfügbar
+```
+
+##
+
+**Inhalt dieses Artikels**
+
+[**Was ist diese Funktion?**](#was-ist-diese-funktion)
+
+[Risikokategorien](#risikokategorien)
+
+[Anwendungsfälle:](#anwendungsfaelle)
+
+[**Wie wird diese Funktion genutzt?**](#wie-wird-diese-funktion-genutzt)
+
+[Text der E-Mail, die gesendet wird (Beispieldaten):](#text-der-e-mail-die-gesendet-wird-beispieldaten)%3A)
+
+[Tab „Risikobewertung“:](#tab-risikobewertung)
+
+[**Häufig gestellte Fragen**](#haeufig-gestellte-fragen)
+
+[Was bedeutet der Prozentsatz „Zustellbar“ im Tab „Risikobewertung“?](#was-bedeutet-der-prozentsatz-zustellbar-im-tab-risikobewertung)
+
+[Wie wird der Prozentsatz „Nicht zustellbar“ im Tab „Risikobewertung“ berechnet?](#wie-wird-der-prozentsatz-nicht-zustellbar-im-tab-risikobewertung-berechnet)
+
+[Was bedeutet der Prozentsatz „Unbekannt“ im Tab „Risikobewertung“?](#was-bedeutet-der-prozentsatz-unbekannt-im-tab-risikobewertung)
+
+[Was ist der „Importname“ im Tab „Risikobewertung“?](#was-ist-der-importname-im-tab-risikobewertung)
+
+[Warum sind Datum und Uhrzeit in der Spalte „Erstellt am“ wichtig?](#warum-sind-datum-und-uhrzeit-in-der-spalte-erstellt-am-wichtig)
+
+[Warum wird nicht jede E-Mail-Adresse verifiziert?](#warum-wird-nicht-jede-e-mail-adresse-verifiziert)
+
+[Was passiert, wenn der E-Mail-Server nicht rechtzeitig antwortet?](#was-passiert-wenn-der-e-mail-server-nicht-rechtzeitig-antwortet)
+
+[Was tun, wenn viele „Unbekannt“-E-Mail-Adressen in der Liste vorkommen?](#was-tun-wenn-viele-unbekannt-e-mail-adressen-in-der-liste-vorkommen)
+
+[Was ist der nächste Schritt nach Erhalt des Risikobewertungsberichts?](#was-ist-der-naechste-schritt-nach-erhalt-des-risikobewertungsberichts)
+
+[Was bedeutet „Anzahl der E-Mails“ im Tab „Risikobewertung“?](#was-bedeutet-anzahl-der-e-mails-im-tab-risikobewertung)
+
+[Warum haben verschiedene Vorgänge unterschiedliche Prozentsätze für „Zustellbar“, „Nicht zustellbar“ und „Unbekannt“?](#warum-haben-verschiedene-vorgaenge-unterschiedliche-prozentsaetze-fuer-zustellba)
+
+[Was kann getan werden, um die Zustellbarkeitsrate zu verbessern?](#was-kann-getan-werden-um-die-zustellbarkeitsrate-zu-verbessern)
+
+[Warum werden manche E-Mails als „Zustellbar“ eingestuft, bouncen aber trotzdem?](#warum-werden-manche-e-mails-als-zustellbar-eingestuft-bouncen-aber-trotzdem)
+
+[Kann die E-Mail-Validierung für einen bestimmten Batch erneut ausgeführt werden?](#kann-die-e-mail-validierung-fuer-einen-bestimmten-batch-erneut-ausgefuehrt-werde)
+
+[Wie oft sollten E-Mail-Listen validiert werden?](#wie-oft-sollten-e-mail-listen-validiert-werden)
+
+[Wie wirkt sich der E-Mail-Validierungsprozess auf die gesamte E-Mail-Marketingstrategie aus?](#wie-wirkt-sich-der-e-mail-validierungsprozess-auf-die-gesamte-e-mail-marketingst)
+
+[Respektiert der Validierungsprozess den Datenschutz?](#respektiert-der-validierungsprozess-den-datenschutz)
+
+[Ist der E-Mail-Validierungsprozess sicher?](#ist-der-e-mail-validierungsprozess-sicher)
+
+---
+
+## Was ist diese Funktion?
+
+Die Funktion zur Risikobewertung analysiert deine importierte Kontaktliste und bietet einen umfassenden Überblick über die E-Mail-Zustellbarkeit und potenzielle Risiken.
+
+Über die interne Massenvalidierungstechnologie wird die E-Mail-Liste aufgeschlüsselt und in Kategorien wie „Zustellbar“, „Nicht zustellbar“, „Catch-All“ und „Unbekannt“ unterteilt. Diese Kategorien werden nach Risikostufen weiter segmentiert: „Hoch“, „Niedrig“, „Mittel“ und „Unbekannt“. Diese detaillierten Einblicke ermöglichen ein klares Verständnis der Zustellbarkeitsaussichten deiner Kontaktliste.
+
+Die Funktion hilft dabei, Bounce-Raten zu senken und unnötige Einschränkungen deiner Versandkapazitäten zu vermeiden. Zudem erinnert das System daran, die E-Mail-Validierung zu aktivieren, falls diese noch nicht genutzt wird, um die Erfolgsquote deiner E-Mail-Kampagnen zu steigern.
+
+---
+
+### Risikokategorien
+
+| Risikokategorien | Beschreibung |
+| --- | --- |
+| Hoch | E-Mail-Adressen in dieser Kategorie sind mit hoher Wahrscheinlichkeit nicht zustellbar. Gründe hierfür können ein nicht existierendes E-Mail-Konto, fehlende MX-Einträge der Domain oder ein volles Postfach des Empfängers sein. |
+| Mittel | E-Mail-Adressen in dieser Kategorie sind möglicherweise zustellbar. Dies kann an einer unklaren Serverantwort liegen, daran, dass die Domain als Catch-All konfiguriert ist, oder an einer zufällig generierten E-Mail-Adresse. |
+| Niedrig | E-Mail-Adressen in dieser Kategorie sind voraussichtlich zustellbar. Der Server hat die Validierungsanfrage positiv beantwortet, die E-Mail-Adresse ist ordnungsgemäß aufgebaut und einer legitimen Domain zugeordnet. |
+| Unbekannt | E-Mail-Adressen in dieser Kategorie konnten aufgrund unvorhergesehener Fehler oder temporärer Probleme mit dem Ziel-E-Mail-Server nicht validiert werden. Die Zustellbarkeit bleibt unklar, bis sie erneut geprüft wird. |
+
+---
+
+### Anwendungsfälle:
+
+Die Massen-E-Mail-Validierung eignet sich für verschiedene Praxisszenarien:
+
+**E-Mail-Marketingkampagnen:** Das Versenden von Newslettern oder Angeboten an unbestätigte Listen kann zu hohen Bounce-Raten führen, was die Absender-Reputation und Zustellbarkeit beeinträchtigt. Die Massenvalidierung bereinigt E-Mail-Listen vorab.
+
+**Validierung bei Benutzerregistrierungen:** Bei Registrierungen können Tippfehler, nicht existierende oder gefälschte Adressen angegeben werden. Die Validierung prüft Adressen, bevor sie in die Datenbank aufgenommen werden.
+
+**CRM-Datenbereinigung:** E-Mail-Adressen im CRM veralten mit der Zeit durch Jobwechsel oder gelöschte Postfächer. Regelmäßige Massenprüfungen halten die Daten aktuell.
+
+**E-Commerce-Plattformen:** Transaktionsbezogene E-Mails wie Bestellbestätigungen sowie Marketingnachrichten müssen zuverlässig im Posteingang der Kunden ankommen.
+
+**Community-Updates:** Vereine oder Organisationen stellen durch die Validierung sicher, dass Rundschreiben an Mitglieder nicht bouncen.
+
+**Bildungseinrichtungen:** Universitäten, Hochschulen und Schulen kommunizieren regelmäßig mit Studierenden, Eltern oder Personal und müssen ungültige Empfänger ausschließen.
+
+**Forschung und Umfragen:** Umfragen per E-Mail erfordern verifizierte Adressen, um verlässliche Daten zu erhalten.
+
+**Jobportale und Personalvermittlungen:** Benachrichtigungen zu Stellenangeboten oder Bewerbungsgesprächen erreichen zuverlässig die Kandidaten.
+
+---
+
+## Wie wird diese Funktion genutzt?
+
+Beim Importieren einer CSV-Datei in das CRM wird die Liste im Hintergrund analysiert, sofern LC Email SMTP genutzt wird und die individuelle E-Mail-Validierung noch nicht aktiv ist. Anschließend erscheint ein Popup und es wird eine E-Mail mit der Risikoanalyse der importierten Adressen an die Teammitglieder gesendet. Beide Hinweise empfehlen die Aktivierung der E-Mail-Validierung.
+
+### Text der E-Mail, die gesendet wird (Beispieldaten):
+
+```
+Betreff: E-Mail-Inhalt für Liste mit hohem Risiko
+_______________________________________
+Hallo [Friendly Business Name],
+
+wir haben deinen letzten Kontakt-Import überprüft und folgendes Ergebnis für die E-Mail-Adressen ermittelt:
+
+Zustellbar: 71,84 %
+Hohes Risiko: 17,81 %
+
+Durch die Aktivierung der nativen E-Mail-Validierung lassen sich potenzielle Risiken vermeiden, da ungültige E-Mail-Adressen gar nicht erst angeschrieben werden. Nach der Aktivierung versucht das System nicht mehr, Adressen zu kontaktieren, die als ungültig markiert sind.
+
+Link zum Hilfe-Artikel: [Insert Link].
+
+Wende dich an den UmsatzAgent Support, wenn du weitere Fragen hast oder Hilfe bei der Verwaltung deiner E-Mail-Liste benötigst.
+
+Viele Grüße
+
+[Admin name]
+```
+
+---
+
+### Tab „Risikobewertung“:
+
+Der Tab „Risikobewertung“ unter **Einstellungen > E-Mail-Dienste > Risikobewertung** protokolliert die historischen Daten aller Importe.
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155004402168/original/n_G799yFb2FrHOvsMH_8KR5NYH-bUM0Gmw.png?1691066891)
+
+Der Tab bietet eine Übersicht über alle E-Mail-Validierungen und deren Ergebnisse:
+
+**Datensätze:** Zeigt an, wie viele Validierungsdatensätze oder -vorgänge vorliegen.
+
+**Datumsbereich:** Bestimmt den Zeitraum für die angezeigten Validierungsdatensätze.
+
+**Importname:** Listet den Namen jedes E-Mail-Validierungsvorgangs auf. Hierfür wird die Bezeichnung der Massenimport-Aktion übernommen.
+
+**Erstellt am:** Zeigt das genaue Datum und die Uhrzeit der Erstellung des Vorgangs.
+
+**Anzahl der E-Mails:** Zeigt die Gesamtzahl der im Vorgang geprüften E-Mail-Adressen.
+
+**Zustellbar (%):** Gibt den Prozentsatz der E-Mail-Adressen an, die als gültig und zustellbar bestätigt wurden.
+
+**Nicht zustellbar (%):** Gibt den Prozentsatz der E-Mail-Adressen an, die als ungültig oder unzustellbar eingestuft wurden.
+
+**Unbekannt (%):** Gibt den Prozentsatz der E-Mail-Adressen an, die nicht abschließend geprüft werden konnten.
+
+**Seitennummerierung:** Ermöglicht die Navigation zwischen mehreren Ergebnisseiten.
+
+---
+
+## FAQs
+
+### Was bedeutet der Prozentsatz „Zustellbar“ im Tab „Risikobewertung“?
+
+Dieser Wert gibt den Anteil der E-Mail-Adressen eines Vorgangs an, die als gültig und erreichbar bestätigt wurden. Er berechnet sich aus der Anzahl der zustellbaren Adressen geteilt durch die Gesamtzahl der Adressen im Vorgang, multipliziert mit 100.
+
+### Wie wird der Prozentsatz „Nicht zustellbar“ im Tab „Risikobewertung“ berechnet?
+
+Dieser Wert gibt den Anteil der ungültigen oder nicht erreichbaren E-Mail-Adressen an. Er ergibt sich aus der Anzahl der unzustellbaren Adressen geteilt durch die Gesamtzahl der Adressen im Vorgang, multipliziert mit 100.
+
+### Was bedeutet der Prozentsatz „Unbekannt“ im Tab „Risikobewertung“?
+
+Dieser Wert zeigt den Anteil der Adressen, deren Status nicht eindeutig ermittelt werden konnte. Er berechnet sich aus der Anzahl der Adressen mit unbekanntem Status geteilt durch die Gesamtzahl der Adressen, multipliziert mit 100.
+
+### Was ist der „Importname“ im Tab „Risikobewertung“?
+
+Der Importname ist die eindeutige Bezeichnung des jeweiligen Batches zur Validierung. Er dient der Nachverfolgung und Verwaltung der Vorgänge.
+
+### Warum sind Datum und Uhrzeit in der Spalte „Erstellt am“ wichtig?
+
+Diese Angaben zeigen den Startzeitpunkt des jeweiligen Prüfvorgangs. Das hilft bei der zeitlichen Nachverfolgung und Einordnung der Daten.
+
+### Warum wird nicht jede E-Mail-Adresse verifiziert?
+
+Einschränkungen von Mailservern, Datenschutzeinstellungen oder temporäre Netzwerkprobleme können eine eindeutige Prüfung verhindern. Solche Adressen werden als „Unbekannt“ eingestuft.
+
+### Was passiert, wenn der E-Mail-Server nicht rechtzeitig antwortet?
+
+Antwortet der Server nicht innerhalb des Zeitlimits, stuft das System die Adresse als „Unbekannt“ ein, da die Zustellbarkeit nicht ermittelt werden konnte.
+
+### Was tun, wenn viele „Unbekannt“-E-Mail-Adressen in der Liste vorkommen?
+
+Viele unbekannte Ergebnisse deuten oft auf temporäre Serverprobleme hin. Führe den Prüfvorgang zu einem späteren Zeitpunkt erneut durch. Prüfe auch die Formatierung der Adressen und der CSV-Datei. Besteht das Problem weiterhin, wende dich an den UmsatzAgent Support.
+
+### Was ist der nächste Schritt nach Erhalt des Risikobewertungsberichts?
+
+Entferne vor dem Start einer E-Mail-Kampagne alle Adressen mit dem Status „Nicht zustellbar“ und überprüfe die Einträge mit dem Status „Unbekannt“. Das schützt deine Zustellbarkeitsrate.
+
+### Was bedeutet „Anzahl der E-Mails“ im Tab „Risikobewertung“?
+
+Dieser Wert gibt die Gesamtzahl der E-Mail-Adressen an, die in diesem spezifischen Durchlauf geprüft wurden.
+
+### Warum haben verschiedene Vorgänge unterschiedliche Prozentsätze für „Zustellbar“, „Nicht zustellbar“ und „Unbekannt“?
+
+Die Anteile variieren je nach Qualität und Alter der Adressdaten im jeweiligen Datensatz. Ältere Listen weisen meist einen höheren Anteil unzustellbarer Adressen auf als aktuell erhobene Kontakte.
+
+### Was kann getan werden, um die Zustellbarkeitsrate zu verbessern?
+
+Erhebe Adressen über verlässliche Quellen, pflege deine Listen regelmäßig und nutze Double-Opt-in-Verfahren.
+
+### Warum werden manche E-Mails als „Zustellbar“ eingestuft, bouncen aber trotzdem?
+
+Auch gültige E-Mail-Adressen können bouncen, wenn das Zielpostfach voll ist, der empfangende Server temporär ausfällt oder die Nachricht vom Spam-Filter des Empfängers abgewiesen wird.
+
+### Kann die E-Mail-Validierung für einen bestimmten Batch erneut ausgeführt werden?
+
+Ja. Das erneute Ausführen ist besonders dann sinnvoll, wenn temporäre Serverprobleme zu einem hohen Anteil an unbekannten Ergebnissen geführt haben.
+
+### Wie oft sollten E-Mail-Listen validiert werden?
+
+Die Häufigkeit hängt vom Listenwachstum und den bisherigen Bounce-Raten ab. Es empfiehlt sich, Kontaktlisten vor größeren E-Mail-Kampagnen zu validieren.
+
+### Wie wirkt sich der E-Mail-Validierungsprozess auf die gesamte E-Mail-Marketingstrategie aus?
+
+Die Validierung sortiert ungültige Adressen aus, schützt die Absender-Reputation, senkt Bounce-Raten und steigert die Wirksamkeit deiner Kampagnen.
+
+### Respektiert der Validierungsprozess den Datenschutz?
+
+Ja. Die Prüfung greift nicht auf E-Mail-Inhalte zu, sondern testet ausschließlich, ob die Domain und das Postfach für den Empfang von Nachrichten bereitstehen.
+
+### Ist der E-Mail-Validierungsprozess sicher?
+
+Ja. Die Datenübertragung und -verarbeitung erfolgen über gesicherte Verbindungen nach den geltenden Datenschutzstandards.

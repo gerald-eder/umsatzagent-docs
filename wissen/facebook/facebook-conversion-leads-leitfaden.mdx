@@ -1,0 +1,175 @@
+---
+title: "Facebook Conversion Leads Leitfaden"
+description: "Die Facebook Conversions-API verbindet deine Marketingdaten direkt mit Funnels und Workflows in UmsatzAgent und Meta, um das Anzeigen-Targeting zu…"
+---
+
+Die Facebook Conversions-API verbindet deine Marketingdaten direkt mit Funnels und Workflows in UmsatzAgent und Meta, um das Anzeigen-Targeting zu optimieren, die Kosten pro Ergebnis zu senken und Resultate zu messen. Mit der Facebook Conversions-API erfasst du Personen, die mit höherer Wahrscheinlichkeit relevante Zielgruppen für Retargeting-Kampagnen darstellen. Damit richtest du serverseitige Events für deinen Web-Traffic ein.
+
+#### In diesem Artikel:
+
+#### [Was ist der Unterschied zwischen Funnel-Events und Lead-Events in der Facebook Conversions-API?](#was-ist-der-unterschied-zwischen-funnel-events-und-lead-events-in-der-facebook-c)
+
+#### [Wie richtest du ein FB CAPI (Conversions-API) Lead-Event ein?](#wie-richtest-du-ein-fb-capi-conversions-api-lead-event-ein)-Lead-Event?)
+
+#### [Schritt 1: Ein FB-Pixel erstellen](#schritt-1-ein-fb-pixel-erstellen)
+
+#### [Schritt 2: Zwei FB Conversions-API Workflows erstellen](#schritt-2-zwei-fb-conversions-api-workflows-erstellen)
+
+#### [Workflow 1: Chance erstellen/aktualisieren](#workflow-1-chance-erstellen-aktualisieren)
+
+#### [Workflow 2: Conversion-Daten an die FB Conversions-API senden](#workflow-2-conversion-daten-an-die-fb-conversions-api-senden)
+
+---
+
+## Was ist der Unterschied zwischen Funnel-Events und Lead-Events in der Facebook Conversions-API?
+
+In UmsatzAgent werden zwei Arten der Facebook Conversions-API unterstützt.
+
+**Funnel-Events** – Die Events werden von einem Webserver gesendet, um Aktionen aufzuzeichnen, wenn Nutzer eine Seite besuchen, Produkte in den Warenkorb legen, etwas kaufen, abonnieren, eine Bewerbung absenden und mehr. Weitere Informationen zur Einrichtung eines Funnel-Event-Pixels mit FB CAPI findest du [in diesem Artikel.](/wissen/facebook/wie-richte-ich-ein-funnel-event-pixel-fuer-die-facebook-conversions-ap)
+
+**Lead-Events** – UmsatzAgent sendet Events basierend darauf, wie sich ein Lead durch die Pipeline-Phasen bewegt. Ein Unternehmen erstellt beispielsweise eine Pipeline namens Lead-Generierung. Die Leads bewegen sich durch die Phasen, von neuen Leads bis hin zu gebuchten oder abgebrochenen. Bei Lead-Events sendet UmsatzAgent die Daten an die Facebook Conversions-API – mit dem CRM als Datenquelle.
+
+**Conversion Leads –**
+
+Die Integration für Facebook Conversion Leads hilft dabei, Sofortformulare in Facebook Lead Ads auf die Lead-Qualität statt auf das Lead-Volumen zu optimieren. Wenn Nutzer ein Sofortformular absenden, werden ihre Kontaktdaten erfasst und im CRM synchronisiert. Diese Kontaktdaten können anschließend für das Follow-up und Nurturing genutzt werden, um die Kontakte weiter durch den Funnel zu führen. Wenn sich ein Lead durch den Sales Funnel bewegt, ermöglicht die Integration für Conversion Leads, den Lead-Status mit Meta zu teilen. Dadurch optimiert Meta die Lead-Anzeige für höhere Lead-to-Sale-Conversions.
+
+Kriterien für den Einsatz der Conversion-Leads-Integration:
+
+- Nutzung von Facebook/Instagram Lead Ads (Sofortformulare) [Facebook-Formularfeld-Zuordnung in UmsatzAgent wird verwendet]
+- Sicherstellen, dass die 15–16-stellige Meta Lead ID im CRM zugeordnet ist
+- Mindestens 250 Leads pro Monat generieren
+- Regelmäßiger Daten-Upload mindestens einmal täglich
+- Die zu optimierende Lead-Phase tritt innerhalb von 28 Tagen nach der Lead-Generierung ein
+- Die zu optimierende Lead-Phase weist eine Conversion-Rate von 1 % bis 40 % auf.
+
+##
+
+---
+
+## Wie richtest du ein FB CAPI (Conversions-API) Lead-Event ein?
+
+### Schritt 1: Ein FB-Pixel erstellen
+
+1. Öffne den [Facebook Business Manager (Meta Business Suite)](http://business.facebook.com) > gehe links auf den Reiter **[Events Manager](https://www.facebook.com/events_manager2/)**.
+2. Stelle sicher, dass du mit dem richtigen Werbekonto verbunden bist und alle erforderlichen Zugriffsrechte für die FB-Seite besitzt.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284070737/original/AFb9bOXlqhbRRlui5ZOjvh_Ry7MYiUeFaQ.png?1677521079)
+3. Klicke in der linken Seitenleiste auf **Datenquellen verbinden**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284518426/original/vpJQuXlQ-fkLtQlkuMXpv-MYw6ymdVS3Ug.png?1677678141)
+4. Wähle **CRM** in den angezeigten Optionen aus und klicke auf **Verbinden**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284071479/original/xefmOQbqFZ5OIXwwokxwojclMFUPmsqMgg.png?1677521389)
+5. **Hinweis**
+
+   ```
+   Wenn du ein Funnel-Event über die Facebook CAPI von UmsatzAgent senden möchtest, wähle hier die Web-Option zum Aufzeichnen der Events.
+   ```
+6. Es öffnet sich ein Pop-up mit Best Practices und einer Schaltfläche **Weiter**. Die Best Practices sind Empfehlungen von Facebook zur optimalen Nutzung dieser Funktion. Klicke auf **Weiter**, um fortzufahren.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284071842/original/h2oYqzg70vxwTCK0nhUngOl5xMlDckMaJg.png?1677521528)
+7. Klicke auf **Neues Pixel erstellen** oder wähle ein bestehendes Pixel aus der Liste aus, um Daten zu erfassen. Klicke auf **Weiter**, sobald die Pixel-Details hinzugefügt wurden.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284072690/original/qgMYOqAYudCL0t2rtYthWAkL4dYkgKtGTw.png?1677521908)
+8. Du wirst weitergeleitet zu FB Events Manager > **Datenquellen > Einstellungen**.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284082779/original/89nNGLDYELlJ8JafKn7S3j0a6pDsRUoLjA.png?1677526059)
+
+   Klicke neben **Wähle dein CRM** auf **Weiter**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284077467/original/XbDBEbRH2zr1RvdA7bB2TIyLU185VR0o1w.png?1677523873)
+9. Suche im Suchfeld nach LeadConnector und wähle LeadConnector aus dem Dropdown-Menü aus:
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284078270/original/Duh85GlHa-WFW4YqBSbPJ-Dl-_HG5-B0BA.png?1677524212)
+10. Wähle **Verbindung über einen Drittanbieter-Partner in wenigen Schritten herstellen (keine Programmierung erforderlich)** und wähle dann **LeadConnector**. Klicke auf **Zu Partner wechseln**, um fortzufahren.
+    ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284079246/original/iHOXn0pJLlidnUuDmTV7dyis5KpBkavXIA.png?1677524607)
+    Du wirst aufgefordert, LeadConnector die Berechtigung zur Verbindung mit deiner Facebook Conversions-API zu erteilen. Danach ist dein CRM verbunden.
+
+**Hinweis**
+
+```
+Voraussetzungen für Facebook CAPI – Lead-Events
+1. Gehe in den Einstellungen auf Integrationen und prüfe, ob das Facebook-Konto mit Administratorrechten verbunden ist. Stelle sicher, dass deine FB-Unternehmensseite, auf der du Administrator bist und Vollzugriff hast, integriert ist und das richtige FB-Lead-Formular zugeordnet ist.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543223/original/n0p0uk19dTqvfrWV5W8Mdih89QFX0KJQjw.png?1678462195) 
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543401/original/iXrLt7Xp2xR1eJl1IT7d6vHsI8ZnYeRBgw.png?1678462227)2. Unter Facebook-Formularfeld-Zuordnung muss das Formular korrekt zugeordnet und der Status aktiviert sein. Die Facebook-Formular-Zuordnung befindet sich unter Einstellungen > Integrationen > Facebook-Formularfeld-Zuordnung. Hier ist eine Liste der unterstützten benutzerdefinierten Felder, die auch benutzerdefinierte Felder mit Einzel- und Mehrfachauswahl umfasst.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48291755645/original/56BY1UUCTEjpcu59cWIfUX9TBVKhun0qpA.gif?1681046482)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286543798/original/TN-M497JjRU1QI1H-NwXVq1r1vWxdBHPWw.png?1678462304)
+```
+
+### Schritt 2: Zwei FB Conversions-API Workflows erstellen
+
+**Hinweis**
+
+```
+Du musst zwei Workflows erstellen, damit dieser Prozess funktioniert.
+
+Der erste Workflow generiert Leads und fügt sie mit der Aktion "Chance erstellen/aktualisieren" zur richtigen Pipeline hinzu. Sobald ein Lead erfasst ist, muss er mit den passenden Tags versehen und in der richtigen Pipeline sowie Phase abgelegt werden, um ihn im Sales Funnel verwalten und nachverfolgen zu können.
+
+Der zweite Workflow löst Events für Facebook Conversion Leads aus. Dieser Workflow wird ausgelöst, sobald ein Lead in eine bestimmte Pipeline-Phase verschoben wird, woraufhin eine Workflow-Aktion für die Facebook Conversions-API die Daten an FB CAPI übermittelt.
+
+Durch die Kombination dieser beiden Workflows erstellst du ein System zur Lead-Generierung und -Verwaltung, das für Facebook Conversion Leads optimiert ist. So kannst du qualifiziertere Leads gewinnen, mehr Kunden abschließen und dein Unternehmen ausbauen.
+```
+
+1. Um ein CRM-Event zu senden, erstellst du einen Workflow. Du kannst den Tab **FB Events Manager > Datenquellen > Einstellungen** vorerst verlassen (lasse ihn im Browser geöffnet) und zu UmsatzAgent wechseln.
+
+   #### **Workflow 1: Chance erstellen/aktualisieren**
+
+   Sobald die FB-Seite in den Einstellungen integriert ist, öffne **Automatisierung > Workflows > Neuen Workflow erstellen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286546010/original/2oXC501R-I5PNsXrie2JGBp-Q1DkpsUjgQ.png?1678462805)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286546006/original/alvpeqMJi-F-GLEN3RRI2cPSXrld3Y5O_w.png?1678462804)
+
+   Füge einen neuen **Workflow-Trigger** hinzu und wähle **Facebook-Lead-Formular übermittelt** (falls dies die erste Stufe deines Conversion-Ablaufs ist).
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286546193/original/QCoLEB86JllFreFJ5Diu7cdng-D99varng.png?1678462855)
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286546275/original/bIYLs5wFGFib8HHB4wVkTiCZ8LsAI4Ve5A.png?1678462874)Du kannst Filter hinzufügen, um festzulegen, bei welchem Facebook Lead Ad-Formular der Workflow ausgelöst werden soll:
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284912934/original/heugdOwIkkCN3nHUQWQkykYEUrQ-gFxVFA.png?1677796877)
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913014/original/9Bu9owdEH4ngwAV5KbUA_Nv7Cb8l49bevw.png?1677796929)Füge anschließend die Aktion **Chance erstellen oder aktualisieren** hinzu.
+   Gib die Pipeline und die Pipeline-Phase für diese Aktion an.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284912843/original/fcbO5T8hniNd4i6_tKAorIYMuq_hfXQF2w.png?1677796821)
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289810478/original/gxXyO-ikMbIEpVzT21sqwMTnLhg7m_1CPw.png?1680029574)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289810628/original/mhTqoClA-pn-nWwlJHm7NhAtejZptyDiBA.png?1680029620)
+
+   Der Chancenname kann über das Platzhalter-Symbol standardmäßig auf den vollständigen Namen des Leads gesetzt werden:
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289810842/original/6eLWKBPaElTUU6pwWKEHtpyCw7pikrndOg.png?1680029713)
+
+   Aktiviere die Option **Doppelte Chancen erlauben** für diesen Workflow.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286547801/original/2IRh7FSb8LVSD_YhLSiMnVX6P9O-GRYuMw.png?1678463117)**WICHTIG**
+2. ```
+   Hinweis – Aktiviere in den Workflow-Einstellungen die Option "Mehrere Kontakte erlauben" (Allow Multiple).
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913229/original/ZxC5IKj5kcGr8aJ9llZd21BFfo8ebfua1g.png?1677797068)
+   ```
+3. Speichere deine Aktionen, speichere den Workflow und schalte ihn auf **Veröffentlicht**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289811747/original/cNyMa27nnTKziuJvBIsKE44CNNVXEKSLBg.png?1680030064)
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286550117/original/MWJV_FDpKOSGuoKp2nAB4j22FW0GWZYCSw.png?1678463664)
+
+   #### **Workflow 2: Conversion-Daten an die FB Conversions-API senden**
+
+   Erstelle einen weiteren Workflow. Füge den Trigger **Pipeline-Phasenänderung** und die Aktion **Facebook Conversion API** hinzu.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913563/original/x6nVQu6rCGuqGi1eraGeNkm6anfS5SXrTA.png?1677797220)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913625/original/HJDwiaFWG7nIwBKgA-a-n8ssIpyvfCFIJA.png?1677797259)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913863/original/hG8Y6bkGqBXvPSiwT5BsymoFcATYK0P-eQ.png?1677797379)Wähle **Lead-Event** als **Event-Typ**.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284913927/original/RYZECNsdo5FJRAqq5VuGqI0oVmphuPGuMQ.png?1677797416)
+   Speichere deine Aktionen, speichere den Workflow und schalte ihn auf **Veröffentlicht**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289809267/original/NJE25vxjbsGs1W81dAPerxmifAHywBIwaQ.png?1680029104)
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286550117/original/MWJV_FDpKOSGuoKp2nAB4j22FW0GWZYCSw.png?1678463664)
+4. Gehe in den **Facebook Events Manager > Datenquellen > Einstellungen > scrolle nach unten und klicke auf Zugriffstoken generieren**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284083011/original/RwfRWhgZecEtx5n_8bJ4KJoI7xDElidJxg.png?1677526170)
+   Kopiere das generierte Zugriffstoken.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284083404/original/bHK53D95m_c3ncnPCMPnmMRzFZwGImFefA.png?1677526360)
+5. Füge es in das Feld **Access Token** in der FB Conversion API-Aktion deines Workflows ein.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284914111/original/9VLCelzYHWuoWc60Vc70ngi9Fz6FDjHZOg.png?1677797522)
+6. Gehe in den **Facebook Events Manager > Datenquellen > Einstellungen > scrolle nach unten und kopiere deine Pixel-ID**.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284083951/original/E5sstzualqyZTzkOPdRidoKqw9sAFz0YaQ.png?1677526654)
+7. Füge die **Pixel-ID** in das Feld **Pixel ID** in der **FB Conversion API-Aktion** deines Workflows ein.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284914151/original/XROx-MtmbjcQ-0iQe0z1L-5Ba3AxacUTzg.png?1677797557)
+8. Gib den **Phasennamen** ein. Er sollte deine Pipeline und Pipeline-Phase für eine genaue Berichterstattung exakt widerspiegeln. Wähle ihn über das Tag-Symbol am Ende aus, um den benutzerdefinierten Wert für die Chancen-Pipeline und -Phasen hinzuzufügen.
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284914422/original/elCtHmZ8BT5Q3vXnUtgdhsmSHZfrDNYm5w.png?1677797736)![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284914455/original/gOIy3oLHfVqEUAzKmxvBnlmNly_2NXYgww.png?1677797768)
+
+   Speichere die Aktion, klicke auf **Speichern** und **Veröffentlichen**.
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289807621/original/rWwzj05pUY2_7sFeDhLxXsiVCoXKKRpPKg.png?1680028476)**WICHTIG**
+9. ```
+   Hinweis – Aktiviere in den Workflow-Einstellungen die Option "Mehrere Kontakte erlauben" (Allow Multiple).
+
+   ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284914523/original/l_2ib3vbuisvYM3kwkrFC6fJvfGmEAxTiA.jpeg?1677797816)
+   ```
+10. Du kannst deinen Workflow mit dem [Lead Ads-Testtool](https://developers.facebook.com/tools/lead-ads-testing) testen. Wähle die entsprechende Seite und das Lead-Ad-Formular aus und klicke auf **Lead erstellen**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48284085774/original/zCWJuZ-RgVmwqiVyUGkYg9sBskBWo0Oh0Q.png?1677527436)
+    Weitere Informationen zur Verwendung des Lead Ads-Testtools findest du [hier](/wissen/facebook/facebook-lead-ads-integration-und-fehlerbehebung).
+
+Das Event wird im Events Manager erfasst, der auf vom Workflow gesendete Events wartet. Es kann bis zu einem Tag dauern, bis ein gesendetes Event vollständig erfasst wird.
+
+Sobald das Event über das Lead Ads-Testtool gesendet wurde, wechsle zur Chancen-Pipeline und verschiebe den Test-Lead in eine andere im Workflow konfigurierte Phase. Prüfe anschließend den Workflow-Status auf erfolgreiche Ausführung sowie das Conversion-API-Event im Events Manager.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48289807416/original/lPWKPzVG8LSj7hT4URdCTXBJsQAya3ue-Q.png?1680028394)
+
+11. Kehre zum Reiter „Einstellungen“ im Events Manager zurück, um den Status der Conversion-Leads-Integration zu verfolgen.

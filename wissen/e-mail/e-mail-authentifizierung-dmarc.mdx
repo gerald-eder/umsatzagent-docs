@@ -4,9 +4,9 @@ description: ""
 ---
 
 ```
-Seit Februar 2024 verlangen Gmail und Yahoo eine DKIM- und DMARC-Authentifizierung für E-Mails. Wir empfehlen allen Absendern dringend, DKIM und DMARC einzurichten.
+Ab Februar 2024 verlangen Gmail und Yahoo eine DKIM- und DMARC-Authentifizierung für E-Mails. Es wird dringend empfohlen, DKIM und DMARC einzurichten.
 
-Weitere Details findest du in unserem Blogbeitrag zu den Authentifizierungsänderungen von Google und Yahoo im Jahr 2024.
+Weitere Details findest du im Blogbeitrag zu den Authentifizierungsänderungen von Google und Yahoo im Jahr 2024.
 ```
 
 **INHALTSVERZEICHNIS**
@@ -14,74 +14,74 @@ Weitere Details findest du in unserem Blogbeitrag zu den Authentifizierungsände
 - [Was ist DMARC?](#was-ist-dmarc)
 - [Was ist ein DMARC-Eintrag?](#was-ist-ein-dmarc-eintrag)
 - [Wie funktioniert DMARC?](#wie-funktioniert-dmarc)
-- [DMARC-E-Mail-Fehler bei geteilten Domains beheben](#dmarc-e-mail-fehler-bei-geteilten-domains-beheben)
+- [DMARC-Zustellfehler bei geteilten LC Email-Domains beheben](#dmarc-zustellfehler-bei-geteilten-lc-email-domains-beheben)
 
 ## Was ist DMARC?
 
-DMARC (Domain-based Message Authentication Reporting and Conformance) ist ein technisches Verfahren, das E-Mails durch die Kombination von SPF- und DKIM-Methoden verifiziert. Es ist kostenlos nutzbar und hilft, E-Mail-Betrug wie Phishing zu verhindern. DMARC wurde 2012 eingeführt und ermöglicht es Domaininhabern, über eine Richtlinie im DMARC-Eintrag (p=) festzulegen, wie mit der unbefugten Nutzung ihrer E-Mail-Domains umgegangen werden soll.
+DMARC (Domain-based Message Authentication Reporting and Conformance) ist ein technisches Verfahren, das E-Mails durch die Kombination von SPF- und DKIM-Methoden verifiziert. Es ist kostenlos nutzbar und schützt vor E-Mail-Betrug wie Phishing. Es wurde 2012 eingeführt und ermöglicht es Domain-Inhabern, über eine Richtlinie im DMARC-Eintrag (p=) festzulegen, wie mit unbefugter Nutzung ihrer E-Mail-Domains umgegangen werden soll.
 
 ```
 P = NONE
-Überwacht deinen E-Mail-Verkehr. Es werden keine weiteren Maßnahmen ergriffen.
+Überwacht den E-Mail-Verkehr. Es werden keine weiteren Maßnahmen ergriffen.
 
 P = QUARANTINE
-Verschiebt unbefugte E-Mails in den Spam-Ordner.
+Verschiebt unberechtigte E-Mails in den Spam-Ordner.
 
 P = REJECT
-Die finale Richtlinie und das eigentliche Ziel bei der Implementierung von DMARC. Diese Richtlinie stellt sicher, dass unbefugte E-Mails gar nicht erst zugestellt werden.
+Die finale Richtlinie und das eigentliche Ziel der DMARC-Implementierung. Diese Richtlinie stellt sicher, dass unberechtigte E-Mails gar nicht erst zugestellt werden.
 ```
 
 ---
 
 ## Was ist ein DMARC-Eintrag?
 
-Ein DMARC-Eintrag ist ein TXT-DNS-Eintrag namens \_dmarc, der Richtlinien und Einstellungen für E-Mail-Server festlegt. Er besteht aus Tags und Werten, die durch Semikolons getrennt sind.
+Ein DMARC-Eintrag ist ein TXT-Eintrag im DNS mit dem Namen \_dmarc, der Richtlinien und Präferenzen für E-Mail-Server festlegt. Er besteht aus Tags und zugewiesenen Werten, getrennt durch Semikolons.
 
 ```
-Hier ist ein Beispiel für einen grundlegenden DMARC-Eintrag:
+Hier ist ein Beispiel für einen einfachen DMARC-Eintrag:
 v=DMARC1; p=none;
 ```
 
-**Hier sind die wichtigsten Tags für die Einrichtung eines DMARC-Eintrags:**
+**Hier sind die wichtigsten Tags zum Einrichten eines DMARC-Eintrags:**
 
 **v (DMARC-Version):**
 
 - **Standard:** DMARC1
-- **Bedeutung:** Gibt die DMARC-Protokollversion an. Muss immer auf "DMARC1" gesetzt sein. Fehlt dieser Wert oder ist er fehlerhaft, wird der gesamte DMARC-Eintrag ignoriert.
+- **Bedeutung:** Gibt die Version des DMARC-Protokolls an. Muss immer auf "DMARC1" gesetzt sein. Fehlt dieser Wert oder ist er falsch, wird der gesamte DMARC-Eintrag ignoriert.
 
-**p (Richtlinie / Policy):**
+**p (Richtlinie):**
 
 - **Standard:** none
-- **Bedeutung:** Legt die Aktion für E-Mails fest, die die DMARC-Prüfung nicht bestehen.
-  - none: Sammelt Berichte, ohne den laufenden E-Mail-Versand zu beeinträchtigen.
-  - quarantine: Behandelt verdächtige E-Mails separat (meist Zustellung in den Spam-Ordner).
-  - reject: Weist alle fehlerhaften E-Mails direkt ab.
+- **Bedeutung:** Legt die Aktion für E-Mails fest, die DMARC-Prüfungen nicht bestehen.
+  - none: Sammelt Feedback, ohne den bestehenden Versand zu beeinflussen.
+  - quarantine: Behandelt verdächtige E-Mails gesondert, meist durch Zustellung in den Spam-Ordner.
+  - reject: Weist alle fehlschlagenden E-Mails direkt ab.
 
-**adkim (DKIM-Abgleichsmodus / Alignment Mode):**
+**adkim (DKIM-Abgleichmodus):**
 
 - **Standard:** r
-- **Bedeutung:** Legt den Abgleichsmodus für DKIM-Signaturen fest.
-  - "r" (Relaxed Mode): Erlaubt DKIM-Domains, die zur selben übergeordneten Domain gehören.
-  - "s" (Strict Mode): Erfordert eine exakte Übereinstimmung zwischen der DKIM-Domain und der Absender-Domain im E-Mail-Header.
+- **Bedeutung:** Legt den Abgleichmodus für DKIM-Signaturen fest.
+  - "r" (Relaxed Mode): Erlaubt DKIM-Domains, die zur selben übergeordneten Domain (Organizational Domain) gehören.
+  - "s" (Strict Mode): Erfordert eine exakte Übereinstimmung zwischen der DKIM-Domain und der Absender-Domain im E-Mail-Header ("From").
 
-**aspf (SPF-Abgleichsmodus / Alignment Mode):**
+**aspf (SPF-Abgleichmodus):**
 
 - **Standard**: r
 - **Bedeutung**: Ähnlich wie adkim, jedoch für die SPF-Authentifizierung.
   - "r" (Relaxed Mode): Erlaubt SPF-Domains, die zur selben übergeordneten Domain gehören.
-  - "s" (Strict Mode): Erfordert eine exakte Übereinstimmung zwischen der SPF-Domain und der Absender-Domain im E-Mail-Header.
+  - "s" (Strict Mode): Erfordert eine exakte Übereinstimmung zwischen der SPF-Domain und der Absender-Domain im E-Mail-Header ("From").
 
 **sp (Subdomain-Richtlinie):**
 
 - **Standard:** Wert von p=
-- **Bedeutung:** Ermöglicht die explizite Definition einer Richtlinie für Subdomains unter diesem DMARC-Eintrag.
+- **Bedeutung:** Ermöglicht das explizite Veröffentlichen einer Richtlinie für Subdomains unter diesem DMARC-Eintrag.
 
 **fo (Optionen für forensische Berichte):**
 
 - **Standard**: 0
-- **Bedeutung**: Bestimmt die Bedingungen für die Erstellung forensischer Berichte.
+- **Bedeutung**: Bestimmt die Bedingungen für das Erstellen forensischer Berichte.
   - "0": Erstellt Berichte, wenn alle Authentifizierungsmechanismen fehlschlagen.
-  - "1": Erstellt Berichte, sobald ein Mechanismus fehlschlägt.
+  - "1": Erstellt Berichte, wenn irgendein Mechanismus fehlschlägt.
   - "d": Erstellt Berichte, wenn die DKIM-Signatur fehlschlägt.
   - "s": Erstellt Berichte, wenn SPF fehlschlägt.
 
@@ -103,16 +103,16 @@ v=DMARC1; p=none;
 **pct (Prozentsatz):**
 
 - **Standard**: 100
-- **Bedeutung**: Gibt den Prozentsatz der E-Mails an, auf die die Richtlinie angewendet werden soll. Die Richtlinie muss "quarantine" oder "reject" lauten, damit dieser Tag greift.
+- **Bedeutung**: Gibt den Prozentsatz der fehlschlagenden E-Mails an, auf die die Richtlinie angewendet werden soll. Die Richtlinie muss "quarantine" oder "reject" lauten, damit das Prozent-Tag greift.
 
 **ri (Berichtsintervall):**
 
 - **Standard**: 86400
-- **Bedeutung**: Legt das Intervall (in Sekunden) für den Erhalt aggregierter XML-Berichte fest.
+- **Bedeutung**: Legt das Intervall für den Empfang aggregierter XML-Berichte fest.
 
-Jeder Tag erfüllt eine bestimmte Funktion bei der Definition von DMARC-Richtlinien sowie Mechanismen für Authentifizierung und Feedback.
+Jedes Tag erfüllt eine bestimmte Aufgabe bei der Definition von DMARC-Richtlinien und Mechanismen für Authentifizierung und Feedback, um E-Mail-Sicherheit und den korrekten Umgang mit fehlgeschlagenen Prüfungen zu gewährleisten.
 
-Um einen DMARC-Eintrag zu erstellen, kannst du ein [DMARC-Generator-Tool](https://dmarcian.com/dmarc-record-wizard/) verwenden.
+Um Unterstützung beim Erstellen eines DMARC-Eintrags zu erhalten, empfiehlt sich die Nutzung eines [DMARC-Generators](https://dmarcian.com/dmarc-record-wizard/).
 
 ---
 
@@ -121,43 +121,43 @@ Um einen DMARC-Eintrag zu erstellen, kannst du ein [DMARC-Generator-Tool](https:
 **Authentifizierung**:
 
 - SPF/DKIM-Prüfung:
-  - Empfangende Server überprüfen die SPF- oder DKIM-Authentifizierung.
-- Domain-Abgleich (Domain Alignment):
-  - Prüft, ob die SPF-Domain (Return-Path) oder die DKIM-Domain (d=) mit der Absenderadresse ("From") im E-Mail-Header übereinstimmt.
+  - Empfangende Server überprüfen die SPF- oder DKIM-Authentifizierungsmethoden.
+- Domain-Abgleich (Alignment):
+  - Prüft, ob die SPF-Domain (Return-Path) oder DKIM-Domain (d=) mit der "From"-Domain im E-Mail-Header übereinstimmt.
 - DMARC-Richtlinie:
-  - Liest die DMARC-Richtlinie aus dem DNS-Eintrag der Absender-Domain aus und wendet sie an.
+  - Liest die DMARC-Richtlinie aus dem DNS-Eintrag der "From"-Domain aus und wendet sie an.
 
 ```
-Beispiel-Konfigurationen:
+Beispielkonfigurationen:
 
-Wenn SPF erfolgreich ist und mit der Absender-Domain übereinstimmt, ist die DMARC-Prüfung erfolgreich.
+Wenn SPF erfolgreich ist und mit der "From"-Domain übereinstimmt, ist die DMARC-Authentifizierung erfolgreich.
 v=DMARC1; p=none; aspf=r;
 
-Wenn DKIM erfolgreich ist und mit der Absender-Domain übereinstimmt, ist die DMARC-Prüfung erfolgreich.
+Wenn DKIM erfolgreich ist und mit der "From"-Domain übereinstimmt, ist die DMARC-Authentifizierung erfolgreich.
 v=DMARC1; p=none; adkim=s;
 
-Wenn sowohl SPF als auch DKIM fehlschlagen, schlägt die DMARC-Prüfung fehl.
+Wenn sowohl SPF als auch DKIM fehlschlagen, schlägt die DMARC-Authentifizierung fehl.
 v=DMARC1; p=reject;
 ```
 
-**Abgleichsmodi (Alignment Modes):**
+**Abgleichmodi:**
 
-- Relaxed (r):
-  - Erlaubt Subdomains bei SPF-/DKIM-Prüfungen im Vergleich zur Absender-Domain.
-- Strict (s):
-  - Erfordert eine exakte Übereinstimmung der SPF-/DKIM-Domains mit der Absender-Domain.
+- Relaxed-Modus (r):
+  - Erlaubt Subdomains bei SPF/DKIM-Prüfungen im Abgleich mit der "From"-Domain.
+- Strict-Modus (s):
+  - Erfordert eine exakte Übereinstimmung der SPF/DKIM-Domains mit der "From"-Domain.
 
 **Berichterstattung:**
 
 - Aggregierte Berichte:
-  - Enthalten Erfolgs- und Fehlerergebnisse in regelmäßigen Berichten, die über den Tag "rua" an angegebene E-Mail-Adressen gesendet werden.
+  - Enthalten Erfolgs- und Fehlerergebnisse in periodischen Berichten, die über das rua-Tag an die angegebenen E-Mail-Adressen gesendet werden.
 - Forensische Berichte:
-  - Detaillierte Fehlerberichte an festgelegte Adressen (ruf). Viele Anbieter versenden diese Berichte aus Datenschutzgründen jedoch nicht.
+  - Detaillierte Fehlerberichte, die an die angegebenen Adressen (ruf) gesendet werden. Viele Anbieter versenden diese aufgrund sensibler Daten jedoch nicht.
 - Berichtsintervall (ri):
-  - Legt die Häufigkeit für das Versenden aggregierter XML-Berichte fest.
+  - Bestimmt die Häufigkeit des Versands aggregierter XML-Berichte.
 
 ```
-Beispiel-Konfigurationen:
+Beispielkonfigurationen:
 
 Aggregierte Berichte alle 24 Stunden senden:
 v=DMARC1; p=none; rua=mailto:postmaster@meinedomain.de; ri=86400;
@@ -169,40 +169,39 @@ v=DMARC1; p=none; ruf=mailto:postmaster@meinedomain.de; ri=604800;
 **Konformität (Richtlinie):**
 
 - DMARC-Richtlinie (p):
-  - Definiert, wie Server mit fehlgeschlagenen DMARC-Prüfungen umgehen sollen.
+  - Definiert, wie Server mit fehlgeschlagenen DMARC-Prüfungen umgehen.
 - Prozentsatz (pct):
-  - Gibt den prozentualen Anteil des E-Mail-Verkehrs an, der der DMARC-Prüfung unterliegt.
+  - Gibt den Prozentsatz des E-Mail-Verkehrs an, der der DMARC-Prüfung unterliegt.
 
 ```
-Beispiel-Konfigurationen:
+Beispielkonfigurationen:
 
-Beginn mit einer Quarantine-Richtlinie und 50 % Überprüfung zu Testzwecken:
+Zu Testzwecken mit einer Quarantine-Richtlinie und 50 % Überprüfung starten:
 v=DMARC1; p=quarantine; pct=50;
 
-Später Wechsel zu einer Reject-Richtlinie und Entfernen des pct-Tags für die vollständige Durchsetzung:
-v=DMARC1; p=reject;
+Später zu einer Reject-Richtlinie wechseln und das pct-Tag für eine vollständige Durchsetzung entfernen: v=DMARC1; p=reject;
 ```
 
-Jede Konfiguration dient dazu, E-Mails zu authentifizieren und Richtlinien für den Umgang mit Fehlern festzulegen.
+Jede Konfiguration dient der Authentifizierung von E-Mails und legt Richtlinien für den Umgang mit Fehlern fest, während sie Flexibilität bei der Berichterstattung und Durchsetzung basierend auf den Anforderungen und Testphasen des Absenders bietet.
 
 ---
 
-## DMARC-E-Mail-Fehler bei geteilten Domains beheben
+## DMARC-Zustellfehler bei geteilten LC Email-Domains beheben
 
 ```
-DMARC ist für den Versand von E-Mails über die geteilten Domains im UmsatzAgent E-Mail-System nicht erforderlich.
+DMARC ist nicht erforderlich, um E-Mails über die geteilten Domains des LC Email-Systems zu versenden.
 ```
 
-Wenn du keine eigene Domain oder keinen eigenen SMTP-Server eingerichtet hast, werden deine E-Mails über eine geteilte Domain von UmsatzAgent versendet.
+Wenn du zum LC Email-System gewechselt bist oder kein eigenes Mailgun / SMTP eingerichtet hast, werden alle deine E-Mails über die geteilte LC-Domain versendet.
 
 **![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48259574637/original/DHSDrhQb90BFpeoyZh-3Q57E9IUiAO0jUw.png?1666867932)**
 
-Die Fehlermeldung besagt:
+Die Fehlermeldung lautet:
 
 *"The domain in your from address (ran@domain.com) has a p=reject DMARC policy. Without a dedicated sending domain configured, most inbox providers will reject your messages, resulting in elevated bounces. To avoid elevated bounces, use company emails."*
 
 Dein tatsächlicher DMARC-Eintrag lautet: **v=DMARC1; p=reject**
 
-**Um das Problem zu beheben, ändere deinen DMARC-Eintrag bei deinem DNS-Anbieter vorübergehend auf p=none**
+**Um das Problem zu beheben, ändere deinen DMARC-Eintrag im DNS vorübergehend auf eine p=none-Richtlinie**
 
-Die obige DMARC-Fehlermeldung tritt auf, wenn eine Richtlinie auf p=reject oder p=quarantine gesetzt ist. Dadurch wird verhindert, dass E-Mails, die DMARC nicht bestehen, im Posteingang ankommen. Um sicherzustellen, dass Nachrichten zugestellt werden, ändere die Richtlinie in deinem DMARC-Eintrag bei deinem DNS-Anbieter auf p=none. Das Wechseln zu einer weniger strengen Richtlinie wird nicht dauerhaft empfohlen; diese Änderung sollte daher nur vorübergehend sein.
+Die obige DMARC-Fehlermeldung weist auf p=reject oder p=quarantine hin. Dies verhindert, dass E-Mails, die DMARC nicht bestehen, in den Posteingang gelangen. Um sicherzustellen, dass Nachrichten auch bei fehlschlagendem DMARC zugestellt werden, ändere die Richtlinie in deinem DMARC-Eintrag bei deinem DNS-Anbieter auf p=none. Der Wechsel zu einer weniger strengen Richtlinie wird nicht dauerhaft empfohlen, daher sollte diese Änderung nur vorübergehend sein.

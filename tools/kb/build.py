@@ -55,10 +55,12 @@ Struktur — unbedingt einhalten:
 - Code, Platzhalter wie {{contact.name}}, API-Feldnamen und Dateinamen bleiben unverändert.
 
 Produktnamen:
-- Das Produkt heißt IMMER UmsatzAgent. Die Quelle nennt es GoHighLevel, HighLevel oder LeadConnector — schreibe stattdessen UmsatzAgent.
-- Es darf im Ergebnis kein Hinweis auf GoHighLevel, HighLevel, LeadConnector, Freshdesk, Twilio oder Mailgun stehen. Auch nicht in Links, Bild-Alt-Texten oder Beispielen.
+- Das Produkt heißt UmsatzAgent. Meint die Quelle mit "LeadConnector" schlicht die Plattform ("in LeadConnector kannst du…"), schreibe UmsatzAgent.
+- ABER: "LeadConnector" bleibt stehen, wo es ein echter Eigenname ist, den der Leser so vorfindet oder eintippen muss — die Mobile App heißt im App Store "Kollab by LeadConnector", und Beschriftungen wie "LC Phone" oder "LC Email" sind Produktnamen. Ersetzt du die, sucht der Leser vergeblich.
+- GoHighLevel und HighLevel dürfen nicht vorkommen. Schreibe UmsatzAgent.
+- Twilio und Mailgun bleiben stehen. Das sind die tatsächlichen SMS- und E-Mail-Dienste; wer ein Zustellproblem sucht, braucht den Namen.
 - Nennt die Quelle einen fremden Support-Kanal (Support-Ticket, Chat, E-Mail-Adresse, Telefonnummer), schreibe stattdessen: "Wende dich an den UmsatzAgent Support."
-- Ist ein Satz nur wegen der Fremdmarke da (Werbung für deren Marketplace, Partnerprogramm, Preisliste), lass ihn weg.
+- Ist ein Satz nur Werbung für einen fremden Marketplace, ein Partnerprogramm oder eine fremde Preisliste, lass ihn weg.
 
 Oberflächenbegriffe — verwende genau diese deutschen Entsprechungen. Sie sind
 am Menü der echten App abgelesen; wer davon abweicht, schickt den Leser zu

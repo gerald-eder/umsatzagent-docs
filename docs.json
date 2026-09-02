@@ -127,23 +127,23 @@
             "group": "E-Mail",
             "pages": [
               "wissen/e-mail/2-wege-e-mail-synchronisierung-fuer-outlook",
-              "wissen/e-mail/bot-erkennung-verhindert-erhoehung-der-statistiken-und-workflow-ausfue",
+              "wissen/e-mail/bot-erkennung-zur-verhinderung-von-statistik-erhoehungen-und-workflow",
               "wissen/e-mail/compliance-erreichen-anforderungen-von-google-und-yahoo-an-e-mail-abse",
               "wissen/e-mail/dmarc-validierungsfunktion-e-mail-authentifizierungswarnungen-verstehe",
               "wissen/e-mail/domain-loeschung-wegen-aktiver-kampagnenzuweisung-blockiert",
               "wissen/e-mail/domain-warmup-so-funktioniert-es",
               "wissen/e-mail/e-mail-authentifizierung-dmarc",
-              "wissen/e-mail/e-mail-validierung-aktivieren",
               "wissen/e-mail/google-postmaster-tools",
               "wissen/e-mail/konfiguration-der-e-mail-dienste-antwort-weiterleitungseinstellungen",
+              "wissen/e-mail/so-aktivierst-du-die-lc-email-validierung",
               "wissen/e-mail/so-fuegst-du-eine-domain-hinzu-und-verifizierst-dns-eintraege",
-              "wissen/e-mail/so-nutzt-du-das-e-mail-risikobewertungs-tool",
+              "wissen/e-mail/so-nutzt-du-das-tool-zur-e-mail-risikobewertung",
               "wissen/e-mail/so-richtest-du-abmelde-links-ein",
               "wissen/e-mail/so-richtest-du-eine-dedizierte-e-mail-absendedomain-ein",
               "wissen/e-mail/standardwerte-fuer-benutzerdefinierte-werte-in-e-mails-festlegen",
               "wissen/e-mail/umsatzagent-e-mail-e-mail-provider-blockierung-erkannt-sofortige-massn",
-              "wissen/e-mail/was-ist-umsatzagent-e-mail",
-              "wissen/e-mail/was-ist-eine-dedizierte-ip-beim-umsatzagent-e-mail-dienst",
+              "wissen/e-mail/was-ist-leadconnector-email",
+              "wissen/e-mail/was-ist-eine-dedizierte-ip-in-lc-email",
               "wissen/e-mail/wo-finde-ich-meine-smtp-zugangsdaten",
               "wissen/e-mail/ueberwache-deine-e-mail-zustellbarkeit-mit-dem-e-mail-integritaetsberi"
             ]
@@ -152,15 +152,14 @@
             "group": "Einrichtung",
             "pages": [
               "wissen/einrichtung/fehlerbehebung-otp-zum-verifizieren-der-whatsapp-telefonnummer-konnte",
-              "wissen/einrichtung/mm-lite-erklaert-schnelleres-einfacheres-whatsapp-marketing-nach-mass",
+              "wissen/einrichtung/mm-lite-erklaert-schnelleres-einfacheres-whatsapp-marketing-im-grossen",
               "wissen/einrichtung/marketing-opt-out-button-zu-deiner-nachrichtenvorlage",
-              "wissen/einrichtung/so-aktivierst-du-whatsapp-in-deinem-konto",
+              "wissen/einrichtung/mit-whatsapp-koexistenz-verbundene-telefonnummer-loeschen",
               "wissen/einrichtung/so-waehlst-du-whatsapp-absendernummern-in-konversationen-aus",
-              "wissen/einrichtung/telefonnummer-loeschen-die-mit-der-whatsapp-koexistenz-verknuepft-ist",
               "wissen/einrichtung/warum-der-whatsapp-anzeigename-abgelehnt-wurde",
               "wissen/einrichtung/whatsapp-workflow-integration",
-              "wissen/einrichtung/whatsapp-faqs",
               "wissen/einrichtung/whatsapp-anrufe",
+              "wissen/einrichtung/whatsapp-faqs",
               "wissen/einrichtung/whatsapp-fehler-in-order-to-maintain-a-healthy-ecosystem-engagement-th",
               "wissen/einrichtung/whatsapp-fehler-132000-number-of-parameters-does-not-match-the-expecte",
               "wissen/einrichtung/whatsapp-fehler-business-account-is-restricted-from-messaging-users-in",
@@ -173,6 +172,7 @@
               "wissen/einrichtung/whatsapp-vorlagen-fehler-new-english-us-content-can-t-be-added-while-t",
               "wissen/einrichtung/whatsapp-vorlagenfehler-body-parameter-at-index-contains-url",
               "wissen/einrichtung/whatsapp-nicht-unterstuetzter-nachrichtentyp",
+              "wissen/einrichtung/wie-du-whatsapp-in-deinem-konto-aktivierst",
               "wissen/einrichtung/ueberarbeitetes-whatsapp-onboarding"
             ]
           },
@@ -184,7 +184,6 @@
             "pages": [
               "wissen/konversationsansicht/aktivitaetskarten-in-konversationen",
               "wissen/konversationsansicht/anleitung-formular-einsendungen-in-konversationen-aufrufen",
-              "wissen/konversationsansicht/cc-carbon-copy-und-bcc-blind-carbon-copy-im-e-mail-editor-nutzen",
               "wissen/konversationsansicht/instagram-dm-workflow-aktion",
               "wissen/konversationsansicht/konversationen-faqs",
               "wissen/konversationsansicht/konversationen-sla-workflow-trigger-amp-berechtigungen",
@@ -192,7 +191,8 @@
               "wissen/konversationsansicht/konversationsansichten-filter-speichern-schneller-arbeiten",
               "wissen/konversationsansicht/praeferenzverwaltung-e-mail-abmeldeverwaltung",
               "wissen/konversationsansicht/sla-performance-dashboard-in-konversationen",
-              "wissen/konversationsansicht/web-chat-in-konversationen-einrichtung-konfiguration-nachrichtenverwal",
+              "wissen/konversationsansicht/so-nutzt-du-cc-carbon-copy-und-bcc-blind-carbon-copy-im-e-mail-compose",
+              "wissen/konversationsansicht/web-chat-in-konversationen-einrichtung-konfiguration-und-nachrichtenve",
               "wissen/konversationsansicht/whatsapp-mediennachrichten-mit-bildunterschriften-in-konversationen-se",
               "wissen/konversationsansicht/uebersicht-konversationsfilter-massenaktionen-nutzen"
             ]
@@ -212,18 +212,18 @@
               "wissen/umsatzagent-telefonie/absender-id-und-opt-out-hinweise-fuer-sms-compliance-konfigurieren",
               "wissen/umsatzagent-telefonie/anrufschleifen-beim-weiterleiten-von-anrufen-an-interne-telefonnummern",
               "wissen/umsatzagent-telefonie/anruftranskriptionen-fuer-aufgezeichnete-anrufe",
-              "wissen/umsatzagent-telefonie/auswahl-zwischen-der-nutzung-deiner-bestehenden-telefonnummer-und-dem",
-              "wissen/umsatzagent-telefonie/benutzerdefinierte-anruf-dispositionen-im-umsatzagent-telefonsystem",
+              "wissen/umsatzagent-telefonie/anrufweiterleitung-zu-deiner-umsatzagent-telefonnummer",
+              "wissen/umsatzagent-telefonie/benutzerdefinierte-call-dispositions-bei-anrufen-im-lc-phone-system",
               "wissen/umsatzagent-telefonie/best-practices-fuer-sms-zustellbarkeit-und-das-vermeiden-von-sms-einsc",
+              "wissen/umsatzagent-telefonie/bestehende-telefonnummer-nutzen-oder-neue-telefonnummer-kaufen",
               "wissen/umsatzagent-telefonie/eigene-telefonnummer-fuer-sprachanrufe-in-umsatzagent-nutzen",
               "wissen/umsatzagent-telefonie/eingehende-anrufe-waehrend-der-arbeitszeiten-durchstellen",
-              "wissen/umsatzagent-telefonie/eingehende-anrufe-ivr-ki-routing-und-anrufablauf-erklaert",
+              "wissen/umsatzagent-telefonie/eingehende-anrufe-ivr-ai-weiterleitung-und-anrufablauf-erklaert",
               "wissen/umsatzagent-telefonie/eingehendes-anrufrouting-nach-arbeitszeiten-konfigurieren",
               "wissen/umsatzagent-telefonie/einstellungen-fuer-telefonnummern-bei-sprachanrufen",
               "wissen/umsatzagent-telefonie/einstellungen-fuer-telefonnummern-erklaert",
-              "wissen/umsatzagent-telefonie/erstellung-von-regulatorischen-paketen-und-adressen",
+              "wissen/umsatzagent-telefonie/erstellung-von-behoerdlichen-paketen-und-adress-paketen",
               "wissen/umsatzagent-telefonie/hilfe-zum-rechnungsnachweis",
-              "wissen/umsatzagent-telefonie/rufumleitung-zu-deiner-umsatzagent-telefonnummer",
               "wissen/umsatzagent-telefonie/so-kaufst-du-eine-telefonnummer-fuer-dein-unternehmen",
               "wissen/umsatzagent-telefonie/so-reduzierst-du-eingehende-spam-anrufe"
             ]
@@ -309,7 +309,7 @@
               "wissen/kontakte/kontakte-mit-benutzerdefinierten-labels-verknuepfen-demnaechst-verfueg",
               "wissen/kontakte/kontakte-und-chancen-per-csv-importieren-demnaechst-verfuegbar",
               "wissen/kontakte/mehrere-datensaetze-zusammenfuehren",
-              "wissen/kontakte/sichere-dokumentenfreigabe-mit-datenschutz-zugriffskontrollen",
+              "wissen/kontakte/sichere-dokumentenfreigabe-mit-datenschutz-und-zugriffskontrollen",
               "wissen/kontakte/so-fuegst-du-kontakte-per-massenaktion-zu-einem-workflow-hinzu",
               "wissen/kontakte/tab-aktivitaet-bei-kontakten-in-der-mobilen-app",
               "wissen/kontakte/tags-fuer-kontakte-per-massenaktion-hinzufuegen-und-entfernen",
@@ -348,12 +348,12 @@
             "group": "E-Commerce",
             "pages": [
               "wissen/e-commerce/abgebrochene-checkouts-verwalten-und-exportieren",
-              "wissen/e-commerce/digitale-produkte-fuer-e-commerce-shops-ausliefern",
               "wissen/e-commerce/so-erstellst-und-verwaltest-du-produkte-in-deinem-online-shop",
               "wissen/e-commerce/so-nutzt-du-die-shopify-integration",
               "wissen/e-commerce/so-richtest-du-einen-e-commerce-online-shop-ein",
               "wissen/e-commerce/so-verbindest-du-einen-e-commerce-shop-und-synchronisierst-bestellunge",
-              "wissen/e-commerce/testbestellung-in-shops-aufgeben"
+              "wissen/e-commerce/testbestellung-in-shops-aufgeben",
+              "wissen/e-commerce/wie-liefere-ich-digitale-produkte-fuer-e-commerce-shops-aus"
             ]
           },
           {
@@ -522,7 +522,7 @@
               "wissen/workflows/ereignis-startdatum-in-workflows-in-umsatzagent-festlegen",
               "wissen/workflows/fehler-in-einem-workflow-hervorheben-und-beheben",
               "wissen/workflows/so-nutzt-du-die-google-sheets-premium-workflow-aktion",
-              "wissen/workflows/so-richtest-du-ziel-ereignisse-in-workflows-ein",
+              "wissen/workflows/so-richtest-du-goal-ereignisse-in-workflows-ein",
               "wissen/workflows/split-aktion",
               "wissen/workflows/workflow-ai-assistent",
               "wissen/workflows/workflow-builder-uebersicht",
@@ -580,8 +580,8 @@
             "pages": [
               "wissen/funnel-website-builder/cookie-richtlinie-details",
               "wissen/funnel-website-builder/definitionen-der-funnel-website-statistiken-kennzahlen-verstehen",
-              "wissen/funnel-website-builder/marketing-tools-in-funnel-website-nutzen-cookie-banner",
-              "wissen/funnel-website-builder/so-erstellst-du-seiten-im-page-builder",
+              "wissen/funnel-website-builder/marketing-tools-fuer-funnel-websites-cookie-banner",
+              "wissen/funnel-website-builder/seiten-im-page-builder-erstellen",
               "wissen/funnel-website-builder/so-erstellst-du-einen-funnel-mit-vorlagen-formularen-und-einer-eigenen",
               "wissen/funnel-website-builder/so-nutzt-du-das-cookie-consent-banner-in-funnels-websites"
             ]
@@ -595,7 +595,7 @@
           },
           "wissen/tracking-fuer-formulare/externe-formular-einreichungen-mit-einem-tracking-skript-erfassen",
           "wissen/webchat-widget/so-erstellst-du-ein-eingebettetes-live-chat-widget",
-          "wissen/wordpress/wordpress-plugin-fuer-umsatzagent-alles-wissenswerte"
+          "wissen/wordpress/wordpress-plugin-leadconnector-alles-was-du-wissen-musst"
         ]
       },
       {
@@ -647,21 +647,21 @@
       {
         "group": "App-Marktplatz",
         "pages": [
-          "wissen/bidirektionale-synchronisierungs-integra/so-aktivierst-du-die-google-zwei-wege-e-mail-synchronisierung",
+          "wissen/bidirektionale-synchronisierungs-integra/so-aktivierst-du-die-bidirektionale-google-e-mail-synchronisierung",
           {
             "group": "Facebook",
             "pages": [
               "wissen/facebook/anleitung-zur-einrichtung-mehrerer-facebook-seiten",
-              "wissen/facebook/facebook-conversion-leads-walkthrough",
-              "wissen/facebook/facebook-lead-ads-mit-der-terminbuchung-verbinden",
-              "wissen/facebook/facebook-multi-seiten-fehlerbehebung",
-              "wissen/facebook/facebook-verbinden",
+              "wissen/facebook/anleitung-zur-seitenauswahl",
+              "wissen/facebook/facebook-conversion-leads-leitfaden",
               "wissen/facebook/facebook-lead-ads-integration-und-fehlerbehebung",
+              "wissen/facebook/facebook-lead-ads-mit-der-terminbuchung-verbinden",
+              "wissen/facebook/facebook-verbinden",
               "wissen/facebook/facebook-seiten-fehlen-im-dropdown-menue-zur-seitenauswahl-bei-der-int",
+              "wissen/facebook/fehlerbehebung-fuer-mehrere-facebook-seiten",
               "wissen/facebook/feldzuordnung-fuer-facebook-formulare",
               "wissen/facebook/instagram-direct-integration",
-              "wissen/facebook/leitfaden-zur-seitenauswahl",
-              "wissen/facebook/messaging-einrichtung-und-fehlerbehebung",
+              "wissen/facebook/nachrichten-einrichtung-und-fehlerbehebung",
               "wissen/facebook/wie-richte-ich-ein-funnel-event-pixel-fuer-die-facebook-conversions-ap"
             ]
           },
@@ -671,7 +671,7 @@
               "wissen/google-unternehmensprofil/gbp-seiten-verwalten-hinzufuegen-entfernen-und-anpassen",
               "wissen/google-unternehmensprofil/gmb-fehlerbehebungsleitfaden",
               "wissen/google-unternehmensprofil/kundeninteraktionen-auf-verknuepften-gbp-seiten-verwalten",
-              "wissen/google-unternehmensprofil/messaging-und-social-media-kanaele-mit-dem-google-business-profile-ver"
+              "wissen/google-unternehmensprofil/messaging-und-social-media-kanaele-mit-gbp-verknuepfen"
             ]
           },
           {
@@ -694,7 +694,7 @@
             "pages": [
               "wissen/erste-schritte/chancen-v2-mobile-app-karten-anpassen-abschluesse-erzielen",
               "wissen/erste-schritte/einheitliche-terminansicht-in-der-mobilen-app",
-              "wissen/erste-schritte/umsatzagent-desktop-app-fuer-windows-mac-herunterladen"
+              "wissen/erste-schritte/leadconnector-desktop-app-fuer-windows-mac-herunterladen"
             ]
           }
         ]
@@ -714,7 +714,7 @@
           {
             "group": "Einführung in Unternehmen",
             "pages": [
-              "wissen/einfuehrung-in-unternehmen/massenimport-von-unternehmen-ins-crm-via-csv-umsatzagent",
+              "wissen/einfuehrung-in-unternehmen/massenimport-von-unternehmen-ins-crm-per-csv-umsatzagent",
               "wissen/einfuehrung-in-unternehmen/unternehmen-im-crm-verwalten-einrichtung-benutzerdefinierte-felder-fil"
             ]
           },
@@ -722,7 +722,7 @@
             "group": "Einstellungen",
             "pages": [
               "wissen/einstellungen/vollstaendige-anleitung-zum-medien-drive",
-              "wissen/einstellungen/wo-und-wie-du-die-standardmaessige-funktion-fuer-rueckruf-sms-bei-verp"
+              "wissen/einstellungen/wo-und-wie-du-die-standard-funktion-fuer-rueckruf-sms-bei-verpasstem-a"
             ]
           },
           "wissen/konto-abrechnung/so-aktualisierst-du-deine-steuernummer-in-der-abrechnung-ust-idnr-ein",

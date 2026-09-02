@@ -1,17 +1,17 @@
 ---
-title: "Konfiguration der E-Mail-Dienste - Antwort- & Weiterleitungseinstellungen"
-description: "Hier sind einige zusätzliche Konfigurationen, mit denen du Kopien der E-Mails, die du in deinem Konto erhältst, über eine Weiterleitungsadresse oder BCC…"
+title: "Konfiguration der E-Mail-Dienste – Antwort- & Weiterleitungseinstellungen"
+description: "Hier sind einige zusätzliche Konfigurationen, mit denen du über eine Weiterleitungsadresse oder BCC Kopien der E-Mails erhalten kannst, die in deinem…"
 ---
 
 **INHALTSVERZEICHNIS**
 
 - [Was sind Antwort- & Weiterleitungsadressen?](#was-sind-antwort-weiterleitungsadressen)
-  - [Wo die Antwort- & Weiterleitungseinstellungen zu finden sind](#wo-die-antwort-weiterleitungseinstellungen-zu-finden-sind)
+  - [Wo du die Antwort- & Weiterleitungseinstellungen findest](#wo-du-die-antwort-weiterleitungseinstellungen-findest)
   - [Weiterleitungsadresse](#weiterleitungsadresse)
   - [Antwortadresse](#antwortadresse)
   - [BCC-E-Mails](#bcc-e-mails)
   - [An zugewiesenen Benutzer weiterleiten](#an-zugewiesenen-benutzer-weiterleiten)
-  - [Antwort-Tracking aktivieren - Andere SMTP-Anbieter](#antwort-tracking-aktivieren-andere-smtp-anbieter)
+  - [Antwort-Tracking aktivieren – Andere SMTP-Anbieter](#antwort-tracking-aktivieren-andere-smtp-anbieter)
     - [Beispiel mit Antwort-Tracking](#beispiel-mit-antwort-tracking)
     - [Beispiel ohne Antwort-Tracking](#beispiel-ohne-antwort-tracking)
   - [Häufig gestellte Fragen](#haeufig-gestellte-fragen)
@@ -20,9 +20,9 @@ description: "Hier sind einige zusätzliche Konfigurationen, mit denen du Kopien
 
 ## Was sind Antwort- & Weiterleitungsadressen?
 
-Hier sind einige zusätzliche Konfigurationen, mit denen du Kopien der E-Mails, die du in deinem Konto erhältst, über eine Weiterleitungsadresse oder BCC empfangen kannst. Das Antwort-Tracking wird ebenfalls erläutert.
+Hier sind einige zusätzliche Konfigurationen, mit denen du über eine Weiterleitungsadresse oder BCC Kopien der E-Mails erhalten kannst, die in deinem Konto eingehen. Außerdem wird das Antwort-Tracking genauer erläutert.
 
-## Wo die Antwort- & Weiterleitungseinstellungen zu finden sind
+## Wo du die Antwort- & Weiterleitungseinstellungen findest
 
 Klicke in deinem Konto auf **Einstellungen -> E-Mail-Dienste**.
 
@@ -32,12 +32,12 @@ Klicke in deinem Konto auf **Einstellungen -> E-Mail-Dienste**.
 
 ## Weiterleitungsadresse
 
-Wenn ein Kontakt auf eine E-Mail antwortet, wird diese Antwort immer im Reiter **Konversationen** angezeigt. Wenn du jedoch eine KOPIE der E-Mail-Antwort an ein bestimmtes E-Mail-Postfach senden möchtest, kannst du diese E-Mail-Adresse dort eintragen. Alle eingehenden und ausgehenden E-Mails (An, CC und BCC) werden abgerechnet.
+Wenn ein Kontakt auf eine E-Mail antwortet, wird diese Antwort immer im Reiter **Konversationen** angezeigt. Wenn du jedoch möchtest, dass eine KOPIE der E-Mail-Antwort an ein bestimmtes E-Mail-Postfach gesendet wird, kannst du dort diese E-Mail-Adresse eintragen. Alle ein- und ausgehenden E-Mails (An, CC und BCC) werden berechnet.
 
-Du kannst hier mehrere Weiterleitungs-E-Mail-Adressen durch ein Komma getrennt eingeben, z. B. [email1@test.com,](mailto:email1@test.com,) [email2@test.com](http://email2@test.com), [email3@test.com](mailto:email3@test.com,).
+Du kannst hier mehrere Weiterleitungs-E-Mail-Adressen durch Kommas getrennt eingeben, z. B. [email1@test.com,](mailto:email1@test.com,) [email2@test.com](http://email2@test.com), [email3@test.com](mailto:email3@test.com,)
 
 ```
-WICHTIG: Die Weiterleitungsadresse und BCC-E-Mails funktionieren nur bei Verwendung des integrierten E-Mail-Dienstes von UmsatzAgent. Andere SMTP-Anbieter werden hierbei nicht unterstützt.
+WICHTIG: Weiterleitungsadressen und BCC-E-Mails funktionieren NUR bei der Verwendung von Mailgun und LC Email. Andere SMTP-Anbieter werden nicht unterstützt.
 ```
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587024/original/fw_nyqf98_WsD_9AFZIKehYXM2lesXXTjw.png?1787947203)
@@ -46,15 +46,15 @@ WICHTIG: Die Weiterleitungsadresse und BCC-E-Mails funktionieren nur bei Verwend
 
 ## Antwortadresse
 
-Es besteht die Option, eine Antwortadresse (Reply-to) hinzuzufügen. Alle eingehenden E-Mails werden an diese E-Mail-Adresse gesendet, anstatt in den Reiter Konversationen geleitet zu werden.
+Du hast die Möglichkeit, eine Antwortadresse hinzuzufügen. Alle eingehenden E-Mails werden an diese E-Mail-Adresse gesendet, anstatt in den Reiter Konversationen geleitet zu werden.
 
-Wenn du auf die E-Mail des Kontakts in deinem Posteingang außerhalb der Software antwortest, wird deine Antwort nicht zurück in das System synchronisiert.
+Wenn du auf die E-Mail des Kontakts in deinem externen Postfach außerhalb des Systems antwortest, wird deine Antwort nicht zurück in das System synchronisiert.
 
 Du kannst bis zu 5 E-Mail-Adressen hinzufügen.
 
-Dies kann unter **Einstellungen > E-Mail-Dienste > Antwort- & Weiterleitungseinstellungen > Antwortadresse** konfiguriert werden.
+Dies kann unter **Einstellungen > E-Mail-Dienste > Reply & Forward Settings > Reply Address** konfiguriert werden.
 
-Klicke nach der Eingabe einer Antwortadresse auf **Speichern**.
+Achte darauf, auf **Speichern** zu klicken, sobald du eine Antwortadresse eingegeben hast.
 
 **![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587027/original/Fo3rLOcJRROGhbTEmLmTe3QZHLIB7jQ83A.png?1787947221)**
 
@@ -64,7 +64,7 @@ Klicke nach der Eingabe einer Antwortadresse auf **Speichern**.
 
 ## BCC-E-Mails
 
-Du erhältst eine Blindkopie (BCC) jeder E-Mail, die aus diesem Konto gesendet wird. Dies kann unter **Einstellungen > E-Mail-Dienste > Antwort- & Weiterleitungseinstellungen > BCC-E-Mails** konfiguriert werden.
+Du erhältst eine Blindkopie (BCC) jeder E-Mail, die aus deinem Konto gesendet wird. Dies lässt sich unter **Einstellungen > E-Mail-Dienste > Reply & Forward Settings > BCC Emails** konfigurieren.
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587036/original/pQf-Su9u8aS6gjynGvjaJ6O-0HZBZnvXNw.png?1787947239)
 
@@ -72,19 +72,19 @@ Du erhältst eine Blindkopie (BCC) jeder E-Mail, die aus diesem Konto gesendet w
 
 ## An zugewiesenen Benutzer weiterleiten
 
-Der dem Kontakt zugewiesene Benutzer erhält die E-Mail-Antworten in seinem eigenen E-Mail-Posteingang. Die E-Mail wird an die E-Mail-Adresse gesendet, die für diesen Benutzer unter **Einstellungen > Meine Mitarbeiter > Benutzer bearbeiten > Benutzerdaten** hinterlegt ist.
+Der dem Kontakt zugewiesene Benutzer erhält die E-Mail-Antworten in seinem E-Mail-Postfach. Die E-Mail wird an die E-Mail-Adresse gesendet, die für diesen Benutzer unter **Einstellungen > Mein Team > Benutzer bearbeiten > Benutzerinfo** hinterlegt ist.
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079587039/original/lMP6-0lXDFDd4U7KHZcOTXuYl1vdv8m9ng.png?1787947255)
 
 ---
 
-## Antwort-Tracking aktivieren - Andere SMTP-Anbieter
+## Antwort-Tracking aktivieren – Andere SMTP-Anbieter
 
-Für den integrierten UmsatzAgent-E-Mail-Dienst gibt es keine separate Option zur Aktivierung des Antwort-Trackings, da dies standardmäßig integriert ist.
+Für Mailgun gibt es keine Option zur Aktivierung des Antwort-Trackings, da es direkt über die in Mailgun eingerichtete Empfangsroute integriert ist.
 
-Wenn du die Absender-E-Mail als testing@gmail.com maskierst, lautet die Antwortadresse **testing@replies.subdomain.com** (die für das Konto eingerichtete Subdomain).
+Wenn du die Absender-E-Mail-Adresse maskierst (z. B. testing@gmail.com), wird als Antwortadresse **testing@replies.subdomain.com** angezeigt – also die Mailgun-Subdomain, die für das Konto eingerichtet wurde.
 
-Antworten erscheinen weiterhin wie gewohnt im Reiter Konversationen.
+Antworten werden weiterhin korrekt im Reiter Konversationen angezeigt.
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48286916898/original/w-1dICJ2Bsh_RZAP7ac2r7jnJsfEuOMb8Q.png?1678723680)
 
@@ -92,17 +92,17 @@ Antworten erscheinen weiterhin wie gewohnt im Reiter Konversationen.
 
 ### Beispiel mit Antwort-Tracking
 
-Die im folgenden Screenshot hervorgehobene E-Mail-Adresse ist die Antwort-E-Mail-Adresse. Dadurch können E-Mail-Antworten im Reiter Konversationen erfasst werden, um sie zu lesen, manuell zu beantworten oder eine Aktion über Tags auszulösen. Dies ist eine Eigenheit bei der Nutzung externer SMTP-Integrationen.
+Die im Screenshot unten hervorgehobene E-Mail-Adresse ist die Antwortadresse. Dadurch können die E-Mail-Antworten im Reiter Konversationen erfasst werden, um sie zu lesen, manuell zu beantworten oder Reaktionen über Tags usw. auszulösen. Dies ist die Einschränkung bei der Verwendung einer SMTP-Integration.
 
 ```
-WICHTIG: E-Mail-Antworten können nicht im Reiter Konversationen erfasst werden, wenn die hervorgehobene E-Mail-Adresse kopiert und eine direkte neue E-Mail an sie verfasst wird. Es muss direkt auf die vom System gesendete E-Mail geantwortet werden.
+WICHTIG: E-Mail-Antworten können nicht im Reiter Konversationen erfasst werden, wenn die unten hervorgehobene E-Mail-Adresse kopiert und eine direkte E-Mail daran gesendet oder ein neuer E-Mail-Verlauf gestartet wird. Es muss direkt auf die vom System gesendete E-Mail geantwortet werden.
 ```
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48260597029/original/MM1xCqK_FV3P9RIVLiwReIssTd-Qb4hbIQ.png?1667330277)
 
 ### Beispiel ohne Antwort-Tracking
 
-Die im folgenden Screenshot hervorgehobene E-Mail-Adresse ist die Antwort-E-Mail-Adresse. E-Mail-Antworten können in diesem Fall nicht im Reiter Konversationen erfasst werden. Antworten gehen stattdessen an die konfigurierte Absender-E-Mail im externen Posteingang.
+Die im Screenshot unten hervorgehobene E-Mail-Adresse ist die Antwortadresse. E-Mail-Antworten können in diesem Fall nicht im Reiter Konversationen erfasst werden. Antworten gehen stattdessen an die konfigurierte Absender-E-Mail-Adresse im Postfach.
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48260597698/original/IFF1KAgY2Qq0-jX_xY_cHqEWOSsOv33SJg.png?1667330551)
 
@@ -110,12 +110,12 @@ Die im folgenden Screenshot hervorgehobene E-Mail-Adresse ist die Antwort-E-Mail
 
 ## Häufig gestellte Fragen
 
-**F:** **Warum werden Dateianhänge bei E-Mail-Antworten nicht weitergeleitet?**
+**F:** **Warum werden Dateianhänge nicht zusammen mit den E-Mail-Antworten weitergeleitet?**
 
-**A:** Die Weiterleitungseinstellungen im Reiter E-Mail-Dienste unterstützen keine Weiterleitung von Anhängen. Wenn ein Kontakt auf eine E-Mail mit einem Anhang antwortet, öffne die Ansicht Konversationen, um den Anhang einzusehen.
+**A:** Die Weiterleitungseinstellungen im Reiter E-Mail-Dienste unterstützen das Weiterleiten von Anhängen nicht. Wenn der Kontakt auf eine E-Mail mit einem Anhang antwortet, musst du die Konversationsansicht öffnen, um diesen einzusehen.
 
 **F:** **Warum verschwinden die hinzugefügten Weiterleitungs-E-Mail-Adressen nach dem Speichern?**
 
-**A:** Wenn E-Mail-Adressen ungültig sind oder mit dedizierten Domains kollidieren, die in deinem Konto hinterlegt sind, können sie nicht als Weiterleitungsadresse genutzt werden.
+**A:** Wenn die E-Mail-Adressen ungültig sind oder mit dedizierten Domains kollidieren, die in deinem Konto hinterlegt sind, können sie nicht als Weiterleitungsadresse verwendet werden.
 
 ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155031548012/original/11wW6F1nZuJDiHlAkBvDF7D58hYMApIDLg.png?1724401276)

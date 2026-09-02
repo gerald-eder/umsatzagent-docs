@@ -1,0 +1,465 @@
+---
+title: "Eingehende Anrufe: IVR, AI, Weiterleitung und Anrufablauf erklärt"
+description: "Dieser Artikel erklärt den gesamten Ablauf vom Moment, in dem jemand deine geschäftliche Telefonnummer anruft, bis der Anruf entgegengenommen oder an die…"
+---
+
+Dieser Artikel erklärt den gesamten Ablauf vom Moment, in dem jemand deine geschäftliche Telefonnummer anruft, bis der Anruf entgegengenommen oder an die Mailbox weitergeleitet wird.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [Übersicht über den Ablauf eingehender Anrufe](#uebersicht-ueber-den-ablauf-eingehender-anrufe)
+- [Wo du Einstellungen für eingehende Anrufe konfigurierst](#wo-du-einstellungen-fuer-eingehende-anrufe-konfigurierst)
+- [Stufe 1 — Intelligente Anrufweiterleitung (IVR & Voice AI)](#stufe-1-intelligente-anrufweiterleitung-ivr-voice-ai))
+  - [1. IVR (Interactive Voice Response) Einrichtung & Ablauf](#1-ivr-interactive-voice-response-einrichtung-ablauf)-Setup-&-Flow)
+  - [2. Voice AI: Primär- vs. Backup-Modus erklärt](#2-voice-ai-primaer-vs-backup-modus-erklaert)
+  - [Zwischen Voice-AI-Modi wechseln](#zwischen-voice-ai-modi-wechseln)
+- [Stufe 2 — Paralleles Klingeln (Wie Anrufe dein Team erreichen)](#stufe-2-paralleles-klingeln-wie-anrufe-dein-team-erreichen))
+  - [Wie paralleles Klingeln funktioniert](#wie-paralleles-klingeln-funktioniert)
+  - [Welche Telefonnummer angerufen wird (Weiterleitungspriorität)](#welche-telefonnummer-angerufen-wird-weiterleitungsprioritaet))
+  - [Geräte von Teammitgliedern & Anrufannahme](#geraete-von-teammitgliedern-anrufannahme)
+  - [Klingel-Timeout festlegen](#klingel-timeout-festlegen)
+- [Stufe 3 — Nach dem Timeout](#stufe-3-nach-dem-timeout)
+  - [1. Voice AI — Backup-Modus 3. Priorität](#1-voice-ai-backup-modus-3-prioritaet)
+  - [2. Backup — Mailbox oder Voice AI](#2-backup-mailbox-oder-voice-ai)
+  - [Mailbox-Ansage — Herkunft der Ansage](#mailbox-ansage-herkunft-der-ansage)
+- [Erweiterte Einstellungen — Funktionen pro Rufnummer](#erweiterte-einstellungen-funktionen-pro-rufnummer)
+- [Spracheinstellungen — Standortweite Weiterleitung](#spracheinstellungen-standortweite-weiterleitung)
+- [Vollständiges Anruffluss-Referenzdiagramm](#vollstaendiges-anruffluss-referenzdiagramm)
+- [Häufige Einrichtungsszenarien](#haeufige-einrichtungsszenarien)
+- [Fehlerbehebung](#fehlerbehebung)
+- [Kurzübersicht](#kurzuebersicht)
+
+---
+
+## Übersicht über den Ablauf eingehender Anrufe
+
+Wenn jemand deine geschäftliche Telefonnummer anruft, durchläuft das System **drei Stufen.** Es stoppt in dem Moment, in dem der Anruf entgegengenommen wird. Nicht konfigurierte Optionen werden automatisch übersprungen.
+
+**Stufe 1 — Wird zuerst geprüft**
+
+Intelligente Weiterleitung
+
+**IVR** oder **Voice AI (Primärmodus)** — wenn eine dieser Optionen eingerichtet ist, übernimmt sie den Anruf sofort. Stufe 2 wird nie ausgeführt.
+
+**Stufe 2 — Wenn Stufe 1 nicht eingerichtet ist**
+
+Paralleles Klingeln
+
+Ein einzelner Twilio-Wählvorgang geht **gleichzeitig an alle konfigurierten Ziele**: Geräte des Teammitglieds + eine Weiterleitungs-Telefonnummer + alle weiteren klingelnden Teammitglieder. Wer zuerst abnimmt, erhält das Gespräch. Das Klingeln dauert so lange wie das von dir festgelegte **Timeout**.
+
+**Stufe 3 — Nach dem Timeout, wenn niemand abgenommen hat**
+
+Backup
+
+**Voice AI (Backup-Modus)** wird zuerst versucht, falls konfiguriert. Danach folgt der finale Fallback: **Mailbox** oder **Voice AI** aus dem Backup-Bereich.
+
+```
+Wichtige Regel: Das System wertet nur aus, was du tatsächlich eingerichtet hast. Wenn etwas nicht eingerichtet oder deaktiviert ist, wird es automatisch übersprungen – es geht kein Prioritätsplatz verloren.
+```
+
+---
+
+## Wo du Einstellungen für eingehende Anrufe konfigurierst
+
+Alle Einstellungen für eingehende Anrufe befinden sich im Konfigurationsfenster der jeweiligen Telefonnummer:
+
+**Einstellungen › Telefonsystem › Nummern › ⚙️ Konfigurieren (bei einer beliebigen Nummer)**
+
+Das Fenster hat drei Reiter:
+
+| Reiter | **Was hier konfiguriert wird** |
+| --- | --- |
+| **Grundlegende Details** | Name und Label der Rufnummer (Screenshot 1.0) |
+| **Anrufweiterleitung** | Gesamte Weiterleitung für Stufe 1, 2 und 3 — IVR, Teammitglied, externe Telefonnummer, Voice AI, geschäftliche Telefonnummer, Timeout, Backup (Screenshot 1.1 & 1.2) |
+| **Erweiterte Einstellungen** | Whisper-Nachricht, Call Connect, Anrufaufzeichnung, Anrufer-ID (Screenshot 1.3) |
+
+Kontoweite Weiterleitungsoptionen (z. B. „Dem angerufenen Nutzer zugewiesenen Benutzer anrufen“) befinden sich an separater Stelle:
+
+**Einstellungen › Telefonsystem › Sprache › Reiter Weitere Einstellungen › Unterreiter Eingehende Anrufe**
+
+Der Bereich „Sprache“ hat sechs Unterreiter: Anrufaufzeichnung & Transkription, Mailbox & Rückruf-SMS bei verpasstem Anruf, Anruf-Skripte, Benutzerdefinierte Dispositionen, VoIP-Tischtelefon (SIP) und Weitere Einstellungen. Die Schalter für die eingehende Weiterleitung befinden sich unter Weitere Einstellungen → Eingehende Anrufe.
+
+## Stufe 1 — Intelligente Anrufweiterleitung (IVR & Voice AI)
+
+Diese beiden Optionen haben, sofern konfiguriert, immer Vorrang. Wenn eine von beiden den Anruf annimmt, wird Stufe 2 nie ausgeführt.
+
+### 1. IVR (Interactive Voice Response) Einrichtung & Ablauf
+
+Mit IVR können Anrufer durch Drücken von Tasten auf ihrem Telefon durch ein Menü navigieren.
+
+**Beispiel:** „Vielen Dank für deinen Anruf. Drücke die 1 für den Vertrieb. Drücke die 2 für den Support. Drücke die 0, um mit der Zentrale verbunden zu werden.“
+
+IVR wird innerhalb eines Workflows erstellt, nicht direkt in den Telefoneinstellungen. Die Rufnummer verweist lediglich auf den zu verwendenden Workflow.
+
+**So richtest du IVR ein:**
+
+1. Gehe zu Automatisierung → Workflows und erstelle einen neuen Workflow mit dem Trigger **Telefon-IVR**.
+2. Baue dein Menü auf: Ansagen abspielen, Tastatureingaben erfassen, nach gedrückter Ziffer verzweigen, an Teammitglieder oder Abteilungen weiterleiten.
+3. Öffne nach dem Erstellen das Konfigurationsfenster der Rufnummer → Reiter **Anrufweiterleitung** → weise den Workflow dem IVR-Feld zu.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754703/original/QsJ9RHIGrhP_3aTBndu0a05GnC17Q0NwvQ.png?1788238620)
+
+Wenn IVR aktiv ist, wird der Anruf vollständig vom Workflow verarbeitet. Stufe 2 (Teammitglied, externe Telefonnummer usw.) wird nie ausgeführt.
+
+### 2. Voice AI: Primär- vs. Backup-Modus erklärt
+
+Voice AI ermöglicht es einem AI-Assistenten, Anrufe entgegenzunehmen und zu bearbeiten. Ob er bei jedem Anruf als erste Instanz antwortet oder erst als Ausweichlösung dient, wenn kein Mensch abnimmt, hängt von einem einzigen Schalter ab — und dieser Schalter befindet sich in den Einstellungen des AI-Assistenten, nicht in den Rufnummerneinstellungen.
+
+### Zwischen Voice-AI-Modi wechseln
+
+**Einstellungen › AI-Assistenten › Voice AI › Wähle deinen Assistenten › Reiter Telefon & Verfügbarkeit**
+
+Suche nach diesem Schalter: **„AI-Assistent als Backup für die Telefonnummer/den Nummern-Pool aktivieren“.**
+Lasse diesen Schalter deaktiviert, wenn dein Voice-AI-Assistent jeden Anruf sofort entgegennehmen soll.
+
+| Schalterzustand | Verhalten | Anzeige im Fenster Anrufweiterleitung |
+| --- | --- | --- |
+| **AUS** (Primärmodus) | AI nimmt jeden Anruf sofort an. Stufe 2 wird nie ausgeführt. | Voice AI erscheint oben als **1. Priorität.** Teammitglied und externe Telefonnummer haben keine Prioritäts-Badges – sie werden nur erreicht, wenn die AI den Anruf weiterleitet. |
+| **EIN** (Backup-Modus) | Zuerst werden Personen über Stufe 2 angerufen. AI antwortet nur, wenn innerhalb des Timeouts niemand abnimmt. | Voice AI erscheint als **3. Priorität**, nach Teammitglied (1.) und externer Telefonnummer (2.). Sie wird erst ausgelöst, nachdem das Klingeln in Stufe 2 abgelaufen ist – nicht währenddessen. |
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754729/original/TKPgYyXxBgpH7Rl7gaU-HrRHKZCWawx9aQ.png?1788238674)**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754744/original/imUgBizBA-mmVlQEsTFOktHDIM3PFD2bzQ.png?1788238726)**
+
+**Funktionen von Voice AI:**
+
+- Anrufe rund um die Uhr ohne menschliche Mitarbeiter annehmen
+- Fragen in natürlicher Sprache beantworten
+- Informationen von Anrufern erfassen
+- Bei Bedarf an ein Teammitglied weiterleiten
+
+Du kannst im selben Reiter „Telefon & Verfügbarkeit“ auch Arbeitszeiten festlegen, sodass die AI nur an bestimmten Tagen und zu bestimmten Zeiten antwortet.
+
+## Stufe 2 — Paralleles Klingeln (Wie Anrufe dein Team erreichen)
+
+### Wie paralleles Klingeln funktioniert
+
+Wenn Stufe 2 ausgeführt wird, startet das System einen **einzelnen ausgehenden Wählvorgang an alle konfigurierten Ziele gleichzeitig.** Es gibt keine sequenzielle Logik („erst Teammitglied versuchen, dann externe Nummer“). Alles klingelt gleichzeitig:
+
+- Ausgewählte Geräte des Teammitglieds (Web-App, Mobile App, VoIP-Tischtelefon)
+- Eine Weiterleitungs-Telefonnummer (siehe Priorität unten)
+- Alle weiteren klingelnden Teammitglieder (auf deren bevorzugten Geräten)
+
+**Das Ziel, das zuerst abnimmt, erhält den Anruf.** Bei allen anderen Zielen stoppt das Klingeln sofort.
+
+**Bedeutung der Prioritäts-Badges (1., 2., 3.):** Diese Bezeichnungen erzeugen kein nacheinander geschaltetes Klingeln. Sie geben die Prioritätsreihenfolge an, welche Rufnummer in das parallele Klingeln einbezogen wird – sowie die relative Position des Voice-AI-Backups (das separat nach Ablauf des Timeouts ausgeführt wird). Siehe nächster Abschnitt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489887/original/G3m2XBJuVGEVYMlJ8wjWDJWM5vB3eobmfQ.png?1774267907)**
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489883/original/60QZcGXN-YUD9wmzvT81cRraKAfi0HYI-g.png?1774267907)**
+
+---
+
+### Welche Telefonnummer angerufen wird (Weiterleitungspriorität)
+
+Es kann nur eine Telefonnummer in das parallele Klingeln einbezogen werden. Das System belegt diesen Platz nach folgender Priorität – die erste zutreffende Option wird genutzt:
+
+| Priorität | Rufnummernquelle | Bedingung |
+| --- | --- | --- |
+| 1. | Persönliche Rufnummer des Teammitglieds | Nur wenn das Gerät „Telefonnummer“ in der Zeile des Teammitglieds aktiviert ist. Ist dies aktiviert, werden externe Telefonnummer und geschäftliche Rufnummer nicht verwendet – der Platz ist bereits belegt. |
+| 2. | Externe Telefonnummer | Wird verwendet, wenn das Gerät „Telefonnummer“ des Teammitglieds nicht aktiviert ist und eine externe Rufnummer konfiguriert wurde. |
+| 3. | Geschäftliche Telefonnummer | Wird als letzter Ausweg genutzt, wenn keine der obigen Optionen den Platz belegt. Standardmäßig für alle Konten aktiv. Deaktiviere dies unter Weitere Einstellungen → Eingehende Anrufe, falls nicht gewünscht. |
+
+Wenn keine dieser Optionen konfiguriert ist, klingelt keine externe Telefonnummer – nur digitale Geräte (Web-App, Mobile App) werden in den Anruf einbezogen.
+
+---
+
+### Geräte von Teammitgliedern & Anrufannahme
+
+Das Teammitglied ist der primäre Empfänger des Anrufs. Alle für das Teammitglied ausgewählten Geräte klingeln gleichzeitig im Rahmen des Stufe-2-Wählvorgangs.
+
+**Web-App**
+
+Eine Anrufbenachrichtigung erscheint im UmsatzAgent-Browser-Tab. Der Nutzer klickt im Browser auf Annehmen. Erfordert eine aktive Anmeldung.
+
+**Mobile App**
+
+Eine Push-Benachrichtigung wird an das Smartphone des Nutzers gesendet. Die Annahme erfolgt über die Mobile App (Kollab by LeadConnector). Erfordert aktivierte Push-Benachrichtigungen auf dem Gerät.
+
+**Telefonnummer**
+
+Das System ruft die persönliche Rufnummer des Nutzers an. Die Annahme erfolgt wie bei einem normalen Anruf. **Hinweis**: Das Aktivieren dieser Option belegt den Weiterleitungsplatz – externe Rufnummer und geschäftliche Rufnummer werden dann nicht angerufen.
+
+**VoIP-Tischtelefon**
+
+Das System ruft das SIP-fähige Tischtelefon des Nutzers an. Erfordert die Einrichtung des Tischtelefons – klicke in der Zeile des Teammitglieds auf „Tischtelefon einrichten“.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489867/original/QYhE24kLj54GSkMisu33HUkjTTIt8eqxxA.png?1774267905)**
+
+**Mehrere Teammitglieder gleichzeitig anrufen**
+
+Aktiviere diese Checkbox, um neben dem primären Teammitglied weitere Nutzer gleichzeitig anzurufen – alle im selben Wählvorgang.
+
+- Alle ausgewählten Mitglieder klingeln gleichzeitig – wer zuerst abnimmt, erhält das Gespräch
+- Jedes Mitglied wird auf seinem bevorzugten Gerät angerufen (wird im jeweiligen Nutzerprofil festgelegt)
+- Maximal 6 zusätzliche Personen
+- Gilt nicht, wenn IVR oder Voice AI (Primärmodus) aktiv ist
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489876/original/uxU66D5TUtq0rHBek81xOuWP025RKwPdcg.png?1774267907)**
+
+---
+
+### Klingel-Timeout festlegen
+
+Das Timeout bestimmt, wie viele Sekunden das parallele Klingeln in Stufe 2 läuft, bevor abgebrochen und zu Stufe 3 gewechselt wird.
+
+- Standard: 20 Sekunden, falls nicht anders konfiguriert
+- Aktiviere „Timeout für eingehende Anrufe“ und trage den gewünschten Wert (in Sekunden) ein
+- Wird das Timeout ohne Antwort erreicht, wechselt das System zu Stufe 3
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489879/original/rk6K3iFT9AvMysEbvNznIc7j_CpH4Nlqug.png?1774267907)**
+
+---
+
+## Stufe 3 — Nach dem Timeout
+
+Wenn während des Klingelns in Stufe 2 niemand abnimmt, wechselt der Anruf in diese Stufe. Folgendes geschieht der Reihe nach:
+
+### 1. Voice AI — Backup-Modus 3. Priorität
+
+Wenn Voice AI mit aktiviertem Backup-Schalter konfiguriert ist, wird sie nach dem Stufe-2-Timeout zuerst versucht. Die AI nimmt den Anruf über eine separate Weiterleitung an – dies ist ein eigenständiger Schritt und nicht Teil des parallelen Klingelns.
+
+Deshalb wird Voice AI im Backup-Modus im Reiter „Anrufweiterleitung“ als „3. Priorität“ angezeigt – sie läuft nach dem parallelen Klingeln (1. + 2.) ab, nicht parallel dazu.
+
+### 2. Backup — Mailbox oder Voice AI
+
+Wenn kein Voice-AI-Backup greift (oder als letzte Ausweichoption), bestimmt der Bereich „Backup“, was passiert:
+
+| Option | Was passiert |
+| --- | --- |
+| **Mailbox** | Der Anrufer hört deine Mailbox-Ansage und hinterlässt eine Nachricht. Diese ist in den Konversationen des jeweiligen Kontakts abrufbar. |
+| **Voice AI** | Ein AI-Assistent nimmt den unbeantworteten Anruf an und bearbeitet ihn. |
+
+Das Backup ist immer der letzte Schritt und wird nie übersprungen.
+
+### Mailbox-Ansage — Herkunft der Ansage
+
+Das System nutzt die erste gefundene Ansage in dieser Reihenfolge:
+
+1. **Persönliche Mailbox des Teammitglieds** — eingerichtet im Nutzerprofil unter Telefoneinstellungen
+2. **Konto-Mailbox** — eingerichtet unter Einstellungen → Telefonsystem → Sprache → Mailbox & Rückruf-SMS bei verpasstem Anruf
+3. **Systemstandard** — standardmäßige Ansage, die zur Aufnahme nach dem Signalton auffordert.
+
+**Unterstützte Upload-Formate:** MP3, WAV, AIFF, GSM, ULAW
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489881/original/PtfGFe-Qhz2YicdM3SJeZsFDA2hyIqYIXA.png?1774267907)**
+
+---
+
+## Erweiterte Einstellungen — Funktionen pro Rufnummer
+
+**Einstellungen › Telefonsystem › Nummern › ⚙️ Konfigurieren › Reiter Erweiterte Einstellungen**
+
+Diese Einstellungen steuern das Verhalten individueller Anrufe, sobald sie während Stufe 2 ein Teammitglied erreichen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489891/original/dXas87JcIaYByBj5xkNv2sLEmYpBG9lPyQ.png?1774267908)**
+
+### Whisper-Nachricht
+
+Eine kurze Audionachricht, die **nur dem Mitarbeiter** (nicht dem Anrufer) in dem Moment vorgespielt wird, in dem er abhebt – bevor beide Parteien verbunden werden.
+
+**Beispiel:** Mitarbeiter nimmt ab → hört „Eingehender Anruf über Facebook Lead Ad — Max Mustermann“ → wird sofort mit dem Anrufer verbunden.
+
+- Unterstützt Variablen: {{contact.name}}, Lead-Quelle, Kampagnenname usw.
+- Der Anrufer hört Wartemusik, während die Whisper-Nachricht für den Mitarbeiter abgespielt wird
+- Die Verbindung wird nach Ende der Nachricht automatisch hergestellt – kein Tastendruck erforderlich
+
+**Whisper-Nachricht vs. Call Connect:** Die Whisper-Nachricht gibt Informationen wieder und verbindet automatisch. Call Connect (unten) erfordert einen aktiven Tastendruck des Mitarbeiters – nutze Call Connect, um Anrufbeantworter abzufangen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489877/original/vFQCuAOmvN3egOzEOp_BKT3NgbiV7yoLeQ.png?1774267907)**
+
+### Call Connect
+
+Wenn aktiviert, muss der Mitarbeiter eine beliebige Taste auf seinem Telefon drücken, um zu bestätigen, dass er eine reale Person ist, bevor er mit dem Anrufer verbunden wird.
+
+**Warum das wichtig ist:** Wenn Anrufe an eine externe Rufnummer weitergeleitet werden, gehen sie möglicherweise an eine Mailbox statt an einen Menschen. Ohne Call Connect wird der Anrufer mit der Mailbox verbunden. Mit Call Connect drücken Anrufbeantworter keine Taste – das System wertet dies als unbeantwortet und wechselt zu Stufe 3.
+
+**Ablauf für den Mitarbeiter:**
+
+1. Telefon klingelt — Mitarbeiter nimmt ab
+2. Mitarbeiter hört die Whisper-Nachricht (falls konfiguriert), dann: „Drücke eine beliebige Taste zum Verbinden.“
+3. Mitarbeiter drückt eine Taste → Anrufer und Mitarbeiter werden verbunden
+4. Wird keine Taste gedrückt → System wechselt zu Stufe 3 (Voice-AI-Backup oder Mailbox)
+
+**Optimal für:** Externe Rufnummern und geschäftliche Telefonnummern, bei denen Mailboxen häufig rangehen. Weniger notwendig für die Web-App oder Mobile App, da die App die Annahme durch einen Menschen direkt bestätigt.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489889/original/EBDWSqpPEzkLdOohxm8E-nce_EAv4oI_dQ.png?1774267908)**
+
+### Anrufaufzeichnung
+
+Wenn aktiviert, zeichnet das System beide Seiten jedes eingehenden Anrufs auf dieser Nummer auf.
+
+- Aufzeichnungen erscheinen in den Konversationen des jeweiligen Kontakts
+- Ein Aufnahmehinweis kann zu Beginn für den Anrufer abgespielt werden – aktiviere/deaktiviere dies in den Erweiterten Einstellungen (in manchen Regionen gesetzlich vorgeschrieben)
+
+---
+
+## Spracheinstellungen — Standortweite Weiterleitung
+
+**Einstellungen › Telefonsystem › Sprache › Reiter Weitere Einstellungen › Unterreiter Eingehende Anrufe**
+
+Diese beiden Schalter gelten kontoweit und stehen über allen rufnummernspezifischen Weiterleitungseinstellungen.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155079754804/original/nZJzVbKX0-Qh0XUWowv2tU06LPO5kEAhMg.png?1788238787)**
+
+### Dem angerufenen Nutzer zugewiesenen Benutzer anrufen
+
+**Wenn EIN**: Das System versucht zuerst, den Benutzer anzurufen, der der angerufenen Telefonnummer zugewiesen ist, bevor die Standard-Weiterleitungskette durchlaufen wird.
+
+**Wenn AUS**: Das System leitet basierend auf dem zugewiesenen Benutzer des Kontakts oder den allgemeinen Weiterleitungseinstellungen weiter.
+
+Diese Einstellung gilt nicht, wenn IVR oder Voice AI (Primärmodus) konfiguriert ist – diese haben unabhängig von diesem Schalter immer Vorrang.
+
+### Anrufe an geschäftliche Telefonnummer weiterleiten
+
+Steuert, ob die geschäftliche Rufnummer deines Kontos als letzte Option im Weiterleitungsplatz zur Verfügung steht. Dies ist standardmäßig aktiviert.
+
+**Deaktiviere** dies, wenn Anrufe nicht auf deine Geschäftsleitung übergehen sollen, falls keine andere Rufnummer konfiguriert ist.
+
+---
+
+## Vollständiges Anruffluss-Referenzdiagramm
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155067489890/original/HDMzUepk3MA3_0T5n5-aJhEQJnK60SqzlQ.jpeg?1774267908)
+
+---
+
+## Häufige Einrichtungsszenarien
+
+### 1. Alle Anrufe klingeln direkt bei mir
+
+1. Setze in der Anrufweiterleitung das **Teammitglied** auf dich selbst.
+2. Aktiviere die Geräte, die klingeln sollen (Web-App, Mobile App etc.).
+3. Stelle das Backup auf **Mailbox**.
+
+### 2. Mein gesamtes Team gleichzeitig anrufen
+
+1. Wähle ein primäres Teammitglied aus.
+2. Aktiviere **Weitere Teammitglieder anrufen** und füge dein Team hinzu (bis zu 6 zusätzliche Personen).
+3. Jedes Teammitglied stellt sein bevorzugtes Gerät im eigenen Benutzerprofil ein.
+
+### 3. Telefonmenü (Drücke 1 für Vertrieb, 2 für Support)
+
+1. Gehe zu **Automatisierung → Workflows** und erstelle einen Workflow mit dem Trigger *Telefon-IVR*.
+2. Erstelle Verzweigungen für die einzelnen Tasteneingaben.
+3. Weise diesen Workflow im Reiter Anrufweiterleitung dem Feld **IVR** zu.
+
+### 4. AI nimmt jeden Anruf sofort an
+
+1. Gehe zu **AI-Assistenten → Voice AI → dein Assistent → Telefon & Verfügbarkeit**.
+2. Schalte die Option *„AI-Assistent als Backup aktivieren“* auf **AUS**.
+3. Weise diesem Assistenten die Rufnummer zu — die AI beantwortet jeden eingehenden Anruf sofort.
+
+### 5. Erst Personen anrufen, AI übernimmt verpasste Anrufe
+
+1. Gehe zu **AI-Assistenten → Voice AI → dein Assistent → Telefon & Verfügbarkeit**.
+2. Schalte die Option *„AI-Assistent als Backup aktivieren“* auf **EIN**.
+3. Konfiguriere Teammitglied und externe Telefonnummer regulär in der Anrufweiterleitung.
+4. Voice AI erscheint als 3. Priorität und antwortet erst nach Ablauf des Stufe-2-Klingel-Timeouts.
+
+### 6. Verbindungen mit Anrufbeantwortern verhindern
+
+1. Aktiviere im Reiter **Erweiterte Einstellungen** die Option **Call Connect**.
+2. Mitarbeiter müssen bei Annahme eine beliebige Taste drücken, um zu bestätigen, dass sie ein Mensch sind.
+3. Anrufbeantworter drücken keine Taste – der Anruf geht automatisch zu Stufe 3 über.
+
+---
+
+## Fehlerbehebung
+
+### 1. Mein Telefon klingelt bei eingehenden Anrufen nicht
+
+- Prüfe, welche Gerätetypen in der Zeile des Teammitglieds aktiviert sind – mindestens einer muss aktiv sein.
+- Für Web-App: Du musst im Browser aktiv bei UmsatzAgent angemeldet sein.
+- Für Mobile App: Push-Benachrichtigungen müssen auf deinem Smartphone aktiviert sein.
+- Prüfe, ob IVR oder Voice AI (Primärmodus) den Anruf abfängt, bevor Stufe 2 startet.
+- Prüfe das Timeout – ist es sehr kurz, endet das Klingeln eventuell vor der Annahme.
+
+### 2. Anrufe gehen direkt an die Mailbox
+
+- Das Timeout ist möglicherweise zu kurz — erhöhe es im Timeout-Bereich.
+- Wenn Call Connect bei Weiterleitung an eine externe Nummer aktiv ist: Ein Anrufbeantworter hebt möglicherweise ab, ohne eine Taste zu drücken, was den Anruf an Stufe 3 sendet.
+- Prüfe Weitere Einstellungen → Eingehende Anrufe — wenn „Dem angerufenen Nutzer zugewiesenen Benutzer anrufen“ aktiv ist, aber kein Benutzer zugewiesen ist, wechselt der Anruf möglicherweise direkt zum Backup.
+
+### 3. Mitarbeiter hört eine Ansage vor dem Anrufer
+
+Dies ist die Whisper-Nachricht. Sie gibt nur dem Mitarbeiter Kontextinformationen. Um dies zu deaktivieren, schalte die Whisper-Nachricht im Reiter Erweiterte Einstellungen aus.
+
+### 4. Mitarbeiter muss vor dem Verbinden eine Taste drücken
+
+Call Connect ist aktiviert. Der Mitarbeiter muss eine Taste drücken, um zu bestätigen, dass er kein Anrufbeantworter ist. Deaktiviere Call Connect im Reiter Erweiterte Einstellungen, um dies abzuschalten.
+
+### 5. „Weitere Teammitglieder anrufen“ lässt nicht alle Telefone klingeln
+
+- Jedes Teammitglied muss mindestens einen aktiven Gerätetyp im eigenen Benutzerprofil hinterlegt haben.
+- Diese Funktion greift nur in Stufe 2 – sie hat keine Auswirkung, wenn IVR oder Voice AI (Primärmodus) aktiv ist.
+
+### 6. Die falsche Person wird angerufen
+
+- Prüfe Einstellungen → Telefonsystem → Sprache → Weitere Einstellungen → Eingehende Anrufe — „Dem angerufenen Nutzer zugewiesenen Benutzer anrufen“ überschreibt eventuell deine Weiterleitungseinstellungen.
+- Prüfe, ob dem Kontakt ein Benutzer zugewiesen ist – diese Zuweisung kann die Anrufzustellung beeinflussen.
+
+### 7. Voice AI nimmt nicht ab, obwohl sie konfiguriert ist
+
+- Prüfe den Backup-Schalter unter AI-Assistenten → Voice AI → Telefon & Verfügbarkeit.
+- Wenn der Backup-Modus AKTIV ist, nimmt Voice AI erst nach Ablauf des Stufe-2-Timeouts ab.
+- Wenn die AI immer abnehmen soll, schalte den Backup-Modus AUS.
+
+---
+
+## Kurzübersicht
+
+| Funktion | Wo konfigurieren | Beschreibung |
+| --- | --- | --- |
+| **IVR** | Automatisierung → Workflows (erstellen); Reiter Anrufweiterleitung (zuweisen) | Telefonmenü — leitet nach Tastendruck weiter. Verarbeitet Anrufe vor Stufe 2. |
+| **Voice AI — Primär** | AI-Assistenten → Voice AI → Telefon & Verfügbarkeit (Backup-Schalter AUS) | AI nimmt jeden Anruf sofort an. Stufe 2 läuft nie. |
+| **Voice AI — Backup** | AI-Assistenten → Voice AI → Telefon & Verfügbarkeit (Backup-Schalter EIN) | AI nimmt erst ab, wenn das Klingeln in Stufe 2 ohne Antwort abläuft. |
+| **Teammitglied** | Reiter Anrufweiterleitung → Zeile Teammitglied | Leitet an ausgewählte Geräte des internen Nutzers weiter – alle klingeln gleichzeitig in Stufe 2. |
+| **Weitere Teammitglieder anrufen** | Reiter Anrufweiterleitung → Checkbox „Weitere Teammitglieder anrufen“ | Lässt bis zu 6 zusätzliche Nutzer im selben Stufe-2-Wählvorgang gleichzeitig klingeln. |
+| **Externe Telefonnummer** | Reiter Anrufweiterleitung → Zeile Externe Telefonnummer | Belegt den Weiterleitungsplatz (2. Priorität), wenn die Rufnummer des Teammitglieds nicht aktiviert ist. |
+| **Geschäftliche Telefonnummer** | Standardmäßig aktiv. Deaktivieren unter Weitere Einstellungen → Eingehende Anrufe. | Belegt den Weiterleitungsplatz als letzte Option (3. Priorität). |
+| **Timeout** | Reiter Anrufweiterleitung → Bereich Timeout | Dauer des Klingelns in Stufe 2 vor dem Wechsel zu Stufe 3 (Standard: 20 s). |
+| **Mailbox** | Reiter Anrufweiterleitung → Bereich Backup | Letzter Fallback — Anrufer hinterlässt eine Nachricht. |
+| **Mailbox-Ansage** | Benutzerprofil (pro Nutzer) oder Telefonsystem → Sprache → Mailbox & Rückruf-SMS bei verpasstem Anruf | Individuelle Audioansage vor Aufnahmebeginn. |
+| **Whisper-Nachricht** | Reiter Erweiterte Einstellungen | Spielt Kontextinfos nur für den Mitarbeiter ab, bevor verbunden wird. Anrufer hört dies nicht. |
+| **Call Connect** | Reiter Erweiterte Einstellungen | Mitarbeiter muss Taste drücken – blockiert Anrufbeantworter. |
+| **Anrufaufzeichnung** | Reiter Erweiterte Einstellungen | Zeichnet beide Gesprächsseiten aller eingehenden Anrufe auf dieser Nummer auf. |
+| **Dem angerufenen Nutzer zugewiesenen Benutzer anrufen** | Telefonsystem → Sprache → Weitere Einstellungen → Eingehende Anrufe | Leitet Anrufe an den der Rufnummer zugewiesenen Nutzer weiter, vor der Standard-Weiterleitung. |
+| **An geschäftliche Rufnummer weiterleiten** | Telefonsystem → Sprache → Weitere Einstellungen → Eingehende Anrufe | Aktiviert/deaktiviert die Geschäftsnummer als letzte Weiterleitungsoption. Standardmäßig EIN. |
+
+---
+
+## Brauchst du Hilfe?
+
+Wenn eingehende Anrufe nicht die gewünschte Person, das Gerät, die IVR, den Voice-AI-Assistenten oder die Mailbox erreichen, prüfe zuerst den Ablauf von Stufe 1 bis Stufe 3 und überprüfe alle konfigurierten Optionen.
+
+Stelle Folgendes sicher:
+
+- Die richtige Telefonnummer wird konfiguriert.
+- IVR oder Voice AI im Primärmodus fangen den Anruf nicht vor der Teamweiterleitung ab.
+- Das gewünschte Teammitglied ist korrekt zugewiesen.
+- Mindestens ein Gerätetyp ist für das zugewiesene Teammitglied aktiviert.
+- Web-Nutzer sind eingeloggt, wenn Anrufe im Browser erwartet werden.
+- Mobile Nutzer haben Push-Benachrichtigungen aktiviert.
+- VoIP-Tischtelefone sind eingerichtet und erreichbar.
+- „Weitere Teammitglieder anrufen“ enthält die richtigen Nutzer.
+- Zusätzliche Teammitglieder haben jeweils mindestens ein aktives Gerät eingerichtet.
+- Das Timeout für eingehende Anrufe ist lang genug für die Annahme.
+- Nur die beabsichtigte Weiterleitungsquelle wird gemäß Priorität verwendet.
+- Die externe Rufnummer ist korrekt hinterlegt, falls Weiterleitung aktiv ist.
+- Die geschäftliche Telefonnummer als Fallback ist nur aktiv, wenn gewünscht.
+- Der Voice-AI-Backup-Modus ist aktiv, wenn die AI erst nach Nichtabnehmen reagieren soll.
+- Der Voice-AI-Primärmodus ist aktiv, wenn die AI sofort abnehmen soll.
+- Das Backup-Ziel ist korrekt auf Mailbox oder Voice AI eingestellt.
+- Die gewünschte Mailbox-Ansage ist auf der richtigen Benutzer- oder Kontoebene hinterlegt.
+- Die Whisper-Nachricht ist deaktiviert, wenn keine Vorab-Nachricht abgespielt werden soll.
+- Call Connect ist deaktiviert, wenn kein Tastendruck vor Verbindungsaufbau verlangt werden soll.
+- Anrufaufzeichnung und weitere erweiterte Einstellungen sind wie gewünscht konfiguriert.
+- Kontoweite Weiterleitungseinstellungen überschreiben nicht die rufnummernspezifische Konfiguration.
+- Der der Rufnummer oder dem Kontakt zugewiesene Benutzer beeinflusst die Weiterleitung nicht unbeabsichtigt.
+
+Wenn Anrufe das falsche Ziel erreichen, prüfe die Weiterleitungsreihenfolge sorgfältig und ermittle die erste konfigurierte Option, die den Anruf annimmt. Das System stoppt die Prüfung weiterer Optionen, sobald der Anruf angenommen wurde.
+
+Besteht das Problem weiterhin, sammle die betroffene Telefonnummer, Datum und Uhrzeit des Anrufs, das erwartete Ziel, das tatsächliche Ziel, die Zuweisung des Teammitglieds, aktivierte Gerätetypen, Timeout-Werte, den Voice-AI-Modus, die Backup-Einstellung sowie Screenshots der Weiterleitungs- und Routing-Konfiguration. Wende dich an den UmsatzAgent Support.

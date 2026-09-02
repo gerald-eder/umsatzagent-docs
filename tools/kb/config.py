@@ -43,11 +43,11 @@ MARKEN = [
     ("Go High Level", "UmsatzAgent"),
     ("HighLevel", "UmsatzAgent"),
     ("High Level", "UmsatzAgent"),
-    ("LeadConnector", "UmsatzAgent"),
-    ("Lead Connector", "UmsatzAgent"),
-    ("LC Phone", "UmsatzAgent Telefon"),
-    ("LC Email", "UmsatzAgent E-Mail"),
-    ("LC-Phone", "UmsatzAgent Telefon"),
+    # LeadConnector wird NICHT stumpf ersetzt. Es ist das Greylabel und darf
+    # sichtbar sein — und es steckt in Namen, die der Kunde wirklich braucht:
+    # die Mobile App heißt im App Store "Kollab by LeadConnector". Wer das zu
+    # "UmsatzAgent" macht, schickt ihn zu einer Suche ohne Treffer. Wo der
+    # Name bloß die Plattform meint, erledigt das die Übersetzung im Kontext.
     # Agentur-Sprache mechanisch geradeziehen. Das Modell hält sich nicht
     # zuverlässig daran, die Begriffe sind aber eindeutig ersetzbar: Der
     # Leser hat genau ein Konto.
@@ -65,9 +65,12 @@ MARKEN = [
 
 # Begriffe, die nach dem Übersetzen NICHT vorkommen dürfen. Findet der Prüfer
 # einen davon, gilt der Artikel als nicht auslieferbar.
+# LeadConnector, Twilio und Mailgun stehen bewusst NICHT hier: LeadConnector
+# ist das Greylabel und darf sichtbar sein, Twilio und Mailgun sind die
+# tatsächlichen SMS- und E-Mail-Dienste — wer ein Zustellproblem sucht,
+# braucht den Namen.
 VERBOTEN = [
-    "highlevel", "high level", "gohighlevel", "leadconnector", "lead connector",
-    "leadconnectorhq", "freshdesk", "twilio", "mailgun",
+    "highlevel", "high level", "gohighlevel",
     # Agentur-Sprache. Der Leser hat ein Konto, keine Konten-Hierarchie.
     "unterkonto", "sub-account", "subaccount", "agenturkonto",
 ]

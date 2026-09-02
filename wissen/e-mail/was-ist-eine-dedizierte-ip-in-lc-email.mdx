@@ -1,0 +1,98 @@
+---
+title: "Was ist eine dedizierte IP in LC Email?"
+description: "Dedizierte IP-Adressen bieten den Vorteil, dass deine E-Mails von einer eindeutigen, exklusiven IP-Adresse gesendet werden. E-Mail-Dienstanbieter (ESPs)…"
+---
+
+Dedizierte IP-Adressen bieten den Vorteil, dass deine E-Mails von einer eindeutigen, exklusiven IP-Adresse gesendet werden. E-Mail-Dienstanbieter (ESPs) überwachen die Absender-Reputation und das Verhalten einer IP-Adresse genau, um die Zustellbarkeit von E-Mails zu bestimmen, die mit bestimmten Domains dieser IP verknüpft sind.
+
+Eine dedizierte IP-Adresse gibt dir die exklusive Kontrolle über die Absender-Reputation und die E-Mail-Zustellbarkeit dieser IP.
+
+Dieser Artikel erklärt, was eine dedizierte IP in LC Email ist, welche Vorteile sie bietet und wie du sie einrichtest.
+
+---
+
+**INHALTSVERZEICHNIS**
+
+- [**Wann sollte ich eine dedizierte IP-Adresse nutzen?**](#wann-sollte-ich-eine-dedizierte-ip-adresse-nutzen)
+- **[Welche Vorteile hat eine dedizierte IP?](#welche-vorteile-hat-eine-dedizierte-ip)**
+- **[Tipps für den E-Mail-Versand mit dedizierten IPs](#tipps-fuer-den-e-mail-versand-mit-dedizierten-ips)**
+- **[Wie kaufe ich eine dedizierte IP?](#wie-kaufe-ich-eine-dedizierte-ip)**
+- **[So verwaltest du deine dedizierte IP](#so-verwaltest-du-deine-dedizierte-ip)**
+- **[So weist du einer Domain eine dedizierte IP zu:](#so-weist-du-einer-domain-eine-dedizierte-ip-zu)**
+- [**Wie richte ich rDNS ein?**](#wie-richte-ich-rdns-ein)
+
+---
+
+## Wann sollte ich eine dedizierte IP-Adresse nutzen?
+
+Wenn du ein hohes E-Mail-Volumen versendest (mehrere hunderttausend bis Millionen pro Monat, insbesondere über 200.000), ist es ratsam, deine Absender-Reputation auf einer dedizierten IP aufzubauen.
+
+Auch bei der Einrichtung von E-Mail-Authentifizierungsprotokollen wie SPF, DMARC, DKIM und SSL-Zertifikaten zum Schutz vor E-Mail-Spoofing ist eine dedizierte IP sinnvoll. **Geteilte IPs bieten nicht das gleiche Sicherheitsniveau, da du von den Aktionen anderer Absender auf derselben IP beeinflusst werden kannst.**
+
+Zudem schützt eine dedizierte IP vor potenziellen Domain-Hijacking-Risiken und sichert die Integrität deiner E-Mail-Kommunikation.
+
+---
+
+## Welche Vorteile hat eine dedizierte IP?
+
+Eine dedizierte IP bietet mehrere Vorteile gegenüber einer geteilten IP:
+
+- **Bessere E-Mail- und Website-Performance:** Dedizierte IPs führen oft zu einer schnelleren E-Mail-Zustellung. Große Anbieter wie Gmail und Yahoo bevorzugen häufig E-Mails von dedizierten IPs, was die Zustellung im Posteingang beschleunigt. Da keine Bandbreite geteilt wird, wird deine Leistung nicht durch andere Nutzer beeinträchtigt.
+- **Volle Kontrolle über die Absender- und IP-Reputation:** Als alleiniger Nutzer kontrollierst du dein Sendeverhalten und deine IP-Reputation vollständig. Deine Strategien werden nicht durch externe Einflüsse gestört.
+- **Effiziente Problemlösung:** Da du der einzige Absender auf deiner IP bist, lassen sich IP-bezogene Probleme schneller identifizieren und beheben.
+- **Höhere Cybersicherheit:** Eine dedizierte IP bietet zusätzlichen Schutz vor Bedrohungen wie Domain-Hijacking, Malware und Hacking-Angriffen.
+
+Zusammenfassend bietet eine dedizierte IP bei hohem Versandvolumen messbare Vorteile bei Performance, Kontrolle, Fehlerbehebung und Sicherheit.
+
+---
+
+## Tipps für den E-Mail-Versand mit dedizierten IPs
+
+Bei E-Mail-Dienstanbietern (ESPs) ist die Absender-Reputation entscheidend. Bei einer dedizierten IP müssen Versandvolumen und Timing gesteuert werden, um Spamfilter zu vermeiden. Das E-Mail-Volumen sollte schrittweise alle 24 Stunden gesteigert werden.
+
+Dedizierte IPs eignen sich am besten bei konstant hohem Versandvolumen. Sporadische Spitzen mit extrem hohem Volumen können problematisch sein und von Spamfiltern negativ bewertet oder blockiert werden. ESPs reagieren empfindlich auf plötzliche Anstiege des Versandvolumens.
+
+Bei unregelmäßigem Versand kann eine geteilte IP vorteilhafter sein, da sich unregelmäßige Spitzen im konstanten Gesamtverkehr der geteilten IP verteilen.
+
+Der Warm-up-Prozess für dedizierte IPs ist automatisiert, um eine stabile Absender-Reputation aufzubauen.
+
+Eine durchdachte Versandstrategie stellt sicher, dass eine gute Absender-Reputation bei den ESPs erhalten bleibt und E-Mails zuverlässig zugestellt werden.
+
+---
+
+## Wie kaufe ich eine dedizierte IP?
+
+Du kannst eine dedizierte IP über den E-Mail-Dienst erwerben.
+
+- Öffne die **Einstellungen** und klicke auf **Email Services**.
+- Klicke im Bereich des LC Email-Anbieters auf **Dedicated Domain And IP**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009896565/original/51LXfRPhW6k6GmIayjleJbl30VnbCLr_Zg.png?1697093257)
+- Klicke auf der nächsten Seite auf **Buy IP**.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009567725/original/MGcEGrG94lo1h91nalxOHYlcQ2jNRhkEBA.png?1696837840)
+- Ein Dialogfenster öffnet sich. Klicke auf **Buy Now**, um den Kauf abzuschließen.![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009567791/original/JQF8N0VlbKo9vpFxWz3yw8SaFMVyf1TAMg.png?1696837899)
+
+## So verwaltest du deine dedizierte IP
+
+Wenn du eine dedizierte Absender-Domain besitzt, zeigt ein Tag an, ob deine Domain mit einer dedizierten oder einer geteilten IP verknüpft ist.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009569127/original/jKoAvC0wqCE_gqBohUVKQvjc0_r6EzdScQ.png?1696838511)
+
+Hinweis: Eine dedizierte IP kann nur mit einer dedizierten Absender-Domain verknüpft werden.
+
+Du kannst deinen Domains eine oder mehrere dedizierte IPs zuweisen. Eine Domain kann mit mehreren IPs verknüpft werden und umgekehrt. Ist deine Domain mehreren IPs zugewiesen, werden E-Mails im Round-Robin-Verfahren über alle diese IPs versendet. Dies gewährleistet eine gleichmäßige Verteilung des E-Mail-Traffics auf die verknüpften IPs.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009569325/original/IJPw9dOn_0_MuKiwiLg41ljMp-jn2Hmkvg.png?1696838572)
+
+## So weist du einer Domain eine dedizierte IP zu:
+
+Klicke auf die **drei Punkte** und wähle **Assign IP**.
+
+**![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009569526/original/WqxtX26vNHJvgqaSguv9LvipF9-_4XYUDA.png?1696838646)**
+
+Das Dialogfenster **IP Assignment** öffnet sich und zeigt alle gekauften IPs an.
+
+![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155009896714/original/vb2sZyUxZ9NcPxiR5Y4L11KpaESvzbJ8RQ.png?1697093323)
+
+---
+
+## Wie richte ich rDNS ein?
+
+Befolge die Anweisungen in diesem Artikel, um das rDNS einzurichten.
