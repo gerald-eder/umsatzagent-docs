@@ -205,7 +205,22 @@ def mdx_sicher(md):
     """
     teile = re.split(r"(```.*?```|`[^`\n]*`)", md, flags=re.S)
     for i in range(0, len(teile), 2):          # nur außerhalb von Code
-        teile[i] = re.sub(r"\{\{([^}\n]{1,120})\}\}", r"`{{\1}}`", teile[i])
+        t = teile[i]
+        t = re.sub(r"\{\{([^}\n]{1,120})\}\}", r"`{{\1}}`", t)
+
+        # Spitze Klammern sind in MDX JSX. Der lokale Entwicklungsserver ist
+        # da nachsichtig, der Produktions-Build nicht — dort baut die Seite
+        # nicht und liefert eine 404.
+        t = re.sub(r"<(https?://[^>\s]+)>", r"[\1](\1)", t)      # Markdown-Autolink
+        t = re.sub(r"<([^@>\s]+@[^>\s]+)>", r"[\1](mailto:\1)", t)
+        t = re.sub(r"<br\s*/?>", "<br/>", t, flags=re.I)          # muss geschlossen sein
+        # Alles Übrige — <form>, </body>, <noscript> aus Code-Beispielen ohne
+        # Zaun — bleibt als sichtbarer Text stehen statt den Build zu kippen.
+        t = re.sub(r"<(?!br/>)(/?[A-Za-z][^>\n]{0,80})>", r"`<\1>`", t)
+        # Auffangnetz für alles Übrige — doppelte Klammern, leere Fragmente,
+        # ein "<" als Kleiner-als-Zeichen im Fließtext.
+        t = re.sub(r"<(?!br/>)", "&lt;", t)
+        teile[i] = t
     return "".join(teile)
 
 
