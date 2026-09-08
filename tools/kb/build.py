@@ -195,6 +195,20 @@ def aufraeumen(md):
     return re.sub(r"\n{3,}", "\n\n", md).strip()
 
 
+def mdx_sicher(md):
+    """Platzhalter vor dem MDX-Parser schützen.
+
+    MDX liest geschweifte Klammern als JavaScript. Ein Platzhalter wie
+    {{contact.name}} ist damit ein Syntaxfehler, und die ganze Seite baut
+    nicht — sie liefert live eine 404. In Backticks steht er als Code da,
+    wird richtig dargestellt und ist obendrein besser lesbar.
+    """
+    teile = re.split(r"(```.*?```|`[^`\n]*`)", md, flags=re.S)
+    for i in range(0, len(teile), 2):          # nur außerhalb von Code
+        teile[i] = re.sub(r"\{\{([^}\n]{1,120})\}\}", r"`{{\1}}`", teile[i])
+    return "".join(teile)
+
+
 def frontmatter(titel, beschreibung, quelle):
     def esc(s):
         return s.replace('"', "'").strip()
@@ -384,6 +398,7 @@ def main():
                 if name:
                     md = md.replace(url, f'/{config.BILDER}/{b["id"]}/{name}')
 
+        md = mdx_sicher(md)
         md = videos_einsetzen(md, b.get("videos") or [])
         text = frontmatter(b["titel"], beschreibung_aus(md), b["quelle"]) + md + "\n"
         open(ziel, "w").write(text)

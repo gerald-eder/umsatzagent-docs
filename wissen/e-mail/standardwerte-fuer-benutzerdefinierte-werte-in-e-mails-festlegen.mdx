@@ -44,11 +44,11 @@ Du kannst Standardwerte zu benutzerdefinierten Werten (auch als Platzhalter genu
 
 Standardwerte werden nur angezeigt, wenn das Kontaktfeld fehlt oder leer ist. Sie aktualisieren, ersetzen oder überschreiben die gespeicherten CRM-Daten des Kontakts nicht. Du kannst sogar jedes Mal, wenn derselbe benutzerdefinierte Wert vorkommt – auch innerhalb derselben E-Mail –, einen anderen Standardwert verwenden.
 
-Wenn beispielsweise *{{contact.first_name}}* zweimal in einer E-Mail vorkommt, kann an einer Stelle „*du*“ als Fallback genutzt werden und an einer anderen Stelle „*Freund*“.
+Wenn beispielsweise *`{{contact.first_name}}`* zweimal in einer E-Mail vorkommt, kann an einer Stelle „*du*“ als Fallback genutzt werden und an einer anderen Stelle „*Freund*“.
 
 **Beispiel 1: Fehlender Vorname**
 
-*Hallo {{contact.first_name}}, schön, dass du dich angemeldet hast!*
+*Hallo `{{contact.first_name}}`, schön, dass du dich angemeldet hast!*
 
 **Standardwert:** „*du*“
 
@@ -59,7 +59,7 @@ Wenn beispielsweise *{{contact.first_name}}* zweimal in einer E-Mail vorkommt, k
 
 **Beispiel 2: Personalisierung der Betreffzeile**
 
-„*Hallo {{contact.first_name}}, dein Termin ist bestätigt*“
+„*Hallo `{{contact.first_name}}`, dein Termin ist bestätigt*“
 
 **Standardwert:** „*Freund*“
 
@@ -83,7 +83,7 @@ Tags für benutzerdefinierte Werte nutzen visuelle Kennzeichnungen, damit du dir
 
 ## So legst du Standardwerte für benutzerdefinierte Werte in E-Mails fest
 
-1. Erstelle oder bearbeite eine E-Mail, eine Vorlage, eine Workflow-E-Mail, eine Massen-E-Mail-Aktion oder eine Kampagnen-E-Mail. Füge den benutzerdefinierten Wert ein, den du personalisieren möchtest (wie *{{contact.first_name}}*), oder wähle ihn aus.
+1. Erstelle oder bearbeite eine E-Mail, eine Vorlage, eine Workflow-E-Mail, eine Massen-E-Mail-Aktion oder eine Kampagnen-E-Mail. Füge den benutzerdefinierten Wert ein, den du personalisieren möchtest (wie *`{{contact.first_name}}`*), oder wähle ihn aus.
 
    *![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155071827538/original/dHBKZljgIpQgk17fSo7UE2NLeJzgLr6vFA.png?1779293570)*
 2. Klicke auf den benutzerdefinierten Wert, um den Editor für den Standardtext zu öffnen.
