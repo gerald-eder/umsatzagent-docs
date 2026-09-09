@@ -255,7 +255,10 @@ def beschreibung_aus(md):
             z = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", z)
             z = re.sub(r"[*_`]", "", z)
             return (z[:155].rsplit(" ", 1)[0] + "…") if len(z) > 158 else z
-    return "Anleitung im UmsatzAgent Help Center."
+    # Kein Fließtext vorhanden — das sind die Artikel, die in der Quelle nur
+    # aus einem Video bestehen. Ehrlich benennen statt Floskel: das Video ist
+    # englisch gesprochen, und wer das vorher weiß, klickt nicht überrascht.
+    return "Videoanleitung, auf Englisch."
 
 
 # --------------------------------------------------------------------------

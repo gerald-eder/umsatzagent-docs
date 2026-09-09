@@ -1,122 +1,146 @@
 ---
-title: "Willkommen beim UmsatzAgent Help Center"
+title: "UmsatzAgent Help Center"
 sidebarTitle: "Start"
-description: "Support-Hub für UmsatzAgent: Erste Schritte, Video-Kurse, Forum, Support-Call, Dokumentation, Abrechnung und Kontakt."
+description: "Anleitungen auf Deutsch zu Konversationen, Kalender, Kontakten, Zahlungen, Automatisierung und dem AI-Assistenten."
 mode: "custom"
 ---
 
-<div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+<div className="mx-auto max-w-4xl px-4 py-14 sm:py-20">
 
 <div className="text-center">
-  <h1 className="text-3xl font-bold tracking-tight text-[#0A1F3D] sm:text-4xl dark:text-white">
-    Willkommen beim UmsatzAgent Help Center 👋
+  <span className="inline-flex items-center gap-2 rounded-full bg-[#F1F9FF] px-3 py-1 text-xs font-semibold text-[#00629D] dark:bg-[#00629D]/20 dark:text-[#ADE5FF]">
+    UmsatzAgent Help Center
+  </span>
+
+  <h1 className="mt-5 text-3xl font-bold tracking-tight text-[#0A1F3D] sm:text-5xl dark:text-white">
+    Wie können wir helfen?
   </h1>
 
-  <p className="mt-3 text-lg text-[#4A5A75] dark:text-gray-400">
-    Wir bieten Unterstützung auf verschiedene Weise:
+  <p className="mx-auto mt-4 max-w-xl text-lg text-[#4A5A75] dark:text-gray-400">
+    Durchsuche die Anleitungen — oder sprich mit uns, wenn du schneller
+    weiterkommen willst.
   </p>
+
+  <button
+    type="button"
+    onClick={() => document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true, ctrlKey: true, bubbles: true }))}
+    className="mx-auto mt-8 flex w-full max-w-xl cursor-pointer items-center gap-3 rounded-xl border border-[#D5DBE3] bg-white px-4 py-3.5 text-left shadow-sm transition hover:border-[#00629D] hover:shadow-md dark:border-white/15 dark:bg-white/5"
+  >
+    <Icon icon="magnifying-glass" size={18} color="#6B7A92" />
+    <span className="flex-1 text-[#6B7A92]">Anleitungen durchsuchen …</span>
+    <kbd className="hidden rounded border border-[#D5DBE3] px-1.5 py-0.5 text-xs text-[#6B7A92] sm:inline dark:border-white/15">⌘K</kbd>
+  </button>
 </div>
 
-<div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+<div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3">
 
 <a
-  href="/erste-schritte/ueberblick"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+  href="/wissen/schnellstart-anleitungen/schnellstartanleitung-konversationen-verwalten"
+  className="flex flex-col rounded-2xl border border-[#E5EAEF] bg-white p-5 no-underline transition hover:-translate-y-0.5 hover:border-[#00629D] hover:shadow-md dark:border-white/10 dark:bg-white/5"
 >
-  <Icon icon="compass" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Erste Schritte</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">Mach das zuerst.</p>
-  </div>
+  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#00629D] dark:text-[#ADE5FF]">Loslegen</span>
+  <span className="mt-2 font-bold text-[#0A1F3D] dark:text-white">Konversationen verwalten</span>
+  <span className="mt-1 text-sm text-[#4A5A75] dark:text-gray-400">
+    Der Posteingang für alle Kanäle — von der ersten Nachricht bis zum Termin.
+  </span>
 </a>
+
+<a
+  href="/wissen/ai-assistent/so-richtest-du-einen-formularbasierten-assistenten-ein"
+  className="flex flex-col rounded-2xl border border-[#E5EAEF] bg-white p-5 no-underline transition hover:-translate-y-0.5 hover:border-[#00629D] hover:shadow-md dark:border-white/10 dark:bg-white/5"
+>
+  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#00629D] dark:text-[#ADE5FF]">Einrichten</span>
+  <span className="mt-2 font-bold text-[#0A1F3D] dark:text-white">AI-Assistent aufsetzen</span>
+  <span className="mt-1 text-sm text-[#4A5A75] dark:text-gray-400">
+    Wie Anna antwortet, qualifiziert und Termine bucht.
+  </span>
+</a>
+
+<a
+  href="/wissen/einrichtung/ueberarbeitetes-whatsapp-onboarding"
+  className="flex flex-col rounded-2xl border border-[#E5EAEF] bg-white p-5 no-underline transition hover:-translate-y-0.5 hover:border-[#00629D] hover:shadow-md dark:border-white/10 dark:bg-white/5"
+>
+  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#00629D] dark:text-[#ADE5FF]">DACH</span>
+  <span className="mt-2 font-bold text-[#0A1F3D] dark:text-white">WhatsApp verbinden</span>
+  <span className="mt-1 text-sm text-[#4A5A75] dark:text-gray-400">
+    Onboarding, Verifizierung und die häufigsten Stolpersteine.
+  </span>
+</a>
+
+</div>
 
 <a
   href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/learning"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
+  className="mt-4 flex flex-col gap-1 rounded-2xl bg-[#00629D] px-6 py-5 no-underline transition hover:bg-[#004E7D] sm:flex-row sm:items-center sm:justify-between"
 >
-  <Icon icon="circle-play" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Video-Kurse</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">
-      Schritt-für-Schritt-Anleitungen.
-    </p>
-  </div>
+  <span>
+    <span className="block font-bold text-white">Keine Lust zu lesen?</span>
+    <span className="mt-0.5 block text-sm text-white/80">
+      In der Online-Marketing Academy erklären wir es dir im Video.
+    </span>
+  </span>
+  <span className="shrink-0 text-sm font-semibold text-white">Zur Academy →</span>
 </a>
 
-<a
-  href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="comments" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Forum</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">
-      Tipps und Ideen von anderen Nutzern.
-    </p>
-  </div>
+<div className="mt-14">
+
+<p className="mb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-[#6B7A92] dark:text-gray-500">
+  Häufig gefragt
+</p>
+
+<div className="divide-y divide-[#E5EAEF] border-y border-[#E5EAEF] dark:divide-white/10 dark:border-white/10">
+
+<a href="/wissen/kontakte/kontakte-importieren" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Wie importiere ich meine Kontakte?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
 </a>
 
-<a
-  href="https://click.umsatzagent.com/widget/groups/support-umsatzagent"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="calendar-check" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">
-      Support-Call buchen
-    </div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">Persönlich, auf Deutsch.</p>
-  </div>
+<a href="/wissen/kalender-verbindungen/so-verbindest-du-deinen-google-kalender" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Wie verbinde ich meinen Google-Kalender?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
 </a>
 
-<a
-  href="/plattform/ueberblick"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="book-open" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Dokumentation</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">
-      Anleitungen zu Plattform & Konto.
-    </p>
-  </div>
+<a href="/wissen/e-mail/wo-finde-ich-meine-smtp-zugangsdaten" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Wo finde ich meine SMTP-Zugangsdaten?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
 </a>
 
-<a
-  href="/konto/abrechnung"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="credit-card" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Abrechnung</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">
-      Monatspreis, Rechnungen, Verbrauch.
-    </p>
-  </div>
+<a href="/wissen/umsatzagent-telefonie/eingehende-anrufe-waehrend-der-arbeitszeiten-durchstellen" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Wie stelle ich Anrufe an mein Team durch?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
 </a>
 
-<a
-  href="https://umsatzagent.com/affiliate"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="bullhorn" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">Weiterempfehlen</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">
-      30 % Provision verdienen.
-    </p>
-  </div>
+<a href="/wissen/fehlerbehebung-bei-e-mail-zustellung/e-mail-versandstatus-gute-raten-beibehalten-und-bei-problemen-wiederhe" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Meine E-Mails landen im Spam — was tun?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
 </a>
 
-<a
-  href="mailto:info@umsatzagent.com"
-  className="flex flex-col gap-3 rounded-2xl bg-[#00629D] p-4 no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#004E7D] hover:shadow-md sm:p-5"
->
-  <Icon icon="envelope" size={22} color="#FFFFFF" />
-  <div>
-    <div className="text-sm font-bold text-white sm:text-base">E-Mail-Support</div>
-    <p className="mt-1 text-xs text-white/80 sm:text-sm">info@umsatzagent.com</p>
-  </div>
+<a href="/wissen/ai-assistent/anleitung-zur-einrichtung-von-ai-assistenten-zielen-fuer-intelligenter" className="flex items-center justify-between gap-4 py-3.5 no-underline">
+  <span className="text-[#0A1F3D] dark:text-gray-200">Wie bringe ich dem Assistenten ein Ziel bei?</span>
+  <Icon icon="chevron-right" size={14} color="#6B7A92" />
+</a>
+
+</div>
+</div>
+
+<div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3">
+
+<a href="https://click.umsatzagent.com/widget/groups/support-umsatzagent" className="flex flex-col gap-2 rounded-2xl bg-[#00629D] p-5 no-underline transition hover:bg-[#004E7D]">
+  <Icon icon="calendar-check" size={20} color="#FFFFFF" />
+  <span className="font-bold text-white">Support-Call buchen</span>
+  <span className="text-sm text-white/80">Persönlich, auf Deutsch.</span>
+</a>
+
+<a href="https://portal.umsatzagent.com/communities/groups/umsatzai-community/home" className="flex flex-col gap-2 rounded-2xl bg-[#00629D] p-5 no-underline transition hover:bg-[#004E7D]">
+  <Icon icon="comments" size={20} color="#FFFFFF" />
+  <span className="font-bold text-white">Forum</span>
+  <span className="text-sm text-white/80">Tipps von anderen Nutzern.</span>
+</a>
+
+<a href="mailto:info@umsatzagent.com" className="flex flex-col gap-2 rounded-2xl bg-[#00629D] p-5 no-underline transition hover:bg-[#004E7D]">
+  <Icon icon="envelope" size={20} color="#FFFFFF" />
+  <span className="font-bold text-white">E-Mail-Support</span>
+  <span className="text-sm text-white/80">info@umsatzagent.com</span>
 </a>
 
 </div>

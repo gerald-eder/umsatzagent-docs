@@ -19,40 +19,7 @@
       {
         "group": "Start",
         "pages": [
-          "index",
-          "fuer-inhaber",
-          "fuer-team"
-        ]
-      },
-      {
-        "group": "Dein Onboarding",
-        "pages": [
-          "erste-schritte/ueberblick",
-          "erste-schritte/onboarding",
-          "erste-schritte/was-du-beitraegst"
-        ]
-      },
-      {
-        "group": "Anna",
-        "pages": [
-          "anna/ueberblick",
-          "anna/im-chat",
-          "anna/am-telefon"
-        ]
-      },
-      {
-        "group": "Plattform",
-        "pages": [
-          "plattform/ueberblick",
-          "plattform/integrationen"
-        ]
-      },
-      {
-        "group": "Konto & Abrechnung",
-        "pages": [
-          "konto/abrechnung",
-          "konto/vertrag",
-          "konto/datenschutz"
+          "index"
         ]
       },
       {

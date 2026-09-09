@@ -15,16 +15,29 @@ import config
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CACHE = os.path.join(ROOT, ".kb-cache")
 
-# Die von Hand gepflegten Gruppen. Bleiben oben, in dieser Reihenfolge.
+# Vorangestellte Gruppen. Aktuell nur die Startseite.
+#
+# Bis 09.09.2026 standen hier dreizehn weitere Seiten über Onboarding, Anna,
+# Plattform und Abrechnung. Sie waren maschinell geschrieben und von niemandem
+# gegengelesen; die Abrechnungsseite nannte Monatspreis, sechs Add-On-Preise
+# und Verbrauchstarife auf zwei Nachkommastellen. Die Zahlen stimmten zwar mit
+# PRODUCT/ANNA/knowledgebase-2026-08.md überein, aber ungeprüfte Preiszusagen
+# gehören nicht ins Help Center, und Preise bekommen ohnehin eine eigene Seite.
+#
+# Die Dateien liegen weiter im Repo und in der Historie. Wer sie
+# zurückholen will, trägt sie hier wieder ein — nach dem Gegenlesen.
 BESTAND = [
-    {"group": "Start", "pages": ["index", "fuer-inhaber", "fuer-team"]},
-    {"group": "Dein Onboarding",
-     "pages": ["erste-schritte/ueberblick", "erste-schritte/onboarding",
-               "erste-schritte/was-du-beitraegst"]},
-    {"group": "Anna", "pages": ["anna/ueberblick", "anna/im-chat", "anna/am-telefon"]},
-    {"group": "Plattform", "pages": ["plattform/ueberblick", "plattform/integrationen"]},
-    {"group": "Konto & Abrechnung",
-     "pages": ["konto/abrechnung", "konto/vertrag", "konto/datenschutz"]},
+    {"group": "Start", "pages": ["index"]},
+]
+
+# Aus der Navigation genommen, bis jemand sie gegengelesen hat.
+UNGEPRUEFT = [
+    "fuer-inhaber", "fuer-team",
+    "erste-schritte/ueberblick", "erste-schritte/onboarding",
+    "erste-schritte/was-du-beitraegst",
+    "anna/ueberblick", "anna/im-chat", "anna/am-telefon",
+    "plattform/ueberblick", "plattform/integrationen",
+    "konto/abrechnung", "konto/vertrag", "konto/datenschutz",
 ]
 
 
