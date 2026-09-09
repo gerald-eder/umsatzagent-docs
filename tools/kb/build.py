@@ -114,15 +114,30 @@ def zu_markdown(html):
 
 
 def videos_einsetzen(md, videos):
-    for i, src in enumerate(videos):
+    """Platzhalter durch das Embed ersetzen — und zwar die ganze Zeile.
+
+    Der Platzhalter steht in der Quelle manchmal in einer Überschrift oder
+    zwischen Sternchen. Ersetzt man nur ihn, bleibt "## " oder "**" davor
+    stehen, und MDX bricht am halb geöffneten JSX-Block ab: die Seite baut
+    nicht und liefert live eine 404.
+    """
+    def embed(src):
         if src.startswith("//"):
             src = "https:" + src
-        embed = (f'<iframe\n  className="w-full aspect-video rounded-xl"\n'
-                 f'  src="{src}"\n  title="Video"\n  frameborder="0"\n'
-                 f'  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"\n'
-                 f"  allowfullscreen\n></iframe>")
-        md = re.sub(rf"VIDEOPLATZHALTER\s*{i}\b", embed, md)
-    return re.sub(r"VIDEOPLATZHALTER\s*\d+\b", "", md)
+        return (f'<iframe\n  className="w-full aspect-video rounded-xl"\n'
+                f'  src="{src}"\n  title="Video"\n  frameborder="0"\n'
+                f'  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"\n'
+                f"  allowfullscreen\n></iframe>")
+
+    zeilen = []
+    for z in md.split("\n"):
+        m = re.search(r"VIDEOPLATZHALTER\s*(\d+)\b", z)
+        if not m:
+            zeilen.append(z)
+            continue
+        i = int(m.group(1))
+        zeilen.append(embed(videos[i]) if i < len(videos) else "")
+    return "\n".join(zeilen)
 
 
 def marken_ersetzen(text):

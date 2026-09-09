@@ -6,10 +6,19 @@ schreibt sie auf UmsatzAgent um und legt sie als Mintlify-Seiten ab.
 ## Ablauf
 
 ```bash
-python3 tools/kb/pull.py      # Quelle -> .kb-cache/  (nur was fehlt)
-python3 tools/kb/build.py     # übersetzen -> wissen/*.mdx + images/wissen/
-python3 tools/kb/nav.py       # Navigation -> docs.json
+python3 tools/kb/pull.py       # Quelle -> .kb-cache/  (nur was fehlt)
+python3 tools/kb/zuordnung.py  # Kategorie/Ordner je Artikel aus der Brotkrume
+python3 tools/kb/auswahl.py    # Relevanz einstufen: kern / rand / raus
+python3 tools/kb/build.py      # übersetzen -> wissen/*.mdx
+python3 tools/kb/nav.py        # Navigation -> docs.json
+npx mintlify validate          # PFLICHT vor jedem Push
 ```
+
+**`mintlify validate` ist nicht optional.** Der Entwicklungsserver ist
+nachsichtiger als der Produktions-Build: Einmal bauten lokal alle 373 Seiten,
+live fehlten 19. Mintlify veröffentlicht bei einem Parser-Fehler den Rest
+trotzdem — die kaputten Seiten liefern still eine 404, ohne dass irgendwo
+eine Fehlermeldung auftaucht. `validate` findet genau das vorher.
 
 Jede Stufe ist wiederholbar und überspringt, was schon erledigt ist. Ein
 zweiter Lauf kostet also nichts und holt nur Neues nach.
