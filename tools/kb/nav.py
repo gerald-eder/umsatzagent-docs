@@ -79,6 +79,25 @@ UNGEPRUEFT = [
 ]
 
 
+# Seiten, die nicht aus der Übersetzung stammen, sondern von Hand oder aus
+# eigenen Stufen kommen. Sie stehen oben, werden aber nur eingetragen, wenn die
+# Datei wirklich existiert — sonst bricht der Build an einem toten Verweis.
+VORANGESTELLT = [
+    ("Hilfe bei Problemen", ["wissen/etwas-funktioniert-nicht"]),
+    ("Anna einrichten", ["wissen/anna-prompt-schreiben",
+                         "wissen/anna-prompt-vorlagen"]),
+]
+
+
+def vorangestellt():
+    raus = []
+    for gruppe, seiten in VORANGESTELLT:
+        da = [s for s in seiten if os.path.exists(os.path.join(ROOT, s + ".mdx"))]
+        if da:
+            raus.append({"group": gruppe, "pages": da})
+    return raus
+
+
 def ordner_deutsch(namen):
     """Ordnernamen einmalig übersetzen und im Cache festhalten.
 
@@ -209,14 +228,11 @@ def main():
         "global": {"anchors": GLOBAL_ANCHORS},
         "tabs": [
             {"tab": "Start", "icon": "house", "pages": ["index"]},
-            # Der Symptom-Einstieg steht vor den Funktionsgruppen: Wer ein
-            # Problem hat, weiß selten, in welchem Bauteil es steckt.
+            # Von Hand gepflegte Einstiege stehen vor den Funktionsgruppen:
+            # Wer ein Problem hat, weiß selten, in welchem Bauteil es steckt,
+            # und wer Anna einrichtet, sucht keine Funktionsliste.
             {"tab": "Anleitungen", "icon": "book-open",
-             "groups": ([{"group": "Hilfe bei Problemen",
-                          "pages": ["wissen/etwas-funktioniert-nicht"]}]
-                        if os.path.exists(os.path.join(ROOT, "wissen",
-                                                       "etwas-funktioniert-nicht.mdx"))
-                        else []) + wissen},
+             "groups": vorangestellt() + wissen},
         ],
     }
     d["navbar"] = NAVBAR

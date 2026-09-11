@@ -63,6 +63,13 @@
             ]
           },
           {
+            "group": "Anna einrichten",
+            "pages": [
+              "wissen/anna-prompt-schreiben",
+              "wissen/anna-prompt-vorlagen"
+            ]
+          },
+          {
             "group": "Erste Schritte",
             "pages": [
               "wissen/daten-importieren/daten-aus-hubspot-importieren",

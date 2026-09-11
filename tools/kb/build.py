@@ -395,12 +395,21 @@ def main():
     npfad = os.path.join(CACHE, "ordnernamen.json")
     ordnernamen = json.load(open(npfad)) if os.path.exists(npfad) else {}
 
+    # Gelöscht wird ausschließlich, was diese Pipeline selbst geschrieben hat.
+    # Früher flog der ganze Zielordner leer — das nahm auch von Hand gepflegte
+    # Seiten mit, die dort liegen, etwa den Symptom-Einstieg.
     zielwurzel = os.path.join(ROOT, config.ZIEL)
     if os.path.isdir(zielwurzel) and not a.ordner:
+        eigene = set()
+        for f in os.listdir(os.path.join(CACHE, "de")):
+            c = json.load(open(os.path.join(CACHE, "de", f)))
+            if c.get("pfad"):
+                eigene.add(os.path.join(ROOT, c["pfad"] + ".mdx"))
         for wurzel, _, dateien_ in os.walk(zielwurzel):
             for d in dateien_:
-                if d.endswith(".mdx"):
-                    os.remove(os.path.join(wurzel, d))
+                pfad_ = os.path.join(wurzel, d)
+                if d.endswith(".mdx") and pfad_ in eigene:
+                    os.remove(pfad_)
 
     geschrieben = 0
     belegt = {}

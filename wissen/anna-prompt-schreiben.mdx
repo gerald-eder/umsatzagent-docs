@@ -1,0 +1,174 @@
+---
+title: "Anna einen guten Prompt geben"
+description: "Wie du festlegst, wie Anna spricht und entscheidet — und was du dabei besser nicht anfasst."
+---
+
+Der Prompt ist Annas Bedienungsanleitung. Er legt fest, wer sie ist, was sie
+erreichen soll und wo ihre Grenzen liegen. Alles andere — Preise, Öffnungszeiten,
+Leistungen — gehört woanders hin. Warum, steht weiter unten.
+
+<Note>
+  Fertige Vorlagen für neun Branchen findest du unter
+  [Prompt-Vorlagen nach Branche](/wissen/anna-prompt-vorlagen). Diese Seite
+  erklärt, warum sie so aufgebaut sind.
+</Note>
+
+## Wo der Prompt steht
+
+Anna arbeitet auf zwei Kanälen, und die werden getrennt eingerichtet.
+
+<CardGroup cols={2}>
+  <Card title="Im Chat" icon="comments">
+    **AI-Assistenten → Conversation AI → Agents List**, Assistenten öffnen,
+    Reiter **Bot Goals**. Dort stehen Rolle, Aufgabe und Leitplanken.
+  </Card>
+  <Card title="Am Telefon" icon="phone">
+    **AI-Assistenten → Voice AI**, Assistenten öffnen, Reiter **Agent Goals**,
+    dann **View System Prompt**.
+  </Card>
+</CardGroup>
+
+## Am Telefon ist das meiste schon erledigt
+
+Das ist der wichtigste Punkt auf dieser Seite, und er spart dir Arbeit.
+
+Der Telefon-Assistent bringt seinen Systemprompt bereits fertig mit, aufgeteilt
+in Module: **Personality**, **Appointment Booking**, **Date & Time Awareness**,
+**Numbers & Symbols Speech Rules** und **Email Confirmation Process**.
+
+Das heißt: Wie Termine gebucht werden, wie Datum und Uhrzeit ausgesprochen
+werden, wie Anna Telefonnummern und Beträge vorliest, wie sie E-Mail-Adressen
+bestätigt — all das ist bereits durchdacht und getestet.
+
+<Warning>
+  Wer diese Module überschreibt, übernimmt sie dauerhaft. Änderungen bleiben
+  bestehen und müssen künftig selbst gepflegt werden — auch dann, wenn die
+  Plattform ihre Standardlogik verbessert. Fass in der Regel nur
+  **Personality** an.
+</Warning>
+
+Ein Prompt aus dem Internet, der Buchungsablauf und Zahlenaussprache selbst
+beschreibt, macht die Sache also nicht besser, sondern doppelt — und du wartest
+sie ab dann allein. Genau deshalb sehen unsere Vorlagen anders aus als das,
+was du anderswo findest.
+
+## Die drei Bausteine im Chat
+
+Ein Prompt besteht aus drei Teilen. Jeder beantwortet eine andere Frage.
+
+<Steps>
+  <Step title="Rolle — wer bist du?">
+    Name, Aufgabe, Tonfall. Zwei bis drei Sätze reichen.
+
+    ```
+    Du bist Anna, die digitale Assistentin von [Firma]. Du antwortest
+    freundlich, kurz und in klarem Deutsch. Du duzt, wenn der Kontakt
+    duzt, sonst siezt du.
+    ```
+  </Step>
+
+  <Step title="Aufgabe — was sollst du erreichen?">
+    Ein klares Ziel, keine Wunschliste. Vage Aufgaben führen dazu, dass
+    Anna sich Dinge ausdenkt.
+
+    ```
+    Dein Ziel ist es, das Anliegen aufzunehmen und einen Termin zu
+    vereinbaren. Wenn ein Termin nicht passt, nimm Name, Rückrufnummer
+    und Anliegen auf.
+    ```
+  </Step>
+
+  <Step title="Leitplanken — was gilt immer?">
+    Wenn-dann-Regeln. Sie beseitigen Mehrdeutigkeit, und zwar besser als
+    jede allgemeine Ermahnung.
+
+    ```
+    Wenn jemand nach Preisen fragt, nenne nur, was in der
+    Wissensdatenbank steht. Steht dort nichts, sage: „Das schaut sich
+    eine Kollegin an und meldet sich."
+    Wenn jemand verärgert ist, biete sofort ein Gespräch mit einem
+    Menschen an.
+    ```
+  </Step>
+</Steps>
+
+## Fakten gehören nicht in den Prompt
+
+Preise, Öffnungszeiten, Adressen, Leistungsbeschreibungen: Das alles gehört in
+die **Wissensdatenbank**, nicht in den Prompt.
+
+Der Grund ist praktisch. Ändert sich ein Preis, willst du ihn an einer Stelle
+ändern — nicht in vier Prompts auf zwei Kanälen. Anna durchsucht die
+Wissensdatenbank und antwortet daraus; der Prompt sagt ihr nur, *dass* sie das
+tun soll.
+
+Die Wissensdatenbank liegt unter **AI-Assistenten → Knowledge Base** und nimmt
+Website-Seiten, FAQ, Dokumente, Tabellen und Dateien auf.
+
+Dieser Satz gehört in jeden Prompt:
+
+```
+Nutze für Angaben zu unserem Unternehmen ausschließlich die hinterlegte
+Wissensdatenbank. Wenn die Antwort dort nicht steht, sage das offen und
+biete an, dass sich jemand meldet. Rate nie und erfinde keine Details.
+```
+
+## Bot-Actions sind Schalter, keine Sätze
+
+Manches macht Anna nicht, weil du es in den Prompt schreibst, sondern weil du
+eine Aktion einschaltest. Im Chat sind das unter anderem:
+
+| Aktion | Wofür |
+|---|---|
+| Add Contact Info | Angaben aus dem Gespräch ins Kontaktfeld schreiben |
+| Appointment Booking | Termin direkt im Kalender buchen |
+| Transfer | An einen anderen Assistenten übergeben |
+| Human Handover | An einen Menschen übergeben |
+| Workflow auslösen | Eine Automatisierung starten |
+
+Zwei Fallstricke, die in der Praxis Zeit kosten:
+
+**Die Aktion allein fragt nicht.** Schaltest du *Add Contact Info* ein, ohne im
+Prompt nach der Information zu fragen, fragt Anna nicht danach — und das Feld
+bleibt leer. Die Aktion speichert nur; fragen musst du sie im Prompt lassen.
+
+**Add Contact Info füllt nur leere Felder.** Bestehende Angaben werden nicht
+überschrieben. E-Mail und Telefonnummer aktualisiert das System ohnehin
+automatisch, dafür brauchst du die Aktion nicht.
+
+## Kurz halten
+
+Lange Prompts sind nicht gründlicher, sie sind unzuverlässiger. Je mehr drinsteht,
+desto wahrscheinlicher überspringt Anna eine Anweisung. Wenn dein Prompt über eine
+Bildschirmseite hinausgeht, gehört das meiste davon wahrscheinlich in die
+Wissensdatenbank.
+
+## Sag, was sie tun soll — nicht, was nicht
+
+Verbote sind für Sprachmodelle schwerer zu befolgen als Anweisungen.
+
+<CodeGroup>
+```text Schlecht
+Gib keine Preise heraus. Versprich keine Rückrufe.
+```
+
+```text Besser
+Wenn jemand nach Preisen fragt, sage: „Die Preise schickt dir eine
+Kollegin gleich per E-Mail." Nimm dafür die E-Mail-Adresse auf.
+```
+</CodeGroup>
+
+## Nach dem Einrichten
+
+Lies den Prompt einmal laut. Was dir beim Lesen unklar vorkommt, ist es für Anna
+auch. Dann führe zwei, drei echte Gespräche durch und schau in den Verlauf —
+unter **AI-Assistenten** siehst du, was Anna geantwortet hat und warum.
+
+<Columns cols={2}>
+  <Card title="Vorlagen nach Branche" icon="folder-open" href="/wissen/anna-prompt-vorlagen">
+    Fertige Prompts für neun Branchen, zum Kopieren und Anpassen.
+  </Card>
+  <Card title="Support-Call buchen" icon="headset" href="https://click.umsatzagent.com/widget/bookings/umsatzagent-support">
+    Wir schauen gemeinsam auf deinen Prompt.
+  </Card>
+</Columns>
