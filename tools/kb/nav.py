@@ -50,6 +50,24 @@ GLOBAL_ANCHORS = [
      "href": "https://app.umsatzagent.com"},
 ]
 
+# Die Leiste oben rechts. Sie trägt bewusst nur zwei Ziele.
+#
+# Anchors allein reichen nicht: Sie stehen oben in der Seitenleiste, und die
+# springt zum aktuellen Artikel. Auf einer tief einsortierten Seite liegen sie
+# dadurch rund 1600 Pixel über dem Bildrand — gemessen, nicht geschätzt. Wer
+# über Google in einem Artikel landet, sieht sie nie. Die Navbar scrollt nicht
+# weg und ist damit der einzige Weg, der auch dort noch funktioniert.
+NAVBAR = {
+    "links": [
+        {"label": "Kurse", "href": "https://portal.umsatzagent.com"},
+    ],
+    "primary": {
+        "type": "button",
+        "label": "Support-Call",
+        "href": "https://click.umsatzagent.com/widget/bookings/umsatzagent-support",
+    },
+}
+
 # Aus der Navigation genommen, bis jemand sie gegengelesen hat.
 UNGEPRUEFT = [
     "fuer-inhaber", "fuer-team",
@@ -191,12 +209,20 @@ def main():
         "global": {"anchors": GLOBAL_ANCHORS},
         "tabs": [
             {"tab": "Start", "icon": "house", "pages": ["index"]},
-            {"tab": "Anleitungen", "icon": "book-open", "groups": wissen},
+            # Der Symptom-Einstieg steht vor den Funktionsgruppen: Wer ein
+            # Problem hat, weiß selten, in welchem Bauteil es steckt.
+            {"tab": "Anleitungen", "icon": "book-open",
+             "groups": ([{"group": "Hilfe bei Problemen",
+                          "pages": ["wissen/etwas-funktioniert-nicht"]}]
+                        if os.path.exists(os.path.join(ROOT, "wissen",
+                                                       "etwas-funktioniert-nicht.mdx"))
+                        else []) + wissen},
         ],
     }
+    d["navbar"] = NAVBAR
     json.dump(d, open(p, "w"), ensure_ascii=False, indent=2)
     open(p, "a").write("\n")
-    print(f"\ndocs.json aktualisiert — 2 Tabs, {len(GLOBAL_ANCHORS)} Anchors")
+    print(f"\ndocs.json aktualisiert — 2 Tabs, {len(GLOBAL_ANCHORS)} Anchors, Navbar")
 
 
 if __name__ == "__main__":
