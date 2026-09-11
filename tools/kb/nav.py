@@ -30,6 +30,26 @@ BESTAND = [
     {"group": "Start", "pages": ["index"]},
 ]
 
+# Dauerhafte Links in der Seitenleiste, auf JEDER Seite sichtbar.
+#
+# Der Grund für Anchors statt einer reinen Linkliste auf der Startseite: Wer in
+# einem Artikel feststeckt, kommt von dort direkt zum Call oder in die Community,
+# ohne den Weg zurück zur Startseite zu suchen. Was hinter diesen Links liegt —
+# Kurse, Community, Rechnungen — wohnt im GoHighLevel-Portal und braucht Login;
+# es lässt sich hier nicht nachbauen und soll es auch nicht.
+GLOBAL_ANCHORS = [
+    {"anchor": "Kurse", "icon": "graduation-cap",
+     "href": "https://portal.umsatzagent.com"},
+    {"anchor": "Community", "icon": "comments",
+     "href": "https://portal.umsatzagent.com/communities/groups/umsatzai-community/home"},
+    {"anchor": "Weekly Q&A-Call", "icon": "calendar-days",
+     "href": "https://click.umsatzagent.com/widget/bookings/weekly-q-a-call"},
+    {"anchor": "Support-Call", "icon": "headset",
+     "href": "https://click.umsatzagent.com/widget/bookings/umsatzagent-support"},
+    {"anchor": "App öffnen", "icon": "arrow-up-right-from-square",
+     "href": "https://app.umsatzagent.com"},
+]
+
 # Aus der Navigation genommen, bis jemand sie gegengelesen hat.
 UNGEPRUEFT = [
     "fuer-inhaber", "fuer-team",
@@ -162,12 +182,21 @@ def main():
         print("\nTrockenlauf — docs.json unverändert.")
         return
 
+    # Zwei Tabs statt einer langen Leiste: Der Hub beantwortet "wohin?", die
+    # Anleitungen beantworten "wie?". In einer gemeinsamen Liste standen beide
+    # untereinander und sahen gleich wichtig aus.
     p = os.path.join(ROOT, "docs.json")
     d = json.load(open(p))
-    d["navigation"] = {"groups": BESTAND + wissen}
+    d["navigation"] = {
+        "global": {"anchors": GLOBAL_ANCHORS},
+        "tabs": [
+            {"tab": "Start", "icon": "house", "pages": ["index"]},
+            {"tab": "Anleitungen", "icon": "book-open", "groups": wissen},
+        ],
+    }
     json.dump(d, open(p, "w"), ensure_ascii=False, indent=2)
     open(p, "a").write("\n")
-    print("\ndocs.json aktualisiert")
+    print(f"\ndocs.json aktualisiert — 2 Tabs, {len(GLOBAL_ANCHORS)} Anchors")
 
 
 if __name__ == "__main__":
