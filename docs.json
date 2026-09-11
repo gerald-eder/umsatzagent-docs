@@ -38,6 +38,11 @@
           "href": "https://click.umsatzagent.com/widget/bookings/umsatzagent-support"
         },
         {
+          "anchor": "Partnerprogramm",
+          "icon": "handshake",
+          "href": "https://umsatzagent.com/partner"
+        },
+        {
           "anchor": "App öffnen",
           "icon": "arrow-up-right-from-square",
           "href": "https://app.umsatzagent.com"
