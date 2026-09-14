@@ -1,0 +1,194 @@
+---
+title: "Standard-Website mit dem KI-Studio einrichten"
+description: "In deinem Konto liegt eine fertige Standard-Website als Entwurf. So passt du sie an deine Branche an, verbindest deine Domain und gehst online."
+---
+
+<Note>
+Gehört zur [Einrichtungsstrecke](/einrichten), Woche 1 — und ist **optional**. Wenn du bereits eine Website hast, genügt dort das [Chat-Widget](/wissen/ki-assistenz-starten/ki-assistenz-ohne-umbau-starten).
+</Note>
+
+In deinem Konto liegt bereits eine fertige Website als Entwurf im **KI-Studio**.
+Sie ist bewusst neutral gehalten, damit sie zu jeder Branche passt. Du tauschst
+Texte und Farben, verbindest deine Domain und bist online.
+
+## Was du bekommst
+
+Eine einseitige Website mit acht Abschnitten: Kopfzeile, Startbereich,
+Leistungen, Über uns, Bewertungen, häufige Fragen, Kontakt und Fußzeile. Auf dem
+Handy erscheint unten eine feste Leiste mit „Anrufen" und „Termin buchen".
+
+Eingebunden sind bereits dein Kontaktformular, dein Terminkalender und das
+Live-Chat-Widget. Alle anpassbaren Stellen stehen als Platzhalter in eckigen
+Klammern, zum Beispiel `[FIRMENNAME]` oder `[LEISTUNG 1]`.
+
+## Bevor du loslegst
+
+<Steps>
+  <Step title="KI-Studio aktivieren">
+    Das KI-Studio läuft über **Labs** und ist nicht in jedem Konto von Haus aus
+    eingeschaltet. Öffne **Einstellungen › Labs** und aktiviere **KI-Studio**.
+    Danach erscheint der Menüpunkt in der linken Navigation.
+  </Step>
+  <Step title="Berechtigung prüfen">
+    Es gibt zwei Stufen: **KI-Studio ansehen** erlaubt nur das Lesen,
+    **KI-Studio ansehen und verwalten** erlaubt das Bearbeiten. Zum Anpassen der
+    Website brauchst du die zweite Stufe.
+  </Step>
+  <Step title="Nutzungsrahmen kennen">
+    Die Nutzung wird in **Fenstern von fünf Stunden** gemessen und hängt von
+    deinem KI-Tarif ab. Ist das Kontingent aufgebraucht, steht das KI-Studio erst
+    am Ende des laufenden Fensters wieder bereit. Plane größere Umbauten deshalb
+    nicht auf den letzten Drücker vor einer Kampagne.
+  </Step>
+</Steps>
+
+<Warning>
+**Zwei Dinge funktionieren anders, als viele erwarten.**
+
+**Das Brand Board wird vom KI-Studio nicht gelesen.** Farben, Schriften und Logos
+aus deinem Brand Board fließen in E-Mails, Funnels und Websites ein — nicht aber
+in KI-Studio-Projekte. Dort kommt die Gestaltung aus deinem Prompt. Ein Brand
+Board anzulegen lohnt sich trotzdem für den Rest deines Kontos, ist für diese
+Website aber keine Voraussetzung.
+
+**Die Wissensdatenbank gehört nicht zum KI-Studio.** Sie versorgt deinen
+Chat-Assistenten. Auf dieser Website sitzt er im Chat-Fenster unten rechts —
+gepflegt wird er beim Assistenten selbst, nicht im Seiteneditor.
+</Warning>
+
+## Schritt 1 — Entwurf öffnen
+
+Klicke in der linken Navigation auf **KI-Studio** und öffne das Projekt
+**Service-One Page**. Links siehst du den Chat, rechts die Vorschau.
+
+## Schritt 2 — Texte und Gestaltung anpassen
+
+Du änderst die Seite im Gespräch. Schreibe in einfachen Worten, was passieren
+soll, und schicke es ab.
+
+Ein Prompt, der alle Platzhalter auf einmal ersetzt:
+
+```text
+Ersetze die Platzhalter: [FIRMENNAME] ist Muster Elektrotechnik,
+[BRANCHE] ist Elektriker, [ORT] ist Linz,
+[HAUPTNUTZEN] ist "Strom, der sitzt. Beim ersten Termin.",
+[TELEFONNUMMER] ist 0732 123456.
+Schreibe für [LEISTUNG 1] bis [LEISTUNG 3] je zwei Sätze zu
+Elektroinstallation, Photovoltaik und Störungsdienst.
+```
+
+<Tip>
+Arbeite in kleinen Schritten und prüfe nach jedem Schritt die Vorschau. Ein
+Prompt, der zehn Dinge gleichzeitig ändert, liefert selten alle zehn richtig.
+</Tip>
+
+Für die Farben reicht ein Satz, weil die gesamte Seite über Variablen läuft:
+
+```text
+Setze --brand auf #0B5FFF. Sonst nichts ändern.
+```
+
+Wenn du lieber klickst als schreibst: Über **Visuelle Bearbeitungen** im
+Eingabefeld wählst du ein Element direkt in der Vorschau aus und änderst es dort.
+
+## Schritt 3 — Formular und Kalender verbinden
+
+Formular und Kalender sind bereits eingebunden. Wenn du weitere hinzufügst,
+erzeugt das KI-Studio zunächst nur die Optik. Damit Anfragen wirklich im CRM
+landen, klicke auf **Verbinden**, sobald der Hinweis erscheint, oder bitte das
+KI-Studio im Chat darum. Der Ablauf **Mit CRM verbinden** legt dann Kontakte an
+und speichert die Einsendungen.
+
+Beim Kalender erkennt das KI-Studio deine vorhandenen Kalender und fragt, welcher
+verbunden werden soll.
+
+<Note>
+Für Automatisierungen gibt es den Workflow-Auslöser **KI-Studio-Formular
+abgeschickt**. Damit startest du zum Beispiel eine Bestätigungs-E-Mail.
+</Note>
+
+## Schritt 4 — Veröffentlichen und Domain verbinden
+
+Die Reihenfolge ist wichtig: **Du kannst eine eigene Domain erst verbinden,
+nachdem das Projekt einmal auf einer Vorschau-Adresse veröffentlicht wurde.**
+
+<Steps>
+  <Step title="Auf die Vorschau-Adresse veröffentlichen">
+    Klicke oben rechts auf **Veröffentlichen**, passe die Adresse bei Bedarf an
+    und klicke erneut auf **Veröffentlichen**. Ergänze danach Symbol, Name,
+    Beschreibung und Vorschaubild und bestätige mit **Änderungen übernehmen**.
+  </Step>
+  <Step title="Eigene Domain hinzufügen">
+    Klicke auf **Veröffentlichen** und wähle **Eigene Domain hinzufügen**. Trage
+    deine Domain ein. Du kannst die Domain mit und ohne `www` verbinden, die
+    Weiterleitung wird dabei automatisch eingerichtet.
+  </Step>
+  <Step title="DNS einrichten">
+    Liegt die Domain bereits in deinem Konto, führt dich der Ablauf direkt
+    weiter. Andernfalls trägst du die angezeigten DNS-Einträge bei deinem
+    Domain-Anbieter ein und klickst auf **DNS prüfen**. Bis die Änderung überall
+    greift, können einige Stunden vergehen.
+  </Step>
+  <Step title="Hauptadresse festlegen">
+    Klicke auf **Veröffentlichen**, dann auf das Drei-Punkte-Menü neben der
+    gewünschten Adresse und auf **Als primär festlegen**. Alle anderen Adressen
+    leiten danach dauerhaft auf diese weiter.
+  </Step>
+</Steps>
+
+Ist alles verbunden, zeigt der Chat die verbundene Domain an und bietet
+**Website ansehen** an.
+
+Wie du eine Domain grundsätzlich einrichtest, steht in
+[Domain verbinden](/wissen/domain-verbinden-uebertragen/domain-verbinden-eine-anleitung).
+
+## Schritt 5 — Chat und Wissensdatenbank
+
+Das Live-Chat-Widget ist bereits eingebunden. Sein Aussehen und sein Verhalten
+stellst du nicht auf der Website ein, sondern beim Widget selbst — siehe
+[Live-Chat-Widget einrichten](/wissen/vertrieb-konversationen/live-chat-widget-einrichten).
+
+Was der Chat inhaltlich beantwortet, steuerst du über den Assistenten und seine
+Wissensdatenbank. Wie du ihn gut anleitest, steht in
+[Anna-Prompt schreiben](/wissen/anna-prompt-schreiben).
+
+## Grenzen, die du kennen solltest
+
+<AccordionGroup>
+  <Accordion title="KI-Studio-Projekte lassen sich nicht in Seiten oder Funnels verschieben">
+    Ein Projekt bleibt im KI-Studio. Es lässt sich nicht in den klassischen
+    Website- oder Funnel-Builder übernehmen. Wenn du Funktionen brauchst, die es
+    nur dort gibt, baue die Seite von Anfang an dort.
+  </Accordion>
+  <Accordion title="Vorlagen von einer bestehenden Website übernehmen">
+    Du kannst eine Adresse oder Bilder als Vorlage angeben. Das Ergebnis ist eine
+    Anlehnung an Aufbau und Stil, keine originalgetreue Kopie.
+  </Accordion>
+  <Accordion title="Projekt weitergeben">
+    Über das Drei-Punkte-Menü und **Klonen** kopierst du ein Projekt in einen
+    anderes Unterkonto. Mehrere Projekte auf einmal gibst du über einen
+    Snapshot weiter.
+  </Accordion>
+</AccordionGroup>
+
+## Wenn etwas nicht klappt
+
+<AccordionGroup>
+  <Accordion title="„Diese Seite ist bereits mit einem Funnel oder einer Website verbunden"">
+    Die Domain ist im Konto schon einem Funnel oder einer Website zugeordnet.
+    Löse die bestehende Zuordnung oder verwende eine Subdomain wie
+    `www.deine-domain.de`. Mehr dazu in der
+    [Fehlerbehebung beim Domain-Verbinden](/wissen/domain-verbinden-uebertragen/fehlerbehebung-domain-verbinden).
+  </Accordion>
+  <Accordion title="Der Kalender bleibt weiß">
+    Wird ein Kalender von Hand als eingebetteter Rahmen eingefügt, lädt er erst,
+    wenn zusätzlich das zugehörige Einbettungs-Skript auf der Seite liegt. Bitte
+    das KI-Studio im Chat, `form_embed.js` zu ergänzen. Erkennungsmerkmal: Der
+    Rahmen behält seine Höhe und bleibt leer. Nutzt du stattdessen den Ablauf
+    **Mit CRM verbinden**, tritt das Problem nicht auf.
+  </Accordion>
+  <Accordion title="Das KI-Studio antwortet nicht mehr">
+    Wahrscheinlich ist das Kontingent des laufenden Fünf-Stunden-Fensters
+    aufgebraucht. Es setzt sich am Ende des Fensters zurück.
+  </Accordion>
+</AccordionGroup>
