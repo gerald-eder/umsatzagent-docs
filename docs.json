@@ -58,6 +58,14 @@
         ]
       },
       {
+        "tab": "Einrichten",
+        "icon": "rocket",
+        "pages": [
+          "einrichten/index",
+          "einrichten/videos"
+        ]
+      },
+      {
         "tab": "Anleitungen",
         "icon": "book-open",
         "groups": [
@@ -77,6 +85,7 @@
           {
             "group": "Erste Schritte",
             "pages": [
+              "wissen/ki-assistenz-starten/ki-assistenz-ohne-umbau-starten",
               "wissen/daten-importieren/daten-aus-hubspot-importieren",
               "wissen/fehlerbehebung/so-behebst-du-domain-dns-und-verifizierungsfehler",
               "wissen/grundeinrichtung/neuen-kontakt-erstellen",
@@ -586,6 +595,12 @@
           {
             "group": "Seiten",
             "pages": [
+              {
+                "group": "KI-Studio",
+                "pages": [
+                  "wissen/ki-studio/standard-website-einrichten"
+                ]
+              },
               {
                 "group": "Formulare",
                 "pages": [

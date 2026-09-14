@@ -1,0 +1,201 @@
+---
+title: "KI-Assistenz starten, ohne dein Setup umzubauen"
+description: "Der schnellste Weg zu einer KI, die rund um die Uhr antwortet und Termine bucht: ein Chat-Widget auf deiner bestehenden Website. In fünf Schritten eingerichtet."
+---
+
+<Note>
+**Schritt 2 von 3** der Einrichtung (Tag 1). Davor: [Konto startklar machen](/wissen/grundeinrichtung/konto-startklar-machen).
+</Note>
+
+Du musst weder deine Website neu bauen noch deinen Anbieter wechseln, um KI-Assistenz
+zu nutzen. Es genügt ein **Live-Chat-Widget** auf einer Seite, die du bereits hast.
+Der Assistent beantwortet Fragen, sammelt Kontaktdaten und bucht Termine — alles
+landet in deinem Konto.
+
+Das Widget kannst du an drei Stellen einsetzen, auch an allen dreien gleichzeitig:
+
+<CardGroup cols={3}>
+  <Card title="Bestehende Website" icon="globe">
+    Ein Zeilen-Code-Schnipsel im Quelltext. Dein Webauftritt bleibt, wie er ist.
+  </Card>
+  <Card title="Landingpage" icon="file">
+    Für Kampagnen und Anzeigen, ohne die Hauptseite anzufassen.
+  </Card>
+  <Card title="Neue Seite bei uns" icon="sparkles">
+    Die [Standard-Website im KI-Studio](/wissen/ki-studio/standard-website-einrichten), bei der das Widget schon eingebaut ist.
+  </Card>
+</CardGroup>
+
+## Die Reihenfolge ist nicht beliebig
+
+<Warning>
+Richte die fünf Schritte **in dieser Reihenfolge** ein. Jeder Schritt baut auf dem
+vorherigen auf:
+
+Der Assistent kann nur dann Termine anbieten, wenn der **Kalender schon existiert**.
+Er kann nur dann Daten sauber speichern, wenn die **Felder schon angelegt** sind.
+Und das Widget kann ihm nur dann zugewiesen werden, wenn es den **Assistenten schon gibt**.
+
+Wer mit dem Assistenten anfängt, baut ihn zweimal.
+</Warning>
+
+## Schritt 1 — Felder und Werte ausfüllen
+
+Das ist der unscheinbarste Schritt und der mit der größten Wirkung.
+
+**Custom Values** sind die Bausteine, die in Nachrichten, E-Mails und im Prompt des
+Assistenten eingesetzt werden: Firmenname, Telefonnummer, Öffnungszeiten,
+Links zu Impressum, Datenschutz und AGB.
+
+<Warning>
+**Ein leerer Custom Value erzeugt keine Fehlermeldung — er erzeugt eine Lücke.**
+Steht kein Wert drin, verschickt dein Konto Nachrichten mit einem leeren Feld an
+der Stelle, und niemand merkt es. Bei Rechtslinks in E-Mails ist das nicht nur
+unschön, sondern angreifbar. Geh die Liste einmal vollständig durch, bevor du
+weitermachst.
+</Warning>
+
+**Custom Fields** sind die Felder am Kontakt, in die der Assistent hineinschreibt,
+zum Beispiel das Anliegen oder der gewünschte Rückrufzeitpunkt. Lege sie an, bevor
+du den Assistenten baust — sonst kannst du sie später nicht auswählen.
+
+## Schritt 2 — Kalender anlegen oder anpassen
+
+Der Assistent bucht nur in einen Kalender, den es bereits gibt.
+
+<Steps>
+  <Step title="Kalender wählen">
+    Nutze einen vorhandenen Kalender oder lege einen neuen an. Für den Anfang
+    genügt ein einziger Terminkalender.
+  </Step>
+  <Step title="Verfügbarkeit setzen">
+    Trage deine Arbeitszeiten, die Termindauer und die Puffer ein. Was hier steht,
+    bietet der Assistent später an — mehr dazu unter
+    [Kalender-Verfügbarkeit](/wissen/kalender/kalender-verfuegbarkeit-woechentliche-arbeitszeiten-amp-datumsspezifis).
+  </Step>
+  <Step title="Beschreibung ausfüllen">
+    Die Kalenderbeschreibung hilft dem Assistenten, den richtigen Kalender zu
+    wählen, wenn du später mehrere hast. Sie ersetzt aber keine Erklärung im
+    Prompt: Was der Kunde erfahren soll, gehört zusätzlich in die Anleitung des
+    Assistenten.
+  </Step>
+</Steps>
+
+## Schritt 3 — Assistenten aufsetzen
+
+Öffne **AI-Assistenten › Conversation AI** und erstelle einen Assistenten. Es gibt
+drei Wege:
+
+| Weg | Wofür |
+|---|---|
+| **Geführtes Formular** | Der schnellste Einstieg. Für Terminbuchung, Fragen beantworten und Kontaktdaten sammeln |
+| **Prompt-basiert** | Wenn du Verhalten und Tonfall selbst ausformulieren willst. Mit Aktionen wie Übergabe an Menschen und Workflow-Auslösern |
+| **Flow-Builder** | Für mehrstufige Abläufe mit Verzweigungen und Qualifizierung |
+
+Für den Start reicht das geführte Formular.
+
+<Steps>
+  <Step title="Grunddaten festlegen">
+    Name des Assistenten, Wartezeit bis zur Antwort und die erste Nachricht.
+  </Step>
+  <Step title="Kanäle wählen">
+    Aktiviere **Live-Chat**. Weitere Kanäle wie SMS, E-Mail, WhatsApp, Facebook
+    und Instagram kannst du später dazunehmen.
+  </Step>
+  <Step title="Ziele setzen">
+    Lege fest, welche Kontaktdaten der Assistent sammeln soll und ob er Termine
+    buchen darf. Hier verbindest du den Kalender aus Schritt 2.
+  </Step>
+  <Step title="Wissen hinterlegen">
+    Über das Training gibst du ihm deine Leistungen, Preise und häufigen Fragen
+    mit — siehe [Assistenten trainieren](/wissen/ai-assistent/wie-du-den-ai-assistenten-fuer-bessere-kundenantworten-trainierst).
+    Ein Assistent ohne Training rät.
+  </Step>
+  <Step title="Arbeitszeiten setzen">
+    Du kannst festlegen, wann der Assistent überhaupt antwortet. Ein Gespräch, das
+    innerhalb der Arbeitszeit begonnen hat, führt er auch danach noch zu Ende.
+  </Step>
+</Steps>
+
+<Note>
+**Neue Assistenten stehen zunächst auf „Aus".** Es gibt drei Zustände: **Aus**,
+**Vorschlagend** (der Assistent entwirft, ein Mensch schickt ab) und **Auto-Pilot**
+(er antwortet selbst). Fang mit „Vorschlagend" an, lies die ersten Gespräche mit
+und schalte erst dann auf Auto-Pilot.
+</Note>
+
+Wie du die [Übergabe an einen Menschen](/wissen/ai-assistent/so-konfigurierst-du-die-menschliche-uebergabe-im-ai-assistenten)
+einrichtest, steht in einer eigenen Anleitung. Richte sie gleich mit ein — der
+häufigste Grund für verlorene Anfragen ist ein Assistent ohne Notausgang.
+
+## Schritt 4 — Live-Chat-Widget einrichten
+
+Jetzt erst das Widget, denn hier weist du den Assistenten zu.
+
+<Steps>
+  <Step title="Widget anlegen">
+    Unter **Seiten › Chat-Widget** auf **Neu** klicken und **Live-Chat** wählen.
+  </Step>
+  <Step title="Farben und Text anpassen">
+    Passe Farbe, Symbol, Begrüßung und den rechtlichen Hinweis an dein
+    Erscheinungsbild an. Die Farbe des Chat-Knopfes kommt aus diesen Einstellungen,
+    nicht aus deiner Website.
+  </Step>
+  <Step title="Assistenten zuweisen">
+    Verbinde das Widget mit dem Assistenten aus Schritt 3.
+  </Step>
+  <Step title="Code kopieren">
+    **Code abrufen › Kopieren**. Diesen Schnipsel brauchst du im nächsten Schritt.
+  </Step>
+</Steps>
+
+Ausführlich in [Live-Chat-Widget einrichten](/wissen/vertrieb-konversationen/live-chat-widget-einrichten).
+
+## Schritt 5 — Widget veröffentlichen
+
+<AccordionGroup>
+  <Accordion title="Auf deiner bestehenden Website">
+    Füge den kopierten Code direkt vor dem schließenden `</body>`-Tag ein. Bei
+    WordPress geht das über ein Plugin für Kopf- und Fußzeilen-Skripte, bei
+    anderen Systemen über das Feld für eigenen Code. An deiner Seite ändert sich
+    sonst nichts.
+  </Accordion>
+  <Accordion title="Auf einer Landingpage">
+    Öffne die Seite im Editor, klicke auf das Symbol für den Tracking-Code
+    (`</>`) und füge den Schnipsel ein. So testest du die KI auf einer Kampagne,
+    ohne die Hauptseite anzufassen.
+  </Accordion>
+  <Accordion title="Auf der Standard-Website im KI-Studio">
+    Dort ist das Widget bereits eingebaut. Du musst nur den Assistenten
+    zuweisen — siehe [Standard-Website einrichten](/wissen/ki-studio/standard-website-einrichten).
+  </Accordion>
+</AccordionGroup>
+
+## Vor dem Scharfschalten testen
+
+Spiele diese fünf Fälle einmal selbst durch, bevor du auf Auto-Pilot stellst:
+
+1. Eine einfache Frage zu deinen Leistungen
+2. Eine Terminbuchung von Anfang bis Ende — und prüfe danach, ob der Termin im
+   Kalender steht und ein Kontakt angelegt wurde
+3. Eine Frage, die der Assistent nicht beantworten kann
+4. Die Bitte, mit einem Menschen zu sprechen
+5. Eine Anfrage außerhalb deiner Arbeitszeiten
+
+<Warning>
+**Kennzeichne die KI.** Besucher müssen erkennen können, dass sie mit einem
+automatischen Assistenten schreiben und nicht mit einer Person. Schreib es in die
+Begrüßung des Widgets. Achte außerdem darauf, dass der rechtliche Hinweis im
+Widget zu deiner Datenschutzerklärung passt.
+</Warning>
+
+## Wenn du später mehr willst
+
+Der Assistent ist nicht auf den Chat beschränkt. Sobald er im Live-Chat zuverlässig
+läuft, kannst du dieselben Kanäle dazuschalten, auf denen du ohnehin Nachrichten
+bekommst: SMS, E-Mail, WhatsApp, Facebook und Instagram. Der Assistent bleibt
+derselbe, du hakst nur weitere Kanäle an.
+
+<Card title="Nächster Schritt" icon="arrow-right" href="/wissen/ai-assistent/wie-du-den-ai-assistenten-fuer-bessere-kundenantworten-trainierst">
+  **Schritt 3 von 3:** Den Assistenten trainieren, damit er nicht rät
+</Card>
